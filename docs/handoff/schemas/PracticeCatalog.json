@@ -1,0 +1,148 @@
+{
+  "title": "PracticeCatalog",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "skill": {
+        "type": "string",
+        "enum": [
+          "listening",
+          "reading",
+          "writing",
+          "speaking"
+        ]
+      },
+      "types": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "enum": [
+                    "multiple-choice",
+                    "tfng",
+                    "ynng",
+                    "matching-information",
+                    "matching-headings",
+                    "matching-features",
+                    "matching-sentence-endings",
+                    "sentence-completion",
+                    "summary-completion",
+                    "note-completion",
+                    "table-completion",
+                    "flow-chart-completion",
+                    "diagram-label-completion",
+                    "short-answer",
+                    "matching",
+                    "plan-map-diagram-labelling",
+                    "form-completion"
+                  ]
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "accuracy": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "attempts": {
+              "type": "number"
+            },
+            "sets": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "title": {
+                    "type": "string"
+                  },
+                  "kind": {
+                    "type": "string",
+                    "enum": [
+                      "full",
+                      "section",
+                      "practice"
+                    ]
+                  },
+                  "skills": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "listening",
+                        "reading",
+                        "writing",
+                        "speaking"
+                      ]
+                    }
+                  },
+                  "questionType": {
+                    "type": "string",
+                    "enum": [
+                      "multiple-choice",
+                      "tfng",
+                      "ynng",
+                      "matching-information",
+                      "matching-headings",
+                      "matching-features",
+                      "matching-sentence-endings",
+                      "sentence-completion",
+                      "summary-completion",
+                      "note-completion",
+                      "table-completion",
+                      "flow-chart-completion",
+                      "diagram-label-completion",
+                      "short-answer",
+                      "matching",
+                      "plan-map-diagram-labelling",
+                      "form-completion"
+                    ]
+                  },
+                  "minutes": {
+                    "type": "number"
+                  },
+                  "questions": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "id",
+                  "title",
+                  "kind",
+                  "skills",
+                  "minutes",
+                  "questions"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "type",
+            "accuracy",
+            "attempts",
+            "sets"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    "required": [
+      "skill",
+      "types"
+    ],
+    "additionalProperties": false
+  }
+}

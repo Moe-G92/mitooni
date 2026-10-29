@@ -1,0 +1,202 @@
+{
+  "title": "SpeakingFeedback",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "band": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 9,
+      "multipleOf": 0.5
+    },
+    "criteria": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "enum": [
+              "tr",
+              "cc",
+              "lr",
+              "gra",
+              "fc",
+              "p"
+            ]
+          },
+          "band": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 9,
+            "multipleOf": 0.5
+          },
+          "comment": {
+            "type": "object",
+            "properties": {
+              "en": {
+                "type": "string"
+              },
+              "fa": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "en",
+              "fa"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "key",
+          "band",
+          "comment"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "parts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "part": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "partId": {
+            "type": "string"
+          },
+          "recordingKey": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "durationSec": {
+            "type": "number"
+          },
+          "transcript": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "part",
+          "partId",
+          "recordingKey",
+          "durationSec",
+          "transcript"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "pronunciation": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "word": {
+            "type": "string"
+          },
+          "note": {
+            "type": "object",
+            "properties": {
+              "en": {
+                "type": "string"
+              },
+              "fa": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "en",
+              "fa"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "word",
+          "note"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "annotations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "quote": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "grammar",
+              "vocabulary",
+              "cohesion",
+              "task"
+            ]
+          },
+          "note": {
+            "type": "object",
+            "properties": {
+              "en": {
+                "type": "string"
+              },
+              "fa": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "en",
+              "fa"
+            ],
+            "additionalProperties": false
+          },
+          "fix": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "quote",
+          "kind",
+          "note"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "summary": {
+      "type": "object",
+      "properties": {
+        "en": {
+          "type": "string"
+        },
+        "fa": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "en",
+        "fa"
+      ],
+      "additionalProperties": false
+    },
+    "dummy": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "band",
+    "criteria",
+    "parts",
+    "pronunciation",
+    "annotations",
+    "summary",
+    "dummy"
+  ],
+  "additionalProperties": false
+}

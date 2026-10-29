@@ -1,0 +1,61 @@
+{
+  "title": "VocabCard",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "term": {
+      "type": "string"
+    },
+    "partOfSpeech": {
+      "type": "string"
+    },
+    "meaning": {
+      "type": "object",
+      "properties": {
+        "en": {
+          "type": "string"
+        },
+        "fa": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "en",
+        "fa"
+      ],
+      "additionalProperties": false
+    },
+    "example": {
+      "type": "string"
+    },
+    "due": {
+      "type": "string"
+    },
+    "intervalDays": {
+      "type": "number"
+    },
+    "reps": {
+      "type": "integer",
+      "minimum": -9007199254740991,
+      "maximum": 9007199254740991
+    },
+    "custom": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "id",
+    "term",
+    "partOfSpeech",
+    "meaning",
+    "example",
+    "due",
+    "intervalDays",
+    "reps",
+    "custom"
+  ],
+  "additionalProperties": false
+}

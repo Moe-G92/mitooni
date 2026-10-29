@@ -1,0 +1,136 @@
+import { useState } from "react";
+import { Link, useNavigate, useParams } from "react-router";
+import { ArrowLeft, GraduationCap } from "lucide-react";
+import { useCoachMutations, useMe, useResult, useTest } from "@/api/queries";
+import { useT } from "@/i18n";
+import { formatBand, formatDate, formatNumber } from "@/lib/format";
+import { cn } from "@/lib/utils";
+import { PageHeader } from "@/components/PageHeader";
+import { Card, CardLabel } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { ErrorState, Skeleton, Tag } from "@/components/ui/misc";
+import { CriterionTile } from "@/components/charts";
+import { Rich } from "@/exam/widgets/QuestionGroupView";
+import { AnnotatedText } from "./feedback-shared";
+import { KIND_CLASS } from "./feedback-kinds";
+
+export default function WritingFeedbackPage() {
+  const { attemptId, partId } = useParams();
+  const { t, locale, pick } = useT();
+  const navigate = useNavigate();
+  const r = useResult(attemptId);
+  const test = useTest(r.data?.testId);
+  const me = useMe();
+  const coach = useCoachMutations();
+  const [active, setActive] = useState<number | null>(null);
+
+  if (r.isError) return <ErrorState message={t("errors.load")} onRetry={() => r.refetch()} />;
+  if (!r.data) return <Skeleton className="h-96" />;
+  const w = r.data.writing.find((x) => x.partId === partId) ?? r.data.writing[0];
+  if (!w) return <ErrorState message={t("errors.load")} />;
+  const part = test.data?.sections.flatMap((s) => s.parts).find((p) => p.id === w.partId);
+  const minWords = w.task === 1 ? 150 : 250;
+
+  const askCoach = () => {
+    if (me.data?.plan !== "coach") return navigate("/app/coach");
+    coach.request.mutate(
+      { kind: "essay", title: `${r.data!.testTitle}, Task ${w.task}`, attemptId: r.data!.attemptId, message: t("feedback.coachMessage") },
+      { onSuccess: () => navigate("/app/coach") },
+    );
+  };
+
+  return (
+    <>
+      <PageHeader title={t("feedback.writingTitle", { n: w.task })} sub={`${r.data.testTitle} · ${formatDate(r.data.completedAt, locale)}`} />
+      <Link to={`/app/results/${r.data.attemptId}`} className="mb-4 inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground">
+        <ArrowLeft className="size-4 rtl:rotate-180" /> {t("feedback.backToResult")}
+      </Link>
+      {w.dummy && <p className="mb-4 rounded-xl border border-dashed border-border px-4 py-2.5 text-xs text-muted-foreground">{t("feedback.dummyWriting")}</p>}
+      <div className="grid grid-cols-12 gap-4">
+        <Card className="col-span-12">
+          <div className="flex flex-wrap items-end gap-6">
+            <div>
+              <div className="text-[13px] text-muted-foreground">{t("common.band")}</div>
+              <div className="font-mono text-5xl leading-none">{formatBand(w.band, locale)}</div>
+            </div>
+            <div className="grid flex-1 grid-cols-2 gap-3 sm:grid-cols-4">
+              {w.criteria.map((c) => (
+                <CriterionTile key={c.key} label={t(`criteria.${c.key === "tr" && w.task === 1 ? "tr1" : c.key}`)} band={c.band} locale={locale} low={c.band < w.band} />
+              ))}
+            </div>
+          </div>
+          <blockquote className="mt-4 rounded-e-xl border-s-[3px] border-primary bg-secondary px-3.5 py-3 text-sm">{pick(w.summary)}</blockquote>
+        </Card>
+
+        <Card className="col-span-12 lg:col-span-7">
+          <CardLabel
+            title={t("feedback.yourEssay")}
+            note={
+              <span className={cn(w.words < minWords && "text-weak")}>
+                {t("results.words", { n: formatNumber(w.words, locale) })}
+                {w.words < minWords && ` · ${t("feedback.underMin", { n: formatNumber(minWords, locale) })}`}
+              </span>
+            }
+          />
+          {part?.writing && (
+            <details className="mt-3 rounded-xl bg-muted px-4 py-3 text-sm">
+              <summary className="cursor-pointer font-medium">{t("feedback.prompt")}</summary>
+              <div lang="en" dir="ltr" className="mt-2 flex flex-col gap-2 text-start">
+                {part.writing.prompt.map((p, i) => (
+                  <p key={i}>
+                    <Rich text={p} />
+                  </p>
+                ))}
+              </div>
+            </details>
+          )}
+          <div className="mt-4 text-[15px]">
+            {w.essay.trim() ? (
+              <AnnotatedText text={w.essay} notes={w.annotations} active={active} onPick={setActive} />
+            ) : (
+              <p className="text-muted-foreground">{t("feedback.noEssay")}</p>
+            )}
+          </div>
+        </Card>
+
+        <Card className="col-span-12 lg:col-span-5">
+          <CardLabel title={t("feedback.notes")} note={t("feedback.notesCount", { n: formatNumber(w.annotations.length, locale) })} />
+          {w.annotations.length === 0 && <p className="mt-3 text-sm text-muted-foreground">{t("feedback.noNotes")}</p>}
+          <ol className="mt-3 flex flex-col gap-2.5">
+            {w.annotations.map((a, i) => (
+              <li key={i}>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setActive(i);
+                    document.getElementById(`ann-${i}`)?.scrollIntoView({ block: "center" });
+                  }}
+                  className={cn("w-full rounded-xl border border-border px-3.5 py-3 text-start text-sm hover:bg-accent/50", active === i && "ring-2 ring-ring")}
+                >
+                  <div className="flex items-center gap-2">
+                    <span className="font-mono text-xs text-muted-foreground">{formatNumber(i + 1, locale)}</span>
+                    <Tag className={KIND_CLASS[a.kind]}>{t(`feedback.kind.${a.kind}`)}</Tag>
+                  </div>
+                  <p className="mt-1.5">{pick(a.note)}</p>
+                  {a.fix && (
+                    <p className="mt-1.5 text-muted-foreground">
+                      {t("feedback.try")}{" "}
+                      <span lang="en" dir="ltr" className="text-foreground">
+                        {a.fix}
+                      </span>
+                    </p>
+                  )}
+                </button>
+              </li>
+            ))}
+          </ol>
+          <div className="mt-5 border-t border-border pt-4">
+            <Button variant="outline" onClick={askCoach} disabled={coach.request.isPending}>
+              <GraduationCap /> {t("feedback.askCoach")}
+            </Button>
+          </div>
+        </Card>
+      </div>
+    </>
+  );
+}

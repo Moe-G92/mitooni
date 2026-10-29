@@ -1,0 +1,61 @@
+{
+  "title": "CheckResult",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "itemId": {
+      "type": "string"
+    },
+    "correct": {
+      "type": "boolean"
+    },
+    "answer": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "explanation": {
+      "type": "object",
+      "properties": {
+        "en": {
+          "type": "string"
+        },
+        "fa": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "en",
+        "fa"
+      ],
+      "additionalProperties": false
+    },
+    "trap": {
+      "type": "object",
+      "properties": {
+        "en": {
+          "type": "string"
+        },
+        "fa": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "en",
+        "fa"
+      ],
+      "additionalProperties": false
+    },
+    "evidence": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "itemId",
+    "correct",
+    "answer",
+    "explanation"
+  ],
+  "additionalProperties": false
+}

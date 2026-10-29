@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>__TITLE__</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --paper: #faf9f5; --paper-2: #f0efe8; --ink: #1a1a2e; --muted: #4f5a57; --soft: #5c6663;
+      --rule: rgba(26,26,46,0.12); --ink-30: rgba(26,26,46,0.30); --ink-20: rgba(26,26,46,0.20);
+      --ink-10: rgba(26,26,46,0.10); --ink-06: rgba(26,26,46,0.06); --ink-05: rgba(26,26,46,0.05);
+      --ink-03: rgba(26,26,46,0.03); --ink-02: rgba(26,26,46,0.02); --ink-40: rgba(26,26,46,0.40);
+      --muted-15: rgba(79,90,87,0.15); --muted-45: rgba(79,90,87,0.45);
+      --accent: #c2410c; --accent-tint: rgba(194,65,12,0.08); --accent-12: rgba(194,65,12,0.12); --accent-04: rgba(194,65,12,0.04);
+      --link: #1a4f4e; --node-fill: #ffffff;
+      --font-sans: 'Roboto', system-ui, sans-serif; --font-title: 'Barlow Condensed', 'Roboto', sans-serif; --font-mono: 'Geist Mono', ui-monospace, monospace;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --paper: #0c1311; --paper-2: #141d1a; --ink: #edf5ef; --muted: #a5ada8; --soft: #989f9b;
+        --rule: rgba(237,245,239,0.12); --ink-30: rgba(237,245,239,0.30); --ink-20: rgba(237,245,239,0.20);
+        --ink-10: rgba(237,245,239,0.10); --ink-06: rgba(237,245,239,0.06); --ink-05: rgba(237,245,239,0.05);
+        --ink-03: rgba(237,245,239,0.03); --ink-02: rgba(237,245,239,0.02); --ink-40: rgba(237,245,239,0.40);
+        --muted-15: rgba(165,173,168,0.15); --muted-45: rgba(165,173,168,0.45);
+        --accent: #fb923c; --accent-tint: rgba(251,146,60,0.12); --accent-12: rgba(251,146,60,0.14); --accent-04: rgba(251,146,60,0.05);
+        --link: #6fbfb2; --node-fill: #141d1a;
+      }
+    }
+    body { font-family: var(--font-sans); background: var(--paper); color: var(--ink); min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 3rem 2rem; }
+    .frame { max-width: 1200px; width: 100%; }
+    .diagram-container { width: 100%; overflow-x: auto; }
+    .eyebrow { font-family: var(--font-mono); font-size: 0.66rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; }
+    h1 { font-family: var(--font-title); font-size: 1.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.01em; line-height: 1.1; color: var(--ink); margin-bottom: 1.5rem; }
+    svg { width: 100%; min-width: 960px; display: block; }
+    svg text { font-family: var(--font-sans); }
+    svg text.mono { font-family: var(--font-mono); }
+    @media print { .diagram-container { overflow-x: visible; } svg { min-width: 0; } body { padding: 0; min-height: 0; display: block; } }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <p class="eyebrow">__EYEBROW__</p>
+    <h1>__H1__</h1>
+    <div class="diagram-container">

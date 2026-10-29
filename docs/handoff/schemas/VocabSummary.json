@@ -1,0 +1,46 @@
+{
+  "title": "VocabSummary",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "due": {
+      "type": "number"
+    },
+    "learning": {
+      "type": "number"
+    },
+    "known": {
+      "type": "number"
+    },
+    "total": {
+      "type": "number"
+    },
+    "reviewDays": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string"
+          },
+          "count": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "date",
+          "count"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "due",
+    "learning",
+    "known",
+    "total",
+    "reviewDays"
+  ],
+  "additionalProperties": false
+}

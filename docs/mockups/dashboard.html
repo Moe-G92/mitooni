@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard mockup</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --bg:#F6F5F1; --card:#FFFFFF; --text:#1C1C1A; --muted:#6B6A64; --faint:#9A998F; --line:#E4E2DA;
+    --accent:#1F3A5F; --accent-ink:#FFFFFF; --accent-soft:#E8EEF7;
+    --strength:#2E7D4F; --strength-soft:#E4F2E9; --fair:#8A5D00; --fair-soft:#F7EED6; --weak:#B23A48; --weak-soft:#F8E4E7;
+    --radius:20px;
+  }
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+    --bg:#121311; --card:#1B1C19; --text:#ECEBE6; --muted:#A3A29A; --faint:#75746C; --line:#2C2D29;
+    --accent:#9DB7E6; --accent-ink:#0F1A2B; --accent-soft:#1E2A3B;
+    --strength:#7FD1A0; --strength-soft:#1A2E22; --fair:#E0B64D; --fair-soft:#30280F; --weak:#F08A96; --weak-soft:#3A1C21;
+  }}
+  :root[data-theme="dark"]{
+    --bg:#121311; --card:#1B1C19; --text:#ECEBE6; --muted:#A3A29A; --faint:#75746C; --line:#2C2D29;
+    --accent:#9DB7E6; --accent-ink:#0F1A2B; --accent-soft:#1E2A3B;
+    --strength:#7FD1A0; --strength-soft:#1A2E22; --fair:#E0B64D; --fair-soft:#30280F; --weak:#F08A96; --weak-soft:#3A1C21;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Geist,ui-sans-serif,system-ui,sans-serif;font-size:15px;line-height:1.5;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased}
+  .mono{font-family:"Geist Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
+  button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+  a{color:inherit;text-decoration:none}
+
+  .app{display:grid;grid-template-columns:232px 1fr;min-height:100vh}
+  aside{border-right:1px solid var(--line);padding:22px 16px;display:flex;flex-direction:column;gap:22px}
+  .brand{display:flex;align-items:center;gap:10px;padding:0 8px;font-weight:600;font-size:17px;letter-spacing:-.01em}
+  .brand i{width:28px;height:28px;border-radius:8px;background:var(--accent);display:inline-block}
+  nav{display:flex;flex-direction:column;gap:2px}
+  nav a{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:10px;color:var(--muted)}
+  nav a svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  nav a.on{background:var(--card);color:var(--text);box-shadow:0 1px 0 var(--line)}
+  .side-foot{margin-top:auto;padding:12px;border:1px solid var(--line);border-radius:14px;font-size:13px;color:var(--muted)}
+  .side-foot b{display:block;color:var(--text);font-weight:500}
+
+  main{padding:26px 30px 48px;min-width:0}
+  .top{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+  .top h1{margin:0;font-size:24px;font-weight:600;letter-spacing:-.02em}
+  .top .sub{color:var(--muted)}
+  .chip{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 12px;border-radius:15px;border:1px solid var(--line);font-size:13px;color:var(--muted);background:var(--card)}
+  .chip.accent{background:var(--accent-soft);border-color:transparent;color:var(--text)}
+  .top .right{margin-left:auto;display:flex;gap:8px;align-items:center}
+  .icon-btn{width:34px;height:34px;border-radius:10px;border:1px solid var(--line);background:var(--card);display:grid;place-items:center}
+  .icon-btn svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.8}
+
+  .grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:16px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;min-width:0}
+  .s7{grid-column:span 7} .s5{grid-column:span 5} .s4{grid-column:span 4} .s3{grid-column:span 3} .s8{grid-column:span 8}
+  .label{font-size:13px;color:var(--muted);display:flex;justify-content:space-between;align-items:center;gap:10px}
+  .label b{font-weight:500;color:var(--text);font-size:15px}
+  .big{font-size:56px;font-weight:400;letter-spacing:-.04em;line-height:1;margin:14px 0 6px}
+  .big small{font-size:18px;color:var(--muted);letter-spacing:0;margin-left:10px}
+  .note{font-size:13px;color:var(--muted);margin-top:10px}
+  .hint{font-size:12px;color:var(--faint);margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}
+
+  .scale{position:relative;height:10px;border-radius:5px;background:var(--line);margin:22px 0 8px}
+  .scale .range{position:absolute;top:0;bottom:0;border-radius:5px;background:var(--accent)}
+  .scale .target{position:absolute;top:-6px;width:2px;height:22px;background:var(--text)}
+  .ticks{display:flex;justify-content:space-between;font-size:11px;color:var(--faint)}
+
+  .skills{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;align-items:center;margin-top:8px}
+  .skill-list{display:flex;flex-direction:column;gap:8px;font-size:13px;white-space:nowrap}
+  .skill-list div{display:flex;justify-content:space-between;gap:10px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+  .skill-list div:last-child{border:0}
+  .skill-list .gap-ok{color:var(--strength)} .skill-list .gap-no{color:var(--weak)}
+
+  .rows{display:flex;flex-direction:column;gap:12px;margin-top:14px}
+  .row{display:grid;grid-template-columns:1fr 92px 70px;gap:12px;align-items:center;font-size:14px}
+  .bar{height:8px;border-radius:4px;background:var(--line);overflow:hidden}
+  .bar i{display:block;height:100%;border-radius:4px;background:var(--accent)}
+  .tag{font-size:12px;padding:3px 8px;border-radius:9px;justify-self:end;white-space:nowrap}
+  .tag.weak{background:var(--weak-soft);color:var(--weak)} .tag.fair{background:var(--fair-soft);color:var(--fair)} .tag.strength{background:var(--strength-soft);color:var(--strength)}
+  .row .pct{text-align:right;color:var(--muted)}
+  .btn{display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 16px;border-radius:12px;background:var(--accent);color:var(--accent-ink);font-weight:500;white-space:nowrap}
+  .btn.ghost{background:transparent;border:1px solid var(--line);color:var(--text)}
+  .btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+  .next h3{margin:12px 0 4px;font-size:18px;font-weight:500;letter-spacing:-.01em}
+  .next p{margin:0;color:var(--muted);font-size:14px}
+  .next .btn{margin-top:16px}
+  .mock{margin-top:20px;padding-top:16px;border-top:1px solid var(--line);font-size:14px}
+  .mock b{font-weight:500;display:block}
+
+  .crit{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:14px}
+  .crit div{padding:12px 14px;border:1px solid var(--line);border-radius:14px}
+  .crit span{display:block;font-size:12px;color:var(--muted)}
+  .crit b{font-size:24px;font-weight:400;letter-spacing:-.03em}
+  .crit .low b{color:var(--weak)}
+  blockquote{margin:14px 0 0;padding:12px 14px;border-left:3px solid var(--accent);background:var(--accent-soft);border-radius:0 12px 12px 0;font-size:14px}
+
+  .time{display:flex;flex-direction:column;gap:12px;margin-top:14px;font-size:14px}
+  .time div{display:grid;grid-template-columns:90px 1fr 70px;gap:10px;align-items:center}
+  .time .pct{text-align:right;color:var(--muted)}
+
+  svg.chart{width:100%;height:auto;display:block}
+  @media (max-width:1100px){ .s7,.s5,.s8{grid-column:span 12} .s4{grid-column:span 6} .s3{grid-column:span 6} .next{grid-column:span 12;order:9} }
+  @media (max-width:760px){ .app{grid-template-columns:minmax(0,1fr)} aside{flex-direction:row;align-items:center;border-right:0;border-bottom:1px solid var(--line);padding:12px 16px;min-width:0;gap:12px} nav{flex:1 1 auto;min-width:0;flex-direction:row;overflow-x:auto} nav a span{display:none} .side-foot{display:none} main{padding:18px 16px 40px} .s4,.s3{grid-column:span 12} .crit{grid-template-columns:1fr 1fr} .skills{grid-template-columns:1fr} .big{font-size:40px} .big small{display:block;margin:8px 0 0} .top{flex-wrap:wrap} .top .right{margin-left:0;flex-wrap:wrap} nav{min-width:0} body{overflow-x:hidden} .row{grid-template-columns:1fr 70px 70px} .time div{grid-template-columns:76px 1fr 60px} }
+</style>
+</head>
+<body>
+<div class="app">
+  <aside>
+    <div class="brand"><i aria-hidden="true"></i>Bandwidth</div>
+    <nav>
+      <a class="on" href="#"><svg viewBox="0 0 24 24"><path d="M3 11 12 3l9 8v10H3z"/></svg><span>Overview</span></a>
+      <a href="#"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4zM8 9h8M8 13h6"/></svg><span>Practice</span></a>
+      <a href="#"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Mock exams</span></a>
+      <a href="#"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16M8 15v-4M12 15V8M16 15v-6"/></svg><span>Results</span></a>
+      <a href="#"><svg viewBox="0 0 24 24"><path d="M3 17 9 11l4 4 8-8"/></svg><span>Progress</span></a>
+      <a href="#"><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5zM9 8h6M9 12h6"/></svg><span>Vocabulary</span></a>
+      <a href="#"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/></svg><span>Settings</span></a>
+    </nav>
+    <div class="side-foot"><b>Target band 7.0</b>Exam on 29 November 2026</div>
+  </aside>
+
+  <main>
+    <div class="top">
+      <div><h1>Overview</h1><div class="sub">Sunday 26 October</div></div>
+      <div class="right">
+        <span class="chip accent">Exam in 34 days</span>
+        <span class="chip">Academic</span>
+        <button class="icon-btn" aria-label="Toggle theme" onclick="const r=document.documentElement;const d=r.dataset.theme==='dark'||(!r.dataset.theme&&matchMedia('(prefers-color-scheme: dark)').matches);r.dataset.theme=d?'light':'dark'"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9Z"/></svg></button>
+      </div>
+    </div>
+
+    <div class="grid">
+      <section class="card s7">
+        <div class="label"><b>Predicted band</b><span>Updated today</span></div>
+        <div class="big mono">6.0 – 7.0<small>target 7.0</small></div>
+        <div class="note">From 4 mocks and 312 practice questions. The range narrows as you complete more timed work.</div>
+        <div class="scale" aria-hidden="true"><div class="range" style="left:66.6%;width:11.2%"></div><div class="target" style="left:77.7%"></div></div>
+        <div class="ticks mono"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span></div>
+        <div class="hint">Writing and Speaking bands are AI estimates. They are graded about half a band more conservatively than the real test.</div>
+      </section>
+
+      <section class="card s5">
+        <div class="label"><b>Band by skill</b><span>Last mock vs target</span></div>
+        <div class="skills">
+          <svg class="chart" viewBox="0 0 240 220" role="img" aria-label="Radar of four skills against a target of 7"><title>Band by skill</title>
+            <g fill="none" stroke="var(--line)" stroke-width="1">
+              <polygon points="120,30 200,110 120,190 40,110"/><polygon points="120,56 174,110 120,164 66,110"/><polygon points="120,83 147,110 120,137 93,110"/>
+              <path d="M120 30v160M40 110h160"/>
+            </g>
+            <polygon points="120,47.8 182.2,110 120,172.2 57.8,110" fill="none" stroke="var(--text)" stroke-dasharray="4 4" stroke-width="1.2"/>
+            <polygon points="120,47.8 177.8,110 120,163.3 62.2,110" fill="var(--accent)" fill-opacity=".18" stroke="var(--accent)" stroke-width="2"/>
+            <g fill="var(--accent)"><circle cx="120" cy="47.8" r="3.5"/><circle cx="177.8" cy="110" r="3.5"/><circle cx="120" cy="163.3" r="3.5"/><circle cx="62.2" cy="110" r="3.5"/></g>
+            <g font-family="Geist, sans-serif" font-size="14" font-weight="500" fill="var(--muted)" text-anchor="middle"><text x="120" y="18">L</text><text x="222" y="115">R</text><text x="120" y="212">W</text><text x="18" y="115">S</text></g>
+          </svg>
+          <div class="skill-list mono">
+            <div><span>Listening</span><span>7.0 <span class="gap-ok">at target</span></span></div>
+            <div><span>Reading</span><span>6.5 <span class="gap-no">−0.5</span></span></div>
+            <div><span>Writing</span><span>6.0 <span class="gap-no">−1.0</span></span></div>
+            <div><span>Speaking</span><span>6.5 <span class="gap-no">−0.5</span></span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card s5">
+        <div class="label"><b>Reading question types</b><span>Last 30 days</span></div>
+        <div class="rows">
+          <div class="row"><span>Matching headings</span><div class="bar"><i style="width:48%"></i></div><span class="tag weak">Weakness</span></div>
+          <div class="row"><span>Matching information</span><div class="bar"><i style="width:62%"></i></div><span class="tag fair">Fair</span></div>
+          <div class="row"><span>True, False, Not Given</span><div class="bar"><i style="width:71%"></i></div><span class="tag fair">Fair</span></div>
+          <div class="row"><span>Summary completion</span><div class="bar"><i style="width:83%"></i></div><span class="tag strength">Strength</span></div>
+          <div class="row"><span>Sentence completion</span><div class="bar"><i style="width:88%"></i></div><span class="tag strength">Strength</span></div>
+        </div>
+        <div class="hint" style="display:flex;justify-content:space-between;align-items:center;gap:12px">Matching headings costs you about 3 marks per test<a class="btn ghost" href="#">Focus here</a></div>
+      </section>
+
+      <section class="card s4">
+        <div class="label"><b>Band trend</b><span>Full mocks</span></div>
+        <svg class="chart" viewBox="0 0 320 170" role="img" aria-label="Overall band across four mocks rising from 5.5 to 6.5 against a target of 7"><title>Band trend</title>
+          <g stroke="var(--line)" stroke-width="1"><path d="M36 30h260M36 70h260M36 110h260M36 150h260"/></g>
+          <g font-family="Geist Mono, monospace" font-size="11" fill="var(--faint)" text-anchor="end"><text x="28" y="34">8</text><text x="28" y="74">7</text><text x="28" y="114">6</text><text x="28" y="154">5</text></g>
+          <path d="M36 70h260" stroke="var(--text)" stroke-dasharray="4 4" stroke-width="1.2"/>
+          <text x="296" y="62" font-family="Geist, sans-serif" font-size="11" fill="var(--muted)" text-anchor="end">Target 7.0</text>
+          <polyline points="70,130 140,110 210,110 280,90" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+          <g fill="var(--accent)"><circle cx="70" cy="130" r="4"/><circle cx="140" cy="110" r="4"/><circle cx="210" cy="110" r="4"/><circle cx="280" cy="90" r="4.5" stroke="var(--card)" stroke-width="2"/></g>
+          <g font-family="Geist, sans-serif" font-size="11" fill="var(--faint)" text-anchor="middle"><text x="70" y="166">14 Sep</text><text x="140" y="166">28 Sep</text><text x="210" y="166">12 Oct</text><text x="280" y="166">25 Oct</text></g>
+        </svg>
+      </section>
+
+      <section class="card s3 next">
+        <div class="label"><b>Do this next</b></div>
+        <h3>Matching headings drill</h3>
+        <p>10 minutes, 8 questions from two passages</p>
+        <a class="btn" href="#">Start<svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <div class="mock"><b>Next full mock</b>Saturday 1 November, 9:00</div>
+      </section>
+
+      <section class="card s4">
+        <div class="label"><b>Time per question</b><span>vs exam budget</span></div>
+        <div class="time">
+          <div><span>Listening</span><div class="bar"><i style="width:60%"></i></div><span class="pct mono">on pace</span></div>
+          <div><span>Reading</span><div class="bar"><i style="width:100%;background:var(--weak)"></i></div><span class="pct mono">+12 s</span></div>
+          <div><span>Writing 1</span><div class="bar"><i style="width:95%"></i></div><span class="pct mono">19 min</span></div>
+          <div><span>Writing 2</span><div class="bar"><i style="width:100%;background:var(--weak)"></i></div><span class="pct mono">44 min</span></div>
+        </div>
+        <div class="hint">Reading runs 12 seconds over per question, which is about 8 minutes across a paper. Task 2 ran 4 minutes over.</div>
+      </section>
+
+      <section class="card s8">
+        <div class="label"><b>Writing feedback</b><span>Task 2, mock of 25 October</span></div>
+        <div class="crit mono">
+          <div><span>Task response</span><b>6.0</b></div>
+          <div><span>Coherence and cohesion</span><b>6.0</b></div>
+          <div><span>Lexical resource</span><b>6.5</b></div>
+          <div class="low"><span>Grammatical range</span><b>5.5</b></div>
+        </div>
+        <blockquote>Your paragraphs each hold one idea and your linking is clear. Grammar is what holds the band down: 9 of 14 complex sentences had a tense or agreement error. Open the essay to see each one highlighted.</blockquote>
+      </section>
+    </div>
+  </main>
+</div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+node_modules/
+dist/
+web/playwright-report/
+web/test-results/
+.DS_Store
+*.log
+*.tsbuildinfo
+.claude/settings.local.json

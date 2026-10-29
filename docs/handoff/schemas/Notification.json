@@ -1,0 +1,63 @@
+{
+  "title": "Notification",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "object",
+      "properties": {
+        "en": {
+          "type": "string"
+        },
+        "fa": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "en",
+        "fa"
+      ],
+      "additionalProperties": false
+    },
+    "body": {
+      "type": "object",
+      "properties": {
+        "en": {
+          "type": "string"
+        },
+        "fa": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "en",
+        "fa"
+      ],
+      "additionalProperties": false
+    },
+    "at": {
+      "type": "string"
+    },
+    "read": {
+      "type": "boolean"
+    },
+    "href": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "title",
+    "body",
+    "at",
+    "read",
+    "href"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,70 @@
+{
+  "title": "TestSummary",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "full",
+        "section",
+        "practice"
+      ]
+    },
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "listening",
+          "reading",
+          "writing",
+          "speaking"
+        ]
+      }
+    },
+    "questionType": {
+      "type": "string",
+      "enum": [
+        "multiple-choice",
+        "tfng",
+        "ynng",
+        "matching-information",
+        "matching-headings",
+        "matching-features",
+        "matching-sentence-endings",
+        "sentence-completion",
+        "summary-completion",
+        "note-completion",
+        "table-completion",
+        "flow-chart-completion",
+        "diagram-label-completion",
+        "short-answer",
+        "matching",
+        "plan-map-diagram-labelling",
+        "form-completion"
+      ]
+    },
+    "minutes": {
+      "type": "number"
+    },
+    "questions": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "id",
+    "title",
+    "kind",
+    "skills",
+    "minutes",
+    "questions"
+  ],
+  "additionalProperties": false
+}

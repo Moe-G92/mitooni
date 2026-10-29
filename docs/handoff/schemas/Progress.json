@@ -1,0 +1,257 @@
+{
+  "title": "Progress",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "trend": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string"
+          },
+          "band": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 9,
+            "multipleOf": 0.5
+          },
+          "attemptId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "date",
+          "band",
+          "attemptId"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "bySkill": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "skill": {
+            "type": "string",
+            "enum": [
+              "listening",
+              "reading",
+              "writing",
+              "speaking"
+            ]
+          },
+          "points": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "date": {
+                  "type": "string"
+                },
+                "band": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 9,
+                  "multipleOf": 0.5
+                }
+              },
+              "required": [
+                "date",
+                "band"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "skill",
+          "points"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "types": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "multiple-choice",
+              "tfng",
+              "ynng",
+              "matching-information",
+              "matching-headings",
+              "matching-features",
+              "matching-sentence-endings",
+              "sentence-completion",
+              "summary-completion",
+              "note-completion",
+              "table-completion",
+              "flow-chart-completion",
+              "diagram-label-completion",
+              "short-answer",
+              "matching",
+              "plan-map-diagram-labelling",
+              "form-completion"
+            ]
+          },
+          "skill": {
+            "type": "string",
+            "enum": [
+              "listening",
+              "reading",
+              "writing",
+              "speaking"
+            ]
+          },
+          "correct": {
+            "type": "number"
+          },
+          "total": {
+            "type": "number"
+          },
+          "strength": {
+            "type": "string",
+            "enum": [
+              "weakness",
+              "fair",
+              "strength"
+            ]
+          }
+        },
+        "required": [
+          "type",
+          "skill",
+          "correct",
+          "total",
+          "strength"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "attemptId": {
+            "type": "string"
+          },
+          "testTitle": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "full",
+              "section",
+              "practice"
+            ]
+          },
+          "mode": {
+            "type": "string",
+            "enum": [
+              "exam",
+              "practice"
+            ]
+          },
+          "completedAt": {
+            "type": "string"
+          },
+          "overall": {
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 9,
+                "multipleOf": 0.5
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "skills": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "skill": {
+                  "type": "string",
+                  "enum": [
+                    "listening",
+                    "reading",
+                    "writing",
+                    "speaking"
+                  ]
+                },
+                "raw": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                },
+                "total": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                },
+                "band": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 9,
+                  "multipleOf": 0.5
+                },
+                "usedSec": {
+                  "type": "number"
+                },
+                "allowedSec": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "skill",
+                "raw",
+                "total",
+                "band",
+                "usedSec",
+                "allowedSec"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "attemptId",
+          "testTitle",
+          "kind",
+          "mode",
+          "completedAt",
+          "overall",
+          "skills"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "studyDays": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "trend",
+    "bySkill",
+    "types",
+    "history",
+    "studyDays"
+  ],
+  "additionalProperties": false
+}

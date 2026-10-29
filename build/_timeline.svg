@@ -1,0 +1,61 @@
+      <svg viewBox="0 0 960 464" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="iran-shock-timeline-title iran-shock-timeline-desc">
+        <title id="iran-shock-timeline-title">How IELTS left Iran, 2019 to 2026</title>
+        <desc id="iran-shock-timeline-desc">Timeline of the shocks to IELTS candidates in Iran: the British Council exit in 2019, IDP stopping tests on 31 January 2026, the January to May internet blackout, the US licence suspension in August and Turkey closing its test route in October 2026.</desc>
+        <rect width="100%" height="100%" fill="var(--paper)"/>
+
+        <text x="40" y="330" fill="var(--ink-06)" font-size="72" font-weight="600" class="mono">2019</text>
+        <text x="600" y="330" fill="var(--ink-06)" font-size="72" font-weight="600" class="mono">2026</text>
+
+        <line x1="80" y1="300" x2="176" y2="300" stroke="var(--muted-45)" stroke-width="1"/>
+        <line x1="186" y1="308" x2="194" y2="292" stroke="var(--muted-45)" stroke-width="1"/>
+        <line x1="198" y1="308" x2="206" y2="292" stroke="var(--muted-45)" stroke-width="1"/>
+        <line x1="216" y1="300" x2="920" y2="300" stroke="var(--muted-45)" stroke-width="1"/>
+        <line x1="80" y1="292" x2="80" y2="308" stroke="var(--ink-20)" stroke-width="1"/>
+        <line x1="920" y1="292" x2="920" y2="308" stroke="var(--ink-20)" stroke-width="1"/>
+        <line x1="240" y1="292" x2="240" y2="308" stroke="var(--ink-20)" stroke-width="1"/>
+        <text x="240" y="282" fill="var(--soft)" font-size="8" class="mono" text-anchor="middle" letter-spacing="0.14em">1 JAN 2026</text>
+
+        <rect x="254" y="292" width="294" height="16" rx="2" fill="var(--accent-tint)" stroke="var(--accent)" stroke-width="0.8"/>
+
+        <line x1="100" y1="300" x2="100" y2="356" stroke="var(--ink-30)" stroke-width="1"/>
+        <circle cx="100" cy="300" r="4" fill="var(--ink)"/>
+        <text x="100" y="372" fill="var(--muted)" font-size="8" class="mono" text-anchor="middle" letter-spacing="0.14em">2019</text>
+        <text x="100" y="388" fill="var(--ink)" font-size="12" font-weight="500" text-anchor="middle">British Council exits</text>
+        <text x="100" y="402" fill="var(--muted)" font-size="9" class="mono" text-anchor="middle">idp becomes sole operator</text>
+
+        <line x1="302" y1="252" x2="302" y2="300" stroke="var(--accent)" stroke-width="1"/>
+        <circle cx="302" cy="300" r="6" fill="var(--accent)"/>
+        <text x="302" y="212" fill="var(--accent)" font-size="8" class="mono" text-anchor="middle" letter-spacing="0.14em">31 JAN 2026</text>
+        <text x="302" y="228" fill="var(--ink)" font-size="14" font-weight="500" text-anchor="middle">IDP stops tests in Iran</text>
+        <text x="302" y="244" fill="var(--muted)" font-size="9" class="mono" text-anchor="middle">fees cannot leave the country</text>
+
+        <line x1="401" y1="308" x2="401" y2="356" stroke="var(--ink-30)" stroke-width="1"/>
+        <text x="401" y="372" fill="var(--muted)" font-size="8" class="mono" text-anchor="middle" letter-spacing="0.14em">8 JAN TO 26 MAY</text>
+        <text x="401" y="388" fill="var(--ink)" font-size="12" font-weight="500" text-anchor="middle">Internet blackout</text>
+        <text x="401" y="402" fill="var(--muted)" font-size="9" class="mono" text-anchor="middle">whitelist-only access</text>
+
+        <line x1="735" y1="252" x2="735" y2="300" stroke="var(--ink-30)" stroke-width="1"/>
+        <circle cx="735" cy="300" r="4" fill="var(--ink)"/>
+        <text x="735" y="212" fill="var(--muted)" font-size="8" class="mono" text-anchor="middle" letter-spacing="0.14em">24 AUG 2026</text>
+        <text x="735" y="228" fill="var(--ink)" font-size="12" font-weight="500" text-anchor="middle">US licence G suspended</text>
+        <text x="735" y="244" fill="var(--muted)" font-size="9" class="mono" text-anchor="middle">toefl, gre, duolingo gone</text>
+
+        <line x1="843" y1="300" x2="843" y2="356" stroke="var(--ink-30)" stroke-width="1"/>
+        <circle cx="843" cy="300" r="4" fill="var(--ink)"/>
+        <text x="843" y="372" fill="var(--muted)" font-size="8" class="mono" text-anchor="middle" letter-spacing="0.14em">14 OCT 2026</text>
+        <text x="843" y="388" fill="var(--ink)" font-size="12" font-weight="500" text-anchor="middle">Turkey route closes</text>
+        <text x="843" y="402" fill="var(--muted)" font-size="9" class="mono" text-anchor="middle">residency now required</text>
+
+        <line x1="868" y1="292" x2="868" y2="308" stroke="var(--ink-20)" stroke-width="1"/>
+        <text x="868" y="282" fill="var(--soft)" font-size="8" class="mono" text-anchor="middle" letter-spacing="0.14em">TODAY</text>
+
+        <line x1="40" y1="420" x2="920" y2="420" stroke="var(--ink-10)" stroke-width="0.8"/>
+        <text x="40" y="436" fill="var(--muted)" font-size="8" class="mono" letter-spacing="0.18em">LEGEND</text>
+        <circle cx="52" cy="452" r="4" fill="var(--ink)"/>
+        <text x="68" y="456" fill="var(--muted)" font-size="8.5">Event</text>
+        <circle cx="128" cy="452" r="6" fill="var(--accent)"/>
+        <text x="144" y="456" fill="var(--muted)" font-size="8.5">The shock that reshapes demand</text>
+        <rect x="304" y="446" width="20" height="12" rx="2" fill="var(--accent-tint)" stroke="var(--accent)" stroke-width="0.8"/>
+        <text x="332" y="456" fill="var(--muted)" font-size="8.5">Nationwide blackout</text>
+        <text x="452" y="456" fill="var(--muted)" font-size="8.5" font-style="italic">Axis is broken between 2019 and 2026; spacing inside 2026 is proportional to time.</text>
+      </svg>

@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exam shell mockup</title>
+<style>
+  :root{
+    --bg:#ffffff; --text:#000000; --muted:#535353; --num:#333333;
+    --banner:#F1F2EC; --banner-line:#D5D5D5; --active:#418FC6; --done:#358E14;
+    --sel:#CFE0F3; --input-line:#535353; --prev:#DDDDDD; --next:#000000; --finish:#EFEFEF;
+    --divider:rgba(0,0,0,.5); --handle:#F9F9F9; --red:#D7282F;
+  }
+  /* The exam shell is light locked. Candidate contrast options are explicit settings, not the OS theme. */
+  [data-contrast="wb"]{ --bg:#000; --text:#fff; --muted:#cfcfcf; --num:#eee; --banner:#1a1a1a; --banner-line:#444; --sel:#1f3a55; --input-line:#bbb; --prev:#444; --next:#fff; --finish:#333; --divider:rgba(255,255,255,.6); --handle:#222; }
+  [data-contrast="yb"]{ --bg:#000; --text:#ffff00; --muted:#e6e600; --num:#ffff66; --banner:#1a1a00; --banner-line:#555500; --sel:#333300; --input-line:#cccc00; --prev:#444400; --next:#ffff00; --finish:#333300; --divider:rgba(255,255,0,.6); --handle:#222200; }
+  [data-size="large"]{ font-size:19px } [data-size="xl"]{ font-size:22px }
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0}
+  body{font-family:Arial, Helvetica, sans-serif;font-size:16px;line-height:1.5;color:var(--text);background:var(--bg);display:flex;flex-direction:column;height:100vh;overflow:hidden}
+  button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+
+  header{height:56px;display:flex;align-items:center;padding:0 16px;flex:0 0 auto;position:relative}
+  .logo{font-weight:700;font-size:22px;color:var(--red);letter-spacing:-.02em}
+  .candidate{margin-left:18px;color:var(--muted)}
+  .clock{position:absolute;left:50%;transform:translateX(-50%);font-weight:700;font-variant-numeric:tabular-nums}
+  .clock.warn{color:var(--red)}
+  .tools{margin-left:auto;display:flex;gap:6px}
+  .tools button{width:36px;height:36px;display:grid;place-items:center;border-radius:4px}
+  .tools button:hover{background:var(--banner)}
+  .tools svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+  .banner{background:var(--banner);border-top:1px solid var(--banner-line);border-bottom:1px solid var(--banner-line);padding:12px 24px;min-height:72px;flex:0 0 auto}
+  .banner b{display:block}
+
+  main{flex:1 1 auto;display:flex;min-height:0;position:relative}
+  .pane{overflow-y:auto;padding:20px 28px 40px}
+  .passage{flex:0 0 46%}
+  .questions{flex:1 1 auto}
+  .divider{flex:0 0 2px;background:var(--divider);position:relative}
+  .handle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:36px;height:36px;background:var(--handle);border:1px solid var(--banner-line);display:grid;place-items:center;border-radius:2px;cursor:col-resize}
+  .handle svg{width:18px;height:18px;stroke:var(--muted);fill:none;stroke-width:1.8}
+  h2{font-size:1em;margin:0 0 12px}
+  p{margin:0 0 14px}
+  .para-label{font-weight:700;margin-right:6px}
+  mark{background:#fff3a3;color:inherit;padding:0 1px}
+  [data-contrast="wb"] mark,[data-contrast="yb"] mark{background:#665c00}
+
+  .rubric{margin:0 0 18px}
+  .q{display:flex;gap:10px;margin:0 0 18px;align-items:flex-start}
+  .qn{flex:0 0 28px;height:24px;display:grid;place-items:center;font-weight:700}
+  .q.active .qn{border:1px solid var(--text);border-radius:2px}
+  .opts{list-style:none;margin:8px 0 0;padding:0}
+  .opts li{display:flex;align-items:center;gap:10px;padding:4px 8px;border-radius:2px}
+  .opts li.on{background:var(--sel)}
+  .opts input{width:16px;height:16px;margin:0;accent-color:var(--active)}
+  .gap{display:inline-block;width:144px;height:22px;border:1px solid var(--input-line);border-radius:3px;background:var(--bg);color:var(--text);font:inherit;font-size:.9em;padding:0 6px;vertical-align:middle;text-align:center}
+  .gap:focus{outline:0;border-color:var(--active);border-width:2px}
+  .gap::placeholder{color:var(--text);opacity:.9}
+
+  footer{height:54px;flex:0 0 auto;display:flex;align-items:stretch;color:var(--muted);border-top:1px solid var(--banner-line)}
+  .parts{flex:1 1 auto;display:flex;align-items:center;gap:22px;padding:0 16px;overflow-x:auto}
+  .part{display:flex;align-items:center;gap:10px;white-space:nowrap}
+  .part .name{font-weight:400}
+  .part.current .name{font-weight:700;color:var(--text)}
+  .part .count{font-size:.85em}
+  .nums{display:flex;gap:4px}
+  .nums button{position:relative;width:21px;height:27px;border:2px solid transparent;border-radius:3px;color:var(--num);font-size:16px;line-height:1}
+  .nums button::before{content:"";position:absolute;left:0;right:0;top:-16px;height:3px;background:var(--banner-line);border-radius:2px}
+  .nums button.done::before{background:var(--done)}
+  .nums button.on{border-color:var(--active);font-weight:700}
+  .nums button.flag::after{content:"";position:absolute;right:-3px;top:-3px;width:7px;height:7px;border-radius:50%;background:var(--red)}
+  .nav{display:flex}
+  .nav button{width:56px;height:54px;display:grid;place-items:center}
+  .nav .prev{background:var(--prev)} .nav .next{background:var(--next)}
+  .nav svg{width:26px;height:26px;stroke:#fff;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+  [data-contrast="wb"] .nav .next svg,[data-contrast="yb"] .nav .next svg{stroke:#000}
+  .finish{width:77px;background:var(--finish);display:grid;place-items:center}
+  .finish svg{width:24px;height:24px;stroke:var(--muted);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+
+  .settings{position:absolute;right:16px;top:60px;background:var(--bg);border:1px solid var(--banner-line);padding:12px 14px;display:none;flex-direction:column;gap:8px;z-index:5;box-shadow:0 6px 20px rgba(0,0,0,.12);font-size:14px}
+  .settings.open{display:flex}
+  .settings label{display:flex;justify-content:space-between;gap:12px;align-items:center}
+  .settings select{font:inherit}
+</style>
+</head>
+<body>
+<header>
+  <span class="logo">IELTS</span>
+  <span class="candidate">Mohammad Ghasemi</span>
+  <span class="clock" id="clock">52 minutes left</span>
+  <div class="tools">
+    <button aria-label="Connected" title="Connected"><svg viewBox="0 0 24 24"><path d="M2 9a16 16 0 0 1 20 0M5.5 13a11 11 0 0 1 13 0M9 17a5 5 0 0 1 6 0M12 20h.01"/></svg></button>
+    <button aria-label="Messages" title="Messages"><svg viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10 21a2 2 0 0 0 4 0"/></svg></button>
+    <button aria-label="Options" title="Options" onclick="document.getElementById('settings').classList.toggle('open')"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    <button aria-label="Show notes" title="Show notes"><svg viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></button>
+  </div>
+  <div class="settings" id="settings">
+    <label>Contrast <select onchange="document.documentElement.dataset.contrast=this.value"><option value="">Black on white</option><option value="wb">White on black</option><option value="yb">Yellow on black</option></select></label>
+    <label>Text size <select onchange="document.documentElement.dataset.size=this.value"><option value="">Regular</option><option value="large">Large</option><option value="xl">Extra large</option></select></label>
+    <label>Timer warning demo <input type="checkbox" onchange="document.getElementById('clock').classList.toggle('warn');document.getElementById('clock').textContent=this.checked?'5 minutes left':'52 minutes left'"></label>
+  </div>
+</header>
+
+<section class="banner">
+  <b>Part 1</b>
+  Read the text and answer questions 1–13.
+</section>
+
+<main>
+  <div class="pane passage">
+    <h2>The making of window glass</h2>
+    <p><span class="para-label">A</span>For most of its history, glass was a luxury. The Romans could blow it into vessels and press it into small panes, but a sheet large enough to glaze a window was slow to make and <mark>rarely flat enough to see through clearly</mark>. Medieval glaziers worked around the problem by joining dozens of small pieces with strips of lead, which is why the windows of old churches look like patchwork.</p>
+    <p><span class="para-label">B</span>The first real change came in seventeenth century France, where workers learned to pour molten glass onto an iron table and roll it flat before it cooled. The resulting plate was thick and cloudy, so it had to be ground and polished by hand for weeks. Only palaces and the grandest shops could afford it, and a single pane might cost more than the room it lit.</p>
+    <p><span class="para-label">C</span>Mechanisation in the nineteenth century brought the price down but not the labour. Cylinder glass, blown into long tubes that were then cut open and flattened in an oven, could be produced in quantity, yet every sheet still carried faint ripples. Buyers accepted the distortion because the alternative was no window at all.</p>
+    <p><span class="para-label">D</span>The breakthrough that gave the modern world its clear, cheap windows came in 1959. Alastair Pilkington, an engineer at a British glassworks, found that molten glass floated on a bath of liquid tin would spread into a sheet of perfectly even thickness with surfaces as smooth as the metal beneath it. No grinding was needed. The float process took seven years and a reported seven million pounds to perfect, and the company nearly abandoned it twice.</p>
+    <p><span class="para-label">E</span>Today almost all flat glass is made this way. A single float line runs without stopping for up to fifteen years, producing a ribbon of glass several metres wide that is cut, stacked and shipped before it has fully cooled. The patchwork windows of the medieval glazier survive only as decoration.</p>
+  </div>
+
+  <div class="divider" role="separator" aria-orientation="vertical"><div class="handle" title="Drag to resize"><svg viewBox="0 0 24 24"><path d="M3 12h18M7 8l-4 4 4 4M17 8l4 4-4 4"/></svg></div></div>
+
+  <div class="pane questions">
+    <h2>Questions 1–6</h2>
+    <p class="rubric">Do the following statements agree with the information given in the text? Choose <b>TRUE</b> if the statement agrees with the information, <b>FALSE</b> if the statement contradicts the information, or <b>NOT GIVEN</b> if there is no information on this.</p>
+
+    <div class="q"><div class="qn">1</div><div>Roman glassmakers were able to produce large, clear window panes.
+      <ul class="opts"><li><input type="radio" name="q1"><span>TRUE</span></li><li class="on"><input type="radio" name="q1" checked><span>FALSE</span></li><li><input type="radio" name="q1"><span>NOT GIVEN</span></li></ul></div></div>
+    <div class="q"><div class="qn">2</div><div>Medieval church windows were made from many small pieces of glass.
+      <ul class="opts"><li class="on"><input type="radio" name="q2" checked><span>TRUE</span></li><li><input type="radio" name="q2"><span>FALSE</span></li><li><input type="radio" name="q2"><span>NOT GIVEN</span></li></ul></div></div>
+    <div class="q active"><div class="qn">3</div><div>Seventeenth century plate glass was polished by machine.
+      <ul class="opts"><li><input type="radio" name="q3"><span>TRUE</span></li><li><input type="radio" name="q3"><span>FALSE</span></li><li><input type="radio" name="q3"><span>NOT GIVEN</span></li></ul></div></div>
+    <div class="q"><div class="qn">4</div><div>Cylinder glass was free of visual distortion.
+      <ul class="opts"><li><input type="radio" name="q4"><span>TRUE</span></li><li><input type="radio" name="q4"><span>FALSE</span></li><li><input type="radio" name="q4"><span>NOT GIVEN</span></li></ul></div></div>
+    <div class="q"><div class="qn">5</div><div>Pilkington trained as a chemist before joining the glassworks.
+      <ul class="opts"><li><input type="radio" name="q5"><span>TRUE</span></li><li><input type="radio" name="q5"><span>FALSE</span></li><li><input type="radio" name="q5"><span>NOT GIVEN</span></li></ul></div></div>
+    <div class="q"><div class="qn">6</div><div>The float process was close to being given up during its development.
+      <ul class="opts"><li><input type="radio" name="q6"><span>TRUE</span></li><li><input type="radio" name="q6"><span>FALSE</span></li><li><input type="radio" name="q6"><span>NOT GIVEN</span></li></ul></div></div>
+
+    <h2>Questions 7–13</h2>
+    <p class="rubric">Complete the notes. Write <b>ONE WORD AND/OR A NUMBER</b> for each answer.</p>
+    <p><b>Float glass</b></p>
+    <p>Invented in <input class="gap" placeholder="7" value="1959"> by an engineer in Britain. Molten glass floats on liquid <input class="gap" placeholder="8">, giving an even thickness without <input class="gap" placeholder="9">.</p>
+    <p>Development took <input class="gap" placeholder="10"> years and about <input class="gap" placeholder="11"> million pounds.</p>
+    <p>A modern line can run continuously for up to <input class="gap" placeholder="12"> years and produces a ribbon several <input class="gap" placeholder="13"> wide.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="parts">
+    <div class="part current"><span class="name">Part 1</span>
+      <div class="nums">
+        <button class="done">1</button><button class="done">2</button><button class="on">3</button><button>4</button><button>5</button><button class="flag">6</button><button class="done">7</button><button>8</button><button>9</button><button>10</button><button>11</button><button>12</button><button>13</button>
+      </div>
+    </div>
+    <div class="part"><span class="name">Part 2</span><span class="count">0 of 13</span></div>
+    <div class="part"><span class="name">Part 3</span><span class="count">0 of 14</span></div>
+  </div>
+  <div class="nav">
+    <button class="prev" aria-label="Previous"><svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></button>
+    <button class="next" aria-label="Next"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+  </div>
+  <button class="finish" aria-label="Review your answers" title="Review your answers"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></button>
+</footer>
+</body>
+</html>

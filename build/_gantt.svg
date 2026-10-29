@@ -1,0 +1,93 @@
+      <svg viewBox="0 0 960 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="gtm-gantt-title gtm-gantt-desc">
+        <title id="gtm-gantt-title">Launch plan, fourteen months</title>
+        <desc id="gtm-gantt-desc">Gantt chart of the go-to-market plan in four phases: foundations, beta, paid launch and scale, with paid packages going live in month five as the focal bar.</desc>
+        <rect width="100%" height="100%" fill="var(--paper)"/>
+        <rect x="12" y="72" width="936" height="84" rx="6" fill="var(--ink-02)" stroke="var(--ink-10)" stroke-width="0.8"/>
+        <rect x="12" y="168" width="936" height="124" rx="6" fill="var(--ink-02)" stroke="var(--ink-10)" stroke-width="0.8"/>
+        <rect x="12" y="304" width="936" height="124" rx="6" fill="var(--ink-02)" stroke="var(--ink-10)" stroke-width="0.8"/>
+        <rect x="12" y="440" width="936" height="84" rx="6" fill="var(--ink-02)" stroke="var(--ink-10)" stroke-width="0.8"/>
+        <text x="200" y="36" fill="var(--muted)" font-size="8" class="mono" letter-spacing="0.18em">MONTH FROM START</text>
+        <text x="226" y="52" fill="var(--ink)" font-size="9" font-weight="500" text-anchor="middle">1</text>
+        <text x="278" y="52" fill="var(--ink)" font-size="9" font-weight="500" text-anchor="middle">2</text>
+        <text x="330" y="52" fill="var(--ink)" font-size="9" font-weight="500" text-anchor="middle">3</text>
+        <text x="382" y="52" fill="var(--ink)" font-size="9" font-weight="500" text-anchor="middle">4</text>
+        <text x="434" y="52" fill="var(--ink)" font-size="9" font-weight="500" text-anchor="middle">5</text>
+        <text x="486" y="52" fill="var(--ink)" font-size="9" font-weight="500" text-anchor="middle">6</text>
+        <text x="538" y="52" fill="var(--ink)" font-size="9" font-weight="500" text-anchor="middle">7</text>
+        <text x="590" y="52" fill="var(--ink)" font-size="9" font-weight="500" text-anchor="middle">8</text>
+        <text x="642" y="52" fill="var(--ink)" font-size="9" font-weight="500" text-anchor="middle">9</text>
+        <text x="694" y="52" fill="var(--ink)" font-size="9" font-weight="500" text-anchor="middle">10</text>
+        <text x="746" y="52" fill="var(--ink)" font-size="9" font-weight="500" text-anchor="middle">11</text>
+        <text x="798" y="52" fill="var(--ink)" font-size="9" font-weight="500" text-anchor="middle">12</text>
+        <text x="850" y="52" fill="var(--ink)" font-size="9" font-weight="500" text-anchor="middle">13</text>
+        <text x="902" y="52" fill="var(--ink)" font-size="9" font-weight="500" text-anchor="middle">14</text>
+        <line x1="252" y1="60" x2="252" y2="524" stroke="var(--ink-05)" stroke-width="0.6"/>
+        <line x1="304" y1="60" x2="304" y2="524" stroke="var(--ink-05)" stroke-width="0.6"/>
+        <line x1="356" y1="60" x2="356" y2="524" stroke="var(--ink-05)" stroke-width="0.6"/>
+        <line x1="408" y1="60" x2="408" y2="524" stroke="var(--ink-05)" stroke-width="0.6"/>
+        <line x1="460" y1="60" x2="460" y2="524" stroke="var(--ink-05)" stroke-width="0.6"/>
+        <line x1="512" y1="60" x2="512" y2="524" stroke="var(--ink-05)" stroke-width="0.6"/>
+        <line x1="564" y1="60" x2="564" y2="524" stroke="var(--ink-05)" stroke-width="0.6"/>
+        <line x1="616" y1="60" x2="616" y2="524" stroke="var(--ink-05)" stroke-width="0.6"/>
+        <line x1="668" y1="60" x2="668" y2="524" stroke="var(--ink-05)" stroke-width="0.6"/>
+        <line x1="720" y1="60" x2="720" y2="524" stroke="var(--ink-05)" stroke-width="0.6"/>
+        <line x1="772" y1="60" x2="772" y2="524" stroke="var(--ink-05)" stroke-width="0.6"/>
+        <line x1="824" y1="60" x2="824" y2="524" stroke="var(--ink-05)" stroke-width="0.6"/>
+        <line x1="876" y1="60" x2="876" y2="524" stroke="var(--ink-05)" stroke-width="0.6"/>
+        <line x1="200" y1="60" x2="928" y2="60" stroke="var(--ink-20)" stroke-width="0.8"/>
+        <line x1="200" y1="36" x2="200" y2="524" stroke="var(--ink-20)" stroke-width="0.8"/>
+        <text x="20" y="85" fill="var(--ink-40)" font-size="7" class="mono" letter-spacing="0.14em">FOUNDATIONS</text>
+        <text x="20" y="181" fill="var(--ink-40)" font-size="7" class="mono" letter-spacing="0.14em">BETA</text>
+        <text x="20" y="317" fill="var(--ink-40)" font-size="7" class="mono" letter-spacing="0.14em">PAID LAUNCH</text>
+        <text x="20" y="453" fill="var(--ink-40)" font-size="7" class="mono" letter-spacing="0.14em">SCALE</text>
+        <rect x="20" y="92" width="176" height="24" fill="var(--paper)"/>
+        <text x="20" y="108" fill="var(--ink)" font-size="10" font-weight="500">Legal structure and partner</text>
+        <rect x="200" y="92" width="104" height="24" rx="4" fill="var(--paper)"/>
+        <rect x="200" y="92" width="104" height="24" rx="4" fill="var(--muted-15)" stroke="var(--muted)" stroke-width="1"/>
+        <rect x="20" y="132" width="176" height="24" fill="var(--paper)"/>
+        <text x="20" y="148" fill="var(--ink)" font-size="10" font-weight="500">Calibration study</text>
+        <rect x="200" y="132" width="156" height="24" rx="4" fill="var(--paper)"/>
+        <rect x="200" y="132" width="156" height="24" rx="4" fill="var(--muted-15)" stroke="var(--muted)" stroke-width="1"/>
+        <rect x="20" y="188" width="176" height="24" fill="var(--paper)"/>
+        <text x="20" y="204" fill="var(--ink)" font-size="10" font-weight="500">Free scorer and Telegram bot</text>
+        <rect x="304" y="188" width="156" height="24" rx="4" fill="var(--paper)"/>
+        <rect x="304" y="188" width="156" height="24" rx="4" fill="var(--muted-15)" stroke="var(--muted)" stroke-width="1"/>
+        <rect x="20" y="228" width="176" height="24" fill="var(--paper)"/>
+        <text x="20" y="244" fill="var(--ink)" font-size="10" font-weight="500">Teacher partnerships</text>
+        <rect x="304" y="228" width="312" height="24" rx="4" fill="var(--paper)"/>
+        <rect x="304" y="228" width="312" height="24" rx="4" fill="var(--muted-15)" stroke="var(--muted)" stroke-width="1"/>
+        <rect x="20" y="268" width="176" height="24" fill="var(--paper)"/>
+        <text x="20" y="284" fill="var(--ink)" font-size="10" font-weight="500">Persian SEO and Aparat video</text>
+        <rect x="304" y="268" width="624" height="24" rx="4" fill="var(--paper)"/>
+        <rect x="304" y="268" width="624" height="24" rx="4" fill="var(--muted-15)" stroke="var(--muted)" stroke-width="1"/>
+        <rect x="20" y="324" width="176" height="24" fill="var(--paper)"/>
+        <text x="20" y="340" fill="var(--accent)" font-size="10" font-weight="500">Paid packages live</text>
+        <rect x="408" y="324" width="208" height="24" rx="4" fill="var(--paper)"/>
+        <rect x="408" y="324" width="208" height="24" rx="4" fill="var(--accent-12)" stroke="var(--accent)" stroke-width="1"/>
+        <text x="512" y="341" fill="var(--accent)" font-size="9" class="mono" text-anchor="middle" letter-spacing="0.08em">REVENUE STARTS</text>
+        <rect x="20" y="364" width="176" height="24" fill="var(--paper)"/>
+        <text x="20" y="380" fill="var(--ink)" font-size="10" font-weight="500">Android apps and PWA</text>
+        <rect x="408" y="364" width="156" height="24" rx="4" fill="var(--paper)"/>
+        <rect x="408" y="364" width="156" height="24" rx="4" fill="var(--muted-15)" stroke="var(--muted)" stroke-width="1"/>
+        <rect x="20" y="404" width="176" height="24" fill="var(--paper)"/>
+        <text x="20" y="420" fill="var(--ink)" font-size="10" font-weight="500">Tutor dashboard and referrals</text>
+        <rect x="460" y="404" width="156" height="24" rx="4" fill="var(--paper)"/>
+        <rect x="460" y="404" width="156" height="24" rx="4" fill="var(--muted-15)" stroke="var(--muted)" stroke-width="1"/>
+        <rect x="20" y="460" width="176" height="24" fill="var(--paper)"/>
+        <text x="20" y="476" fill="var(--ink)" font-size="10" font-weight="500">Exam-tour partners</text>
+        <rect x="564" y="460" width="208" height="24" rx="4" fill="var(--paper)"/>
+        <rect x="564" y="460" width="208" height="24" rx="4" fill="var(--muted-15)" stroke="var(--muted)" stroke-width="1"/>
+        <rect x="20" y="500" width="176" height="24" fill="var(--paper)"/>
+        <text x="20" y="516" fill="var(--ink)" font-size="10" font-weight="500">White-label and diaspora</text>
+        <rect x="616" y="500" width="312" height="24" rx="4" fill="var(--paper)"/>
+        <rect x="616" y="500" width="312" height="24" rx="4" fill="var(--muted-15)" stroke="var(--muted)" stroke-width="1"/>
+        <line x1="40" y1="548" x2="920" y2="548" stroke="var(--ink-10)" stroke-width="0.8"/>
+        <text x="40" y="564" fill="var(--muted)" font-size="8" class="mono" letter-spacing="0.18em">LEGEND</text>
+        <rect x="40" y="574" width="20" height="12" rx="3" fill="var(--accent-12)" stroke="var(--accent)" stroke-width="1"/>
+        <text x="68" y="584" fill="var(--muted)" font-size="8.5">Paid launch, the gate the earlier phases exist for</text>
+        <rect x="300" y="574" width="20" height="12" rx="3" fill="var(--muted-15)" stroke="var(--muted)" stroke-width="1"/>
+        <text x="328" y="584" fill="var(--muted)" font-size="8.5">Workstream</text>
+        <rect x="400" y="574" width="20" height="12" rx="3" fill="var(--ink-02)" stroke="var(--ink-10)" stroke-width="0.8"/>
+        <text x="428" y="584" fill="var(--muted)" font-size="8.5">Phase</text>
+        <text x="480" y="584" fill="var(--muted)" font-size="8.5" font-style="italic">Months count from the day the legal structure work begins.</text>
+      </svg>

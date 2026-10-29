@@ -1,0 +1,127 @@
+import { useEffect, useState } from "react";
+import { Link } from "react-router";
+import { ArrowLeft } from "lucide-react";
+import type { VocabCard } from "@/api/schemas";
+import { useVocabDue, useVocabMutations } from "@/api/queries";
+import { useT } from "@/i18n";
+import { formatNumber } from "@/lib/format";
+import { PageHeader } from "@/components/PageHeader";
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Bar, EmptyState, Skeleton } from "@/components/ui/misc";
+
+/** Two-button review (Again / Good). Space shows the answer, 1 and 2 grade it. */
+export default function VocabularyReview() {
+  const { t, locale } = useT();
+  const due = useVocabDue();
+  const { review } = useVocabMutations();
+  const [queue, setQueue] = useState<VocabCard[] | null>(null);
+  const [shown, setShown] = useState(false);
+  const [done, setDone] = useState(0);
+
+  useEffect(() => {
+    if (due.data && queue === null) setQueue(due.data);
+  }, [due.data, queue]);
+
+  const card = queue?.[0];
+  const grade = (g: "again" | "good") => {
+    if (!card) return;
+    review.mutate({ id: card.id, grade: g });
+    setShown(false);
+    setQueue((q) => {
+      if (!q) return q;
+      const [first, ...rest] = q;
+      // "Again" brings the card back later in this session.
+      return g === "again" ? [...rest, first] : rest;
+    });
+    if (g === "good") setDone((n) => n + 1);
+  };
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if ((e.target as HTMLElement)?.closest("input,textarea")) return;
+      if (e.key === " " && !shown) {
+        e.preventDefault();
+        setShown(true);
+      } else if (shown && e.key === "1") grade("again");
+      else if (shown && e.key === "2") grade("good");
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  });
+
+  const total = done + (queue?.length ?? 0);
+  const nextGood = card ? (card.intervalDays === 0 ? 1 : Math.round(card.intervalDays * 2.5)) : 1;
+
+  return (
+    <>
+      <PageHeader title={t("vocab.reviewTitle")} />
+      <Link to="/app/vocabulary" className="mb-4 inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground">
+        <ArrowLeft className="size-4 rtl:rotate-180" /> {t("vocab.title")}
+      </Link>
+      {!queue && <Skeleton className="h-72" />}
+      {queue && !card && (
+        <EmptyState
+          title={t("vocab.sessionDone")}
+          body={t("vocab.sessionDoneBody", { n: formatNumber(done, locale) })}
+          action={
+            <Button asChild>
+              <Link to="/app/vocabulary">{t("vocab.title")}</Link>
+            </Button>
+          }
+        />
+      )}
+      {card && (
+        <div className="mx-auto max-w-xl">
+          <div className="mb-3 flex items-center gap-3 text-xs text-muted-foreground">
+            <Bar value={total ? done / total : 0} className="flex-1" label={t("vocab.progress")} />
+            {formatNumber(done, locale)} / {formatNumber(total, locale)}
+          </div>
+          <Card className="flex min-h-72 flex-col items-center justify-center text-center">
+            <div className="text-3xl font-semibold" lang="en" dir="ltr">
+              {card.term}
+            </div>
+            <div className="mt-1 text-sm text-muted-foreground">{t(`vocab.posNames.${card.partOfSpeech}`, { defaultValue: card.partOfSpeech })}</div>
+            {shown ? (
+              <div className="mt-6 w-full border-t border-border pt-5" aria-live="polite">
+                <p className="text-lg">{card.meaning[locale] || card.meaning.en}</p>
+                <p className="mt-1 text-sm text-muted-foreground" lang={locale === "fa" ? "en" : "fa"} dir={locale === "fa" ? "ltr" : "rtl"}>
+                  {locale === "fa" ? card.meaning.en : card.meaning.fa}
+                </p>
+                {card.example && (
+                  <p className="mt-4 text-sm italic" lang="en" dir="ltr">
+                    {card.example}
+                  </p>
+                )}
+              </div>
+            ) : (
+              card.example && (
+                <p className="mt-6 text-sm text-muted-foreground italic" lang="en" dir="ltr">
+                  {card.example.replace(new RegExp(card.term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "gi"), "_____")}
+                </p>
+              )
+            )}
+          </Card>
+          <div className="mt-4 grid grid-cols-2 gap-3">
+            {!shown ? (
+              <Button key="show" size="lg" className="col-span-2" onClick={() => setShown(true)}>
+                {t("vocab.show")} <kbd className="ms-2 rounded border border-current px-1.5 text-xs opacity-90">Space</kbd>
+              </Button>
+            ) : (
+              <>
+                <Button key="again" size="lg" variant="outline" onClick={() => grade("again")} className="flex-col gap-0 py-7">
+                  <span>{t("vocab.again")}</span>
+                  <span className="text-xs text-muted-foreground">{t("vocab.inMinutes", { n: formatNumber(10, locale) })} · 1</span>
+                </Button>
+                <Button key="good" size="lg" onClick={() => grade("good")} className="flex-col gap-0 py-7">
+                  <span>{t("vocab.good")}</span>
+                  <span className="text-xs opacity-80">{t("vocab.inDays", { n: formatNumber(nextGood, locale) })} · 2</span>
+                </Button>
+              </>
+            )}
+          </div>
+        </div>
+      )}
+    </>
+  );
+}

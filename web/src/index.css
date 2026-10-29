@@ -1,0 +1,320 @@
+@import "tailwindcss";
+@import "@fontsource-variable/geist";
+@import "@fontsource-variable/geist-mono";
+@import "@fontsource-variable/vazirmatn";
+@import "@fontsource-variable/archivo";
+@import "@fontsource-variable/gabarito";
+
+/*
+ * Dark mode is keyed on data-theme on <html>, which the app always resolves
+ * to "light" or "dark" (following the OS when the learner picks "system").
+ */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* Tokens from docs/mockups/dashboard.html */
+:root {
+  --background: #f6f5f1;
+  --foreground: #1c1c1a;
+  --card: #ffffff;
+  --card-foreground: #1c1c1a;
+  --popover: #ffffff;
+  --popover-foreground: #1c1c1a;
+  --primary: #1f3a5f;
+  --primary-foreground: #ffffff;
+  --secondary: #e8eef7;
+  --secondary-foreground: #1c1c1a;
+  --muted: #efede7;
+  --muted-foreground: #6b6a64;
+  --faint: #6f6e66;
+  --accent: #efede7;
+  --accent-foreground: #1c1c1a;
+  --destructive: #b23a48;
+  --border: #e4e2da;
+  --input: #d9d6cc;
+  --ring: #1f3a5f;
+  --strength: #25683f;
+  --strength-soft: #e4f2e9;
+  --fair: #8a5d00;
+  --fair-soft: #f7eed6;
+  --weak: #b23a48;
+  --weak-soft: #f8e4e7;
+  --chart-1: #1f3a5f;
+  --chart-2: #25683f;
+  --chart-3: #8a5d00;
+  --chart-4: #b23a48;
+  --chart-5: #6b6a64;
+  --radius: 20px;
+}
+
+[data-theme="dark"] {
+  --background: #121311;
+  --foreground: #ecebe6;
+  --card: #1b1c19;
+  --card-foreground: #ecebe6;
+  --popover: #22231f;
+  --popover-foreground: #ecebe6;
+  --primary: #9db7e6;
+  --primary-foreground: #0f1a2b;
+  --secondary: #1e2a3b;
+  --secondary-foreground: #ecebe6;
+  --muted: #24251f;
+  --muted-foreground: #a3a29a;
+  --faint: #8c8b83;
+  --accent: #2a2b26;
+  --accent-foreground: #ecebe6;
+  --destructive: #f08a96;
+  --border: #2c2d29;
+  --input: #3a3b36;
+  --ring: #9db7e6;
+  --strength: #7fd1a0;
+  --strength-soft: #1a2e22;
+  --fair: #e0b64d;
+  --fair-soft: #30280f;
+  --weak: #f08a96;
+  --weak-soft: #3a1c21;
+  --chart-1: #9db7e6;
+  --chart-2: #7fd1a0;
+  --chart-3: #e0b64d;
+  --chart-4: #f08a96;
+  --chart-5: #a3a29a;
+  color-scheme: dark;
+}
+
+
+/* Public pages: colours and fonts from reasonal.co (docs/research/2026-10-29-reasonal-teardown.md). */
+:root {
+  --mk-page: #ffffff;
+  --mk-ink: #181d1f;
+  --mk-body: #424647;
+  --mk-card: #ffffff;
+  --mk-line: rgba(24, 29, 31, 0.12);
+  --mk-peach: #fddbce;
+  --mk-beige: #eae4dc;
+  --mk-lavender: #d7cef0;
+  --mk-orange: #fd956d;
+  --mk-blue: #dbe5f0;
+  --mk-sage: #d5e2da;
+  --mk-pink: #f4e1e1;
+  --mk-butter: #f6e7cf;
+  --mk-green: #e4eed2;
+  --mk-teal: #dceeef;
+  --mk-footer: #181d1f;
+  --mk-sky: #037bb5;
+  --mk-hero: linear-gradient(180deg, #15aeea 0%, #73cef2 100%);
+  /* Reasonal's title blue, deepened to reach 3:1 on the brightest sky (large-text AA). */
+  --mk-hero-title: linear-gradient(169.245deg, #02557f 20.481%, #034e76 73.8%);
+  --mk-cloud: rgba(255, 255, 255, 0.75);
+}
+[data-theme="dark"] {
+  --mk-page: #0f1112;
+  --mk-ink: #f2f0ec;
+  --mk-body: #bdbab3;
+  --mk-card: #1e2224;
+  --mk-line: rgba(242, 240, 236, 0.14);
+  --mk-peach: #3a2a24;
+  --mk-beige: #2a2723;
+  --mk-lavender: #2b2740;
+  --mk-orange: #fd956d;
+  --mk-blue: #1f2a36;
+  --mk-sage: #1f2b25;
+  --mk-pink: #362424;
+  --mk-butter: #352d1f;
+  --mk-green: #26301c;
+  --mk-teal: #1c2f31;
+  --mk-footer: #1a1f21;
+  --mk-sky: #7cc8ef;
+  --mk-hero: linear-gradient(180deg, #0b4f70 0%, #13698f 100%);
+  --mk-hero-title: linear-gradient(169.245deg, rgba(214, 240, 252, 0.95) 20%, rgba(176, 226, 249, 0.95) 74%);
+  --mk-cloud: rgba(255, 255, 255, 0.08);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-faint: var(--faint);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-strength: var(--strength);
+  --color-strength-soft: var(--strength-soft);
+  --color-fair: var(--fair);
+  --color-fair-soft: var(--fair-soft);
+  --color-weak: var(--weak);
+  --color-weak-soft: var(--weak-soft);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-card: var(--radius);
+  --font-sans: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono Variable", ui-monospace, monospace;
+  --font-persian: "Vazirmatn Variable", Tahoma, sans-serif;
+  --font-archivo: "Archivo Variable", "Vazirmatn Variable", sans-serif;
+  --font-gabarito: "Gabarito Variable", "Vazirmatn Variable", sans-serif;
+  --color-mk-page: var(--mk-page);
+  --color-mk-ink: var(--mk-ink);
+  --color-mk-body: var(--mk-body);
+  --color-mk-card: var(--mk-card);
+  --color-mk-line: var(--mk-line);
+  --color-mk-peach: var(--mk-peach);
+  --color-mk-beige: var(--mk-beige);
+  --color-mk-lavender: var(--mk-lavender);
+  --color-mk-orange: var(--mk-orange);
+  --color-mk-blue: var(--mk-blue);
+  --color-mk-sage: var(--mk-sage);
+  --color-mk-pink: var(--mk-pink);
+  --color-mk-butter: var(--mk-butter);
+  --color-mk-green: var(--mk-green);
+  --color-mk-teal: var(--mk-teal);
+  --color-mk-footer: var(--mk-footer);
+  --color-mk-sky: var(--mk-sky);
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  html {
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  /*
+   * Persian typography (Vazirmatn; rules from github.com/ali2000hos/persian-writing
+   * references/fonts.md): no letter-spacing ever, because it breaks cursive joins;
+   * body about 10% larger than Latin; line height about 1.8; no uppercase.
+   */
+  :lang(fa) {
+    font-family: var(--font-persian);
+  }
+  body:lang(fa) {
+    font-size: 16.5px;
+    line-height: 1.8;
+  }
+  :lang(fa),
+  :lang(fa) * {
+    letter-spacing: 0 !important;
+    text-transform: none !important;
+  }
+  :lang(fa) .font-archivo,
+  :lang(fa) .font-gabarito,
+  :lang(fa) .font-mono {
+    font-family: var(--font-persian);
+    font-variant-numeric: tabular-nums;
+  }
+  /* Same sizes as English on the public pages, with Persian leading. */
+  :lang(fa) .mk :is(h1, h2, h3) {
+    line-height: 1.4 !important;
+  }
+  :lang(fa) .mk :is(p, li, label, span) {
+    line-height: 1.85;
+  }
+  /* Codes and English quotes inside Persian text keep the Latin faces. */
+  :lang(fa) .ltr-mono {
+    font-family: var(--font-mono);
+  }
+  :lang(fa) [lang="en"] {
+    font-family: var(--font-sans);
+  }
+  button,
+  [role="button"] {
+    cursor: pointer;
+  }
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+}
+
+/* Sign-in page entrance (from the 21st.dev sign-in component). Reduced motion ends them instantly. */
+@keyframes fadeSlideIn {
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+@keyframes slideRightIn {
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+  }
+}
+@keyframes testimonialIn {
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+  }
+}
+.animate-element {
+  opacity: 0;
+  filter: blur(4px);
+  transform: translateY(10px);
+  animation: fadeSlideIn 0.6s cubic-bezier(0.2, 0.9, 0.25, 1) forwards;
+}
+.animate-slide-right {
+  opacity: 0;
+  filter: blur(4px);
+  transform: translateX(24px);
+  animation: slideRightIn 0.8s cubic-bezier(0.2, 0.9, 0.25, 1) forwards;
+}
+.animate-testimonial {
+  opacity: 0;
+  filter: blur(4px);
+  transform: translateY(16px) scale(0.97);
+  animation: testimonialIn 0.7s cubic-bezier(0.2, 0.9, 0.25, 1) forwards;
+}
+.animate-delay-100 { animation-delay: 0.1s; }
+.animate-delay-200 { animation-delay: 0.2s; }
+.animate-delay-300 { animation-delay: 0.3s; }
+.animate-delay-400 { animation-delay: 0.4s; }
+.animate-delay-500 { animation-delay: 0.5s; }
+.animate-delay-600 { animation-delay: 0.6s; }
+.animate-delay-700 { animation-delay: 0.7s; }
+.animate-delay-800 { animation-delay: 0.8s; }
+.animate-delay-1000 { animation-delay: 1s; }
+.animate-delay-1200 { animation-delay: 1.2s; }
+.animate-delay-1400 { animation-delay: 1.4s; }
+
+/* Language switch: a short cross-fade (View Transitions API), skipped for reduced motion. */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 260ms;
+  animation-timing-function: ease;
+}
+
+@layer utilities {
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

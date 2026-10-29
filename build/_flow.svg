@@ -1,0 +1,59 @@
+      <svg viewBox="0 0 960 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="trip-readiness-flow-title trip-readiness-flow-desc">
+        <title id="trip-readiness-flow-title">The trip-readiness loop</title>
+        <desc id="trip-readiness-flow-desc">Flowchart of the learner loop: enter the test city, date and target band, follow a weekly plan, practise writing and speaking daily with instant feedback, and two weeks out either book the trip or postpone with a coach week and return to practice.</desc>
+        <defs>
+          <marker id="f-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="var(--muted)"/></marker>
+          <marker id="f-arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="var(--accent)"/></marker>
+        </defs>
+        <rect width="100%" height="100%" fill="var(--paper)"/>
+
+        <line x1="440" y1="96" x2="440" y2="128" stroke="var(--muted)" stroke-width="1.2" marker-end="url(#f-arrow)"/>
+        <line x1="440" y1="176" x2="440" y2="208" stroke="var(--muted)" stroke-width="1.2" marker-end="url(#f-arrow)"/>
+        <line x1="440" y1="264" x2="440" y2="296" stroke="var(--muted)" stroke-width="1.2" marker-end="url(#f-arrow)"/>
+        <line x1="540" y1="344" x2="680" y2="344" stroke="var(--muted)" stroke-width="1.2" marker-end="url(#f-arrow)"/>
+        <line x1="440" y1="392" x2="440" y2="432" stroke="var(--accent)" stroke-width="1.4" marker-end="url(#f-arrow-accent)"/>
+        <path d="M760 320 L760 244 A8 8 0 0 0 752 236 L520 236" fill="none" stroke="var(--muted)" stroke-width="1.2" stroke-dasharray="5,4" marker-end="url(#f-arrow)"/>
+
+        <rect x="596" y="324" width="24" height="12" rx="2" fill="var(--paper)"/>
+        <text x="608" y="333" fill="var(--muted)" font-size="8" class="mono" text-anchor="middle" letter-spacing="0.12em">NO</text>
+        <rect x="448" y="404" width="32" height="12" rx="2" fill="var(--paper)"/>
+        <text x="464" y="413" fill="var(--accent)" font-size="8" class="mono" text-anchor="middle" letter-spacing="0.12em">YES</text>
+        <rect x="768" y="272" width="44" height="12" rx="2" fill="var(--paper)"/>
+        <text x="790" y="281" fill="var(--muted)" font-size="8" class="mono" text-anchor="middle" letter-spacing="0.12em">RETRY</text>
+
+        <rect x="340" y="40" width="200" height="56" rx="20" fill="var(--ink-03)" stroke="var(--ink-30)" stroke-width="1"/>
+        <text x="440" y="64" fill="var(--ink)" font-size="12" font-weight="500" text-anchor="middle">Test city, date and target band</text>
+        <text x="440" y="80" fill="var(--muted)" font-size="9" class="mono" text-anchor="middle">yerevan · tbilisi · dubai</text>
+
+        <rect x="360" y="128" width="160" height="48" rx="6" fill="var(--node-fill)" stroke="var(--ink)" stroke-width="1"/>
+        <text x="440" y="156" fill="var(--ink)" font-size="12" font-weight="500" text-anchor="middle">Weekly plan to the trip</text>
+
+        <rect x="360" y="208" width="160" height="56" rx="6" fill="var(--node-fill)" stroke="var(--ink)" stroke-width="1"/>
+        <text x="440" y="232" fill="var(--ink)" font-size="12" font-weight="500" text-anchor="middle">Daily writing and speaking</text>
+        <text x="440" y="248" fill="var(--muted)" font-size="9" class="mono" text-anchor="middle">instant scored feedback</text>
+
+        <polygon points="440,296 540,344 440,392 340,344" fill="var(--node-fill)" stroke="var(--ink)" stroke-width="1"/>
+        <text x="440" y="342" fill="var(--ink)" font-size="12" font-weight="500" text-anchor="middle">Ready for band 7</text>
+        <text x="440" y="356" fill="var(--ink)" font-size="12" font-weight="500" text-anchor="middle">two weeks out?</text>
+
+        <rect x="680" y="320" width="160" height="48" rx="6" fill="var(--node-fill)" stroke="var(--ink)" stroke-width="1"/>
+        <text x="760" y="340" fill="var(--ink)" font-size="12" font-weight="500" text-anchor="middle">Postpone, add coach week</text>
+        <text x="760" y="356" fill="var(--muted)" font-size="9" class="mono" text-anchor="middle">human review of ai scores</text>
+
+        <rect x="340" y="432" width="200" height="56" rx="20" fill="var(--accent-tint)" stroke="var(--accent)" stroke-width="1"/>
+        <text x="440" y="456" fill="var(--ink)" font-size="12" font-weight="500" text-anchor="middle">Book the trip and sit the test</text>
+        <text x="440" y="472" fill="var(--muted)" font-size="9" class="mono" text-anchor="middle">one attempt, prepared</text>
+
+        <line x1="40" y1="540" x2="920" y2="540" stroke="var(--ink-10)" stroke-width="0.8"/>
+        <text x="40" y="556" fill="var(--muted)" font-size="8" class="mono" letter-spacing="0.18em">LEGEND · SHAPE CARRIES TYPE</text>
+        <rect x="40" y="572" width="24" height="12" rx="6" fill="var(--ink-03)" stroke="var(--ink-30)" stroke-width="1"/>
+        <text x="72" y="582" fill="var(--muted)" font-size="8.5">Start or end</text>
+        <rect x="180" y="572" width="24" height="12" rx="2" fill="var(--node-fill)" stroke="var(--ink)" stroke-width="1"/>
+        <text x="212" y="582" fill="var(--muted)" font-size="8.5">Step</text>
+        <polygon points="292,578 304,572 316,578 304,584" fill="var(--node-fill)" stroke="var(--ink)" stroke-width="1"/>
+        <text x="328" y="582" fill="var(--muted)" font-size="8.5">Decision</text>
+        <line x1="420" y1="580" x2="448" y2="580" stroke="var(--accent)" stroke-width="1.4" marker-end="url(#f-arrow-accent)"/>
+        <text x="456" y="582" fill="var(--muted)" font-size="8.5">Happy path</text>
+        <line x1="560" y1="580" x2="588" y2="580" stroke="var(--muted)" stroke-width="1.2" stroke-dasharray="5,4" marker-end="url(#f-arrow)"/>
+        <text x="596" y="582" fill="var(--muted)" font-size="8.5">Return to practice</text>
+      </svg>

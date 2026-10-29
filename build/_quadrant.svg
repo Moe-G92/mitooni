@@ -1,0 +1,63 @@
+      <svg viewBox="0 0 960 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="iran-competitors-quadrant-title iran-competitors-quadrant-desc">
+        <title id="iran-competitors-quadrant-title">Iranian IELTS competitors, feedback against reach</title>
+        <desc id="iran-competitors-quadrant-desc">Quadrant placing twelve Iranian IELTS players by how instant their feedback is and how many learners they reach, with the open top-right ground where an AI tutor with calibrated feedback and real distribution would sit.</desc>
+        <defs>
+          <marker id="q-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="var(--muted)"/></marker>
+        </defs>
+        <rect width="100%" height="100%" fill="var(--paper)"/>
+
+        <rect x="500" y="88" width="360" height="162" fill="var(--accent-04)"/>
+
+        <line x1="120" y1="250" x2="872" y2="250" stroke="var(--muted-45)" stroke-width="1" marker-end="url(#q-arrow)"/>
+        <line x1="500" y1="420" x2="500" y2="88" stroke="var(--muted-45)" stroke-width="1" marker-end="url(#q-arrow)"/>
+
+        <text x="884" y="253" fill="var(--ink)" font-size="9" class="mono" letter-spacing="0.18em" dominant-baseline="middle">INSTANT</text>
+        <text x="108" y="253" fill="var(--ink)" font-size="9" class="mono" text-anchor="end" letter-spacing="0.18em" dominant-baseline="middle">MANUAL</text>
+        <text x="500" y="72" fill="var(--ink)" font-size="9" class="mono" text-anchor="middle" letter-spacing="0.18em">MANY</text>
+        <text x="500" y="442" fill="var(--ink)" font-size="9" class="mono" text-anchor="middle" letter-spacing="0.18em">FEW</text>
+
+        <text x="140" y="108" fill="var(--muted)" font-size="9" class="mono" letter-spacing="0.18em">INSTITUTES</text>
+        <text x="860" y="108" fill="var(--accent)" font-size="9" class="mono" text-anchor="end" letter-spacing="0.18em" font-weight="600">OPEN GROUND</text>
+        <text x="140" y="412" fill="var(--muted)" font-size="9" class="mono" letter-spacing="0.18em">TUTOR MARKET</text>
+        <text x="860" y="412" fill="var(--muted)" font-size="9" class="mono" text-anchor="end" letter-spacing="0.18em">AI LOCALS</text>
+
+        <circle cx="190" cy="120" r="4" fill="var(--ink)"/>
+        <text x="202" y="124" fill="var(--muted)" font-size="11">Afarinesh</text>
+        <circle cx="390" cy="110" r="4" fill="var(--ink)"/>
+        <text x="402" y="114" fill="var(--muted)" font-size="11">Zabanshenas</text>
+        <circle cx="250" cy="160" r="4" fill="var(--ink)"/>
+        <text x="262" y="164" fill="var(--muted)" font-size="11">IELTS Tehran</text>
+        <circle cx="340" cy="140" r="4" fill="var(--ink)"/>
+        <text x="352" y="144" fill="var(--muted)" font-size="11">Maktabkhooneh</text>
+        <circle cx="300" cy="200" r="4" fill="var(--ink)"/>
+        <text x="312" y="204" fill="var(--muted)" font-size="11">Irsafam</text>
+        <circle cx="160" cy="210" r="4" fill="var(--ink)"/>
+        <text x="172" y="214" fill="var(--muted)" font-size="11">Safir</text>
+
+        <circle cx="230" cy="340" r="4" fill="var(--ink)"/>
+        <text x="242" y="344" fill="var(--muted)" font-size="11">Ostadbank tutors</text>
+        <circle cx="300" cy="390" r="4" fill="var(--ink)"/>
+        <text x="312" y="394" fill="var(--muted)" font-size="11">Iranmehr</text>
+
+        <circle cx="790" cy="300" r="4" fill="var(--ink)"/>
+        <text x="802" y="304" fill="var(--muted)" font-size="11">Fastdic AI</text>
+        <circle cx="700" cy="380" r="4" fill="var(--ink)"/>
+        <text x="712" y="384" fill="var(--muted)" font-size="11">Testinno</text>
+        <circle cx="620" cy="420" r="4" fill="var(--ink)"/>
+        <text x="632" y="424" fill="var(--muted)" font-size="11">AI Guru</text>
+
+        <circle cx="800" cy="130" r="5" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.2"/>
+        <text x="812" y="134" fill="var(--muted)" font-size="11">ChatGPT via VPN</text>
+        <circle cx="640" cy="170" r="6" fill="var(--accent)"/>
+        <text x="652" y="174" fill="var(--ink)" font-size="11" font-weight="500">Our product</text>
+
+        <line x1="40" y1="456" x2="920" y2="456" stroke="var(--ink-10)" stroke-width="0.8"/>
+        <text x="40" y="472" fill="var(--muted)" font-size="8" class="mono" letter-spacing="0.18em">LEGEND</text>
+        <circle cx="52" cy="488" r="6" fill="var(--accent)"/>
+        <text x="68" y="492" fill="var(--muted)" font-size="8.5">Where we position</text>
+        <circle cx="180" cy="488" r="4" fill="var(--ink)"/>
+        <text x="196" y="492" fill="var(--muted)" font-size="8.5">Competitor</text>
+        <circle cx="276" cy="488" r="5" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.2"/>
+        <text x="292" y="492" fill="var(--muted)" font-size="8.5">Free foreign chatbot, uncalibrated</text>
+        <text x="476" y="492" fill="var(--muted)" font-size="8.5" font-style="italic">Position is the signal; placement is qualitative, from the October 2026 research.</text>
+      </svg>

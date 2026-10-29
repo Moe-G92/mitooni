@@ -1,0 +1,74 @@
+{
+  "title": "CoachReview",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "essay",
+        "recording"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "attemptId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "requested",
+        "in-review",
+        "returned"
+      ]
+    },
+    "submittedAt": {
+      "type": "string"
+    },
+    "messages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "author": {
+            "type": "string",
+            "enum": [
+              "coach",
+              "me"
+            ]
+          },
+          "text": {
+            "type": "string"
+          },
+          "at": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "author",
+          "text",
+          "at"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "id",
+    "kind",
+    "title",
+    "attemptId",
+    "status",
+    "submittedAt",
+    "messages"
+  ],
+  "additionalProperties": false
+}
