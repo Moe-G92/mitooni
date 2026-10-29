@@ -120,6 +120,7 @@ function speakingFor(section: Section, attempt: Attempt): SpeakingFeedback {
     return {
       part: p.speaking?.part ?? 1,
       partId: p.id,
+      band: fixturePart?.band,
       recordingKey: rec?.key ?? null,
       durationSec: rec?.durationSec ?? 0,
       transcript: fixturePart?.transcript ?? "",

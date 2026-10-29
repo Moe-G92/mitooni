@@ -67,6 +67,93 @@
               "fa"
             ],
             "additionalProperties": false
+          },
+          "metrics": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "key": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "object",
+                  "properties": {
+                    "en": {
+                      "type": "string"
+                    },
+                    "fa": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "en",
+                    "fa"
+                  ],
+                  "additionalProperties": false
+                },
+                "score": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 100
+                },
+                "verdict": {
+                  "type": "string",
+                  "enum": [
+                    "needs-work",
+                    "acceptable",
+                    "good",
+                    "strong"
+                  ]
+                },
+                "note": {
+                  "type": "object",
+                  "properties": {
+                    "en": {
+                      "type": "string"
+                    },
+                    "fa": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "en",
+                    "fa"
+                  ],
+                  "additionalProperties": false
+                },
+                "example": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "key",
+                "label",
+                "score",
+                "verdict",
+                "note"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "tips": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "en": {
+                  "type": "string"
+                },
+                "fa": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "en",
+                "fa"
+              ],
+              "additionalProperties": false
+            }
           }
         },
         "required": [

@@ -57,11 +57,11 @@ export function PageHero({ kicker, title, lead }: { kicker: string; title: strin
       <div className="absolute inset-0 bg-[image:var(--mk-hero)]" />
       <Clouds />
       <div className="relative flex flex-col items-center px-6 pt-36 pb-20 text-center max-md:pt-28 max-md:pb-14">
-        <p className={cn(eyebrow, "text-[#083149] dark:text-[#cdeefe]")}>{kicker}</p>
+        <p className={cn(eyebrow, "text-mk-hero-text")}>{kicker}</p>
         <h1 className="mt-5 max-w-[960px] bg-[image:var(--mk-hero-title)] bg-clip-text pb-1 font-archivo text-[clamp(40px,6.4vw,96px)] leading-[1.08] font-semibold tracking-[-0.015em] text-transparent">
           {title}
         </h1>
-        <p className="mt-6 max-w-[720px] font-archivo text-[22px] leading-8 text-[#0b3a52] max-md:text-[18px] max-md:leading-7 dark:text-[#e3f5fd]">{lead}</p>
+        <p className="mt-6 max-w-[720px] font-archivo text-[22px] leading-8 text-mk-hero-text max-md:text-[18px] max-md:leading-7">{lead}</p>
       </div>
     </Section>
   );
@@ -70,7 +70,7 @@ export function PageHero({ kicker, title, lead }: { kicker: string; title: strin
 /** The dark closing card with one action. */
 export function CtaCard({ title, text, action }: { title: string; text: string; action: React.ReactNode }) {
   return (
-    <Section className="bg-[#181D1F] dark:bg-[#0b2c3d]">
+    <Section className="bg-mk-footer">
       <div className="flex flex-col items-center px-6 py-20 text-center max-md:py-14">
         <h2 className={cn(cardTitle, "text-white")}>{title}</h2>
         <p className="mt-4 max-w-xl font-archivo text-[20px] leading-7 text-white/75 max-[1200px]:text-[16px] max-[1200px]:leading-6">{text}</p>

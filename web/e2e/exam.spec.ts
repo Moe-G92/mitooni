@@ -96,5 +96,6 @@ test("Speaking: fake camera and microphone, recorded parts, playback on the feed
   await expect(page).toHaveURL(/results\//);
   await page.getByRole("link", { name: "Open feedback" }).click();
   await expect(page.getByText("Speaking feedback")).toBeVisible();
+  await page.getByRole("tab", { name: /Part 1/ }).click();
   await expect(page.locator("audio").first()).toBeVisible();
 });

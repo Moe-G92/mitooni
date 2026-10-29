@@ -1,37 +1,58 @@
 import { Link, useNavigate } from "react-router";
 import { ArrowRight } from "lucide-react";
 import type { Skill } from "@/api/schemas";
-import { useDashboard, useMe } from "@/api/queries";
+import { useDashboard, useMe, useProgress } from "@/api/queries";
 import { useT } from "@/i18n";
-import { formatBand, formatDateTime, formatDayDate, formatNumber } from "@/lib/format";
+import { formatBand, formatDate, formatDateTime, formatDayDate, formatNumber, formatShortDate } from "@/lib/format";
 import { PageHeader } from "@/components/PageHeader";
 import { Card, CardHint, CardLabel } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Bar, Chip, ErrorState, Skeleton, StrengthTag } from "@/components/ui/misc";
-import { BandScale, BandTrend, CriterionTile, SkillRadar } from "@/components/charts";
+import { AccuracyDonut, BandScale, CriterionTile, MockBars, SkillRadar } from "@/components/charts";
+import { ExamCountdown } from "@/components/ExamCountdown";
+import { cn } from "@/lib/utils";
 import { practiceHref } from "@/lib/links";
 
 const SKILLS: Skill[] = ["listening", "reading", "writing", "speaking"];
+
+/* KPI tiles in the reference palette, like the four tiles on the reference dashboard. */
+const KPI_TONES = [
+  "bg-rosewood text-white",
+  "bg-frosted-blue text-ink-black [&_.kpi-note]:text-ink-black/80",
+  "bg-light-green text-ink-black [&_.kpi-note]:text-ink-black/80",
+  "bg-almond-silk text-ink-black [&_.kpi-note]:text-ink-black/80",
+];
+
+function Kpi({ label, value, note, tone }: { label: string; value: string; note: string; tone: number }) {
+  return (
+    <section className={cn("col-span-6 min-w-0 rounded-card px-5 py-4 lg:col-span-3", KPI_TONES[tone])}>
+      <h2 className="text-[13px] font-medium">{label}</h2>
+      <div className="mt-2 font-mono text-[32px] leading-none tracking-tight">{value}</div>
+      <p className="kpi-note mt-2 text-xs">{note}</p>
+    </section>
+  );
+}
 
 /* The approved dashboard (docs/mockups/dashboard.html), now reading real data from GET /api/dashboard. */
 export default function Overview() {
   const { t, locale, pick } = useT();
   const me = useMe();
   const d = useDashboard();
+  const progress = useProgress();
   const navigate = useNavigate();
   const target = me.data?.targets.overall ?? 7;
   const skillLabels = Object.fromEntries(SKILLS.map((s) => [s, t(`skills.${s}`)]));
 
-  const chips = (
-    <>
-      {d.data?.daysToTest !== null && d.data?.daysToTest !== undefined && (
-        <Chip className="border-transparent bg-secondary text-foreground">
-          {d.data.daysToTest >= 0 ? t("overview.examIn", { count: d.data.daysToTest, n: formatNumber(d.data.daysToTest, locale) }) : t("overview.examPast")}
-        </Chip>
-      )}
-      <Chip>{t("common.academic")}</Chip>
-    </>
-  );
+  const chips = <Chip>{t("common.academic")}</Chip>;
+
+  const days = d.data?.daysToTest ?? null;
+  const p = progress.data;
+  const fullMocks = (p?.history ?? []).filter((h) => h.kind === "full" && h.overall !== null).slice(0, 6).reverse();
+  const totals = (p?.types ?? []).reduce((a, x) => ({ correct: a.correct + x.correct, total: a.total + x.total }), { correct: 0, total: 0 });
+  const since = new Date();
+  since.setDate(since.getDate() - 28);
+  const studyDays = (p?.studyDays ?? []).filter((x) => x >= since.toISOString().slice(0, 10)).length;
+  const latest = d.data?.trend.at(-1)?.band ?? null;
 
   return (
     <>
@@ -46,6 +67,32 @@ export default function Overview() {
       )}
       {d.data && (
         <div className="grid grid-cols-12 gap-4">
+          {/* Exam countdown */}
+          <Card className="col-span-12 flex flex-col lg:col-span-5">
+            <CardLabel title={t("overview.countdown")} note={me.data?.testDate ? t("overview.testOn", { date: formatDate(me.data.testDate, locale) }) : undefined} />
+            {days !== null && days >= 0 ? (
+              <div className="mt-3 flex flex-1 flex-col justify-center">
+                <ExamCountdown
+                  days={days}
+                  locale={locale}
+                  line1={days === 0 ? t("overview.testToday1") : t("overview.countdownDays", { count: days })}
+                  line2={days === 0 ? t("overview.testToday2") : t("overview.toGo")}
+                  label={t("overview.countdownLabel", { count: days, n: formatNumber(days, locale) })}
+                />
+                <Link to="/app/settings" className="mt-3 self-end text-[13px] text-muted-foreground underline-offset-4 hover:text-foreground hover:underline">
+                  {t("overview.changeDate")}
+                </Link>
+              </div>
+            ) : (
+              <div className="mt-4">
+                <p className="text-sm text-muted-foreground">{days === null ? t("overview.noDate") : t("overview.examPast")}</p>
+                <Button asChild variant="outline" size="sm" className="mt-3">
+                  <Link to="/app/settings">{t("overview.setDate")}</Link>
+                </Button>
+              </div>
+            )}
+          </Card>
+
           {/* Predicted band */}
           <Card className="col-span-12 lg:col-span-7">
             <CardLabel title={t("overview.predicted")} note={t("overview.updatedToday")} />
@@ -73,10 +120,89 @@ export default function Overview() {
             )}
           </Card>
 
-          {/* Band by skill */}
+          {/* KPI tiles */}
+          <Kpi tone={0} label={t("overview.kpi.latest")} value={formatBand(latest, locale)} note={t("overview.targetShort", { band: formatBand(target, locale) })} />
+          <Kpi tone={1} label={t("overview.kpi.mocks")} value={formatNumber(d.data.predicted?.mocks ?? fullMocks.length, locale)} note={t("overview.kpi.mocksNote")} />
+          <Kpi tone={2} label={t("overview.kpi.questions")} value={formatNumber(d.data.predicted?.questions ?? totals.total, locale)} note={t("overview.kpi.questionsNote")} />
+          <Kpi tone={3} label={t("overview.kpi.study")} value={formatNumber(studyDays, locale)} note={t("overview.kpi.studyNote")} />
+
+          {/* Mock scores by skill */}
           <Card className="col-span-12 lg:col-span-5">
+            <CardLabel title={t("overview.scores")} note={t("overview.scoresNote")} />
+            {fullMocks.length ? (
+              <MockBars
+                mocks={fullMocks.map((m) => ({ attemptId: m.attemptId, date: m.completedAt, skills: m.skills }))}
+                labels={skillLabels}
+                target={target}
+                targetLabel={t("overview.targetShort", { band: formatBand(target, locale) })}
+                locale={locale}
+                onPick={(id) => navigate(`/app/results/${id}`)}
+              />
+            ) : (
+              <p className="mt-4 text-sm text-muted-foreground">{t("overview.noTrend")}</p>
+            )}
+          </Card>
+
+          {/* Answer accuracy */}
+          <Card className="col-span-12 sm:col-span-5 lg:col-span-3">
+            <CardLabel title={t("overview.accuracy")} />
+            {totals.total ? (
+              <div className="mt-4">
+                <AccuracyDonut
+                  correct={totals.correct}
+                  total={totals.total}
+                  locale={locale}
+                  centerNote={`${formatNumber(totals.total, locale)} ${t("overview.answered")}`}
+                  labels={{ correct: t("overview.correct"), wrong: t("overview.wrong") }}
+                />
+                <ul className="mt-4 flex justify-center gap-4 text-xs text-muted-foreground">
+                  <li className="flex items-center gap-1.5">
+                    <i className="size-2.5 rounded-full bg-chart-1" aria-hidden="true" />
+                    {t("overview.correct")} {formatNumber(totals.correct, locale)}
+                  </li>
+                  <li className="flex items-center gap-1.5">
+                    <i className="size-2.5 rounded-full bg-rosewood" aria-hidden="true" />
+                    {t("overview.wrong")} {formatNumber(totals.total - totals.correct, locale)}
+                  </li>
+                </ul>
+              </div>
+            ) : (
+              <p className="mt-4 text-sm text-muted-foreground">{t("overview.noTypes")}</p>
+            )}
+          </Card>
+
+          {/* Recent results */}
+          <Card className="col-span-12 sm:col-span-7 lg:col-span-4">
+            <CardLabel
+              title={t("overview.recent")}
+              note={
+                <Link to="/app/results" className="hover:text-foreground hover:underline">
+                  {t("overview.seeAll")}
+                </Link>
+              }
+            />
+            <ul className="mt-2">
+              {(p?.history ?? []).slice(0, 5).map((h) => {
+                const band = h.overall ?? (h.skills.length === 1 ? h.skills[0].band : null);
+                return (
+                  <li key={h.attemptId} className="border-b border-border last:border-0">
+                    <Link to={`/app/results/${h.attemptId}`} className="flex items-center justify-between gap-3 py-2.5 text-sm hover:text-primary">
+                      <span className="min-w-0">
+                        <span className="block truncate">{h.testTitle}</span>
+                        <span className="text-xs text-muted-foreground">{formatShortDate(h.completedAt, locale)}</span>
+                      </span>
+                      <span className="shrink-0 rounded-full bg-secondary px-2.5 py-0.5 font-mono text-[13px] text-foreground">{formatBand(band, locale)}</span>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </Card>
+
+          {/* Band by skill */}
+          <Card className="col-span-12 lg:col-span-4">
             <CardLabel title={t("overview.bySkill")} note={t("overview.lastVsTarget")} />
-            <div className="mt-2 grid grid-cols-1 items-center gap-4 sm:grid-cols-2">
+            <div className="mt-2 grid grid-cols-1 items-center gap-4 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
               <SkillRadar data={d.data.skills.map((s) => ({ ...s }))} locale={locale} labels={skillLabels} />
               <ul className="flex flex-col gap-2 text-[13px]">
                 {d.data.skills.map((s) => {
@@ -129,22 +255,6 @@ export default function Overview() {
                   {t("overview.focus")}
                 </Button>
               </CardHint>
-            )}
-          </Card>
-
-          {/* Band trend */}
-          <Card className="col-span-12 sm:col-span-6 lg:col-span-4">
-            <CardLabel title={t("overview.trend")} note={t("overview.fullMocks")} />
-            {d.data.trend.length ? (
-              <BandTrend
-                points={d.data.trend}
-                target={target}
-                locale={locale}
-                targetLabel={t("overview.targetShort", { band: formatBand(target, locale) })}
-                onPoint={(id) => navigate(`/app/results/${id}`)}
-              />
-            ) : (
-              <p className="mt-4 text-sm text-muted-foreground">{t("overview.noTrend")}</p>
             )}
           </Card>
 

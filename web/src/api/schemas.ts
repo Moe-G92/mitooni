@@ -298,10 +298,29 @@ export const SubmitResponse = z.object({ attempt: Attempt, resultReady: z.boolea
 /*  Results and feedback                                               */
 /* ------------------------------------------------------------------ */
 
+/**
+ * One sub-skill inside a criterion, for the score breakdown (for example Pace,
+ * Pausing and Hesitations inside Fluency and coherence).
+ */
+export const CriterionMetric = z.object({
+  key: z.string(),
+  label: Localized,
+  /** 0–100: how close this sub-skill is to band 9 performance. */
+  score: z.number().min(0).max(100),
+  verdict: z.enum(["needs-work", "acceptable", "good", "strong"]),
+  note: Localized,
+  /** Words from the learner's own essay or transcript that show it (English). */
+  example: z.string().optional(),
+});
+
 export const Criterion = z.object({
   key: z.enum(["tr", "cc", "lr", "gra", "fc", "p"]),
   band: Band,
   comment: Localized,
+  /** Sub-skills for the breakdown view. Optional: older results have none. */
+  metrics: z.array(CriterionMetric).optional(),
+  /** Concrete things to do to raise this criterion, most useful first. */
+  tips: z.array(Localized).optional(),
 });
 
 export const Annotation = z.object({
@@ -332,6 +351,8 @@ export const SpeakingFeedback = z.object({
     z.object({
       part: z.number().int(),
       partId: z.string(),
+      /** Band for this part on its own, shown on the part tabs. Optional. */
+      band: Band.optional(),
       recordingKey: z.string().nullable(),
       durationSec: z.number(),
       transcript: z.string(),
@@ -556,6 +577,7 @@ export type Criterion = z.infer<typeof Criterion>;
 export type Annotation = z.infer<typeof Annotation>;
 export type WritingFeedback = z.infer<typeof WritingFeedback>;
 export type SpeakingFeedback = z.infer<typeof SpeakingFeedback>;
+export type CriterionMetric = z.infer<typeof CriterionMetric>;
 export type ItemResult = z.infer<typeof ItemResult>;
 export type SkillScore = z.infer<typeof SkillScore>;
 export type TypeStat = z.infer<typeof TypeStat>;

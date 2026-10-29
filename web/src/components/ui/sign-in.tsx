@@ -28,7 +28,7 @@ export function GlassInputWrapper({ children, invalid }: { children: ReactNode; 
   return (
     <div
       className={cn(
-        "rounded-2xl border bg-mk-ink/[0.04] backdrop-blur-sm transition-colors focus-within:border-[#037BB5]/70 focus-within:bg-[#037BB5]/[0.06] dark:bg-white/[0.05]",
+        "rounded-2xl border bg-mk-ink/[0.04] backdrop-blur-sm transition-colors focus-within:border-rosewood/70 focus-within:bg-frosted-blue/[0.12] dark:bg-white/[0.05]",
         invalid ? "border-weak" : "border-mk-line",
       )}
     >
@@ -109,8 +109,8 @@ export function FieldError({ id, children }: { id?: string; children?: ReactNode
 /** Product facts shown as the component's floating cards. */
 function PanelCard({ title, body, delay, mark }: { title: string; body: string; delay: string; mark: ReactNode }) {
   return (
-    <div className={cn("animate-testimonial flex w-64 items-start gap-3 rounded-3xl border border-white/30 bg-white/70 p-5 text-[#181D1F] backdrop-blur-xl dark:bg-[#0f1112]/60 dark:text-white", delay)}>
-      <span className="grid size-10 shrink-0 place-items-center rounded-2xl bg-[#037BB5] text-white">{mark}</span>
+    <div className={cn("animate-testimonial flex w-64 items-start gap-3 rounded-3xl border border-white/30 bg-white/70 p-5 text-ink-black backdrop-blur-xl dark:bg-[#020c15]/60 dark:text-white", delay)}>
+      <span className="grid size-10 shrink-0 place-items-center rounded-2xl bg-rosewood text-white">{mark}</span>
       <div className="text-sm leading-snug">
         <p className="font-semibold">{title}</p>
         <p className="mt-1 opacity-75">{body}</p>
@@ -144,7 +144,7 @@ export function AuthShell({ children }: { children: ReactNode }) {
             <span key={i} className={cn("absolute rounded-[50%] bg-[var(--mk-cloud)] blur-[48px]", p)} />
           ))}
           <div className="relative p-12">
-            <p className="font-gabarito text-[16px] font-semibold tracking-[0.1em] text-[#083149] uppercase dark:text-[#cdeefe]">{t("mk.auth.panelEyebrow")}</p>
+            <p className="font-gabarito text-[16px] font-semibold tracking-[0.1em] text-mk-hero-text uppercase">{t("mk.auth.panelEyebrow")}</p>
             <p className="mt-4 max-w-md bg-[image:var(--mk-hero-title)] bg-clip-text font-archivo text-[56px] leading-[1.05] font-semibold tracking-[-0.015em] text-transparent lg:text-[64px]">
               {t("mk.auth.panelTitle")}
             </p>

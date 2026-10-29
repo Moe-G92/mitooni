@@ -33,6 +33,51 @@ export const writingFeedbackTask1: WritingFeedback = {
         en: "You give a clear overview and report the key figures for every activity. For video games you skip the 2015 figure, so that comparison is thinner than the others.",
         fa: "یک جمع‌بندی کلی روشن نوشته‌اید و عددهای اصلی هر فعالیت را آورده‌اید. برای بازی‌های ویدیویی عدد سال ۲۰۱۵ را جا انداخته‌اید، برای همین این مقایسه از بقیه ضعیف‌تر است.",
       },
+      metrics: [
+        {
+          key: "overview",
+          label: { en: "Overview", fa: "جمع‌بندی کلی" },
+          score: 78,
+          verdict: "good",
+          note: {
+            en: "Your second paragraph sums up the main trends before giving any numbers, which is exactly what the examiner looks for.",
+            fa: "پاراگراف دوم پیش از آوردن هر عددی روندهای اصلی را خلاصه می‌کند، و این دقیقاً همان چیزی است که ممتحن دنبالش است.",
+          },
+          example: "Overall, the time for social media and video games increased significantly",
+        },
+        {
+          key: "key-features",
+          label: { en: "Key features", fa: "نکته‌های اصلی" },
+          score: 62,
+          verdict: "acceptable",
+          note: {
+            en: "You compare the biggest changes well, but for video games you skip the 2015 figure, so that trend is only half shown.",
+            fa: "بزرگ‌ترین تغییرها را خوب مقایسه کرده‌اید، ولی برای بازی‌های ویدیویی عدد سال ۲۰۱۵ را نیاورده‌اید و این روند فقط نیمه‌کاره نشان داده شده است.",
+          },
+          example: "grew steadily from 3 to 8 hours",
+        },
+        {
+          key: "data-accuracy",
+          label: { en: "Data accuracy", fa: "دقت در عددها" },
+          score: 74,
+          verdict: "good",
+          note: {
+            en: "Most figures are reported accurately with their years, and you even mention the small peak for sport in 2015.",
+            fa: "بیشتر عددها را درست و همراه با سالشان آورده‌اید و حتی به اوج کوچک ورزش در سال ۲۰۱۵ هم اشاره کرده‌اید.",
+          },
+          example: "with a small peak of 6 hours in 2015",
+        },
+      ],
+      tips: [
+        {
+          en: "Give the figure for every year of each activity, including the middle year, so every trend is complete.",
+          fa: "برای هر فعالیت عدد همهٔ سال‌ها، از جمله سال وسط، را بیاورید تا هر روند کامل دیده شود.",
+        },
+        {
+          en: "In the overview, also name the most popular activity at the start and at the end, for example that social media overtook TV.",
+          fa: "در جمع‌بندی کلی بگویید کدام فعالیت در ابتدا و کدام در انتها از همه محبوب‌تر بود، مثلاً اینکه شبکه‌های اجتماعی از تلویزیون جلو زدند.",
+        },
+      ],
     },
     {
       key: "cc",
@@ -41,6 +86,55 @@ export const writingFeedbackTask1: WritingFeedback = {
         en: "The paragraphs follow a logical order and linkers such as 'Similarly' and 'On the other hand' work well. In the sentence with 'however', two clauses are joined only by a comma, which breaks the flow.",
         fa: "ترتیب پاراگراف‌ها منطقی است و کلمه‌های ربطی مثل «Similarly» و «On the other hand» درست کار می‌کنند. در جمله‌ای که «however» دارد، دو جمله فقط با یک ویرگول به هم چسبیده‌اند و روانی متن به هم می‌خورد.",
       },
+      metrics: [
+        {
+          key: "paragraphing",
+          label: { en: "Paragraphing", fa: "پاراگراف‌بندی" },
+          score: 66,
+          verdict: "good",
+          note: {
+            en: "You have a clear introduction, overview and two body paragraphs. The second body paragraph mixes a rising activity with a stable one, so the grouping is less clear.",
+            fa: "مقدمه، جمع‌بندی کلی و دو پاراگراف بدنهٔ روشن دارید. پاراگراف بدنهٔ دوم یک فعالیت رو به افزایش را با یک فعالیت ثابت قاطی کرده و برای همین دسته‌بندی‌اش کمتر روشن است.",
+          },
+          example: "Video games also grew steadily",
+        },
+        {
+          key: "linking-words",
+          label: { en: "Linking words", fa: "کلمه‌های ربط" },
+          score: 52,
+          verdict: "acceptable",
+          note: {
+            en: "'Similarly' and 'On the other hand' work well, but 'however' after a comma cannot join two clauses.",
+            fa: "«Similarly» و «On the other hand» خوب کار می‌کنند، ولی «however» بعد از ویرگول نمی‌تواند دو جمله را به هم وصل کند.",
+          },
+          example: "in 2005, however it rose dramatically",
+        },
+        {
+          key: "referencing",
+          label: { en: "Referencing", fa: "ارجاع" },
+          score: 60,
+          verdict: "acceptable",
+          note: {
+            en: "'This figure' and 'which' help you avoid repetition, but most sentences repeat the activity name instead of using 'it' or 'the latter'.",
+            fa: "«this figure» و «which» به شما کمک می‌کنند تکرار نکنید، ولی بیشتر جمله‌ها به‌جای «it» یا «the latter» دوباره اسم فعالیت را تکرار می‌کنند.",
+          },
+          example: "this figure dropped to 10 hours",
+        },
+      ],
+      tips: [
+        {
+          en: "Use 'However,' only at the start of a new sentence. Inside a sentence, use 'but' or 'while'.",
+          fa: "«However,» را فقط در ابتدای جملهٔ تازه بیاورید. وسط جمله از «but» یا «while» استفاده کنید.",
+        },
+        {
+          en: "Group activities by trend: one paragraph for those that fell and one for those that rose.",
+          fa: "فعالیت‌ها را بر اساس روندشان دسته‌بندی کنید: یک پاراگراف برای آن‌هایی که کم شدند و یکی برای آن‌هایی که زیاد شدند.",
+        },
+        {
+          en: "Replace some repeated activity names with 'this figure', 'the latter' or 'it'.",
+          fa: "به‌جای تکرار اسم فعالیت‌ها، گاهی از «this figure»، «the latter» یا «it» استفاده کنید.",
+        },
+      ],
     },
     {
       key: "lr",
@@ -49,6 +143,55 @@ export const writingFeedbackTask1: WritingFeedback = {
         en: "You use good trend language such as 'dropped', 'rose dramatically' and 'grew steadily'. A few phrases are unnatural, for example 'fell down' and 'reached at'.",
         fa: "برای توصیف روندها کلمه‌های خوبی مثل «dropped»، «rose dramatically» و «grew steadily» به کار برده‌اید. چند عبارت طبیعی نیست، مثلاً «fell down» و «reached at».",
       },
+      metrics: [
+        {
+          key: "range",
+          label: { en: "Range", fa: "دامنهٔ واژگان" },
+          score: 68,
+          verdict: "good",
+          note: {
+            en: "Good trend verbs and adverbs such as 'dropped', 'rose dramatically' and 'grew steadily'.",
+            fa: "فعل‌ها و قیدهای خوبی برای توصیف روند به کار برده‌اید، مثل «dropped»، «rose dramatically» و «grew steadily».",
+          },
+          example: "rose dramatically to 9 hours",
+        },
+        {
+          key: "collocation",
+          label: { en: "Collocation", fa: "همایندها" },
+          score: 56,
+          verdict: "acceptable",
+          note: {
+            en: "'Spend' goes with 'on', but you use 'in' and 'for' with it, and 'watch TV' does not take 'the'.",
+            fa: "فعل «spend» با «on» می‌آید، ولی شما با آن «in» و «for» به کار برده‌اید، و «watch TV» هم حرف تعریف «the» نمی‌گیرد.",
+          },
+          example: "spent about 5 hours for sport",
+        },
+        {
+          key: "precision",
+          label: { en: "Precision", fa: "دقت واژگان" },
+          score: 50,
+          verdict: "acceptable",
+          note: {
+            en: "'Fell down' and 'reached at' are not used with numbers, so some of your trend language sounds unnatural.",
+            fa: "«fell down» و «reached at» برای عدد و آمار به کار نمی‌روند، برای همین بخشی از توصیف روندها طبیعی به نظر نمی‌رسد.",
+          },
+          example: "fell down from 4 hours to 2 hours",
+        },
+      ],
+      tips: [
+        {
+          en: "Learn trend verbs as full patterns: 'fell to 2 hours', 'reached 15 hours', 'rose by 5 hours'.",
+          fa: "فعل‌های روند را با الگوی کاملشان یاد بگیرید: «fell to 2 hours»، «reached 15 hours»، «rose by 5 hours».",
+        },
+        {
+          en: "Learn 'spend time on' and 'watch TV' as fixed phrases.",
+          fa: "«spend time on» و «watch TV» را به‌شکل عبارت ثابت حفظ کنید.",
+        },
+        {
+          en: "Add one or two less common words, such as 'overtook' or 'remained stable'.",
+          fa: "یکی دو کلمهٔ کمتر رایج هم اضافه کنید، مثل «overtook» یا «remained stable».",
+        },
+      ],
     },
     {
       key: "gra",
@@ -57,6 +200,55 @@ export const writingFeedbackTask1: WritingFeedback = {
         en: "Simple sentences are mostly correct, but there are agreement, article and tense errors, such as 'The bar chart illustrate' and 'has decreased' for a finished period.",
         fa: "جمله‌های ساده بیشتر درست‌اند، ولی خطای مطابقت فعل و فاعل، حرف تعریف و زمان فعل دیده می‌شود، مثل «The bar chart illustrate» و استفاده از «has decreased» برای دوره‌ای که تمام شده است.",
       },
+      metrics: [
+        {
+          key: "range",
+          label: { en: "Range", fa: "تنوع ساختارها" },
+          score: 58,
+          verdict: "acceptable",
+          note: {
+            en: "You use the past simple, comparisons and a relative clause, which is enough for a short report but shows little variety.",
+            fa: "از گذشتهٔ ساده، مقایسه و یک جملهٔ موصولی استفاده کرده‌اید که برای یک گزارش کوتاه کافی است، ولی تنوع زیادی ندارد.",
+          },
+          example: "which made it the most popular activity",
+        },
+        {
+          key: "accuracy",
+          label: { en: "Accuracy", fa: "دقت دستوری" },
+          score: 42,
+          verdict: "needs-work",
+          note: {
+            en: "Errors with verb endings, articles and tense appear in most paragraphs, starting with the first sentence.",
+            fa: "خطای پایانهٔ فعل، حرف تعریف و زمان فعل تقریباً در هر پاراگراف دیده می‌شود، از همان جملهٔ اول.",
+          },
+          example: "The bar chart illustrate",
+        },
+        {
+          key: "complex-sentences",
+          label: { en: "Complex sentences", fa: "جمله‌های مرکب" },
+          score: 55,
+          verdict: "acceptable",
+          note: {
+            en: "Your longest sentence links three ideas with 'however' and 'which', but the comma splice and the missing 'the' in 'the end of the period' weaken it.",
+            fa: "طولانی‌ترین جمله‌تان سه ایده را با «however» و «which» به هم وصل می‌کند، ولی ویرگول نابه‌جا و «the» جاافتاده در «the end of the period» آن را ضعیف کرده است.",
+          },
+          example: "at the end of period",
+        },
+      ],
+      tips: [
+        {
+          en: "Reread every sentence once only for verb endings: a singular subject needs a verb ending in -s.",
+          fa: "هر جمله را یک بار فقط برای پایانهٔ فعل دوباره بخوانید: فاعل مفرد فعلی با «s» در آخر می‌خواهد.",
+        },
+        {
+          en: "When all the years are in the past, keep the past simple for the whole report.",
+          fa: "وقتی همهٔ سال‌ها در گذشته‌اند، در کل گزارش از گذشتهٔ ساده استفاده کنید.",
+        },
+        {
+          en: "Check the articles in fixed phrases: 'the same', 'at the end of the period', 'watch TV'.",
+          fa: "حرف تعریف را در عبارت‌های ثابت چک کنید: «the same»، «at the end of the period»، «watch TV».",
+        },
+      ],
     },
   ],
   annotations: [
@@ -186,6 +378,55 @@ export const writingFeedbackTask2: WritingFeedback = {
         en: "You discuss both views and give a clear opinion, with relevant examples about housing and family life. The opinion only appears in the second half, and the 'independence' side needs one more developed example.",
         fa: "هر دو دیدگاه را بررسی کرده‌اید و نظر روشنی داده‌اید، با مثال‌های مرتبط دربارهٔ مسکن و زندگی خانوادگی. ولی نظرتان فقط در نیمهٔ دوم مقاله آمده و بخش مربوط به «استقلال» به یک مثال کامل‌تر نیاز دارد.",
       },
+      metrics: [
+        {
+          key: "position",
+          label: { en: "Position", fa: "موضع" },
+          score: 56,
+          verdict: "acceptable",
+          note: {
+            en: "Your opinion is clear but only appears in the fourth paragraph. The introduction repeats the question instead of stating your view.",
+            fa: "نظرتان روشن است ولی فقط در پاراگراف چهارم می‌آید. مقدمه به‌جای بیان دیدگاه شما فقط صورت سؤال را تکرار می‌کند.",
+          },
+          example: "In this essay I will discuss both views and give my own opinion.",
+        },
+        {
+          key: "development",
+          label: { en: "Development", fa: "گسترش ایده‌ها" },
+          score: 52,
+          verdict: "acceptable",
+          note: {
+            en: "The family side has two reasons with examples, but the independence side rests on one general example about a young man.",
+            fa: "طرف خانواده دو دلیل همراه با مثال دارد، ولی طرف استقلال فقط به یک مثال کلی دربارهٔ یک مرد جوان تکیه می‌کند.",
+          },
+          example: "When a young man lives with his parents",
+        },
+        {
+          key: "relevance",
+          label: { en: "Relevance", fa: "ارتباط با سؤال" },
+          score: 72,
+          verdict: "good",
+          note: {
+            en: "Every paragraph stays on the question, and the example about housing in Tehran is specific and relevant.",
+            fa: "همهٔ پاراگراف‌ها به سؤال مربوط‌اند و مثال مسکن در تهران مشخص و مرتبط است.",
+          },
+          example: "housing in big cities like Tehran is extremely expensive",
+        },
+      ],
+      tips: [
+        {
+          en: "State your opinion in one short sentence in the introduction, then repeat it in the conclusion.",
+          fa: "نظرتان را در مقدمه در یک جملهٔ کوتاه بگویید و در نتیجه‌گیری دوباره تکرارش کنید.",
+        },
+        {
+          en: "Develop each body idea with a reason, an example and a result, especially on the independence side.",
+          fa: "هر ایدهٔ پاراگراف‌های بدنه را با یک دلیل، یک مثال و یک نتیجه گسترش دهید، مخصوصاً در بخش استقلال.",
+        },
+        {
+          en: "Drop memorised openers that only repeat the question, and use the space for your own ideas.",
+          fa: "جمله‌های حفظی را که فقط سؤال را تکرار می‌کنند کنار بگذارید و از آن جا برای ایده‌های خودتان استفاده کنید.",
+        },
+      ],
     },
     {
       key: "cc",
@@ -194,6 +435,51 @@ export const writingFeedbackTask2: WritingFeedback = {
         en: "Each body paragraph holds one idea and the linking is clear ('Firstly', 'As a result', 'Moreover'). Some linkers are mechanical, and 'they' and 'he' switch within the same paragraph.",
         fa: "هر پاراگراف بدنه یک ایدهٔ اصلی دارد و ارتباط جمله‌ها روشن است (مثل «Firstly»، «As a result» و «Moreover»). بعضی کلمه‌های ربط کلیشه‌ای‌اند و در یک پاراگراف ضمیر بین «he» و «they» عوض می‌شود.",
       },
+      metrics: [
+        {
+          key: "paragraphing",
+          label: { en: "Paragraphing", fa: "پاراگراف‌بندی" },
+          score: 70,
+          verdict: "good",
+          note: {
+            en: "Five well-balanced paragraphs, and each body paragraph opens with a clear topic sentence.",
+            fa: "پنج پاراگراف متعادل دارید و هر پاراگراف بدنه با یک جملهٔ موضوعی روشن شروع می‌شود.",
+          },
+          example: "On the one hand, living together has some clear advantages for families.",
+        },
+        {
+          key: "linking-words",
+          label: { en: "Linking words", fa: "کلمه‌های ربط" },
+          score: 58,
+          verdict: "acceptable",
+          note: {
+            en: "Linkers are accurate but mechanical: 'Firstly', 'Secondly', 'Moreover' and 'As a result' all open sentences the same way.",
+            fa: "کلمه‌های ربط درست‌اند ولی کلیشه‌ای: «Firstly»، «Secondly»، «Moreover» و «As a result» همه جمله‌ها را به یک شکل شروع می‌کنند.",
+          },
+          example: "Moreover, sharing a house can cause conflicts",
+        },
+        {
+          key: "referencing",
+          label: { en: "Referencing", fa: "ارجاع" },
+          score: 50,
+          verdict: "acceptable",
+          note: {
+            en: "In the third paragraph, 'a young man' becomes 'he' and then 'they', so the reader loses track of who you mean.",
+            fa: "در پاراگراف سوم «a young man» اول «he» می‌شود و بعد «they»، و خواننده نمی‌فهمد منظورتان چه کسی است.",
+          },
+          example: "when they finally move out",
+        },
+      ],
+      tips: [
+        {
+          en: "Keep one pronoun for the same person or group: if you start with 'young people', continue with 'they'.",
+          fa: "برای یک شخص یا گروه همیشه از یک ضمیر استفاده کنید: اگر با «young people» شروع کردید، با «they» ادامه دهید.",
+        },
+        {
+          en: "Link some ideas inside the sentence with 'which means' or 'so', instead of starting every sentence with a linker.",
+          fa: "به‌جای اینکه هر جمله را با کلمهٔ ربط شروع کنید، بعضی ایده‌ها را وسط جمله با «which means» یا «so» به هم وصل کنید.",
+        },
+      ],
     },
     {
       key: "lr",
@@ -202,6 +488,55 @@ export const writingFeedbackTask2: WritingFeedback = {
         en: "Good topic vocabulary such as 'financial benefits', 'conflicts between generations' and 'stand on their own feet'. A few word choices are slightly off, for example 'the base of a healthy society'.",
         fa: "واژه‌های مرتبط با موضوع خوب انتخاب شده‌اند، مثل «financial benefits»، «conflicts between generations» و «stand on their own feet». چند واژه هم کمی نادرست انتخاب شده‌اند، مثلاً «the base of a healthy society».",
       },
+      metrics: [
+        {
+          key: "range",
+          label: { en: "Range", fa: "دامنهٔ واژگان" },
+          score: 74,
+          verdict: "good",
+          note: {
+            en: "Good topic vocabulary, and a natural idiom used correctly.",
+            fa: "واژه‌های مرتبط با موضوع خوب‌اند و یک اصطلاح طبیعی را درست به کار برده‌اید.",
+          },
+          example: "stand on their own feet",
+        },
+        {
+          key: "collocation",
+          label: { en: "Collocation", fa: "همایندها" },
+          score: 70,
+          verdict: "good",
+          note: {
+            en: "Natural word pairs such as 'financial benefits' and 'conflicts between generations'.",
+            fa: "ترکیب‌های طبیعی مثل «financial benefits» و «conflicts between generations» به کار برده‌اید.",
+          },
+          example: "conflicts between generations",
+        },
+        {
+          key: "precision",
+          label: { en: "Precision", fa: "دقت واژگان" },
+          score: 58,
+          verdict: "acceptable",
+          note: {
+            en: "A few word choices are slightly off, such as 'base' where 'foundation' is the natural word, and 'face with'.",
+            fa: "چند واژه کمی نادرست انتخاب شده‌اند، مثل «base» به‌جای «foundation» و «face with».",
+          },
+          example: "the base of a healthy society",
+        },
+      ],
+      tips: [
+        {
+          en: "Learn verbs together with their patterns, for example 'face problems' with no preposition.",
+          fa: "فعل‌ها را همراه با الگویشان یاد بگیرید، مثلاً «face problems» بدون حرف اضافه.",
+        },
+        {
+          en: "Paraphrase the words of the question, for example 'stay in the family home' for 'live with their parents'.",
+          fa: "کلمه‌های صورت سؤال را با عبارت‌های دیگر بیان کنید، مثلاً به‌جای «live with their parents» بنویسید «stay in the family home».",
+        },
+        {
+          en: "Keep a list of words for abstract ideas, such as 'foundation', 'pillar' and 'cornerstone'.",
+          fa: "برای مفهوم‌های انتزاعی فهرستی از واژه‌ها نگه دارید، مثل «foundation»، «pillar» و «cornerstone».",
+        },
+      ],
     },
     {
       key: "gra",
@@ -210,6 +545,55 @@ export const writingFeedbackTask2: WritingFeedback = {
         en: "You try a good range of complex sentences, but many of them have subject–verb agreement or tense errors, such as 'this habit make' and 'if they stayed at home'. These errors are frequent enough to lower the band.",
         fa: "از جمله‌های مرکب متنوعی استفاده کرده‌اید، ولی در خیلی از آن‌ها مطابقت فعل و فاعل یا زمان فعل اشتباه است، مثل «this habit make» و «if they stayed at home». تعداد این خطاها آن‌قدر زیاد است که نمره را پایین می‌آورد.",
       },
+      metrics: [
+        {
+          key: "range",
+          label: { en: "Range", fa: "تنوع ساختارها" },
+          score: 64,
+          verdict: "acceptable",
+          note: {
+            en: "You attempt conditionals, relative clauses and 'although' clauses, a good range for this band.",
+            fa: "جمله‌های شرطی، موصولی و جمله‌هایی با «although» را امتحان کرده‌اید که برای این سطح تنوع خوبی است.",
+          },
+          example: "although living with parents has financial benefits",
+        },
+        {
+          key: "accuracy",
+          label: { en: "Accuracy", fa: "دقت دستوری" },
+          score: 38,
+          verdict: "needs-work",
+          note: {
+            en: "Subject–verb agreement errors appear in almost every paragraph, three of them in a single sentence.",
+            fa: "خطای مطابقت فعل و فاعل تقریباً در هر پاراگراف هست و سه تا از آن‌ها در یک جمله آمده است.",
+          },
+          example: "his mother usually cook the meals and his father pay the bills",
+        },
+        {
+          key: "complex-sentences",
+          label: { en: "Complex sentences", fa: "جمله‌های مرکب" },
+          score: 50,
+          verdict: "acceptable",
+          note: {
+            en: "Many complex sentences break down, for example a past verb in a present conditional and an extra 'them' after 'which'.",
+            fa: "خیلی از جمله‌های مرکب خراب می‌شوند، مثلاً فعل گذشته در یک جملهٔ شرطی زمان حال و «them» اضافه بعد از «which».",
+          },
+          example: "which they did not expect them",
+        },
+      ],
+      tips: [
+        {
+          en: "Before you finish, find every 'he', 'she', 'it' and singular noun, and check that its verb ends in -s.",
+          fa: "قبل از تمام کردن، هر «he»، «she»، «it» و اسم مفرد را پیدا کنید و ببینید فعلش «s» دارد یا نه.",
+        },
+        {
+          en: "In first conditionals, keep both clauses in the present: 'if they stay at home, they can save money'.",
+          fa: "در جمله‌های شرطی نوع اول هر دو بخش را در زمان حال نگه دارید: «if they stay at home, they can save money».",
+        },
+        {
+          en: "After 'which' or 'who', do not repeat the object as a pronoun.",
+          fa: "بعد از «which» یا «who» مفعول را دوباره با ضمیر تکرار نکنید.",
+        },
+      ],
     },
   ],
   annotations: [
@@ -656,6 +1040,55 @@ export const speakingFeedback: SpeakingFeedback = {
         en: "You speak at length without noticeable effort and extend most answers with reasons and examples. Your Part 2 talk follows the cue card in a clear order.",
         fa: "بدون مکث‌های طولانی و راحت صحبت می‌کنید و بیشتر جواب‌ها را با دلیل و مثال گسترش می‌دهید. صحبتتان در بخش دوم به ترتیب روشنی از نکته‌های کارت پیروی می‌کند.",
       },
+      metrics: [
+        {
+          key: "pace",
+          label: { en: "Pace", fa: "سرعت" },
+          score: 82,
+          verdict: "strong",
+          note: {
+            en: "You keep a steady, natural speed and talk for almost the full two minutes in Part 2.",
+            fa: "با سرعتی ثابت و طبیعی صحبت می‌کنید و در بخش دوم تقریباً تمام دو دقیقه را حرف می‌زنید.",
+          },
+          example: "I'd like to talk about how I learned to cook rice in the Persian way",
+        },
+        {
+          key: "pausing",
+          label: { en: "Pausing", fa: "مکث‌ها" },
+          score: 76,
+          verdict: "good",
+          note: {
+            en: "Most pauses fall between ideas rather than in the middle of a phrase, so your answers are easy to follow.",
+            fa: "بیشتر مکث‌هایتان بین ایده‌هاست، نه وسط عبارت‌ها، برای همین دنبال کردن جواب‌هایتان راحت است.",
+          },
+          example: "Actually, yes, it's quite different.",
+        },
+        {
+          key: "hesitations",
+          label: { en: "Hesitations", fa: "تردید در صحبت" },
+          score: 68,
+          verdict: "good",
+          note: {
+            en: "In Part 3 you hesitate a little when an abstract question needs a new word, and sometimes buy time with a short set phrase first.",
+            fa: "در بخش سوم وقتی سؤال انتزاعی کلمهٔ تازه‌ای لازم دارد کمی مکث می‌کنید و گاهی اول با یک عبارت کوتاه آماده وقت می‌خرید.",
+          },
+          example: "It depends on the skill.",
+        },
+      ],
+      tips: [
+        {
+          en: "Prepare a few natural ways to start a Part 3 answer, such as 'That's an interesting question. I'd say…', so you never freeze.",
+          fa: "چند شروع طبیعی برای جواب‌های بخش سوم آماده کنید، مثل «That's an interesting question. I'd say…»، تا هیچ‌وقت ساکت نمانید.",
+        },
+        {
+          en: "Vary the links between ideas: not only 'because' and 'for example', but also 'on top of that' or 'that said'.",
+          fa: "ارتباط بین ایده‌ها را متنوع کنید: نه فقط «because» و «for example»، بلکه «on top of that» یا «that said» هم به کار ببرید.",
+        },
+        {
+          en: "In Part 2, add one more detail or feeling before you stop, so you use the full two minutes.",
+          fa: "در بخش دوم قبل از تمام کردن یک جزئیات یا حس دیگر هم اضافه کنید تا از همهٔ دو دقیقه استفاده کنید.",
+        },
+      ],
     },
     {
       key: "lr",
@@ -664,6 +1097,51 @@ export const speakingFeedback: SpeakingFeedback = {
         en: "Good range for familiar topics ('crispy layer', 'basic first aid', 'make a budget'). Some prepositions after nouns and verbs are wrong, such as 'photos from nature'.",
         fa: "برای موضوع‌های آشنا واژگان خوبی دارید («crispy layer»، «basic first aid»، «make a budget»). بعضی حرف‌های اضافه بعد از اسم و فعل اشتباه است، مثل «photos from nature».",
       },
+      metrics: [
+        {
+          key: "range",
+          label: { en: "Range", fa: "دامنهٔ واژگان" },
+          score: 74,
+          verdict: "good",
+          note: {
+            en: "You use less common words naturally on familiar topics such as food and education.",
+            fa: "در موضوع‌های آشنا مثل غذا و آموزش، واژه‌های کمتر رایج را طبیعی به کار می‌برید.",
+          },
+          example: "the crispy layer at the bottom of the pot",
+        },
+        {
+          key: "collocation",
+          label: { en: "Collocation", fa: "همایندها" },
+          score: 70,
+          verdict: "good",
+          note: {
+            en: "Good pairs like 'make a budget' and 'basic first aid', with a few slips such as 'in the internet'.",
+            fa: "ترکیب‌های خوبی مثل «make a budget» و «basic first aid» دارید و فقط چند لغزش کوچک مثل «in the internet».",
+          },
+          example: "how to make a budget",
+        },
+        {
+          key: "precision",
+          label: { en: "Precision", fa: "دقت واژگان" },
+          score: 58,
+          verdict: "acceptable",
+          note: {
+            en: "Wrong prepositions after nouns and verbs make some otherwise good phrases sound unnatural.",
+            fa: "حرف اضافهٔ اشتباه بعد از اسم و فعل باعث می‌شود بعضی عبارت‌های خوب طبیعی به نظر نرسند.",
+          },
+          example: "taking photos from nature",
+        },
+      ],
+      tips: [
+        {
+          en: "Learn nouns with their prepositions: 'photos of', 'on the internet', 'on weekdays'.",
+          fa: "اسم‌ها را همراه با حرف اضافه‌شان یاد بگیرید: «photos of»، «on the internet»، «on weekdays».",
+        },
+        {
+          en: "You say 'important' several times. Try 'essential', 'vital' or 'a big part of' instead.",
+          fa: "چند بار «important» گفتید. به‌جایش «essential»، «vital» یا «a big part of» را امتحان کنید.",
+        },
+      ],
     },
     {
       key: "gra",
@@ -672,6 +1150,55 @@ export const speakingFeedback: SpeakingFeedback = {
         en: "You use a mix of simple and complex structures, including relative clauses, but there are frequent errors with verb patterns ('explained me', 'let me to do') and past habits.",
         fa: "ترکیبی از ساختارهای ساده و پیچیده، از جمله جمله‌های موصولی، به کار می‌برید، ولی در الگوی فعل‌ها («explained me»، «let me to do») و بیان عادت‌های گذشته خطای زیادی دارید.",
       },
+      metrics: [
+        {
+          key: "range",
+          label: { en: "Range", fa: "تنوع ساختارها" },
+          score: 68,
+          verdict: "good",
+          note: {
+            en: "You use relative clauses, conditionals and the present perfect, a wider range than most answers at this band.",
+            fa: "از جمله‌های موصولی، شرطی و حال کامل استفاده می‌کنید که از بیشتر جواب‌ها در این سطح متنوع‌تر است.",
+          },
+          example: "My grandmother, who lives in Isfahan, taught it to me",
+        },
+        {
+          key: "accuracy",
+          label: { en: "Accuracy", fa: "دقت دستوری" },
+          score: 48,
+          verdict: "needs-work",
+          note: {
+            en: "Verb patterns go wrong again and again, such as 'explained me' and 'let me to do'.",
+            fa: "الگوی فعل‌ها بارها اشتباه می‌شود، مثل «explained me» و «let me to do».",
+          },
+          example: "she let me to do it myself",
+        },
+        {
+          key: "complex-sentences",
+          label: { en: "Complex sentences", fa: "جمله‌های مرکب" },
+          score: 60,
+          verdict: "acceptable",
+          note: {
+            en: "Long sentences are usually clear, but past habits come out in the past continuous instead of 'used to' or 'would'.",
+            fa: "جمله‌های طولانی معمولاً روشن‌اند، ولی عادت‌های گذشته را به‌جای «used to» یا «would» با گذشتهٔ استمراری می‌گویید.",
+          },
+          example: "my mother was waking me up every day",
+        },
+      ],
+      tips: [
+        {
+          en: "Say ten common verb patterns aloud until they feel automatic: 'explain something to someone', 'let someone do', 'make someone do'.",
+          fa: "ده الگوی فعل پرکاربرد را آن‌قدر با صدای بلند تکرار کنید تا خودکار شوند: «explain something to someone»، «let someone do»، «make someone do».",
+        },
+        {
+          en: "For past habits, use 'used to' or 'would': 'my mother used to wake me up'.",
+          fa: "برای عادت‌های گذشته از «used to» یا «would» استفاده کنید: «my mother used to wake me up».",
+        },
+        {
+          en: "Avoid double comparatives: say 'much faster', not 'much more faster'.",
+          fa: "صفت تفضیلی را دو بار نیاورید: بگویید «much faster»، نه «much more faster».",
+        },
+      ],
     },
     {
       key: "p",
@@ -680,12 +1207,61 @@ export const speakingFeedback: SpeakingFeedback = {
         en: "Generally easy to understand. A few sounds (/w/ and /θ/) and some word stress make you harder to follow, and your intonation is flat in longer answers.",
         fa: "در کل راحت فهمیده می‌شوید. چند صدا (/w/ و /θ/) و تکیهٔ بعضی کلمه‌ها فهم حرفتان را سخت‌تر می‌کند و در جواب‌های طولانی آهنگ صدایتان یکنواخت می‌شود.",
       },
+      metrics: [
+        {
+          key: "individual-sounds",
+          label: { en: "Individual sounds", fa: "تلفظ صداها" },
+          score: 60,
+          verdict: "acceptable",
+          note: {
+            en: "/w/ sometimes becomes /v/, /θ/ becomes /t/, and you add a vowel before /sk/ in 'school'.",
+            fa: "صدای /w/ گاهی /v/ می‌شود، /θ/ به /t/ تبدیل می‌شود و قبل از /sk/ در «school» یک صدای «اِ» اضافه می‌کنید.",
+          },
+          example: "my grandparents' wedding",
+        },
+        {
+          key: "word-stress",
+          label: { en: "Word stress", fa: "تکیهٔ کلمه" },
+          score: 66,
+          verdict: "good",
+          note: {
+            en: "Most words are stressed correctly, but in longer words like 'vocabulary' the stress moves to the end.",
+            fa: "تکیهٔ بیشتر کلمه‌ها درست است، ولی در کلمه‌های بلند مثل «vocabulary» تکیه به آخر کلمه می‌رود.",
+          },
+          example: "my vocabulary flashcards",
+        },
+        {
+          key: "intonation",
+          label: { en: "Intonation", fa: "آهنگ صدا" },
+          score: 56,
+          verdict: "acceptable",
+          note: {
+            en: "Your voice stays flat in longer answers and lists, so the key words don't stand out.",
+            fa: "در جواب‌های طولانی و فهرست‌ها صدایتان یکنواخت می‌ماند و کلمه‌های مهم برجسته نمی‌شوند.",
+          },
+          example: "cooking, sewing, or growing plants",
+        },
+      ],
+      tips: [
+        {
+          en: "Practise /w/ against /v/ with pairs like 'wet/vet' and 'west/vest', watching your lips in a mirror.",
+          fa: "صدای /w/ و /v/ را با جفت‌کلمه‌هایی مثل «wet/vet» و «west/vest» جلوی آینه تمرین کنید و به لب‌هایتان دقت کنید.",
+        },
+        {
+          en: "In lists, let your voice rise on each item and fall on the last one.",
+          fa: "در فهرست‌ها صدایتان را روی هر مورد کمی بالا ببرید و روی مورد آخر پایین بیاورید.",
+        },
+        {
+          en: "Give the most important word in each sentence a little more stress, so the listener hears what matters.",
+          fa: "مهم‌ترین کلمهٔ هر جمله را کمی محکم‌تر بگویید تا شنونده بفهمد چه چیزی مهم است.",
+        },
+      ],
     },
   ],
   parts: [
-    { part: 1, partId: "a1-s-p1", recordingKey: null, durationSec: 238, transcript: speakingP1 },
-    { part: 2, partId: "a1-s-p2", recordingKey: null, durationSec: 112, transcript: speakingP2 },
-    { part: 3, partId: "a1-s-p3", recordingKey: null, durationSec: 262, transcript: speakingP3 },
+    { part: 1, partId: "a1-s-p1", band: 7, recordingKey: null, durationSec: 238, transcript: speakingP1 },
+    { part: 2, partId: "a1-s-p2", band: 6.5, recordingKey: null, durationSec: 112, transcript: speakingP2 },
+    { part: 3, partId: "a1-s-p3", band: 6.5, recordingKey: null, durationSec: 262, transcript: speakingP3 },
   ],
   pronunciation: [
     {
@@ -848,9 +1424,9 @@ export const speakingFeedbackOlder: SpeakingFeedback[] = [
       },
     ],
     parts: [
-      { part: 1, partId: "a1-s-p1", recordingKey: null, durationSec: 205, transcript: olderSpeaking1.p1 },
-      { part: 2, partId: "a1-s-p2", recordingKey: null, durationSec: 74, transcript: olderSpeaking1.p2 },
-      { part: 3, partId: "a1-s-p3", recordingKey: null, durationSec: 210, transcript: olderSpeaking1.p3 },
+      { part: 1, partId: "a1-s-p1", band: 6.5, recordingKey: null, durationSec: 205, transcript: olderSpeaking1.p1 },
+      { part: 2, partId: "a1-s-p2", band: 5.5, recordingKey: null, durationSec: 74, transcript: olderSpeaking1.p2 },
+      { part: 3, partId: "a1-s-p3", band: 6, recordingKey: null, durationSec: 210, transcript: olderSpeaking1.p3 },
     ],
     pronunciation: [
       { word: "engineering", note: { en: "Stress the last syllable: en-gi-NEER-ing.", fa: "تکیه روی بخش سوم است: en-gi-NEER-ing." } },
@@ -907,9 +1483,9 @@ export const speakingFeedbackOlder: SpeakingFeedback[] = [
       },
     ],
     parts: [
-      { part: 1, partId: "a1-s-p1", recordingKey: null, durationSec: 214, transcript: olderSpeaking2.p1 },
-      { part: 2, partId: "a1-s-p2", recordingKey: null, durationSec: 88, transcript: olderSpeaking2.p2 },
-      { part: 3, partId: "a1-s-p3", recordingKey: null, durationSec: 230, transcript: olderSpeaking2.p3 },
+      { part: 1, partId: "a1-s-p1", band: 6.5, recordingKey: null, durationSec: 214, transcript: olderSpeaking2.p1 },
+      { part: 2, partId: "a1-s-p2", band: 6, recordingKey: null, durationSec: 88, transcript: olderSpeaking2.p2 },
+      { part: 3, partId: "a1-s-p3", band: 6, recordingKey: null, durationSec: 230, transcript: olderSpeaking2.p3 },
     ],
     pronunciation: [
       { word: "advertisements", note: { en: "British stress: ad-VER-tise-ments.", fa: "تکیه در انگلیسی بریتانیایی روی بخش دوم است: ad-VER-tise-ments." } },
@@ -966,9 +1542,9 @@ export const speakingFeedbackOlder: SpeakingFeedback[] = [
       },
     ],
     parts: [
-      { part: 1, partId: "a1-s-p1", recordingKey: null, durationSec: 226, transcript: olderSpeaking3.p1 },
-      { part: 2, partId: "a1-s-p2", recordingKey: null, durationSec: 104, transcript: olderSpeaking3.p2 },
-      { part: 3, partId: "a1-s-p3", recordingKey: null, durationSec: 248, transcript: olderSpeaking3.p3 },
+      { part: 1, partId: "a1-s-p1", band: 6.5, recordingKey: null, durationSec: 226, transcript: olderSpeaking3.p1 },
+      { part: 2, partId: "a1-s-p2", band: 7, recordingKey: null, durationSec: 104, transcript: olderSpeaking3.p2 },
+      { part: 3, partId: "a1-s-p3", band: 6.5, recordingKey: null, durationSec: 248, transcript: olderSpeaking3.p3 },
     ],
     pronunciation: [
       { word: "chemistry", note: { en: "Starts with /k/, and stress the first syllable: KEM-is-try.", fa: "با صدای /k/ شروع می‌شود و تکیه روی بخش اول است: KEM-is-try." } },

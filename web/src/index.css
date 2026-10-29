@@ -4,6 +4,7 @@
 @import "@fontsource-variable/vazirmatn";
 @import "@fontsource-variable/archivo";
 @import "@fontsource-variable/gabarito";
+@import "@fontsource/anton";
 
 /*
  * Dark mode is keyed on data-theme on <html>, which the app always resolves
@@ -11,121 +12,157 @@
  */
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
-/* Tokens from docs/mockups/dashboard.html */
+/*
+ * Reference palette (Mo, 29 Oct 2026, two coolors.co palettes). The same in
+ * both themes: use them as fills behind ink-black text (or white text on
+ * Rosewood), sparingly, for accents, tiles and chart marks. Big surfaces use
+ * the soft tints in the theme tokens below, never the full colours.
+ *   Palette 1: Ink Black, Rosewood, Frosted Blue, Light Green, Almond Silk
+ *   Palette 2: Wisteria Blue, Pink Carnation, Canary Yellow, White, Vibrant Coral
+ */
 :root {
-  --background: #f6f5f1;
-  --foreground: #1c1c1a;
+  --ink-black: #011627;
+  --rosewood: #c33c54;
+  --frosted-blue: #8ee3ef;
+  --light-green: #9ce37d;
+  --almond-silk: #f2d1c9;
+  --wisteria-blue: #91a6ff;
+  --pink-carnation: #ff88dc;
+  --canary-yellow: #faff7f;
+  --white: #ffffff;
+  --vibrant-coral: #ff5154;
+}
+
+/* App tokens, built on the reference palette (dashboard, results, feedback). */
+:root {
+  --background: #f4f5f7;
+  --foreground: #011627;
   --card: #ffffff;
-  --card-foreground: #1c1c1a;
+  --card-foreground: #011627;
   --popover: #ffffff;
-  --popover-foreground: #1c1c1a;
-  --primary: #1f3a5f;
+  --popover-foreground: #011627;
+  --primary: #011627;
   --primary-foreground: #ffffff;
-  --secondary: #e8eef7;
-  --secondary-foreground: #1c1c1a;
-  --muted: #efede7;
-  --muted-foreground: #6b6a64;
-  --faint: #6f6e66;
-  --accent: #efede7;
-  --accent-foreground: #1c1c1a;
-  --destructive: #b23a48;
-  --border: #e4e2da;
-  --input: #d9d6cc;
-  --ring: #1f3a5f;
-  --strength: #25683f;
-  --strength-soft: #e4f2e9;
-  --fair: #8a5d00;
-  --fair-soft: #f7eed6;
-  --weak: #b23a48;
-  --weak-soft: #f8e4e7;
-  --chart-1: #1f3a5f;
-  --chart-2: #25683f;
-  --chart-3: #8a5d00;
-  --chart-4: #b23a48;
-  --chart-5: #6b6a64;
+  --secondary: #e4f8fb;
+  --secondary-foreground: #011627;
+  --muted: #eceef1;
+  --muted-foreground: #556170;
+  --faint: #5d6874;
+  --accent: #eceef1;
+  --accent-foreground: #011627;
+  --destructive: #c33c54;
+  --border: #e1e4e8;
+  --input: #d3d8de;
+  --ring: #011627;
+  --strength: #2c6e1a;
+  --strength-soft: #e6f7de;
+  --fair: #7a6100;
+  --fair-soft: #fbfcd9;
+  /* Rosewood, one step darker so it passes AA on its own soft tint. */
+  --weak: #ad2f46;
+  --weak-soft: #fae8e4;
+  --chart-1: #011627;
+  --chart-2: #5fb83c;
+  --chart-3: #c33c54;
+  --chart-4: #6a82f0;
+  --chart-5: #556170;
+  /* Sidebar: Ink Black in both themes, as in the reference dashboard. */
+  --sidebar: #011627;
+  --sidebar-foreground: #ffffff;
+  --sidebar-muted: rgba(255, 255, 255, 0.68);
+  --sidebar-active: rgba(142, 227, 239, 0.16);
   --radius: 20px;
 }
 
 [data-theme="dark"] {
-  --background: #121311;
-  --foreground: #ecebe6;
-  --card: #1b1c19;
-  --card-foreground: #ecebe6;
-  --popover: #22231f;
-  --popover-foreground: #ecebe6;
-  --primary: #9db7e6;
-  --primary-foreground: #0f1a2b;
-  --secondary: #1e2a3b;
-  --secondary-foreground: #ecebe6;
-  --muted: #24251f;
-  --muted-foreground: #a3a29a;
-  --faint: #8c8b83;
-  --accent: #2a2b26;
-  --accent-foreground: #ecebe6;
-  --destructive: #f08a96;
-  --border: #2c2d29;
-  --input: #3a3b36;
-  --ring: #9db7e6;
-  --strength: #7fd1a0;
-  --strength-soft: #1a2e22;
-  --fair: #e0b64d;
-  --fair-soft: #30280f;
-  --weak: #f08a96;
-  --weak-soft: #3a1c21;
-  --chart-1: #9db7e6;
-  --chart-2: #7fd1a0;
-  --chart-3: #e0b64d;
-  --chart-4: #f08a96;
-  --chart-5: #a3a29a;
+  --background: #020c15;
+  --foreground: #e9eef3;
+  --card: #0a1b29;
+  --card-foreground: #e9eef3;
+  --popover: #0f2232;
+  --popover-foreground: #e9eef3;
+  --primary: #8ee3ef;
+  --primary-foreground: #011627;
+  --secondary: #0f2a35;
+  --secondary-foreground: #e9eef3;
+  --muted: #112231;
+  --muted-foreground: #a3b1be;
+  --faint: #8d9cab;
+  --accent: #132839;
+  --accent-foreground: #e9eef3;
+  --destructive: #f08497;
+  --border: #1a2e3f;
+  --input: #27405a;
+  --ring: #8ee3ef;
+  --strength: #9ce37d;
+  --strength-soft: #16301a;
+  --fair: #e7ec74;
+  --fair-soft: #2a2c12;
+  --weak: #f08497;
+  --weak-soft: #3a1820;
+  --chart-1: #8ee3ef;
+  --chart-2: #9ce37d;
+  --chart-3: #f08497;
+  --chart-4: #91a6ff;
+  --chart-5: #a3b1be;
+  --sidebar: #010e19;
+  --sidebar-foreground: #ffffff;
+  --sidebar-muted: rgba(255, 255, 255, 0.66);
+  --sidebar-active: rgba(142, 227, 239, 0.14);
   color-scheme: dark;
 }
 
 
-/* Public pages: colours and fonts from reasonal.co (docs/research/2026-10-29-reasonal-teardown.md). */
+/*
+ * Public pages: layout and type from reasonal.co (docs/research/2026-10-29-reasonal-teardown.md),
+ * colours from the reference palette. Section backgrounds are pale tints of it;
+ * the full colours only appear in small accents.
+ */
 :root {
   --mk-page: #ffffff;
-  --mk-ink: #181d1f;
-  --mk-body: #424647;
+  --mk-ink: #011627;
+  --mk-body: #3a4855;
   --mk-card: #ffffff;
-  --mk-line: rgba(24, 29, 31, 0.12);
-  --mk-peach: #fddbce;
-  --mk-beige: #eae4dc;
-  --mk-lavender: #d7cef0;
-  --mk-orange: #fd956d;
-  --mk-blue: #dbe5f0;
-  --mk-sage: #d5e2da;
-  --mk-pink: #f4e1e1;
-  --mk-butter: #f6e7cf;
-  --mk-green: #e4eed2;
-  --mk-teal: #dceeef;
-  --mk-footer: #181d1f;
-  --mk-sky: #037bb5;
-  --mk-hero: linear-gradient(180deg, #15aeea 0%, #73cef2 100%);
-  /* Reasonal's title blue, deepened to reach 3:1 on the brightest sky (large-text AA). */
-  --mk-hero-title: linear-gradient(169.245deg, #02557f 20.481%, #034e76 73.8%);
-  --mk-cloud: rgba(255, 255, 255, 0.75);
+  --mk-line: rgba(1, 22, 39, 0.12);
+  --mk-peach: #f2d1c9; /* Almond Silk */
+  --mk-beige: #f8ece8; /* Almond Silk, light */
+  --mk-lavender: #e3e8ff; /* Wisteria Blue tint */
+  --mk-orange: #ff5154; /* Vibrant Coral, with ink text */
+  --mk-blue: #ddf6fa; /* Frosted Blue tint */
+  --mk-sage: #e5f7dc; /* Light Green tint */
+  --mk-pink: #ffe6f8; /* Pink Carnation tint */
+  --mk-butter: #fcfdd8; /* Canary Yellow tint */
+  --mk-green: #e5f7dc;
+  --mk-teal: #ddf6fa;
+  --mk-footer: #011627;
+  --mk-sky: #c33c54; /* accent: Rosewood */
+  --mk-hero: linear-gradient(180deg, #8ee3ef 0%, #c6f2f8 100%);
+  --mk-hero-title: linear-gradient(170deg, #011627 20%, #0b3550 75%);
+  --mk-hero-text: #0b2a3e;
+  --mk-cloud: rgba(255, 255, 255, 0.7);
 }
 [data-theme="dark"] {
-  --mk-page: #0f1112;
-  --mk-ink: #f2f0ec;
-  --mk-body: #bdbab3;
-  --mk-card: #1e2224;
-  --mk-line: rgba(242, 240, 236, 0.14);
-  --mk-peach: #3a2a24;
-  --mk-beige: #2a2723;
-  --mk-lavender: #2b2740;
-  --mk-orange: #fd956d;
-  --mk-blue: #1f2a36;
-  --mk-sage: #1f2b25;
-  --mk-pink: #362424;
-  --mk-butter: #352d1f;
-  --mk-green: #26301c;
-  --mk-teal: #1c2f31;
-  --mk-footer: #1a1f21;
-  --mk-sky: #7cc8ef;
-  --mk-hero: linear-gradient(180deg, #0b4f70 0%, #13698f 100%);
-  --mk-hero-title: linear-gradient(169.245deg, rgba(214, 240, 252, 0.95) 20%, rgba(176, 226, 249, 0.95) 74%);
-  --mk-cloud: rgba(255, 255, 255, 0.08);
+  --mk-page: #020c15;
+  --mk-ink: #eef3f7;
+  --mk-body: #b3bfca;
+  --mk-card: #0d1f2e;
+  --mk-line: rgba(238, 243, 247, 0.14);
+  --mk-peach: #2c1f22;
+  --mk-beige: #1a1a22;
+  --mk-lavender: #1b2140;
+  --mk-orange: #ff5154;
+  --mk-blue: #0e2a33;
+  --mk-sage: #15291a;
+  --mk-pink: #2e1729;
+  --mk-butter: #26271a;
+  --mk-green: #15291a;
+  --mk-teal: #0e2a33;
+  --mk-footer: #010e19;
+  --mk-sky: #f08497;
+  --mk-hero: linear-gradient(180deg, #011627 0%, #0a3346 100%);
+  --mk-hero-title: linear-gradient(170deg, #c6f4fa 20%, #8ee3ef 75%);
+  --mk-hero-text: #d6f3f8;
+  --mk-cloud: rgba(142, 227, 239, 0.07);
 }
 
 @theme inline {
@@ -159,12 +196,27 @@
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-muted: var(--sidebar-muted);
+  --color-sidebar-active: var(--sidebar-active);
+  --color-ink-black: var(--ink-black);
+  --color-rosewood: var(--rosewood);
+  --color-frosted-blue: var(--frosted-blue);
+  --color-light-green: var(--light-green);
+  --color-almond-silk: var(--almond-silk);
+  --color-wisteria-blue: var(--wisteria-blue);
+  --color-pink-carnation: var(--pink-carnation);
+  --color-canary-yellow: var(--canary-yellow);
+  --color-vibrant-coral: var(--vibrant-coral);
   --radius-card: var(--radius);
   --font-sans: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Geist Mono Variable", ui-monospace, monospace;
   --font-persian: "Vazirmatn Variable", Tahoma, sans-serif;
   --font-archivo: "Archivo Variable", "Vazirmatn Variable", sans-serif;
   --font-gabarito: "Gabarito Variable", "Vazirmatn Variable", sans-serif;
+  /* Heavy condensed face for the exam countdown only. */
+  --font-anton: "Anton", "Vazirmatn Variable", Impact, sans-serif;
   --color-mk-page: var(--mk-page);
   --color-mk-ink: var(--mk-ink);
   --color-mk-body: var(--mk-body);
@@ -182,6 +234,7 @@
   --color-mk-teal: var(--mk-teal);
   --color-mk-footer: var(--mk-footer);
   --color-mk-sky: var(--mk-sky);
+  --color-mk-hero-text: var(--mk-hero-text);
 }
 
 @layer base {

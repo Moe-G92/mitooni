@@ -1,4 +1,22 @@
-import { CartesianGrid, Line, LineChart, PolarAngleAxis, PolarGrid, Radar, RadarChart, ReferenceLine, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
+import {
+  Bar as RBar,
+  BarChart,
+  CartesianGrid,
+  Cell,
+  Line,
+  LineChart,
+  Pie,
+  PieChart,
+  PolarAngleAxis,
+  PolarGrid,
+  Radar,
+  RadarChart,
+  ReferenceLine,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from "recharts";
 import type { Locale } from "@/api/schemas";
 import { formatBand, formatNumber, formatShortDate } from "@/lib/format";
 import { cn } from "@/lib/utils";
@@ -219,6 +237,150 @@ export function CriterionTile({ label, band, low, locale }: { label: string; ban
     <div className="rounded-[14px] border border-border px-3.5 py-3">
       <span className="block text-xs text-muted-foreground">{label}</span>
       <b className={cn("font-mono text-2xl font-normal tracking-tight", low && "text-weak")}>{formatBand(band, locale)}</b>
+    </div>
+  );
+}
+
+const tooltipStyle = { background: "var(--popover)", border: "1px solid var(--border)", borderRadius: 12, color: "var(--popover-foreground)", fontSize: 12 };
+
+/** Grouped bars, one group per full mock and one bar per skill (the reference dashboard's "Trend"). */
+export function MockBars({
+  mocks,
+  labels,
+  target,
+  targetLabel,
+  locale,
+  height = 210,
+  onPick,
+}: {
+  mocks: { attemptId: string; date: string; skills: { skill: string; band: number }[] }[];
+  labels: Record<string, string>;
+  target: number;
+  targetLabel: string;
+  locale: Locale;
+  height?: number;
+  onPick?: (attemptId: string) => void;
+}) {
+  const skills = ["listening", "reading", "writing", "speaking"];
+  const rows = mocks.map((m) => {
+    const row: Record<string, number | string> = { label: formatShortDate(m.date, locale), attemptId: m.attemptId };
+    for (const s of m.skills) row[s.skill] = s.band;
+    return row;
+  });
+  return (
+    <div>
+      <div dir="ltr" style={{ height }} className="w-full">
+        <ResponsiveContainer>
+          <BarChart data={rows} margin={{ top: 16, right: 8, bottom: 0, left: -22 }} barGap={2} barCategoryGap="22%">
+            <CartesianGrid vertical={false} stroke="var(--border)" />
+            <XAxis dataKey="label" tick={axisTick} axisLine={false} tickLine={false} />
+            <YAxis domain={[0, 9]} ticks={[0, 3, 6, 9]} tick={axisTick} axisLine={false} tickLine={false} />
+            <ReferenceLine
+              y={target}
+              stroke="var(--foreground)"
+              strokeDasharray="4 4"
+              label={{ value: targetLabel, position: "insideTopRight", fill: "var(--muted-foreground)", fontSize: 11 }}
+            />
+            <Tooltip cursor={{ fill: "var(--accent)" }} contentStyle={tooltipStyle} formatter={(v, name) => [formatBand(Number(v), locale), labels[String(name)]]} />
+            {skills.map((k) => (
+              <RBar
+                key={k}
+                dataKey={k}
+                fill={BAR_COLORS[k]}
+                radius={[3, 3, 0, 0]}
+                maxBarSize={14}
+                isAnimationActive={false}
+                cursor={onPick ? "pointer" : undefined}
+                onClick={(d: unknown) => {
+                  const id = (d as { attemptId?: string; payload?: { attemptId?: string } })?.payload?.attemptId ?? (d as { attemptId?: string })?.attemptId;
+                  if (id && onPick) onPick(id);
+                }}
+              />
+            ))}
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+      <ul className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs text-muted-foreground">
+        {skills.map((k) => (
+          <li key={k} className="flex items-center gap-1.5">
+            <i className="size-2.5 rounded-sm" style={{ background: BAR_COLORS[k] }} aria-hidden="true" />
+            {labels[k]}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+/* Bars use the reference palette; in dark mode the chart tokens lighten Ink Black and Rosewood. */
+const BAR_COLORS: Record<string, string> = {
+  listening: "var(--chart-1)",
+  reading: "var(--frosted-blue)",
+  writing: "var(--chart-3)",
+  speaking: "var(--light-green)",
+};
+
+/** Donut of right and wrong answers with the accuracy in the middle. */
+export function AccuracyDonut({
+  correct,
+  total,
+  locale,
+  centerNote,
+  labels,
+}: {
+  correct: number;
+  total: number;
+  locale: Locale;
+  centerNote: string;
+  labels: { correct: string; wrong: string };
+}) {
+  const wrong = Math.max(0, total - correct);
+  const data = [
+    { name: labels.correct, value: correct, color: "var(--chart-1)" },
+    { name: labels.wrong, value: wrong, color: "var(--rosewood)" },
+  ];
+  const pct = total ? Math.round((correct / total) * 100) : 0;
+  return (
+    <div className="relative mx-auto aspect-square w-full max-w-[190px]" role="img" aria-label={`${labels.correct} ${formatNumber(correct, locale)}, ${labels.wrong} ${formatNumber(wrong, locale)}`}>
+      <ResponsiveContainer>
+        <PieChart>
+          <Pie data={data} dataKey="value" innerRadius="66%" outerRadius="100%" startAngle={90} endAngle={-270} stroke="var(--card)" strokeWidth={3} isAnimationActive={false}>
+            {data.map((d) => (
+              <Cell key={d.name} fill={d.color} />
+            ))}
+          </Pie>
+        </PieChart>
+      </ResponsiveContainer>
+      <div className="pointer-events-none absolute inset-0 grid place-items-center text-center">
+        <div>
+          <div className="font-mono text-[28px] leading-none tracking-tight">{formatNumber(pct, locale)}%</div>
+          <div className="mt-1 text-xs text-muted-foreground">{centerNote}</div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/** Ring gauge for a 0–100 sub-skill score, as in the reference feedback screen. */
+export function ScoreRing({ value, label, locale, size = 112 }: { value: number; label: string; locale: Locale; size?: number }) {
+  const r = 44;
+  const c = 2 * Math.PI * r;
+  const v = Math.max(0, Math.min(100, value));
+  const tone = v < 50 ? "var(--weak)" : v < 65 ? "var(--fair)" : "var(--strength)";
+  return (
+    <div className="relative shrink-0" style={{ width: size, height: size }}>
+      <svg viewBox="0 0 100 100" className="size-full -rotate-90" aria-hidden="true">
+        <circle cx="50" cy="50" r={r} fill="none" stroke="var(--border)" strokeWidth="7" />
+        <circle cx="50" cy="50" r={r} fill="none" stroke={tone} strokeWidth="7" strokeLinecap="round" strokeDasharray={`${(v / 100) * c} ${c}`} />
+      </svg>
+      <div className="absolute inset-0 grid place-items-center text-center">
+        <div>
+          <div className="font-mono text-2xl leading-none tracking-tight" dir="ltr">
+            {formatNumber(Math.round(v), locale)}%
+          </div>
+          <div className="mt-1 text-[11px] text-muted-foreground">{label}</div>
+        </div>
+      </div>
     </div>
   );
 }

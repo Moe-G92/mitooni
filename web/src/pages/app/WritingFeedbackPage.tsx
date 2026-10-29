@@ -3,16 +3,18 @@ import { Link, useNavigate, useParams } from "react-router";
 import { ArrowLeft, GraduationCap } from "lucide-react";
 import { useCoachMutations, useMe, useResult, useTest } from "@/api/queries";
 import { useT } from "@/i18n";
-import { formatBand, formatDate, formatNumber } from "@/lib/format";
+import { formatDate, formatNumber } from "@/lib/format";
+import { overallBand, writingBand } from "@/lib/bands";
 import { cn } from "@/lib/utils";
 import { PageHeader } from "@/components/PageHeader";
 import { Card, CardLabel } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ErrorState, Skeleton, Tag } from "@/components/ui/misc";
-import { CriterionTile } from "@/components/charts";
 import { Rich } from "@/exam/widgets/QuestionGroupView";
 import { AnnotatedText } from "./feedback-shared";
 import { KIND_CLASS } from "./feedback-kinds";
+import { ScoreBreakdown, SectionTabs } from "./ScoreBreakdown";
+import { liftFor } from "@/lib/breakdown";
 
 export default function WritingFeedbackPage() {
   const { attemptId, partId } = useParams();
@@ -47,20 +49,32 @@ export default function WritingFeedbackPage() {
       </Link>
       {w.dummy && <p className="mb-4 rounded-xl border border-dashed border-border px-4 py-2.5 text-xs text-muted-foreground">{t("feedback.dummyWriting")}</p>}
       <div className="grid grid-cols-12 gap-4">
-        <Card className="col-span-12">
-          <div className="flex flex-wrap items-end gap-6">
-            <div>
-              <div className="text-[13px] text-muted-foreground">{t("common.band")}</div>
-              <div className="font-mono text-5xl leading-none">{formatBand(w.band, locale)}</div>
-            </div>
-            <div className="grid flex-1 grid-cols-2 gap-3 sm:grid-cols-4">
-              {w.criteria.map((c) => (
-                <CriterionTile key={c.key} label={t(`criteria.${c.key === "tr" && w.task === 1 ? "tr1" : c.key}`)} band={c.band} locale={locale} low={c.band < w.band} />
-              ))}
-            </div>
-          </div>
-          <blockquote className="mt-4 rounded-e-xl border-s-[3px] border-primary bg-secondary px-3.5 py-3 text-sm">{pick(w.summary)}</blockquote>
-        </Card>
+        {/* Grades first: one tab per task */}
+        <SectionTabs
+          label={t("skills.writing")}
+          value={w.partId}
+          onChange={(id) => navigate(`/app/results/${r.data!.attemptId}/writing/${id}`)}
+          items={[...r.data.writing]
+            .sort((a, b) => a.task - b.task)
+            .map((x) => ({ key: x.partId, title: t("breakdown.task", { n: formatNumber(x.task, locale) }), sub: t(`breakdown.taskNames.${x.task}`), band: x.band }))}
+        />
+        <blockquote className="col-span-12 rounded-e-xl border-s-[3px] border-rosewood bg-card px-4 py-3 text-sm">{pick(w.summary)}</blockquote>
+        <ScoreBreakdown
+          key={w.partId}
+          criteria={w.criteria}
+          criterionLabel={(k) => t(`criteria.${k === "tr" && w.task === 1 ? "tr1" : k}`)}
+          skillLabel={t("skills.writing")}
+          lift={(k) => {
+            const res = r.data!;
+            const other = res.writing.find((x) => x.task !== w.task);
+            // Task 2 counts twice as much as Task 1.
+            const toSkill = (b: number) => (other ? (w.task === 2 ? writingBand(other.band, b) : writingBand(b, other.band)) : b);
+            const skill = res.skills.find((x) => x.skill === "writing")?.band ?? w.band;
+            const others = res.skills.filter((x) => x.skill !== "writing").map((x) => x.band);
+            const full = res.overall !== null && others.length === 3;
+            return liftFor(w.criteria, k, { skill, overall: res.overall }, toSkill, full ? (wb) => overallBand([...others, wb]) : null);
+          }}
+        />
 
         <Card className="col-span-12 lg:col-span-7">
           <CardLabel

@@ -14,7 +14,7 @@ export default function ForgotPassword() {
   const [error, setError] = useState<string>();
 
   const back = (
-    <Link to="/sign-in" className="animate-element inline-flex items-center gap-1.5 text-sm text-[#037BB5] hover:underline dark:text-[#7cc8ef]">
+    <Link to="/sign-in" className="animate-element inline-flex items-center gap-1.5 text-sm text-mk-sky hover:underline">
       <ArrowLeft className="size-4 rtl:rotate-180" aria-hidden="true" /> {t("auth.backToSignIn")}
     </Link>
   );

@@ -145,7 +145,7 @@ export default function Auth() {
   const strengthKey = strength(password);
 
   const backLink = (
-    <button type="button" onClick={reset} className="animate-element inline-flex items-center gap-1.5 text-sm text-[#037BB5] hover:underline dark:text-[#7cc8ef]">
+    <button type="button" onClick={reset} className="animate-element inline-flex items-center gap-1.5 text-sm text-mk-sky hover:underline">
       <ArrowLeft className="size-4 rtl:rotate-180" aria-hidden="true" /> {t("mk.auth.change")}
     </button>
   );
@@ -251,10 +251,10 @@ export default function Auth() {
             </div>
             <div className="animate-element animate-delay-400 flex items-center justify-between text-sm">
               <label className="flex cursor-pointer items-center gap-3">
-                <input type="checkbox" checked={keep} onChange={(e) => setKeep(e.target.checked)} className="size-4 accent-[#037BB5]" />
+                <input type="checkbox" checked={keep} onChange={(e) => setKeep(e.target.checked)} className="size-4 accent-[#c33c54]" />
                 <span>{t("mk.auth.keep")}</span>
               </label>
-              <Link to={`/forgot-password?email=${encodeURIComponent(id.trim())}`} className="text-[#037BB5] hover:underline dark:text-[#7cc8ef]">
+              <Link to={`/forgot-password?email=${encodeURIComponent(id.trim())}`} className="text-mk-sky hover:underline">
                 {t("mk.auth.forgot")}
               </Link>
             </div>
@@ -324,7 +324,7 @@ export default function Auth() {
             )}
             <div className="animate-element animate-delay-500">
               <label className="flex cursor-pointer items-start gap-3 text-sm">
-                <input type="checkbox" checked={agree} onChange={(e) => setAgree(e.target.checked)} className="mt-0.5 size-4 accent-[#037BB5]" />
+                <input type="checkbox" checked={agree} onChange={(e) => setAgree(e.target.checked)} className="mt-0.5 size-4 accent-[#c33c54]" />
                 <span>{t("mk.auth.agree")}</span>
               </label>
               <FieldError>{errors.agree}</FieldError>
@@ -370,7 +370,7 @@ export default function Auth() {
               {resendIn > 0 ? (
                 t("mk.auth.resendIn", { n: formatNumber(resendIn, locale) })
               ) : (
-                <button type="button" className="text-[#037BB5] hover:underline dark:text-[#7cc8ef]" onClick={() => auth.otpSend.mutate({ phone: toLatin(id) }, { onSuccess: () => setResendIn(60) })}>
+                <button type="button" className="text-mk-sky hover:underline" onClick={() => auth.otpSend.mutate({ phone: toLatin(id) }, { onSuccess: () => setResendIn(60) })}>
                   {t("mk.auth.resend")}
                 </button>
               )}

@@ -38,7 +38,7 @@ test("sign up, onboarding, then the dashboard", async ({ page }) => {
 test("the dashboard matches the approved mockup's numbers", async ({ page }) => {
   await signIn(page);
   await expect(page.getByText("6.0 – 7.0")).toBeVisible();
-  await expect(page.getByText(/Exam in \d+ days/)).toBeVisible();
+  await expect(page.getByRole("img", { name: /days? to go until your test/ })).toBeVisible();
   await expect(page.getByText("Matching headings").first()).toBeVisible();
   await page.getByRole("button", { name: "Focus here" }).click();
   await expect(page).toHaveURL(/practice\?type=matching-headings/);
@@ -53,8 +53,15 @@ test("results review shows the explanation and the passage evidence", async ({ p
   await first.click();
   await expect(page.locator("blockquote").first()).toBeVisible();
   await page.goto("/app/results/att-demo-4/writing/a1-w-p2");
-  await expect(page.getByText("Grammatical range")).toBeVisible();
+  await expect(page.getByRole("tab", { name: /Grammatical range/ })).toBeVisible();
   await expect(page.locator("mark").first()).toBeVisible();
+  // Score breakdown: pick a criterion, see its sub-skills, what it is worth and tips.
+  await page.getByRole("tab", { name: /Task response/ }).click();
+  await expect(page.getByRole("heading", { name: "Task response" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "What raising it is worth" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Tips for improvement" })).toBeVisible();
+  await page.getByRole("tab", { name: /Task 1/ }).click();
+  await expect(page).toHaveURL(/writing\/a1-w-p1$/);
 });
 
 test("vocabulary review: show, then grade", async ({ page }) => {

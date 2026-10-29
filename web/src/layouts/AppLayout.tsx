@@ -17,7 +17,7 @@ const NAV = [
   { to: "/app/settings", key: "nav.settings", icon: Settings },
 ] as const;
 
-/* Sidebar shell from docs/mockups/dashboard.html. Collapses to an icon row under 760px. */
+/* Sidebar shell: Ink Black like the reference dashboard (29 Oct 2026). Collapses to an icon row under 760px. */
 export function AppLayout() {
   const { t, locale } = useT();
   const me = useMe();
@@ -26,8 +26,8 @@ export function AppLayout() {
       <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:start-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-card focus:px-3 focus:py-2">
         {t("nav.skip")}
       </a>
-      <aside className="flex min-w-0 items-center gap-3 border-b border-border px-4 py-3 md:flex-col md:items-stretch md:gap-5.5 md:border-e md:border-b-0 md:px-4 md:py-5.5 md:sticky md:top-0 md:h-screen">
-        <BrandMark />
+      <aside className="flex min-w-0 items-center gap-3 bg-sidebar px-4 py-3 text-sidebar-foreground md:sticky md:top-0 md:h-screen md:flex-col md:items-stretch md:gap-5.5 md:px-4 md:py-5.5">
+        <BrandMark light />
         <nav aria-label={t("nav.label")} className="flex min-w-0 flex-1 gap-0.5 overflow-x-auto md:flex-none md:flex-col">
           {NAV.map(({ to, key, icon: Icon, ...rest }) => (
             <NavLink
@@ -36,8 +36,8 @@ export function AppLayout() {
               end={"end" in rest}
               className={({ isActive }) =>
                 cn(
-                  "flex shrink-0 items-center gap-2.5 rounded-[10px] px-2.5 py-2.5 text-muted-foreground transition-colors hover:text-foreground",
-                  isActive && "bg-card text-foreground shadow-[0_1px_0_var(--border)]",
+                  "flex shrink-0 items-center gap-2.5 rounded-[10px] px-2.5 py-2.5 text-sidebar-muted transition-colors hover:bg-white/5 hover:text-sidebar-foreground focus-visible:outline-frosted-blue",
+                  isActive && "bg-sidebar-active text-sidebar-foreground shadow-[inset_3px_0_0_var(--frosted-blue)] rtl:shadow-[inset_-3px_0_0_var(--frosted-blue)]",
                 )
               }
             >
@@ -47,8 +47,8 @@ export function AppLayout() {
           ))}
         </nav>
         {me.data && (
-          <div className="mt-auto hidden rounded-[14px] border border-border p-3 text-[13px] text-muted-foreground md:block">
-            <b className="block font-medium text-foreground">
+          <div className="mt-auto hidden rounded-[14px] border border-white/12 p-3 text-[13px] text-sidebar-muted md:block">
+            <b className="block font-medium text-sidebar-foreground">
               {t("nav.target", { band: formatBand(me.data.targets.overall, locale) })}
             </b>
             {me.data.testDate ? t("nav.examOn", { date: formatDate(me.data.testDate, locale) }) : t("nav.noTestDate")}

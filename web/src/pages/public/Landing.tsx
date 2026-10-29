@@ -94,7 +94,7 @@ function TagCloud() {
           key={k}
           className={cn(
             "rounded-full px-4 py-2 font-archivo text-[16px] leading-6 font-medium",
-            hot ? "bg-mk-orange text-[#181D1F]" : "bg-mk-card/80 text-mk-ink",
+            hot ? "bg-mk-orange text-ink-black" : "bg-mk-card/80 text-mk-ink",
           )}
         >
           {t(`types.${k}`)}
@@ -109,7 +109,7 @@ function EssayCard({ note, example }: { note: string; example: string }) {
     <div className="relative mx-auto max-w-md" aria-hidden="true">
       <div lang="en" dir="ltr" className="rounded-2xl bg-mk-card p-5 text-start font-archivo text-[16px] leading-7 text-mk-ink shadow-sm">
         <span className="mb-2 block font-gabarito text-[12px] tracking-[0.1em] text-mk-body uppercase">Task 2 · band 6.0</span>
-        Nowadays, <mark className="rounded bg-[#f8e4e7] px-0.5 text-[#181D1F] underline decoration-[#b23a48] decoration-2 underline-offset-4">in many countries the young adults</mark> continue to live with their
+        Nowadays, <mark className="rounded bg-almond-silk px-0.5 text-ink-black underline decoration-rosewood decoration-2 underline-offset-4">in many countries the young adults</mark> continue to live with their
         parents until they are almost thirty years old.
       </div>
       <div className="ms-auto mt-3 w-[85%] rounded-2xl bg-mk-ink p-4 font-archivo text-[15px] leading-6 text-mk-page shadow-lg">
@@ -130,7 +130,7 @@ function BandCard({ label, locale }: { label: string; locale: Locale }) {
         {formatBand(6, locale)} – {formatBand(7, locale)}
       </div>
       <div dir="ltr" className="relative mt-6 h-2.5 rounded-full bg-mk-ink/10">
-        <div className="absolute inset-y-0 rounded-full bg-[#037BB5]" style={{ left: "66.6%", width: "11.1%" }} />
+        <div className="absolute inset-y-0 rounded-full bg-rosewood" style={{ left: "66.6%", width: "11.1%" }} />
         <div className="absolute -top-1.5 h-5.5 w-0.5 bg-mk-ink" style={{ left: "77.7%" }} />
       </div>
       <div dir="ltr" className="mt-2 flex justify-between font-gabarito text-[12px] text-mk-body">
@@ -182,28 +182,28 @@ function BilingualCard() {
 
 const PILL_ROWS: { key: string; icon: typeof Clock; bg: string }[][] = [
   [
-    { key: "full", icon: Clock, bg: "bg-[#D7CEF0]" },
-    { key: "headings", icon: ListChecks, bg: "bg-[#FD956D]" },
-    { key: "speaking", icon: Mic, bg: "bg-[#D5E2DA]" },
-    { key: "task2", icon: PenLine, bg: "bg-[#F6E7CF]" },
-    { key: "trend", icon: BarChart3, bg: "bg-[#DBE5F0]" },
-    { key: "fa", icon: Languages, bg: "bg-[#F4E1E1]" },
+    { key: "full", icon: Clock, bg: "bg-wisteria-blue" },
+    { key: "headings", icon: ListChecks, bg: "bg-vibrant-coral" },
+    { key: "speaking", icon: Mic, bg: "bg-light-green" },
+    { key: "task2", icon: PenLine, bg: "bg-canary-yellow" },
+    { key: "trend", icon: BarChart3, bg: "bg-frosted-blue" },
+    { key: "fa", icon: Languages, bg: "bg-pink-carnation" },
   ],
   [
-    { key: "tfng", icon: SquareCheck, bg: "bg-[#DCEEEF]" },
-    { key: "sections", icon: BookOpen, bg: "bg-[#FDDBCE]" },
-    { key: "map", icon: Map, bg: "bg-[#E4EED2]" },
-    { key: "vocab", icon: NotebookPen, bg: "bg-[#D7CEF0]" },
-    { key: "coach", icon: GraduationCap, bg: "bg-[#FD956D]" },
-    { key: "time", icon: Clock, bg: "bg-[#DBE5F0]" },
+    { key: "tfng", icon: SquareCheck, bg: "bg-frosted-blue" },
+    { key: "sections", icon: BookOpen, bg: "bg-almond-silk" },
+    { key: "map", icon: Map, bg: "bg-light-green" },
+    { key: "vocab", icon: NotebookPen, bg: "bg-wisteria-blue" },
+    { key: "coach", icon: GraduationCap, bg: "bg-vibrant-coral" },
+    { key: "time", icon: Clock, bg: "bg-frosted-blue" },
   ],
   [
-    { key: "task1", icon: FileText, bg: "bg-[#F6E7CF]" },
-    { key: "review", icon: SquareCheck, bg: "bg-[#D5E2DA]" },
-    { key: "notes", icon: Highlighter, bg: "bg-[#F4E1E1]" },
-    { key: "practice", icon: Headphones, bg: "bg-[#DCEEEF]" },
-    { key: "contrast", icon: Contrast, bg: "bg-[#E4EED2]" },
-    { key: "plan", icon: Route, bg: "bg-[#FDDBCE]" },
+    { key: "task1", icon: FileText, bg: "bg-canary-yellow" },
+    { key: "review", icon: SquareCheck, bg: "bg-light-green" },
+    { key: "notes", icon: Highlighter, bg: "bg-pink-carnation" },
+    { key: "practice", icon: Headphones, bg: "bg-frosted-blue" },
+    { key: "contrast", icon: Contrast, bg: "bg-light-green" },
+    { key: "plan", icon: Route, bg: "bg-almond-silk" },
   ],
 ];
 
@@ -218,11 +218,11 @@ export default function Landing() {
         <div className="absolute inset-0 bg-[image:var(--mk-hero)]" />
         <Clouds />
         <div className="relative flex min-h-[min(816px,100svh)] flex-col items-center justify-center px-6 pt-28 pb-16 text-center">
-          <p className={cn(eyebrow, "text-[#083149] dark:text-[#cdeefe]")}>{t("mk.hero.eyebrow")}</p>
+          <p className={cn(eyebrow, "text-mk-hero-text")}>{t("mk.hero.eyebrow")}</p>
           <h1 className="mt-5 max-w-[1100px] bg-[image:var(--mk-hero-title)] bg-clip-text font-archivo text-[clamp(44px,8.6vw,128px)] leading-[1.09] font-semibold tracking-[-0.015em] text-transparent">
             {t("mk.hero.title")}
           </h1>
-          <p className="mt-6 max-w-[720px] font-archivo text-[22px] leading-8 text-[#0b3a52] max-md:text-[18px] max-md:leading-7 dark:text-[#e3f5fd]">
+          <p className="mt-6 max-w-[720px] font-archivo text-[22px] leading-8 text-mk-hero-text max-md:text-[18px] max-md:leading-7">
             {t("mk.hero.sub")}
           </p>
           <div className="mt-9 flex flex-wrap justify-center gap-3">
@@ -256,10 +256,10 @@ export default function Landing() {
           <p className={statement}>{t("mk.why.p2")}</p>
           <span aria-hidden="true">
             <svg viewBox="0 0 32 32" className="size-8">
-              <rect width="32" height="32" rx="8" fill="#037BB5" />
+              <rect width="32" height="32" rx="8" fill="#011627" />
               <rect x="7" y="17" width="4.5" height="8" rx="2.25" fill="#fff" />
               <rect x="13.75" y="12" width="4.5" height="13" rx="2.25" fill="#fff" />
-              <rect x="20.5" y="7" width="4.5" height="18" rx="2.25" fill="#FD956D" />
+              <rect x="20.5" y="7" width="4.5" height="18" rx="2.25" fill="#8EE3EF" />
             </svg>
           </span>
           <p className={statement}>{t("mk.why.p3")}</p>
@@ -337,7 +337,7 @@ export default function Landing() {
             <div key={r} className={cn("flex justify-center gap-4", r === 1 ? "ms-[-140px]" : r === 2 ? "ms-[120px]" : "")}>
               {row.map(({ key, icon: Icon, bg }) => (
                 <div key={key} className="flex shrink-0 items-center gap-4 rounded-2xl bg-mk-card py-2 ps-2 pe-6 shadow-sm">
-                  <span className={cn("grid size-14 place-items-center rounded-xl text-[#181D1F]", bg)}>
+                  <span className={cn("grid size-14 place-items-center rounded-xl text-ink-black", bg)}>
                     <Icon className="size-6" strokeWidth={1.7} aria-hidden="true" />
                   </span>
                   <span className="font-archivo text-[18px] leading-6 font-medium whitespace-nowrap">{t(`mk.inside.pills.${key}`)}</span>
@@ -351,7 +351,7 @@ export default function Landing() {
       </Section>
 
       {/* Start: dark card */}
-      <Section className="bg-[#181D1F] dark:bg-[#0b2c3d]">
+      <Section className="bg-mk-footer">
         <div className="relative grid grid-cols-1 items-center gap-10 p-14 max-md:p-8 lg:grid-cols-[1.2fr_1fr]">
           <div>
             <h2 className={cn(cardTitle, "text-white")}>{t("mk.start.title")}</h2>

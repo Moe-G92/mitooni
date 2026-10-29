@@ -23,7 +23,7 @@ export function MkButton({ to, children, light = false, className }: { to: strin
       to={to}
       className={cn(
         "inline-flex items-center justify-center gap-2 rounded-lg px-5 py-2.5 font-gabarito text-[16px] leading-6 font-semibold transition-colors",
-        light ? "bg-white text-[#181D1F] hover:bg-white/90" : "bg-mk-ink text-mk-page hover:bg-mk-ink/90",
+        light ? "bg-white text-ink-black hover:bg-white/90" : "bg-mk-ink text-mk-page hover:bg-mk-ink/90",
         className,
       )}
     >

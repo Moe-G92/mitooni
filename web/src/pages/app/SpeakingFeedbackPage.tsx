@@ -1,16 +1,19 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router";
 import { ArrowLeft, GraduationCap } from "lucide-react";
+import type { SpeakingFeedback } from "@/api/schemas";
 import { fetchRecording, useCoachMutations, useMe, useResult } from "@/api/queries";
 import { useT } from "@/i18n";
-import { formatBand, formatClock, formatDate } from "@/lib/format";
+import { formatClock, formatDate, formatNumber } from "@/lib/format";
+import { overallBand } from "@/lib/bands";
 import { PageHeader } from "@/components/PageHeader";
 import { Card, CardLabel } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ErrorState, Skeleton, Tag } from "@/components/ui/misc";
-import { CriterionTile } from "@/components/charts";
 import { AnnotatedText } from "./feedback-shared";
 import { KIND_CLASS } from "./feedback-kinds";
+import { ScoreBreakdown, SectionTabs } from "./ScoreBreakdown";
+import { liftFor } from "@/lib/breakdown";
 
 /** Plays a recording kept by the mock API (GET /api/recordings/:key). */
 function Recording({ recordingKey }: { recordingKey: string | null }) {
@@ -39,6 +42,7 @@ export default function SpeakingFeedbackPage() {
   const r = useResult(attemptId);
   const me = useMe();
   const coach = useCoachMutations();
+  const [tab, setTab] = useState<string>("overall");
 
   if (r.isError) return <ErrorState message={t("errors.load")} onRetry={() => r.refetch()} />;
   if (!r.data) return <Skeleton className="h-96" />;
@@ -61,76 +65,101 @@ export default function SpeakingFeedbackPage() {
       </Link>
       {s.dummy && <p className="mb-4 rounded-xl border border-dashed border-border px-4 py-2.5 text-xs text-muted-foreground">{t("feedback.dummySpeaking")}</p>}
       <div className="grid grid-cols-12 gap-4">
-        <Card className="col-span-12">
-          <div className="flex flex-wrap items-end gap-6">
-            <div>
-              <div className="text-[13px] text-muted-foreground">{t("common.band")}</div>
-              <div className="font-mono text-5xl leading-none">{formatBand(s.band, locale)}</div>
-            </div>
-            <div className="grid flex-1 grid-cols-2 gap-3 sm:grid-cols-4">
-              {s.criteria.map((c) => (
-                <CriterionTile key={c.key} label={t(`criteria.${c.key}`)} band={c.band} locale={locale} low={c.band < s.band} />
-              ))}
-            </div>
-          </div>
-          <blockquote className="mt-4 rounded-e-xl border-s-[3px] border-primary bg-secondary px-3.5 py-3 text-sm">{pick(s.summary)}</blockquote>
-        </Card>
+        {/* Grades first: the whole test, then each part */}
+        <SectionTabs
+          label={t("feedback.speakingTitle")}
+          value={tab}
+          onChange={setTab}
+          items={[
+            { key: "overall", title: t("breakdown.overall"), sub: t("skills.speaking"), band: s.band },
+            ...s.parts.map((p) => ({ key: p.partId, title: t("breakdown.part", { n: formatNumber(p.part, locale) }), sub: t(`breakdown.partNames.${p.part}`), band: p.band ?? null })),
+          ]}
+        />
 
-        <div className="col-span-12 flex flex-col gap-4 lg:col-span-7">
-          {s.parts.map((p) => (
-            <Card key={p.partId}>
-              <CardLabel title={t("feedback.part", { n: p.part })} note={p.durationSec ? formatClock(p.durationSec, locale) : undefined} />
-              <div className="mt-3">
-                <Recording recordingKey={p.recordingKey} />
-              </div>
-              <div className="mt-4 text-[15px]">
-                <div className="mb-1.5 text-xs text-muted-foreground">{t("feedback.transcript")}</div>
-                <AnnotatedText text={p.transcript} notes={s.annotations} />
+        {tab === "overall" ? (
+          <>
+            <blockquote className="col-span-12 rounded-e-xl border-s-[3px] border-rosewood bg-card px-4 py-3 text-sm">{pick(s.summary)}</blockquote>
+            <ScoreBreakdown
+              criteria={s.criteria}
+              criterionLabel={(k) => t(`criteria.${k}`)}
+              skillLabel={t("skills.speaking")}
+              lift={(k) => {
+                const others = r.data!.skills.filter((x) => x.skill !== "speaking").map((x) => x.band);
+                const full = r.data!.overall !== null && others.length === 3;
+                return liftFor(s.criteria, k, { skill: s.band, overall: r.data!.overall }, (b) => b, full ? (sp) => overallBand([...others, sp]) : null);
+              }}
+            />
+            <Card className="col-span-12 lg:col-span-5">
+              <CardLabel title={t("feedback.pronunciation")} />
+              <ul className="mt-3 flex flex-col gap-2.5 text-sm">
+                {s.pronunciation.map((p) => (
+                  <li key={p.word} className="rounded-xl border border-border px-3.5 py-3">
+                    <b className="font-medium" lang="en" dir="ltr">
+                      {p.word}
+                    </b>
+                    <p className="mt-1 text-muted-foreground">{pick(p.note)}</p>
+                  </li>
+                ))}
+              </ul>
+            </Card>
+            <Card className="col-span-12 lg:col-span-7">
+              <CardLabel title={t("feedback.notes")} />
+              <Notes notes={s.annotations} />
+              <div className="mt-5 border-t border-border pt-4">
+                <Button variant="outline" onClick={askCoach} disabled={coach.request.isPending}>
+                  <GraduationCap /> {t("feedback.askCoachSpeaking")}
+                </Button>
               </div>
             </Card>
-          ))}
-        </div>
-
-        <div className="col-span-12 flex flex-col gap-4 lg:col-span-5">
-          <Card>
-            <CardLabel title={t("feedback.pronunciation")} />
-            <ul className="mt-3 flex flex-col gap-2.5 text-sm">
-              {s.pronunciation.map((p) => (
-                <li key={p.word} className="rounded-xl border border-border px-3.5 py-3">
-                  <b className="font-medium" lang="en" dir="ltr">
-                    {p.word}
-                  </b>
-                  <p className="mt-1 text-muted-foreground">{pick(p.note)}</p>
-                </li>
-              ))}
-            </ul>
-          </Card>
-          <Card>
-            <CardLabel title={t("feedback.notes")} />
-            <ol className="mt-3 flex flex-col gap-2.5 text-sm">
-              {s.annotations.map((a, i) => (
-                <li key={i} className="rounded-xl border border-border px-3.5 py-3">
-                  <Tag className={KIND_CLASS[a.kind]}>{t(`feedback.kind.${a.kind}`)}</Tag>
-                  <p className="mt-1.5">{pick(a.note)}</p>
-                  {a.fix && (
-                    <p className="mt-1.5 text-muted-foreground">
-                      {t("feedback.try")}{" "}
-                      <span lang="en" dir="ltr" className="text-foreground">
-                        {a.fix}
-                      </span>
-                    </p>
-                  )}
-                </li>
-              ))}
-            </ol>
-            <div className="mt-5 border-t border-border pt-4">
-              <Button variant="outline" onClick={askCoach} disabled={coach.request.isPending}>
-                <GraduationCap /> {t("feedback.askCoachSpeaking")}
-              </Button>
-            </div>
-          </Card>
-        </div>
+          </>
+        ) : (
+          s.parts
+            .filter((p) => p.partId === tab)
+            .map((p) => {
+              const own = s.annotations.filter((a) => p.transcript.includes(a.quote));
+              return (
+                <div key={p.partId} className="contents">
+                  <Card className="col-span-12 lg:col-span-7">
+                    <CardLabel title={`${t("feedback.part", { n: formatNumber(p.part, locale) })} · ${t(`breakdown.partNames.${p.part}`)}`} note={p.durationSec ? formatClock(p.durationSec, locale) : undefined} />
+                    <div className="mt-3">
+                      <Recording recordingKey={p.recordingKey} />
+                    </div>
+                    <div className="mt-4 text-[15px]">
+                      <div className="mb-1.5 text-xs text-muted-foreground">{t("feedback.transcript")}</div>
+                      <AnnotatedText text={p.transcript} notes={own} />
+                    </div>
+                  </Card>
+                  <Card className="col-span-12 lg:col-span-5">
+                    <CardLabel title={t("breakdown.partNotes")} />
+                    {own.length ? <Notes notes={own} /> : <p className="mt-3 text-sm text-muted-foreground">{t("feedback.noNotes")}</p>}
+                  </Card>
+                </div>
+              );
+            })
+        )}
       </div>
     </>
+  );
+}
+
+function Notes({ notes }: { notes: SpeakingFeedback["annotations"] }) {
+  const { t, pick } = useT();
+  return (
+    <ol className="mt-3 flex flex-col gap-2.5 text-sm">
+      {notes.map((a, i) => (
+        <li key={i} className="rounded-xl border border-border px-3.5 py-3">
+          <Tag className={KIND_CLASS[a.kind]}>{t(`feedback.kind.${a.kind}`)}</Tag>
+          <p className="mt-1.5">{pick(a.note)}</p>
+          {a.fix && (
+            <p className="mt-1.5 text-muted-foreground">
+              {t("feedback.try")}{" "}
+              <span lang="en" dir="ltr" className="text-foreground">
+                {a.fix}
+              </span>
+            </p>
+          )}
+        </li>
+      ))}
+    </ol>
   );
 }

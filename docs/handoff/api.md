@@ -52,6 +52,7 @@ The client clock is for display. The server should own the limit: store when eac
 - Listening and Reading: one mark per question; "Choose TWO" items give one mark per correct letter. Gap answers match any accepted variant, ignoring case, extra spaces, curly apostrophes and a trailing full stop (`normaliseAnswer` in `web/src/lib/utils.ts`). Raw score to band uses the tables in `web/src/lib/bands.ts`; practice sets shorter than 40 are scaled.
 - Writing: Task 2 counts twice as much as Task 1. Overall: the mean of the four skills, with .25 rounding up to .5 and .75 up to the next band.
 - Writing and Speaking feedback in the prototype comes from fixtures and has `dummy: true`. The real marking service fills the same `WritingFeedback` and `SpeakingFeedback` shapes.
+- Score breakdown (added 29 Oct 2026, all optional so older results still parse): each `Criterion` can carry `metrics` (sub-skills such as Pace, Pausing and Hesitations, each with a 0–100 `score`, a `verdict` of `needs-work` / `acceptable` / `good` / `strong`, a `note` and an optional `example` quoted from the learner's text) and `tips` (most useful first). Each Speaking part can carry its own `band`. The client works out "what raising this criterion by one band is worth" to the skill and overall band itself (`web/src/lib/breakdown.ts`), so the backend does not send that.
 
 ## Results
 
