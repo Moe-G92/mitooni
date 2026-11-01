@@ -9,7 +9,8 @@ import { Card } from "@/components/ui/card";
 import { ScoreRing } from "@/components/charts";
 
 /*
- * Score breakdown, after the AI-examiner reference Mo sent on 29 Oct 2026:
+ * Score breakdown, after the AI-examiner reference Mo sent on 29 Oct 2026,
+ * restyled to the mitooni canvas (Coral for the picked criterion):
  * criteria on the start side (band, level and what raising each one is worth),
  * the picked criterion on the end side (level bar, sub-skills with a ring,
  * what it is worth to the skill and overall band, and tips).
@@ -79,7 +80,7 @@ export function ScoreBreakdown({
                   onKeyDown={(e) => onKey(e, i)}
                   className={cn(
                     "grid grid-cols-[32px_minmax(0,1fr)_auto] items-center gap-3 rounded-[14px] border px-3 py-2.5 text-start transition-colors",
-                    on ? "border-transparent bg-rosewood text-white shadow-sm" : "border-border bg-card hover:bg-accent",
+                    on ? "border-transparent bg-coral text-white shadow-sm" : "border-border bg-card hover:bg-accent",
                   )}
                 >
                   <Icon className={cn("size-6", on ? "text-white" : "text-muted-foreground")} strokeWidth={1.6} aria-hidden="true" />
@@ -90,7 +91,7 @@ export function ScoreBreakdown({
                       <span
                         className={cn(
                           "mt-1 inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-medium",
-                          on ? "bg-white text-rosewood" : "bg-strength-soft text-strength",
+                          on ? "bg-white text-coral" : "bg-strength-soft text-strength",
                         )}
                       >
                         <TrendingUp className="size-3" aria-hidden="true" />
@@ -100,11 +101,11 @@ export function ScoreBreakdown({
                       </span>
                     ) : null}
                     {x.key === best && (
-                      <span className={cn("mt-0.5 block text-[11px] font-medium whitespace-nowrap", on ? "text-white" : "text-rosewood dark:text-weak")}>{t("breakdown.biggest")}</span>
+                      <span className={cn("mt-0.5 block text-[11px] font-medium whitespace-nowrap", on ? "text-white" : "text-coral")}>{t("breakdown.biggest")}</span>
                     )}
                   </span>
                   <span className="flex items-center gap-1">
-                    <b className={cn("font-mono text-lg font-normal", !on && "text-foreground")}>{formatBand(x.band, locale)}</b>
+                    <b className={cn("font-archivo text-lg font-normal tabular-nums", !on && "text-foreground")}>{formatBand(x.band, locale)}</b>
                     {on && <ChevronRight className="size-4 rtl:rotate-180" aria-hidden="true" />}
                   </span>
                 </button>
@@ -136,9 +137,9 @@ function CriterionDetail({ c, label, lift, skillLabel }: { c: Criterion; label: 
         <div className="rounded-[14px] bg-muted px-4 py-3.5">
           <div className="text-center text-xs text-muted-foreground">{t("breakdown.yourLevel")}</div>
           <div className="text-center font-medium">{t(`breakdown.levels.${levelOf(c.band)}`)}</div>
-          <div dir="ltr" className="relative mt-4 mb-1 h-3 rounded-full bg-gradient-to-r from-almond-silk to-rosewood" aria-hidden="true">
+          <div dir="ltr" className="relative mt-4 mb-1 h-3 rounded-full bg-gradient-to-r from-[#FFC4EC] to-coral" aria-hidden="true">
             <span
-              className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-rosewood px-2.5 py-0.5 font-mono text-[13px] text-white shadow ring-2 ring-card"
+              className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-coral px-2.5 py-0.5 font-archivo tabular-nums text-[13px] text-white shadow ring-2 ring-card"
               style={{ left: `clamp(22px, ${pct}%, calc(100% - 22px))` }}
             >
               {formatBand(c.band, locale)}
@@ -164,7 +165,7 @@ function CriterionDetail({ c, label, lift, skillLabel }: { c: Criterion; label: 
                 onClick={() => setMi(i)}
                 className={cn(
                   "-mb-px flex shrink-0 items-center gap-2 border-b-2 px-3 py-2.5 text-sm",
-                  i === mi ? "border-rosewood font-medium text-foreground" : "border-transparent text-muted-foreground hover:text-foreground",
+                  i === mi ? "border-coral font-medium text-foreground" : "border-transparent text-muted-foreground hover:text-foreground",
                 )}
               >
                 {pick(x.label)}
@@ -180,7 +181,7 @@ function CriterionDetail({ c, label, lift, skillLabel }: { c: Criterion; label: 
               {m.example && (
                 <figure className="mt-2.5">
                   <figcaption className="text-xs text-muted-foreground">{t("breakdown.example")}</figcaption>
-                  <blockquote lang="en" dir="ltr" className="mt-1 rounded-e-lg border-s-[3px] border-rosewood bg-weak-soft px-3 py-2 text-start text-sm italic">
+                  <blockquote lang="en" dir="ltr" className="mt-1 rounded-e-lg border-s-[3px] border-coral bg-weak-soft px-3 py-2 text-start text-sm italic">
                     “{m.example}”
                   </blockquote>
                 </figure>
@@ -193,7 +194,7 @@ function CriterionDetail({ c, label, lift, skillLabel }: { c: Criterion; label: 
       )}
 
       {/* What it is worth */}
-      <div className="mt-5 rounded-[14px] bg-secondary px-4 py-3.5">
+      <div className="mt-5 rounded-[14px] bg-pink-tint px-4 py-3.5">
         <h4 className="flex items-center gap-2 text-sm font-medium">
           <TrendingUp className="size-4" aria-hidden="true" /> {t("breakdown.worth")}
         </h4>
@@ -216,7 +217,7 @@ function CriterionDetail({ c, label, lift, skillLabel }: { c: Criterion; label: 
       {c.tips && c.tips.length > 0 && (
         <div className="mt-5">
           <h4 className="flex items-center gap-2 text-sm font-medium">
-            <span className="grid size-6 place-items-center rounded-full bg-almond-silk text-ink-black">
+            <span className="grid size-6 place-items-center rounded-full bg-[#FFC4EC] text-foreground">
               <Lightbulb className="size-3.5" aria-hidden="true" />
             </span>
             {t("breakdown.tips")}
@@ -224,7 +225,7 @@ function CriterionDetail({ c, label, lift, skillLabel }: { c: Criterion; label: 
           <ol className="mt-2 flex flex-col gap-2 text-sm">
             {c.tips.map((tip, i) => (
               <li key={i} className="flex gap-2.5 rounded-xl border border-border px-3.5 py-2.5">
-                <span className="font-mono text-xs text-muted-foreground">{i + 1}</span>
+                <span className="font-archivo tabular-nums text-xs text-muted-foreground">{i + 1}</span>
                 <span>{pick(tip)}</span>
               </li>
             ))}
@@ -241,7 +242,7 @@ function LiftRow({ label, from, to }: { label: string; from: number; to: number 
   return (
     <div className="flex items-center justify-between gap-3 rounded-lg bg-card px-3 py-2">
       <dt>{label}</dt>
-      <dd className="font-mono" dir="ltr">
+      <dd className="font-archivo tabular-nums" dir="ltr">
         {formatBand(from, locale)} → <b className={cn("font-normal", up ? "text-strength" : "text-muted-foreground")}>{formatBand(to, locale)}</b>
         {!up && <span className="ms-2 font-sans text-xs text-muted-foreground">{t("breakdown.noChange")}</span>}
       </dd>
@@ -275,7 +276,7 @@ export function SectionTabs<K extends string>({
             onClick={() => onChange(it.key)}
             className={cn(
               "flex min-w-[150px] flex-1 items-center justify-between gap-3 rounded-[14px] border-b-2 px-4 py-2.5 text-start transition-colors",
-              on ? "border-rosewood bg-weak-soft/60" : "border-transparent hover:bg-accent",
+              on ? "border-coral bg-weak-soft/60" : "border-transparent hover:bg-accent",
             )}
           >
             <span className="min-w-0">
@@ -284,8 +285,8 @@ export function SectionTabs<K extends string>({
             </span>
             <span
               className={cn(
-                "shrink-0 rounded-md px-2 py-0.5 font-mono text-sm",
-                on ? "bg-rosewood text-white" : "border border-rosewood/60 text-rosewood dark:text-weak",
+                "shrink-0 rounded-md px-2 py-0.5 font-archivo tabular-nums text-sm",
+                on ? "bg-coral text-white" : "border border-coral/60 text-coral",
               )}
             >
               {formatBand(it.band, locale)}

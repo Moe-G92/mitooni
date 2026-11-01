@@ -1,5 +1,7 @@
 import { useState, type ReactNode } from "react";
 import { Bell, Menu, SquarePen, Wifi } from "lucide-react";
+import { LogoMark } from "@/components/Logo";
+import { brand } from "@/config/brand";
 
 function clockText(remaining: number, practice: boolean): string {
   // The real test shows whole minutes; practice mode adds seconds.
@@ -13,7 +15,7 @@ function clockText(remaining: number, practice: boolean): string {
   return `${minutes} minutes left`;
 }
 
-/** Official header: IELTS logo, candidate, clock top centre, connection, messages, options, notes. */
+/** Official header layout with the mitooni logo: candidate, clock top centre, connection, messages, options, notes. */
 export function ExamHeader({
   candidate,
   remaining,
@@ -25,6 +27,8 @@ export function ExamHeader({
   onOptions,
   onToggleNotes,
   notesOpen,
+  messagesButton = true,
+  bordered = false,
 }: {
   candidate: string;
   remaining?: number;
@@ -36,13 +40,19 @@ export function ExamHeader({
   onOptions: () => void;
   onToggleNotes?: () => void;
   notesOpen?: boolean;
+  /** The Speaking screens have no invigilator messages button. */
+  messagesButton?: boolean;
+  bordered?: boolean;
 }) {
   const [messages, setMessages] = useState(false);
   const warn = remaining !== undefined && remaining <= 10 * 60;
   return (
-    <header className="x-header">
-      <span className="x-logo" aria-label="IELTS">
-        IELTS
+    <header className={`x-header ${bordered ? "bordered" : ""}`}>
+      <span className="x-logo" role="img" aria-label={brand.name}>
+        <LogoMark />
+        <span className="x-logo-word" aria-hidden="true">
+          {brand.name}
+        </span>
       </span>
       <span className="x-candidate">
         <span>{candidate}</span>
@@ -60,9 +70,11 @@ export function ExamHeader({
         <button aria-label="Connected" title="Connected" type="button">
           <Wifi aria-hidden="true" />
         </button>
-        <button aria-label="Messages" title="Messages" type="button" onClick={() => setMessages((v) => !v)} aria-expanded={messages}>
-          <Bell aria-hidden="true" />
-        </button>
+        {messagesButton && (
+          <button aria-label="Messages" title="Messages" type="button" onClick={() => setMessages((v) => !v)} aria-expanded={messages}>
+            <Bell aria-hidden="true" />
+          </button>
+        )}
         <button aria-label="Options" title="Options" type="button" onClick={onOptions}>
           <Menu aria-hidden="true" />
         </button>

@@ -1,19 +1,17 @@
 import { brand } from "@/config/brand";
 import { useState, type ReactNode } from "react";
 import { Link } from "react-router";
-import { Eye, EyeOff } from "lucide-react";
-import { useT } from "@/i18n";
+import { ArrowLeft, Eye, EyeOff } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { formatNumber } from "@/lib/format";
 import { Logo } from "@/components/Logo";
 import { LanguageSwitch } from "@/components/TopControls";
 
 /*
- * Adapted from the 21st.dev "sign-in" component (@jahed): form column on the
- * start side, a hero panel with floating cards on the end side, glass inputs
- * and staggered entrance animations. Changes: theme tokens and fonts from the
- * public site, right-to-left support, accessible labels, and product cards
- * instead of testimonials (there are no real learners yet).
+ * Shared pieces for sign-in, sign-up and forgot password, styled after the
+ * mitooni canvases (SignIn.dc.html, ForgotPassword.dc.html): a white form
+ * column on the start side (logo, language switch, form centred at 448px) and
+ * a rounded illustrated panel on the end side from the lg breakpoint up.
+ * First adapted from the 21st.dev "sign-in" component (@jahed).
  */
 
 export const GoogleIcon = () => (
@@ -25,12 +23,13 @@ export const GoogleIcon = () => (
   </svg>
 );
 
-export function GlassInputWrapper({ children, invalid }: { children: ReactNode; invalid?: boolean }) {
+/** Light grey rounded field box (canvas: 4% ink fill, 12% ink border, 16px radius). */
+export function InputBox({ children, invalid }: { children: ReactNode; invalid?: boolean }) {
   return (
     <div
       className={cn(
-        "rounded-2xl border bg-mk-ink/[0.04] backdrop-blur-sm transition-colors focus-within:border-rosewood/70 focus-within:bg-frosted-blue/[0.12] dark:bg-white/[0.05]",
-        invalid ? "border-weak" : "border-mk-line",
+        "rounded-2xl border bg-[rgba(1,22,39,0.04)] transition-colors focus-within:border-primary focus-within:bg-white focus-within:ring-3 focus-within:ring-primary/20",
+        invalid ? "border-weak" : "border-[rgba(1,22,39,0.12)]",
       )}
     >
       {children}
@@ -38,8 +37,22 @@ export function GlassInputWrapper({ children, invalid }: { children: ReactNode; 
   );
 }
 
-export const glassInput =
-  "w-full rounded-2xl bg-transparent p-4 text-[16px] text-mk-ink placeholder:text-mk-body/70 focus:outline-none";
+/** The input inside an InputBox: 52px tall overall. */
+export const inputClass =
+  "block h-[50px] w-full rounded-2xl bg-transparent px-4 text-[16px] text-foreground placeholder:text-[#6b7480] focus:outline-none";
+
+/** Full-width Deep Wisteria button. */
+export const primaryButton =
+  "block w-full rounded-2xl bg-primary py-4 text-center font-gabarito text-[15px] leading-normal font-medium text-white transition-colors hover:bg-deep-wisteria-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:opacity-60";
+
+/** Coral text link or button (back links, "Forgot password?", resend). */
+export const coralLink = "text-coral hover:underline focus-visible:rounded focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-coral";
+
+export const checkboxClass = "size-4 shrink-0 accent-coral";
+
+export const titleClass = "font-archivo text-[36px] leading-[1.25] font-semibold tracking-[-0.02em] text-foreground";
+
+export const leadClass = "text-[15px] text-[#3a4855]";
 
 export function PasswordInput({
   id,
@@ -62,8 +75,9 @@ export function PasswordInput({
 }) {
   const [show, setShow] = useState(false);
   return (
-    <GlassInputWrapper invalid={invalid}>
-      <div className="relative">
+    <InputBox invalid={invalid}>
+      {/* The field is always left to right (passwords, emails), so the eye button sits on the right in both languages. */}
+      <div className="relative" dir="ltr">
         <input
           id={id}
           name="password"
@@ -74,25 +88,25 @@ export function PasswordInput({
           placeholder={placeholder}
           autoComplete={autoComplete}
           aria-invalid={invalid}
-          className={cn(glassInput, "pe-12")}
+          className={cn(inputClass, "pr-12 text-left [&:lang(fa)]:placeholder:text-right")}
         />
         <button
           type="button"
           onClick={() => setShow((s) => !s)}
           aria-label={show ? hideLabel : showLabel}
           aria-pressed={show}
-          className="absolute inset-y-0 end-3 flex items-center text-mk-body hover:text-mk-ink"
+          className="absolute inset-y-0 right-3 flex items-center text-[#3a4855] hover:text-foreground focus-visible:outline-2 focus-visible:outline-primary"
         >
-          {show ? <EyeOff className="size-5" /> : <Eye className="size-5" />}
+          {show ? <EyeOff className="size-5" aria-hidden="true" /> : <Eye className="size-5" aria-hidden="true" />}
         </button>
       </div>
-    </GlassInputWrapper>
+    </InputBox>
   );
 }
 
 export function FieldLabel({ htmlFor, children }: { htmlFor?: string; children: ReactNode }) {
   return (
-    <label htmlFor={htmlFor} className="mb-1.5 block text-[14px] font-medium text-mk-body">
+    <label htmlFor={htmlFor} className="mb-1.5 block text-[14px] font-medium text-[#3a4855]">
       {children}
     </label>
   );
@@ -107,58 +121,47 @@ export function FieldError({ id, children }: { id?: string; children?: ReactNode
   );
 }
 
-/** Product facts shown as the component's floating cards. */
-function PanelCard({ title, body, delay, mark }: { title: string; body: string; delay: string; mark: ReactNode }) {
-  return (
-    <div className={cn("animate-testimonial flex w-64 items-start gap-3 rounded-3xl border border-white/30 bg-white/70 p-5 text-ink-black backdrop-blur-xl dark:bg-[#020c15]/60 dark:text-white", delay)}>
-      <span className="grid size-10 shrink-0 place-items-center rounded-2xl bg-rosewood text-white">{mark}</span>
-      <div className="text-sm leading-snug">
-        <p className="font-semibold">{title}</p>
-        <p className="mt-1 opacity-75">{body}</p>
-      </div>
-    </div>
+/** Coral "back" link with an arrow that flips in RTL. Pass `to` for a link, `onClick` for a button. */
+export function BackLink({ to, onClick, children }: { to?: string; onClick?: () => void; children: ReactNode }) {
+  const inner = (
+    <>
+      <ArrowLeft className="size-4 rtl:-scale-x-100" aria-hidden="true" /> {children}
+    </>
+  );
+  const cls = cn("inline-flex items-center gap-1.5 self-start text-[14px]", coralLink);
+  return to ? (
+    <Link to={to} className={cls}>
+      {inner}
+    </Link>
+  ) : (
+    <button type="button" onClick={onClick} className={cls}>
+      {inner}
+    </button>
   );
 }
 
-export function AuthShell({ children }: { children: ReactNode }) {
-  const { t, locale } = useT();
+/** Dashed prototype note under the form. */
+export function PrototypeNote({ children }: { children: ReactNode }) {
+  return <p className="rounded-xl border border-dashed border-[rgba(1,22,39,0.12)] px-4 py-3 text-[12px] leading-5 text-[#3a4855]">{children}</p>;
+}
+
+/** Full-screen two-column layout: form on the start side, `panel` on the end side (lg and up). */
+export function AuthShell({ children, panel }: { children: ReactNode; panel: ReactNode }) {
   return (
-    <div className="mk flex min-h-[100dvh] w-full flex-col bg-mk-page font-gabarito text-mk-ink md:flex-row">
-      <section className="flex flex-1 flex-col p-6 sm:p-8">
+    <div className="grid min-h-[100dvh] w-full bg-white font-gabarito text-[15px] leading-normal text-foreground lg:grid-cols-2">
+      <section className="flex min-w-0 flex-col p-4 sm:p-8">
         <div className="flex items-center justify-between gap-3">
-          <Link to="/" aria-label={brand.name}>
+          <Link to="/" aria-label={brand.name} className="flex rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
             <Logo />
           </Link>
-          <div className="flex items-center gap-2">
-            <LanguageSwitch />
-          </div>
+          <LanguageSwitch className="bg-white" />
         </div>
-        <div className="flex flex-1 items-center justify-center py-10">
-          <div className="w-full max-w-md">{children}</div>
-        </div>
+        <main id="main" className="flex flex-1 items-center justify-center py-10">
+          <div className="w-full max-w-[448px]">{children}</div>
+        </main>
       </section>
-
-      <section className="relative hidden flex-1 p-4 md:block" aria-hidden="true">
-        <div className="animate-slide-right animate-delay-300 absolute inset-4 overflow-hidden rounded-3xl bg-[image:var(--mk-hero)]">
-          {["start-[-10%] top-[46%] h-[34%] w-[60%]", "end-[-12%] top-[62%] h-[36%] w-[58%]", "end-[8%] top-[8%] h-[22%] w-[40%]"].map((p, i) => (
-            <span key={i} className={cn("absolute rounded-[50%] bg-[var(--mk-cloud)] blur-[48px]", p)} />
-          ))}
-          <div className="relative p-12">
-            <p className="font-gabarito text-[16px] font-semibold tracking-[0.1em] text-mk-hero-text uppercase">{t("mk.auth.panelEyebrow")}</p>
-            <p className="mt-4 max-w-md bg-[image:var(--mk-hero-title)] bg-clip-text font-archivo text-[56px] leading-[1.05] font-semibold tracking-[-0.015em] text-transparent lg:text-[64px]">
-              {t("mk.auth.panelTitle")}
-            </p>
-          </div>
-        </div>
-        <div className="absolute bottom-8 left-1/2 flex w-full -translate-x-1/2 justify-center gap-4 px-8">
-          <PanelCard title={t("mk.auth.card1Title")} body={t("mk.auth.card1Body")} delay="animate-delay-1000" mark={<span className="font-archivo text-sm font-bold">{formatNumber(7, locale)}</span>} />
-          <div className="hidden xl:flex">
-            <PanelCard title={t("mk.auth.card2Title")} body={t("mk.auth.card2Body")} delay="animate-delay-1200" mark={<span className="font-archivo text-sm font-bold">S</span>} />
-          </div>
-          <div className="hidden 2xl:flex">
-            <PanelCard title={t("mk.auth.card3Title")} body={t("mk.auth.card3Body")} delay="animate-delay-1400" mark={<span className="text-sm font-bold">فا</span>} />
-          </div>
-        </div>
+      <section className="hidden min-w-0 p-4 lg:block" aria-hidden="true">
+        {panel}
       </section>
     </div>
   );

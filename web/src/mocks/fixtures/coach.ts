@@ -1,17 +1,17 @@
 import type { Coach, CoachReview, Notification } from "@/api/schemas";
 
-/* A fictional tutor. Any resemblance to a real person is accidental. */
+/* A generic tutor profile: no named person and no examiner credential. */
 export const coach: Coach = {
   id: "coach-1",
-  name: "Dr Shirin Navabi",
-  initials: "SN",
+  name: "Your coach",
+  initials: "YC",
   credentials: {
-    en: "IELTS Band 8.5 · Former IELTS Writing and Speaking examiner · PhD in Applied Linguistics",
-    fa: "نمرهٔ ۸٫۵ آیلتس · ممتحن پیشین رایتینگ و اسپیکینگ آیلتس · دکترای زبان‌شناسی کاربردی",
+    en: "Band 8.5 IELTS tutor",
+    fa: "مدرس آیلتس با نمرهٔ ۸٫۵",
   },
   bio: {
-    en: "Shirin marked IELTS Writing and Speaking for nine years before she began coaching full time. She helps Persian-speaking learners find the two or three habits that hold their band down and fix them first.",
-    fa: "شیرین پیش از آنکه تمام‌وقت مربی شود، نُه سال ممتحن رایتینگ و اسپیکینگ آیلتس بود. او به فارسی‌زبان‌ها کمک می‌کند آن دو سه عادتی را که جلوی بالا رفتن نمره‌شان را گرفته است پیدا کنند و اول همان‌ها را درست کنند.",
+    en: "Your coach helps Persian-speaking learners find the two or three habits that hold their band down and fix them first.",
+    fa: "مربی شما به فارسی‌زبان‌ها کمک می‌کند آن دو سه عادتی را که جلوی بالا رفتن نمره‌شان را گرفته است پیدا کنند و اول همان‌ها را درست کنند.",
   },
 };
 
@@ -26,7 +26,7 @@ export const coachReviewsSeed: CoachReview[] = [
     messages: [
       {
         author: "me",
-        text: "Hi Shirin, this is my Task 2 from last week's mock. I always get 5.5 in writing and I don't know what to change first.",
+        text: "Hi, this is my Task 2 from last week's mock. I always get 5.5 in writing and I don't know what to change first.",
         at: "2026-10-24T17:40:00Z",
       },
       {
@@ -79,8 +79,8 @@ export const notificationsSeed: Notification[] = [
     id: "n2",
     title: { en: "Your coach replied", fa: "مربی‌تان پاسخ داد" },
     body: {
-      en: "Shirin left new comments on your Task 2 essay about working from home.",
-      fa: "شیرین نکته‌های تازه‌ای روی مقالهٔ تسک ۲ شما دربارهٔ دورکاری نوشت.",
+      en: "Your coach left new comments on your Task 2 essay about working from home.",
+      fa: "مربی‌تان نکته‌های تازه‌ای روی مقالهٔ تسک ۲ شما دربارهٔ دورکاری نوشت.",
     },
     at: "2026-10-27T14:30:00Z",
     read: false,

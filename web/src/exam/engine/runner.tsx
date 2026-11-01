@@ -14,6 +14,13 @@ export type RunnerCtx = {
   setVolume: (v: number) => void;
   /** Speaking ends itself when Part 3 is done. */
   submitNow: () => void;
+  /**
+   * Speaking: submits the section without leaving the page, so the room can
+   * show its own confirmation. Resolves true when the whole result is ready.
+   */
+  submitSection: () => Promise<boolean>;
+  /** Goes up by one each time "Go to submission page" is chosen in Options during Speaking. */
+  summaryRequest: number;
 };
 
 export const Runner = createContext<RunnerCtx | null>(null);

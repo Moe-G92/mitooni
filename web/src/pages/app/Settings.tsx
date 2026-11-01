@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
-import type { Profile, Skill, ThemeChoice } from "@/api/schemas";
+import type { Profile, Skill } from "@/api/schemas";
 import { useMe, useResetDemo, useUpdateMe } from "@/api/queries";
 import { useT } from "@/i18n";
 import { formatBand } from "@/lib/format";
-import { setPrefs, usePrefs } from "@/lib/prefs";
 import { PageHeader } from "@/components/PageHeader";
 import { Card, CardLabel } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Field, Input, Select } from "@/components/ui/form";
-import { Segmented, Skeleton, Switch } from "@/components/ui/misc";
+import { Skeleton, Switch } from "@/components/ui/misc";
 import { LanguageSwitch } from "@/components/TopControls";
 
 const BANDS = Array.from({ length: 11 }, (_, i) => 4 + i * 0.5);
@@ -31,7 +30,6 @@ export default function Settings() {
   const me = useMe();
   const update = useUpdateMe();
   const reset = useResetDemo();
-  const prefs = usePrefs();
   const [draft, setDraft] = useState<Profile | null>(null);
   const [saved, setSaved] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -111,22 +109,6 @@ export default function Settings() {
               <div className="flex items-center justify-between gap-3">
                 <span className="text-sm">{t("settings.language")}</span>
                 <LanguageSwitch />
-              </div>
-              <div className="flex flex-wrap items-center justify-between gap-3">
-                <span className="text-sm">{t("settings.theme")}</span>
-                <Segmented<ThemeChoice>
-                  label={t("settings.theme")}
-                  value={prefs.theme}
-                  onChange={(v) => {
-                    setPrefs({ theme: v });
-                    patch({ theme: v });
-                  }}
-                  items={[
-                    { value: "system", label: t("settings.themeSystem") },
-                    { value: "light", label: t("settings.themeLight") },
-                    { value: "dark", label: t("settings.themeDark") },
-                  ]}
-                />
               </div>
             </div>
           </Card>

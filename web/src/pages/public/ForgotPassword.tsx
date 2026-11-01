@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { Link, useSearchParams } from "react-router";
-import { ArrowLeft } from "lucide-react";
+import { useSearchParams } from "react-router";
 import { useAuth } from "@/api/queries";
 import { useT } from "@/i18n";
 import { emailOk } from "@/lib/validate";
-import { AuthShell, FieldError, FieldLabel, GlassInputWrapper, glassInput } from "@/components/ui/sign-in";
+import { cn } from "@/lib/utils";
+import { AuthShell, BackLink, FieldError, FieldLabel, InputBox, inputClass, leadClass, primaryButton, titleClass } from "@/components/ui/sign-in";
+import { OopsPanel } from "@/components/public/auth/AuthPanel";
 
 export default function ForgotPassword() {
   const { t } = useT();
@@ -13,22 +14,27 @@ export default function ForgotPassword() {
   const [email, setEmail] = useState(params.get("email") ?? "");
   const [error, setError] = useState<string>();
 
-  const back = (
-    <Link to="/sign-in" className="animate-element inline-flex items-center gap-1.5 text-sm text-mk-sky hover:underline">
-      <ArrowLeft className="size-4 rtl:rotate-180" aria-hidden="true" /> {t("auth.backToSignIn")}
-    </Link>
-  );
+  const back = <BackLink to="/sign-in">{t("mk.auth.backToSignIn")}</BackLink>;
 
   return (
-    <AuthShell>
+    <AuthShell panel={<OopsPanel />}>
       {forgot.isSuccess ? (
         <div className="flex flex-col gap-5">
           {back}
-          <h1 className="animate-element animate-delay-100 font-archivo text-4xl leading-tight font-semibold tracking-[-0.02em]">{t("auth.checkEmail")}</h1>
-          <p className="animate-element animate-delay-200 text-mk-body">
-            {t("auth.checkEmailSub", { email: "__E__" })
+          <h1 className={titleClass}>{t("mk.auth.checkEmail")}</h1>
+          <p className={leadClass} role="status">
+            {t("mk.auth.checkEmailSub", { email: "__E__" })
               .split("__E__")
-              .flatMap((part, i) => (i ? [<bdi key={i} dir="ltr">{email}</bdi>, part] : [part]))}
+              .flatMap((part, i) =>
+                i
+                  ? [
+                      <bdi key={i} dir="ltr" className="font-medium text-foreground">
+                        {email}
+                      </bdi>,
+                      part,
+                    ]
+                  : [part],
+              )}
           </p>
         </div>
       ) : (
@@ -43,11 +49,11 @@ export default function ForgotPassword() {
           }}
         >
           {back}
-          <h1 className="animate-element animate-delay-100 font-archivo text-4xl leading-tight font-semibold tracking-[-0.02em]">{t("auth.forgotTitle")}</h1>
-          <p className="animate-element animate-delay-200 text-mk-body">{t("auth.forgotSub")}</p>
-          <div className="animate-element animate-delay-300">
+          <h1 className={titleClass}>{t("mk.auth.forgotTitle")}</h1>
+          <p className={leadClass}>{t("mk.auth.forgotSub")}</p>
+          <div>
             <FieldLabel htmlFor="email">{t("mk.auth.email")}</FieldLabel>
-            <GlassInputWrapper invalid={!!error}>
+            <InputBox invalid={!!error}>
               <input
                 id="email"
                 type="email"
@@ -58,13 +64,14 @@ export default function ForgotPassword() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder={t("mk.auth.emailPh")}
                 aria-invalid={!!error}
-                className={glassInput}
+                aria-describedby={error ? "email-err" : undefined}
+                className={cn(inputClass, "text-start")}
               />
-            </GlassInputWrapper>
-            <FieldError>{error}</FieldError>
+            </InputBox>
+            <FieldError id="email-err">{error}</FieldError>
           </div>
-          <button type="submit" disabled={forgot.isPending} className="animate-element animate-delay-400 w-full rounded-2xl bg-mk-ink py-4 font-medium text-mk-page hover:bg-mk-ink/90 disabled:opacity-60">
-            {t("auth.sendLink")}
+          <button type="submit" disabled={forgot.isPending} className={primaryButton}>
+            {t("mk.auth.sendLink")}
           </button>
         </form>
       )}

@@ -25,33 +25,33 @@ test("sign up, onboarding, then the dashboard", async ({ page }) => {
   // Step 2 must not submit early (distinct Next and Finish buttons).
   await expect(page.getByText("When is your test?")).toBeVisible();
   await page.getByLabel("Test date").fill("2026-12-20");
-  await page.getByRole("button", { name: "Next" }).click();
-  await expect(page.getByText("Last details")).toBeVisible();
+  // Two steps only: the second ends the onboarding.
   await page.getByRole("button", { name: "Go to my dashboard" }).click();
 
   await expect(page).toHaveURL(/\/app$/);
-  await expect(page.getByRole("heading", { name: "Overview" })).toBeVisible();
-  await expect(page.getByText("target 7.5", { exact: true })).toBeVisible();
+  await expect(page.getByRole("heading", { level: 1, name: /^Good (morning|afternoon|evening), Reza$/ })).toBeVisible();
   await expect(page.getByText("Target band 7.5")).toBeVisible();
 });
 
-test("the dashboard matches the approved mockup's numbers", async ({ page }) => {
+test("the dashboard leads with the next drill", async ({ page }) => {
   await signIn(page);
-  await expect(page.getByText("6.0 – 7.0")).toBeVisible();
-  await expect(page.getByRole("img", { name: /days? to go until your test/ })).toBeVisible();
+  await expect(page.getByRole("img", { name: /days? to go until your test/ }).first()).toBeVisible();
   await expect(page.getByText("Matching headings").first()).toBeVisible();
-  await page.getByRole("button", { name: "Focus here" }).click();
-  await expect(page).toHaveURL(/practice\?type=matching-headings/);
+  await page.getByRole("link", { name: /Start drill/ }).click();
+  await expect(page).toHaveURL(/\/(exam\/new|app\/practice)/);
 });
 
 test("results review shows the explanation and the passage evidence", async ({ page }) => {
   await signIn(page);
   await page.goto("/app/results/att-demo-4");
   await expect(page.getByText("Competent user")).toBeVisible();
-  await page.getByRole("radio", { name: "Only mistakes" }).click();
-  const first = page.locator("li button[aria-expanded]").first();
-  await first.click();
-  await expect(page.locator("blockquote").first()).toBeVisible();
+  // The jump strip opens the Listening part and lands on the highlighted answer in the transcript.
+  await page.getByRole("button", { name: "Question 11, incorrect" }).first().click();
+  await expect(page.locator("mark").first()).toBeVisible();
+  // Reading passages open to show the text beside its questions.
+  const passage = page.locator("button[aria-expanded=false]").filter({ hasText: /Questions 1–13/ }).first();
+  await passage.click();
+  await expect(page.getByLabel("Questions").first()).toBeVisible();
   await page.goto("/app/results/att-demo-4/writing/a1-w-p2");
   await expect(page.getByRole("tab", { name: /Grammatical range/ })).toBeVisible();
   await expect(page.locator("mark").first()).toBeVisible();
@@ -67,18 +67,22 @@ test("results review shows the explanation and the passage evidence", async ({ p
 test("vocabulary review: show, then grade", async ({ page }) => {
   await signIn(page);
   await page.goto("/app/vocabulary");
-  const due = Number(await page.locator(".font-mono.text-5xl").first().innerText());
+  const due = Number(await page.locator(".font-archivo.text-5xl").first().innerText());
   await page.getByRole("link", { name: "Start review" }).click();
   await page.getByRole("button", { name: /Show answer/ }).click();
+  // Wait for the grade to be saved before leaving the page.
+  const saved = page.waitForResponse((r) => /\/api\/vocab\/[^/]+\/review$/.test(r.url()) && r.ok());
   await page.getByRole("button", { name: /Good/ }).click();
+  await saved;
   await expect(page.getByText(/^1 \/ /)).toBeVisible();
   await page.goto("/app/vocabulary");
-  await expect(page.locator(".font-mono.text-5xl").first()).toHaveText(String(due - 1));
+  await expect(page.locator(".font-archivo.text-5xl").first()).toHaveText(String(due - 1));
 });
 
 test("coach: join, book a call, send a message and get a reply", async ({ page }) => {
   await signIn(page);
   await page.goto("/app/coach");
+  // Prototype: joining switches the account to the coach plan.
   await page.getByRole("button", { name: "Add coach support" }).click();
   await page.getByRole("button", { name: /^Book a call on/ }).first().click();
   await expect(page.getByText("No calls booked")).toHaveCount(0);
@@ -93,7 +97,7 @@ test("Persian switches the app to right to left; the exam stays English", async 
   await signIn(page);
   await page.getByRole("button", { name: "تغییر زبان به فارسی" }).click();
   await expect(page.locator("html")).toHaveAttribute("dir", "rtl");
-  await expect(page.getByRole("heading", { name: "نمای کلی" })).toBeVisible();
+  await expect(page.getByRole("heading", { level: 1, name: /^(صبح|ظهر|عصر) بخیر، / })).toBeVisible();
   await page.goto("/exam/new/practice-a1-r-g1?mode=practice");
   const root = page.locator(".exam-root");
   await expect(root).toHaveAttribute("dir", "ltr");

@@ -27,8 +27,10 @@ export default function Practice() {
   const catalog = usePractice();
   const open = useAttempts("in-progress");
   const focusType = params.get("type");
+  const skillParam = params.get("skill");
   const [mode, setMode] = useState<"practice" | "exam">("practice");
-  const [skill, setSkill] = useState<Skill>("reading");
+  // "Practise Listening" on the Overview arrives with ?skill=listening.
+  const [skill, setSkill] = useState<Skill>(SKILLS.some((x) => x.skill === skillParam) ? (skillParam as Skill) : "reading");
 
   // "Focus here" links arrive with ?type=; open the skill that has it.
   useEffect(() => {
@@ -79,12 +81,12 @@ export default function Practice() {
           value={skill}
           onValueChange={(v) => {
             setSkill(v as Skill);
-            if (focusType) setParams({}, { replace: true });
+            if (focusType || skillParam) setParams({}, { replace: true });
           }}
         >
           <TabsList className="mb-4 flex-wrap">
             {SKILLS.map(({ skill: s, icon: Icon }) => (
-              <TabsTrigger key={s} value={s} className="gap-2">
+              <TabsTrigger key={s} value={s} className="inline-flex items-center gap-2">
                 <Icon className="size-4" aria-hidden="true" /> {t(`skills.${s}`)}
               </TabsTrigger>
             ))}
@@ -96,7 +98,7 @@ export default function Practice() {
                   tp.sets.map((set) => {
                     const highlight = tp.type !== null && tp.type === focusType;
                     return (
-                      <Card key={set.id} className={cn("flex flex-col", highlight && "ring-2 ring-ring")}>
+                      <Card key={set.id} className={cn("flex flex-col", highlight && "ring-2 ring-primary")}>
                         <div className="flex items-start justify-between gap-3">
                           <h3 className="font-medium">
                             {tp.type ? t(`types.${tp.type}`) : group.skill === "writing" ? t("practice.writingTask", { n: set.title.slice(-1) }) : t("practice.speakingPart", { n: set.title.slice(-1) })}

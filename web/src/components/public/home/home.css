@@ -1,0 +1,58 @@
+/*
+ * Landing page motion (canvas Main.dc.html). Hero: the answer sheet is written,
+ * ticked and stamped "Band score 7.0" on a 4.67 s loop while the book and sheet
+ * drift. Feedback: the note pops, the fix appears and the 6.0 stamp lands
+ * (3.75 s). Report: the score counts up and the bars fill (3.68 s).
+ * Every animation stops under prefers-reduced-motion and shows its end state.
+ */
+
+@keyframes hmSheet { 0%, 100% { transform: rotate(6deg) translateY(0); } 50% { transform: rotate(4deg) translateY(-10px); } }
+@keyframes hmBack { 0%, 100% { transform: rotate(-7deg) translateY(0); } 50% { transform: rotate(-9deg) translateY(6px); } }
+@keyframes hmFront { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes hmWrite { 0%, 8% { clip-path: inset(0 100% 0 0); } 22%, 100% { clip-path: inset(0 0 0 0); } }
+@keyframes hmTick { 0%, 18% { opacity: 0; transform: scale(0.2); } 26% { opacity: 1; transform: scale(1.4); } 32%, 100% { opacity: 1; transform: scale(1); } }
+@keyframes hmBand {
+  0%, 68% { opacity: 0; transform: translate(-50%, -50%) rotate(-16deg) scale(2.6); }
+  73% { opacity: 1; transform: translate(-50%, -50%) rotate(-16deg) scale(0.92); }
+  77%, 94% { opacity: 1; transform: translate(-50%, -50%) rotate(-16deg) scale(1); }
+  100% { opacity: 0; transform: translate(-50%, -50%) rotate(-16deg) scale(1); }
+}
+.hm-sheet { transform: rotate(6deg); animation: hmSheet 6s ease-in-out infinite; }
+.hm-back { transform: rotate(-7deg); animation: hmBack 7s ease-in-out infinite; }
+.hm-front { animation: hmFront 6s ease-in-out infinite 0.4s; }
+.hm-w { display: inline-block; animation: hmWrite 4.67s ease-out infinite both; }
+.hm-t { display: inline-block; animation: hmTick 4.67s ease-out infinite both; }
+.hm-band { opacity: 0; transform: translate(-50%, -50%) rotate(-16deg); animation: hmBand 4.67s ease-out infinite both; }
+
+@keyframes hmPop { 0% { opacity: 0; transform: translateY(-6px) scale(0.92); } 6% { opacity: 1; transform: translateY(1px) scale(1.01); } 9%, 92% { opacity: 1; transform: none; } 100% { opacity: 0; transform: translateY(4px); } }
+@keyframes hmFix { 0%, 22% { opacity: 0; transform: scale(0.7); } 27% { opacity: 1; transform: scale(1.08); } 31%, 92% { opacity: 1; transform: none; } 100% { opacity: 0; } }
+@keyframes hmStamp { 0%, 48% { opacity: 0; transform: rotate(-14deg) scale(2.6); } 54% { opacity: 1; transform: rotate(-14deg) scale(0.92); } 58%, 94% { opacity: 1; transform: rotate(-14deg) scale(1); } 100% { opacity: 0; transform: rotate(-14deg) scale(1); } }
+.hm-bubble { transform-origin: 110px 0; animation: hmPop 3.75s ease-out infinite both; }
+.hm-fix { transform-origin: 0 50%; animation: hmFix 3.75s ease-out infinite both; }
+.hm-stamp { opacity: 0; transform: rotate(-14deg); animation: hmStamp 3.75s ease-out infinite both; }
+
+@property --hmn { syntax: "<integer>"; initial-value: 0; inherits: false; }
+@keyframes hmCount { 0% { --hmn: 0; } 41.7%, 100% { --hmn: 27; } }
+@keyframes hmBandPop { 0%, 42.9% { opacity: 0; transform: scale(0.4); } 50% { opacity: 1; transform: scale(1.18); } 54.8%, 100% { opacity: 1; transform: scale(1); } }
+@keyframes hmBar { 0%, 47.6% { transform: scaleX(0); } 69%, 100% { transform: scaleX(1); } }
+@keyframes hmNum { 0%, 61.9% { opacity: 0; transform: translateY(6px); } 71.4%, 100% { opacity: 1; transform: none; } }
+@keyframes hmTarget { 0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(250, 255, 127, 0.7); } 50% { transform: scale(1.18); box-shadow: 0 0 0 8px rgba(250, 255, 127, 0); } }
+.hm-cnt { --hmn: 27; counter-reset: hmn var(--hmn); animation: hmCount 3.68s cubic-bezier(0.3, 0.6, 0.4, 1) infinite; }
+.hm-cnt::after { content: counter(hmn); }
+.hm-cnt-fa::after { content: counter(hmn, persian); }
+.hm-bandpop { display: inline-block; animation: hmBandPop 3.68s ease-out infinite both; }
+.hm-bar { transform-origin: 0 50%; animation: hmBar 3.68s cubic-bezier(0.2, 0.7, 0.3, 1) infinite both; }
+[dir="rtl"] .hm-bar { transform-origin: 100% 50%; }
+.hm-num { animation: hmNum 3.68s ease-out infinite both; }
+.hm-target { animation: hmTarget 1.4s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hm-sheet, .hm-back, .hm-front, .hm-w, .hm-t, .hm-band,
+  .hm-bubble, .hm-fix, .hm-stamp,
+  .hm-cnt, .hm-bandpop, .hm-bar, .hm-num, .hm-target {
+    animation: none !important;
+  }
+  .hm-band { opacity: 1; transform: translate(-50%, -50%) rotate(-16deg); }
+  .hm-stamp { opacity: 1; transform: rotate(-14deg); }
+  .hm-cnt { --hmn: 27; }
+}

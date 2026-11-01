@@ -9,10 +9,9 @@ import { cn } from "@/lib/utils";
 import { PageHeader } from "@/components/PageHeader";
 import { Card, CardLabel } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ErrorState, Skeleton, Tag } from "@/components/ui/misc";
+import { ErrorState, Skeleton } from "@/components/ui/misc";
 import { Rich } from "@/exam/widgets/QuestionGroupView";
-import { AnnotatedText } from "./feedback-shared";
-import { KIND_CLASS } from "./feedback-kinds";
+import { AnnotatedText, NoteBody } from "./feedback-shared";
 import { ScoreBreakdown, SectionTabs } from "./ScoreBreakdown";
 import { liftFor } from "@/lib/breakdown";
 
@@ -119,21 +118,9 @@ export default function WritingFeedbackPage() {
                     setActive(i);
                     document.getElementById(`ann-${i}`)?.scrollIntoView({ block: "center" });
                   }}
-                  className={cn("w-full rounded-xl border border-border px-3.5 py-3 text-start text-sm hover:bg-accent/50", active === i && "ring-2 ring-ring")}
+                  className={cn("w-full rounded-xl border border-border px-3.5 py-3 text-start text-sm hover:bg-accent/50 focus-visible:outline-2 focus-visible:outline-ring", active === i && "ring-2 ring-ring")}
                 >
-                  <div className="flex items-center gap-2">
-                    <span className="font-mono text-xs text-muted-foreground">{formatNumber(i + 1, locale)}</span>
-                    <Tag className={KIND_CLASS[a.kind]}>{t(`feedback.kind.${a.kind}`)}</Tag>
-                  </div>
-                  <p className="mt-1.5">{pick(a.note)}</p>
-                  {a.fix && (
-                    <p className="mt-1.5 text-muted-foreground">
-                      {t("feedback.try")}{" "}
-                      <span lang="en" dir="ltr" className="text-foreground">
-                        {a.fix}
-                      </span>
-                    </p>
-                  )}
+                  <NoteBody note={a} n={i + 1} />
                 </button>
               </li>
             ))}

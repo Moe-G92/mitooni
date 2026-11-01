@@ -28,7 +28,9 @@ const router = createBrowserRouter([
         children: [
           { path: "/", element: page(() => import("@/pages/public/Landing")) },
           { path: "/how-it-works", element: page(() => import("@/pages/public/HowItWorks")) },
+          { path: "/what-is-ielts", element: page(() => import("@/pages/public/WhatIsIelts")) },
           { path: "/coaching", element: page(() => import("@/pages/public/Coaching")) },
+          { path: "/faq", element: page(() => import("@/pages/public/Faq")) },
         ],
       },
       // One identifier-first page for new and returning learners; it has its own two-column layout.

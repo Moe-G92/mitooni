@@ -104,13 +104,18 @@ function SectionRunner({
   const [volume, setVolume] = useState(0.8);
   const [heard, setHeard] = useState(false);
   const [devicesReady, setDevicesReady] = useState(false);
+  const [summaryRequest, setSummaryRequest] = useState(0);
   const unsaved = useRef(0);
 
-  const doSubmit = useCallback(async () => {
+  const submitSection = useCallback(async () => {
     await s.flush();
     const res = await submit.mutateAsync({ attemptId: attempt.id, sectionId: section.id });
-    if (res.resultReady) navigate(`/app/results/${attempt.id}?fresh=1`, { replace: true });
-  }, [s, submit, attempt.id, section.id, navigate]);
+    return res.resultReady;
+  }, [s, submit, attempt.id, section.id]);
+
+  const doSubmit = useCallback(async () => {
+    if (await submitSection()) navigate(`/app/results/${attempt.id}?fresh=1`, { replace: true });
+  }, [submitSection, attempt.id, navigate]);
 
   const running = (phase === "running" || phase === "submission") && clockStarted && section.skill !== "speaking" && !noTimeLimit;
   const { remaining } = useCountdown({
@@ -158,6 +163,8 @@ function SectionRunner({
     volume,
     setVolume,
     submitNow: () => void doSubmit(),
+    submitSection,
+    summaryRequest,
   };
 
   const header = <ExamHeader candidate={profile.name} practice={practice} showClock={false} onOptions={() => setOptionsOpen(true)} />;
@@ -226,7 +233,9 @@ function SectionRunner({
           onClose={() => setOptionsOpen(false)}
           onSubmissionPage={() => {
             setOptionsOpen(false);
-            if (phase === "running") setPhase("submission");
+            // Speaking has its own summary page with Submit for checking.
+            if (phase === "running" && section.skill === "speaking") setSummaryRequest((n) => n + 1);
+            else if (phase === "running") setPhase("submission");
           }}
           onLeave={leave}
           practiceExtras={

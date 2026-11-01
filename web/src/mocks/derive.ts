@@ -37,13 +37,15 @@ function fullMocks(db: DB) {
 }
 
 function typeTotals(results: Result[]) {
-  const map = new Map<QuestionType, { type: QuestionType; skill: Skill; correct: number; total: number }>();
+  // One row per skill and type: Listening and Reading share some type names.
+  const map = new Map<string, { type: QuestionType; skill: Skill; correct: number; total: number }>();
   for (const r of results)
     for (const s of r.byType) {
-      const t = map.get(s.type) ?? { type: s.type, skill: s.skill, correct: 0, total: 0 };
+      const key = `${s.skill}:${s.type}`;
+      const t = map.get(key) ?? { type: s.type, skill: s.skill, correct: 0, total: 0 };
       t.correct += s.correct;
       t.total += s.total;
-      map.set(s.type, t);
+      map.set(key, t);
     }
   return [...map.values()];
 }

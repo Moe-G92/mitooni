@@ -41,10 +41,11 @@ export function ConfirmScreen({ name, attempt, onConfirm, onLeave }: { name: str
   );
 }
 
-const INFO: Record<Skill, { title: string; time: (min: number) => string; instructions: string[]; information: string[] }> = {
+const INFO: Record<Skill, { title: string; time: (min: number, accommodation: number) => string; instructions: string[]; information: string[] }> = {
   listening: {
     title: "IELTS Academic Listening",
-    time: (m) => `Approximately ${m} minutes`,
+    // The canvas states the official figure; the clock itself follows the audio length.
+    time: (_m, acc) => `Approximately ${Math.round(30 * acc)} minutes`,
     instructions: [
       "Answer all the questions.",
       "You can change your answers at any time during the test.",
@@ -73,7 +74,10 @@ const INFO: Record<Skill, { title: string; time: (min: number) => string; instru
       "In Part 2 you will have one minute to prepare and can make notes on screen.",
       "Your answers are recorded.",
     ],
-    information: ["There are three parts to the test.", "This simulator plays recorded examiner questions and moves on when you finish speaking."],
+    information: [
+      "There are three parts to the test.",
+      "The examiner's questions are recorded. You record each answer, can listen back and record it again, and submit them all at the end.",
+    ],
   },
 };
 
@@ -100,7 +104,7 @@ export function IntroScreen({
       <div className="x-screen-inner">
         <h1>{practice ? `Practice: ${section.title}` : info.title}</h1>
         <p>
-          <b>Time:</b> {practice && section.parts.length === 1 ? `About ${minutes} minutes` : info.time(minutes)}
+          <b>Time:</b> {practice && section.parts.length === 1 ? `About ${minutes} minutes` : info.time(minutes, accommodation)}
           {accommodation !== 1 && ` (includes x${accommodation} extra time)`}
         </p>
         <h2>Instructions to candidates</h2>
@@ -122,7 +126,7 @@ export function IntroScreen({
         {practice && (
           <p className="x-practice-note">
             {section.skill === "speaking"
-              ? "Practice mode: you can repeat a question, skip ahead and read the examiner's words. None of this happens in the real test."
+              ? "Practice mode: you can hear a question again, skip the instructions and skip a question without answering. None of this happens in the real test."
               : section.skill === "writing"
                 ? "Practice mode: you can keep writing after the clock runs out and see a word target. None of this happens in the real test."
                 : `Practice mode: you can check answers as you go${section.skill === "listening" ? ", pause the audio" : ""} and keep working after the clock runs out. None of this happens in the real test.`}

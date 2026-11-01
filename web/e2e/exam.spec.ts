@@ -74,28 +74,34 @@ test("Writing: type, live word count, submit, open feedback", async ({ page }) =
   await expect(page.getByText("in many countries the young adults")).toBeVisible();
 });
 
-test("Speaking: fake camera and microphone, recorded parts, playback on the feedback page", async ({ page }) => {
+test("Speaking: instructions first, one question at a time, recorded takes, playback on the feedback page", async ({ page }) => {
+  test.setTimeout(150_000);
   await fakeMedia(page);
   await signIn(page);
   await page.goto("/exam/new/academic-1-speaking?mode=practice");
-  await page.getByRole("button", { name: "Allow camera and microphone" }).click();
+  await page.getByRole("button", { name: "Allow microphone" }).click();
   await expect(page.getByText("We can hear you")).toBeVisible({ timeout: 15_000 });
   await page.getByRole("button", { name: "Start test" }).click();
-  await expect(page.getByText("Speaking, Part 1 of 3")).toBeVisible();
-  await expect(page.locator(".x-tile video")).toBeVisible();
 
-  // Practice mode: move through every step with Next.
-  for (let i = 0; i < 80; i++) {
-    if (await page.getByText("Submit your answers").isVisible()) break;
-    const next = page.getByRole("button", { name: /^(Next|Start talking now)$/ });
-    if (await next.isVisible()) await next.click().catch(() => undefined);
-    await page.waitForTimeout(250);
+  // The examiner's instructions come first; practice mode may skip them.
+  await expect(page.getByText("Speaking · Instructions")).toBeVisible();
+  await expect(page.getByRole("button", { name: "Start the questions" })).toBeDisabled();
+  await page.getByRole("button", { name: "Skip the instructions" }).click();
+
+  await expect(page.getByText("Speaking · Part 1 of 3")).toBeVisible();
+  for (let i = 1; i <= 6; i++) {
+    await expect(page.getByText(`Question ${i} of 6`)).toBeVisible();
+    await page.getByRole("button", { name: "Start recording" }).click();
+    await page.waitForTimeout(2300);
+    await page.getByRole("button", { name: "Stop recording" }).click();
+    await expect(page.getByRole("button", { name: /^Your answer · 0:0[1-3]$/ })).toBeVisible();
+    await page.getByRole("button", { name: i < 6 ? "Next question" : "Finish" }).click();
   }
-  await expect(page.getByText("Submit your answers")).toBeVisible();
-  await page.getByRole("button", { name: "Next" }).click();
-  await expect(page).toHaveURL(/results\//);
-  await page.getByRole("link", { name: "Open feedback" }).click();
-  await expect(page.getByText("Speaking feedback")).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Check your answers" })).toBeVisible();
+  await page.getByRole("button", { name: "Submit for checking" }).click();
+  await expect(page.getByRole("heading", { name: "Submitted for checking" })).toBeVisible({ timeout: 20_000 });
+  await page.getByRole("link", { name: "See your feedback" }).click();
+  await expect(page).toHaveURL(/results\/att-[^/]+\/speaking/);
   await page.getByRole("tab", { name: /Part 1/ }).click();
   await expect(page.locator("audio").first()).toBeVisible();
 });

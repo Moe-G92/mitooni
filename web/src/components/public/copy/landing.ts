@@ -1,0 +1,158 @@
+/*
+ * Copy for the landing page (route /, canvas Main.dc.html), namespace mk.home.
+ * Rules: no full stops in titles, headings, card titles, labels or taglines
+ * (body sentences keep them); never zero-pad numbers; Persian uses real
+ * half-spaces (U+200C) and keeps "mitooni" in Latin letters.
+ * Skill, question-type and strength names come from the app strings
+ * (skills.*, types.*, strength.*). Strings with <b>…</b> render through Rich.
+ */
+
+export const landingEn = {
+  hero: {
+    kicker: "Practise for <b>IELTS Academic & General</b>",
+    title: "Sit IELTS before you sit IELTS",
+    lead: "Real test screens, a band you can trust and feedback in <b>English or Persian</b>.",
+    cta: "Start practising",
+    secondary: "How to use",
+    point1: "Listening, Reading, Writing, Speaking",
+    point2: "Computer-delivered format",
+    chip1: "Real test screens",
+    chip2: "A band you can trust",
+    chip3: "Feedback in English or Persian",
+    art: "A mitooni practice book with a Listening answer sheet being marked and stamped band 7.0",
+  },
+  diff: {
+    title: "<b>What makes</b> mitooni <b>different?</b>",
+    typesKicker: "Practise exactly what costs you marks",
+    typesTitle: "Every question type, tracked and drilled",
+    typesBody:
+      "Your dashboard scores every official question type against your target, charts your band over time and picks the next ten minute drill for you. Matching headings costing you marks? You will see it, and fix it.",
+    feedbackKicker: "Notes on your own sentences",
+    feedbackTitle: "Feedback you can act on",
+    feedbackBody: "<b>Writing:</b> Every essay comes back with a band for each criterion and notes on your own sentences.",
+  },
+  dash: {
+    title: "Question types",
+    note: "Correct answers across your last four tests",
+    target: "target {{n}}",
+    overall: "Overall band",
+    since: "+{{n}} since September",
+    targetBand: "Target {{n}}",
+    focus: "Focus here next",
+    drill: "Matching headings drill",
+    drillMeta: "{{min}} min · {{q}} questions",
+    start: "Start drill",
+  },
+  note: {
+    kind: "Grammar",
+    text: "No \"the\" before a group in general",
+  },
+  mock: {
+    kicker: "Start with a",
+    title: "Full mock exam",
+    body: "2 hours 45 minutes. You get a band for every skill and one clear next step.",
+    cta: "Create your account",
+  },
+  report: {
+    title: "<b>What your report shows</b> after every mock",
+    meta: "Sample report · Mock {{n}} · 28 October",
+    name: "Sara's full mock result",
+    overall: "Overall band",
+    target: "Target {{n}}",
+    marksTitle: "Where your Reading marks went",
+    correct: "Correct",
+    band: "Band {{n}}",
+    outOf: "{{n}} out of {{total}} correct",
+    bandsTitle: "Bands against your target",
+    analysis: "Analysis",
+    a1: "<b>Matching headings cost you 6 marks.</b> You picked headings that repeat words from the paragraph instead of its main idea.",
+    a2: "<b>You ran out of time on Passage 3.</b> You spent 26 minutes on Passage 1, so the last 5 questions were guesses.",
+    a3: "<b>Listening is on target at 7.0.</b> Keep it there with one Part 4 set a week.",
+    next: "Next step",
+    nextTitle: "Matching headings drill · {{n}} min",
+    seeFull: "See full report",
+  },
+  ready: {
+    title: "Walk into the test <b>knowing your band</b>",
+    body: "No more guessing whether you are ready to book.",
+    cta: "Start practising",
+    card: "Ready to book?",
+    target: "Target {{n}}",
+    yes: "Yes, you can book your test",
+  },
+};
+
+export const landingFa: typeof landingEn = {
+  hero: {
+    kicker: "تمرین برای <b>آیلتس آکادمیک و جنرال</b>",
+    title: "پیش از آیلتس، آیلتس بدهید",
+    lead: "همان صفحه‌های آزمون واقعی، نمره‌ای که می‌شود به آن اعتماد کرد و بازخورد به <b>فارسی یا انگلیسی</b>.",
+    cta: "شروع تمرین",
+    secondary: "راهنمای استفاده",
+    point1: "لیسنینگ، ریدینگ، رایتینگ، اسپیکینگ",
+    point2: "قالب آزمون کامپیوتری",
+    chip1: "صفحه‌های آزمون واقعی",
+    chip2: "نمره‌ای قابل‌اعتماد",
+    chip3: "بازخورد به فارسی یا انگلیسی",
+    art: "کتاب تمرین mitooni با پاسخ‌برگ لیسنینگ که تصحیح می‌شود و مُهر نمرهٔ ۷٫۰ می‌خورد",
+  },
+  diff: {
+    title: "<b>چه چیزی</b> mitooni <b>را متفاوت می‌کند؟</b>",
+    typesKicker: "دقیقاً همان چیزی را تمرین کنید که از شما نمره می‌گیرد",
+    typesTitle: "همهٔ انواع سؤال، زیر نظر و تمرین‌شده",
+    typesBody:
+      "داشبورد شما هر نوع سؤال رسمی را با هدفتان می‌سنجد، روند نمره‌تان را در طول زمان نشان می‌دهد و تمرین ده‌دقیقه‌ای بعدی را برایتان انتخاب می‌کند. سؤال‌های Matching headings از شما نمره می‌گیرند؟ آن را می‌بینید و درستش می‌کنید.",
+    feedbackKicker: "یادداشت روی جمله‌های خودتان",
+    feedbackTitle: "بازخوردی که می‌شود به آن عمل کرد",
+    feedbackBody: "<b>رایتینگ:</b> هر نوشته با نمرهٔ جداگانه برای هر معیار و یادداشت روی جمله‌های خودتان برمی‌گردد.",
+  },
+  dash: {
+    title: "انواع سؤال",
+    note: "پاسخ‌های درست در چهار آزمون اخیر",
+    target: "هدف {{n}}",
+    overall: "نمرهٔ کلی",
+    since: "+{{n}} نسبت به شهریور",
+    targetBand: "هدف {{n}}",
+    focus: "تمرکز بعدی",
+    drill: "تمرین Matching headings",
+    drillMeta: "{{min}} دقیقه · {{q}} سؤال",
+    start: "شروع تمرین",
+  },
+  note: {
+    kind: "دستور زبان",
+    text: "پیش از اسمی که به یک گروه کلی اشاره دارد \"the\" نیاورید",
+  },
+  mock: {
+    kicker: "شروع با یک",
+    title: "آزمون آزمایشی کامل",
+    body: "۲ ساعت و ۴۵ دقیقه. برای هر مهارت نمره می‌گیرید و یک قدم بعدی روشن.",
+    cta: "ساخت حساب",
+  },
+  report: {
+    title: "<b>گزارش شما چه نشان می‌دهد</b> پس از هر آزمون آزمایشی",
+    meta: "نمونهٔ گزارش · آزمون {{n}} · ۶ آبان",
+    name: "نتیجهٔ آزمون کامل سارا",
+    overall: "نمرهٔ کلی",
+    target: "هدف {{n}}",
+    marksTitle: "نمره‌های ریدینگ کجا از دست رفت",
+    correct: "درست",
+    band: "نمرهٔ {{n}}",
+    outOf: "{{n}} پاسخ درست از {{total}}",
+    bandsTitle: "نمره‌ها در برابر هدف شما",
+    analysis: "تحلیل",
+    a1: "<b>سؤال‌های Matching headings ۶ نمره از شما گرفتند.</b> عنوان‌هایی را انتخاب کردید که واژه‌های پاراگراف را تکرار می‌کنند، نه ایدهٔ اصلی آن را.",
+    a2: "<b>در متن ۳ وقت کم آوردید.</b> ۲۶ دقیقه روی متن ۱ گذاشتید و ۵ سؤال آخر را حدسی جواب دادید.",
+    a3: "<b>لیسنینگ با ۷٫۰ به هدف رسیده است.</b> با یک تمرین بخش ۴ در هفته آن را نگه دارید.",
+    next: "قدم بعدی",
+    nextTitle: "تمرین Matching headings · {{n}} دقیقه",
+    seeFull: "دیدن گزارش کامل",
+  },
+  ready: {
+    title: "با دانستن نمره‌تان <b>سر جلسهٔ آزمون بروید</b>",
+    body: "دیگر لازم نیست حدس بزنید که برای ثبت‌نام آماده‌اید یا نه.",
+    cta: "شروع تمرین",
+    card: "آمادهٔ ثبت‌نام هستید؟",
+    target: "هدف {{n}}",
+    yes: "بله، می‌توانید ثبت‌نام کنید",
+  },
+};

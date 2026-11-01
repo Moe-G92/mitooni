@@ -1,0 +1,89 @@
+/*
+ * Hero globe for the What is IELTS? page (canvas WhatIsIELTS.dc.html).
+ * A CSS 3D sphere of land dots that spins slowly; dots on the far side are
+ * hidden with backface-visibility. The radius follows the scene width
+ * (container units), so the globe scales down on small screens.
+ * Under prefers-reduced-motion the globe stands still (Europe and Africa in
+ * front) and the pin pings stop.
+ */
+
+.wi-globe-scene {
+  container-type: inline-size;
+}
+
+@keyframes wiGlobeSpin {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes wiGlobePing {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(3.2);
+    opacity: 0;
+  }
+}
+
+.wi-globe-spin {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  transform-style: preserve-3d;
+  animation: wiGlobeSpin 30s linear infinite;
+}
+
+/* Land dot: radius 150px on a 400px scene = 37.5% of the scene width. */
+.wi-globe-spin i {
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #c9d2ff;
+  transform: rotateY(var(--lon)) rotateX(var(--lat)) translateZ(37.5cqw);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* City pin, just above the dots. */
+.wi-globe-spin b {
+  position: absolute;
+  left: -4px;
+  top: -4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d92f3a;
+  box-shadow: 0 0 0 1.5px #fff;
+  transform: rotateY(var(--lon)) rotateX(var(--lat)) translateZ(37.75cqw);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.wi-globe-spin b u {
+  position: absolute;
+  inset: -1px;
+  border-radius: 50%;
+  border: 1.5px solid #faff7f;
+  animation: wiGlobePing 1.8s ease-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wi-globe-spin,
+  .wi-globe-spin b u {
+    animation: none;
+  }
+  .wi-globe-spin {
+    transform: rotateY(0deg);
+  }
+}

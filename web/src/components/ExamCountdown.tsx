@@ -95,3 +95,42 @@ export function ExamCountdown({
     </svg>
   );
 }
+
+/*
+ * Compact countdown from the mitooni canvas (Overview): a small tear-off page
+ * (Coral header, two Deep Wisteria rings, big number) beside a Pink Carnation
+ * panel with the words. Persian mirrors it through the flex direction.
+ */
+export function CountdownCard({
+  days,
+  locale,
+  line1,
+  line2,
+  label,
+}: {
+  days: number;
+  locale: Locale;
+  /** "DAYS" (or "DAY"), already translated. */
+  line1: string;
+  /** "TO GO", already translated. */
+  line2: string;
+  /** Full sentence for screen readers. */
+  label: string;
+}) {
+  return (
+    <div role="img" aria-label={label} className="flex overflow-hidden rounded-[14px] bg-pink-tint">
+      <div className="relative w-24 shrink-0 bg-white shadow-[0_2px_6px_rgba(11,42,62,0.12)]">
+        <div className="h-[26px] bg-coral" />
+        <span aria-hidden="true" className="absolute start-6 -top-1.5 h-[18px] w-1.5 rounded-[3px] bg-primary" />
+        <span aria-hidden="true" className="absolute end-6 -top-1.5 h-[18px] w-1.5 rounded-[3px] bg-primary" />
+        <div className="px-1 pt-1.5 pb-2.5 text-center font-archivo text-[44px] leading-none font-extrabold text-primary tabular-nums">
+          {formatNumber(days, locale)}
+        </div>
+      </div>
+      <div aria-hidden="true" className="flex flex-col justify-center px-[18px] font-archivo leading-[1.05] text-primary">
+        <b className="text-2xl font-extrabold">{line1}</b>
+        <span className="text-base font-bold">{line2}</span>
+      </div>
+    </div>
+  );
+}

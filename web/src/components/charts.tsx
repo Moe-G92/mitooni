@@ -23,7 +23,7 @@ import { cn } from "@/lib/utils";
 
 /*
  * Charts for the learner pages, drawn with Recharts (what shadcn/ui charts use)
- * and coloured from the theme tokens, so they follow light and dark mode.
+ * and coloured from the theme tokens (day mode only).
  * Time axes stay left to right in both languages.
  */
 
@@ -236,7 +236,7 @@ export function CriterionTile({ label, band, low, locale }: { label: string; ban
   return (
     <div className="rounded-[14px] border border-border px-3.5 py-3">
       <span className="block text-xs text-muted-foreground">{label}</span>
-      <b className={cn("font-mono text-2xl font-normal tracking-tight", low && "text-weak")}>{formatBand(band, locale)}</b>
+      <b className={cn("font-archivo text-2xl font-bold tracking-tight tabular-nums", low && "text-weak")}>{formatBand(band, locale)}</b>
     </div>
   );
 }
@@ -375,12 +375,128 @@ export function ScoreRing({ value, label, locale, size = 112 }: { value: number;
       </svg>
       <div className="absolute inset-0 grid place-items-center text-center">
         <div>
-          <div className="font-mono text-2xl leading-none tracking-tight" dir="ltr">
+          <div className="font-archivo text-2xl leading-none font-bold tracking-tight tabular-nums" dir="ltr">
             {formatNumber(Math.round(v), locale)}%
           </div>
           <div className="mt-1 text-[11px] text-muted-foreground">{label}</div>
         </div>
       </div>
     </div>
+  );
+}
+
+/*
+ * Band line drawn as plain SVG, as on the mitooni canvas: a dashed target line,
+ * one dot per test and dates under the first and last dot. `size="trend"` is the
+ * Overview card (latest dot in Coral with its band); `size="mini"` is the small
+ * chart on each Results card (every dot labelled). Time runs left to right in
+ * both languages.
+ */
+export function BandLine({
+  points,
+  target,
+  locale,
+  label,
+  targetLabel,
+  size = "mini",
+  className,
+}: {
+  points: { date: string; band: number }[];
+  target: number;
+  locale: Locale;
+  /** Start of the accessible name, such as "Overall band by mock". */
+  label: string;
+  /** Text on the target line, such as "target 7.0". */
+  targetLabel: string;
+  size?: "trend" | "mini";
+  className?: string;
+}) {
+  const mini = size === "mini";
+  const W = mini ? 200 : 360;
+  const H = mini ? 112 : 190;
+  const x0 = mini ? 16 : 24;
+  const x1 = W - x0;
+  const yTop = mini ? 34 : 54;
+  const yLow = mini ? 90 : 136;
+  const perBand = mini ? 28 : 48;
+  const bands = points.map((p) => p.band);
+  const top = Math.max(target, ...bands);
+  const low = Math.min(target, ...bands);
+  const per = top > low ? Math.min(perBand, (yLow - yTop) / (top - low)) : perBand;
+  const y = (b: number) => yTop + (top - b) * per;
+  const x = (i: number) => (points.length === 1 ? W / 2 : x0 + ((x1 - x0) * i) / (points.length - 1));
+  const ty = y(target);
+  const pts = points.map((p, i) => ({ ...p, cx: x(i), cy: y(p.band) }));
+  const last = pts.length - 1;
+  const aria = `${label}: ${points.map((p) => `${formatShortDate(p.date, locale)} ${formatBand(p.band, locale)}`).join(", ")}. ${targetLabel}`;
+
+  return (
+    <svg
+      viewBox={`0 0 ${W} ${H}`}
+      role="img"
+      aria-label={aria}
+      direction="ltr"
+      className={cn("block h-auto w-full font-archivo tabular-nums", className)}
+    >
+      {mini ? (
+        <>
+          <line x1="4" x2={W - 4} y1={ty} y2={ty} stroke="#3E4FC4" strokeDasharray="3 3" />
+          <text x="4" y={ty - 5} fontSize="9" fill="#556170">
+            {targetLabel}
+          </text>
+        </>
+      ) : (
+        <>
+          <line x1="10" x2={W - 10} y1={ty} y2={ty} stroke="#2B2470" strokeWidth="2.5" strokeDasharray="7 5" strokeLinecap="round" />
+          <text x={W - 10} y={ty - 10} textAnchor="end" fontSize="12" fontWeight="700" fill="#2B2470">
+            {targetLabel}
+          </text>
+          <line x1="10" x2={W - 10} y1="160" y2="160" stroke="#e1e4e8" />
+        </>
+      )}
+      {pts.length > 1 && (
+        <polyline
+          points={pts.map((p) => `${p.cx},${p.cy}`).join(" ")}
+          fill="none"
+          stroke="#3E4FC4"
+          strokeWidth={mini ? 2.5 : 2.5}
+          strokeLinejoin="round"
+          strokeLinecap="round"
+        />
+      )}
+      {pts.map((p, i) => {
+        const isLast = i === last;
+        if (mini)
+          return (
+            <g key={i}>
+              <circle cx={p.cx} cy={p.cy} r={isLast ? 4.5 : 3.5} fill="#3E4FC4" />
+              <text x={p.cx} y={p.cy - 9} textAnchor="middle" fontSize="10" fill="#556170">
+                {formatBand(p.band, locale)}
+              </text>
+            </g>
+          );
+        return (
+          <g key={i}>
+            <circle cx={p.cx} cy={p.cy} r={isLast ? 6 : 5} fill={isLast ? "#D92F3A" : "#3E4FC4"} />
+            {isLast && (
+              <text x={p.cx} y={p.cy - 12} textAnchor="middle" fontSize="12" fontWeight="600" fill="#B8232D">
+                {formatBand(p.band, locale)}
+              </text>
+            )}
+          </g>
+        );
+      })}
+      {pts.map((p, i) => {
+        // Dates: every dot on the trend card when there is room, otherwise first and last.
+        const show = i === 0 || i === last || (!mini && pts.length <= 5);
+        if (!show) return null;
+        const anchor = pts.length === 1 ? "middle" : i === 0 ? (mini ? "start" : "middle") : i === last ? "end" : "middle";
+        return (
+          <text key={`d${i}`} x={p.cx} y={mini ? 108 : 180} textAnchor={anchor} fontSize={mini ? 9 : 11} fill="#556170" className="font-sans">
+            {formatShortDate(p.date, locale)}
+          </text>
+        );
+      })}
+    </svg>
   );
 }

@@ -1,0 +1,268 @@
+/*
+ * Motion for the How to use page (canvas HowItWorks.dc.html).
+ *
+ * Hero: a before/after laptop. Until the visitor touches it, the "before"
+ * screen fades in piece by piece and is then wiped away to show "after"
+ * (6 s loop). Once the visitor drags, clicks or focuses the divider, the
+ * loop stops and the divider stays where they put it (set from React).
+ * RTL mirrors the wipe: "before" sits on the start (right) side.
+ *
+ * Step 2: a recording dot that blinks and a bouncing sound wave.
+ *
+ * Under prefers-reduced-motion every animation stops. The global rule in
+ * index.css only shortens durations, which makes infinite loops flicker, so
+ * this file sets animation: none explicitly.
+ */
+
+/* Hero: auto wipe */
+@keyframes hwWipe {
+  0%,
+  40% {
+    clip-path: inset(0 0 0 0);
+  }
+  62%,
+  99% {
+    clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes hwWipeRtl {
+  0%,
+  40% {
+    clip-path: inset(0 0 0 0);
+  }
+  62%,
+  99% {
+    clip-path: inset(0 0 0 100%);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes hwHandle {
+  0%,
+  36% {
+    left: 100%;
+    opacity: 0;
+  }
+  40% {
+    left: 100%;
+    opacity: 1;
+  }
+  62% {
+    left: 0%;
+    opacity: 1;
+  }
+  66%,
+  100% {
+    left: 0%;
+    opacity: 0;
+  }
+}
+
+@keyframes hwHandleRtl {
+  0%,
+  36% {
+    left: 0%;
+    opacity: 0;
+  }
+  40% {
+    left: 0%;
+    opacity: 1;
+  }
+  62% {
+    left: 100%;
+    opacity: 1;
+  }
+  66%,
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+.hw-wipe {
+  animation: hwWipe 6s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+.hw-wipe-rtl {
+  animation: hwWipeRtl 6s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+.hw-handle-auto {
+  animation: hwHandle 6s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+.hw-handle-auto-rtl {
+  animation: hwHandleRtl 6s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+/* Hero: the "before" pieces fly in one after another. --hw-x is 1 in LTR and -1 in RTL. */
+@keyframes hwFi0 {
+  0%,
+  2% {
+    opacity: 0;
+    transform: translate(0, -30px);
+  }
+  7%,
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes hwFi1 {
+  0%,
+  5.4% {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+  10.4%,
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes hwFi2 {
+  0%,
+  8.8% {
+    opacity: 0;
+    transform: translate(calc(-60px * var(--hw-x, 1)), 20px);
+  }
+  13.8%,
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes hwFi3 {
+  0%,
+  12.2% {
+    opacity: 0;
+    transform: translate(calc(60px * var(--hw-x, 1)), -20px);
+  }
+  17.2%,
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes hwFi4 {
+  0%,
+  15.6% {
+    opacity: 0;
+    transform: translate(calc(-60px * var(--hw-x, 1)), 30px);
+  }
+  20.6%,
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes hwFi5 {
+  0%,
+  19% {
+    opacity: 0;
+    transform: translate(calc(60px * var(--hw-x, 1)), 30px);
+  }
+  24%,
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes hwFi6 {
+  0%,
+  22.4% {
+    opacity: 0;
+    transform: translate(0, 40px);
+  }
+  27.4%,
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes hwFi7 {
+  0%,
+  25.8% {
+    opacity: 0;
+    transform: translate(0, 30px);
+  }
+  30.8%,
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.hw-auto .hw-fi0 {
+  animation: hwFi0 6s cubic-bezier(0.2, 0.8, 0.25, 1) infinite both;
+}
+.hw-auto .hw-fi1 {
+  animation: hwFi1 6s cubic-bezier(0.2, 0.8, 0.25, 1) infinite both;
+}
+.hw-auto .hw-fi2 {
+  animation: hwFi2 6s cubic-bezier(0.2, 0.8, 0.25, 1) infinite both;
+}
+.hw-auto .hw-fi3 {
+  animation: hwFi3 6s cubic-bezier(0.2, 0.8, 0.25, 1) infinite both;
+}
+.hw-auto .hw-fi4 {
+  animation: hwFi4 6s cubic-bezier(0.2, 0.8, 0.25, 1) infinite both;
+}
+.hw-auto .hw-fi5 {
+  animation: hwFi5 6s cubic-bezier(0.2, 0.8, 0.25, 1) infinite both;
+}
+.hw-auto .hw-fi6 {
+  animation: hwFi6 6s cubic-bezier(0.2, 0.8, 0.25, 1) infinite both;
+}
+.hw-auto .hw-fi7 {
+  animation: hwFi7 6s cubic-bezier(0.2, 0.8, 0.25, 1) infinite both;
+}
+
+/* Step 2: sound wave and recording dot */
+@keyframes hwBar {
+  0%,
+  100% {
+    transform: scaleY(0.35);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+@keyframes hwRec {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}
+.hw-bar {
+  transform-origin: 50% 100%;
+  animation: hwBar 1.1s ease-in-out infinite;
+}
+.hw-rec {
+  animation: hwRec 1.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hw-wipe,
+  .hw-wipe-rtl,
+  .hw-handle-auto,
+  .hw-handle-auto-rtl,
+  .hw-auto .hw-fi0,
+  .hw-auto .hw-fi1,
+  .hw-auto .hw-fi2,
+  .hw-auto .hw-fi3,
+  .hw-auto .hw-fi4,
+  .hw-auto .hw-fi5,
+  .hw-auto .hw-fi6,
+  .hw-auto .hw-fi7,
+  .hw-bar,
+  .hw-rec {
+    animation: none !important;
+  }
+}

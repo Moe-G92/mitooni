@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router";
 import { ArrowLeft, GraduationCap } from "lucide-react";
-import type { SpeakingFeedback } from "@/api/schemas";
 import { fetchRecording, useCoachMutations, useMe, useResult } from "@/api/queries";
 import { useT } from "@/i18n";
 import { formatClock, formatDate, formatNumber } from "@/lib/format";
@@ -9,9 +8,8 @@ import { overallBand } from "@/lib/bands";
 import { PageHeader } from "@/components/PageHeader";
 import { Card, CardLabel } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ErrorState, Skeleton, Tag } from "@/components/ui/misc";
-import { AnnotatedText } from "./feedback-shared";
-import { KIND_CLASS } from "./feedback-kinds";
+import { ErrorState, Skeleton } from "@/components/ui/misc";
+import { AnnotatedText, NoteList } from "./feedback-shared";
 import { ScoreBreakdown, SectionTabs } from "./ScoreBreakdown";
 import { liftFor } from "@/lib/breakdown";
 
@@ -89,12 +87,12 @@ export default function SpeakingFeedbackPage() {
                 return liftFor(s.criteria, k, { skill: s.band, overall: r.data!.overall }, (b) => b, full ? (sp) => overallBand([...others, sp]) : null);
               }}
             />
-            <Card className="col-span-12 lg:col-span-5">
+            <Card className="col-span-12">
               <CardLabel title={t("feedback.pronunciation")} />
               <ul className="mt-3 flex flex-col gap-2.5 text-sm">
                 {s.pronunciation.map((p) => (
                   <li key={p.word} className="rounded-xl border border-border px-3.5 py-3">
-                    <b className="font-medium" lang="en" dir="ltr">
+                    <b className="block font-medium" lang="en" dir="ltr">
                       {p.word}
                     </b>
                     <p className="mt-1 text-muted-foreground">{pick(p.note)}</p>
@@ -102,9 +100,9 @@ export default function SpeakingFeedbackPage() {
                 ))}
               </ul>
             </Card>
-            <Card className="col-span-12 lg:col-span-7">
+            <Card className="col-span-12">
               <CardLabel title={t("feedback.notes")} />
-              <Notes notes={s.annotations} />
+              <NoteList notes={s.annotations} />
               <div className="mt-5 border-t border-border pt-4">
                 <Button variant="outline" onClick={askCoach} disabled={coach.request.isPending}>
                   <GraduationCap /> {t("feedback.askCoachSpeaking")}
@@ -119,7 +117,7 @@ export default function SpeakingFeedbackPage() {
               const own = s.annotations.filter((a) => p.transcript.includes(a.quote));
               return (
                 <div key={p.partId} className="contents">
-                  <Card className="col-span-12 lg:col-span-7">
+                  <Card className="col-span-12">
                     <CardLabel title={`${t("feedback.part", { n: formatNumber(p.part, locale) })} · ${t(`breakdown.partNames.${p.part}`)}`} note={p.durationSec ? formatClock(p.durationSec, locale) : undefined} />
                     <div className="mt-3">
                       <Recording recordingKey={p.recordingKey} />
@@ -129,9 +127,9 @@ export default function SpeakingFeedbackPage() {
                       <AnnotatedText text={p.transcript} notes={own} />
                     </div>
                   </Card>
-                  <Card className="col-span-12 lg:col-span-5">
+                  <Card className="col-span-12">
                     <CardLabel title={t("breakdown.partNotes")} />
-                    {own.length ? <Notes notes={own} /> : <p className="mt-3 text-sm text-muted-foreground">{t("feedback.noNotes")}</p>}
+                    {own.length ? <NoteList notes={own} /> : <p className="mt-3 text-sm text-muted-foreground">{t("feedback.noNotes")}</p>}
                   </Card>
                 </div>
               );
@@ -142,24 +140,3 @@ export default function SpeakingFeedbackPage() {
   );
 }
 
-function Notes({ notes }: { notes: SpeakingFeedback["annotations"] }) {
-  const { t, pick } = useT();
-  return (
-    <ol className="mt-3 flex flex-col gap-2.5 text-sm">
-      {notes.map((a, i) => (
-        <li key={i} className="rounded-xl border border-border px-3.5 py-3">
-          <Tag className={KIND_CLASS[a.kind]}>{t(`feedback.kind.${a.kind}`)}</Tag>
-          <p className="mt-1.5">{pick(a.note)}</p>
-          {a.fix && (
-            <p className="mt-1.5 text-muted-foreground">
-              {t("feedback.try")}{" "}
-              <span lang="en" dir="ltr" className="text-foreground">
-                {a.fix}
-              </span>
-            </p>
-          )}
-        </li>
-      ))}
-    </ol>
-  );
-}

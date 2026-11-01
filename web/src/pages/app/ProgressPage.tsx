@@ -1,36 +1,57 @@
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import { Link, useNavigate } from "react-router";
+import { BookOpen, CalendarDays, Headphones, Mic, PenLine, type LucideIcon } from "lucide-react";
 import type { Skill } from "@/api/schemas";
 import { useMe, useProgress } from "@/api/queries";
 import { useT } from "@/i18n";
-import { formatBand, formatDate, formatNumber, formatPercent } from "@/lib/format";
+import { daysUntil, formatBand, formatNumber, formatPercent } from "@/lib/format";
 import { practiceHref } from "@/lib/links";
+import { cn } from "@/lib/utils";
 import { PageHeader } from "@/components/PageHeader";
-import { Card, CardHint, CardLabel } from "@/components/ui/card";
+import { Card, CardLabel } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Bar, EmptyState, ErrorState, Segmented, Skeleton, StrengthTag } from "@/components/ui/misc";
-import { BandTrend, SkillTrend, StudyCalendar } from "@/components/charts";
+import { EmptyState, ErrorState, Skeleton, StrengthTag } from "@/components/ui/misc";
+import { BandTrend } from "@/components/charts";
+import { SkillBars } from "@/components/study/SkillBars";
+import { DaysToGo } from "@/components/study/DaysToGo";
+import { ExamMonth } from "@/components/study/ExamMonth";
+import { Mascot } from "@/components/study/Mascot";
+import { formatFullDay } from "@/components/study/dates";
 
 const SKILLS: Skill[] = ["listening", "reading", "writing", "speaking"];
+
+/* Per-skill colours for the question type sections, from the canvas. */
+const SECTION: Record<Skill, { icon: LucideIcon; text: string; top: string; head: string; tile: string; bar: string }> = {
+  listening: { icon: Headphones, text: "text-primary", top: "border-t-primary", head: "bg-[#E6EBFF]", tile: "bg-primary", bar: "#3E4FC4" },
+  reading: { icon: BookOpen, text: "text-magenta", top: "border-t-magenta", head: "bg-pink-tint", tile: "bg-magenta", bar: "#E95FC4" },
+  writing: { icon: PenLine, text: "text-weak", top: "border-t-coral", head: "bg-weak-soft", tile: "bg-coral", bar: "#D92F3A" },
+  speaking: { icon: Mic, text: "text-strength", top: "border-t-[#4f9a2e]", head: "bg-strength-soft", tile: "bg-[#4f9a2e]", bar: "#4f9a2e" },
+};
 
 export default function ProgressPage() {
   const { t, locale } = useT();
   const navigate = useNavigate();
   const p = useProgress();
   const me = useMe();
-  const [sort, setSort] = useState<"weak" | "name">("weak");
-  const labels = Object.fromEntries(SKILLS.map((s) => [s, t(`skills.${s}`)]));
+  const labels = Object.fromEntries(SKILLS.map((s) => [s, t(`skills.${s}`)])) as Record<Skill, string>;
 
-  const types = useMemo(() => {
-    const list = [...(p.data?.types ?? [])];
-    return sort === "weak" ? list.sort((a, b) => a.correct / a.total - b.correct / b.total) : list.sort((a, b) => t(`types.${a.type}`).localeCompare(t(`types.${b.type}`)));
-  }, [p.data, sort, t]);
+  // Question types grouped by skill, weakest first within each skill.
+  const groups = useMemo(() => {
+    const types = p.data?.types ?? [];
+    return SKILLS.map((skill) => ({
+      skill,
+      rows: types.filter((x) => x.skill === skill).sort((a, b) => a.correct / a.total - b.correct / b.total),
+    })).filter((g) => g.rows.length > 0);
+  }, [p.data]);
 
   if (p.isError) return <ErrorState message={t("errors.load")} onRetry={() => p.refetch()} />;
   if (!p.data || !me.data) return <Skeleton className="h-96" />;
   const d = p.data;
-  const daysLeft = me.data.testDate ? Math.max(0, Math.round((new Date(me.data.testDate).getTime() - Date.now()) / 86_400_000)) : null;
+  const testDate = me.data.testDate;
+  const daysLeft = testDate ? Math.max(0, daysUntil(testDate)) : null;
   const mocksLeft = daysLeft !== null ? Math.max(1, Math.floor(daysLeft / 7)) : null;
+  const firstName = me.data.name.trim().split(/\s+/)[0] ?? "";
+  const target = me.data.targets.overall;
 
   return (
     <>
@@ -52,10 +73,10 @@ export default function ProgressPage() {
             {d.trend.length ? (
               <BandTrend
                 points={d.trend}
-                target={me.data.targets.overall}
+                target={target}
                 locale={locale}
                 height={240}
-                targetLabel={t("overview.targetShort", { band: formatBand(me.data.targets.overall, locale) })}
+                targetLabel={t("overview.targetShort", { band: formatBand(target, locale) })}
                 onPoint={(id) => navigate(`/app/results/${id}`)}
               />
             ) : (
@@ -63,22 +84,28 @@ export default function ProgressPage() {
             )}
           </Card>
 
-          <Card className="col-span-12 lg:col-span-5">
+          <Card className="col-span-12 flex flex-col lg:col-span-5">
             <CardLabel title={t("progress.pace")} />
-            {daysLeft !== null ? (
+            {daysLeft !== null && testDate ? (
               <>
                 <div className="mt-3 grid grid-cols-2 gap-3">
-                  <div className="rounded-[14px] border border-border px-3.5 py-3">
-                    <span className="block text-xs text-muted-foreground">{t("progress.daysLeft")}</span>
-                    <b className="font-mono text-2xl font-normal">{formatNumber(daysLeft, locale)}</b>
-                  </div>
+                  <DaysToGo
+                    days={daysLeft}
+                    locale={locale}
+                    line1={t("progress.daysWord", { count: daysLeft })}
+                    line2={t("progress.toGo")}
+                    label={t("progress.daysToGoLabel", { count: daysLeft, n: formatNumber(daysLeft, locale) })}
+                  />
                   <div className="rounded-[14px] border border-border px-3.5 py-3">
                     <span className="block text-xs text-muted-foreground">{t("progress.mocksDone")}</span>
-                    <b className="font-mono text-2xl font-normal">{formatNumber(d.trend.length, locale)}</b>
+                    <b className="font-archivo text-2xl font-bold tabular-nums">{formatNumber(d.trend.length, locale)}</b>
                   </div>
                 </div>
                 <p className="mt-4 text-sm">{t("progress.paceAdvice", { n: formatNumber(mocksLeft ?? 1, locale) })}</p>
-                <CardHint>{t("progress.testOn", { date: formatDate(me.data.testDate!, locale) })}</CardHint>
+                <div className="mt-auto flex items-center gap-2 border-t border-border pt-3 font-archivo text-base leading-snug font-bold text-primary max-lg:mt-4">
+                  <CalendarDays className="size-[18px] shrink-0 text-coral" aria-hidden="true" />
+                  {t("progress.testDay", { date: formatFullDay(testDate, locale) })}
+                </div>
               </>
             ) : (
               <p className="mt-3 text-sm text-muted-foreground">
@@ -93,89 +120,107 @@ export default function ProgressPage() {
           <Card className="col-span-12 lg:col-span-7">
             <CardLabel title={t("progress.bySkill")} note={t("progress.bySkillNote")} />
             <div className="mt-3">
-              <SkillTrend series={d.bySkill} labels={labels} locale={locale} />
-            </div>
-          </Card>
-
-          <Card className="col-span-12 lg:col-span-5">
-            <CardLabel title={t("progress.calendar")} note={t("progress.calendarNote")} />
-            <div className="mt-4">
-              <StudyCalendar days={d.studyDays} locale={locale} label={t("progress.calendar")} countText={(n) => t("progress.studyDays", { n })} />
-            </div>
-          </Card>
-
-          <Card className="col-span-12">
-            <div className="flex flex-wrap items-center justify-between gap-3">
-              <h2 className="text-[15px] font-medium">{t("progress.types")}</h2>
-              <Segmented<"weak" | "name">
-                label={t("progress.sort")}
-                value={sort}
-                onChange={setSort}
-                items={[
-                  { value: "weak", label: t("progress.sortWeak") },
-                  { value: "name", label: t("progress.sortName") },
-                ]}
+              <SkillBars
+                series={d.bySkill}
+                labels={labels}
+                target={target}
+                locale={locale}
+                targetLabel={t("progress.targetLine", { band: formatBand(target, locale) })}
+                legendTarget={t("progress.target")}
               />
             </div>
-            <div className="mt-3 overflow-x-auto">
-              <table className="w-full min-w-[620px] text-sm">
-                <thead>
-                  <tr className="border-b border-border text-xs text-muted-foreground">
-                    <th className="py-2 text-start font-medium">{t("progress.type")}</th>
-                    <th className="py-2 text-start font-medium">{t("results.skill")}</th>
-                    <th className="w-40 py-2 text-start font-medium">{t("practice.accuracy")}</th>
-                    <th className="py-2 text-center font-medium">{t("progress.marks")}</th>
-                    <th className="py-2" />
-                  </tr>
-                </thead>
-                <tbody>
-                  {types.map((x) => (
-                    <tr key={`${x.skill}-${x.type}`} className="border-b border-border last:border-0">
-                      <td className="py-2.5">{t(`types.${x.type}`)}</td>
-                      <td className="py-2.5 text-muted-foreground">{t(`skills.${x.skill}`)}</td>
-                      <td className="py-2.5">
-                        <div className="flex items-center gap-2">
-                          <Bar value={x.correct / x.total} className="w-24" label={t(`types.${x.type}`)} />
-                          <span className="font-mono text-xs text-muted-foreground">{formatPercent(x.correct / x.total, locale)}</span>
-                        </div>
-                      </td>
-                      <td className="py-2.5 text-center font-mono" dir="ltr">
-                        {formatNumber(x.correct, locale)}/{formatNumber(x.total, locale)}
-                      </td>
-                      <td className="py-2.5 text-end">
-                        <span className="inline-flex items-center gap-3">
-                          <StrengthTag strength={x.strength} label={t(`strength.${x.strength}`)} />
-                          <Link to={practiceHref(x.type)} className="text-xs text-primary hover:underline">
-                            {t("progress.drill")}
-                          </Link>
-                        </span>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
           </Card>
 
-          <Card className="col-span-12">
-            <CardLabel title={t("progress.history")} />
-            <ul className="mt-2">
-              {d.history.slice(0, 8).map((h) => (
-                <li key={h.attemptId} className="flex flex-wrap items-center gap-3 border-b border-border py-2.5 text-sm last:border-0">
-                  <span className="w-36 text-muted-foreground">{formatDate(h.completedAt, locale)}</span>
-                  <Link to={`/app/results/${h.attemptId}`} className="flex-1 font-medium hover:underline">
-                    {h.testTitle}
-                  </Link>
-                  <span className="font-mono">{formatBand(h.overall ?? h.skills[0]?.band, locale)}</span>
-                </li>
-              ))}
-            </ul>
-            <div className="mt-3">
-              <Link to="/app/results" className="text-sm text-primary hover:underline">
-                {t("common.viewAll")}
-              </Link>
+          <section
+            aria-label={t("progress.keepGoing")}
+            className="col-span-12 flex min-w-0 flex-col items-center justify-center gap-5 rounded-card bg-pink-tint px-6 py-5.5 text-center lg:col-span-5"
+          >
+            <div className="flex items-center gap-3 text-start">
+              <Mascot className="h-auto w-16 shrink-0" />
+              <div className="min-w-0">
+                <h2 className="font-archivo text-[22px] leading-tight font-extrabold text-midnight-iris">{t("progress.cheer", { name: firstName })}</h2>
+                <p className="mt-1 text-sm text-[#3a4855]">{testDate ? t("progress.cheerBody") : t("progress.cheerNoDate")}</p>
+              </div>
             </div>
-          </Card>
+            {testDate && (
+              <ExamMonth
+                examDate={testDate}
+                locale={locale}
+                tag={t("progress.examDay")}
+                label={t("progress.examMonthLabel", { date: formatFullDay(testDate, locale) })}
+              />
+            )}
+          </section>
+
+          {groups.map(({ skill, rows }) => {
+            const c = SECTION[skill];
+            const Icon = c.icon;
+            return (
+              <section
+                key={skill}
+                aria-label={t("progress.typesFor", { skill: labels[skill] })}
+                className={cn("col-span-12 min-w-0 overflow-hidden rounded-card border border-t-[5px] border-border bg-card", c.top)}
+              >
+                <div className={cn("flex items-center gap-3 px-6 py-4", c.head)}>
+                  <span className={cn("grid size-9 shrink-0 place-items-center rounded-[10px] text-white", c.tile)}>
+                    <Icon className="size-[18px]" aria-hidden="true" />
+                  </span>
+                  <h2 className={cn("font-archivo text-[22px] font-extrabold", c.text)}>{labels[skill]}</h2>
+                  <span className={cn("ms-auto text-[13px] font-semibold", c.text)}>{t("progress.typeCount", { count: rows.length, n: formatNumber(rows.length, locale) })}</span>
+                </div>
+                <div className="relative overflow-x-auto px-6 pt-1.5 pb-4">
+                  <table className="w-full min-w-[620px] text-sm">
+                    <thead>
+                      <tr className="border-b border-border text-xs text-muted-foreground">
+                        <th className="py-2 text-start font-medium">{t("progress.type")}</th>
+                        <th className="w-40 py-2 text-start font-medium">{t("practice.accuracy")}</th>
+                        <th className="py-2 text-center font-medium">{t("progress.marks")}</th>
+                        <th className="py-2">
+                          <span className="sr-only">{t("progress.actions")}</span>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {rows.map((x) => {
+                        const ratio = x.correct / x.total;
+                        return (
+                          <tr key={`${x.skill}-${x.type}`} className="border-b border-border">
+                            <td className="py-2.5">{t(`types.${x.type}`)}</td>
+                            <td className="py-2.5">
+                              <div className="flex items-center gap-2">
+                                <div
+                                  role="meter"
+                                  aria-valuemin={0}
+                                  aria-valuemax={100}
+                                  aria-valuenow={Math.round(ratio * 100)}
+                                  aria-label={t(`types.${x.type}`)}
+                                  className="h-2 w-24 overflow-hidden rounded bg-border"
+                                >
+                                  <i className="block h-full rounded" style={{ width: `${ratio * 100}%`, background: c.bar }} />
+                                </div>
+                                <span className="font-archivo text-xs text-muted-foreground tabular-nums">{formatPercent(ratio, locale)}</span>
+                              </div>
+                            </td>
+                            <td className="py-2.5 text-center font-archivo tabular-nums" dir="ltr">
+                              {formatNumber(x.correct, locale)}/{formatNumber(x.total, locale)}
+                            </td>
+                            <td className="py-2.5 text-end">
+                              <span className="inline-flex items-center gap-3">
+                                <StrengthTag strength={x.strength} label={t(`strength.${x.strength}`)} />
+                                <Link to={practiceHref(x.type)} className="text-xs text-foreground hover:text-primary hover:underline">
+                                  {t("progress.drill")}
+                                </Link>
+                              </span>
+                            </td>
+                          </tr>
+                        );
+                      })}
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+            );
+          })}
         </div>
       )}
     </>

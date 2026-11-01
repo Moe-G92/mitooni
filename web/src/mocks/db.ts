@@ -24,7 +24,7 @@ export type DB = {
 };
 
 const KEY = "bw-db";
-export const DB_VERSION = 5;
+export const DB_VERSION = 6;
 
 let cache: DB | null = null;
 

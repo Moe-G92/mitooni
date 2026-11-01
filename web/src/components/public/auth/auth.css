@@ -1,0 +1,152 @@
+/*
+ * Motion for the sign-in panels (ported from SignIn.dc.html and ForgotPassword.dc.html).
+ * Every animation stops under reduced motion and shows its final state.
+ */
+
+/* Progress path: the travelled part draws itself, markers pop in one by one. */
+.au-done {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: au-draw 1.4s 0.2s cubic-bezier(0.5, 0, 0.3, 1) forwards;
+}
+@keyframes au-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.au-pop {
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: au-pop 0.5s cubic-bezier(0.2, 0.8, 0.25, 1.2) forwards;
+}
+.au-chip {
+  opacity: 0;
+  animation: au-pop 0.5s 0.1s cubic-bezier(0.2, 0.8, 0.25, 1.2) forwards;
+}
+.au-chip + .au-chip {
+  animation-delay: 0.25s;
+}
+.au-d1 {
+  animation-delay: 0.25s;
+}
+.au-d2 {
+  animation-delay: 0.75s;
+}
+.au-d3 {
+  animation-delay: 1.35s;
+}
+.au-d4 {
+  animation-delay: 1.7s;
+}
+@keyframes au-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* The "You stopped here" card rises in after the path. */
+.au-card {
+  opacity: 0;
+  animation: au-up 0.6s 2s cubic-bezier(0.2, 0.8, 0.25, 1) forwards;
+}
+@keyframes au-up {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* The pin bobs, a ring pulses out of it, the flag waves, the caret blinks. */
+.au-bob {
+  animation: au-bob 2.4s 2s ease-in-out infinite;
+}
+@keyframes au-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+.au-ring {
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: au-ring 2s 1.8s ease-out infinite;
+}
+@keyframes au-ring {
+  0% {
+    opacity: 0.9;
+    transform: scale(0.6);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2.4);
+  }
+}
+.au-cloth {
+  transform-box: fill-box;
+  transform-origin: left center;
+  animation: au-wave 1.6s ease-in-out infinite;
+}
+@keyframes au-wave {
+  0%,
+  100% {
+    transform: skewY(0) scaleX(1);
+  }
+  50% {
+    transform: skewY(-8deg) scaleX(0.86);
+  }
+}
+.au-caret {
+  animation: au-blink 1s steps(1) infinite;
+}
+@keyframes au-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Forgot password: columns of "Oopsie!" drift upwards. Each column holds its words twice, so -50% loops seamlessly. */
+.au-oops {
+  animation: au-oops 30s linear infinite;
+}
+@keyframes au-oops {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .au-done,
+  .au-pop,
+  .au-chip,
+  .au-card,
+  .au-bob,
+  .au-cloth,
+  .au-caret,
+  .au-oops {
+    animation: none !important;
+    opacity: 1 !important;
+    stroke-dashoffset: 0 !important;
+    transform: none !important;
+  }
+  .au-ring,
+  .au-trav {
+    display: none;
+  }
+}

@@ -1,27 +1,22 @@
 /*
- * Camera and microphone for the Speaking room. The stream is kept here so the
- * device check and the room share one permission prompt.
+ * Microphone for the Speaking test. The stream is kept here so the device
+ * check and the test share one permission prompt. The canvas design has no
+ * camera tile, so only the microphone is requested.
  */
 
-export const media: { stream: MediaStream | null; hasVideo: boolean; hasAudio: boolean } = {
+export const media: { stream: MediaStream | null; hasAudio: boolean } = {
   stream: null,
-  hasVideo: false,
   hasAudio: false,
 };
 
 export async function openDevices(): Promise<typeof media> {
   if (media.stream && media.stream.getTracks().some((t) => t.readyState === "live")) return media;
   try {
-    media.stream = await navigator.mediaDevices.getUserMedia({ audio: true, video: { width: 640, height: 360 } });
+    media.stream = await navigator.mediaDevices.getUserMedia({ audio: true });
   } catch {
-    try {
-      media.stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-    } catch {
-      media.stream = null;
-    }
+    media.stream = null;
   }
   media.hasAudio = !!media.stream?.getAudioTracks().length;
-  media.hasVideo = !!media.stream?.getVideoTracks().length;
   return media;
 }
 

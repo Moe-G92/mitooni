@@ -1,14 +1,35 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, CircleArrowOutUpRight } from "lucide-react";
 import type { VocabCard } from "@/api/schemas";
 import { useVocabDue, useVocabMutations } from "@/api/queries";
 import { useT } from "@/i18n";
 import { formatNumber } from "@/lib/format";
+import { cn } from "@/lib/utils";
 import { PageHeader } from "@/components/PageHeader";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Bar, EmptyState, Skeleton } from "@/components/ui/misc";
+
+const termPattern = (term: string) => new RegExp(term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "gi");
+
+/** The example sentence with the word itself picked out in magenta. */
+function Highlighted({ text, term }: { text: string; term: string }) {
+  const parts = text.split(new RegExp(`(${termPattern(term).source})`, "gi"));
+  return (
+    <>
+      {parts.map((p, i) =>
+        i % 2 === 1 ? (
+          <mark key={i} className="rounded bg-white px-[3px] font-bold text-magenta">
+            {p}
+          </mark>
+        ) : (
+          p
+        ),
+      )}
+    </>
+  );
+}
 
 /** Two-button review (Again / Good). Space shows the answer, 1 and 2 grade it. */
 export default function VocabularyReview() {
@@ -81,26 +102,30 @@ export default function VocabularyReview() {
             <div className="text-3xl font-semibold" lang="en" dir="ltr">
               {card.term}
             </div>
-            <div className="mt-1 text-sm text-muted-foreground">{t(`vocab.posNames.${card.partOfSpeech}`, { defaultValue: card.partOfSpeech })}</div>
-            {shown ? (
-              <div className="mt-6 w-full border-t border-border pt-5" aria-live="polite">
-                <p className="text-lg">{card.meaning[locale] || card.meaning.en}</p>
-                <p className="mt-1 text-sm text-muted-foreground" lang={locale === "fa" ? "en" : "fa"} dir={locale === "fa" ? "ltr" : "rtl"}>
-                  {locale === "fa" ? card.meaning.en : card.meaning.fa}
-                </p>
-                {card.example && (
-                  <p className="mt-4 text-sm italic" lang="en" dir="ltr">
-                    {card.example}
-                  </p>
-                )}
-              </div>
-            ) : (
-              card.example && (
-                <p className="mt-6 text-sm text-muted-foreground italic" lang="en" dir="ltr">
-                  {card.example.replace(new RegExp(card.term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "gi"), "_____")}
-                </p>
-              )
+            {shown && card.meaning.fa && (
+              <p lang="fa" dir="rtl" className="mt-1.5 text-[22px] leading-8 font-extrabold text-[#800020]/60">
+                {card.meaning.fa}
+              </p>
             )}
+            <div className="mt-0.5 text-sm text-muted-foreground">{t(`vocab.posNames.${card.partOfSpeech}`, { defaultValue: card.partOfSpeech })}</div>
+            <div className="mt-6 w-full border-t border-border pt-5" aria-live="polite">
+              {shown && card.meaning.en && (
+                <p className="text-lg" lang="en" dir="ltr">
+                  {card.meaning.en}
+                </p>
+              )}
+              {card.example && (
+                <div className={cn("w-full rounded-[14px] border-s-4 border-pink-carnation bg-pink-tint px-4 py-3.5 text-start", shown && card.meaning.en && "mt-4.5")}>
+                  <div className="flex items-center gap-1.5 text-xs font-semibold tracking-[0.08em] text-magenta uppercase">
+                    <CircleArrowOutUpRight className="size-3.5" aria-hidden="true" />
+                    {t("vocab.exampleInContext")}
+                  </div>
+                  <p lang="en" dir="ltr" className="mt-1.5 text-start text-[17px] leading-[26px]">
+                    “{shown ? <Highlighted text={card.example} term={card.term} /> : card.example.replace(termPattern(card.term), "_____")}”
+                  </p>
+                </div>
+              )}
+            </div>
           </Card>
           <div className="mt-4 grid grid-cols-2 gap-3">
             {!shown ? (
@@ -109,11 +134,11 @@ export default function VocabularyReview() {
               </Button>
             ) : (
               <>
-                <Button key="again" size="lg" variant="outline" onClick={() => grade("again")} className="flex-col gap-0 py-7">
+                <Button key="again" size="lg" variant="outline" onClick={() => grade("again")} className="h-14 flex-col gap-0 text-base">
                   <span>{t("vocab.again")}</span>
                   <span className="text-xs text-muted-foreground">{t("vocab.inMinutes", { n: formatNumber(10, locale) })} · 1</span>
                 </Button>
-                <Button key="good" size="lg" onClick={() => grade("good")} className="flex-col gap-0 py-7">
+                <Button key="good" size="lg" onClick={() => grade("good")} className="h-14 flex-col gap-0 text-base">
                   <span>{t("vocab.good")}</span>
                   <span className="text-xs opacity-80">{t("vocab.inDays", { n: formatNumber(nextGood, locale) })} · 2</span>
                 </Button>

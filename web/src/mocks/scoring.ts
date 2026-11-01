@@ -4,7 +4,6 @@ import type {
   Item,
   ItemResult,
   QuestionGroup,
-  QuestionType,
   Result,
   Section,
   SkillScore,
@@ -158,12 +157,15 @@ export function buildResult(test: Test, attempt: Attempt, completedAt = new Date
     }
   }
 
-  const byTypeMap = new Map<QuestionType, TypeStat>();
+  // Keyed by skill and type: Listening and Reading share type names (multiple choice,
+  // note completion...), and merging them made each skill's rows add up wrongly.
+  const byTypeMap = new Map<string, TypeStat>();
   for (const i of items) {
-    const s = byTypeMap.get(i.type) ?? { type: i.type, skill: i.skill, correct: 0, total: 0 };
+    const key = `${i.skill}:${i.type}`;
+    const s = byTypeMap.get(key) ?? { type: i.type, skill: i.skill, correct: 0, total: 0 };
     s.correct += i.marks;
     s.total += i.maxMarks;
-    byTypeMap.set(i.type, s);
+    byTypeMap.set(key, s);
   }
   const byType = [...byTypeMap.values()];
 

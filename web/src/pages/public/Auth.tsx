@@ -1,13 +1,28 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useNavigate, useSearchParams } from "react-router";
-import { ArrowLeft } from "lucide-react";
 import type { Profile } from "@/api/schemas";
 import { useAuth } from "@/api/queries";
 import { useT } from "@/i18n";
 import { formatNumber } from "@/lib/format";
 import { emailOk, phoneOk, toLatin } from "@/lib/validate";
 import { cn } from "@/lib/utils";
-import { AuthShell, FieldError, FieldLabel, GlassInputWrapper, GoogleIcon, PasswordInput, glassInput } from "@/components/ui/sign-in";
+import {
+  AuthShell,
+  BackLink,
+  FieldError,
+  FieldLabel,
+  GoogleIcon,
+  InputBox,
+  PasswordInput,
+  PrototypeNote,
+  checkboxClass,
+  coralLink,
+  inputClass,
+  leadClass,
+  primaryButton,
+  titleClass,
+} from "@/components/ui/sign-in";
+import { ProgressPanel, type PanelVariant } from "@/components/public/auth/AuthPanel";
 
 /*
  * One page for everyone, identifier first (the pattern Google, Microsoft and
@@ -141,40 +156,41 @@ export default function Auth() {
     );
   };
 
-  const shownId = <bdi dir="ltr">{id.trim()}</bdi>;
-  const strengthKey = strength(password);
 
-  const backLink = (
-    <button type="button" onClick={reset} className="animate-element inline-flex items-center gap-1.5 text-sm text-mk-sky hover:underline">
-      <ArrowLeft className="size-4 rtl:rotate-180" aria-hidden="true" /> {t("mk.auth.change")}
-    </button>
-  );
+  const shownId = <bdi dir="ltr">{id.trim()}</bdi>;
+  const withId = (text: string) => text.split("__ID__").flatMap((part, i) => (i ? [<span key={i}>{shownId}</span>, part] : [part]));
+  const strengthKey = strength(password);
+  const firstName = knownName.split(" ")[0];
+  const panelVariant: PanelVariant = step === "password" ? "returning" : step === "identify" ? "identify" : step === "code" ? "code" : "create";
+
+  const backLink = <BackLink onClick={reset}>{t("mk.auth.change")}</BackLink>;
 
   return (
-    <AuthShell>
+    <AuthShell panel={<ProgressPanel key={panelVariant} variant={panelVariant} name={firstName} />}>
       <div ref={formArea} className="flex flex-col gap-6">
         {step === "identify" && (
-          <>
-            <h1 className="animate-element animate-delay-100 font-archivo text-4xl leading-tight font-semibold tracking-[-0.02em] md:text-5xl">{t("mk.auth.title")}</h1>
-            <p className="animate-element animate-delay-200 font-archivo text-[17px] text-mk-body">{t("mk.auth.sub")}</p>
+          <div className="flex flex-col gap-5">
+            <h1 className={titleClass}>{t("mk.auth.title")}</h1>
+            <p className={leadClass}>{t("mk.auth.sub")}</p>
 
             <button
               type="button"
               disabled={busy}
               onClick={() => auth.google.mutate(undefined, { onSuccess: go })}
-              className="animate-element animate-delay-300 flex w-full items-center justify-center gap-3 rounded-2xl border border-mk-line py-4 font-medium transition-colors hover:bg-mk-ink/5 disabled:opacity-60"
+              className="flex h-[52px] w-full items-center justify-center gap-3 rounded-2xl border border-border bg-white text-[15px] font-medium transition-colors hover:bg-pale-wisteria focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:opacity-60"
             >
               <GoogleIcon />
               {t("mk.auth.google")}
             </button>
 
-            <div className="animate-element animate-delay-400 relative flex items-center justify-center">
-              <span className="w-full border-t border-mk-line" />
-              <span className="absolute bg-mk-page px-4 text-sm text-mk-body">{t("mk.auth.or")}</span>
+            <div className="flex items-center gap-4 text-[14px] text-[#3a4855]">
+              <span className="h-px flex-1 bg-[rgba(1,22,39,0.12)]" />
+              {t("mk.auth.or")}
+              <span className="h-px flex-1 bg-[rgba(1,22,39,0.12)]" />
             </div>
 
             <form className="flex flex-col gap-5" onSubmit={identify} noValidate>
-              <div role="tablist" aria-label={t("mk.auth.or")} className="animate-element animate-delay-500 grid grid-cols-2 rounded-2xl bg-mk-ink/[0.05] p-1 dark:bg-white/[0.06]">
+              <div role="tablist" aria-label={t("mk.auth.or")} className="grid grid-cols-2 rounded-2xl bg-[rgba(1,22,39,0.04)] p-1">
                 {(["email", "phone"] as const).map((m) => (
                   <button
                     key={m}
@@ -187,17 +203,17 @@ export default function Auth() {
                       setErrors({});
                     }}
                     className={cn(
-                      "rounded-xl py-2.5 text-[15px] font-medium transition-colors",
-                      method === m ? "bg-mk-page text-mk-ink shadow-sm" : "text-mk-body hover:text-mk-ink",
+                      "rounded-xl py-2.5 text-[15px] font-medium transition-colors focus-visible:outline-2 focus-visible:outline-primary",
+                      method === m ? "bg-white text-midnight-iris shadow-[0_1px_3px_rgba(1,22,39,0.12)]" : "text-[#3a4855] hover:text-foreground",
                     )}
                   >
                     {m === "email" ? t("mk.auth.tabEmail") : t("mk.auth.tabPhone")}
                   </button>
                 ))}
               </div>
-              <div className="animate-element animate-delay-600">
+              <div>
                 <FieldLabel htmlFor="auth-id">{method === "email" ? t("mk.auth.email") : t("mk.auth.phone")}</FieldLabel>
-                <GlassInputWrapper invalid={!!errors.id}>
+                <InputBox invalid={!!errors.id}>
                   <input
                     id="auth-id"
                     name={method === "email" ? "email" : "tel"}
@@ -210,32 +226,26 @@ export default function Auth() {
                     placeholder={method === "email" ? t("mk.auth.emailPh") : t("mk.auth.phonePh")}
                     aria-invalid={!!errors.id}
                     aria-describedby={errors.id ? "auth-id-err" : undefined}
-                    className={cn(glassInput, "text-start")}
+                    className={cn(inputClass, "text-start")}
                   />
-                </GlassInputWrapper>
+                </InputBox>
                 <FieldError id="auth-id-err">{errors.id}</FieldError>
               </div>
-              <button type="submit" disabled={busy} className="animate-element animate-delay-700 w-full rounded-2xl bg-mk-ink py-4 font-medium text-mk-page transition-colors hover:bg-mk-ink/90 disabled:opacity-60">
+              <button type="submit" disabled={busy} className={primaryButton}>
                 {busy ? t("mk.auth.checking") : method === "email" ? t("mk.auth.continue") : t("mk.auth.sendCode")}
               </button>
             </form>
-          </>
+          </div>
         )}
 
         {step === "password" && (
           <form className="flex flex-col gap-5" onSubmit={signIn} noValidate>
             {backLink}
-            <h1 className="animate-element animate-delay-100 font-archivo text-4xl leading-tight font-semibold tracking-[-0.02em]">
-              {t("mk.auth.welcomeBack", { name: knownName.split(" ")[0] })}
-            </h1>
-            <p className="animate-element animate-delay-200 text-mk-body">
-              {t("mk.auth.welcomeBackSub", { id: "__ID__" })
-                .split("__ID__")
-                .flatMap((part, i) => (i ? [<span key={i}>{shownId}</span>, part] : [part]))}
-            </p>
+            <h1 className={titleClass}>{t("mk.auth.welcomeBack", { name: firstName })}</h1>
+            <p className={leadClass}>{withId(t("mk.auth.welcomeBackSub", { id: "__ID__" }))}</p>
             {/* Lets password managers pair the saved email with this password. */}
             <input type="email" name="email" autoComplete="username" value={id} readOnly hidden />
-            <div className="animate-element animate-delay-300">
+            <div>
               <FieldLabel htmlFor="auth-password">{t("mk.auth.password")}</FieldLabel>
               <PasswordInput
                 id="auth-password"
@@ -249,16 +259,16 @@ export default function Auth() {
               />
               <FieldError>{errors.password}</FieldError>
             </div>
-            <div className="animate-element animate-delay-400 flex items-center justify-between text-sm">
+            <div className="flex flex-wrap items-center justify-between gap-3 text-[14px]">
               <label className="flex cursor-pointer items-center gap-3">
-                <input type="checkbox" checked={keep} onChange={(e) => setKeep(e.target.checked)} className="size-4 accent-[#c33c54]" />
+                <input type="checkbox" checked={keep} onChange={(e) => setKeep(e.target.checked)} className={checkboxClass} />
                 <span>{t("mk.auth.keep")}</span>
               </label>
-              <Link to={`/forgot-password?email=${encodeURIComponent(id.trim())}`} className="text-mk-sky hover:underline">
+              <Link to={`/forgot-password?email=${encodeURIComponent(id.trim())}`} className={coralLink}>
                 {t("mk.auth.forgot")}
               </Link>
             </div>
-            <button type="submit" disabled={busy} className="animate-element animate-delay-500 w-full rounded-2xl bg-mk-ink py-4 font-medium text-mk-page hover:bg-mk-ink/90 disabled:opacity-60">
+            <button type="submit" disabled={busy} className={primaryButton}>
               {t("mk.auth.signIn")}
             </button>
           </form>
@@ -267,15 +277,11 @@ export default function Auth() {
         {(step === "create" || step === "name") && (
           <form className="flex flex-col gap-5" onSubmit={create} noValidate>
             {backLink}
-            <h1 className="animate-element animate-delay-100 font-archivo text-4xl leading-tight font-semibold tracking-[-0.02em]">{t("mk.auth.newHere")}</h1>
-            <p className="animate-element animate-delay-200 text-mk-body">
-              {t(step === "name" ? "mk.auth.newHereSubPhone" : "mk.auth.newHereSub", { id: "__ID__" })
-                .split("__ID__")
-                .flatMap((part, i) => (i ? [<span key={i}>{shownId}</span>, part] : [part]))}
-            </p>
-            <div className="animate-element animate-delay-300">
+            <h1 className={titleClass}>{t("mk.auth.newHere")}</h1>
+            <p className={leadClass}>{withId(t(step === "name" ? "mk.auth.newHereSubPhone" : "mk.auth.newHereSub", { id: "__ID__" }))}</p>
+            <div>
               <FieldLabel htmlFor="auth-name">{t("mk.auth.name")}</FieldLabel>
-              <GlassInputWrapper invalid={!!errors.name}>
+              <InputBox invalid={!!errors.name}>
                 <input
                   id="auth-name"
                   name="name"
@@ -284,13 +290,13 @@ export default function Auth() {
                   onChange={(e) => setName(e.target.value)}
                   placeholder={t("mk.auth.namePh")}
                   aria-invalid={!!errors.name}
-                  className={glassInput}
+                  className={inputClass}
                 />
-              </GlassInputWrapper>
+              </InputBox>
               <FieldError>{errors.name}</FieldError>
             </div>
             {step === "create" && (
-              <div className="animate-element animate-delay-400">
+              <div>
                 <FieldLabel htmlFor="auth-new-password">{t("mk.auth.password")}</FieldLabel>
                 <input type="email" name="email" autoComplete="username" value={id} readOnly hidden />
                 <PasswordInput
@@ -304,14 +310,20 @@ export default function Auth() {
                   hideLabel={t("mk.auth.hide")}
                 />
                 {password && (
-                  <div className="mt-2 flex items-center gap-2 text-xs text-mk-body" aria-live="polite">
+                  <div className="mt-2 flex items-center gap-2 text-[12px] text-[#3a4855]" aria-live="polite">
                     <div className="flex flex-1 gap-1" aria-hidden="true">
                       {[0, 1, 2].map((i) => (
                         <i
                           key={i}
                           className={cn(
                             "h-1 flex-1 rounded",
-                            i <= ["weak", "ok", "strong"].indexOf(strengthKey) ? (strengthKey === "weak" ? "bg-weak" : strengthKey === "ok" ? "bg-fair" : "bg-strength") : "bg-mk-line",
+                            i <= ["weak", "ok", "strong"].indexOf(strengthKey)
+                              ? strengthKey === "weak"
+                                ? "bg-weak"
+                                : strengthKey === "ok"
+                                  ? "bg-fair"
+                                  : "bg-strength"
+                              : "bg-border",
                           )}
                         />
                       ))}
@@ -322,14 +334,14 @@ export default function Auth() {
                 <FieldError>{errors.password}</FieldError>
               </div>
             )}
-            <div className="animate-element animate-delay-500">
-              <label className="flex cursor-pointer items-start gap-3 text-sm">
-                <input type="checkbox" checked={agree} onChange={(e) => setAgree(e.target.checked)} className="mt-0.5 size-4 accent-[#c33c54]" />
+            <div>
+              <label className="flex cursor-pointer items-start gap-3 text-[14px]">
+                <input type="checkbox" checked={agree} onChange={(e) => setAgree(e.target.checked)} className={cn(checkboxClass, "mt-0.5")} />
                 <span>{t("mk.auth.agree")}</span>
               </label>
               <FieldError>{errors.agree}</FieldError>
             </div>
-            <button type="submit" disabled={busy} className="animate-element animate-delay-600 w-full rounded-2xl bg-mk-ink py-4 font-medium text-mk-page hover:bg-mk-ink/90 disabled:opacity-60">
+            <button type="submit" disabled={busy} className={primaryButton}>
               {t("mk.auth.create")}
             </button>
           </form>
@@ -338,15 +350,11 @@ export default function Auth() {
         {step === "code" && (
           <form className="flex flex-col gap-5" onSubmit={verify} noValidate>
             {backLink}
-            <h1 className="animate-element animate-delay-100 font-archivo text-4xl leading-tight font-semibold tracking-[-0.02em]">{t("mk.auth.codeTitle")}</h1>
-            <p className="animate-element animate-delay-200 text-mk-body">
-              {t("mk.auth.codeSub", { id: "__ID__" })
-                .split("__ID__")
-                .flatMap((part, i) => (i ? [<span key={i}>{shownId}</span>, part] : [part]))}
-            </p>
-            <div className="animate-element animate-delay-300">
+            <h1 className={titleClass}>{t("mk.auth.codeTitle")}</h1>
+            <p className={leadClass}>{withId(t("mk.auth.codeSub", { id: "__ID__" }))}</p>
+            <div>
               <FieldLabel htmlFor="auth-code">{t("mk.auth.code")}</FieldLabel>
-              <GlassInputWrapper invalid={!!errors.code}>
+              <InputBox invalid={!!errors.code}>
                 <input
                   id="auth-code"
                   name="one-time-code"
@@ -358,19 +366,19 @@ export default function Auth() {
                   onChange={(e) => setCode(toLatin(e.target.value).replace(/\D/g, "").slice(0, 6))}
                   placeholder="••••••"
                   aria-invalid={!!errors.code}
-                  className={cn(glassInput, "text-center font-mono text-2xl tracking-[0.5em]")}
+                  className={cn(inputClass, "text-center font-mono text-2xl tracking-[0.5em]")}
                 />
-              </GlassInputWrapper>
+              </InputBox>
               <FieldError>{errors.code}</FieldError>
             </div>
-            <button type="submit" disabled={busy} className="animate-element animate-delay-400 w-full rounded-2xl bg-mk-ink py-4 font-medium text-mk-page hover:bg-mk-ink/90 disabled:opacity-60">
+            <button type="submit" disabled={busy} className={primaryButton}>
               {t("mk.auth.verify")}
             </button>
-            <p className="animate-element animate-delay-500 text-center text-sm text-mk-body">
+            <p className="text-center text-[14px] text-[#3a4855]">
               {resendIn > 0 ? (
                 t("mk.auth.resendIn", { n: formatNumber(resendIn, locale) })
               ) : (
-                <button type="button" className="text-mk-sky hover:underline" onClick={() => auth.otpSend.mutate({ phone: toLatin(id) }, { onSuccess: () => setResendIn(60) })}>
+                <button type="button" className={coralLink} onClick={() => auth.otpSend.mutate({ phone: toLatin(id) }, { onSuccess: () => setResendIn(60) })}>
                   {t("mk.auth.resend")}
                 </button>
               )}
@@ -378,7 +386,7 @@ export default function Auth() {
           </form>
         )}
 
-        <p className="animate-element animate-delay-800 rounded-xl border border-dashed border-mk-line px-4 py-3 text-xs leading-5 text-mk-body">{t("mk.auth.prototype")}</p>
+        <PrototypeNote>{t("mk.auth.prototype")}</PrototypeNote>
       </div>
     </AuthShell>
   );

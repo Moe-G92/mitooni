@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 import { Menu, MenuContent, MenuItem, MenuSeparator, MenuTrigger } from "@/components/ui/misc";
 
 const iconBtn =
-  "grid size-[34px] place-items-center rounded-[10px] border border-border bg-card text-foreground hover:bg-accent [&_svg]:size-[17px]";
+  "grid size-[34px] shrink-0 place-items-center rounded-[10px] border border-border bg-card text-foreground transition-colors hover:bg-accent [&_svg]:size-4";
 
 /** Language switch: English is the default, Persian the second language. */
 export function LanguageSwitch({ className }: { className?: string }) {
@@ -41,7 +41,7 @@ function Notifications() {
     <Menu>
       <MenuTrigger className={cn(iconBtn, "relative")} aria-label={t("top.notifications", { count: unread })}>
         <Bell />
-        {unread > 0 && <span className="absolute -end-1 -top-1 grid size-4 place-items-center rounded-full bg-weak text-[10px] text-white dark:text-background">{unread}</span>}
+        {unread > 0 && <span className="absolute -end-1 -top-1 grid size-4 place-items-center rounded-full bg-weak font-archivo text-[10px] leading-none font-bold text-white">{unread}</span>}
       </MenuTrigger>
       <MenuContent className="w-80 p-2">
         <div className="flex items-center justify-between px-2 py-1.5">
