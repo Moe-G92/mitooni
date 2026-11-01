@@ -46,12 +46,12 @@ export function usePrefs(): Prefs {
   return useSyncExternalStore(subscribePrefs, getPrefs, getPrefs);
 }
 
-const darkQuery =
-  typeof window !== "undefined" && typeof window.matchMedia === "function" ? window.matchMedia("(prefers-color-scheme: dark)") : null;
-
-export function resolvedTheme(theme: ThemeChoice = current.theme): "light" | "dark" {
-  if (theme === "system") return darkQuery?.matches ? "dark" : "light";
-  return theme;
+/**
+ * Day mode only (Mo, 1 Nov 2026). The saved theme choice is kept for the API
+ * contract, but every page renders light.
+ */
+export function resolvedTheme(_theme: ThemeChoice = current.theme): "light" {
+  return "light";
 }
 
 /** Writes lang, dir and data-theme on <html>. The exam layout overrides these locally. */
@@ -61,7 +61,3 @@ export function applyPrefs() {
   root.lang = current.locale;
   root.dir = current.locale === "fa" ? "rtl" : "ltr";
 }
-
-darkQuery?.addEventListener("change", () => {
-  if (current.theme === "system") applyPrefs();
-});

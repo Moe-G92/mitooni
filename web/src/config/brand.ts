@@ -1,8 +1,8 @@
 /**
- * Placeholder product name. Change it here once the name is chosen;
- * every screen reads it from this file.
+ * Product name. Every screen reads it from this file. "mitooni" is Persian
+ * for "you can"; it stays lower case and in Latin letters in both languages.
  */
 export const brand = {
-  name: "Bandwidth",
-  nameFa: "بندویدث",
+  name: "mitooni",
+  nameFa: "میتونی",
 } as const;

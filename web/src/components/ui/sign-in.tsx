@@ -1,3 +1,4 @@
+import { brand } from "@/config/brand";
 import { useState, type ReactNode } from "react";
 import { Link } from "react-router";
 import { Eye, EyeOff } from "lucide-react";
@@ -5,7 +6,7 @@ import { useT } from "@/i18n";
 import { cn } from "@/lib/utils";
 import { formatNumber } from "@/lib/format";
 import { Logo } from "@/components/Logo";
-import { LanguageSwitch, ThemeToggle } from "@/components/TopControls";
+import { LanguageSwitch } from "@/components/TopControls";
 
 /*
  * Adapted from the 21st.dev "sign-in" component (@jahed): form column on the
@@ -125,12 +126,11 @@ export function AuthShell({ children }: { children: ReactNode }) {
     <div className="mk flex min-h-[100dvh] w-full flex-col bg-mk-page font-gabarito text-mk-ink md:flex-row">
       <section className="flex flex-1 flex-col p-6 sm:p-8">
         <div className="flex items-center justify-between gap-3">
-          <Link to="/" aria-label="Bandwidth">
+          <Link to="/" aria-label={brand.name}>
             <Logo />
           </Link>
           <div className="flex items-center gap-2">
             <LanguageSwitch />
-            <ThemeToggle />
           </div>
         </div>
         <div className="flex flex-1 items-center justify-center py-10">

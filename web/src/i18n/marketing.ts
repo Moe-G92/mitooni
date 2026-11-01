@@ -23,10 +23,10 @@ export const marketingEn = {
     secondary: "How it works",
   },
   why: {
-    eyebrow: "Why Bandwidth?",
+    eyebrow: "Why mitooni?",
     p1: "IELTS is expensive to sit, and for many candidates it means travelling to another country.",
     p2: "Yet most practice happens on paper, or in apps that look nothing like the real screen.",
-    p3: "With Bandwidth, test day feels like the tenth time, not the first.",
+    p3: "With mitooni, test day feels like the tenth time, not the first.",
   },
   shell: {
     title: "The real exam, screen for screen",
@@ -103,7 +103,7 @@ export const marketingEn = {
     title: "Frequently asked questions",
     more: "More questions",
     q1: "Is this the official IELTS test?",
-    a1: "No. Bandwidth is an independent practice platform. Its screens follow the published computer-delivered test, so your practice transfers to the real one.",
+    a1: "No. mitooni is an independent practice platform. Its screens follow the published computer-delivered test, so your practice transfers to the real one.",
     q2: "How accurate is the band?",
     a2: "Listening and Reading use the published raw-score tables, which can differ by about one mark from test to test. Writing and Speaking bands are estimates, and we say so on every result.",
     q3: "Can I practise without a time limit?",
@@ -118,7 +118,7 @@ export const marketingEn = {
     account: "Account",
     language: "Language",
     create: "Create account",
-    rights: "© 2026 Bandwidth. Prototype.",
+    rights: "© 2026 mitooni. Prototype.",
     disclaimer: "Independent practice platform. Not affiliated with IELTS, the British Council, IDP or Cambridge.",
   },
   auth: {
@@ -199,10 +199,10 @@ export const marketingFa: MarketingMessages = {
     secondary: "چطور کار می‌کند",
   },
   why: {
-    eyebrow: "چرا Bandwidth؟",
+    eyebrow: "چرا mitooni؟",
     p1: "شرکت در آیلتس گران است و برای بسیاری از داوطلب‌ها یعنی سفر به کشوری دیگر.",
     p2: "با این حال بیشتر تمرین‌ها روی کاغذ انجام می‌شود، یا در برنامه‌هایی که هیچ شباهتی به صفحهٔ آزمون واقعی ندارند.",
-    p3: "با Bandwidth، روز آزمون برایتان مثل بار دهم است، نه بار اول.",
+    p3: "با mitooni، روز آزمون برایتان مثل بار دهم است، نه بار اول.",
   },
   shell: {
     title: "همان آزمون واقعی، صفحه به صفحه",
@@ -279,7 +279,7 @@ export const marketingFa: MarketingMessages = {
     title: "پرسش‌های پرتکرار",
     more: "پرسش‌های بیشتر",
     q1: "آیا این آزمون رسمی آیلتس است؟",
-    a1: "نه. Bandwidth یک پلتفرم تمرینی مستقل است. صفحه‌های آن از آزمون کامپیوتری رسمی پیروی می‌کنند تا تمرین شما مستقیم به آزمون واقعی منتقل شود.",
+    a1: "نه. mitooni یک پلتفرم تمرینی مستقل است. صفحه‌های آن از آزمون کامپیوتری رسمی پیروی می‌کنند تا تمرین شما مستقیم به آزمون واقعی منتقل شود.",
     q2: "نمره چقدر دقیق است؟",
     a2: "لیسنینگ و ریدینگ از جدول‌های رسمی نمرهٔ خام استفاده می‌کنند که ممکن است از آزمونی به آزمون دیگر حدود یک نمره فرق کند. نمرهٔ رایتینگ و اسپیکینگ تخمینی است و این را روی هر نتیجه می‌نویسیم.",
     q3: "می‌توانم بدون محدودیت زمان تمرین کنم؟",
@@ -294,7 +294,7 @@ export const marketingFa: MarketingMessages = {
     account: "حساب",
     language: "زبان",
     create: "ساخت حساب",
-    rights: "© ۲۰۲۶ Bandwidth. نسخهٔ نمایشی.",
+    rights: "© ۲۰۲۶ mitooni. نسخهٔ نمایشی.",
     disclaimer: "پلتفرم تمرینی مستقل. هیچ ارتباطی با آیلتس، بریتیش کانسل، آی‌دی‌پی یا کمبریج ندارد.",
   },
   auth: {

@@ -4,6 +4,9 @@ import { en } from "./en";
 import { fa } from "./fa";
 import { getPrefs, setPrefs, subscribePrefs } from "@/lib/prefs";
 import { marketingEn, marketingFa } from "./marketing";
+import { dashboardEn, dashboardFa } from "./overrides/dashboard";
+import { studyEn, studyFa } from "./overrides/study";
+import { resultsEn, resultsFa } from "./overrides/results";
 import type { Locale, Localized } from "@/api/schemas";
 
 /*
@@ -11,8 +14,22 @@ import type { Locale, Localized } from "@/api/schemas";
  * never uses these strings: real exam screens are English only.
  */
 
+type Tree = { [k: string]: unknown };
+const isTree = (v: unknown): v is Tree => typeof v === "object" && v !== null && !Array.isArray(v);
+
+/** Merges override string trees into the base tree, key by key. */
+function deepMerge(base: Tree, ...overrides: Tree[]): Tree {
+  const out: Tree = { ...base };
+  for (const o of overrides)
+    for (const [k, v] of Object.entries(o)) out[k] = isTree(v) && isTree(out[k]) ? deepMerge(out[k] as Tree, v) : v;
+  return out;
+}
+
 void i18n.use(initReactI18next).init({
-  resources: { en: { translation: { ...en, mk: marketingEn } }, fa: { translation: { ...fa, mk: marketingFa } } },
+  resources: {
+    en: { translation: { ...deepMerge(en, dashboardEn, resultsEn, studyEn), mk: marketingEn } },
+    fa: { translation: { ...deepMerge(fa, dashboardFa, resultsFa, studyFa), mk: marketingFa } },
+  },
   lng: getPrefs().locale,
   fallbackLng: "en",
   interpolation: { escapeValue: false },

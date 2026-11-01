@@ -7,162 +7,102 @@
 @import "@fontsource/anton";
 
 /*
- * Dark mode is keyed on data-theme on <html>, which the app always resolves
- * to "light" or "dark" (following the OS when the learner picks "system").
+ * Day mode only (Mo, 1 Nov 2026). The dark variant never matches, so any
+ * leftover dark: classes are inert until they are cleaned up.
  */
-@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+@custom-variant dark (&:where([data-theme="never"], [data-theme="never"] *));
 
 /*
- * Reference palette (Mo, 29 Oct 2026, two coolors.co palettes). The same in
- * both themes: use them as fills behind ink-black text (or white text on
- * Rosewood), sparingly, for accents, tiles and chart marks. Big surfaces use
- * the soft tints in the theme tokens below, never the full colours.
- *   Palette 1: Ink Black, Rosewood, Frosted Blue, Light Green, Almond Silk
- *   Palette 2: Wisteria Blue, Pink Carnation, Canary Yellow, White, Vibrant Coral
+ * mitooni palette (design canvas, 1 Nov 2026). Deep Wisteria is the brand
+ * colour; Midnight Iris for logo and display type; Canary and Coral for small
+ * accents; Pink Carnation tints for warm panels. Old names are kept as aliases
+ * so existing classes still resolve.
  */
 :root {
   --ink-black: #011627;
-  --rosewood: #c33c54;
-  --frosted-blue: #8ee3ef;
-  --light-green: #9ce37d;
-  --almond-silk: #f2d1c9;
-  --wisteria-blue: #91a6ff;
-  --pink-carnation: #ff88dc;
+  --deep-wisteria: #3e4fc4;
+  --deep-wisteria-dark: #2f3da0;
+  --midnight-iris: #2b2470;
+  --periwinkle: #c9d2ff;
+  --pale-wisteria: #eef1ff;
   --canary-yellow: #faff7f;
+  --coral: #d92f3a;
+  --pink-carnation: #ff88dc;
+  --pink-tint: #ffe6f8;
+  --magenta: #b02c8c;
   --white: #ffffff;
-  --vibrant-coral: #ff5154;
+  /* aliases */
+  --rosewood: #d92f3a;
+  --vibrant-coral: #d92f3a;
+  --frosted-blue: #c9d2ff;
+  --wisteria-blue: #3e4fc4;
+  --light-green: #9ce37d;
+  --almond-silk: #ffe6f8;
 }
 
-/* App tokens, built on the reference palette (dashboard, results, feedback). */
+/* App tokens (dashboard, results, feedback). */
 :root {
-  --background: #f4f5f7;
+  --background: #f7f8ff;
   --foreground: #011627;
   --card: #ffffff;
   --card-foreground: #011627;
   --popover: #ffffff;
   --popover-foreground: #011627;
-  --primary: #011627;
+  --primary: #3e4fc4;
   --primary-foreground: #ffffff;
-  --secondary: #e4f8fb;
-  --secondary-foreground: #011627;
-  --muted: #eceef1;
+  --secondary: #eef1ff;
+  --secondary-foreground: #2b2470;
+  --muted: #eef0f3;
   --muted-foreground: #556170;
   --faint: #5d6874;
-  --accent: #eceef1;
-  --accent-foreground: #011627;
-  --destructive: #c33c54;
+  --accent: #eef1ff;
+  --accent-foreground: #2b2470;
+  --destructive: #d92f3a;
   --border: #e1e4e8;
   --input: #d3d8de;
-  --ring: #011627;
+  --ring: #3e4fc4;
   --strength: #2c6e1a;
   --strength-soft: #e6f7de;
   --fair: #7a6100;
-  --fair-soft: #fbfcd9;
-  /* Rosewood, one step darker so it passes AA on its own soft tint. */
-  --weak: #ad2f46;
-  --weak-soft: #fae8e4;
-  --chart-1: #011627;
-  --chart-2: #5fb83c;
-  --chart-3: #c33c54;
-  --chart-4: #6a82f0;
+  --fair-soft: #fdffc2;
+  --weak: #b8232d;
+  --weak-soft: #ffe3e3;
+  --chart-1: #3e4fc4;
+  --chart-2: #4f9a2e;
+  --chart-3: #d92f3a;
+  --chart-4: #b02c8c;
   --chart-5: #556170;
-  /* Sidebar: Ink Black in both themes, as in the reference dashboard. */
-  --sidebar: #011627;
+  /* Sidebar: Deep Wisteria with a Canary marker on the active item. */
+  --sidebar: #3e4fc4;
   --sidebar-foreground: #ffffff;
   --sidebar-muted: rgba(255, 255, 255, 0.68);
-  --sidebar-active: rgba(142, 227, 239, 0.16);
+  --sidebar-active: rgba(250, 255, 127, 0.16);
   --radius: 20px;
 }
 
-[data-theme="dark"] {
-  --background: #020c15;
-  --foreground: #e9eef3;
-  --card: #0a1b29;
-  --card-foreground: #e9eef3;
-  --popover: #0f2232;
-  --popover-foreground: #e9eef3;
-  --primary: #8ee3ef;
-  --primary-foreground: #011627;
-  --secondary: #0f2a35;
-  --secondary-foreground: #e9eef3;
-  --muted: #112231;
-  --muted-foreground: #a3b1be;
-  --faint: #8d9cab;
-  --accent: #132839;
-  --accent-foreground: #e9eef3;
-  --destructive: #f08497;
-  --border: #1a2e3f;
-  --input: #27405a;
-  --ring: #8ee3ef;
-  --strength: #9ce37d;
-  --strength-soft: #16301a;
-  --fair: #e7ec74;
-  --fair-soft: #2a2c12;
-  --weak: #f08497;
-  --weak-soft: #3a1820;
-  --chart-1: #8ee3ef;
-  --chart-2: #9ce37d;
-  --chart-3: #f08497;
-  --chart-4: #91a6ff;
-  --chart-5: #a3b1be;
-  --sidebar: #010e19;
-  --sidebar-foreground: #ffffff;
-  --sidebar-muted: rgba(255, 255, 255, 0.66);
-  --sidebar-active: rgba(142, 227, 239, 0.14);
-  color-scheme: dark;
-}
-
-
-/*
- * Public pages: layout and type from reasonal.co (docs/research/2026-10-29-reasonal-teardown.md),
- * colours from the reference palette. Section backgrounds are pale tints of it;
- * the full colours only appear in small accents.
- */
+/* Public pages: white page, Deep Wisteria nav, pink and pale-wisteria panels. */
 :root {
   --mk-page: #ffffff;
   --mk-ink: #011627;
   --mk-body: #3a4855;
   --mk-card: #ffffff;
   --mk-line: rgba(1, 22, 39, 0.12);
-  --mk-peach: #f2d1c9; /* Almond Silk */
-  --mk-beige: #f8ece8; /* Almond Silk, light */
-  --mk-lavender: #e3e8ff; /* Wisteria Blue tint */
-  --mk-orange: #ff5154; /* Vibrant Coral, with ink text */
-  --mk-blue: #ddf6fa; /* Frosted Blue tint */
-  --mk-sage: #e5f7dc; /* Light Green tint */
-  --mk-pink: #ffe6f8; /* Pink Carnation tint */
-  --mk-butter: #fcfdd8; /* Canary Yellow tint */
-  --mk-green: #e5f7dc;
-  --mk-teal: #ddf6fa;
-  --mk-footer: #011627;
-  --mk-sky: #c33c54; /* accent: Rosewood */
-  --mk-hero: linear-gradient(180deg, #8ee3ef 0%, #c6f2f8 100%);
-  --mk-hero-title: linear-gradient(170deg, #011627 20%, #0b3550 75%);
-  --mk-hero-text: #0b2a3e;
+  --mk-peach: #ffe6f8;
+  --mk-beige: #ffe6f8;
+  --mk-lavender: #eef1ff;
+  --mk-orange: #d92f3a;
+  --mk-blue: #eef1ff;
+  --mk-sage: #e6f7de;
+  --mk-pink: #ffe6f8;
+  --mk-butter: #fdffc7;
+  --mk-green: #e6f7de;
+  --mk-teal: #eef1ff;
+  --mk-footer: #2b2470;
+  --mk-sky: #d92f3a;
+  --mk-hero: #ffffff;
+  --mk-hero-title: linear-gradient(170deg, #2b2470 20%, #3e4fc4 75%);
+  --mk-hero-text: #2b2470;
   --mk-cloud: rgba(255, 255, 255, 0.7);
-}
-[data-theme="dark"] {
-  --mk-page: #020c15;
-  --mk-ink: #eef3f7;
-  --mk-body: #b3bfca;
-  --mk-card: #0d1f2e;
-  --mk-line: rgba(238, 243, 247, 0.14);
-  --mk-peach: #2c1f22;
-  --mk-beige: #1a1a22;
-  --mk-lavender: #1b2140;
-  --mk-orange: #ff5154;
-  --mk-blue: #0e2a33;
-  --mk-sage: #15291a;
-  --mk-pink: #2e1729;
-  --mk-butter: #26271a;
-  --mk-green: #15291a;
-  --mk-teal: #0e2a33;
-  --mk-footer: #010e19;
-  --mk-sky: #f08497;
-  --mk-hero: linear-gradient(180deg, #011627 0%, #0a3346 100%);
-  --mk-hero-title: linear-gradient(170deg, #c6f4fa 20%, #8ee3ef 75%);
-  --mk-hero-text: #d6f3f8;
-  --mk-cloud: rgba(142, 227, 239, 0.07);
 }
 
 @theme inline {
@@ -201,6 +141,14 @@
   --color-sidebar-muted: var(--sidebar-muted);
   --color-sidebar-active: var(--sidebar-active);
   --color-ink-black: var(--ink-black);
+  --color-deep-wisteria: var(--deep-wisteria);
+  --color-deep-wisteria-dark: var(--deep-wisteria-dark);
+  --color-midnight-iris: var(--midnight-iris);
+  --color-periwinkle: var(--periwinkle);
+  --color-pale-wisteria: var(--pale-wisteria);
+  --color-coral: var(--coral);
+  --color-pink-tint: var(--pink-tint);
+  --color-magenta: var(--magenta);
   --color-rosewood: var(--rosewood);
   --color-frosted-blue: var(--frosted-blue);
   --color-light-green: var(--light-green);
@@ -212,7 +160,8 @@
   --radius-card: var(--radius);
   --font-sans: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Geist Mono Variable", ui-monospace, monospace;
-  --font-persian: "Vazirmatn Variable", Tahoma, sans-serif;
+  /* IRAN Rounded once its licensed web font files are added; Vazirmatn until then. */
+  --font-persian: "IRANRounded", "IRAN Rounded", "Vazirmatn Variable", Tahoma, sans-serif;
   --font-archivo: "Archivo Variable", "Vazirmatn Variable", sans-serif;
   --font-gabarito: "Gabarito Variable", "Vazirmatn Variable", sans-serif;
   /* Heavy condensed face for the exam countdown only. */

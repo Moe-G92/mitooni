@@ -1,9 +1,10 @@
+import { brand } from "@/config/brand";
 import { Link, NavLink, Outlet, useLocation } from "react-router";
 import { Menu as MenuIcon } from "lucide-react";
 import { useMe } from "@/api/queries";
 import { useT } from "@/i18n";
 import { Logo } from "@/components/Logo";
-import { LanguageSwitch, ThemeToggle } from "@/components/TopControls";
+import { LanguageSwitch } from "@/components/TopControls";
 import { Menu, MenuContent, MenuItem, MenuTrigger } from "@/components/ui/misc";
 import { cn } from "@/lib/utils";
 
@@ -47,7 +48,7 @@ export function PublicLayout() {
       </a>
       <header className="fixed inset-x-0 top-0 z-[1000] p-6 md:p-8">
         <div className="relative mx-auto flex h-[60px] max-w-[1408px] items-center gap-3 rounded-2xl bg-mk-page/85 px-4 shadow-[0_1px_0_var(--mk-line)] backdrop-blur-md">
-          <Link to="/" className="z-10 flex items-center" aria-label="Bandwidth">
+          <Link to="/" className="z-10 flex items-center" aria-label={brand.name}>
             <Logo />
           </Link>
           <nav aria-label={t("pub.nav")} className="absolute inset-0 hidden items-center justify-center lg:flex">
@@ -63,7 +64,6 @@ export function PublicLayout() {
           </nav>
           <div className="z-10 ms-auto flex items-center gap-2">
             <LanguageSwitch />
-            <ThemeToggle />
             <Menu>
               <MenuTrigger className="grid size-[34px] place-items-center rounded-[10px] border border-border bg-card lg:hidden" aria-label={t("mk.nav.menu")}>
                 <MenuIcon className="size-[17px]" />

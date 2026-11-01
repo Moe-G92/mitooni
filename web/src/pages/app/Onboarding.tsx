@@ -7,7 +7,7 @@ import { formatBand, formatNumber } from "@/lib/format";
 import { setPrefs } from "@/lib/prefs";
 import { cn } from "@/lib/utils";
 import { BrandMark } from "@/components/BrandMark";
-import { LanguageSwitch, ThemeToggle } from "@/components/TopControls";
+import { LanguageSwitch } from "@/components/TopControls";
 import { Button } from "@/components/ui/button";
 import { Field, Input, Label, Select } from "@/components/ui/form";
 import { Segmented } from "@/components/ui/misc";
@@ -66,7 +66,6 @@ export default function Onboarding() {
         <BrandMark to="/" />
         <div className="ms-auto flex gap-2">
           <LanguageSwitch />
-          <ThemeToggle />
         </div>
       </header>
       <main className="mx-auto max-w-xl px-4 pt-6 pb-16">

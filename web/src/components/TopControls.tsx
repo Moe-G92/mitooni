@@ -1,8 +1,8 @@
 import { Link, useNavigate } from "react-router";
-import { Bell, LogOut, Moon, Settings, Sun, User } from "lucide-react";
+import { Bell, LogOut, Settings, User } from "lucide-react";
 import { useAuth, useMe, useNotificationMutations, useNotifications, useUpdateMe } from "@/api/queries";
 import { switchLocale, useT } from "@/i18n";
-import { resolvedTheme, setPrefs, usePrefs } from "@/lib/prefs";
+import { usePrefs } from "@/lib/prefs";
 import { formatDateTime } from "@/lib/format";
 import { cn } from "@/lib/utils";
 import { Menu, MenuContent, MenuItem, MenuSeparator, MenuTrigger } from "@/components/ui/misc";
@@ -27,27 +27,6 @@ export function LanguageSwitch({ className }: { className?: string }) {
       lang={next}
     >
       {next === "fa" ? "فارسی" : "English"}
-    </button>
-  );
-}
-
-export function ThemeToggle() {
-  const { t } = useT();
-  const prefs = usePrefs();
-  const me = useMe();
-  const update = useUpdateMe();
-  const dark = resolvedTheme(prefs.theme) === "dark";
-  return (
-    <button
-      className={iconBtn}
-      aria-label={dark ? t("top.light") : t("top.dark")}
-      onClick={() => {
-        const theme = dark ? "light" : "dark";
-        setPrefs({ theme });
-        if (me.data) update.mutate({ theme });
-      }}
-    >
-      {dark ? <Sun /> : <Moon />}
     </button>
   );
 }
@@ -144,7 +123,6 @@ export function TopControls() {
     <div className="flex items-center gap-2">
       <LanguageSwitch />
       <Notifications />
-      <ThemeToggle />
       <Account />
     </div>
   );
