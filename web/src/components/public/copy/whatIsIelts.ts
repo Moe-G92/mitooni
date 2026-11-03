@@ -3,6 +3,9 @@
  * Rules: no full stops in titles, headings, card titles, labels or taglines
  * (body sentences keep them); never zero-pad numbers; Persian uses real
  * half-spaces (U+200C) and keeps "mitooni" in Latin letters.
+ * The Persian copy follows the canvas WhatIsIELTSFa.dc.html: a casual, spoken
+ * tone, with IELTS, skill and test names left in English (the page isolates
+ * those English runs with <bdi>). Numbers use Persian digits.
  */
 
 export const whatEn = {
@@ -18,10 +21,26 @@ export const whatEn = {
   skills: {
     title: "The four skills",
     lead: "Listening, Reading and Writing are taken on the same day, with no breaks between them. Speaking can be on the same day or up to a week before or after.",
-    listening: { name: "Listening", time: "About 30 minutes", detail: "4 parts · 40 questions" },
-    reading: { name: "Reading", time: "60 minutes", detail: "3 passages · 40 questions" },
-    writing: { name: "Writing", time: "60 minutes", detail: "Task 1 and Task 2" },
-    speaking: { name: "Speaking", time: "11 to 14 minutes", detail: "3 parts, face to face" },
+    listening: {
+      name: "Listening",
+      time: "About 30 minutes",
+      detail: "4 parts · 40 questions",
+    },
+    reading: {
+      name: "Reading",
+      time: "60 minutes",
+      detail: "3 passages · 40 questions",
+    },
+    writing: {
+      name: "Writing",
+      time: "60 minutes",
+      detail: "Task 1 and Task 2",
+    },
+    speaking: {
+      name: "Speaking",
+      time: "11 to 14 minutes",
+      detail: "3 parts, face to face",
+    },
   },
   types: {
     title: "Which test do you need?",
@@ -48,43 +67,51 @@ export const whatEn = {
 };
 
 export const whatFa: typeof whatEn = {
-  kicker: "آزمونی را که برایش آماده می‌شوید بشناسید",
-  title: "آیلتس چیست؟",
-  lead: "آیلتس (IELTS، سامانهٔ بین‌المللی آزمون زبان انگلیسی) انگلیسی شما را در چهار مهارت می‌سنجد: <b>شنیدن، خواندن، نوشتن و صحبت کردن</b>. برای هر مهارت یک نمره (باند) از ۰ تا ۹ می‌گیرید و یک نمرهٔ کلی هم دارید. آزمون را می‌توانید روی کاغذ یا با کامپیوتر بدهید و حدود ۲ ساعت و ۴۵ دقیقه طول می‌کشد.",
+  kicker: "اول ببین با چه آزمونی طرفی",
+  title: "درباره‌ی IELTS",
+  lead: "IELTS (International English Language Testing System) انگلیسیت رو توی چهار مهارت محک می‌زنه: <b>Listening, Reading, Writing, Speaking</b>. برای هر مهارت یه نمره از ۰ تا ۹ می‌گیری و یه Overall band هم برای کل آزمون. می‌تونی کاغذی یا کامپیوتری بدیش و کلش حدود ۲ ساعت و ۴۵ دقیقه طول می‌کشه.",
   chips: {
-    bands: "نمره از ۰ تا ۹",
+    bands: "Band از ۰ تا ۹",
     orgs: "بیش از ۱۲٬۰۰۰ سازمان",
     format: "کاغذی یا کامپیوتری",
   },
   countries: "پذیرفته‌شده در بیش از ۱۴۰ کشور",
   skills: {
-    title: "چهار مهارت آزمون",
-    lead: "شنیدن، خواندن و نوشتن در یک روز و پشت سر هم، بدون استراحت برگزار می‌شوند. صحبت کردن ممکن است همان روز باشد یا تا یک هفته قبل یا بعد از آن.",
-    listening: { name: "شنیدن", time: "حدود ۳۰ دقیقه", detail: "۴ بخش · ۴۰ سؤال" },
-    reading: { name: "خواندن", time: "۶۰ دقیقه", detail: "۳ متن · ۴۰ سؤال" },
-    writing: { name: "نوشتن", time: "۶۰ دقیقه", detail: "تسک ۱ و تسک ۲" },
-    speaking: { name: "صحبت کردن", time: "۱۱ تا ۱۴ دقیقه", detail: "۳ بخش، رودررو با ممتحن" },
+    title: "چهار مهارت",
+    lead: "Listening، Reading و Writing توی یه روز و پشت سر هم برگزار می‌شن، بدون استراحت. Speaking ممکنه همون روز باشه یا تا یه هفته قبل یا بعدش.",
+    listening: {
+      name: "Listening",
+      time: "حدود ۳۰ دقیقه",
+      detail: "۴ بخش · ۴۰ سؤال",
+    },
+    reading: { name: "Reading", time: "۶۰ دقیقه", detail: "۳ متن · ۴۰ سؤال" },
+    writing: { name: "Writing", time: "۶۰ دقیقه", detail: "Task 1 و Task 2" },
+    speaking: {
+      name: "Speaking",
+      time: "۱۱ تا ۱۴ دقیقه",
+      detail: "۳ بخش، رو در رو",
+    },
   },
   types: {
-    title: "به کدام آزمون نیاز دارید؟",
-    lead: "پیش از ثبت‌نام، حتماً بررسی کنید دانشگاه، کارفرما یا سفارت چه نمره‌ای و کدام نوع آزمون را از شما می‌خواهد.",
-    cta: "تمرین را شروع کنید",
+    title: "کدوم آزمون به کارت میاد؟",
+    lead: "قبل از ثبت‌نام یه بار چک کن دانشگاه، کارفرما یا مرجع ویزا چه آزمونی و چه نمره‌ای ازت خواسته.",
+    cta: "تمرین رو شروع کن",
     academic: {
-      name: "آیلتس آکادمیک",
-      body: "برای تحصیل در دانشگاه (کارشناسی یا تحصیلات تکمیلی) و ثبت مدرک حرفه‌ای، مثلاً برای پزشکان و پرستاران.",
+      name: "IELTS Academic",
+      body: "اگه می‌خوای دانشگاه بری، از کارشناسی تا تحصیلات تکمیلی، یا برای کارت ثبت‌نام حرفه‌ای لازم داری، مثل پزشک‌ها و پرستارها.",
     },
     general: {
-      name: "آیلتس جنرال ترینینگ",
-      body: "برای سابقهٔ کار یا دورهٔ آموزشی، تحصیل در دبیرستان و مهاجرت به کشورهایی مانند استرالیا، کانادا، نیوزیلند و بریتانیا.",
+      name: "IELTS General Training",
+      body: "برای سابقه‌ی کار، دوره‌ی آموزشی، دبیرستان و مهاجرت به کشورهایی مثل استرالیا، کانادا، نیوزیلند و بریتانیا.",
     },
     ukvi: {
-      name: "آیلتس UKVI",
-      body: "همان آزمون آکادمیک یا جنرال که در یک مرکز تأییدشده برگزار می‌شود، برای درخواست ویزا و اقامت بریتانیا.",
+      name: "IELTS for UKVI",
+      body: "همون آزمون Academic یا General Training که توی یه مرکز تأییدشده برگزار می‌شه و برای ویزا و مهاجرت به بریتانیا به کار میاد.",
     },
     life: {
-      name: "آیلتس لایف اسکیلز",
-      body: "آزمون صحبت کردن و شنیدن در سطح A1،‏ A2 یا B1، برای برخی ویزاهای خانوادگی، اقامت دائم و شهروندی بریتانیا.",
+      name: "IELTS Life Skills",
+      body: "آزمونی برای Speaking و Listening در سطح A1، A2 یا B1، برای بعضی ویزاهای خانوادگی، اقامت و شهروندی بریتانیا.",
     },
-    note: "بخش‌های شنیدن و صحبت کردن در آکادمیک و جنرال یکسان‌اند. خواندن و نوشتن با هم فرق دارند.",
+    note: "Listening و Speaking در Academic و General Training یکیه. Reading و Writing فرق داره.",
   },
 };

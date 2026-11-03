@@ -185,11 +185,9 @@ function FullTestCard({ test }: { test: TestSummary }) {
           {t("mocks.length")}
         </span>
       </div>
-      {(me.data?.scheduledMock || (me.data && me.data.accommodation !== 1)) && (
-        <div className="relative mt-3 text-sm text-white/90">
-          {me.data?.scheduledMock && <p>{t("mocks.scheduledFor", { date: formatDateTime(me.data.scheduledMock, locale) })}</p>}
-          {me.data && me.data.accommodation !== 1 && <p>{t("mocks.extraTime", { x: formatNumber(me.data.accommodation, locale) })}</p>}
-        </div>
+      {/* The canvas no longer repeats the scheduled time here (the Overview shows it); extra time still shows when it applies. */}
+      {me.data && me.data.accommodation !== 1 && (
+        <p className="relative mt-3 text-sm text-white/90">{t("mocks.extraTime", { x: formatNumber(me.data.accommodation, locale) })}</p>
       )}
     </section>
   );
@@ -285,7 +283,7 @@ export default function Mocks() {
                       </div>
                       <div className="text-xs text-muted-foreground">
                         {t("mocks.startedOn", { date: formatDateTime(a.startedAt, locale) })}
-                        {st && ` · ${t("mocks.minutesLeft", { count: Math.ceil(st.remainingSec / 60) })}`}
+                        {st && ` · ${t("mocks.minutesLeft", { count: Math.ceil(st.remainingSec / 60), n: formatNumber(Math.ceil(st.remainingSec / 60), locale) })}`}
                       </div>
                     </div>
                     <Button asChild size="sm">

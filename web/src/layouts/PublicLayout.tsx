@@ -8,6 +8,7 @@ import { LogoMark } from "@/components/Logo";
 import { LanguageSwitch } from "@/components/TopControls";
 import { Container } from "@/components/public/ui";
 import { pillClass } from "@/components/public/pill";
+import { Mixed } from "@/components/public/Mixed";
 import { cn } from "@/lib/utils";
 
 /*
@@ -16,11 +17,20 @@ import { cn } from "@/lib/utils";
  * footer. Below 1024px the nav collapses into a menu button in the strip.
  */
 
+/** The nav strip ("Your study room" is the app; signed-out visitors land on sign-in). */
 const NAV = [
   { to: "/how-it-works", key: "how" },
   { to: "/what-is-ielts", key: "what" },
+  { to: "/coaching", key: "coaching" },
+  { to: "/app", key: "studyRoom" },
+  { to: "/faq", key: "faq" },
+] as const;
+
+/** The footer's Product column. */
+const PRODUCT = [
+  { to: "/how-it-works", key: "how" },
+  { to: "/what-is-ielts", key: "what" },
   { to: "/app/mocks", key: "mocks" },
-  { to: "/app/practice", key: "practice" },
   { to: "/coaching", key: "coaching" },
   { to: "/faq", key: "faq" },
 ] as const;
@@ -57,8 +67,8 @@ export function PublicLayout() {
 
   const links = NAV.map(({ to, key }) => (
     <li key={to}>
-      <NavLink to={to} className={stripLink}>
-        {t(`mk.nav.${key}`)}
+      <NavLink to={to} end={to === "/app"} className={stripLink}>
+        <Mixed text={t(`mk.nav.${key}`)} />
       </NavLink>
     </li>
   ));
@@ -131,15 +141,17 @@ export function PublicLayout() {
           <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,200px),1fr))] gap-10">
             <div>
               <Wordmark light size="sm" />
-              <p className="mt-4 max-w-[320px] font-archivo text-[15px] leading-6 text-white/85">{t("mk.footer.disclaimer")}</p>
+              <p className="mt-4 max-w-[320px] font-archivo text-[15px] leading-6 text-white/85">
+                <Mixed text={t("mk.footer.disclaimer")} />
+              </p>
             </div>
             <div>
               <h2 className="m-0 font-archivo text-[16px] leading-6 font-semibold text-white/85">{t("mk.footer.product")}</h2>
               <ul className="mt-4 flex list-none flex-col gap-2.5 p-0 font-archivo text-[16px] leading-6">
-                {(["how", "what", "mocks", "coaching", "faq"] as const).map((k) => (
-                  <li key={k}>
-                    <Link to={NAV.find((n) => n.key === k)!.to} className="text-white no-underline hover:text-white hover:underline">
-                      {t(`mk.nav.${k}`)}
+                {PRODUCT.map(({ to, key }) => (
+                  <li key={key}>
+                    <Link to={to} className="text-white no-underline hover:text-white hover:underline">
+                      <Mixed text={t(`mk.nav.${key}`)} />
                     </Link>
                   </li>
                 ))}
@@ -163,11 +175,13 @@ export function PublicLayout() {
             <div>
               <h2 className="m-0 font-archivo text-[16px] leading-6 font-semibold text-white/85">{t("mk.footer.language")}</h2>
               <div className="mt-4">
-                <LanguageSwitch className="border-white/30 bg-transparent text-white hover:bg-white/10" />
+                <LanguageSwitch className="w-full border-white/30 bg-transparent text-white hover:bg-white/10" />
               </div>
             </div>
           </div>
-          <p className="mt-12 border-t border-white/15 pt-6 font-archivo text-[14px] text-white/85">{t("mk.footer.rights")}</p>
+          <p className="mt-12 border-t border-white/15 pt-6 font-archivo text-[14px] text-white/85">
+            <Mixed text={t("mk.footer.rights")} />
+          </p>
         </Container>
       </footer>
     </div>

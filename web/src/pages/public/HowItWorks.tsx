@@ -86,7 +86,7 @@ const OPTIONS: { key: OptionKey; to: string; icons: string[]; red: boolean }[] =
   { key: "skill", to: "/app/practice", icons: ["grid", "aim", "timer", "language"], red: false },
 ];
 
-function OptionCard({ n, opt }: { n: number; opt: (typeof OPTIONS)[number] }) {
+function OptionCard({ opt }: { opt: (typeof OPTIONS)[number] }) {
   const { t, locale } = useT();
   const k = (s: string) => t(`mk.howTo.options.${opt.key}.${s}`);
   const colour = opt.red ? "#D92F3A" : "#3E4FC4";
@@ -94,7 +94,7 @@ function OptionCard({ n, opt }: { n: number; opt: (typeof OPTIONS)[number] }) {
     <article className="flex flex-col overflow-hidden rounded-[28px] border border-border bg-white shadow-[0_14px_34px_rgba(43,36,112,0.08)]">
       <div className={cn("flex flex-wrap items-center justify-between gap-3 px-[26px] py-5 text-white max-sm:px-5", opt.red ? "bg-coral" : "bg-primary")}>
         <div>
-          <div className={cn("text-[12px] font-bold tracking-[0.12em] uppercase", !opt.red && "text-white/85")}>{t("mk.howTo.options.option", { n: formatNumber(n, locale) })}</div>
+          <div className={cn("text-[12px] font-bold tracking-[0.12em] uppercase", !opt.red && "text-white/85")}>{k("label")}</div>
           <h3 className="mt-0.5 text-[24px] leading-[30px] font-extrabold text-white max-sm:text-[21px] max-sm:leading-7">{k("title")}</h3>
         </div>
         <div
@@ -203,8 +203,8 @@ export default function HowItWorks() {
           </h2>
           <p className="mx-auto mt-2.5 max-w-[620px] text-center text-[17px] leading-[26px] text-[#3a4855]">{t("mk.howTo.options.lead")}</p>
           <div className="mt-8 grid grid-cols-[repeat(auto-fit,minmax(min(100%,500px),1fr))] gap-6">
-            {OPTIONS.map((o, i) => (
-              <OptionCard key={o.key} n={i + 1} opt={o} />
+            {OPTIONS.map((o) => (
+              <OptionCard key={o.key} opt={o} />
             ))}
           </div>
         </Container>

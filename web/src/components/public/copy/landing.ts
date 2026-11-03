@@ -1,10 +1,15 @@
 /*
  * Copy for the landing page (route /, canvas Main.dc.html), namespace mk.home.
  * Rules: no full stops in titles, headings, card titles, labels or taglines
- * (body sentences keep them); never zero-pad numbers; Persian uses real
- * half-spaces (U+200C) and keeps "mitooni" in Latin letters.
+ * (body sentences keep them); never zero-pad numbers.
+ * Persian follows MainFa.dc.html: a friendly spoken register, real half-spaces
+ * (U+200C), "‌ی" after a final ه, and mitooni, IELTS, Mock and skill names in
+ * Latin letters. The product mock-ups (dashboard, answer sheet, score tiles,
+ * report and "Ready to book?" card) stay English and left to right on the
+ * Persian page too, as on the board, so dash, note, report and the ready card
+ * strings are English in both languages.
  * Skill, question-type and strength names come from the app strings
- * (skills.*, types.*, strength.*). Strings with <b>…</b> render through Rich.
+ * (skills.*, types.*, strength.*). Strings with <b>…</b> render through Mixed.
  */
 
 export const landingEn = {
@@ -84,75 +89,45 @@ export const landingEn = {
 
 export const landingFa: typeof landingEn = {
   hero: {
-    kicker: "تمرین برای <b>آیلتس آکادمیک و جنرال</b>",
-    title: "پیش از آیلتس، آیلتس بدهید",
-    lead: "همان صفحه‌های آزمون واقعی، نمره‌ای که می‌شود به آن اعتماد کرد و بازخورد به <b>فارسی یا انگلیسی</b>.",
-    cta: "شروع تمرین",
+    kicker: "هر چیزی که برای نمره‌ی دلخواهت نیاز داری",
+    title: "قبل از آزمون، نمره‌ت رو بدون",
+    lead: "همه‌چی مو به مو مثل روز امتحانه. نمره‌ای که می‌گیری واقعیه و هر جا اشتباه کنی، به <b>فارسی یا انگلیسی</b> برات توضیح می‌دیم.",
+    cta: "همین الان شروع کن",
     secondary: "راهنمای استفاده",
-    point1: "لیسنینگ، ریدینگ، رایتینگ، اسپیکینگ",
-    point2: "قالب آزمون کامپیوتری",
-    chip1: "صفحه‌های آزمون واقعی",
-    chip2: "نمره‌ای قابل‌اعتماد",
-    chip3: "بازخورد به فارسی یا انگلیسی",
-    art: "کتاب تمرین mitooni با پاسخ‌برگ لیسنینگ که تصحیح می‌شود و مُهر نمرهٔ ۷٫۰ می‌خورد",
+    point1: "هر چهار مهارت، Listening, Reading, Writing, Speaking",
+    point2: "فرمت Computer-delivered",
+    chip1: "همون صفحه‌های آزمون اصلی",
+    chip2: "نمره‌ای که می‌شه روش حساب کرد",
+    chip3: "توضیح به فارسی یا انگلیسی",
+    art: "کتاب تمرین mitooni با پاسخ‌برگ Listening که تصحیح می‌شه و مُهر نمره‌ی ۷٫۰ می‌خوره",
   },
   diff: {
-    title: "<b>چه چیزی</b> mitooni <b>را متفاوت می‌کند؟</b>",
-    typesKicker: "دقیقاً همان چیزی را تمرین کنید که از شما نمره می‌گیرد",
-    typesTitle: "همهٔ انواع سؤال، زیر نظر و تمرین‌شده",
+    title: "<b>فرق</b> mitooni <b>با بقیه چیه؟</b>",
+    typesKicker: "روی همون جایی کار کن که ازت نمره کم می‌کنه",
+    typesTitle: "همه‌ی مدل سؤال‌ها، زیر ذره‌بین",
     typesBody:
-      "داشبورد شما هر نوع سؤال رسمی را با هدفتان می‌سنجد، روند نمره‌تان را در طول زمان نشان می‌دهد و تمرین ده‌دقیقه‌ای بعدی را برایتان انتخاب می‌کند. سؤال‌های Matching headings از شما نمره می‌گیرند؟ آن را می‌بینید و درستش می‌کنید.",
-    feedbackKicker: "یادداشت روی جمله‌های خودتان",
-    feedbackTitle: "بازخوردی که می‌شود به آن عمل کرد",
-    feedbackBody: "<b>رایتینگ:</b> هر نوشته با نمرهٔ جداگانه برای هر معیار و یادداشت روی جمله‌های خودتان برمی‌گردد.",
+      "داشبوردت هر مدل سؤال رسمی رو با نمره‌ی هدفت می‌سنجه، نمودار پیشرفتت رو جلوی چشمت می‌ذاره و تمرین ده دقیقه‌ای بعدی رو خودش برات انتخاب می‌کنه. اگه سؤال‌هایی مثل Matching headings نمره‌ت رو پایین میارن، همین‌جا می‌فهمی و درستش می‌کنی.",
+    feedbackKicker: "نکته روی جمله‌های خودت",
+    feedbackTitle: "بازخوردی که واقعاً به کارت میاد",
+    feedbackBody: "<b>Writing:</b> هر essay که می‌نویسی، با نمره‌ی جدا برای هر معیار و نکته روی جمله‌های خودت برمی‌گرده.",
   },
-  dash: {
-    title: "انواع سؤال",
-    note: "پاسخ‌های درست در چهار آزمون اخیر",
-    target: "هدف {{n}}",
-    overall: "نمرهٔ کلی",
-    since: "+{{n}} نسبت به شهریور",
-    targetBand: "هدف {{n}}",
-    focus: "تمرکز بعدی",
-    drill: "تمرین Matching headings",
-    drillMeta: "{{min}} دقیقه · {{q}} سؤال",
-    start: "شروع تمرین",
-  },
-  note: {
-    kind: "دستور زبان",
-    text: "پیش از اسمی که به یک گروه کلی اشاره دارد \"the\" نیاورید",
-  },
+  // English on the Persian page too (product mock-ups, see the note at the top).
+  dash: landingEn.dash,
+  note: landingEn.note,
   mock: {
-    kicker: "شروع با یک",
-    title: "آزمون آزمایشی کامل",
-    body: "۲ ساعت و ۴۵ دقیقه. برای هر مهارت نمره می‌گیرید و یک قدم بعدی روشن.",
-    cta: "ساخت حساب",
+    kicker: "با یه",
+    title: "Mock کامل شروع کن",
+    body: "۲ ساعت و ۴۵ دقیقه وقت می‌ذاری و برای هر مهارت یه نمره‌ی جدا می‌گیری، همراه با قدم بعدی‌ای که باید برداری.",
+    cta: "حسابت رو بساز",
   },
   report: {
-    title: "<b>گزارش شما چه نشان می‌دهد</b> پس از هر آزمون آزمایشی",
-    meta: "نمونهٔ گزارش · آزمون {{n}} · ۶ آبان",
-    name: "نتیجهٔ آزمون کامل سارا",
-    overall: "نمرهٔ کلی",
-    target: "هدف {{n}}",
-    marksTitle: "نمره‌های ریدینگ کجا از دست رفت",
-    correct: "درست",
-    band: "نمرهٔ {{n}}",
-    outOf: "{{n}} پاسخ درست از {{total}}",
-    bandsTitle: "نمره‌ها در برابر هدف شما",
-    analysis: "تحلیل",
-    a1: "<b>سؤال‌های Matching headings ۶ نمره از شما گرفتند.</b> عنوان‌هایی را انتخاب کردید که واژه‌های پاراگراف را تکرار می‌کنند، نه ایدهٔ اصلی آن را.",
-    a2: "<b>در متن ۳ وقت کم آوردید.</b> ۲۶ دقیقه روی متن ۱ گذاشتید و ۵ سؤال آخر را حدسی جواب دادید.",
-    a3: "<b>لیسنینگ با ۷٫۰ به هدف رسیده است.</b> با یک تمرین بخش ۴ در هفته آن را نگه دارید.",
-    next: "قدم بعدی",
-    nextTitle: "تمرین Matching headings · {{n}} دقیقه",
-    seeFull: "دیدن گزارش کامل",
+    ...landingEn.report,
+    title: "<b>گزارشت چی بهت نشون می‌ده</b> بعد از هر Mock",
   },
   ready: {
-    title: "با دانستن نمره‌تان <b>سر جلسهٔ آزمون بروید</b>",
-    body: "دیگر لازم نیست حدس بزنید که برای ثبت‌نام آماده‌اید یا نه.",
-    cta: "شروع تمرین",
-    card: "آمادهٔ ثبت‌نام هستید؟",
-    target: "هدف {{n}}",
-    yes: "بله، می‌توانید ثبت‌نام کنید",
+    ...landingEn.ready,
+    title: "با دونستن <b>نمره‌ت</b> برو سر جلسه",
+    body: "دیگه لازم نیست حدس بزنی که برای ثبت‌نام آماده‌ای یا نه.",
+    cta: "همین الان شروع کن",
   },
 };

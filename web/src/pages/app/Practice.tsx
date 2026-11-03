@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router";
-import { BookOpen, Headphones, Mic, PenLine } from "lucide-react";
+import { ArrowRight, BookOpen, Headphones, Mic, PenLine } from "lucide-react";
 import type { Skill } from "@/api/schemas";
 import { useAttempts, usePractice } from "@/api/queries";
 import { useT } from "@/i18n";
@@ -20,6 +20,40 @@ const SKILLS: { skill: Skill; icon: typeof BookOpen }[] = [
 ];
 
 const strengthOf = (a: number) => (a < 0.55 ? "weakness" : a < 0.78 ? "fair" : "strength");
+
+/* Practice rooms from the canvas: one tinted card per skill, each opening that skill's practice screen. */
+const ROOM_TONE: Record<Skill, { card: string; ink: string }> = {
+  listening: { card: "bg-pale-wisteria border-primary", ink: "text-midnight-iris" },
+  reading: { card: "bg-pink-tint border-magenta", ink: "text-magenta" },
+  writing: { card: "bg-[#FFECEE] border-coral", ink: "text-weak" },
+  speaking: { card: "bg-strength-soft border-strength", ink: "text-strength" },
+};
+
+function Rooms() {
+  const { t } = useT();
+  return (
+    <ul aria-label={t("practice.rooms")} className="mb-5.5 grid grid-cols-1 gap-3 min-[420px]:grid-cols-2 lg:grid-cols-4">
+      {SKILLS.map(({ skill }) => {
+        const tone = ROOM_TONE[skill];
+        return (
+          <li key={skill} className="min-w-0">
+            <Link
+              to={`/practice/${skill}`}
+              className={cn("flex h-full flex-col gap-1 rounded-[18px] border-t-[6px] px-4.5 py-4 text-foreground transition-[filter] hover:brightness-[0.97]", tone.card)}
+            >
+              <span className={cn("text-[11px] font-bold tracking-[0.1em] uppercase", tone.ink)}>{t(`practice.room.${skill}.kicker`)}</span>
+              <b className={cn("font-archivo text-[22px] font-extrabold", tone.ink)}>{t(`skills.${skill}`)}</b>
+              <span className="text-[13px] text-[#3a4855]">{t(`practice.room.${skill}.line`)}</span>
+              <span className={cn("mt-auto inline-flex items-center gap-1 pt-1.5 text-[13px] font-bold", tone.ink)}>
+                {t("practice.enter")} <ArrowRight className="size-3.5 rtl:rotate-180" aria-hidden="true" />
+              </span>
+            </Link>
+          </li>
+        );
+      })}
+    </ul>
+  );
+}
 
 export default function Practice() {
   const { t, locale } = useT();
@@ -44,6 +78,7 @@ export default function Practice() {
   return (
     <>
       <PageHeader title={t("practice.title")} sub={t("practice.sub")} />
+      <Rooms />
 
       <div className="mb-5 flex flex-wrap items-center gap-3">
         <Segmented<"practice" | "exam">
@@ -106,8 +141,9 @@ export default function Practice() {
                           {tp.accuracy !== null && <StrengthTag strength={strengthOf(tp.accuracy)} label={t(`strength.${strengthOf(tp.accuracy)}`)} />}
                         </div>
                         <p className="mt-1 text-sm text-muted-foreground">
-                          {set.questions > 0 ? `${t("common.questions", { count: set.questions })} · ` : ""}
-                          {t("common.minutes", { count: set.minutes })}
+                          {set.questions > 0
+                            ? t("practice.meta", { count: set.questions, q: formatNumber(set.questions, locale), m: formatNumber(set.minutes, locale) })
+                            : t("practice.metaMinutes", { m: formatNumber(set.minutes, locale) })}
                         </p>
                         {tp.accuracy !== null ? (
                           <div className="mt-3 flex items-center gap-3 text-xs text-muted-foreground">

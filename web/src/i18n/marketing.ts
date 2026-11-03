@@ -3,8 +3,10 @@
  * The shared header and footer live here; each page keeps its own copy file in
  * src/components/public/copy/ and is merged in below.
  * Rules: no full stops in titles, headings, labels or taglines; no prices, no
- * "free"; Persian uses real half-spaces (U+200C) and keeps "mitooni" in Latin
- * letters. Letter-spacing and upper case are switched off for Persian in CSS.
+ * "free". Persian follows the canvas Fa boards: a friendly spoken register,
+ * real half-spaces (U+200C), "‌ی" after a final ه, and IELTS, Mock and
+ * "mitooni" kept in Latin letters (Mixed wraps them in <bdi> at render time).
+ * Letter-spacing and upper case are switched off for Persian in CSS.
  */
 
 import { authEn, authFa } from "@/components/public/copy/auth";
@@ -20,9 +22,9 @@ export const marketingEn = {
     home: "mitooni home",
     how: "How to use",
     what: "What is IELTS?",
-    mocks: "Mock exams",
-    practice: "Practice",
     coaching: "Coaching",
+    studyRoom: "Your study room",
+    mocks: "Mock exams",
     faq: "FAQ",
     try: "Try now",
     open: "Open the app",
@@ -51,26 +53,26 @@ export type MarketingMessages = typeof marketingEn;
 export const marketingFa: MarketingMessages = {
   nav: {
     label: "سایت",
-    home: "صفحهٔ اصلی mitooni",
+    home: "صفحه‌ی اصلی mitooni",
     how: "راهنمای استفاده",
-    what: "آیلتس چیست؟",
-    mocks: "آزمون‌های آزمایشی",
-    practice: "تمرین",
-    coaching: "مربی",
-    faq: "پرسش‌های پرتکرار",
-    try: "شروع کنید",
-    open: "رفتن به برنامه",
+    what: "درباره‌ی IELTS",
+    coaching: "کوچینگ",
+    studyRoom: "اتاق مطالعه",
+    mocks: "آزمون‌های Mock",
+    faq: "سؤال‌های رایج",
+    try: "شروع کن",
+    open: "برو به اتاق مطالعه",
     signIn: "ورود",
     menu: "منو",
     close: "بستن منو",
   },
   footer: {
     product: "محصول",
-    account: "حساب",
+    account: "حساب کاربری",
     language: "زبان",
     create: "ساخت حساب",
-    rights: "© ۲۰۲۶ mitooni. نسخهٔ نمایشی.",
-    disclaimer: "پلتفرم تمرینی مستقل. هیچ ارتباطی با آیلتس، بریتیش کانسل، آی‌دی‌پی یا کمبریج ندارد.",
+    rights: "© ۲۰۲۶ mitooni. نسخه‌ی نمونه.",
+    disclaimer: "یه پلتفرم تمرینی مستقلیم و به IELTS، British Council، IDP یا Cambridge هیچ ربطی نداریم.",
   },
   home: landingFa,
   what: whatFa,

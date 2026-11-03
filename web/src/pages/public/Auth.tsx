@@ -24,6 +24,9 @@ import {
 } from "@/components/ui/sign-in";
 import { ProgressPanel, type PanelVariant } from "@/components/public/auth/AuthPanel";
 
+/** Persian leads and notes get the taller line height of the SignInFa canvas. */
+const faLead = cn(leadClass, "[&:lang(fa)]:leading-[1.7]");
+
 /*
  * One page for everyone, identifier first (the pattern Google, Microsoft and
  * Notion use): enter an email or mobile number, and the page shows the right
@@ -157,7 +160,8 @@ export default function Auth() {
   };
 
 
-  const shownId = <bdi dir="ltr">{id.trim()}</bdi>;
+  // Mobile numbers read in Persian digits on the Persian page; emails stay as typed.
+  const shownId = <bdi dir="ltr">{method === "phone" && locale === "fa" ? toLatin(id.trim()).replace(/\d/g, (d) => "۰۱۲۳۴۵۶۷۸۹"[Number(d)]) : id.trim()}</bdi>;
   const withId = (text: string) => text.split("__ID__").flatMap((part, i) => (i ? [<span key={i}>{shownId}</span>, part] : [part]));
   const strengthKey = strength(password);
   const firstName = knownName.split(" ")[0];
@@ -171,7 +175,7 @@ export default function Auth() {
         {step === "identify" && (
           <div className="flex flex-col gap-5">
             <h1 className={titleClass}>{t("mk.auth.title")}</h1>
-            <p className={leadClass}>{t("mk.auth.sub")}</p>
+            <p className={faLead}>{t("mk.auth.sub")}</p>
 
             <button
               type="button"
@@ -242,7 +246,7 @@ export default function Auth() {
           <form className="flex flex-col gap-5" onSubmit={signIn} noValidate>
             {backLink}
             <h1 className={titleClass}>{t("mk.auth.welcomeBack", { name: firstName })}</h1>
-            <p className={leadClass}>{withId(t("mk.auth.welcomeBackSub", { id: "__ID__" }))}</p>
+            <p className={faLead}>{withId(t("mk.auth.welcomeBackSub", { id: "__ID__" }))}</p>
             {/* Lets password managers pair the saved email with this password. */}
             <input type="email" name="email" autoComplete="username" value={id} readOnly hidden />
             <div>
@@ -278,7 +282,7 @@ export default function Auth() {
           <form className="flex flex-col gap-5" onSubmit={create} noValidate>
             {backLink}
             <h1 className={titleClass}>{t("mk.auth.newHere")}</h1>
-            <p className={leadClass}>{withId(t(step === "name" ? "mk.auth.newHereSubPhone" : "mk.auth.newHereSub", { id: "__ID__" }))}</p>
+            <p className={faLead}>{withId(t(step === "name" ? "mk.auth.newHereSubPhone" : "mk.auth.newHereSub", { id: "__ID__" }))}</p>
             <div>
               <FieldLabel htmlFor="auth-name">{t("mk.auth.name")}</FieldLabel>
               <InputBox invalid={!!errors.name}>
@@ -351,7 +355,7 @@ export default function Auth() {
           <form className="flex flex-col gap-5" onSubmit={verify} noValidate>
             {backLink}
             <h1 className={titleClass}>{t("mk.auth.codeTitle")}</h1>
-            <p className={leadClass}>{withId(t("mk.auth.codeSub", { id: "__ID__" }))}</p>
+            <p className={faLead}>{withId(t("mk.auth.codeSub", { id: "__ID__" }))}</p>
             <div>
               <FieldLabel htmlFor="auth-code">{t("mk.auth.code")}</FieldLabel>
               <InputBox invalid={!!errors.code}>
@@ -386,7 +390,13 @@ export default function Auth() {
           </form>
         )}
 
-        <PrototypeNote>{t("mk.auth.prototype")}</PrototypeNote>
+        <PrototypeNote>
+          <span className="[&:lang(fa)]:leading-[22px]">
+            {t("mk.auth.prototype")
+              .split("sara@example.com")
+              .flatMap((part, i) => (i ? [<bdi key={i} dir="ltr">sara@example.com</bdi>, part] : [part]))}
+          </span>
+        </PrototypeNote>
       </div>
     </AuthShell>
   );

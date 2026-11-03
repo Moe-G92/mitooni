@@ -75,7 +75,8 @@ export default function Onboarding() {
               <p className="mt-1.5 text-muted-foreground">{t("onboarding.s1Sub", { name: p.name.split(" ")[0] })}</p>
               <div className="mt-6">
                 <Label id="overall-label">{t("onboarding.overall")}</Label>
-                <div role="radiogroup" aria-labelledby="overall-label" className="grid grid-cols-5 gap-2 sm:grid-cols-6">
+                {/* A band scale reads left to right in both languages, as on the Persian canvas. */}
+                <div role="radiogroup" aria-labelledby="overall-label" dir="ltr" className="grid grid-cols-5 gap-2 sm:grid-cols-6">
                   {BANDS.filter((b) => b >= 5).map((b) => (
                     <button
                       key={b}
@@ -149,7 +150,7 @@ export default function Onboarding() {
           <div className="mt-8 flex items-center justify-between gap-3">
             {step > 1 ? (
               <Button key="back" type="button" variant="ghost" onClick={() => (setError(undefined), setStep(1))}>
-                {t("common.back")}
+                {t("onboarding.back")}
               </Button>
             ) : (
               <span />

@@ -16,8 +16,17 @@ import "@/components/dashboard/dashboard.css";
 type Filter = "all" | "full" | "section" | "practice";
 const SKILLS: Skill[] = ["listening", "reading", "writing", "speaking"];
 
+/* Line colour for each card's chart, from the canvas: the skill colours, with Overall in brand blue and a slightly heavier line. */
+const LINE: Record<"overall" | Skill, { color: string; width: number }> = {
+  overall: { color: "#3E4FC4", width: 3 },
+  listening: { color: "#3E4FC4", width: 2.5 },
+  reading: { color: "#E95FC4", width: 2.5 },
+  writing: { color: "#D92F3A", width: 2.5 },
+  speaking: { color: "#4f9a2e", width: 2.5 },
+};
+
 /* One "band progress over time" card. Below target, it glows red (the glow stops for reduced motion). */
-function ProgressCard({ name, points, target }: { name: string; points: { date: string; band: number }[]; target: number }) {
+function ProgressCard({ name, points, target, line }: { name: string; points: { date: string; band: number }[]; target: number; line: { color: string; width: number } }) {
   const { t, locale } = useT();
   const last = points.at(-1);
   const first = points[0];
@@ -57,6 +66,8 @@ function ProgressCard({ name, points, target }: { name: string; points: { date: 
       {points.length ? (
         <BandLine
           className="mt-1.5"
+          color={line.color}
+          lineWidth={line.width}
           points={points}
           target={target}
           locale={locale}
@@ -82,7 +93,7 @@ export default function Results() {
   // The six most recent points keep each small chart readable.
   const cards = p
     ? [
-        { key: "overall", name: t("skills.overall"), points: p.trend.slice(-6), target: targets?.overall ?? 7 },
+        { key: "overall" as const, name: t("skills.overall"), points: p.trend.slice(-6), target: targets?.overall ?? 7 },
         ...SKILLS.map((s) => ({
           key: s,
           name: t(`skills.${s}`),
@@ -103,7 +114,7 @@ export default function Results() {
           </h2>
           <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,190px),1fr))] gap-3">
             {cards.map((c) => (
-              <ProgressCard key={c.key} name={c.name} points={c.points} target={c.target} />
+              <ProgressCard key={c.key} name={c.name} points={c.points} target={c.target} line={LINE[c.key]} />
             ))}
           </div>
         </section>

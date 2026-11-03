@@ -85,7 +85,7 @@ export function ProgressPanel({ variant, name }: { variant: PanelVariant; name?:
           ].map(({ x, y, label, d }) => (
             <g key={x} className={cn("au-pop", d)}>
               <circle cx={x} cy={y} r="7" fill="#2B2470" stroke="#C9D2FF" strokeWidth="3" />
-              <text x={x} y={y + 26} textAnchor="middle" fontSize="12" fontWeight="700" fill="rgba(255,255,255,0.7)">
+              <text x={x} y={y + 26} textAnchor="middle" fontSize="12" fontWeight="700" fill="rgba(255,255,255,0.65)">
                 {label[1]}
               </text>
               <text x={x} y={y - 18} textAnchor="middle" fontSize="17" fontWeight="800" fill="#C9D2FF">
@@ -115,13 +115,13 @@ export function ProgressPanel({ variant, name }: { variant: PanelVariant; name?:
             <text x="478" y="74" textAnchor="middle" fontSize="17" fontWeight="800" fill="#FAFF7F">
               {flag[0]}
             </text>
-            <text x="478" y="90" textAnchor="middle" fontSize="12" fontWeight="700" fill="rgba(255,255,255,0.7)">
+            <text x="478" y="90" textAnchor="middle" fontSize="12" fontWeight="700" fill="rgba(255,255,255,0.65)">
               {flag[1]}
             </text>
           </g>
         </svg>
 
-        <div className="au-card relative mt-[30px] max-w-[590px] rounded-2xl bg-white py-4 ps-[52px] pe-[18px] text-midnight-iris shadow-[0_12px_28px_rgba(0,0,0,0.28)]">
+        <div className="au-card relative mt-[30px] max-w-[520px] rounded-2xl bg-white py-4 ps-[52px] pe-[18px] text-midnight-iris shadow-[0_12px_28px_rgba(0,0,0,0.28)]">
           <svg width="22" height="34" viewBox="0 0 22 34" className="absolute start-4 -top-1">
             <path d="M0 0 H22 V34 L11 26 L0 34 Z" fill="#D92F3A" />
           </svg>

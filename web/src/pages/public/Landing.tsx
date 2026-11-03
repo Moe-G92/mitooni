@@ -1,10 +1,16 @@
 import { useT } from "@/i18n";
 import { formatBand } from "@/lib/format";
 import { cn } from "@/lib/utils";
-import { ButtonTray, Container, Kicker, PillLink, Rich, Tick, heroLead, heroTitle, sectionTitle } from "@/components/public/ui";
+import { ButtonTray, Container, Kicker, PillLink, Tick, heroLead, heroTitle, sectionTitle } from "@/components/public/ui";
+import { Mixed } from "@/components/public/Mixed";
 import { DashboardMock, HeroBook, ReadyCard, ReportCard, WritingSheet } from "@/components/public/home/Art";
+import { mockupStrings } from "@/components/public/home/mockup";
 
-/* Landing page, ported from the canvas Main.dc.html. */
+/*
+ * Landing page, ported from the canvas Main.dc.html and MainFa.dc.html.
+ * Copy renders through Mixed, which isolates English words (IELTS, Mock,
+ * Listening…) inside Persian text. The product mock-ups stay English.
+ */
 
 function FeatureText({ icon, kicker, title, body }: { icon: React.ReactNode; kicker: string; title: string; body: string }) {
   return (
@@ -14,7 +20,7 @@ function FeatureText({ icon, kicker, title, body }: { icon: React.ReactNode; kic
       <h3 className="mt-1 mb-0 font-archivo text-[28px] leading-9 font-bold text-primary max-sm:text-[24px] max-sm:leading-8">{title}</h3>
       <div className="mx-auto mt-4 h-0.5 w-[120px] bg-pink-carnation" />
       <p className="mt-4 mb-0 text-start font-archivo text-[17px] leading-7 text-[#3a4855] [&_b]:text-midnight-iris">
-        <Rich text={body} />
+        <Mixed text={body} />
       </p>
     </div>
   );
@@ -23,7 +29,8 @@ function FeatureText({ icon, kicker, title, body }: { icon: React.ReactNode; kic
 const iconProps = { width: 26, height: 26, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 1.8, strokeLinecap: "round", strokeLinejoin: "round", "aria-hidden": true } as const;
 
 export default function Landing() {
-  const { t, locale } = useT();
+  const { t } = useT();
+  const en = mockupStrings();
 
   return (
     <>
@@ -32,11 +39,11 @@ export default function Landing() {
         <Container className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,460px),1fr))] items-center gap-12 pt-[72px] pb-20 max-sm:pt-10 max-sm:pb-14">
           <div className="min-w-0">
             <Kicker>
-              <Rich text={t("mk.home.hero.kicker")} />
+              <Mixed text={t("mk.home.hero.kicker")} />
             </Kicker>
             <h1 className={cn(heroTitle, "mt-6 mb-0")}>{t("mk.home.hero.title")}</h1>
             <p className={cn(heroLead, "mt-5 mb-0 max-w-[520px]")}>
-              <Rich text={t("mk.home.hero.lead")} />
+              <Mixed text={t("mk.home.hero.lead")} />
             </p>
             <ButtonTray className="mt-8">
               <PillLink to="/sign-up">{t("mk.home.hero.cta")}</PillLink>
@@ -47,11 +54,15 @@ export default function Landing() {
             <ul className="mt-7 mb-0 flex list-none flex-wrap gap-x-5 gap-y-2 p-0 font-archivo text-[15px] leading-[22px] text-[#3a4855]">
               <li className="flex items-center gap-1.5">
                 <Tick />
-                {t("mk.home.hero.point1")}
+                <span>
+                  <Mixed text={t("mk.home.hero.point1")} />
+                </span>
               </li>
               <li className="flex items-center gap-1.5">
                 <Tick />
-                {t("mk.home.hero.point2")}
+                <span>
+                  <Mixed text={t("mk.home.hero.point2")} />
+                </span>
               </li>
             </ul>
           </div>
@@ -73,7 +84,7 @@ export default function Landing() {
       <section aria-labelledby="diff-title" className="overflow-x-clip">
         <Container className="pt-6 pb-10">
           <h2 id="diff-title" className={cn(sectionTitle, "mx-auto my-0 max-w-[820px]")}>
-            <Rich text={t("mk.home.diff.title")} />
+            <Mixed text={t("mk.home.diff.title")} />
           </h2>
           <div className="mt-10 grid grid-cols-[repeat(auto-fit,minmax(min(100%,440px),1fr))] items-center gap-10 rounded-[32px] bg-pink-tint p-12 max-md:p-8 max-sm:gap-8 max-sm:px-4 max-sm:py-7">
             <DashboardMock />
@@ -118,14 +129,14 @@ export default function Landing() {
             <div className="relative text-center">
               <p className="m-0 font-archivo text-[22px] leading-[30px] text-white/90 italic [&:lang(fa)]:not-italic">{t("mk.home.mock.kicker")}</p>
               <h2 id="mock-title" className="mt-1 mb-0 font-archivo text-[clamp(32px,4vw,46px)] leading-[1.15] font-bold tracking-[-0.015em] text-white">
-                {t("mk.home.mock.title")}
+                <Mixed text={t("mk.home.mock.title")} />
               </h2>
               <p className="mx-auto mt-4 mb-0 max-w-[440px] font-archivo text-[18px] leading-7 text-white/90">{t("mk.home.mock.body")}</p>
               <PillLink to="/sign-up" variant="white" className="mt-7">
                 {t("mk.home.mock.cta")}
               </PillLink>
             </div>
-            <div aria-hidden="true" className="relative mx-auto grid w-full max-w-[360px] grid-cols-2 gap-3">
+            <div aria-hidden="true" lang="en" dir="ltr" className="mk-en relative mx-auto grid w-full max-w-[360px] grid-cols-2 gap-3">
               {(
                 [
                   ["listening", 7],
@@ -135,8 +146,8 @@ export default function Landing() {
                 ] as const
               ).map(([s, b]) => (
                 <div key={s} className={cn("rounded-[18px] p-5 text-white", s === "speaking" ? "bg-coral" : "bg-white/[0.08]")}>
-                  <div className="font-gabarito text-[14px] tracking-[0.08em] text-white/90">{t(`skills.${s}`)}</div>
-                  <div className="mt-2 font-archivo text-[36px] leading-none font-bold">{formatBand(b, locale)}</div>
+                  <div className="font-gabarito text-[14px] tracking-[0.08em] text-white/90">{en.t(`skills.${s}`)}</div>
+                  <div className="mt-2 font-archivo text-[36px] leading-none font-bold">{formatBand(b, en.locale)}</div>
                 </div>
               ))}
             </div>
@@ -148,7 +159,7 @@ export default function Landing() {
       <section aria-labelledby="report-title">
         <Container className="pt-16 pb-6">
           <h2 id="report-title" className={cn(sectionTitle, "mx-auto my-0 max-w-[820px]")}>
-            <Rich text={t("mk.home.report.title")} />
+            <Mixed text={t("mk.home.report.title")} />
           </h2>
           <ReportCard />
         </Container>
@@ -156,12 +167,12 @@ export default function Landing() {
 
       {/* Walk into the test knowing your band */}
       <section aria-labelledby="ready-title">
-        <Container className="pt-10 pb-16">
+        <Container className="pt-10 pb-4">
           <div className="relative grid grid-cols-[repeat(auto-fit,minmax(min(100%,420px),1fr))] items-center gap-10 overflow-hidden rounded-[32px] bg-[linear-gradient(180deg,#2b4a63_0%,#3E4FC4_100%)] px-12 py-14 max-md:px-8 max-sm:px-5 max-sm:py-10">
             <ReadyCard />
             <div className="text-center">
               <h2 id="ready-title" className="m-0 font-archivo text-[clamp(30px,3.6vw,42px)] leading-[1.2] font-normal tracking-[-0.015em] text-white [&_b]:font-bold">
-                <Rich text={t("mk.home.ready.title")} />
+                <Mixed text={t("mk.home.ready.title")} />
               </h2>
               <p className="mx-auto mt-4 mb-0 max-w-[440px] font-archivo text-[18px] leading-7 text-white/90">{t("mk.home.ready.body")}</p>
               <PillLink to="/sign-up" className="mt-7 py-3 ps-7 pe-3.5">

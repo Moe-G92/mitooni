@@ -1,0 +1,16 @@
+/*
+ * Coaching page (canvas Coaching.dc.html / CoachingFa.dc.html).
+ *
+ * The Persian board keeps two illustrations in English and left to right:
+ * the coach chat in the hero and the four pinned notes in "A week with your
+ * coach". Those islands are marked .coach-en and lang="en"; this rule gives
+ * them back their Latin faces, which the global :lang(fa) rules in index.css
+ * would otherwise swap for the Persian font.
+ */
+.mk .coach-en,
+.mk .coach-en .font-archivo {
+  font-family: var(--font-archivo);
+}
+.mk .coach-en .font-gabarito {
+  font-family: var(--font-gabarito);
+}

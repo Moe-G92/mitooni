@@ -1,4 +1,4 @@
-import type { Profile, Progress, QuestionType, Result, ResultSummary, Skill } from "@/api/schemas";
+import type { Attempt, Profile, Progress, QuestionType, Result, ResultSummary, Skill, TestSummary } from "@/api/schemas";
 import { practiceHref } from "@/lib/links";
 import { addDays, sameDay, toDay } from "./dates";
 
@@ -23,7 +23,17 @@ export type PlanItem = {
   href: string;
 };
 
-export type PlanDay = { date: Date; items: PlanItem[]; past: boolean; today: boolean; tomorrow: boolean };
+/** A test the learner started and has not finished, shown on the day it was started. */
+export type StartedItem = {
+  kind: Skill | "mock";
+  /** i18n key under coach.plan.items. */
+  key: "startedSkill" | "startedMock";
+  minutesLeft: number;
+  minutes: number | null;
+  href: string;
+};
+
+export type PlanDay = { date: Date; items: PlanItem[]; started: StartedItem[]; past: boolean; today: boolean; tomorrow: boolean };
 
 export type Basis = {
   skill: Skill;
@@ -78,11 +88,38 @@ export function buildBasis(summary: ResultSummary, result: Result | undefined, p
   return rows;
 }
 
-/** Monday of the plan week: this week, or next week when today is Sunday. */
+/** Saturday of the plan week (weeks run Saturday to Friday, as in Iran), so the week always holds today. */
 export function planWeekStart(today: Date, offset = 0): Date {
-  const day = today.getDay();
-  const monday = day === 0 ? addDays(today, 1) : addDays(today, -((day + 6) % 7));
-  return addDays(monday, offset * 7);
+  const saturday = addDays(today, -((today.getDay() + 1) % 7));
+  return addDays(saturday, offset * 7);
+}
+
+/** Unfinished tests, as timetable entries keyed by the day they were started (YYYY-M-D). */
+export function startedByDay(open: Attempt[], tests: TestSummary[]): Map<string, StartedItem[]> {
+  const out = new Map<string, StartedItem[]>();
+  for (const a of open) {
+    const test = tests.find((x) => x.id === a.testId);
+    const section = a.sections[a.sectionIndex];
+    const full = a.kind === "full";
+    const item: StartedItem = {
+      kind: full ? "mock" : (test?.skills[0] ?? "reading"),
+      key: full ? "startedMock" : "startedSkill",
+      minutesLeft: Math.max(1, Math.ceil((section?.remainingSec ?? 0) / 60)),
+      minutes: test?.minutes ?? null,
+      href: `/exam/${a.id}`,
+    };
+    const k = dayKey(new Date(a.startedAt));
+    out.set(k, [...(out.get(k) ?? []), item]);
+  }
+  return out;
+}
+
+const dayKey = (d: Date) => `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
+
+/** The next full mock day (a Saturday) on or after today, if it comes before test day. */
+export function nextMockDay(today: Date, testDate: Date | null): Date | null {
+  const d = addDays(today, (6 - today.getDay() + 7) % 7);
+  return testDate && d.getTime() >= testDate.getTime() ? null : d;
 }
 
 export function buildWeek({
@@ -93,6 +130,7 @@ export function buildWeek({
   progress,
   result,
   due,
+  started,
 }: {
   start: Date;
   today: Date;
@@ -101,6 +139,7 @@ export function buildWeek({
   progress: Progress | undefined;
   result: Result | undefined;
   due: number;
+  started?: Map<string, StartedItem[]>;
 }): PlanDay[] {
   const biggest = basis.find((b) => b.biggest)?.skill ?? "writing";
   const listening = weakest(progress, "listening");
@@ -134,18 +173,23 @@ export function buildWeek({
     else if (testDate && date.getTime() > testDate.getTime()) items = [];
     else {
       const writingMain: PlanItem = { kind: "writing", key: "writingFocus", vars: { criterion: writingFocus }, minutes: 40, href: writingHref };
+      // Saturday is mock day, Sunday a light day after it, then the week's main work.
       const days: PlanItem[][] = [
+        [{ kind: "mock", key: "fullMock", minutes: 165, href: "/app/mocks" }],
+        [vocab(date)],
         [mainFor(biggest, writingMain), vocab(date)],
         [drill("reading", 0), drill("listening", 0)],
         [{ kind: "speaking", key: "cueCards", minutes: 25, href: "/app/practice" }, vocab(date)],
         [{ kind: "writing", key: "task1", minutes: 30, href: "/app/practice" }, drill("reading", 1)],
         [drill("listening", 1), vocab(date)],
-        [{ kind: "mock", key: "fullMock", minutes: 165, href: "/app/mocks" }],
-        [{ kind: "writing", key: "mockReview", minutes: 30, href: "/app/results" }, vocab(date)],
       ];
       items = days[i];
     }
-    return { date, items, past: date.getTime() < today.getTime(), today: sameDay(date, today), tomorrow: sameDay(date, addDays(today, 1)) };
+    const past = date.getTime() < today.getTime() && !sameDay(date, today);
+    const begun = started?.get(dayKey(date)) ?? [];
+    // A past day that went on an unfinished test shows that test instead of the plan.
+    if (past && begun.length) items = [];
+    return { date, items, started: begun, past, today: sameDay(date, today), tomorrow: sameDay(date, addDays(today, 1)) };
   });
 }
 

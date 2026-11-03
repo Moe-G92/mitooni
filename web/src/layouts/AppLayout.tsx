@@ -1,10 +1,12 @@
-import { NavLink, Outlet } from "react-router";
+import { NavLink, Outlet, useMatch } from "react-router";
 import { BarChart3, BookOpen, Clock, GraduationCap, Home, LineChart, NotebookPen, Settings } from "lucide-react";
 import { useMe } from "@/api/queries";
 import { useT } from "@/i18n";
 import { formatBand, formatDate } from "@/lib/format";
 import { cn } from "@/lib/utils";
 import { BrandMark } from "@/components/BrandMark";
+import { TopControls } from "@/components/TopControls";
+import { Chip } from "@/components/ui/misc";
 
 const NAV = [
   { to: "/app", key: "nav.overview", icon: Home, end: true },
@@ -18,21 +20,81 @@ const NAV = [
 ] as const;
 
 /*
- * Sidebar shell from the mitooni canvas: Deep Wisteria with a Canary marker on
- * the active item. Inactive items use white at 80% (the canvas has 68%, which
- * falls under WCAG AA on Deep Wisteria). Collapses to an icon row under 768px.
+ * Two shells from the mitooni canvas. The Overview ("Today") board has a white
+ * top bar with the nav as pills; every other dashboard board keeps the Deep
+ * Wisteria sidebar with a Canary marker on the active item.
  */
 export function AppLayout() {
+  const today = useMatch({ path: "/app", end: true });
+  return today ? <TopBarShell /> : <SidebarShell />;
+}
+
+function SkipLink() {
+  const { t } = useT();
+  return (
+    <a
+      href="#main"
+      className="sr-only focus:not-sr-only focus:absolute focus:start-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-card focus:px-3 focus:py-2"
+    >
+      {t("nav.skip")}
+    </a>
+  );
+}
+
+/*
+ * Top bar for the Overview: logo, nav (Today first, Settings sits behind the
+ * account button), then the exam type and the global controls. Under 1280px
+ * the nav moves to its own row and scrolls sideways.
+ */
+function TopBarShell() {
+  const { t } = useT();
+  return (
+    <div className="min-h-screen">
+      <SkipLink />
+      <header className="border-b border-border bg-card">
+        <div className="mx-auto flex max-w-[1280px] flex-wrap items-center gap-x-6 gap-y-2 px-4 py-3 md:px-8">
+          <BrandMark />
+          <nav aria-label={t("nav.label")} className="order-last -mx-1 flex w-full gap-0.5 overflow-x-auto px-1 xl:order-none xl:mx-0 xl:w-auto xl:flex-wrap xl:px-0">
+            {NAV.filter((n) => n.to !== "/app/settings").map(({ to, key, ...rest }) => (
+              <NavLink
+                key={to}
+                to={to}
+                end={"end" in rest}
+                className={({ isActive }) =>
+                  cn(
+                    "shrink-0 rounded-lg px-3 py-2 text-sm whitespace-nowrap transition-colors",
+                    isActive ? "bg-pink-tint font-semibold text-foreground" : "text-muted-foreground hover:bg-accent hover:text-foreground",
+                  )
+                }
+              >
+                {to === "/app" ? t("nav.today") : t(key)}
+              </NavLink>
+            ))}
+          </nav>
+          <div className="ms-auto flex items-center gap-2">
+            <Chip className="hidden text-foreground sm:inline-flex">{t("common.academic")}</Chip>
+            <TopControls />
+          </div>
+        </div>
+      </header>
+      <main id="main" className="mx-auto min-w-0 max-w-[1280px] px-4 pt-6 pb-14 md:px-8 md:pt-10">
+        <Outlet />
+      </main>
+    </div>
+  );
+}
+
+/*
+ * Sidebar shell: Deep Wisteria with a Canary marker on the active item.
+ * Inactive items use white at 80% (the canvas has 68%, which falls under WCAG
+ * AA on Deep Wisteria). Collapses to an icon row under 768px.
+ */
+function SidebarShell() {
   const { t, locale } = useT();
   const me = useMe();
   return (
     <div className="grid min-h-screen grid-cols-1 md:grid-cols-[232px_minmax(0,1fr)]">
-      <a
-        href="#main"
-        className="sr-only focus:not-sr-only focus:absolute focus:start-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-card focus:px-3 focus:py-2"
-      >
-        {t("nav.skip")}
-      </a>
+      <SkipLink />
       {/* The aside stretches with the page so the colour runs to the bottom; its content stays in view. */}
       <aside className="min-w-0 bg-sidebar text-sidebar-foreground">
         <div className="flex min-w-0 items-center gap-3 px-3 py-3 md:sticky md:top-0 md:h-screen md:flex-col md:items-stretch md:gap-5.5 md:overflow-y-auto md:px-4 md:py-5.5">

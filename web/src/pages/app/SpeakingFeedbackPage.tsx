@@ -57,7 +57,11 @@ export default function SpeakingFeedbackPage() {
 
   return (
     <>
-      <PageHeader title={t("feedback.speakingTitle")} sub={`${r.data.testTitle} · ${formatDate(r.data.completedAt, locale)}`} />
+      <PageHeader title={t("feedback.speakingTitle")} sub={
+          <>
+            <bdi>{r.data.testTitle}</bdi> · {formatDate(r.data.completedAt, locale)}
+          </>
+        } />
       <Link to={`/app/results/${r.data.attemptId}`} className="mb-4 inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground">
         <ArrowLeft className="size-4 rtl:rotate-180" /> {t("feedback.backToResult")}
       </Link>

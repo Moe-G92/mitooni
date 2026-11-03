@@ -30,7 +30,7 @@ test("sign up, onboarding, then the dashboard", async ({ page }) => {
 
   await expect(page).toHaveURL(/\/app$/);
   await expect(page.getByRole("heading", { level: 1, name: /^Good (morning|afternoon|evening), Reza$/ })).toBeVisible();
-  await expect(page.getByText("Target band 7.5")).toBeVisible();
+  await expect(page.locator(".dash-goal")).toHaveText(/Target band\s*7\.5/);
 });
 
 test("the dashboard leads with the next drill", async ({ page }) => {
@@ -44,7 +44,7 @@ test("the dashboard leads with the next drill", async ({ page }) => {
 test("results review shows the explanation and the passage evidence", async ({ page }) => {
   await signIn(page);
   await page.goto("/app/results/att-demo-4");
-  await expect(page.getByText("Competent user")).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Your full report" })).toBeVisible();
   // The jump strip opens the Listening part and lands on the highlighted answer in the transcript.
   await page.getByRole("button", { name: "Question 11, incorrect" }).first().click();
   await expect(page.locator("mark").first()).toBeVisible();

@@ -22,7 +22,7 @@ export default function ForgotPassword() {
         <div className="flex flex-col gap-5">
           {back}
           <h1 className={titleClass}>{t("mk.auth.checkEmail")}</h1>
-          <p className={leadClass} role="status">
+          <p className={cn(leadClass, "[&:lang(fa)]:leading-[1.7]")} role="status">
             {t("mk.auth.checkEmailSub", { email: "__E__" })
               .split("__E__")
               .flatMap((part, i) =>
@@ -50,7 +50,7 @@ export default function ForgotPassword() {
         >
           {back}
           <h1 className={titleClass}>{t("mk.auth.forgotTitle")}</h1>
-          <p className={leadClass}>{t("mk.auth.forgotSub")}</p>
+          <p className={cn(leadClass, "[&:lang(fa)]:leading-[1.7]")}>{t("mk.auth.forgotSub")}</p>
           <div>
             <FieldLabel htmlFor="email">{t("mk.auth.email")}</FieldLabel>
             <InputBox invalid={!!error}>

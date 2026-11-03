@@ -71,6 +71,23 @@ const router = createBrowserRouter([
         path: "/exam/:attemptId",
         element: <RequireAuth>{page(() => import("@/pages/exam/ExamPage"))}</RequireAuth>,
       },
+      // Skill practice players: full screen like the exam, outside AppLayout. Exit goes back to /app/practice.
+      {
+        path: "/practice/listening",
+        element: <RequireAuth>{page(() => import("@/pages/practice/ListeningPractice"))}</RequireAuth>,
+      },
+      {
+        path: "/practice/reading",
+        element: <RequireAuth>{page(() => import("@/pages/practice/ReadingPractice"))}</RequireAuth>,
+      },
+      {
+        path: "/practice/writing",
+        element: <RequireAuth>{page(() => import("@/pages/practice/WritingPractice"))}</RequireAuth>,
+      },
+      {
+        path: "/practice/speaking",
+        element: <RequireAuth>{page(() => import("@/pages/practice/SpeakingPractice"))}</RequireAuth>,
+      },
       { path: "/dashboard", element: <Navigate to="/app" replace /> },
       { path: "*", element: page(() => import("@/pages/NotFound")) },
     ],

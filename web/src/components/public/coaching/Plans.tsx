@@ -3,6 +3,7 @@ import { useT } from "@/i18n";
 import { Rich, sectionTitle } from "@/components/public/ui";
 import { cn } from "@/lib/utils";
 import { CheckIcon } from "./icons";
+import "./coaching.css";
 
 /*
  * "Pick your plan" (canvas section #plans): three plan cards, the middle one
@@ -43,7 +44,10 @@ export function Plans() {
                   {k("popular")}
                 </span>
               )}
-              <h3 className={cn("m-0 font-archivo text-[20px] font-extrabold", featured ? "text-white" : "text-foreground")}>{k(`${id}.name`)}</h3>
+              {/* Plan names stay in English on the Persian page too (canvas CoachingFa). */}
+              <h3 lang="en" className={cn("coach-en mk-en mk-en m-0 font-archivo text-[20px] font-extrabold", featured ? "text-white" : "text-foreground")}>
+                {k(`${id}.name`)}
+              </h3>
               <p className={cn("mt-1 font-archivo text-[14px]", featured ? "text-white/80" : "text-muted-foreground")}>{k(`${id}.tagline`)}</p>
               <div className="mt-4 font-archivo">
                 <b className="text-[44px] leading-none font-extrabold">{k(`${id}.price`)}</b>

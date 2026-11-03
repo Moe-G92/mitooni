@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import { cn } from "@/lib/utils";
 import { pillClass, type PillVariant, type PillSize } from "@/components/public/pill";
+import "./latin.css";
 
 /*
  * Shared building blocks for the mitooni public pages (canvas: Main, How to use,

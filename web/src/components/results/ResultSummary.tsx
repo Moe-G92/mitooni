@@ -24,10 +24,7 @@ export function SummaryCard({ result, skills, targets }: { result: Result; skill
           <h2 className="text-[13px] font-medium text-muted-foreground">
             {result.overall !== null ? t("results.report.overall") : t(`skills.${skills[0]?.skill ?? "reading"}`)}
           </h2>
-          <div className="flex items-baseline gap-2.5">
-            <span className="font-archivo text-5xl leading-none font-bold tracking-[-0.025em] tabular-nums">{formatBand(headline, locale)}</span>
-            {headline !== null && <span className="text-sm text-muted-foreground">{t(`bands.${Math.floor(headline)}`)}</span>}
-          </div>
+          <div className="font-archivo text-5xl leading-none font-bold tracking-[-0.025em] tabular-nums">{formatBand(headline, locale)}</div>
           {gap !== null && target !== undefined && (
             <div className={cn("mt-1 text-[13px] font-semibold", gap > 0 ? "text-weak" : "text-strength")}>
               {gap > 0
@@ -47,7 +44,7 @@ export function SummaryCard({ result, skills, targets }: { result: Result; skill
             const below = targets ? targets[s.skill] - s.band : 0;
             return (
               <div key={s.skill} className={cn("min-w-0 rounded-[14px] border-s-4 px-3.5 py-3", tone.bg, tone.border)}>
-                <div className="flex flex-wrap justify-between gap-x-2 text-xs">
+                <div className="flex flex-wrap justify-between gap-x-2 text-xs leading-normal">
                   <b className={tone.text}>{t(`skills.${s.skill}`)}</b>
                   {targets && (
                     <span className={cn("font-semibold", below > 0 ? "text-weak" : "text-strength")}>
@@ -67,7 +64,7 @@ export function SummaryCard({ result, skills, targets }: { result: Result; skill
                     </span>
                   )}
                 </div>
-                <div className="text-xs text-muted-foreground">
+                <div className="text-xs leading-normal text-muted-foreground">
                   {t("results.report.timeUsed", {
                     used: formatNumber(Math.round(s.usedSec / 60), locale),
                     allowed: formatNumber(Math.round(s.allowedSec / 60), locale),

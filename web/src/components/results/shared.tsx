@@ -42,7 +42,7 @@ export function TypeTable({ result, skill }: { result: Result; skill: Skill }) {
           const acc = x.correct / x.total;
           const s = strengthOf(acc);
           return (
-            <div key={x.type} className="grid grid-cols-[minmax(0,1fr)_44px_auto] items-center gap-3 text-sm sm:grid-cols-[minmax(0,1fr)_80px_44px_124px]">
+            <div key={x.type} className="grid grid-cols-[minmax(0,1fr)_44px_auto] items-center gap-3 text-sm leading-normal sm:grid-cols-[minmax(0,1fr)_80px_44px_124px]">
               <span className="min-w-0 truncate">{t(`types.${x.type}`)}</span>
               <Bar value={acc} label={t(`types.${x.type}`)} className="hidden sm:block" />
               <span className="text-end font-archivo text-muted-foreground tabular-nums" dir="ltr">

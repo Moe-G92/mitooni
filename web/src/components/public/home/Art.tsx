@@ -1,14 +1,21 @@
 import { Link } from "react-router";
 import type { QuestionType } from "@/api/schemas";
 import { useT } from "@/i18n";
+import { mockupStrings } from "./mockup";
 import { formatBand, formatNumber } from "@/lib/format";
 import { cn } from "@/lib/utils";
 import { Rich } from "@/components/public/ui";
 import "./home.css";
 
-/* Illustrations for the landing page (canvas Main.dc.html). All decorative. */
+/*
+ * Illustrations for the landing page (canvas Main.dc.html). All decorative.
+ * The product mock-ups (dashboard, answer sheet, report, "Ready to book?")
+ * stay English and left to right on the Persian page too, as on MainFa.
+ */
 
 const PAPER_SHADOW = "shadow-[0_14px_30px_rgba(11,42,62,0.2)]";
+/** The learner's handwriting on the Writing answer sheet (canvas: Caveat, then system hands). */
+const HAND = "'Caveat', 'Segoe Print', 'Bradley Hand', cursive";
 
 function CheckDisc({ size = 22, className }: { size?: number; className?: string }) {
   return (
@@ -39,7 +46,7 @@ const SHEET: { a: React.ReactNode; ok: boolean }[] = [
 export function HeroBook() {
   const { t } = useT();
   return (
-    <div role="img" aria-label={t("mk.home.hero.art")} lang="en" dir="ltr" className="relative mx-auto h-[500px] w-full max-w-[440px] max-sm:h-[420px] max-sm:max-w-[343px]">
+    <div role="img" aria-label={t("mk.home.hero.art")} lang="en" dir="ltr" className="mk-en relative mx-auto h-[500px] w-full max-w-[440px] max-sm:h-[420px] max-sm:max-w-[343px]">
       <div aria-hidden="true" className="contents">
         <div className="hm-back absolute top-[38px] left-[6%] h-[410px] w-[300px] rounded-[6px_16px_16px_6px] bg-[linear-gradient(160deg,#4a3d8f_0%,#2d2463_100%)] shadow-[0_18px_36px_rgba(11,42,62,0.18)] max-sm:h-[340px] max-sm:w-[250px]" />
         <div className={cn("hm-sheet absolute right-0 bottom-1.5 z-[2] w-[210px] rounded-[10px] bg-white px-4 py-3.5 text-[12px] text-black max-sm:w-[190px]", PAPER_SHADOW)} style={{ fontFamily: "Arial, sans-serif" }}>
@@ -107,10 +114,10 @@ const LEVEL_STYLE = {
 
 /** A tablet showing the dashboard: question-type bars, band trend and the next drill. */
 export function DashboardMock() {
-  const { t, locale } = useT();
+  const { t, locale } = mockupStrings();
   const pct = (n: number) => formatNumber(n / 100, locale, { style: "percent" });
   return (
-    <div aria-hidden="true" className="w-full min-w-0 rounded-[18px] bg-[#1d2126] p-3 shadow-[0_16px_32px_rgba(11,42,62,0.15)] max-sm:p-2">
+    <div aria-hidden="true" lang="en" dir="ltr" className="mk-en w-full min-w-0 rounded-[18px] bg-[#1d2126] p-3 shadow-[0_16px_32px_rgba(11,42,62,0.15)] max-sm:p-2">
       <div className="flex flex-col gap-3 rounded-lg bg-background p-[18px] font-archivo max-sm:p-2.5">
         <div className="rounded-xl border border-border bg-white p-4 max-sm:p-2.5">
           <div className="flex flex-wrap items-center justify-between gap-2">
@@ -180,9 +187,9 @@ export function DashboardMock() {
 
 /** A Task 2 answer sheet with a feedback note and the 6.0 stamp. */
 export function WritingSheet() {
-  const { t } = useT();
+  const { t } = mockupStrings();
   return (
-    <div aria-hidden="true" className="relative min-w-0 px-1.5 pt-2 pb-3.5">
+    <div aria-hidden="true" lang="en" dir="ltr" className="mk-en relative min-w-0 px-1.5 pt-2 pb-3.5">
       <div className="absolute inset-[14px_2px_6px_12px] rotate-2 rounded-[2px] bg-[#f1ede4] shadow-[0_10px_24px_rgba(11,42,62,0.10)]" />
       <div className="relative -rotate-[0.6deg] rounded-[2px] bg-[#fffefb] px-[18px] pt-4 pb-3.5 font-archivo text-foreground shadow-[0_1px_2px_rgba(0,0,0,0.08),0_18px_34px_rgba(11,42,62,0.16)] max-sm:px-3">
         <div lang="en" dir="ltr" className="flex items-end justify-between gap-2.5 border-b-2 border-foreground pb-1.5">
@@ -193,7 +200,7 @@ export function WritingSheet() {
           <div className="border-2 border-foreground px-2.5 py-0.5 text-[13px] font-extrabold whitespace-nowrap">TASK 2</div>
         </div>
         <div className="mt-2.5 border border-[#c9ced6] bg-white bg-[repeating-linear-gradient(180deg,transparent_0,transparent_27px,#d6dbe3_27px,#d6dbe3_28px)] bg-[position:0_4px] px-3 pt-1 pb-3">
-          <div lang="en" dir="ltr" className="text-left text-[16px] leading-7 text-foreground max-sm:text-[14.5px]">
+          <div className="text-left text-[23px] leading-7 font-medium text-[#1f2a6b] max-sm:text-[20px]" style={{ fontFamily: HAND }}>
             Nowadays,{" "}
             <mark className="rounded bg-[#FFC4EC] px-0.5 text-foreground underline decoration-coral decoration-2 underline-offset-4">in many countries the young adults</mark> continue to live with their parents
             until they are almost thirty years old.
@@ -237,10 +244,10 @@ const BANDS = [
 
 /** Sample mock report: where the Reading marks went, bands against target, analysis and next step. */
 export function ReportCard() {
-  const { t, locale } = useT();
+  const { t, locale } = mockupStrings();
   const pos = (band: number) => `${((band / 9) * 100).toFixed(1)}%`;
   return (
-    <div className="mt-9 overflow-hidden rounded-[28px] border border-border bg-white font-archivo text-foreground shadow-[0_20px_44px_rgba(43,36,112,0.10)]">
+    <div lang="en" dir="ltr" className="mk-en mt-9 overflow-hidden rounded-[28px] border border-border bg-white font-archivo text-foreground shadow-[0_20px_44px_rgba(43,36,112,0.10)]">
       <div className="flex flex-wrap items-center justify-between gap-3 bg-midnight-iris px-7 py-[18px] text-white max-sm:px-5">
         <div>
           <div className="text-[12px] tracking-[0.12em] uppercase opacity-85">{t("mk.home.report.meta", { n: formatNumber(4, locale) })}</div>
@@ -267,7 +274,7 @@ export function ReportCard() {
               <div className="absolute inset-0 grid place-content-center text-center">
                 <span className="sr-only">{t("mk.home.report.outOf", { n: formatNumber(27, locale), total: formatNumber(40, locale) })}</span>
                 <b aria-hidden="true" dir="ltr" className="text-[30px] leading-none tabular-nums [&:lang(fa)]:text-[25px]">
-                  <span className={cn("hm-cnt", locale === "fa" && "hm-cnt-fa")} />/{formatNumber(40, locale)}
+                  <span className="hm-cnt" />/{formatNumber(40, locale)}
                 </b>
                 <span className="hm-bandpop mt-1 justify-self-center rounded-full bg-midnight-iris px-2.5 py-0.5 text-[13px] font-bold text-white">
                   {t("mk.home.report.band", { n: formatBand(6.5, locale) })}
@@ -327,7 +334,7 @@ export function ReportCard() {
 
 /** "Ready to book?" card with four skills on target. */
 export function ReadyCard() {
-  const { t, locale } = useT();
+  const { t, locale } = mockupStrings();
   const rows = [
     ["listening", 7],
     ["reading", 7],
@@ -335,7 +342,7 @@ export function ReadyCard() {
     ["speaking", 7.5],
   ] as const;
   return (
-    <div aria-hidden="true" className="relative box-border w-full max-w-[380px] -rotate-2 justify-self-center rounded-3xl bg-white px-6 pt-[22px] pb-5 font-archivo text-foreground shadow-[0_18px_40px_rgba(0,0,0,0.25)] max-sm:px-5">
+    <div aria-hidden="true" lang="en" dir="ltr" className="mk-en relative box-border w-full max-w-[380px] -rotate-2 justify-self-center rounded-3xl bg-white px-6 pt-[22px] pb-5 font-archivo text-foreground shadow-[0_18px_40px_rgba(0,0,0,0.25)] max-sm:px-5">
       <div className="flex items-center justify-between gap-2.5">
         <b className="text-[18px]">{t("mk.home.ready.card")}</b>
         <span className="text-[13px] text-muted-foreground">{t("mk.home.ready.target", { n: formatBand(7, locale) })}</span>

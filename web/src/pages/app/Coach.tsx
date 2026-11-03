@@ -3,7 +3,7 @@ import { Link } from "react-router";
 import { useQueryClient } from "@tanstack/react-query";
 import { CalendarCheck, ChevronLeft, ChevronRight, Clock, GraduationCap, RefreshCw, Send } from "lucide-react";
 import type { CoachReview, Locale, Skill, Slot } from "@/api/schemas";
-import { keys, useCoach, useCoachMutations, useMe, useProgress, useResult, useResults, useUpdateMe, useVocabSummary } from "@/api/queries";
+import { keys, useAttempts, useCoach, useCoachMutations, useMe, useProgress, useResult, useResults, useTests, useUpdateMe, useVocabSummary } from "@/api/queries";
 import { useT } from "@/i18n";
 import { formatBand, formatDate, formatDateTime, formatDayDate, formatNumber, formatShortDate, formatTime } from "@/lib/format";
 import { cn } from "@/lib/utils";
@@ -12,7 +12,7 @@ import { Card, CardLabel } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Field, Select, Textarea } from "@/components/ui/form";
 import { Dialog, DialogContent, DialogTrigger, EmptyState, ErrorState, Skeleton, Tag } from "@/components/ui/misc";
-import { buildBasis, buildReviews, buildWeek, dailyMinutes, latestFull, planWeekStart, type ItemKind } from "@/components/study/plan";
+import { buildBasis, buildReviews, buildWeek, dailyMinutes, latestFull, nextMockDay, planWeekStart, startedByDay, type ItemKind } from "@/components/study/plan";
 import { formatDayMonth, formatShortDay, formatWeekdayShort, toDay } from "@/components/study/dates";
 
 const STATUS_CLASS: Record<CoachReview["status"], string> = {
@@ -262,6 +262,8 @@ export default function Coach() {
   const results = useResults();
   const progress = useProgress();
   const vocab = useVocabSummary();
+  const open = useAttempts("in-progress");
+  const tests = useTests();
   const latest = useMemo(() => (results.data ? latestFull(results.data) : null), [results.data]);
   const result = useResult(latest?.attemptId);
   const [offset, setOffset] = useState(0);
@@ -350,14 +352,16 @@ export default function Coach() {
   const basis = buildBasis(latest, result.data, progress.data, me.data);
   const biggest = basis.find((b) => b.biggest);
   const maxOffset = testDate ? Math.max(0, Math.floor((testDate.getTime() - planWeekStart(today).getTime()) / (7 * 86_400_000))) : 3;
-  const week = buildWeek({ start: planWeekStart(today, offset), today, testDate, basis, progress: progress.data, result: result.data, due });
+  const started = startedByDay(open.data ?? [], tests.data ?? []);
+  const week = buildWeek({ start: planWeekStart(today, offset), today, testDate, basis, progress: progress.data, result: result.data, due, started });
   const minutes = dailyMinutes(week);
-  const mockDay = week.find((d) => d.items.some((x) => x.kind === "mock"));
+  // The next mock still to come: in this week, or the Saturday after it.
+  const mockDay = week.find((d) => !d.past && d.items.some((x) => x.kind === "mock"))?.date ?? (offset === 0 ? nextMockDay(today, testDate) : null);
   const reviews = buildReviews({ today, testDate, result: result.data, progress: progress.data, due, mockDate: latest.completedAt });
   const weekLine = [
     t("coach.plan.range", { from: formatDayDate(week[0].date, locale), to: formatDayDate(week[6].date, locale) }),
     minutes ? t("coach.plan.perDay", { n: n(minutes) }) : null,
-    mockDay ? t("coach.plan.nextMock", { date: formatDayDate(mockDay.date, locale) }) : null,
+    mockDay ? t("coach.plan.nextMock", { date: formatDayDate(mockDay, locale) }) : null,
   ]
     .filter(Boolean)
     .join(" · ");
@@ -432,7 +436,7 @@ export default function Coach() {
                 className={cn(
                   "flex min-w-0 flex-col gap-2 rounded-2xl bg-card",
                   d.today ? "border-2 border-coral p-[11px]" : "border border-border p-3",
-                  d.past && "bg-[#f6f7f9] opacity-75",
+                  d.past && "bg-[#f6f7f9]",
                 )}
               >
                 <div className="flex items-baseline justify-between gap-1.5">
@@ -441,7 +445,22 @@ export default function Coach() {
                 </div>
                 {d.today && <span className="self-start rounded-full bg-coral px-2 py-px text-[11px] font-semibold text-white">{t("coach.plan.today")}</span>}
                 {d.tomorrow && <span className="self-start rounded-full bg-pink-tint px-2 py-px text-[11px] font-semibold text-weak">{t("coach.plan.tomorrow")}</span>}
-                {d.items.length === 0 && <span className="text-xs text-muted-foreground">{t("coach.plan.rest")}</span>}
+                {d.started.length > 0 && (
+                  <span className="self-start rounded-full bg-border px-2 py-px text-[11px] font-semibold text-[#3a4855]">{t("coach.plan.started")}</span>
+                )}
+                {d.started.map((x, i) => (
+                  <Link key={`s${i}`} to={x.href} className={cn("block rounded-xl border-s-4 px-3 py-2.5 text-foreground hover:brightness-[0.98] focus-visible:outline-2 focus-visible:outline-ring", KIND_STYLE[x.kind].box)}>
+                    <span className={cn("block text-[11px] font-semibold tracking-[0.06em] uppercase", KIND_STYLE[x.kind].label)}>{kindLabel(x.kind)}</span>
+                    <span className="mt-0.5 block text-sm leading-[19px] font-medium">{t(`coach.plan.items.${x.key}`, { n: n(x.minutesLeft) })}</span>
+                    {x.minutes !== null && (
+                      <span className="mt-1.5 flex items-center gap-1 text-xs text-[#3a4855]">
+                        <Clock className="size-3" aria-hidden="true" />
+                        {t("coach.plan.minutes", { n: n(x.minutes) })}
+                      </span>
+                    )}
+                  </Link>
+                ))}
+                {d.items.length === 0 && d.started.length === 0 && <span className="text-xs text-muted-foreground">{t("coach.plan.rest")}</span>}
                 {d.items.map((x, i) => (
                   <Link key={i} to={x.href} className={cn("block rounded-xl border-s-4 px-3 py-2.5 text-foreground hover:brightness-[0.98] focus-visible:outline-2 focus-visible:outline-ring", KIND_STYLE[x.kind].box)}>
                     <span className={cn("block text-[11px] font-semibold tracking-[0.06em] uppercase", KIND_STYLE[x.kind].label)}>{kindLabel(x.kind)}</span>

@@ -3,7 +3,7 @@ import { AudioLines, Blocks, BookOpenText, ChevronRight, Lightbulb, Link2, Targe
 import type { Criterion } from "@/api/schemas";
 import { useT } from "@/i18n";
 import { levelOf, type Lift } from "@/lib/breakdown";
-import { formatBand } from "@/lib/format";
+import { formatBand, formatNumber } from "@/lib/format";
 import { cn } from "@/lib/utils";
 import { Card } from "@/components/ui/card";
 import { ScoreRing } from "@/components/charts";
@@ -23,12 +23,15 @@ export function ScoreBreakdown({
   criterionLabel,
   skillLabel,
   lift,
+  exampleTone = "coral",
 }: {
   criteria: Criterion[];
   criterionLabel: (key: Criterion["key"]) => string;
   /** "Speaking" or "Writing task 2", for the lift rows. */
   skillLabel: string;
   lift: (key: Criterion["key"]) => Lift;
+  /** Colour of the "From your answer" quote: brand blue on Writing, Coral on Speaking (canvas). */
+  exampleTone?: "blue" | "coral";
 }) {
   const { t, locale } = useT();
   const lifts = Object.fromEntries(criteria.map((c) => [c.key, lift(c.key)])) as Record<Criterion["key"], Lift>;
@@ -90,7 +93,7 @@ export function ScoreBreakdown({
                     {g.overall > 0 || g.skill > 0 ? (
                       <span
                         className={cn(
-                          "mt-1 inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-medium",
+                          "mt-1 inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] leading-[1.4] font-medium",
                           on ? "bg-white text-coral" : "bg-strength-soft text-strength",
                         )}
                       >
@@ -116,14 +119,26 @@ export function ScoreBreakdown({
 
         {/* Picked criterion */}
         <div id="crit-panel" role="tabpanel" aria-labelledby={`crit-tab-${c.key}`} className="min-w-0 p-5 lg:p-6">
-          <CriterionDetail c={c} label={criterionLabel(c.key)} lift={lifts[c.key]} skillLabel={skillLabel} />
+          <CriterionDetail c={c} label={criterionLabel(c.key)} lift={lifts[c.key]} skillLabel={skillLabel} exampleTone={exampleTone} />
         </div>
       </div>
     </Card>
   );
 }
 
-function CriterionDetail({ c, label, lift, skillLabel }: { c: Criterion; label: string; lift: Lift; skillLabel: string }) {
+function CriterionDetail({
+  c,
+  label,
+  lift,
+  skillLabel,
+  exampleTone,
+}: {
+  c: Criterion;
+  label: string;
+  lift: Lift;
+  skillLabel: string;
+  exampleTone: "blue" | "coral";
+}) {
   const { t, locale, pick } = useT();
   const metrics = c.metrics ?? [];
   const [mi, setMi] = useState(0);
@@ -181,7 +196,10 @@ function CriterionDetail({ c, label, lift, skillLabel }: { c: Criterion; label: 
               {m.example && (
                 <figure className="mt-2.5">
                   <figcaption className="text-xs text-muted-foreground">{t("breakdown.example")}</figcaption>
-                  <blockquote lang="en" dir="ltr" className="mt-1 rounded-e-lg border-s-[3px] border-coral bg-weak-soft px-3 py-2 text-start text-sm italic">
+                  <blockquote lang="en" dir="ltr" className={cn(
+                      "mt-1 rounded-e-lg border-s-[3px] px-3 py-2 text-start text-sm italic",
+                      exampleTone === "blue" ? "border-primary bg-[#E6EBFF]" : "border-coral bg-weak-soft",
+                    )}>
                     “{m.example}”
                   </blockquote>
                 </figure>
@@ -225,7 +243,7 @@ function CriterionDetail({ c, label, lift, skillLabel }: { c: Criterion; label: 
           <ol className="mt-2 flex flex-col gap-2 text-sm">
             {c.tips.map((tip, i) => (
               <li key={i} className="flex gap-2.5 rounded-xl border border-border px-3.5 py-2.5">
-                <span className="font-archivo tabular-nums text-xs text-muted-foreground">{i + 1}</span>
+                <span className="font-archivo tabular-nums text-xs text-muted-foreground">{formatNumber(i + 1, locale)}</span>
                 <span>{pick(tip)}</span>
               </li>
             ))}

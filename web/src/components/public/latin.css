@@ -1,0 +1,40 @@
+/*
+ * English islands on the Persian public pages (class .mk-en, with lang="en"
+ * dir="ltr"). The canvas Fa boards keep product mock-ups English: the landing
+ * dashboard, answer sheets, report and "Ready to book?" card.
+ *
+ * The global :lang(fa) rules in index.css swap every .font-archivo and
+ * .font-gabarito for the Persian face, force letter-spacing to 0 and
+ * text-transform to none (both !important), and give spans and paragraphs
+ * Persian line heights. Inside an island these rules put the Latin typography
+ * back. They sit in the base layer so their !important beats the global ones
+ * (same layer, higher specificity); Tailwind's --tw-tracking and --tw-leading
+ * carry the utility values, and elements without a utility inherit.
+ */
+@layer base {
+  :lang(fa) .mk-en {
+    line-height: 1.5;
+  }
+  :lang(fa) .mk-en,
+  :lang(fa) .mk-en .font-archivo {
+    font-family: var(--font-archivo);
+  }
+  :lang(fa) .mk-en .font-gabarito {
+    font-family: var(--font-gabarito);
+  }
+  :lang(fa) .mk-en,
+  :lang(fa) .mk-en * {
+    letter-spacing: var(--tw-tracking) !important;
+    text-transform: inherit !important;
+  }
+  :lang(fa) .mk-en.uppercase,
+  :lang(fa) .mk-en .uppercase {
+    text-transform: uppercase !important;
+  }
+  :lang(fa) .mk .mk-en :is(p, li, label, span) {
+    line-height: inherit;
+  }
+  :lang(fa) .mk .mk-en :is(h1, h2, h3, h4) {
+    line-height: var(--tw-leading) !important;
+  }
+}

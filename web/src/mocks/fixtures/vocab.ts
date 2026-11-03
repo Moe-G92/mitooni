@@ -43,7 +43,7 @@ export const vocabSeed: Seed[] = [
   w(28, "hypothesis", "noun", "an idea that is tested by research", "فرضیه", "The scientists tested the hypothesis that bees can recognise human faces."),
   w(29, "implement", "verb", "to put a plan or decision into action", "اجرا کردن", "The council implemented a new recycling scheme last year."),
   w(30, "indicate", "verb", "to show or suggest that something is true", "نشان دادن، حاکی بودن", "The figures indicate that more people are cycling to work."),
-  w(31, "infrastructure", "noun", "the basic systems a country needs, such as roads, power and water", "زیرساخت", "Poor infrastructure makes it hard for small towns to attract businesses."),
+  w(31, "infrastructure", "noun", "the basic systems a country needs, such as roads, power and water", "زیرساخت", "Governments should invest more in rural infrastructure, such as roads and internet access, so that young people do not have to move to cities."),
   w(32, "interpret", "verb", "to explain or understand the meaning of something", "تفسیر کردن", "Students often find it difficult to interpret complex statistics."),
   w(33, "maintain", "verb", "to keep something at the same level or in good condition", "حفظ کردن", "The country maintained a stable growth rate for ten years."),
   w(34, "obtain", "verb", "to get something, especially by effort", "به دست آوردن", "Researchers obtained the data from a survey of 2,000 adults."),

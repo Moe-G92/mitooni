@@ -7,6 +7,7 @@ import { marketingEn, marketingFa } from "./marketing";
 import { dashboardEn, dashboardFa } from "./overrides/dashboard";
 import { studyEn, studyFa } from "./overrides/study";
 import { resultsEn, resultsFa } from "./overrides/results";
+import { practiceEn, practiceFa } from "./overrides/practice";
 import type { Locale, Localized } from "@/api/schemas";
 
 /*
@@ -27,8 +28,8 @@ function deepMerge(base: Tree, ...overrides: Tree[]): Tree {
 
 void i18n.use(initReactI18next).init({
   resources: {
-    en: { translation: { ...deepMerge(en, dashboardEn, resultsEn, studyEn), mk: marketingEn } },
-    fa: { translation: { ...deepMerge(fa, dashboardFa, resultsFa, studyFa), mk: marketingFa } },
+    en: { translation: { ...deepMerge(en, dashboardEn, resultsEn, studyEn, practiceEn), mk: marketingEn } },
+    fa: { translation: { ...deepMerge(fa, dashboardFa, resultsFa, studyFa, practiceFa), mk: marketingFa } },
   },
   lng: getPrefs().locale,
   fallbackLng: "en",

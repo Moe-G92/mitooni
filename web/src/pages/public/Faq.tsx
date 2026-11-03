@@ -1,6 +1,7 @@
 import { useT } from "@/i18n";
 import { cn } from "@/lib/utils";
 import { Container, Kicker, PillLink, heroLead } from "@/components/public/ui";
+import { Mixed } from "@/components/public/Mixed";
 
 /* FAQ page, ported from the canvas FAQ.dc.html. Native details/summary keeps it keyboard and screen-reader friendly. */
 
@@ -35,14 +36,18 @@ export default function Faq() {
         <Container className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-8 pt-14 pb-6 max-sm:pt-10">
           <div>
             <Kicker>{t("mk.faqPage.kicker")}</Kicker>
-            <h1 className="mt-5 mb-0 font-archivo text-[clamp(34px,4.6vw,56px)] leading-[1.15] font-bold tracking-[-0.02em] text-primary">{t("mk.faqPage.title")}</h1>
-            <p className={cn(heroLead, "mt-3.5 mb-0 max-w-[560px] text-[18px] leading-7")}>{t("mk.faqPage.lead")}</p>
+            <h1 className="mt-5 mb-0 font-archivo text-[clamp(38px,4.6vw,56px)] max-sm:text-[34px] leading-[1.15] font-bold tracking-[-0.02em] text-primary">
+              {t("mk.faqPage.title")}
+            </h1>
+            <p className={cn(heroLead, "mt-3.5 mb-0 max-w-[560px] text-[18px] leading-7 [&:lang(fa)]:leading-[1.8]")}>
+              <Mixed text={t("mk.faqPage.lead")} />
+            </p>
             <nav aria-label={t("mk.faqPage.jump")} className="mt-[22px]">
               <ul className="m-0 flex list-none flex-wrap gap-2.5 p-0">
                 {GROUPS.map((g) => (
                   <li key={g.key}>
                     <a href={`#faq-${g.key}`} className={cn("inline-block rounded-full px-4 py-2 font-archivo text-[15px] font-bold no-underline hover:underline", g.chip)}>
-                      {t(`mk.faqPage.groups.${g.key}`)}
+                      <Mixed text={t(`mk.faqPage.groups.${g.key}`)} />
                     </a>
                   </li>
                 ))}
@@ -58,13 +63,17 @@ export default function Faq() {
           <section key={g.key} id={`faq-${g.key}`} aria-labelledby={`faq-${g.key}-title`} className="scroll-mt-5">
             <h2 id={`faq-${g.key}-title`} className={cn("m-0 flex items-center gap-2.5 font-archivo text-[22px] font-extrabold", g.heading)}>
               <i aria-hidden="true" className={cn("size-2.5 rounded-full", g.dot)} />
-              {t(`mk.faqPage.groups.${g.key}`)}
+              <span>
+                <Mixed text={t(`mk.faqPage.groups.${g.key}`)} />
+              </span>
             </h2>
             <div className="mt-3.5 flex flex-col gap-2.5">
               {Array.from({ length: g.count }, (_, i) => i + 1).map((n) => (
                 <details key={n} open={gi === 0 && n === 1} className="group rounded-[18px] border border-border bg-white">
                   <summary className="flex cursor-pointer list-none items-center justify-between gap-3.5 rounded-[18px] px-5 py-[18px] font-archivo text-[18px] font-bold text-foreground max-sm:text-[17px] [&::-webkit-details-marker]:hidden">
-                    {t(`mk.faqPage.${g.key}.q${n}`)}
+                    <span className="[&:lang(fa)]:leading-[1.6]">
+                      <Mixed text={t(`mk.faqPage.${g.key}.q${n}`)} />
+                    </span>
                     <span className={cn("grid size-8 flex-none place-items-center rounded-full", g.icon)}>
                       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" aria-hidden="true">
                         <path d="M5 12h14" />
@@ -72,7 +81,9 @@ export default function Faq() {
                       </svg>
                     </span>
                   </summary>
-                  <p className="m-0 px-5 pb-5 font-archivo text-[16px] leading-[26px] text-[#3a4855]">{t(`mk.faqPage.${g.key}.a${n}`)}</p>
+                  <p className="m-0 px-5 pb-5 font-archivo text-[16px] leading-[26px] text-[#3a4855] [&:lang(fa)]:leading-[30px]">
+                    <Mixed text={t(`mk.faqPage.${g.key}.a${n}`)} />
+                  </p>
                 </details>
               ))}
             </div>
@@ -87,7 +98,7 @@ export default function Faq() {
               <h2 id="faq-contact" className="m-0 text-[20px] font-bold">
                 {t("mk.faqPage.contactTitle")}
               </h2>
-              <p className="mt-1 mb-0 text-[15px] text-white/85">{t("mk.faqPage.contactBody")}</p>
+              <p className="mt-1 mb-0 text-[15px] text-white/85 [&:lang(fa)]:leading-[1.7]">{t("mk.faqPage.contactBody")}</p>
             </div>
             <PillLink to="/app/coach" size="md" className="px-6 py-3 text-[16px]">
               {t("mk.faqPage.contact")}

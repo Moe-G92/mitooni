@@ -1,0 +1,130 @@
+/*
+ * Small motion pieces for the skill practice players (canvas boards
+ * PracticeListening, PracticeReading, PracticeWriting, PracticeSpeaking).
+ * Nothing here moves behind body text, and all of it stops for people who
+ * prefer reduced motion.
+ */
+
+/* Audio waveform bars bounce only while the audio plays. */
+.pp-eq i {
+  transform-origin: bottom;
+}
+.pp-eq[data-playing="true"] i {
+  animation: ppEq 1.1s ease-in-out infinite;
+}
+@keyframes ppEq {
+  0%,
+  100% {
+    transform: scaleY(0.55);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+/* "You are here" marker on the listening map, while the audio plays. */
+.pp-pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: ppPulse 1.6s ease-in-out infinite;
+}
+@keyframes ppPulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.35);
+  }
+}
+
+/* Feedback cards slide in once when they appear. */
+.pp-slide {
+  animation: ppSlide 0.45s cubic-bezier(0.2, 0.8, 0.25, 1) both;
+}
+@keyframes ppSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Reading: the empty slot that is waiting for a heading. */
+.pp-slot-live {
+  animation: ppSlot 1.8s ease-in-out infinite;
+}
+@keyframes ppSlot {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 136, 220, 0.55);
+  }
+  50% {
+    box-shadow: 0 0 0 7px rgba(255, 136, 220, 0);
+  }
+}
+
+/* Reading: the topic sentence, marked like a highlighter pen. */
+.pp-mark {
+  background: linear-gradient(transparent 55%, #faff7f 55%, #faff7f 92%, transparent 92%) no-repeat;
+  background-size: 100% 100%;
+  padding: 0 2px;
+}
+
+/* Speaking: the ON AIR badge glows while recording. */
+.pp-onair {
+  animation: ppAir 1.6s ease-in-out infinite;
+}
+@keyframes ppAir {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(217, 47, 58, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 18px 4px rgba(217, 47, 58, 0.5);
+  }
+}
+
+/* Writing: criterion bars grow in once. */
+.pp-grow {
+  transform-origin: left;
+  animation: ppGrow 0.9s cubic-bezier(0.2, 0.8, 0.25, 1) both;
+}
+[dir="rtl"] .pp-grow {
+  transform-origin: right;
+}
+@keyframes ppGrow {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pp-eq[data-playing="true"] i,
+  .pp-pulse,
+  .pp-slide,
+  .pp-slot-live,
+  .pp-onair,
+  .pp-grow {
+    animation: none !important;
+  }
+}
+
+/* Small capitals labels. Persian has no case and must not be letter-spaced. */
+.pp-caps {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+:lang(fa).pp-caps,
+:lang(fa) .pp-caps {
+  text-transform: none;
+  letter-spacing: 0;
+}

@@ -399,6 +399,8 @@ export function BandLine({
   label,
   targetLabel,
   size = "mini",
+  color = "#3E4FC4",
+  lineWidth = 2.5,
   className,
 }: {
   points: { date: string; band: number }[];
@@ -409,6 +411,9 @@ export function BandLine({
   /** Text on the target line, such as "target 7.0". */
   targetLabel: string;
   size?: "trend" | "mini";
+  /** Line and dot colour (the skill colour on the Results cards). */
+  color?: string;
+  lineWidth?: number;
   className?: string;
 }) {
   const mini = size === "mini";
@@ -458,8 +463,8 @@ export function BandLine({
         <polyline
           points={pts.map((p) => `${p.cx},${p.cy}`).join(" ")}
           fill="none"
-          stroke="#3E4FC4"
-          strokeWidth={mini ? 2.5 : 2.5}
+          stroke={color}
+          strokeWidth={lineWidth}
           strokeLinejoin="round"
           strokeLinecap="round"
         />
@@ -469,7 +474,7 @@ export function BandLine({
         if (mini)
           return (
             <g key={i}>
-              <circle cx={p.cx} cy={p.cy} r={isLast ? 4.5 : 3.5} fill="#3E4FC4" />
+              <circle cx={p.cx} cy={p.cy} r={isLast ? 4.5 : 3.5} fill={color} />
               <text x={p.cx} y={p.cy - 9} textAnchor="middle" fontSize="10" fill="#556170">
                 {formatBand(p.band, locale)}
               </text>
@@ -477,7 +482,7 @@ export function BandLine({
           );
         return (
           <g key={i}>
-            <circle cx={p.cx} cy={p.cy} r={isLast ? 6 : 5} fill={isLast ? "#D92F3A" : "#3E4FC4"} />
+            <circle cx={p.cx} cy={p.cy} r={isLast ? 6 : 5} fill={isLast ? "#D92F3A" : color} />
             {isLast && (
               <text x={p.cx} y={p.cy - 12} textAnchor="middle" fontSize="12" fontWeight="600" fill="#B8232D">
                 {formatBand(p.band, locale)}

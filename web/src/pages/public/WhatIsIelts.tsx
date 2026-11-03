@@ -1,5 +1,6 @@
 import { useT } from "@/i18n";
-import { Container, Kicker, PillLink, Rich } from "@/components/public/ui";
+import { Container, Kicker, PillLink } from "@/components/public/ui";
+import { Mixed } from "@/components/public/Mixed";
 import { Globe } from "@/components/public/what/Globe";
 import { cn } from "@/lib/utils";
 
@@ -7,6 +8,7 @@ import { cn } from "@/lib/utils";
  * What is IELTS? (route /what-is-ielts, canvas WhatIsIELTS.dc.html): a hero
  * with the spinning dotted globe, the four skills with their timings, and a
  * pale wisteria panel on the four test types. Copy lives in mk.what.
+ * Text goes through Mixed, which isolates English terms inside Persian copy.
  */
 
 const h2 = "m-0 font-archivo text-[clamp(28px,3.4vw,40px)] leading-[1.2] font-bold tracking-[-0.015em] text-primary";
@@ -37,14 +39,16 @@ export default function WhatIsIelts() {
         <Container className="grid min-h-[clamp(640px,calc(100vh-132px),800px)] grid-cols-[repeat(auto-fit,minmax(min(100%,460px),1fr))] content-center items-center gap-12 py-12 max-sm:min-h-0">
           <div>
             <Kicker>{k("kicker")}</Kicker>
-            <h1 className="mt-6 mb-0 font-archivo text-[clamp(40px,5vw,60px)] leading-[1.15] font-bold tracking-[-0.02em] text-primary">{k("title")}</h1>
+            <h1 className="mt-6 mb-0 font-archivo text-[clamp(40px,5vw,60px)] leading-[1.15] font-bold tracking-[-0.02em] text-primary">
+              <Mixed text={k("title")} />
+            </h1>
             <p className="mt-5 mb-0 max-w-[540px] font-archivo text-[19px] leading-[30px] text-[#3a4855] max-sm:text-[17px] max-sm:leading-7 [&_b]:text-foreground">
-              <Rich text={k("lead")} />
+              <Mixed text={k("lead")} />
             </p>
             <ul className="m-0 mt-6 flex list-none flex-wrap gap-2.5 p-0">
               {(["bands", "orgs", "format"] as const).map((c) => (
                 <li key={c} className="rounded-full bg-pale-wisteria px-3.5 py-2 font-archivo text-[15px] leading-[22px] font-semibold text-midnight-iris">
-                  {k(`chips.${c}`)}
+                  <Mixed text={k(`chips.${c}`)} />
                 </li>
               ))}
             </ul>
@@ -53,7 +57,9 @@ export default function WhatIsIelts() {
             <Globe />
             <p className="m-0 mt-3.5 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 font-archivo text-[15px] leading-[22px] font-semibold text-midnight-iris shadow-[0_6px_16px_rgba(43,36,112,0.10)]">
               <span aria-hidden="true" className="size-2.5 shrink-0 rounded-full bg-coral shadow-[0_0_0_3px_rgba(250,255,127,0.9)]" />
-              {k("countries")}
+              <span>
+                <Mixed text={k("countries")} />
+              </span>
             </p>
           </div>
         </Container>
@@ -65,13 +71,21 @@ export default function WhatIsIelts() {
           <h2 id="skills-title" className={h2}>
             {k("skills.title")}
           </h2>
-          <p className={cn(body, "mt-2.5 mb-0")}>{k("skills.lead")}</p>
+          <p className={cn(body, "mt-2.5 mb-0")}>
+            <Mixed text={k("skills.lead")} />
+          </p>
           <ul className="m-0 mt-6 grid list-none grid-cols-[repeat(auto-fit,minmax(min(100%,230px),1fr))] gap-4 p-0">
             {SKILLS.map(({ key, bg, fg }) => (
               <li key={key} className={cn("rounded-[20px] px-[22px] py-5", bg)}>
-                <h3 className={cn("m-0 font-gabarito text-[13px] leading-5 font-bold tracking-[0.1em] uppercase", fg)}>{k(`skills.${key}.name`)}</h3>
-                <p className="m-0 mt-2 font-archivo text-[22px] leading-[30px] font-bold text-foreground">{k(`skills.${key}.time`)}</p>
-                <p className="m-0 mt-1 font-archivo text-[15px] leading-[22px] text-[#3a4855]">{k(`skills.${key}.detail`)}</p>
+                <h3 className={cn("m-0 font-gabarito text-[13px] leading-5 font-bold tracking-[0.1em] uppercase", fg)}>
+                  <Mixed text={k(`skills.${key}.name`)} />
+                </h3>
+                <p className="m-0 mt-2 font-archivo text-[22px] leading-[30px] font-bold text-foreground">
+                  <Mixed text={k(`skills.${key}.time`)} />
+                </p>
+                <p className="m-0 mt-1 font-archivo text-[15px] leading-[22px] text-[#3a4855]">
+                  <Mixed text={k(`skills.${key}.detail`)} />
+                </p>
               </li>
             ))}
           </ul>
@@ -95,12 +109,18 @@ export default function WhatIsIelts() {
               <ul className="m-0 flex list-none flex-col gap-3 p-0">
                 {TYPES.map(({ key, border }) => (
                   <li key={key} className={cn("rounded-[14px] border-s-4 bg-white px-3.5 py-3 text-start", border)}>
-                    <h3 className="m-0 font-archivo text-[16px] leading-6 font-bold text-foreground">{k(`types.${key}.name`)}</h3>
-                    <p className="m-0 font-gabarito text-[14px] leading-5 text-[#3a4855]">{k(`types.${key}.body`)}</p>
+                    <h3 className="m-0 font-archivo text-[16px] leading-6 font-bold text-foreground">
+                      <Mixed text={k(`types.${key}.name`)} />
+                    </h3>
+                    <p className="m-0 font-gabarito text-[14px] leading-[22px] text-[#3a4855]">
+                      <Mixed text={k(`types.${key}.body`)} />
+                    </p>
                   </li>
                 ))}
               </ul>
-              <p className="m-0 mt-1 font-gabarito text-[13px] leading-5 text-muted-foreground">{k("types.note")}</p>
+              <p className="m-0 mt-1 font-gabarito text-[13px] leading-5 text-muted-foreground">
+                <Mixed text={k("types.note")} />
+              </p>
             </div>
           </div>
         </Container>

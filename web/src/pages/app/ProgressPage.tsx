@@ -15,7 +15,6 @@ import { BandTrend } from "@/components/charts";
 import { SkillBars } from "@/components/study/SkillBars";
 import { DaysToGo } from "@/components/study/DaysToGo";
 import { ExamMonth } from "@/components/study/ExamMonth";
-import { Mascot } from "@/components/study/Mascot";
 import { formatFullDay } from "@/components/study/dates";
 
 const SKILLS: Skill[] = ["listening", "reading", "writing", "speaking"];
@@ -50,7 +49,6 @@ export default function ProgressPage() {
   const testDate = me.data.testDate;
   const daysLeft = testDate ? Math.max(0, daysUntil(testDate)) : null;
   const mocksLeft = daysLeft !== null ? Math.max(1, Math.floor(daysLeft / 7)) : null;
-  const firstName = me.data.name.trim().split(/\s+/)[0] ?? "";
   const target = me.data.targets.overall;
 
   return (
@@ -69,7 +67,7 @@ export default function ProgressPage() {
       ) : (
         <div className="grid grid-cols-12 gap-4">
           <Card className="col-span-12 lg:col-span-7">
-            <CardLabel title={t("progress.overallTrend")} note={t("overview.fullMocks")} />
+            <CardLabel title={t("progress.overallTrend")} note={t("progress.fullMocks")} />
             {d.trend.length ? (
               <BandTrend
                 points={d.trend}
@@ -80,7 +78,7 @@ export default function ProgressPage() {
                 onPoint={(id) => navigate(`/app/results/${id}`)}
               />
             ) : (
-              <p className="mt-4 text-sm text-muted-foreground">{t("overview.noTrend")}</p>
+              <p className="mt-4 text-sm text-muted-foreground">{t("progress.noTrend")}</p>
             )}
           </Card>
 
@@ -117,7 +115,7 @@ export default function ProgressPage() {
             )}
           </Card>
 
-          <Card className="col-span-12 lg:col-span-7">
+          <Card className={cn("col-span-12", testDate && "lg:col-span-7")}>
             <CardLabel title={t("progress.bySkill")} note={t("progress.bySkillNote")} />
             <div className="mt-3">
               <SkillBars
@@ -131,26 +129,19 @@ export default function ProgressPage() {
             </div>
           </Card>
 
-          <section
-            aria-label={t("progress.keepGoing")}
-            className="col-span-12 flex min-w-0 flex-col items-center justify-center gap-5 rounded-card bg-pink-tint px-6 py-5.5 text-center lg:col-span-5"
-          >
-            <div className="flex items-center gap-3 text-start">
-              <Mascot className="h-auto w-16 shrink-0" />
-              <div className="min-w-0">
-                <h2 className="font-archivo text-[22px] leading-tight font-extrabold text-midnight-iris">{t("progress.cheer", { name: firstName })}</h2>
-                <p className="mt-1 text-sm text-[#3a4855]">{testDate ? t("progress.cheerBody") : t("progress.cheerNoDate")}</p>
-              </div>
-            </div>
-            {testDate && (
+          {testDate && (
+            <section
+              aria-label={t("progress.keepGoing")}
+              className="col-span-12 flex min-w-0 flex-col items-center justify-center rounded-card bg-pink-tint px-6 py-5.5 lg:col-span-5"
+            >
               <ExamMonth
                 examDate={testDate}
                 locale={locale}
                 tag={t("progress.examDay")}
                 label={t("progress.examMonthLabel", { date: formatFullDay(testDate, locale) })}
               />
-            )}
-          </section>
+            </section>
+          )}
 
           {groups.map(({ skill, rows }) => {
             const c = SECTION[skill];

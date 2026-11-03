@@ -10,6 +10,7 @@ import { PageHeader } from "@/components/PageHeader";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Bar, EmptyState, Skeleton } from "@/components/ui/misc";
+import { vocabUse } from "@/components/study/vocabUse";
 
 const termPattern = (term: string) => new RegExp(term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "gi");
 
@@ -72,6 +73,7 @@ export default function VocabularyReview() {
   });
 
   const total = done + (queue?.length ?? 0);
+  const use = card ? vocabUse(card.term, card.custom) : null;
   const nextGood = card ? (card.intervalDays === 0 ? 1 : Math.round(card.intervalDays * 2.5)) : 1;
 
   return (
@@ -123,6 +125,7 @@ export default function VocabularyReview() {
                   <p lang="en" dir="ltr" className="mt-1.5 text-start text-[17px] leading-[26px]">
                     “{shown ? <Highlighted text={card.example} term={card.term} /> : card.example.replace(termPattern(card.term), "_____")}”
                   </p>
+                  {use && <p className="mt-1.5 text-start text-xs text-[#3a4855]">{t(`vocab.useFor.${use}`)}</p>}
                 </div>
               )}
             </div>

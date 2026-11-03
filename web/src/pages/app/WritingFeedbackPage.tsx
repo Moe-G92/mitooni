@@ -42,7 +42,11 @@ export default function WritingFeedbackPage() {
 
   return (
     <>
-      <PageHeader title={t("feedback.writingTitle", { n: w.task })} sub={`${r.data.testTitle} · ${formatDate(r.data.completedAt, locale)}`} />
+      <PageHeader title={t("feedback.writingTitle", { n: formatNumber(w.task, locale) })} sub={
+          <>
+            <bdi>{r.data.testTitle}</bdi> · {formatDate(r.data.completedAt, locale)}
+          </>
+        } />
       <Link to={`/app/results/${r.data.attemptId}`} className="mb-4 inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground">
         <ArrowLeft className="size-4 rtl:rotate-180" /> {t("feedback.backToResult")}
       </Link>
@@ -63,6 +67,7 @@ export default function WritingFeedbackPage() {
           criteria={w.criteria}
           criterionLabel={(k) => t(`criteria.${k === "tr" && w.task === 1 ? "tr1" : k}`)}
           skillLabel={t("skills.writing")}
+          exampleTone="blue"
           lift={(k) => {
             const res = r.data!;
             const other = res.writing.find((x) => x.task !== w.task);

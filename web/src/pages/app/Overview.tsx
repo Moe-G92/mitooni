@@ -7,8 +7,7 @@ import { useT } from "@/i18n";
 import { formatBand, formatDateTime, formatDayDate, formatNumber, formatPercent } from "@/lib/format";
 import { practiceHref } from "@/lib/links";
 import { cn } from "@/lib/utils";
-import { TopControls } from "@/components/TopControls";
-import { Chip, ErrorState, Skeleton } from "@/components/ui/misc";
+import { ErrorState, Skeleton } from "@/components/ui/misc";
 import { BandLine } from "@/components/charts";
 import { CountdownCard } from "@/components/ExamCountdown";
 import { formatExamDay, partOfDay } from "@/components/dashboard/format";
@@ -26,7 +25,11 @@ const TONE_TAG: Record<Tone, string> = {
   strong: "bg-strength-soft text-strength",
 };
 
-/* Overview ("Today") from the mitooni canvas: greeting and countdown, the next drill, a card per skill, then question types and the band trend. */
+/*
+ * Overview ("Today") from the mitooni canvas: greeting and countdown, the next
+ * drill, a card per skill (each opens that skill's practice room), then
+ * question types and the band trend. AppLayout gives this screen the top bar.
+ */
 export default function Overview() {
   const { t, locale } = useT();
   const me = useMe();
@@ -50,13 +53,8 @@ export default function Overview() {
             {d.data?.focus ? t("overview.lead", { band: formatBand(target, locale) }) : t("overview.leadNoData")}
           </p>
         </div>
-        <div className="flex flex-col items-start gap-4 sm:items-end">
-          <div className="flex flex-wrap items-center gap-2">
-            <Chip className="text-foreground">{t("common.academic")}</Chip>
-            <TopControls />
-          </div>
-          {d.data && <ExamBlock days={d.data.daysToTest} testDate={me.data?.testDate ?? null} target={target} />}
-        </div>
+        {/* The exam type and global controls sit in the top bar on this screen (AppLayout). */}
+        {d.data && <ExamBlock days={d.data.daysToTest} testDate={me.data?.testDate ?? null} target={target} />}
       </section>
 
       {d.isError && <ErrorState message={t("errors.load")} onRetry={() => d.refetch()} />}
@@ -130,8 +128,10 @@ function ExamBlock({ days, testDate, target }: { days: number | null; testDate: 
 function UpNext({ d }: { d: Dashboard }) {
   const { t, locale, pick } = useT();
   const focus = d.focus;
-  // The focus is always a Reading question type (it comes from the Reading accuracy table).
-  const eyebrow = focus ? `${t("overview.upNext")} · ${t("skills.reading")}` : t("overview.upNext");
+  // The focus is always a Reading question type (it comes from the Reading accuracy table); drills take about 10 minutes.
+  const eyebrow = focus
+    ? `${t("overview.upNext")} · ${t("overview.drillMinutes", { n: formatNumber(10, locale) })} · ${t("skills.reading")}`
+    : t("overview.upNext");
   return (
     <section aria-label={t("overview.upNext")} className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-5 rounded-card bg-primary px-6 py-6 text-white sm:px-8 sm:py-7">
       <div className="min-w-0 flex-[1_1_360px]">
@@ -139,7 +139,7 @@ function UpNext({ d }: { d: Dashboard }) {
         <h2 className="mt-1.5 font-archivo text-[28px] leading-9 font-bold tracking-[-0.015em]">{pick(d.next.title)}</h2>
         <p className="mt-2 text-[15px] text-white/90">
           {pick(d.next.detail)}
-          {focus && <>. {t("overview.costs", { type: t(`types.${focus.type}`), count: focus.marksLost, n: formatNumber(focus.marksLost, locale) })}.</>}
+          {focus && <>. {t("overview.costsThis", { count: focus.marksLost, n: formatNumber(focus.marksLost, locale) })}</>}
         </p>
       </div>
       <div className="flex flex-wrap items-center gap-5">
@@ -238,7 +238,7 @@ function SkillCards({ d, progress, latest, sections }: { d: Dashboard; progress?
                 <div className="text-[15px] font-medium">{area ?? t("overview.notYet")}</div>
               </div>
               <Link
-                to={`/app/practice?skill=${s.skill}`}
+                to={`/practice/${s.skill}`}
                 className={cn("mt-auto block rounded-[10px] p-[11px] text-center text-sm font-semibold transition-[filter] hover:brightness-95", tone.soft, tone.ink, "mt-4")}
               >
                 {t("overview.practiseIn", { skill: t(`skills.${s.skill}`) })}

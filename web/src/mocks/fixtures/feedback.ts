@@ -345,7 +345,7 @@ export const writingFeedbackTask1: WritingFeedback = {
   ],
   summary: {
     en: "Your overview is clear and every activity is covered, which keeps Task Achievement strong. Small grammar slips (verb endings, articles and prepositions) hold the band at 6.0. Next time, reread each sentence once only for 'the', 'on/in' and verb endings.",
-    fa: "جمع‌بندی کلی‌تان روشن است و همهٔ فعالیت‌ها را پوشش داده‌اید، و همین نمرهٔ معیار دستیابی به هدف تسک را بالا نگه می‌دارد. خطاهای کوچک دستوری (پایانهٔ فعل، حرف تعریف و حرف اضافه) نمره را روی ۶ نگه داشته است. دفعهٔ بعد هر جمله را یک بار فقط برای «the»، «on/in» و پایانهٔ فعل‌ها دوباره بخوانید.",
+    fa: "overview واضحه و همه‌ی فعالیت‌ها پوشش داده شدن، برای همین Task Achievement قویه. اشتباه‌های کوچیک گرامری (آخر فعل‌ها، حرف تعریف و حرف اضافه) Band رو روی ۶٫۰ نگه داشتن. دفعه‌ی بعد، هر جمله رو یک بار فقط برای «the»، «on/in» و آخر فعل‌ها دوباره بخون.",
   },
   dummy: true,
 };
@@ -543,7 +543,7 @@ export const writingFeedbackTask2: WritingFeedback = {
       band: 5.5,
       comment: {
         en: "You try a good range of complex sentences, but many of them have subject–verb agreement or tense errors, such as 'this habit make' and 'if they stayed at home'. These errors are frequent enough to lower the band.",
-        fa: "از جمله‌های مرکب متنوعی استفاده کرده‌اید، ولی در خیلی از آن‌ها مطابقت فعل و فاعل یا زمان فعل اشتباه است، مثل «this habit make» و «if they stayed at home». تعداد این خطاها آن‌قدر زیاد است که نمره را پایین می‌آورد.",
+        fa: "جمله‌های مرکب متنوعی امتحان می‌کنی، ولی خیلی‌هاشون خطای مطابقت فعل و فاعل یا زمان دارن، مثل «this habit make» و «if they stayed at home». این خطاها اون‌قدر تکرار می‌شن که Band رو پایین میارن.",
       },
       metrics: [
         {
@@ -553,7 +553,7 @@ export const writingFeedbackTask2: WritingFeedback = {
           verdict: "acceptable",
           note: {
             en: "You attempt conditionals, relative clauses and 'although' clauses, a good range for this band.",
-            fa: "جمله‌های شرطی، موصولی و جمله‌هایی با «although» را امتحان کرده‌اید که برای این سطح تنوع خوبی است.",
+            fa: "از جمله‌های شرطی، relative clause و جمله‌های «although» استفاده می‌کنی؛ برای این Band تنوع خوبیه.",
           },
           example: "although living with parents has financial benefits",
         },
@@ -583,15 +583,15 @@ export const writingFeedbackTask2: WritingFeedback = {
       tips: [
         {
           en: "Before you finish, find every 'he', 'she', 'it' and singular noun, and check that its verb ends in -s.",
-          fa: "قبل از تمام کردن، هر «he»، «she»، «it» و اسم مفرد را پیدا کنید و ببینید فعلش «s» دارد یا نه.",
+          fa: "قبل از تموم کردن، همه‌ی «he»، «she»، «it» و اسم‌های مفرد رو پیدا کن و چک کن فعلشون ‎-s داشته باشه.",
         },
         {
           en: "In first conditionals, keep both clauses in the present: 'if they stay at home, they can save money'.",
-          fa: "در جمله‌های شرطی نوع اول هر دو بخش را در زمان حال نگه دارید: «if they stay at home, they can save money».",
+          fa: "توی first conditional هر دو بخش جمله رو حال نگه دار: «if they stay at home, they can save money».",
         },
         {
           en: "After 'which' or 'who', do not repeat the object as a pronoun.",
-          fa: "بعد از «which» یا «who» مفعول را دوباره با ضمیر تکرار نکنید.",
+          fa: "بعد از «which» یا «who»، مفعول رو دوباره با ضمیر تکرار نکن.",
         },
       ],
     },
@@ -602,7 +602,7 @@ export const writingFeedbackTask2: WritingFeedback = {
       kind: "grammar",
       note: {
         en: "When you talk about a group in general, use no article.",
-        fa: "وقتی دربارهٔ یک گروه به‌طور کلی حرف می‌زنید، حرف تعریف «the» لازم نیست.",
+        fa: "وقتی درباره‌ی یه گروه به‌طور کلی حرف می‌زنی، article لازم نیست.",
       },
       fix: "in many countries young adults",
     },
@@ -611,7 +611,7 @@ export const writingFeedbackTask2: WritingFeedback = {
       kind: "grammar",
       note: {
         en: "'It' needs 'damages', and 'generation' needs an article here.",
-        fa: "با «it» فعل باید «damages» باشد و «generation» هم اینجا حرف تعریف می‌خواهد.",
+        fa: "«It» فعل «damages» می‌خواد و «generation» اینجا article لازم داره.",
       },
       fix: "it damages the independence of the younger generation",
     },
@@ -620,7 +620,7 @@ export const writingFeedbackTask2: WritingFeedback = {
       kind: "task",
       note: {
         en: "A memorised sentence that repeats the question. Use this space to state your position in a few words.",
-        fa: "این جمله حفظی است و فقط صورت سؤال را تکرار می‌کند. به‌جایش در چند کلمه نظر خودتان را بگویید.",
+        fa: "یه جمله‌ی حفظی که فقط سؤال رو تکرار می‌کنه. از این فضا استفاده کن تا نظرت رو در چند کلمه بگی.",
       },
       fix: "In my view, the benefits are real, but independence matters more in the long run.",
     },
@@ -629,7 +629,7 @@ export const writingFeedbackTask2: WritingFeedback = {
       kind: "grammar",
       note: {
         en: "The main clause is in the present ('can save'), so the if-clause should be present too.",
-        fa: "جملهٔ اصلی در زمان حال است («can save»)، پس جملهٔ شرطی هم باید در زمان حال باشد.",
+        fa: "جمله‌ی اصلی زمان حاله («can save»)، پس بخش if هم باید حال باشه.",
       },
       fix: "if they stay at home",
     },
@@ -638,7 +638,7 @@ export const writingFeedbackTask2: WritingFeedback = {
       kind: "grammar",
       note: {
         en: "'Family relationships' is a general plural idea, and 'people' is plural, so the verbs change.",
-        fa: "«family relationships» به‌طور کلی جمع است و «people» هم جمع است، پس فعل‌ها باید جمع بیایند.",
+        fa: "«Family relationships» یه مفهوم کلی و جمعه و «people» هم جمعه، پس فعل‌ها عوض می‌شن.",
       },
       fix: "family relationships are very important and many people believe",
     },
@@ -647,7 +647,7 @@ export const writingFeedbackTask2: WritingFeedback = {
       kind: "vocabulary",
       note: {
         en: "For an idea or institution, 'foundation' is the natural word.",
-        fa: "برای مفهوم‌ها و نهادها کلمهٔ طبیعی «foundation» است.",
+        fa: "برای یه ایده یا نهاد، «foundation» کلمه‌ی طبیعی‌تریه.",
       },
       fix: "the foundation of a healthy society",
     },
@@ -656,7 +656,7 @@ export const writingFeedbackTask2: WritingFeedback = {
       kind: "grammar",
       note: {
         en: "Singular subject, so 'makes'.",
-        fa: "فاعل مفرد است، پس «makes».",
+        fa: "فاعل مفرده، پس «makes».",
       },
       fix: "this habit makes young people dependent",
     },
@@ -665,7 +665,7 @@ export const writingFeedbackTask2: WritingFeedback = {
       kind: "grammar",
       note: {
         en: "Three agreement errors in one sentence. Each singular subject needs a verb ending in -s.",
-        fa: "سه خطای مطابقت در یک جمله. هر فاعل مفرد فعلی با «s» در آخر می‌خواهد.",
+        fa: "سه خطای مطابقت توی یه جمله. هر فاعل مفرد فعلی با ‎-s می‌خواد.",
       },
       fix: "his mother usually cooks the meals and his father pays the bills, so he never learns",
     },
@@ -674,7 +674,7 @@ export const writingFeedbackTask2: WritingFeedback = {
       kind: "grammar",
       note: {
         en: "'Face' takes a direct object, and 'which' already replaces 'them', so delete the extra pronoun.",
-        fa: "«face» مفعول مستقیم می‌گیرد و «which» جای «them» را گرفته است، پس ضمیر اضافه را حذف کنید.",
+        fa: "«Face» مفعول مستقیم می‌گیره و «which» خودش جای «them» نشسته، پس ضمیر اضافه رو حذف کن.",
       },
       fix: "they face many problems which they did not expect",
     },
@@ -683,13 +683,13 @@ export const writingFeedbackTask2: WritingFeedback = {
       kind: "vocabulary",
       note: {
         en: "Natural idiom, used correctly. Keep using phrases like this.",
-        fa: "اصطلاح طبیعی و درستی است. از این نوع عبارت‌ها بیشتر استفاده کنید.",
+        fa: "یه اصطلاح طبیعی که درست به کار رفته. از این عبارت‌ها بیشتر استفاده کن.",
       },
     },
   ],
   summary: {
     en: "Your paragraphs hold one idea each and your linking is clear. Grammar is what holds the band down: many complex sentences had tense or agreement errors. Next, check every verb against its subject before you finish, especially after 'he', 'it' and 'this'.",
-    fa: "هر پاراگراف شما یک ایده دارد و ارتباط جمله‌ها روشن است. چیزی که نمره را پایین نگه می‌دارد دستور زبان است: در خیلی از جمله‌های مرکب، زمان فعل یا مطابقت فعل و فاعل اشتباه بود. قدم بعدی: قبل از تمام کردن، هر فعل را با فاعلش چک کنید، مخصوصاً بعد از «he»، «it» و «this».",
+    fa: "هر پاراگرافت یه ایده‌ی اصلی داره و ارتباط جمله‌هات واضحه. چیزی که Band رو پایین نگه می‌داره گرامره: خیلی از جمله‌های مرکبت خطای زمان یا مطابقت فعل و فاعل داشتن. قدم بعدی: قبل از تموم کردن، هر فعل رو با فاعلش چک کن، مخصوصاً بعد از «he»، «it» و «this».",
   },
   dummy: true,
 };
@@ -771,7 +771,7 @@ export const writingFeedbackTask2Older: WritingFeedback[] = [
       {
         quote: "let their employees to work",
         kind: "grammar",
-        note: { en: "'Let' is followed by the base verb without 'to'.", fa: "بعد از «let» فعل ساده بدون «to» می‌آید." },
+        note: { en: "'Let' is followed by the base verb without 'to'.", fa: "بعد از «Let» فعل ساده بدون «to» میاد." },
         fix: "let their employees work",
       },
       {
@@ -873,7 +873,7 @@ export const writingFeedbackTask2Older: WritingFeedback[] = [
       {
         quote: "more easier",
         kind: "grammar",
-        note: { en: "Double comparative. Use 'easier' or 'more easily'.", fa: "صفت تفضیلی دو بار آمده است. یا «easier» بنویسید یا «more easily»." },
+        note: { en: "Double comparative. Use 'easier' or 'more easily'.", fa: "صفت تفضیلی دوتایی. یا «easier» بنویسید یا «more easily»." },
         fix: "more easily",
       },
       {
@@ -1148,7 +1148,7 @@ export const speakingFeedback: SpeakingFeedback = {
       band: 6,
       comment: {
         en: "You use a mix of simple and complex structures, including relative clauses, but there are frequent errors with verb patterns ('explained me', 'let me to do') and past habits.",
-        fa: "ترکیبی از ساختارهای ساده و پیچیده، از جمله جمله‌های موصولی، به کار می‌برید، ولی در الگوی فعل‌ها («explained me»، «let me to do») و بیان عادت‌های گذشته خطای زیادی دارید.",
+        fa: "ترکیبی از ساختارهای ساده و مرکب، از جمله relative clause، به کار می‌بری، ولی توی الگوهای فعلی («explained me»، «let me to do») و عادت‌های گذشته خطا زیاد داری.",
       },
       metrics: [
         {
@@ -1158,7 +1158,7 @@ export const speakingFeedback: SpeakingFeedback = {
           verdict: "good",
           note: {
             en: "You use relative clauses, conditionals and the present perfect, a wider range than most answers at this band.",
-            fa: "از جمله‌های موصولی، شرطی و حال کامل استفاده می‌کنید که از بیشتر جواب‌ها در این سطح متنوع‌تر است.",
+            fa: "از relative clause، جمله‌های شرطی و present perfect استفاده می‌کنی؛ تنوعی بیشتر از بیشتر جواب‌ها در این Band.",
           },
           example: "My grandmother, who lives in Isfahan, taught it to me",
         },
@@ -1188,15 +1188,15 @@ export const speakingFeedback: SpeakingFeedback = {
       tips: [
         {
           en: "Say ten common verb patterns aloud until they feel automatic: 'explain something to someone', 'let someone do', 'make someone do'.",
-          fa: "ده الگوی فعل پرکاربرد را آن‌قدر با صدای بلند تکرار کنید تا خودکار شوند: «explain something to someone»، «let someone do»، «make someone do».",
+          fa: "ده الگوی رایج فعلی رو بلند تکرار کن تا خودکار بشن: «explain something to someone»، «let someone do»، «make someone do».",
         },
         {
           en: "For past habits, use 'used to' or 'would': 'my mother used to wake me up'.",
-          fa: "برای عادت‌های گذشته از «used to» یا «would» استفاده کنید: «my mother used to wake me up».",
+          fa: "برای عادت‌های گذشته از «used to» یا «would» استفاده کن: «my mother used to wake me up».",
         },
         {
           en: "Avoid double comparatives: say 'much faster', not 'much more faster'.",
-          fa: "صفت تفضیلی را دو بار نیاورید: بگویید «much faster»، نه «much more faster».",
+          fa: "صفت تفضیلی رو دوبار نیار: بگو «much faster»، نه «much more faster».",
         },
       ],
     },
@@ -1268,42 +1268,42 @@ export const speakingFeedback: SpeakingFeedback = {
       word: "wedding",
       note: {
         en: "You said /v/ at the start. Round your lips for /w/ and don't touch your teeth to your lip.",
-        fa: "اول کلمه را /v/ گفتید. برای /w/ لب‌ها را گرد کنید و دندان را به لب نزنید.",
+        fa: "اولش ‎/v/‎ گفتی. برای ‎/w/‎ لب‌هات رو گرد کن و دندونت رو به لب نزن.",
       },
     },
     {
       word: "think",
       note: {
         en: "/θ/ sounded like /t/. Put your tongue lightly between your teeth and push air out.",
-        fa: "صدای /θ/ شبیه /t/ شد. نوک زبان را آرام بین دندان‌ها بگذارید و هوا را بیرون بدهید.",
+        fa: "‎/θ/‎ شبیه ‎/t/‎ شنیده شد. زبونت رو آروم بین دندون‌ها بذار و هوا رو بیرون بده.",
       },
     },
     {
       word: "vocabulary",
       note: {
         en: "Stress the second syllable: vo-CAB-u-la-ry, not vo-ca-bu-LA-ry.",
-        fa: "تکیه روی بخش دوم است: vo-CAB-u-la-ry، نه روی بخش آخر.",
+        fa: "تأکید روی هجای دومه: ‎vo-CAB-u-la-ry‎، نه ‎vo-ca-bu-LA-ry‎.",
       },
     },
     {
       word: "school",
       note: {
         en: "You added a vowel before the /sk/ cluster ('eschool'). Start directly with /s/.",
-        fa: "قبل از /sk/ یک صدای «اِ» اضافه کردید («eschool»). کلمه را مستقیم با /s/ شروع کنید.",
+        fa: "قبل از ‎/sk/‎ یه واکه اضافه کردی («eschool»). مستقیم با ‎/s/‎ شروع کن.",
       },
     },
     {
       word: "practise",
       note: {
         en: "Stress the first syllable: PRAC-tise. The second vowel is short and weak.",
-        fa: "تکیه روی بخش اول است: PRAC-tise. صدای بخش دوم کوتاه و ضعیف است.",
+        fa: "تأکید روی هجای اوله: ‎PRAC-tise‎. واکه‌ی دوم کوتاه و ضعیفه.",
       },
     },
     {
       word: "cooking, sewing, or growing plants",
       note: {
         en: "In a list, let your voice rise on each item and fall on the last one. Your intonation stayed flat.",
-        fa: "در یک فهرست، صدا باید روی هر مورد کمی بالا برود و روی مورد آخر پایین بیاید. آهنگ صدای شما یکنواخت ماند.",
+        fa: "توی یه فهرست، صدات روی هر مورد بالا بره و روی آخری پایین بیاد. آهنگ صدات صاف موند.",
       },
     },
   ],
@@ -1311,7 +1311,7 @@ export const speakingFeedback: SpeakingFeedback = {
     {
       quote: "especially in the weekdays",
       kind: "grammar",
-      note: { en: "We say 'on weekdays', with no article.", fa: "می‌گوییم «on weekdays»، بدون حرف تعریف." },
+      note: { en: "We say 'on weekdays', with no article.", fa: "می‌گیم «on weekdays»، بدون article." },
       fix: "especially on weekdays",
     },
     {
@@ -1319,14 +1319,14 @@ export const speakingFeedback: SpeakingFeedback = {
       kind: "grammar",
       note: {
         en: "For a past habit, use 'used to' or 'would', not the past continuous.",
-        fa: "برای عادت گذشته از «used to» یا «would» استفاده کنید، نه گذشتهٔ استمراری.",
+        fa: "برای عادت گذشته از «used to» یا «would» استفاده کن، نه past continuous.",
       },
       fix: "my mother used to wake me up every day",
     },
     {
       quote: "taking photos from nature",
       kind: "vocabulary",
-      note: { en: "You take photos of something.", fa: "در انگلیسی «photos of» چیزی می‌گیریم." },
+      note: { en: "You take photos of something.", fa: "عکس گرفتن از چیزی با «of» میاد: «take photos of»." },
       fix: "taking photos of nature",
     },
     {
@@ -1334,26 +1334,26 @@ export const speakingFeedback: SpeakingFeedback = {
       kind: "grammar",
       note: {
         en: "'Explain' needs 'to' before the person.",
-        fa: "بعد از «explain» قبل از شخص باید «to» بیاید.",
+        fa: "«Explain» قبل از شخص «to» لازم داره.",
       },
       fix: "she explained every step to me",
     },
     {
       quote: "she let me to do it myself",
       kind: "grammar",
-      note: { en: "'Let' is followed by the base verb without 'to'.", fa: "بعد از «let» فعل ساده بدون «to» می‌آید." },
+      note: { en: "'Let' is followed by the base verb without 'to'.", fa: "بعد از «Let» فعل ساده بدون «to» میاد." },
       fix: "she let me do it myself",
     },
     {
       quote: "much more faster",
       kind: "grammar",
-      note: { en: "Double comparative.", fa: "صفت تفضیلی دو بار آمده است." },
+      note: { en: "Double comparative.", fa: "صفت تفضیلی دوتایی." },
       fix: "much faster",
     },
   ],
   summary: {
     en: "You speak fluently and develop your answers well, which is why Fluency and Coherence is your strongest score. Grammar holds the band at 6.5: verb patterns like 'explain to' and 'let someone do' come up again and again. Practise ten of these patterns aloud this week.",
-    fa: "روان صحبت می‌کنید و جواب‌هایتان را خوب گسترش می‌دهید، برای همین روانی و انسجام بهترین نمرهٔ شماست. دستور زبان نمره را روی ۶٫۵ نگه داشته است: الگوهای فعلی مثل «explain to» و «let someone do» بارها اشتباه شده‌اند. این هفته ده الگوی مشابه را با صدای بلند تمرین کنید.",
+    fa: "روان صحبت می‌کنی و جواب‌هات رو خوب گسترش می‌دی، برای همین Fluency and coherence قوی‌ترین نمره‌ته. گرامر Band رو روی ۶٫۵ نگه داشته: الگوهای فعلی مثل «explain to» و «let someone do» مدام تکرار می‌شن. این هفته ده‌تا از این الگوها رو بلند تمرین کن.",
   },
   dummy: true,
 };
