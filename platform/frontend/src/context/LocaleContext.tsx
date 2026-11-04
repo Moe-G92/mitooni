@@ -1,0 +1,15 @@
+import { createContext, useContext, useState, useEffect, useCallback, type ReactNode } from "react";
+const messages = {
+ fa: { brandHome:"می میتونی خانه", skills:"مهارت‌ها", notes:"یادداشت‌ها", practice:"تمرین", mock:"آزمون", profile:"حساب کاربری", home:"خانه", back:"بازگشت", expand:"باز کردن نوار", collapse:"بستن نوار", openMenu:"باز کردن فهرست", closeMenu:"بستن فهرست", signOut:"خروج", dismiss:"بستن اعلان", localAccount:"حساب نمونه", reading:"خواندن", listening:"شنیدن", writing:"نوشتن", speaking:"صحبت کردن", empty:"هنوز محتوایی منتشر نشده است.", catalogue:"دیدن مهارت‌ها", noteEmpty:"هنوز یادداشتی ندارید.", theme:"نمایش", light:"روشن", dark:"تیره", system:"سیستم", saved:"ذخیره شد", language:"زبان", loading:"در حال بارگذاری", retry:"تلاش دوباره", error:"اطلاعات بارگذاری نشد.", signedOut:"از حساب خارج شدید", localSignIn:"بازگشت به حساب نمونه", unavailable:"این صفحه در دسترس نیست", preview:"پیش‌نمایش محلی · اطلاعات نمونه", preferences:"تنظیمات", note:"یادداشت", newNote:"یادداشت جدید", save:"ذخیره", clear:"پاک کردن", signIn:"ورود", shellError:"این صفحه باز نشد." },
+ en: { brandHome:"می Mitooni home", skills:"Skills", notes:"Notes", practice:"Practice", mock:"Mock", profile:"Profile", home:"Home", back:"Back", expand:"Expand sidebar", collapse:"Collapse sidebar", openMenu:"Open navigation menu", closeMenu:"Close navigation menu", signOut:"Sign out", dismiss:"Dismiss notification", localAccount:"Sample account", reading:"Reading", listening:"Listening", writing:"Writing", speaking:"Speaking", empty:"No content has been published yet.", catalogue:"View skills", noteEmpty:"You have no notes yet.", theme:"Appearance", light:"Light", dark:"Dark", system:"System", saved:"Saved", language:"Language", loading:"Loading", retry:"Retry", error:"Your information could not load.", signedOut:"You are signed out", localSignIn:"Return to sample account", unavailable:"Page unavailable", preview:"Local preview · sample information", preferences:"Preferences", note:"Note", newNote:"New note", save:"Save", clear:"Clear", signIn:"Sign in", shellError:"This page could not open." }
+};
+export type Message = keyof typeof messages.en;
+type Locale = "fa" | "en";
+const Context = createContext<{locale:Locale;setLocale:(v:Locale)=>void;t:(key:string)=>string} | null>(null);
+export function LocaleProvider({children}:{children:ReactNode}) {
+ const [locale,setLocale] = useState<Locale>(()=> { try { return localStorage.getItem("mitooni-locale") === "en" ? "en" : "fa"; } catch { return "fa"; } });
+ useEffect(()=> { document.documentElement.lang=locale; document.documentElement.dir=locale==="fa"?"rtl":"ltr"; try { localStorage.setItem("mitooni-locale",locale); } catch { /* preference stays in memory */ } },[locale]);
+ const t=useCallback((key:string)=>messages[locale][key as Message] ?? key,[locale]);
+ return <Context.Provider value={{locale,setLocale,t}}>{children}</Context.Provider>;
+}
+export function useLocale(){const v=useContext(Context);if(!v)throw new Error("Locale missing");return v;}

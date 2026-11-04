@@ -1,0 +1,9 @@
+import ts from 'typescript';
+import {readFileSync,existsSync,writeFileSync} from 'node:fs';
+import {resolve,dirname,relative} from 'node:path';
+const root=resolve('src');
+function graph(entry){const seen=new Set(),imports=[];function visit(file){file=resolve(file);if(seen.has(file))return;seen.add(file);const source=readFileSync(file,'utf8');const ast=ts.createSourceFile(file,source,ts.ScriptTarget.Latest,true,file.endsWith('tsx')?ts.ScriptKind.TSX:ts.ScriptKind.TS);function node(n){let name;if(ts.isImportDeclaration(n)||ts.isExportDeclaration(n))name=n.moduleSpecifier?.text;if(ts.isCallExpression(n)&&n.expression.kind===ts.SyntaxKind.ImportKeyword)name=n.arguments[0]?.text;if(name){if(name.startsWith('.')){let path=resolve(dirname(file),name);const match=[path,path+'.ts',path+'.tsx',path+'.css',path+'/index.ts',path+'/index.tsx'].find(existsSync);if(!match||!match.startsWith(root+'/'))throw new Error('Import outside receiving src: '+name);imports.push({from:relative(root,file),to:relative(root,match)});if(/\.(ts|tsx)$/.test(match))visit(match);}else imports.push({from:relative(root,file),package:name});}ts.forEachChild(n,node);}node(ast);}visit(entry);return{files:[...seen].map(f=>relative(root,f)).sort(),imports};}
+const production=graph('src/main.tsx'),preview=graph('src/preview/main.tsx');
+if(production.files.some(f=>f.startsWith('preview/')||f.includes('RuntimeContext')))throw new Error('Preview graph entered production');
+for(const item of preview.imports)if(item.package&&/supabase|openai|chatkit/.test(item.package))throw new Error('Live SDK entered preview');
+writeFileSync('IMPORT_CLOSURE.json',JSON.stringify({production,preview},null,2)+'\n');console.log(`Import closure: ${production.files.length} production modules, ${preview.files.length} preview modules; isolated.`);

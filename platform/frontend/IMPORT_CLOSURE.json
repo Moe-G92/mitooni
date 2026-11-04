@@ -1,0 +1,379 @@
+{
+  "production": {
+    "files": [
+      "main.tsx",
+      "production/ProductionUnavailable.tsx"
+    ],
+    "imports": [
+      {
+        "from": "main.tsx",
+        "package": "react"
+      },
+      {
+        "from": "main.tsx",
+        "package": "react-dom/client"
+      },
+      {
+        "from": "main.tsx",
+        "to": "index.css"
+      },
+      {
+        "from": "main.tsx",
+        "to": "production/ProductionUnavailable.tsx"
+      }
+    ]
+  },
+  "preview": {
+    "files": [
+      "brand/brand.ts",
+      "chunkRecoveryBootstrap.ts",
+      "components/AppLayout.tsx",
+      "components/AuthGuard.tsx",
+      "components/RootLayout.tsx",
+      "components/RouteError.tsx",
+      "components/brand/ProductMark.tsx",
+      "components/motion/PageTransition.tsx",
+      "components/ui/ToastNotification.tsx",
+      "components/ui/back-button.tsx",
+      "components/ui/skeleton.tsx",
+      "context/AppBootstrapContext.tsx",
+      "context/ConsentContext.tsx",
+      "context/LocaleContext.tsx",
+      "context/RuntimeContext.tsx",
+      "context/ThemeContext.tsx",
+      "context/ToastContext.tsx",
+      "hooks/useCloseOnViewportChange.ts",
+      "hooks/useToast.ts",
+      "lib/appNavigation.ts",
+      "lib/chunkRecovery.ts",
+      "lib/motion.ts",
+      "preview/App.tsx",
+      "preview/fixtures.ts",
+      "preview/main.tsx",
+      "preview/routes.tsx",
+      "preview/screens.tsx"
+    ],
+    "imports": [
+      {
+        "from": "preview/main.tsx",
+        "to": "chunkRecoveryBootstrap.ts"
+      },
+      {
+        "from": "chunkRecoveryBootstrap.ts",
+        "to": "lib/chunkRecovery.ts"
+      },
+      {
+        "from": "preview/main.tsx",
+        "package": "react-dom/client"
+      },
+      {
+        "from": "preview/main.tsx",
+        "package": "react"
+      },
+      {
+        "from": "preview/main.tsx",
+        "package": "react-router"
+      },
+      {
+        "from": "preview/main.tsx",
+        "to": "preview/App.tsx"
+      },
+      {
+        "from": "preview/App.tsx",
+        "package": "react-router"
+      },
+      {
+        "from": "preview/App.tsx",
+        "to": "context/RuntimeContext.tsx"
+      },
+      {
+        "from": "context/RuntimeContext.tsx",
+        "package": "react"
+      },
+      {
+        "from": "preview/App.tsx",
+        "to": "context/ThemeContext.tsx"
+      },
+      {
+        "from": "context/ThemeContext.tsx",
+        "package": "react"
+      },
+      {
+        "from": "context/ThemeContext.tsx",
+        "to": "context/RuntimeContext.tsx"
+      },
+      {
+        "from": "preview/App.tsx",
+        "to": "context/AppBootstrapContext.tsx"
+      },
+      {
+        "from": "context/AppBootstrapContext.tsx",
+        "package": "react"
+      },
+      {
+        "from": "context/AppBootstrapContext.tsx",
+        "to": "context/RuntimeContext.tsx"
+      },
+      {
+        "from": "preview/App.tsx",
+        "to": "context/ToastContext.tsx"
+      },
+      {
+        "from": "context/ToastContext.tsx",
+        "package": "react"
+      },
+      {
+        "from": "preview/App.tsx",
+        "to": "context/ConsentContext.tsx"
+      },
+      {
+        "from": "context/ConsentContext.tsx",
+        "package": "react"
+      },
+      {
+        "from": "preview/App.tsx",
+        "to": "components/ui/ToastNotification.tsx"
+      },
+      {
+        "from": "components/ui/ToastNotification.tsx",
+        "package": "react"
+      },
+      {
+        "from": "components/ui/ToastNotification.tsx",
+        "package": "lucide-react"
+      },
+      {
+        "from": "components/ui/ToastNotification.tsx",
+        "to": "hooks/useToast.ts"
+      },
+      {
+        "from": "hooks/useToast.ts",
+        "package": "react"
+      },
+      {
+        "from": "hooks/useToast.ts",
+        "to": "context/ToastContext.tsx"
+      },
+      {
+        "from": "components/ui/ToastNotification.tsx",
+        "to": "context/LocaleContext.tsx"
+      },
+      {
+        "from": "context/LocaleContext.tsx",
+        "package": "react"
+      },
+      {
+        "from": "components/ui/ToastNotification.tsx",
+        "to": "context/ToastContext.tsx"
+      },
+      {
+        "from": "preview/App.tsx",
+        "to": "context/LocaleContext.tsx"
+      },
+      {
+        "from": "preview/main.tsx",
+        "to": "preview/fixtures.ts"
+      },
+      {
+        "from": "preview/fixtures.ts",
+        "to": "context/RuntimeContext.tsx"
+      },
+      {
+        "from": "preview/main.tsx",
+        "to": "preview/routes.tsx"
+      },
+      {
+        "from": "preview/routes.tsx",
+        "package": "react-router"
+      },
+      {
+        "from": "preview/routes.tsx",
+        "to": "components/RootLayout.tsx"
+      },
+      {
+        "from": "components/RootLayout.tsx",
+        "package": "react-router"
+      },
+      {
+        "from": "components/RootLayout.tsx",
+        "to": "lib/motion.ts"
+      },
+      {
+        "from": "lib/motion.ts",
+        "package": "react"
+      },
+      {
+        "from": "components/RootLayout.tsx",
+        "to": "context/LocaleContext.tsx"
+      },
+      {
+        "from": "preview/routes.tsx",
+        "to": "components/AppLayout.tsx"
+      },
+      {
+        "from": "components/AppLayout.tsx",
+        "package": "react-router"
+      },
+      {
+        "from": "components/AppLayout.tsx",
+        "to": "components/motion/PageTransition.tsx"
+      },
+      {
+        "from": "components/motion/PageTransition.tsx",
+        "package": "react"
+      },
+      {
+        "from": "components/motion/PageTransition.tsx",
+        "package": "react-router"
+      },
+      {
+        "from": "components/motion/PageTransition.tsx",
+        "to": "lib/motion.ts"
+      },
+      {
+        "from": "components/motion/PageTransition.tsx",
+        "to": "components/ui/skeleton.tsx"
+      },
+      {
+        "from": "components/ui/skeleton.tsx",
+        "package": "react"
+      },
+      {
+        "from": "components/AppLayout.tsx",
+        "to": "lib/motion.ts"
+      },
+      {
+        "from": "components/AppLayout.tsx",
+        "package": "lucide-react"
+      },
+      {
+        "from": "components/AppLayout.tsx",
+        "to": "components/ui/back-button.tsx"
+      },
+      {
+        "from": "components/ui/back-button.tsx",
+        "package": "react-router"
+      },
+      {
+        "from": "components/ui/back-button.tsx",
+        "package": "framer-motion"
+      },
+      {
+        "from": "components/ui/back-button.tsx",
+        "package": "lucide-react"
+      },
+      {
+        "from": "components/ui/back-button.tsx",
+        "to": "context/LocaleContext.tsx"
+      },
+      {
+        "from": "components/AppLayout.tsx",
+        "package": "react"
+      },
+      {
+        "from": "components/AppLayout.tsx",
+        "package": "react"
+      },
+      {
+        "from": "components/AppLayout.tsx",
+        "to": "context/RuntimeContext.tsx"
+      },
+      {
+        "from": "components/AppLayout.tsx",
+        "to": "context/LocaleContext.tsx"
+      },
+      {
+        "from": "components/AppLayout.tsx",
+        "to": "context/AppBootstrapContext.tsx"
+      },
+      {
+        "from": "components/AppLayout.tsx",
+        "package": "lucide-react"
+      },
+      {
+        "from": "components/AppLayout.tsx",
+        "to": "hooks/useCloseOnViewportChange.ts"
+      },
+      {
+        "from": "hooks/useCloseOnViewportChange.ts",
+        "package": "react"
+      },
+      {
+        "from": "components/AppLayout.tsx",
+        "to": "components/brand/ProductMark.tsx"
+      },
+      {
+        "from": "components/brand/ProductMark.tsx",
+        "package": "react"
+      },
+      {
+        "from": "components/AppLayout.tsx",
+        "to": "brand/brand.ts"
+      },
+      {
+        "from": "components/AppLayout.tsx",
+        "to": "lib/appNavigation.ts"
+      },
+      {
+        "from": "preview/routes.tsx",
+        "to": "components/AuthGuard.tsx"
+      },
+      {
+        "from": "components/AuthGuard.tsx",
+        "package": "react-router"
+      },
+      {
+        "from": "components/AuthGuard.tsx",
+        "to": "context/RuntimeContext.tsx"
+      },
+      {
+        "from": "components/AuthGuard.tsx",
+        "to": "context/AppBootstrapContext.tsx"
+      },
+      {
+        "from": "components/AuthGuard.tsx",
+        "to": "context/LocaleContext.tsx"
+      },
+      {
+        "from": "preview/routes.tsx",
+        "to": "components/RouteError.tsx"
+      },
+      {
+        "from": "components/RouteError.tsx",
+        "package": "react-router"
+      },
+      {
+        "from": "components/RouteError.tsx",
+        "to": "context/LocaleContext.tsx"
+      },
+      {
+        "from": "preview/routes.tsx",
+        "to": "preview/screens.tsx"
+      },
+      {
+        "from": "preview/screens.tsx",
+        "package": "react-router"
+      },
+      {
+        "from": "preview/screens.tsx",
+        "to": "context/LocaleContext.tsx"
+      },
+      {
+        "from": "preview/screens.tsx",
+        "to": "context/ThemeContext.tsx"
+      },
+      {
+        "from": "preview/screens.tsx",
+        "to": "hooks/useToast.ts"
+      },
+      {
+        "from": "preview/screens.tsx",
+        "to": "context/RuntimeContext.tsx"
+      },
+      {
+        "from": "preview/main.tsx",
+        "to": "index.css"
+      }
+    ]
+  }
+}

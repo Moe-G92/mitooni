@@ -1,0 +1,49 @@
+{
+  "name": "mitooni-platform-shell",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "engines": {
+    "node": ">=20.19"
+  },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src --max-warnings=0",
+    "test": "vitest run",
+    "build": "tsc --noEmit && vite build && node scripts/check-production.mjs",
+    "build:preview": "vite build --mode shell-preview",
+    "preview": "vite preview --host 127.0.0.1"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router": "^7.13.1",
+    "framer-motion": "^12.38.0",
+    "lucide-react": "^0.575.0",
+    "@radix-ui/react-slot": "^1.2.4",
+    "class-variance-authority": "^0.7.1",
+    "@fontsource-variable/vazirmatn": "^5.3.0"
+  },
+  "devDependencies": {
+    "vite": "^7.1.9",
+    "@vitejs/plugin-react-swc": "^3.5.0",
+    "typescript": "^5.6.3",
+    "@types/react": "^19.0.3",
+    "@types/react-dom": "^19.0.3",
+    "@types/node": "^22",
+    "tailwindcss": "^4",
+    "@tailwindcss/postcss": "^4",
+    "postcss": "^8.4.47",
+    "eslint": "^9.17.0",
+    "@eslint/js": "^9.17.0",
+    "typescript-eslint": "^8",
+    "eslint-plugin-react-hooks": "^5",
+    "eslint-plugin-react-refresh": "^0.4.16",
+    "globals": "^15.12.0",
+    "vitest": "^4.1.9",
+    "jsdom": "^29.1.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1"
+  }
+}

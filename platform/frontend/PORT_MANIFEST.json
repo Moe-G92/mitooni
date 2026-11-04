@@ -1,0 +1,432 @@
+{
+  "sourceRevision": "af57036ad18a45a0aa20a81202c9e0939ebd99d5",
+  "files": [
+    {
+      "source": "frontend/src/lib/utils.ts",
+      "sourceSha256": "bcffd77a1c9f7e8124028642bafbb0847a1c5fd3dff7be61ec2d8a633af17f98",
+      "target": "src/lib/utils.ts",
+      "adapted": false,
+      "targetSha256": "bcffd77a1c9f7e8124028642bafbb0847a1c5fd3dff7be61ec2d8a633af17f98",
+      "sourceImports": [],
+      "targetImports": []
+    },
+    {
+      "source": "frontend/src/context/ToastContext.tsx",
+      "sourceSha256": "e2239f187bd5ce0a7f02276f8405c41266911847ef40d11906e0caf55d418752",
+      "target": "src/context/ToastContext.tsx",
+      "adapted": true,
+      "targetSha256": "69151e47d1213ee0f705d7ad2cd86f6f775ebf9a17b282430c5cdbdeb50d78dc",
+      "sourceImports": [
+        "react"
+      ],
+      "targetImports": [
+        "react"
+      ]
+    },
+    {
+      "source": "frontend/src/hooks/useToast.ts",
+      "sourceSha256": "0565a01f4daa0ee79d05e07c991c40292e11c7adbf5b0e05da1f21a79726fbeb",
+      "target": "src/hooks/useToast.ts",
+      "adapted": false,
+      "targetSha256": "0565a01f4daa0ee79d05e07c991c40292e11c7adbf5b0e05da1f21a79726fbeb",
+      "sourceImports": [
+        "react",
+        "../context/ToastContext"
+      ],
+      "targetImports": [
+        "react",
+        "../context/ToastContext"
+      ]
+    },
+    {
+      "source": "frontend/src/hooks/useCloseOnViewportChange.ts",
+      "sourceSha256": "071eddfa7664875418511e5fbb9b0f3b7d6dc632a1362644ddb0645cc5dfa3b2",
+      "target": "src/hooks/useCloseOnViewportChange.ts",
+      "adapted": false,
+      "targetSha256": "071eddfa7664875418511e5fbb9b0f3b7d6dc632a1362644ddb0645cc5dfa3b2",
+      "sourceImports": [
+        "react"
+      ],
+      "targetImports": [
+        "react"
+      ]
+    },
+    {
+      "source": "frontend/src/lib/motion.ts",
+      "sourceSha256": "4d19a807ffd9435a92acc7a1e4e5b4b974c826809be0296001f6e1698801868c",
+      "target": "src/lib/motion.ts",
+      "adapted": false,
+      "targetSha256": "4d19a807ffd9435a92acc7a1e4e5b4b974c826809be0296001f6e1698801868c",
+      "sourceImports": [
+        "react"
+      ],
+      "targetImports": [
+        "react"
+      ]
+    },
+    {
+      "source": "frontend/src/components/ui/button.tsx",
+      "sourceSha256": "cb19ea65041f7d13f69cf2fd8634ccc883abaf9f2771a9d3d9a5b79fcc1fbca8",
+      "target": "src/components/ui/button.tsx",
+      "adapted": true,
+      "targetSha256": "5235905cc9050993284917992e7e26d394c91583143bfae1e4a18259f18198b4",
+      "sourceImports": [
+        "@radix-ui/react-slot",
+        "class-variance-authority",
+        "react",
+        "@/lib/utils"
+      ],
+      "targetImports": [
+        "@radix-ui/react-slot",
+        "class-variance-authority",
+        "react",
+        "../../lib/utils"
+      ]
+    },
+    {
+      "source": "frontend/src/components/ui/input.tsx",
+      "sourceSha256": "dafe5ab09b470c1ea2954390397721a39c7cb5d722b6cd9c8a2a57ee2823c889",
+      "target": "src/components/ui/input.tsx",
+      "adapted": true,
+      "targetSha256": "77088be4a04f266f03d4dd5cba936728ef429fafc687af4ebdc1c4fca2760b96",
+      "sourceImports": [
+        "@/lib/utils",
+        "react"
+      ],
+      "targetImports": [
+        "../../lib/utils",
+        "react"
+      ]
+    },
+    {
+      "source": "frontend/src/components/motion/PageTransition.tsx",
+      "sourceSha256": "ac32e7821409bd0b046c632913966a3bd4ada1a7cde667bef7e7563e1a5c9372",
+      "target": "src/components/motion/PageTransition.tsx",
+      "adapted": true,
+      "targetSha256": "cf9270aed5a13ca217b927810dc71c5a34d6b559773370d0bf227aa5af41fc25",
+      "sourceImports": [
+        "react",
+        "react-router",
+        "../../lib/motion",
+        "../ui/skeleton"
+      ],
+      "targetImports": [
+        "react",
+        "react-router",
+        "../../lib/motion",
+        "../ui/skeleton"
+      ]
+    },
+    {
+      "source": "frontend/src/components/ui/skeleton.tsx",
+      "sourceSha256": "de75788ada22204b13c83cd091cae7733677f559cc5c8bf75db41ac94b49e8d5",
+      "target": "src/components/ui/skeleton.tsx",
+      "adapted": true,
+      "targetSha256": "3a6346aaa3c9617c3130421debc3a0fa0cf7d24e6298985bd7c475f8e4b1d4fd",
+      "sourceImports": [
+        "react"
+      ],
+      "targetImports": [
+        "react"
+      ]
+    },
+    {
+      "source": "frontend/src/lib/chunkRecovery.ts",
+      "sourceSha256": "9cad4f9de13e29d8bf3f89d1bdfdd7d6606cc9f18770aab41997714364753211",
+      "target": "src/lib/chunkRecovery.ts",
+      "adapted": true,
+      "targetSha256": "87bc6b450f61e2053f73be0928b525ef6ad528ae0a8ec8c38d9c81d35a1c2f9f",
+      "sourceImports": [],
+      "targetImports": []
+    },
+    {
+      "source": "frontend/src/chunkRecoveryBootstrap.ts",
+      "sourceSha256": "7f5559e885868e47a73020f85446aa747170c5307f7cf15765a71358ae015f7b",
+      "target": "src/chunkRecoveryBootstrap.ts",
+      "adapted": false,
+      "targetSha256": "7f5559e885868e47a73020f85446aa747170c5307f7cf15765a71358ae015f7b",
+      "sourceImports": [
+        "./lib/chunkRecovery"
+      ],
+      "targetImports": [
+        "./lib/chunkRecovery"
+      ]
+    },
+    {
+      "source": "frontend/src/context/ThemeContext.tsx",
+      "sourceSha256": "6c5c8210042b9450254df9c0950f20b566056c7cef16ac31755ef135f9a176d7",
+      "target": "src/context/ThemeContext.tsx",
+      "adapted": true,
+      "targetSha256": "ca2fa88f90f03403a14a6418296430c89621784d321d495d44bf94ec32628290",
+      "sourceImports": [
+        "react",
+        "../lib/api",
+        "./AuthContext"
+      ],
+      "targetImports": [
+        "react",
+        "./RuntimeContext"
+      ]
+    },
+    {
+      "source": "frontend/src/components/ui/back-button.tsx",
+      "sourceSha256": "8416866090db595e0d49eafaaba9afbb7f6848d5570227384240e5171f38b24a",
+      "target": "src/components/ui/back-button.tsx",
+      "adapted": true,
+      "targetSha256": "46162ca17457b36222c0af5d0f451418693e19bc4f58b6198fcc9b76bc8764f4",
+      "sourceImports": [
+        "react-router",
+        "framer-motion",
+        "lucide-react"
+      ],
+      "targetImports": [
+        "react-router",
+        "framer-motion",
+        "lucide-react",
+        "../../context/LocaleContext"
+      ]
+    },
+    {
+      "source": "frontend/src/components/ui/ToastNotification.tsx",
+      "sourceSha256": "ce64edb86c9ea8911108f7dbca4551ad0549c1e6a737c1f33e2b747fac97fe6f",
+      "target": "src/components/ui/ToastNotification.tsx",
+      "adapted": true,
+      "targetSha256": "73fc83ac038a963ee178aadc2c980e93ccf6055583c007c7a02d6f878ab64487",
+      "sourceImports": [
+        "react",
+        "lucide-react",
+        "../../hooks/useToast",
+        "../../context/ToastContext"
+      ],
+      "targetImports": [
+        "react",
+        "lucide-react",
+        "../../hooks/useToast",
+        "../../context/LocaleContext",
+        "../../context/ToastContext"
+      ]
+    },
+    {
+      "source": "frontend/src/components/AppLayout.tsx",
+      "sourceSha256": "b0b9af09c01dbfdc5d41738c8780113967988c58537ae161bbc5f08ac4309f71",
+      "target": "src/components/AppLayout.tsx",
+      "adapted": true,
+      "targetSha256": "1b4de93fb6aeed92a18e2fe3486a66ba151a342d97527a66ec422f5d89348a1e",
+      "sourceImports": [
+        "react-router",
+        "./motion/PageTransition",
+        "./books/BookTransition",
+        "../lib/motion",
+        "lucide-react",
+        "./ui/back-button",
+        "./ui/subject-book-icon",
+        "react",
+        "react",
+        "../context/AuthContext",
+        "../context/AppBootstrapContext",
+        "../context/TourContext",
+        "./tour/TourOverlay",
+        "../lib/api",
+        "./ui/app-icons",
+        "../hooks/useCloseOnViewportChange",
+        "./brand/BarexMark",
+        "./brand/BrandIntroModal",
+        "../brand/brand",
+        "../assets/sqe-cracker-checklist-icon.svg",
+        "../assets/Practice_icon.svg",
+        "../assets/practice-answers-icon.svg",
+        "../lib/appNavigation"
+      ],
+      "targetImports": [
+        "react-router",
+        "./motion/PageTransition",
+        "../lib/motion",
+        "lucide-react",
+        "./ui/back-button",
+        "react",
+        "react",
+        "../context/RuntimeContext",
+        "../context/LocaleContext",
+        "../context/AppBootstrapContext",
+        "lucide-react",
+        "../hooks/useCloseOnViewportChange",
+        "./brand/ProductMark",
+        "../brand/brand",
+        "../lib/appNavigation"
+      ]
+    },
+    {
+      "source": "frontend/src/index.css",
+      "sourceSha256": "83abfb06398f878dbac0f88192bf1c5c7dcc77873cf26fdcb57ab01bdde03ec5",
+      "target": "src/index.css",
+      "adapted": true,
+      "selection": "theme tokens and @theme inline only",
+      "targetSha256": "f8acad022ecc931080d900f5020b34c41f241f6b5218f32b018ad63a6d2158d0",
+      "sourceImports": [
+        "tailwindcss"
+      ],
+      "targetImports": [
+        "tailwindcss",
+        "@fontsource-variable/vazirmatn"
+      ]
+    },
+    {
+      "source": "frontend/src/context/AppBootstrapContext.tsx",
+      "sourceSha256": "86f6b149d9c4f5363a2e1bc79001d72d535c883de3da1743fa48214d7d30935f",
+      "target": "src/context/AppBootstrapContext.tsx",
+      "adapted": true,
+      "method": "Recomposed source interfaces and lifecycle; source domain/network side effects removed.",
+      "targetSha256": "8ea8dd5eba677b97f468612877f330487cda2119760c1594a2b34212f43d6023",
+      "sourceImports": [
+        "react",
+        "../data/plans",
+        "../lib/api",
+        "./AuthContext"
+      ],
+      "targetImports": [
+        "react",
+        "./RuntimeContext"
+      ]
+    },
+    {
+      "source": "frontend/src/context/ConsentContext.tsx",
+      "sourceSha256": "bcc14ad5e60962d67d1e5674d403ebdfbc0c3ccf9de6cd5ca1e0e6290ffc39e5",
+      "target": "src/context/ConsentContext.tsx",
+      "adapted": true,
+      "method": "Recomposed source interfaces and lifecycle; source domain/network side effects removed.",
+      "targetSha256": "372602af3569c2ab350081b58f4313bbdfa53591bb3a4ca8823aa11677ce59e3",
+      "sourceImports": [
+        "react",
+        "../lib/consent"
+      ],
+      "targetImports": [
+        "react"
+      ]
+    },
+    {
+      "source": "frontend/src/components/RootLayout.tsx",
+      "sourceSha256": "a450fd38892700b273fdf2c2cfe608d557458ffdf5b1994df17582fafc44589f",
+      "target": "src/components/RootLayout.tsx",
+      "adapted": true,
+      "method": "Recomposed source interfaces and lifecycle; source domain/network side effects removed.",
+      "targetSha256": "11ca825c8306bab893f084d60343b4af5bcf5cb0a217e8a5c0b89476abfa9278",
+      "sourceImports": [
+        "react",
+        "react-router",
+        "../lib/acquisitionAttribution",
+        "../lib/pixels",
+        "../lib/authIntent",
+        "./consent/CookieConsentDock",
+        "./RouteLoadingOverlay"
+      ],
+      "targetImports": [
+        "react-router",
+        "../lib/motion",
+        "../context/LocaleContext"
+      ]
+    },
+    {
+      "source": "frontend/src/components/AuthGuard.tsx",
+      "sourceSha256": "7c59c2557085f9c826081f8de561307a5f97c840f4fa3f2f7ce13238d62ebbd6",
+      "target": "src/components/AuthGuard.tsx",
+      "adapted": true,
+      "method": "Recomposed source interfaces and lifecycle; source domain/network side effects removed.",
+      "targetSha256": "3bb6ed6702ee788fd8b085444796230655122b949842190e147201906f1964c8",
+      "sourceImports": [
+        "react-router",
+        "../context/AuthContext",
+        "../context/AppBootstrapContext",
+        "./ui/loader"
+      ],
+      "targetImports": [
+        "react-router",
+        "../context/RuntimeContext",
+        "../context/AppBootstrapContext",
+        "../context/LocaleContext"
+      ]
+    },
+    {
+      "source": "frontend/src/App.tsx",
+      "sourceSha256": "4fcc95dd03caa1d49e3bd0ee3b15301e62d6ea02031bde34d0c87e847e7f55bd",
+      "target": "src/preview/App.tsx",
+      "adapted": true,
+      "method": "Recomposed source interfaces and lifecycle; source domain/network side effects removed.",
+      "targetSha256": "921ff54ad941ca7f6f75b7b86fa4f627fd5f0c85ad0ecccc6c63dbda42040844",
+      "sourceImports": [
+        "react-router",
+        "./routes",
+        "./context/AuthContext",
+        "./context/AppBootstrapContext",
+        "./context/ToastContext",
+        "./context/ThemeContext",
+        "./context/ConsentContext",
+        "./components/ui/ToastNotification"
+      ],
+      "targetImports": [
+        "react-router",
+        "../context/RuntimeContext",
+        "../context/ThemeContext",
+        "../context/AppBootstrapContext",
+        "../context/ToastContext",
+        "../context/ConsentContext",
+        "../components/ui/ToastNotification",
+        "../context/LocaleContext"
+      ]
+    }
+  ],
+  "excluded": "No source data, assets, public files, env, credentials, routes registry, live auth/SDK, backend, workers or commercial modules admitted.",
+  "newFiles": [
+    "IMPORT_CLOSURE.json",
+    "preview.html",
+    "index.html",
+    "postcss.config.mjs",
+    ".gitignore",
+    "package-lock.json",
+    "package.json",
+    "tsconfig.json",
+    "vite.config.ts",
+    "vitest.config.ts",
+    "eslint.config.mjs",
+    "licenses/Vazirmatn-OFL.txt",
+    "licenses/THIRD_PARTY_NOTICES.txt",
+    "scripts/check-production.mjs",
+    "scripts/import-closure.mjs",
+    "src/main.tsx",
+    "src/context/LocaleContext.tsx",
+    "src/context/RuntimeContext.tsx",
+    "src/test/shell.test.tsx",
+    "src/test/setup.ts",
+    "src/brand/brand.ts",
+    "src/components/RouteError.tsx",
+    "src/production/ProductionUnavailable.tsx",
+    "src/lib/appNavigation.ts",
+    "src/preview/fixtures.ts",
+    "src/preview/main.tsx",
+    "src/preview/screens.tsx",
+    "src/preview/routes.tsx",
+    "src/components/brand/ProductMark.tsx"
+  ],
+  "assets": [
+    {
+      "asset": "Vazirmatn Variable",
+      "source": "npm @fontsource-variable/vazirmatn",
+      "license": "SIL OFL 1.1",
+      "licensePath": "licenses/Vazirmatn-OFL.txt",
+      "delivery": "Self-hosted npm package font assets; license emitted in both builds."
+    },
+    {
+      "asset": "Lucide icons",
+      "source": "npm lucide-react",
+      "license": "ISC",
+      "delivery": "Package SVG components only; no source binary assets copied."
+    },
+    {
+      "asset": "Mitooni wordmark",
+      "source": "New typographic receiving brand composition",
+      "delivery": "Text only; no source BarEx mark copied."
+    }
+  ],
+  "rootClosure": "RootLayout adapted to Outlet + source delayed loading and shell-mounted helpers. No consent dock, attribution, pixels, referrals or SDK imports; inert necessary=true/marketing=false consent state retained in preview App.",
+  "configuration": "Target-only Vite envDir=false/publicDir=false; no inherited env, proxy, source scripts/prerender, live provider startup or copied deployment config.",
+  "implementationBoundary": "S0 internal local shell only; live AuthContext/supabase.ts deliberately absent, not copied then conditionally disabled. Production has no fixture import and refuses service access."
+}
