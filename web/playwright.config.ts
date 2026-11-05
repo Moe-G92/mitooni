@@ -14,6 +14,7 @@ export default defineConfig({
   use: {
     baseURL: "http://localhost:5174",
     channel: "chrome",
+    storageState: { cookies: [], origins: [{ origin: "http://localhost:5174", localStorage: [{ name: "mitooni-ui-prefs-v1", value: JSON.stringify({locale:"en",theme:"light"}) }] }] },
     headless: true,
     viewport: { width: 1280, height: 800 },
     permissions: ["camera", "microphone"],
@@ -23,7 +24,7 @@ export default defineConfig({
     trace: "retain-on-failure",
   },
   webServer: {
-    command: "npx vite --port 5174 --strictPort",
+    command: "npx vite --config vite.prototype.config.ts --port 5174 --strictPort",
     url: "http://localhost:5174",
     reuseExistingServer: true,
     timeout: 60_000,

@@ -1,0 +1,692 @@
+{
+  "AccountOut": {
+    "$defs": {
+      "IdentityOut": {
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "email": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Email"
+          }
+        },
+        "required": [
+          "id",
+          "email"
+        ],
+        "title": "IdentityOut",
+        "type": "object"
+      },
+      "MembershipOut": {
+        "additionalProperties": false,
+        "properties": {
+          "status": {
+            "enum": [
+              "none",
+              "active",
+              "inactive"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "roles": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Roles",
+            "type": "array"
+          },
+          "entitlements": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Entitlements",
+            "type": "array"
+          }
+        },
+        "required": [
+          "status",
+          "roles",
+          "entitlements"
+        ],
+        "title": "MembershipOut",
+        "type": "object"
+      },
+      "Notifications": {
+        "additionalProperties": false,
+        "properties": {
+          "email": {
+            "default": false,
+            "title": "Email",
+            "type": "boolean"
+          },
+          "reminders": {
+            "default": false,
+            "title": "Reminders",
+            "type": "boolean"
+          }
+        },
+        "title": "Notifications",
+        "type": "object"
+      },
+      "ProfileOut": {
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Name",
+            "type": "string"
+          },
+          "locale": {
+            "default": "fa",
+            "enum": [
+              "fa",
+              "en"
+            ],
+            "title": "Locale",
+            "type": "string"
+          },
+          "theme": {
+            "default": "system",
+            "enum": [
+              "system",
+              "light",
+              "dark"
+            ],
+            "title": "Theme",
+            "type": "string"
+          },
+          "targets": {
+            "$ref": "#/$defs/Targets"
+          },
+          "testDate": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Testdate"
+          },
+          "currentLevel": {
+            "anyOf": [
+              {
+                "maximum": 9,
+                "minimum": 0,
+                "multipleOf": 0.5,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Currentlevel"
+          },
+          "weeklyHours": {
+            "maximum": 60,
+            "minimum": 0,
+            "title": "Weeklyhours",
+            "type": "integer"
+          },
+          "showFlag": {
+            "default": false,
+            "title": "Showflag",
+            "type": "boolean"
+          },
+          "notifications": {
+            "$ref": "#/$defs/Notifications"
+          },
+          "onboarded": {
+            "const": true,
+            "title": "Onboarded",
+            "type": "boolean"
+          },
+          "revision": {
+            "minimum": 1,
+            "title": "Revision",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "name",
+          "targets",
+          "weeklyHours",
+          "onboarded",
+          "revision"
+        ],
+        "title": "ProfileOut",
+        "type": "object"
+      },
+      "Targets": {
+        "additionalProperties": false,
+        "properties": {
+          "overall": {
+            "maximum": 9,
+            "minimum": 0,
+            "multipleOf": 0.5,
+            "title": "Overall",
+            "type": "number"
+          },
+          "listening": {
+            "maximum": 9,
+            "minimum": 0,
+            "multipleOf": 0.5,
+            "title": "Listening",
+            "type": "number"
+          },
+          "reading": {
+            "maximum": 9,
+            "minimum": 0,
+            "multipleOf": 0.5,
+            "title": "Reading",
+            "type": "number"
+          },
+          "writing": {
+            "maximum": 9,
+            "minimum": 0,
+            "multipleOf": 0.5,
+            "title": "Writing",
+            "type": "number"
+          },
+          "speaking": {
+            "maximum": 9,
+            "minimum": 0,
+            "multipleOf": 0.5,
+            "title": "Speaking",
+            "type": "number"
+          }
+        },
+        "required": [
+          "overall",
+          "listening",
+          "reading",
+          "writing",
+          "speaking"
+        ],
+        "title": "Targets",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "identity": {
+        "$ref": "#/$defs/IdentityOut"
+      },
+      "membership": {
+        "$ref": "#/$defs/MembershipOut"
+      },
+      "state": {
+        "enum": [
+          "access-required",
+          "setup-required",
+          "ready"
+        ],
+        "title": "State",
+        "type": "string"
+      },
+      "profile": {
+        "anyOf": [
+          {
+            "$ref": "#/$defs/ProfileOut"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    },
+    "required": [
+      "identity",
+      "membership",
+      "state",
+      "profile"
+    ],
+    "title": "AccountOut",
+    "type": "object"
+  },
+  "Onboarding": {
+    "$defs": {
+      "EditableProfile": {
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Name",
+            "type": "string"
+          },
+          "locale": {
+            "default": "fa",
+            "enum": [
+              "fa",
+              "en"
+            ],
+            "title": "Locale",
+            "type": "string"
+          },
+          "theme": {
+            "default": "system",
+            "enum": [
+              "system",
+              "light",
+              "dark"
+            ],
+            "title": "Theme",
+            "type": "string"
+          },
+          "targets": {
+            "$ref": "#/$defs/Targets"
+          },
+          "testDate": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Testdate"
+          },
+          "currentLevel": {
+            "anyOf": [
+              {
+                "maximum": 9,
+                "minimum": 0,
+                "multipleOf": 0.5,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Currentlevel"
+          },
+          "weeklyHours": {
+            "maximum": 60,
+            "minimum": 0,
+            "title": "Weeklyhours",
+            "type": "integer"
+          },
+          "showFlag": {
+            "default": false,
+            "title": "Showflag",
+            "type": "boolean"
+          },
+          "notifications": {
+            "$ref": "#/$defs/Notifications"
+          }
+        },
+        "required": [
+          "name",
+          "targets",
+          "weeklyHours"
+        ],
+        "title": "EditableProfile",
+        "type": "object"
+      },
+      "Notifications": {
+        "additionalProperties": false,
+        "properties": {
+          "email": {
+            "default": false,
+            "title": "Email",
+            "type": "boolean"
+          },
+          "reminders": {
+            "default": false,
+            "title": "Reminders",
+            "type": "boolean"
+          }
+        },
+        "title": "Notifications",
+        "type": "object"
+      },
+      "Targets": {
+        "additionalProperties": false,
+        "properties": {
+          "overall": {
+            "maximum": 9,
+            "minimum": 0,
+            "multipleOf": 0.5,
+            "title": "Overall",
+            "type": "number"
+          },
+          "listening": {
+            "maximum": 9,
+            "minimum": 0,
+            "multipleOf": 0.5,
+            "title": "Listening",
+            "type": "number"
+          },
+          "reading": {
+            "maximum": 9,
+            "minimum": 0,
+            "multipleOf": 0.5,
+            "title": "Reading",
+            "type": "number"
+          },
+          "writing": {
+            "maximum": 9,
+            "minimum": 0,
+            "multipleOf": 0.5,
+            "title": "Writing",
+            "type": "number"
+          },
+          "speaking": {
+            "maximum": 9,
+            "minimum": 0,
+            "multipleOf": 0.5,
+            "title": "Speaking",
+            "type": "number"
+          }
+        },
+        "required": [
+          "overall",
+          "listening",
+          "reading",
+          "writing",
+          "speaking"
+        ],
+        "title": "Targets",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "expectedRevision": {
+        "maximum": 0,
+        "minimum": 0,
+        "title": "Expectedrevision",
+        "type": "integer"
+      },
+      "profile": {
+        "$ref": "#/$defs/EditableProfile"
+      }
+    },
+    "required": [
+      "expectedRevision",
+      "profile"
+    ],
+    "title": "Onboarding",
+    "type": "object"
+  },
+  "ProfilePatch": {
+    "$defs": {
+      "NotificationChanges": {
+        "additionalProperties": false,
+        "properties": {
+          "email": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Email"
+          },
+          "reminders": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Reminders"
+          }
+        },
+        "title": "NotificationChanges",
+        "type": "object"
+      },
+      "ProfileChanges": {
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Name"
+          },
+          "locale": {
+            "anyOf": [
+              {
+                "enum": [
+                  "fa",
+                  "en"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Locale"
+          },
+          "theme": {
+            "anyOf": [
+              {
+                "enum": [
+                  "system",
+                  "light",
+                  "dark"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Theme"
+          },
+          "targets": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/TargetChanges"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null
+          },
+          "testDate": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Testdate"
+          },
+          "currentLevel": {
+            "anyOf": [
+              {
+                "maximum": 9,
+                "minimum": 0,
+                "multipleOf": 0.5,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Currentlevel"
+          },
+          "weeklyHours": {
+            "anyOf": [
+              {
+                "maximum": 60,
+                "minimum": 0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Weeklyhours"
+          },
+          "showFlag": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Showflag"
+          },
+          "notifications": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/NotificationChanges"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null
+          }
+        },
+        "title": "ProfileChanges",
+        "type": "object"
+      },
+      "TargetChanges": {
+        "additionalProperties": false,
+        "properties": {
+          "overall": {
+            "anyOf": [
+              {
+                "maximum": 9,
+                "minimum": 0,
+                "multipleOf": 0.5,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Overall"
+          },
+          "listening": {
+            "anyOf": [
+              {
+                "maximum": 9,
+                "minimum": 0,
+                "multipleOf": 0.5,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Listening"
+          },
+          "reading": {
+            "anyOf": [
+              {
+                "maximum": 9,
+                "minimum": 0,
+                "multipleOf": 0.5,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Reading"
+          },
+          "writing": {
+            "anyOf": [
+              {
+                "maximum": 9,
+                "minimum": 0,
+                "multipleOf": 0.5,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Writing"
+          },
+          "speaking": {
+            "anyOf": [
+              {
+                "maximum": 9,
+                "minimum": 0,
+                "multipleOf": 0.5,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Speaking"
+          }
+        },
+        "title": "TargetChanges",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "expectedRevision": {
+        "minimum": 1,
+        "title": "Expectedrevision",
+        "type": "integer"
+      },
+      "changes": {
+        "$ref": "#/$defs/ProfileChanges"
+      }
+    },
+    "required": [
+      "expectedRevision",
+      "changes"
+    ],
+    "title": "ProfilePatch",
+    "type": "object"
+  }
+}

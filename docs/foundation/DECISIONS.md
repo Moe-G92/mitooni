@@ -1,20 +1,22 @@
 # Mitooni foundation decisions
 
-Date: 2026-11-04, Europe/London. Coordinator: Codex. Status: S0 shell and S1 backend foundation accepted at the bounded local port checkpoint. Production and learner pilot not approved.
+Updated: 2026-11-05, Europe/London. Coordinator: Codex. Current authority and checkpoint: CHECKPOINT-2026-11-05.md. Mo's UI/UX and brand govern the active frontend; BarEx supplies missing capabilities. Prior S0/S1 acceptance below is historical local evidence, not a direction to replace Mo's interface. Production and learner pilot not approved.
 
 ## Confirmed direction
 
 Arash commissioned engineering and product leadership; Mo and Arash own the business, service and domain decisions. IELTS Academic leads the first pilot, with both independent study and expert coaching, for all learner levels and target bands. Persian is the default interface with an English option. An IELTS teacher/examiner will review the original packs and assessments. The supplied resources have Arash-confirmed commercial/distribution rights for an Iranian audience; the product will use original packs/tests derived from them. Preserve the territory and content lineage. No full resource corpus has been added to the application or sent to an external processor.
 
-The reviewed scaffold is `Moe-G92/mitooni` at `d2266e8e4b92869d857c6d19d4d635509a960fab`. The read-only reuse source is `sqe-cracker/sqe-tutor` at `af57036ad18a45a0aa20a81202c9e0939ebd99d5`. Local work is on `codex/foundation-review-20261104`. The existing `web/` and source learning materials remain unchanged; new port implementation lives under `platform/`.
+Confirmed 2026-11-05: the AI tutor delivers the teacher-designed learning sequence, as in BarEx. Independent study includes AI-led explanation, practice, formative feedback and controlled adaptation; human coaching adds review/escalation. Teacher approval of the curriculum does not by itself validate automatic band scoring. Mo's interface remains the visual direction for this delivery.
 
-## Decision 1: port BarEx's shell and useful platform
+The reviewed scaffold is `Moe-G92/mitooni` at `d2266e8e4b92869d857c6d19d4d635509a960fab`. The read-only reuse source is `sqe-cracker/sqe-tutor` at `af57036ad18a45a0aa20a81202c9e0939ebd99d5`. Local work is on `codex/foundation-review-20261104`. The active account integration adapts Mo's `web/` and the receiving `platform/backend/`. Source learning materials remain outside the checkout.
 
-Arash's latest explicit instruction supersedes the initial proposal to retain Mo's shell: port everything useful from BarEx and fill that shell with the new Mitooni corpus. BarEx is the product/platform base. Mo's current scaffold remains preserved as IELTS-specific reference work, content contracts and candidate exam interactions to bring into the BarEx-derived shell.
+## Decision 1: preserve Mo's interface and supply missing BarEx capabilities
+
+Arash clarified on 2026-11-05 that Mo's version is the UI/UX direction and brand identity and BarEx supplies what is missing. `web/` is the active frontend. Preserve Mo's appearance, layouts and working interactions, adapting reusable BarEx authentication, backend, learning and service mechanics underneath them. The prior `platform/frontend/` port remains historical/reuse evidence and is no longer the visual authority; `platform/backend/` remains the receiving backend foundation.
 
 Reuse the existing React/Vite frontend, FastAPI/Python backend and suitable BarEx assets, services, integrations, hosting and AI. Source inspection identifies Supabase Auth/Postgres/private Storage, OpenAI SDK/Agents/ChatKit/realtime, Railway backend configuration, Vercel frontend configuration, Resend and Turnstile. Stripe integration exists but Mitooni payments remain undecided. These are source-observed arrangements; live account configuration and Iranian eligibility have not been verified. No Redis dependency is established; the source has Postgres-backed leased jobs.
 
-Prepare an exact port allowlist/import inventory, adapt product/domain configuration, and test the receiving application. Separate Mitooni data, content, retrieval, storage, jobs and authorization. Existing provider accounts, infrastructure and hosting can be reused where permitted and appropriately isolated; no categorical ban on shared accounts/deployments is intended. Prefer an independent Mitooni workload on that infrastructure unless verified tenancy makes a shared runtime safe. No BarEx learners, private coaching, corpus or secrets are copied. Build a staged port without overwriting Mo's existing files, then choose the final directory cutover after verification.
+Prepare an exact reusable-code/import inventory, adapt product/domain configuration, and test the receiving application within Mo's interface. Separate Mitooni data, content, retrieval, storage, jobs and authorization. Existing provider accounts, infrastructure and hosting can be reused where permitted and appropriately isolated; no categorical ban on shared accounts/deployments is intended. Prefer an independent Mitooni workload on that infrastructure unless verified tenancy makes a shared runtime safe. No BarEx learners, private coaching, corpus or secrets are copied. Preserve the original Mo prototype explicitly while introducing tested account/service integration; do not maintain two competing visual directions.
 
 BarEx's existing auth-only browser SDK plus Bearer-authenticated BFF is the starting session architecture. Mo's exam components currently expect cookie calls and a different error shape; adapt that boundary deliberately rather than mixing protocols. Retain default-deny RLS and backend-mediated data operations. Review token lifecycle, allowed origins, account recovery and runtime schemas in the adapted shell. No service credential belongs in browser code. Provider use still depends on permitted and reachable service for the intended end users.
 
@@ -24,7 +26,7 @@ Alternatives considered:
 - A literal implementation of Mo's mock API preserves missing ownership, unsafe mutable fields, non-idempotent submissions and unvalidated scoring. Reject.
 - A separate greenfield frontend/backend would contradict the requested BarEx base and recreate useful work. Do not pursue it. A universal multi-exam platform is also premature.
 
-Port useful implementations, not only inspiration: shell/navigation/UI, auth and API plumbing, tutor/voice workflow, practice/mock/progress patterns, coaching, content publication/jobs and operational controls where the manifest confirms suitability. Replace SQE taxonomy, answer assumptions, source paths, prompts and corpus bindings with reviewed Mitooni equivalents. Stage modules rather than pretending everything is portable in one copy. Reuse does not transfer security or release approval.
+Port useful implementations, not only inspiration: auth and API plumbing, tutor/voice workflow, practice/mock/progress patterns, coaching, content publication/jobs and operational controls where suitability is established. Use BarEx UI mechanics only to fill a missing interaction and adapt them to Mo's brand. Replace SQE taxonomy, answer assumptions, source paths, prompts and corpus bindings with reviewed Mitooni equivalents. Stage modules rather than treating everything as portable in one copy. Reuse does not transfer security or release approval.
 
 ## Decision 2: make submitted work recoverable and authoritative
 
@@ -38,7 +40,7 @@ Speaking requires a separate media proof: persist each take, reconcile uploads, 
 
 ## Decision 3: prove practice and coaching before predicting bands
 
-The first internal vertical slice contains one original Reading passage with raw accuracy and evidence-linked explanations, and one original Writing Task 2 with self-review, expert review and learner revision. This is Academic practice, not a full mock or the entire pilot.
+The first internal learning slice uses the AI tutor with one original Reading passage, raw accuracy and evidence-linked explanations, and one original Writing Task 2 with formative tutoring, self-review, expert review and learner revision. This is Academic practice, not a full mock or the entire pilot. The tutor delivers the reviewed teaching sequence; this two-task engineering slice does not replace the broader curriculum blueprint in Decision 5.
 
 Why two task kinds: Reading proves independent checked practice and deterministic marking; Writing proves durable free response and the asynchronous human service. A Writing-only slice is technically smaller but does not establish the automatically checked practice experience already present in the scaffold. The second task kind is a bounded, purposeful addition rather than expansion to another exam.
 
@@ -54,9 +56,19 @@ Iran-based access, permitted provider use, business/operator structure, processi
 
 Adapt existing identity, storage and AI integrations; keep their boundaries inspectable and replaceable without creating speculative multi-provider infrastructure. Payments are unresolved. Local synthetic engineering and content design can continue while service-specific operational evidence remains open. No live learner collection, processor uploads, provisioning or release follows from this checkpoint.
 
+## Decision 5: AI-delivered curriculum with several entry paths
+
+The 5 November learning proposal and independent review support a teacher-designed objective backbone delivered by an AI tutor through versioned skill/task packs. Accept Sequence A, the objective/skill bridge, as the proposed default for teacher/examiner challenge. Sequence B starts with productive-language feedback when evidence and reviewer capacity warrant it; Sequence C starts with familiarisation and broad sampling when that is the learner's immediate need. These are routes through common objectives, not three separately validated courses. Diagnostic routing can abstain, learners can choose appropriate work, and coaches can override with a recorded reason.
+
+The concrete default blueprint is: U1 understand/explain meaning and instructions; U2 find and justify Reading evidence; U3 develop a Task 2 position; U4 follow spoken information; U5 extend and respond in Speaking; U6 apply Reading/Writing independently on fresh families. Separate fresh Listening/Speaking follow-ups remain necessary. Each unit has prerequisite, support and challenge variants for novice, uneven, advanced, retaker and time-limited journeys. Goals do not imply verified proficiency, a guaranteed time-to-band, or a fixed CEFR-to-IELTS conversion. The all-level product remains confirmed; this short blueprint does not constitute a complete general-English curriculum.
+
+Teacher/examiner responsibility is curriculum, original content, rubric and assessment-policy validation. The AI tutor explains, checks understanding, supplies approved practice, gives permitted formative feedback and proposes bounded next steps. Human coaching adds review, interpretation and escalation. Server-owned versions, permissions, exposure and progression evidence remain authoritative. Formal independent assessment needs restricted context and family-exposure checks; switching chats cannot make a taught item unseen. Deterministic raw marks, qualitative AI feedback and unvalidated numeric model estimates remain separate.
+
+Reuse BarEx's canonical packs, scoped tutor/planner/workspace mechanics, versioned attempts and operational lessons where verified. The archive and production aggregates establish deployed mechanics and usage, not causal learning benefit or calibrated mastery/band prediction. No private learner rows or licensed legal content were transferred. Full methods, original sources, query limitations and dissent/resolution are in `research/learning-pathways-20261105.md`, `research/barex-history-evidence-20261105.md` and `research/learning-review-20261105.md`. The five-page Word brief in `briefs/` is the human review artifact. Research direction is accepted; domain content approval and runtime teaching/scoring validation remain subsequent work.
+
 ## Sequenced checkpoints and evidence
 
-### C1 — baseline and foundation design (current)
+### C1 — baseline and foundation design (completed historical checkpoint)
 
 Owners: coordinator and five specialists. Evidence: source audits, resource inventory, official exam/provider sources and synthetic browser baseline. Close only after specialist reports and independent challenge have been inspected. Existing tests are fixture evidence; no learning efficacy, provider authorization, Iranian reachability or production-security claim is implied.
 
@@ -82,14 +94,14 @@ Stop/rework rules: any cross-account disclosure, unexplained acknowledged-work l
 
 ## Open decisions from Arash and Mo
 
-- First-pack sequence and representative level/target coverage within the confirmed all-level product; intended exam delivery modes.
+- Teacher/examiner challenge of the proposed Sequence A and B/C exceptions, objective progression evidence, representative content variants and actual intended exam-country/delivery settings. Engineering/product has supplied the concrete proposal rather than leaving the sequence undefined.
 - Named teacher/examiner, availability, independent review/adjudication roles, coaching workflow and capacity (reviewer type is confirmed).
 - Operator/partner, exact existing service configuration and Iranian end-user eligibility; payment arrangement.
 - Before a learner pilot: age range, cohort, accountable human, schedule, budget, approved promises and measurable success/stop criteria.
 
 These do not block local source analysis or a synthetic technical specification. They do block choosing dependent operating arrangements or making learner-facing promises. No repeated rights confirmation is required for the already-authorized local work.
 
-## Review and restart
+## Historical review — prior BarEx visual shell
 
 All specialists use gpt-6.1-sol with medium effort. Architecture and reuse specialists agree with the latest BarEx-first direction, staged exact-file admission, retained source Auth/BFF architecture and separate Mitooni data boundaries. The learning specialist agrees with Reading + Task 2 as a technical integration slice, clarifying that the product still serves all levels/targets and the slice does not validate them all. Security agrees with reuse of existing accounts/infrastructure where isolated and permitted, without asserting live provider eligibility. Independent validation accepted local S0 design with concrete import/preview/auth/asset corrections in `research/port-review.md`. The coordinator accepted those corrections and assigned disjoint frontend/backend implementation.
 
@@ -107,9 +119,9 @@ Completed ownership: scaffold_architecture implemented `platform/frontend/`; reu
 
 The independent records are `research/port-acceptance.md` and `research/port-security-review.md`; implementation records and exact manifests preserve commands, corrections, failures and limits. Security reviewer's browser launch attempts failed; the separate independent browser reviewer supplied the successful runtime evidence. Source fidelity is established by copied code/provenance and inspected receiving renders, not a live BarEx side-by-side run. No Lighthouse score, full WCAG conformance, full learning flow, real-network Iranian access or live provider validation is claimed. All substantive objections within this local checkpoint were resolved; the coordinator agrees with scoped local acceptance. This is not APPROVED FOR GO-LIVE.
 
-### Next bounded assignment
+### Previous next-assignment plan — superseded by the 5 November checkpoint
 
-Continue the authorized BarEx port with source auth/session and bootstrap/profile integration inside the new shell, backed by an isolated receiving data model. First specify and test product membership separately from shared-provider identity, explicit account/configuration boundaries, default-deny data policies, profile fields and session/account-change recovery. Reuse the source transport and auth-only browser SDK; use supported Node 22+ when adding that SDK (see coordinator compatibility note). No new permission is needed for this internal work.
+Continue source auth/session and bootstrap/profile integration inside Mo's `web/`, backed by an isolated receiving data model. The 5 November checkpoint and contract records now own its implementation and review. Product membership remains separate from shared-provider identity; explicit account/configuration boundaries, default-deny data policies, profile fields and session/account-change recovery are required. Reuse the source transport and auth-only browser SDK; use supported Node 22+ when adding that SDK (see coordinator compatibility note). No new permission is needed for this internal work.
 
 Then port study/workspace/notes, tutor/voice, coaching and content/job modules in inspected slices, replacing their SQE domain bindings with Mitooni's versioned corpus and assessment contracts. Connect the original Reading/Task 2 review-and-revision slice only after its content blueprint and expert review. Teacher/examiner identity/capacity, first-pack level coverage, full four-skill validation, provider eligibility and payments remain the recorded domain/operational gates; they are not reasons to reconstruct the platform from scratch or to stop unrelated local work.
 

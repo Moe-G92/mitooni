@@ -1,0 +1,10 @@
+node_modules/
+dist/
+dist-prototype/
+dist-account-local/
+review/
+playwright-report/
+test-results/
+.taste-skill/
+.env*
+!.env.example

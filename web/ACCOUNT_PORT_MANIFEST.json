@@ -1,0 +1,404 @@
+{
+  "receivingRevision": "c82d9a6dcf7b00d3d2b66759352dba397152a41f",
+  "direction": "Mo UI/brand; BarEx mechanics only",
+  "moFiles": [
+    {
+      "source": "src/components/ui/sign-in.tsx",
+      "target": "src/account/AuthShell.tsx",
+      "sourceSha256": "127f220689bd24719974e4fa5a638578e511b84b11f530ce82f8cd64400a6ff9",
+      "targetSha256": "595216c77d3ec277c76dbf16263654b60070e3c1e28dc4fa8a0fd10b40137c1b"
+    },
+    {
+      "source": "src/components/public/auth/AuthPanel.tsx",
+      "target": "src/account/AuthPanel.tsx",
+      "sourceSha256": "01d6044615e2ce5894065c0e9bcebad4e6f9524c18512852b325df7cbfb21784",
+      "targetSha256": "c51ea67770d8dfc9a9216ff9fa26fa9c00d38cd2c4e020a9adc3a6649ff32789"
+    },
+    {
+      "source": "src/layouts/AppLayout.tsx",
+      "target": "src/account/AppLayout.tsx",
+      "sourceSha256": "b0a248d6265e5a23b619f02f187a23e61fe34a3c03d3efa62ffc6dd83f8ff438",
+      "targetSha256": "5bb0d58b9417dc962783a54248889555de88e60c40e032a209b61ddd079290f9"
+    },
+    {
+      "source": "src/pages/app/Onboarding.tsx",
+      "target": "src/account/Onboarding.tsx",
+      "sourceSha256": "bc4a250acd477e5b39ec2e5f9544447b594f6d469d5d3aa7dae45e618d17518e",
+      "targetSha256": "0926c44d5c1bab118759e0803e67c7c8b6505757b0ab5eb86ce86c49c8ceac8b"
+    },
+    {
+      "source": "src/pages/app/Settings.tsx",
+      "target": "src/account/Settings.tsx",
+      "sourceSha256": "d6a73a7293da45c55897d9be8e1d559efe974ec0a911c260b64b0d9676c5b387",
+      "targetSha256": "d1ba17545e506ceacef4ecb85aa61fc3a34ede8438d13a611a27d382af554d26"
+    },
+    {
+      "source": "src/components/PageHeader.tsx",
+      "target": "src/account/PageHeader.tsx",
+      "sourceSha256": "ceba6f5d59355fde7273c66f2bd7fe6c918f203bffde4dd77f2078d21ee8aae1",
+      "targetSha256": "2d08329c705b73c98862afd45018802cb959a987aea128f71341534f6f618764"
+    },
+    {
+      "source": "src/components/TopControls.tsx",
+      "target": "src/account/TopControls.tsx",
+      "sourceSha256": "f0a3c90c1cdb147ed3832e2eff0523b46b9b148fa04a98d83fdd847ff95e01b7",
+      "targetSha256": "c0645a6ed0a87700a3cf7780bfce4693323bc90a7bdaeeae550f6e657cf9b0a8"
+    },
+    {
+      "source": "src/components/BrandMark.tsx",
+      "target": "src/account/BrandMark.tsx",
+      "sourceSha256": "9ed6b8b9c87dac813842ebe536606e5263b0d806b473c002b4eaa115ba0237f1",
+      "targetSha256": "79c7a0b0170f46981e94a371863d41c3876aa9e6bcfe876a72d20243a328c827"
+    }
+  ],
+  "checkpoint": "Mo account integration; local synthetic auth + isolated real HTTP/Postgres",
+  "copyPolicy": "Frozen Mo prototype is compatibility/reference only. src/account compositions own configured account UI, sharing Mo brand, CSS, primitives, format helpers. No BarEx shell or CSS admitted.",
+  "barEx": {
+    "revision": "af57036ad18a45a0aa20a81202c9e0939ebd99d5",
+    "admission": "Mechanics adapted, no module/asset import; no source credentials, datasets, profile defaults, pricing or entitlement logic.",
+    "ranges": [
+      {
+        "source": "src/context/AuthContext.tsx",
+        "lines": [
+          "1-12",
+          "82-110",
+          "161-177"
+        ],
+        "sourceSha256": "ed86adfde1e161aa2d118ae6daa0373e20b6ccc3ed4e4f3e38867c8d94209204",
+        "targets": [
+          "src/auth/session.ts",
+          "src/auth/supabaseAuth.ts"
+        ],
+        "adaptation": "Auth-only SDK lifecycle and credential login; synchronous events, nonpersistent client, local signout, serialized epoch ownership and timeout quarantine added; no source metadata profile fallback."
+      },
+      {
+        "source": "src/lib/api.ts",
+        "lines": [
+          "375-459"
+        ],
+        "sourceSha256": "be4be7122788a7d070fe287451b4a620778516de291a4af01a879ed6e7788192",
+        "targets": [
+          "src/account/transport.ts"
+        ],
+        "adaptation": "Bearer transport, expected identity and one401 refresh/retry; receiving structured DTO/runtime validation, exact ownership/idempotency headers, explicit no-redirect/no-cookie, epoch checks added."
+      },
+      {
+        "source": "src/lib/supabase.ts",
+        "lines": [
+          "1-11"
+        ],
+        "sourceSha256": "68a1332818222b8eb77b00c3b0d875a6ed5e355c9d923e1220109e37766b3730",
+        "targets": [
+          "src/auth/supabaseAuth.ts",
+          "src/auth/config.ts"
+        ],
+        "adaptation": "Auth-only factory pattern; source eager singleton rejected. Receiving validated public configuration only, no client created at import."
+      }
+    ]
+  },
+  "safeSharedMoImports": [
+    "src/components/BrandMark.tsx",
+    "src/components/Logo.tsx",
+    "src/components/dashboard/styles.ts",
+    "src/components/public/auth/auth.css",
+    "src/components/ui/button.tsx",
+    "src/components/ui/card.tsx",
+    "src/components/ui/form.tsx",
+    "src/components/ui/misc.tsx",
+    "src/config/brand.ts",
+    "src/index.css",
+    "src/lib/format.ts",
+    "src/lib/prefs.ts",
+    "src/lib/utils.ts"
+  ],
+  "translationSources": [
+    {
+      "path": "src/i18n/en.ts",
+      "sha256": "81a79f42c7da9bc2efe0c527407df4fd4b3d7531db0022eb45dedbcef49cc8e2"
+    },
+    {
+      "path": "src/i18n/fa.ts",
+      "sha256": "00ebe1d13055aa5d2436fff9474439e917d7000592581845ace5bc7d74b9b31f"
+    },
+    {
+      "path": "src/i18n/overrides/dashboard.ts",
+      "sha256": "debd9f6d78a8b3192b60536999a8f28c6a8b198ddb72641e58327ea55f3e3308"
+    },
+    {
+      "path": "src/components/public/copy/auth.ts",
+      "sha256": "5acbcb85f6a3d67110590eb692478fbfb4600abdbaf526daf8cc2126d8e6c53c"
+    }
+  ],
+  "translations": "Only keys used by receiving account pages. Generic auth illustration removes sample results, predictions, delivery claims and tagline. Actual dashboard overrides retained; goal range 0–9 halfsteps.",
+  "assets": [
+    {
+      "source": "public/favicon.svg",
+      "sha256": "2990dd1cf4d050375846a51639f1d0fa0d9e14144afb896965f32492be2574e3",
+      "admission": "Existing Mo brand image bytes; explicit HTML asset reference with publicDir:false, no directory copy."
+    },
+    {
+      "source": "public/favicon-32.png",
+      "sha256": "c1f7d13cedcd6618eb67998b2df35a5bf52fce4755cbc0cd88d51673114e039f",
+      "admission": "Existing Mo brand image bytes; explicit HTML asset reference with publicDir:false, no directory copy."
+    },
+    {
+      "source": "public/apple-touch-icon.png",
+      "sha256": "3a909db27df2224d92a97a3ec76d91503d31dd384a1b0cc09b73e3f4bbf84c3b",
+      "admission": "Existing Mo brand image bytes; explicit HTML asset reference with publicDir:false, no directory copy."
+    }
+  ],
+  "fonts": "Existing Mo fontsource imports in index.css unchanged; no new font assets. Existing package licences retained (SIL Open Font License); no BarEx font/icon asset admitted.",
+  "receivingFiles": [
+    {
+      "path": ".gitignore",
+      "sha256": "0d889a1115bc6dda32c8cb896537bc99f45d53183d01d8acc90e2ba5dbafe554"
+    },
+    {
+      "path": "account.html",
+      "sha256": "1f4c9f4e6fa3e96d340af25e6951ff030ee4ad7a058a04629dd4d63a4656c49b"
+    },
+    {
+      "path": "e2e/practice.spec.ts",
+      "sha256": "8608144fee4fb0b1185636ca3469da6a70da148a3e01b55fefe7b3ea9c111544"
+    },
+    {
+      "path": "index.html",
+      "sha256": "37a9f3272ed71dbc21af99a45e937fa2eddb0c49672bf15e6c2e0098fb7a7140"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "96182969efe1828aab70d203c26b0ac25bf51b80bdbe5a1973d80aab9934c289"
+    },
+    {
+      "path": "package.json",
+      "sha256": "dc374e4dea7f93591abdc4ae42f39106e67e5d718a38270e8ea4a322140a7cb5"
+    },
+    {
+      "path": "playwright.config.ts",
+      "sha256": "cc51516cdbdbb1e93ea79c1c5e7e695abc1ac79e4354efd8cabe94497b81cc6d"
+    },
+    {
+      "path": "prototype.html",
+      "sha256": "0b0ef9dccda1942bf04fce28a325e2132f8bc60739909e32610f6459baafc9fa"
+    },
+    {
+      "path": "scripts/account-build-boundary.ts",
+      "sha256": "431433ca0a2cd5cf60a6cb65dea94ba2757e4b460fc6ce3cfa765df4b8e24859"
+    },
+    {
+      "path": "src/account/App.tsx",
+      "sha256": "1c35dc3bd677ec70f66278384801aca861a4cc700a2ab5b8d0166825e45d79c5"
+    },
+    {
+      "path": "src/account/AppLayout.tsx",
+      "sha256": "5bb0d58b9417dc962783a54248889555de88e60c40e032a209b61ddd079290f9"
+    },
+    {
+      "path": "src/account/Auth.tsx",
+      "sha256": "e5be72658d3bc185d2ebbc0171a99ade2dd00151ce984be0a62fd6076df54f80"
+    },
+    {
+      "path": "src/account/AuthPanel.tsx",
+      "sha256": "c51ea67770d8dfc9a9216ff9fa26fa9c00d38cd2c4e020a9adc3a6649ff32789"
+    },
+    {
+      "path": "src/account/AuthShell.tsx",
+      "sha256": "595216c77d3ec277c76dbf16263654b60070e3c1e28dc4fa8a0fd10b40137c1b"
+    },
+    {
+      "path": "src/account/Boundary.tsx",
+      "sha256": "8d56a24d4440f2cad6ad2b65572940724822a17457e0bf1a64f0e4409e4db923"
+    },
+    {
+      "path": "src/account/BrandMark.tsx",
+      "sha256": "79c7a0b0170f46981e94a371863d41c3876aa9e6bcfe876a72d20243a328c827"
+    },
+    {
+      "path": "src/account/Button.tsx",
+      "sha256": "f72af7e35dff09851102ff0c2a86031676efa1997911e840a0114883e24c5139"
+    },
+    {
+      "path": "src/account/ErrorNotice.tsx",
+      "sha256": "9b0fd61ef3212d56e8b092970697d74c979673e392d63c373dd64002a4df06a2"
+    },
+    {
+      "path": "src/account/LanguageSwitch.tsx",
+      "sha256": "6558b826a178b131a1497f15516d6bf3e1ea16c0ea87f9d59de29eabee304f74"
+    },
+    {
+      "path": "src/account/Onboarding.tsx",
+      "sha256": "0926c44d5c1bab118759e0803e67c7c8b6505757b0ab5eb86ce86c49c8ceac8b"
+    },
+    {
+      "path": "src/account/PageHeader.tsx",
+      "sha256": "2d08329c705b73c98862afd45018802cb959a987aea128f71341534f6f618764"
+    },
+    {
+      "path": "src/account/Settings.test.tsx",
+      "sha256": "d0a6422eac2acd2cf79605e3dc1c3f6a23e2f14106fc4d7e7eec4ebc3ceb9830"
+    },
+    {
+      "path": "src/account/Settings.tsx",
+      "sha256": "d1ba17545e506ceacef4ecb85aa61fc3a34ede8438d13a611a27d382af554d26"
+    },
+    {
+      "path": "src/account/TopControls.tsx",
+      "sha256": "c0645a6ed0a87700a3cf7780bfce4693323bc90a7bdaeeae550f6e657cf9b0a8"
+    },
+    {
+      "path": "src/account/contracts.ts",
+      "sha256": "300238bdc7af8c3284babfbe51b5d0968b0dc304eaf0c5fb0434eadc9fbf1d45"
+    },
+    {
+      "path": "src/account/locale.ts",
+      "sha256": "22566072db44ae9d1d9c2c4c86b95efe5a2d2f3280b66fc08b4485a493d0bfcc"
+    },
+    {
+      "path": "src/account/messages.json",
+      "sha256": "2a48f756c5cf2282cd8de36dfccbb3595757de71eae93c5812cd81d2deab7b97"
+    },
+    {
+      "path": "src/account/mount.tsx",
+      "sha256": "4f8bc74259bad6bf5ec6fdb35bc747e54465644deb1421d2a10b256b6163892f"
+    },
+    {
+      "path": "src/account/state.test.tsx",
+      "sha256": "35042864e6996dbd4fdfdaeb1bb37d9afdd5711a11307f8a8193c0882e39e08c"
+    },
+    {
+      "path": "src/account/state.tsx",
+      "sha256": "5c1e21db0b7924c1c136b331690ce4f511a28f83ef6ec21fd2555285a61d3a09"
+    },
+    {
+      "path": "src/account/transport.ts",
+      "sha256": "3164cee1a59079c7dfbf8868bedc2b897c1d646b000e0c5bea0e4a5ca3eb678a"
+    },
+    {
+      "path": "src/auth/buildBoundary.test.ts",
+      "sha256": "74cc6b9f572befe5732273871a69f22ae5d161a49e78f9954e100f9c6774c3d7"
+    },
+    {
+      "path": "src/auth/config.ts",
+      "sha256": "7eb2a33fa6ec2708792c435fa77b2e5ed79b3847ec00c84f1dc1eb0f6cb44e9a"
+    },
+    {
+      "path": "src/auth/redirect.ts",
+      "sha256": "0244bb0ca57443d23d94e23cd256d16a5de84a4d2f46b425e8817d50d59dfce1"
+    },
+    {
+      "path": "src/auth/session.test.ts",
+      "sha256": "0266f8c66f1042790f5344a86870d13f4cda799b0c4a606ba0fff70d1aea5caa"
+    },
+    {
+      "path": "src/auth/session.ts",
+      "sha256": "608607b25aedab446a53367ea12250e57eba96d751107dc9193301d03008cfaf"
+    },
+    {
+      "path": "src/auth/signoutBus.test.ts",
+      "sha256": "8ff5aedc10fb84996fb010188fc5a1fb9e923e52b2b133bb4768fd282cdf4086"
+    },
+    {
+      "path": "src/auth/signoutBus.ts",
+      "sha256": "359e6669c491a4060d7701f2e191b8a640567317d4f7c44b9ae2275ab8b1232c"
+    },
+    {
+      "path": "src/auth/supabaseAuth.ts",
+      "sha256": "f09660476f46f0d23a58778feafdbb1a4d14147a499914955f94e4aa0e66d5b5"
+    },
+    {
+      "path": "src/auth/types.ts",
+      "sha256": "fb4d0ef3052b1c12554e5d16f3f5c6d884666f54e17df85c1dc5612b97893ac7"
+    },
+    {
+      "path": "src/auth/workerMigration.test.ts",
+      "sha256": "37f4fe3a7ba40dec4a2be7df66f58008c98e4d0e09e53e81a01b416e9ea5c78f"
+    },
+    {
+      "path": "src/auth/workerMigration.ts",
+      "sha256": "7ef5d299d2441f5fb278a0f83555dba8e4add03c71281131e74e8ca8fb0b7e32"
+    },
+    {
+      "path": "src/lib/prefs.ts",
+      "sha256": "99d07325ba5f5e5c1cab6033773f18effc7ff8b34aa54ab0e311fad82d2c66d2"
+    },
+    {
+      "path": "src/main.tsx",
+      "sha256": "2c6033c70340a2d3ae793e46eaac7e840a79fefd6fb06a81a5ae102d1ce51361"
+    },
+    {
+      "path": "src/preview/accountLocal.tsx",
+      "sha256": "aad990244a57d8795d4e49d60c3a7bc7428d8bba76904b0e01c80c5ec16b3e51"
+    },
+    {
+      "path": "src/preview/prototype.tsx",
+      "sha256": "bbee61925e9b0c72dee1f1edb0acaaca30d43d15eddfde79831c941e44663511"
+    },
+    {
+      "path": "vite.account-local.config.ts",
+      "sha256": "4d9d77001b8b118f85ed1afc9aaef96653c7c0f44bcb2f4cad03b773e2e827fe"
+    },
+    {
+      "path": "vite.config.ts",
+      "sha256": "2c618fc45bc7d0d1a6755acbd3b7d9c423fde2aeb8ba974311d337458ee5bbd4"
+    },
+    {
+      "path": "vite.prototype.config.ts",
+      "sha256": "e0a6dc60f85e188712e71e296d5dd45eab6bb32fa4f3026f2d2a5a1fec94403b"
+    }
+  ],
+  "productionGraph": [
+    "src/account/App.tsx",
+    "src/account/AppLayout.tsx",
+    "src/account/Auth.tsx",
+    "src/account/AuthPanel.tsx",
+    "src/account/AuthShell.tsx",
+    "src/account/Boundary.tsx",
+    "src/account/BrandMark.tsx",
+    "src/account/Button.tsx",
+    "src/account/ErrorNotice.tsx",
+    "src/account/LanguageSwitch.tsx",
+    "src/account/Onboarding.tsx",
+    "src/account/PageHeader.tsx",
+    "src/account/Settings.tsx",
+    "src/account/TopControls.tsx",
+    "src/account/contracts.ts",
+    "src/account/locale.ts",
+    "src/account/messages.json",
+    "src/account/mount.tsx",
+    "src/account/state.tsx",
+    "src/account/transport.ts",
+    "src/auth/config.ts",
+    "src/auth/redirect.ts",
+    "src/auth/session.ts",
+    "src/auth/signoutBus.ts",
+    "src/auth/supabaseAuth.ts",
+    "src/auth/types.ts",
+    "src/auth/workerMigration.ts",
+    "src/components/Logo.tsx",
+    "src/components/dashboard/styles.ts",
+    "src/components/public/auth/auth.css",
+    "src/components/ui/button.tsx",
+    "src/components/ui/card.tsx",
+    "src/components/ui/form.tsx",
+    "src/components/ui/misc.tsx",
+    "src/config/brand.ts",
+    "src/index.css",
+    "src/lib/format.ts",
+    "src/lib/prefs.ts",
+    "src/lib/utils.ts",
+    "src/main.tsx"
+  ],
+  "verification": "Final frozen UI-only delta: account nav and Settings/Signout menu items use min44px hitboxes; global Mo kit unchanged. Build admission remains production by default with role-isolated optimization caches.",
+  "authFormReference": {
+    "source": "src/pages/public/Auth.tsx",
+    "sourceSha256": "726c54da3a00fe373a4e5177fb9720de6ef3b92ea6d6e7c552807db95f9a26c2",
+    "target": "src/account/Auth.tsx",
+    "adaption": "Mo AuthShell/primitives and identifier-then-password geometry retained; lookup, enrollment, OTP/social and canned personalization excluded."
+  },
+  "prototypeEntry": {
+    "source": "src/main.tsx@c82d9a6",
+    "sourceSha256": "b19860db7c4e244d20cf6bb2f79dff1cb6c9f63205d63cc96e50cc45c3cf7f59",
+    "target": "src/preview/prototype.tsx",
+    "adaptation": "Same original App/MSW bootstrap, relative imports adjusted and explicit prototype entry always enables its own mock worker."
+  }
+}

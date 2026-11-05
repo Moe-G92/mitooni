@@ -124,7 +124,7 @@ test("speaking: works without a microphone", async ({ page }) => {
 
 test("practice screens in Persian are right to left and fit a phone", async ({ page }) => {
   await signIn(page);
-  await page.evaluate(() => localStorage.setItem("bw-prefs", JSON.stringify({ locale: "fa" })));
+  await page.evaluate(() => localStorage.setItem("mitooni-ui-prefs-v1", JSON.stringify({ locale: "fa" })));
   await page.setViewportSize({ width: 375, height: 800 });
   for (const [path, label] of [
     ["/practice/listening", "بررسی پاسخ"],

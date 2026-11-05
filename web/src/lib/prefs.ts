@@ -8,25 +8,38 @@ import type { Locale, ThemeChoice } from "@/api/schemas";
 
 export type Prefs = { locale: Locale; theme: ThemeChoice };
 
-const KEY = "bw-prefs";
-const DEFAULTS: Prefs = { locale: "en", theme: "system" };
+const KEY = "mitooni-ui-prefs-v1";
+const DEFAULTS: Prefs = { locale: "fa", theme: "system" };
 const listeners = new Set<() => void>();
 
 function read(): Prefs {
   try {
-    return { ...DEFAULTS, ...JSON.parse(localStorage.getItem(KEY) || "{}") };
+    const value = JSON.parse(
+      localStorage.getItem(KEY) || localStorage.getItem("bw-prefs") || "{}",
+    );
+    return {
+      locale: value?.locale === "en" ? "en" : "fa",
+      theme: ["system", "light", "dark"].includes(value?.theme)
+        ? value.theme
+        : "system",
+    };
   } catch {
     return DEFAULTS;
   }
 }
 
 let current = read();
+let generation = 0;
+export function prefsGeneration() {
+  return generation;
+}
 
 export function getPrefs(): Prefs {
   return current;
 }
 
 export function setPrefs(patch: Partial<Prefs>) {
+  generation += 1;
   current = { ...current, ...patch };
   try {
     localStorage.setItem(KEY, JSON.stringify(current));

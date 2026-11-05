@@ -19,8 +19,27 @@
       "source": "backend/app/dependencies.py",
       "source_sha256": "6224803185f2192bef467238c91dfce509a7051af4b3242a415183c5c797ea63",
       "target": "app/dependencies.py",
-      "target_sha256": "400a981e8ab92413ca1ac5247f2f004ce5b19eb3810b52224dceef877df3c520",
+      "target_sha256": "47f443a473809141b6d71cbdcfc1104ca0246e2f87f98ad1799bed59278a1a8c",
       "mode": "adapted verified identity without source allowlists or bypass"
     }
-  ]
+  ],
+  "receiving_account_extension": {
+    "source_patterns": [
+      "backend/app/routers/user.py:121-141,246-280,311-397",
+      "backend/app/services/guided_learning.py:2256-2299"
+    ],
+    "mode": "adapted profile/bootstrap separation; new Mitooni strict DTOs and local transactional repository; source business data/logic not copied",
+    "local_driver": "psycopg[binary]==3.2.13",
+    "snapshot_sha256": {
+      "app/config.py": "915695a336f864157a6c3fe1cb4bd903935a84db4e3f32f4aa2efb3ebe6a5cbe",
+      "app/contracts/account.py": "f7fa4982f5949d3a06d707fe46aa8f213e462e445b5b0903b5dc9c78b8b24c92",
+      "app/db/read_retry_transport.py": "93ef45427bddddf8aca5fdf5cfa8aad37f847ff2773dad70e0d998f1c31b8cff",
+      "app/db/supabase_client.py": "f9fc008de7e3ea542dbde9e8100ef301182c1ac7e99a38ca59ee98112995e6d2",
+      "app/dependencies.py": "47f443a473809141b6d71cbdcfc1104ca0246e2f87f98ad1799bed59278a1a8c",
+      "app/main.py": "77661b26c4cb20bedc832d84ce509df9af4247972851acb65286af0503c9b691",
+      "app/repositories/account.py": "c1ec0b11a99f17cdc7be932dfd00e67e592aaf9c6a53f66717e0698200df3630",
+      "app/repositories/postgres_account.py": "b9edd85d97512a6c0706476fd287606c80ab4c3513e646aba12edadf7707b278",
+      "app/routers/account.py": "1b6205cfa6d401788fb87ddb496ea3dd794ade16aaa208ddcc861517ac53f5bd"
+    }
+  }
 }

@@ -1,8 +1,6 @@
-# Mitooni backend foundation
+# Mitooni backend
 
-BarEx-derived FastAPI foundation. This stage exposes verified identity only. It does not implement application membership, profiles, content, business routes, jobs or media.
-
-From this directory:
+BarEx-derived FastAPI identity/transport foundation with an explicitly composed local account/profile integration. Mo's `web/` remains the UI/UX authority. Hosted Supabase account storage and real provider authentication have not been validated by this local slice.
 
 ```sh
 uv sync --frozen
@@ -10,12 +8,10 @@ uv run pytest -q
 uv run uvicorn app.main:app --host 127.0.0.1 --port 8000
 ```
 
-The default app has no authentication configuration. `/health` returns `{"status":"ok"}`; `/api/me` returns 503 until a receiving-workload factory explicitly supplies `BackendConfig`. No environment file or source deployment configuration is loaded. `BackendConfig` requires an explicit workload, environment, service origin, expected project and server-only credential. Development/test configurations are loopback-only. Hosted production is intentionally configurable with HTTPS and a matching Supabase project reference; no provider calls occur until a protected request is verified. Credentials must be supplied through a future deployment-specific factory; never put them in code or browser config.
+Default `app.main:app` exposes only `/health` and verified-identity `/api/me`; protected identity returns503 until an explicit receiving `BackendConfig` is composed. It never reads env files or source credentials/allowlists. `/me` returns `{id,email}` only, not membership, entitlements or a fabricated profile. Service credentials stay server-side; the source service client bypasses RLS. Initialization/close are lock-guarded and no worker or provider activates at startup.
 
-Configured `/api/me` requires `Authorization: Bearer …` and returns `{"id":"…","email":null}` (email may be a string). Identity and authentication-error responses use `Cache-Control: private, no-store`. Bearer schemes are case-insensitive. Errors use FastAPI's `{"detail":"…"}` envelope. A verified shared-project identity is not proof of Mitooni membership; future content routes need product-scoped membership and ownership enforcement. This app has no such routes and returns no roles. No CORS origins are enabled by default.
+The synthetic account HTTP harness is a separate opt-in `local.serve` entry, described in [local/README.md](local/README.md). Its account repository and fake verifier cannot be injected into a production-configured factory. There is no production fixture flag or header bypass. Auth-only browser Supabase SDK plus Bearer BFF remains the production integration pattern; cookie auth is not introduced.
 
-The injected verifier seam requires explicit `environment="test"` configuration and is server-side test composition only. Tests use synthetic identities, ASGI requests and local fake transports, not a running Supabase instance. Service credentials bypass RLS; default-deny database permissions and receiving-product authorization remain prerequisites for adding data APIs.
+New account paths use `{detail:{code,message,fields?},requestId}`. Invalid/expired credentials return401; provider/connection/configuration failures503 preserve the browser session. `/me` retains the earlier string-detail shape. Identity/account/profile responses and errors are private/no-store. New account writes require a matching expected-user assertion and operation key; fields, revision and membership are authoritative server-side.
 
-`PORT_PROVENANCE.json` records source revision/hashes. The `uv.lock` is independently generated with exact source-installed compatible constraints; it does not include the full BarEx application or unrelated integrations. The Supabase SDK itself brings its transitive dependencies.
-
-Lazy SDK initialization and shutdown are lock-guarded. Failed initialization closes its transport; shutdown resets references, allowing a fresh client in a later application lifespan. The lock protects construction/cleanup, not arbitrary concurrent service calls; ASGI shutdown must continue to drain in-flight requests before closing resources.
+`PORT_PROVENANCE.json` records source revision/hashes and adapted paths. The independent `uv.lock` pins the source-compatible SDK/runtime closure plus Psycopg3.2.13 for the direct isolated-local PostgreSQL adapter. No BarEx users, content, secrets or business routes were copied.

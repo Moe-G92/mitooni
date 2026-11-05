@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="IELTS Academic practice and mock exams that look and feel like the real test" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#011627" />
+    <title>mitooni, IELTS practice</title>
+    <script>
+      // Apply the saved theme and language before first paint to avoid a flash.
+      (function () {
+        try {
+          var s = JSON.parse(localStorage.getItem("bw-prefs") || "{}");
+          var r = document.documentElement;
+          var dark = s.theme === "dark" || (s.theme !== "light" && matchMedia("(prefers-color-scheme: dark)").matches);
+          r.dataset.theme = dark ? "dark" : "light";
+          if (s.locale === "fa") { r.lang = "fa"; r.dir = "rtl"; }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/preview/prototype.tsx"></script>
+  </body>
+</html>

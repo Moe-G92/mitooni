@@ -1,6 +1,6 @@
 # Mitooni foundation review
 
-Date: 2026-11-04 (Europe/London). Owner: coordinating Codex. Current checkpoint: initial local BarEx shell/backend port accepted after independent review; next integration slice specified in DECISIONS.
+Started: 2026-11-04 (Europe/London). Updated: 2026-11-05. Owner: coordinating Codex. Current checkpoint and authority: CHECKPOINT-2026-11-05.md; Mo's UI/UX and brand remain primary while BarEx supplies missing capabilities.
 
 ## Authority and outcome
 
@@ -8,7 +8,7 @@ Arash directly commissioned Codex to lead product, engineering and technical str
 
 Confirmed scope: IELTS Academic first; both self-study and expert coaching in the first pilot. Persian is the default interface with an English option. Design for all learner levels and target bands; an IELTS teacher/examiner will review the original packs and Writing/Speaking assessments. Arash confirms full distribution and commercial use rights for the supplied resources for an Iranian audience, with original packs and tests to be produced from them. This confirmation is the current rights authority; preserve its territorial scope and per-asset provenance. Do not invent a separate rights blocker or permission request for already authorised local analysis. External model processing and any wider territory still need an explicitly established basis.
 
-Latest architecture direction supersedes the initial retain-Mo-shell proposal: port everything useful from BarEx, including its shell, code, assets, infrastructure, services, integrations, hosting and AI; populate/adapt that shell for Mitooni's new corpus and exam domain. Mo's scaffold is IELTS-specific reference work/components for integration, not the primary shell. Payments remain undecided. Reuse existing service arrangements where permitted and technically suitable; isolate product data and verify Iranian end-user eligibility without inventing a greenfield procurement project. This authorizes local port work after the reviewed design checkpoint, not a production deploy or credential/data transfer.
+Current architecture direction, clarified by Arash on 2026-11-05: Mo's version governs UI/UX and brand; BarEx supplies missing code, useful assets, infrastructure, services, integrations, hosting and AI. The previous BarEx visual-shell port is historical/reuse work, not the primary interface. Payments remain undecided. Reuse existing service arrangements where permitted and technically suitable; isolate product data and verify Iranian end-user eligibility without inventing a greenfield procurement project. This authorizes local integration after reviewed design checkpoints, not production deployment or credential/data transfer.
 
 Source: Moe-G92/mitooni at d2266e8, cloned to app/ without changing the supplied material folders. Working branch: codex/foundation-review-20261104. No repository-specific AGENTS.md or CLAUDE.md found at intake. Applicable instructions: /Users/arashshahrokhi/Projects/AGENTS.md; additionally /Users/arashshahrokhi/Projects/sqe-cracker/AGENTS.md for all source-project reads.
 

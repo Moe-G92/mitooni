@@ -1,0 +1,172 @@
+{
+  "en": {
+    "common": {
+      "next": "Next",
+      "save": "Save",
+      "academic": "Academic"
+    },
+    "nav": {
+      "overview": "Overview",
+      "practice": "Practice",
+      "mocks": "Mock exams",
+      "results": "Results",
+      "progress": "Progress",
+      "vocabulary": "Vocabulary",
+      "coach": "Coach",
+      "settings": "Settings",
+      "today": "Today",
+      "skip": "Skip to content",
+      "label": "Main",
+      "target": "Target band {{band}}",
+      "examOn": "Exam on {{date}}",
+      "noTestDate": "No test date yet"
+    },
+    "settings": {
+      "title": "Settings",
+      "saved": "Changes saved",
+      "profile": "Profile",
+      "name": "Name",
+      "email": "Email",
+      "targets": "Targets and test date",
+      "testDate": "Test date",
+      "display": "Display",
+      "language": "Language"
+    },
+    "onboarding": {
+      "step": "Step {{n}} of {{total}}",
+      "s1Title": "What band do you need?",
+      "overall": "Overall band",
+      "perSkill": "I need different bands for each skill",
+      "s2Title": "When is your test?",
+      "booked": "Test booked",
+      "bookedYes": "I have a date",
+      "bookedNo": "Not booked yet",
+      "testDate": "Test date",
+      "hours": "Hours you can study each week",
+      "back": "Back",
+      "finish": "Save and open settings",
+      "errDate": "Choose a date from today onwards",
+      "errHours": "Enter a whole number from 0 to 60"
+    },
+    "skills": {
+      "overall": "Overall",
+      "listening": "Listening",
+      "reading": "Reading",
+      "writing": "Writing",
+      "speaking": "Speaking"
+    },
+    "top": {
+      "account": "Account",
+      "signOut": "Sign out"
+    },
+    "mk": {
+      "auth": {
+        "panel": {
+          "identify": {
+            "eyebrow": "IELTS Academic",
+            "title": "Your IELTS account"
+          },
+          "generic": {
+            "chip1": "Academic",
+            "chip2": "IELTS",
+            "m1Top": "Listening",
+            "m1": "Reading",
+            "m2Top": "Writing",
+            "m2": "Speaking",
+            "here": "",
+            "flagTop": "IELTS",
+            "flag": "Academic",
+            "cardEyebrow": "",
+            "cardTitle": "Your goals",
+            "cardBody": ""
+          }
+        }
+      }
+    }
+  },
+  "fa": {
+    "common": {
+      "next": "بعدی",
+      "save": "ذخیره",
+      "academic": "Academic"
+    },
+    "nav": {
+      "overview": "داشبورد",
+      "practice": "تمرین",
+      "mocks": "آزمون‌های Mock",
+      "results": "نتایج",
+      "progress": "پیشرفت",
+      "vocabulary": "واژگان",
+      "coach": "مربی",
+      "settings": "تنظیمات",
+      "today": "امروز",
+      "skip": "رفتن به محتوا",
+      "label": "منوی اصلی",
+      "target": "هدف: Band {{band}}",
+      "examOn": "روز آزمون: {{date}}",
+      "noTestDate": "هنوز تاریخ آزمون نداری"
+    },
+    "settings": {
+      "title": "تنظیمات",
+      "saved": "تغییرات ذخیره شد",
+      "profile": "پروفایل",
+      "name": "نام",
+      "email": "ایمیل",
+      "targets": "هدف‌ها و تاریخ آزمون",
+      "testDate": "تاریخ آزمون",
+      "display": "نمایش",
+      "language": "زبان"
+    },
+    "onboarding": {
+      "step": "مرحله‌ی {{n}} از {{total}}",
+      "s1Title": "چه نمره‌ای لازم داری؟",
+      "overall": "Band کلی",
+      "perSkill": "برای هر مهارت نمره‌ی جدا لازم دارم",
+      "s2Title": "آزمونت کِی هست؟",
+      "booked": "آزمون رزرو شده",
+      "bookedYes": "تاریخش مشخصه",
+      "bookedNo": "هنوز ثبت‌نام نکردم",
+      "testDate": "تاریخ آزمون",
+      "hours": "هر هفته چند ساعت می‌تونی درس بخونی؟",
+      "back": "برگشت",
+      "finish": "ذخیره و باز کردن تنظیمات",
+      "errDate": "یه تاریخ از امروز به بعد انتخاب کن",
+      "errHours": "عددی صحیح از ۰ تا ۶۰ وارد کن"
+    },
+    "skills": {
+      "overall": "Band کلی",
+      "listening": "Listening",
+      "reading": "Reading",
+      "writing": "Writing",
+      "speaking": "Speaking"
+    },
+    "top": {
+      "account": "حساب کاربری",
+      "signOut": "خروج"
+    },
+    "mk": {
+      "auth": {
+        "panel": {
+          "identify": {
+            "eyebrow": "آیلتس آکادمیک",
+            "title": "حساب آیلتس تو"
+          },
+          "generic": {
+            "chip1": "آکادمیک",
+            "chip2": "IELTS",
+            "m1Top": "Listening",
+            "m1": "Reading",
+            "m2Top": "Writing",
+            "m2": "Speaking",
+            "here": "",
+            "flagTop": "IELTS",
+            "flag": "Academic",
+            "cardEyebrow": "",
+            "cardTitle": "هدف‌های تو",
+            "cardBody": ""
+          }
+        }
+      }
+    }
+  }
+}
