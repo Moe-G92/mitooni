@@ -1,0 +1,2276 @@
+{
+  "JourneyResponse": {
+    "$defs": {
+      "BundleRef": {
+        "additionalProperties": false,
+        "properties": {
+          "packId": {
+            "title": "Packid",
+            "type": "string"
+          },
+          "packVersion": {
+            "title": "Packversion",
+            "type": "integer"
+          },
+          "contentHash": {
+            "title": "Contenthash",
+            "type": "string"
+          },
+          "objectiveId": {
+            "title": "Objectiveid",
+            "type": "string"
+          },
+          "objectiveVersion": {
+            "title": "Objectiveversion",
+            "type": "integer"
+          },
+          "rubricVersion": {
+            "title": "Rubricversion",
+            "type": "integer"
+          },
+          "policyVersion": {
+            "title": "Policyversion",
+            "type": "integer"
+          },
+          "familyRegistryVersion": {
+            "title": "Familyregistryversion",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "packId",
+          "packVersion",
+          "contentHash",
+          "objectiveId",
+          "objectiveVersion",
+          "rubricVersion",
+          "policyVersion",
+          "familyRegistryVersion"
+        ],
+        "title": "BundleRef",
+        "type": "object"
+      },
+      "StepOut": {
+        "additionalProperties": false,
+        "properties": {
+          "stepId": {
+            "title": "Stepid",
+            "type": "string"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          },
+          "skill": {
+            "enum": [
+              "reading",
+              "writing"
+            ],
+            "title": "Skill",
+            "type": "string"
+          },
+          "state": {
+            "enum": [
+              "available",
+              "completed",
+              "locked"
+            ],
+            "title": "State",
+            "type": "string"
+          },
+          "bundleRef": {
+            "$ref": "#/$defs/BundleRef"
+          },
+          "conditionPresets": {
+            "items": {
+              "enum": [
+                "supported",
+                "independent"
+              ],
+              "type": "string"
+            },
+            "title": "Conditionpresets",
+            "type": "array"
+          },
+          "reasonEvidenceIds": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Reasonevidenceids",
+            "type": "array"
+          }
+        },
+        "required": [
+          "stepId",
+          "title",
+          "skill",
+          "state",
+          "bundleRef",
+          "conditionPresets",
+          "reasonEvidenceIds"
+        ],
+        "title": "StepOut",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "id": {
+        "title": "Id",
+        "type": "string"
+      },
+      "revision": {
+        "title": "Revision",
+        "type": "integer"
+      },
+      "policyVersion": {
+        "title": "Policyversion",
+        "type": "integer"
+      },
+      "steps": {
+        "items": {
+          "$ref": "#/$defs/StepOut"
+        },
+        "title": "Steps",
+        "type": "array"
+      }
+    },
+    "required": [
+      "id",
+      "revision",
+      "policyVersion",
+      "steps"
+    ],
+    "title": "JourneyResponse",
+    "type": "object"
+  },
+  "WorkspaceResponse": {
+    "$defs": {
+      "AnchorOut": {
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          },
+          "text": {
+            "title": "Text",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "label",
+          "text"
+        ],
+        "title": "AnchorOut",
+        "type": "object"
+      },
+      "AttemptOut": {
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "open",
+              "submitted"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "bundleRef": {
+            "$ref": "#/$defs/BundleRef"
+          },
+          "taskId": {
+            "title": "Taskid",
+            "type": "string"
+          },
+          "familyId": {
+            "title": "Familyid",
+            "type": "string"
+          },
+          "originalConditions": {
+            "enum": [
+              "supported",
+              "independent"
+            ],
+            "title": "Originalconditions",
+            "type": "string"
+          },
+          "currentConditions": {
+            "enum": [
+              "supported",
+              "independent"
+            ],
+            "title": "Currentconditions",
+            "type": "string"
+          },
+          "conditionsRevision": {
+            "title": "Conditionsrevision",
+            "type": "integer"
+          },
+          "draftId": {
+            "title": "Draftid",
+            "type": "string"
+          },
+          "draftRevision": {
+            "title": "Draftrevision",
+            "type": "integer"
+          },
+          "responseSnapshot": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Responsesnapshot"
+          },
+          "responseSnapshotHash": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Responsesnapshothash"
+          },
+          "eligibility": {
+            "additionalProperties": true,
+            "title": "Eligibility",
+            "type": "object"
+          },
+          "startedAt": {
+            "title": "Startedat",
+            "type": "string"
+          },
+          "submittedAt": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Submittedat"
+          },
+          "parentAttemptId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Parentattemptid"
+          }
+        },
+        "required": [
+          "id",
+          "status",
+          "bundleRef",
+          "taskId",
+          "familyId",
+          "originalConditions",
+          "currentConditions",
+          "conditionsRevision",
+          "draftId",
+          "draftRevision",
+          "eligibility",
+          "startedAt"
+        ],
+        "title": "AttemptOut",
+        "type": "object"
+      },
+      "BundleRef": {
+        "additionalProperties": false,
+        "properties": {
+          "packId": {
+            "title": "Packid",
+            "type": "string"
+          },
+          "packVersion": {
+            "title": "Packversion",
+            "type": "integer"
+          },
+          "contentHash": {
+            "title": "Contenthash",
+            "type": "string"
+          },
+          "objectiveId": {
+            "title": "Objectiveid",
+            "type": "string"
+          },
+          "objectiveVersion": {
+            "title": "Objectiveversion",
+            "type": "integer"
+          },
+          "rubricVersion": {
+            "title": "Rubricversion",
+            "type": "integer"
+          },
+          "policyVersion": {
+            "title": "Policyversion",
+            "type": "integer"
+          },
+          "familyRegistryVersion": {
+            "title": "Familyregistryversion",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "packId",
+          "packVersion",
+          "contentHash",
+          "objectiveId",
+          "objectiveVersion",
+          "rubricVersion",
+          "policyVersion",
+          "familyRegistryVersion"
+        ],
+        "title": "BundleRef",
+        "type": "object"
+      },
+      "DraftOut": {
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "workspaceId": {
+            "title": "Workspaceid",
+            "type": "string"
+          },
+          "attemptId": {
+            "title": "Attemptid",
+            "type": "string"
+          },
+          "revision": {
+            "title": "Revision",
+            "type": "integer"
+          },
+          "taskId": {
+            "title": "Taskid",
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "reading",
+              "task2"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "text": {
+            "title": "Text",
+            "type": "string"
+          },
+          "updatedAt": {
+            "title": "Updatedat",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "workspaceId",
+          "attemptId",
+          "revision",
+          "taskId",
+          "kind",
+          "text",
+          "updatedAt"
+        ],
+        "title": "DraftOut",
+        "type": "object"
+      },
+      "MessageOut": {
+        "additionalProperties": false,
+        "properties": {
+          "requestText": {
+            "default": "",
+            "maxLength": 3000,
+            "title": "Requesttext",
+            "type": "string"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "turnId": {
+            "title": "Turnid",
+            "type": "string"
+          },
+          "workspaceId": {
+            "title": "Workspaceid",
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "explanation",
+              "question",
+              "feedback"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "text": {
+            "maxLength": 6000,
+            "minLength": 1,
+            "title": "Text",
+            "type": "string"
+          },
+          "citations": {
+            "items": {
+              "$ref": "#/$defs/PublicCitation"
+            },
+            "maxItems": 8,
+            "title": "Citations",
+            "type": "array"
+          },
+          "workSpans": {
+            "items": {
+              "$ref": "#/$defs/WorkSpan"
+            },
+            "maxItems": 8,
+            "title": "Workspans",
+            "type": "array"
+          },
+          "observations": {
+            "items": {
+              "$ref": "#/$defs/Observation"
+            },
+            "maxItems": 8,
+            "title": "Observations",
+            "type": "array"
+          },
+          "proposalId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Proposalid"
+          },
+          "provenance": {
+            "$ref": "#/$defs/PublicProvenance"
+          },
+          "createdAt": {
+            "title": "Createdat",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "turnId",
+          "workspaceId",
+          "kind",
+          "text",
+          "citations",
+          "workSpans",
+          "observations",
+          "proposalId",
+          "provenance",
+          "createdAt"
+        ],
+        "title": "MessageOut",
+        "type": "object"
+      },
+      "Observation": {
+        "additionalProperties": false,
+        "properties": {
+          "criterionId": {
+            "maxLength": 120,
+            "minLength": 1,
+            "title": "Criterionid",
+            "type": "string"
+          },
+          "text": {
+            "maxLength": 1000,
+            "minLength": 1,
+            "title": "Text",
+            "type": "string"
+          },
+          "workSpanIndexes": {
+            "items": {
+              "type": "integer"
+            },
+            "maxItems": 8,
+            "minItems": 1,
+            "title": "Workspanindexes",
+            "type": "array"
+          }
+        },
+        "required": [
+          "criterionId",
+          "text",
+          "workSpanIndexes"
+        ],
+        "title": "Observation",
+        "type": "object"
+      },
+      "ProposalOut": {
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "turnId": {
+            "title": "Turnid",
+            "type": "string"
+          },
+          "expectedJourneyRevision": {
+            "title": "Expectedjourneyrevision",
+            "type": "integer"
+          },
+          "targetStepId": {
+            "title": "Targetstepid",
+            "type": "string"
+          },
+          "evidenceIds": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Evidenceids",
+            "type": "array"
+          },
+          "status": {
+            "enum": [
+              "proposed",
+              "accepted",
+              "rejected"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "decisionReasons": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Decisionreasons",
+            "type": "array"
+          }
+        },
+        "required": [
+          "id",
+          "turnId",
+          "expectedJourneyRevision",
+          "targetStepId",
+          "evidenceIds",
+          "status",
+          "decisionReasons"
+        ],
+        "title": "ProposalOut",
+        "type": "object"
+      },
+      "PublicCitation": {
+        "additionalProperties": false,
+        "properties": {
+          "anchorId": {
+            "title": "Anchorid",
+            "type": "string"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          }
+        },
+        "required": [
+          "anchorId",
+          "label"
+        ],
+        "title": "PublicCitation",
+        "type": "object"
+      },
+      "PublicProvenance": {
+        "additionalProperties": false,
+        "properties": {
+          "actorKind": {
+            "const": "ai_formative",
+            "title": "Actorkind",
+            "type": "string"
+          },
+          "runnerKind": {
+            "enum": [
+              "provider",
+              "synthetic"
+            ],
+            "title": "Runnerkind",
+            "type": "string"
+          },
+          "bundleRef": {
+            "$ref": "#/$defs/BundleRef"
+          },
+          "contextManifestId": {
+            "title": "Contextmanifestid",
+            "type": "string"
+          },
+          "workRef": {
+            "$ref": "#/$defs/WorkRef"
+          }
+        },
+        "required": [
+          "actorKind",
+          "runnerKind",
+          "bundleRef",
+          "contextManifestId",
+          "workRef"
+        ],
+        "title": "PublicProvenance",
+        "type": "object"
+      },
+      "RawCheck": {
+        "additionalProperties": false,
+        "properties": {
+          "actorKind": {
+            "const": "deterministic_check",
+            "title": "Actorkind",
+            "type": "string"
+          },
+          "itemCount": {
+            "const": 1,
+            "title": "Itemcount",
+            "type": "integer"
+          },
+          "correctCount": {
+            "enum": [
+              0,
+              1
+            ],
+            "title": "Correctcount",
+            "type": "integer"
+          },
+          "workRef": {
+            "$ref": "#/$defs/WorkRef"
+          }
+        },
+        "required": [
+          "actorKind",
+          "itemCount",
+          "correctCount",
+          "workRef"
+        ],
+        "title": "RawCheck",
+        "type": "object"
+      },
+      "TaskOut": {
+        "additionalProperties": false,
+        "properties": {
+          "taskId": {
+            "title": "Taskid",
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "reading",
+              "task2"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          },
+          "stimulus": {
+            "title": "Stimulus",
+            "type": "string"
+          },
+          "prompt": {
+            "title": "Prompt",
+            "type": "string"
+          },
+          "anchors": {
+            "items": {
+              "$ref": "#/$defs/AnchorOut"
+            },
+            "title": "Anchors",
+            "type": "array"
+          }
+        },
+        "required": [
+          "taskId",
+          "kind",
+          "title",
+          "stimulus",
+          "prompt",
+          "anchors"
+        ],
+        "title": "TaskOut",
+        "type": "object"
+      },
+      "WorkRef": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "enum": [
+              "draft",
+              "attempt"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "revision": {
+            "minimum": 1,
+            "title": "Revision",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "kind",
+          "id",
+          "revision"
+        ],
+        "title": "WorkRef",
+        "type": "object"
+      },
+      "WorkSpan": {
+        "additionalProperties": false,
+        "properties": {
+          "start": {
+            "minimum": 0,
+            "title": "Start",
+            "type": "integer"
+          },
+          "end": {
+            "exclusiveMinimum": 0,
+            "title": "End",
+            "type": "integer"
+          },
+          "quote": {
+            "maxLength": 600,
+            "title": "Quote",
+            "type": "string"
+          }
+        },
+        "required": [
+          "start",
+          "end",
+          "quote"
+        ],
+        "title": "WorkSpan",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "id": {
+        "title": "Id",
+        "type": "string"
+      },
+      "revision": {
+        "title": "Revision",
+        "type": "integer"
+      },
+      "journeyId": {
+        "title": "Journeyid",
+        "type": "string"
+      },
+      "stepId": {
+        "title": "Stepid",
+        "type": "string"
+      },
+      "bundleRef": {
+        "$ref": "#/$defs/BundleRef"
+      },
+      "threadId": {
+        "title": "Threadid",
+        "type": "string"
+      },
+      "contextManifestId": {
+        "title": "Contextmanifestid",
+        "type": "string"
+      },
+      "stage": {
+        "enum": [
+          "working",
+          "submitted",
+          "reviewing"
+        ],
+        "title": "Stage",
+        "type": "string"
+      },
+      "currentAttemptId": {
+        "title": "Currentattemptid",
+        "type": "string"
+      },
+      "activeTurnId": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Activeturnid"
+      },
+      "capabilities": {
+        "items": {
+          "enum": [
+            "draft:write",
+            "attempt:submit",
+            "support:switch",
+            "tutor:use",
+            "attempt:revise"
+          ],
+          "type": "string"
+        },
+        "title": "Capabilities",
+        "type": "array"
+      },
+      "task": {
+        "$ref": "#/$defs/TaskOut"
+      },
+      "draft": {
+        "$ref": "#/$defs/DraftOut"
+      },
+      "attempt": {
+        "$ref": "#/$defs/AttemptOut"
+      },
+      "messages": {
+        "items": {
+          "$ref": "#/$defs/MessageOut"
+        },
+        "title": "Messages",
+        "type": "array"
+      },
+      "latestTurnId": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Latestturnid"
+      },
+      "proposals": {
+        "items": {
+          "$ref": "#/$defs/ProposalOut"
+        },
+        "title": "Proposals",
+        "type": "array"
+      },
+      "rawCheck": {
+        "anyOf": [
+          {
+            "$ref": "#/$defs/RawCheck"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null
+      }
+    },
+    "required": [
+      "id",
+      "revision",
+      "journeyId",
+      "stepId",
+      "bundleRef",
+      "threadId",
+      "contextManifestId",
+      "stage",
+      "currentAttemptId",
+      "activeTurnId",
+      "capabilities",
+      "task",
+      "draft",
+      "attempt",
+      "messages"
+    ],
+    "title": "WorkspaceResponse",
+    "type": "object"
+  },
+  "DraftOut": {
+    "additionalProperties": false,
+    "properties": {
+      "id": {
+        "title": "Id",
+        "type": "string"
+      },
+      "workspaceId": {
+        "title": "Workspaceid",
+        "type": "string"
+      },
+      "attemptId": {
+        "title": "Attemptid",
+        "type": "string"
+      },
+      "revision": {
+        "title": "Revision",
+        "type": "integer"
+      },
+      "taskId": {
+        "title": "Taskid",
+        "type": "string"
+      },
+      "kind": {
+        "enum": [
+          "reading",
+          "task2"
+        ],
+        "title": "Kind",
+        "type": "string"
+      },
+      "text": {
+        "title": "Text",
+        "type": "string"
+      },
+      "updatedAt": {
+        "title": "Updatedat",
+        "type": "string"
+      }
+    },
+    "required": [
+      "id",
+      "workspaceId",
+      "attemptId",
+      "revision",
+      "taskId",
+      "kind",
+      "text",
+      "updatedAt"
+    ],
+    "title": "DraftOut",
+    "type": "object"
+  },
+  "AttemptOut": {
+    "$defs": {
+      "BundleRef": {
+        "additionalProperties": false,
+        "properties": {
+          "packId": {
+            "title": "Packid",
+            "type": "string"
+          },
+          "packVersion": {
+            "title": "Packversion",
+            "type": "integer"
+          },
+          "contentHash": {
+            "title": "Contenthash",
+            "type": "string"
+          },
+          "objectiveId": {
+            "title": "Objectiveid",
+            "type": "string"
+          },
+          "objectiveVersion": {
+            "title": "Objectiveversion",
+            "type": "integer"
+          },
+          "rubricVersion": {
+            "title": "Rubricversion",
+            "type": "integer"
+          },
+          "policyVersion": {
+            "title": "Policyversion",
+            "type": "integer"
+          },
+          "familyRegistryVersion": {
+            "title": "Familyregistryversion",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "packId",
+          "packVersion",
+          "contentHash",
+          "objectiveId",
+          "objectiveVersion",
+          "rubricVersion",
+          "policyVersion",
+          "familyRegistryVersion"
+        ],
+        "title": "BundleRef",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "id": {
+        "title": "Id",
+        "type": "string"
+      },
+      "status": {
+        "enum": [
+          "open",
+          "submitted"
+        ],
+        "title": "Status",
+        "type": "string"
+      },
+      "bundleRef": {
+        "$ref": "#/$defs/BundleRef"
+      },
+      "taskId": {
+        "title": "Taskid",
+        "type": "string"
+      },
+      "familyId": {
+        "title": "Familyid",
+        "type": "string"
+      },
+      "originalConditions": {
+        "enum": [
+          "supported",
+          "independent"
+        ],
+        "title": "Originalconditions",
+        "type": "string"
+      },
+      "currentConditions": {
+        "enum": [
+          "supported",
+          "independent"
+        ],
+        "title": "Currentconditions",
+        "type": "string"
+      },
+      "conditionsRevision": {
+        "title": "Conditionsrevision",
+        "type": "integer"
+      },
+      "draftId": {
+        "title": "Draftid",
+        "type": "string"
+      },
+      "draftRevision": {
+        "title": "Draftrevision",
+        "type": "integer"
+      },
+      "responseSnapshot": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Responsesnapshot"
+      },
+      "responseSnapshotHash": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Responsesnapshothash"
+      },
+      "eligibility": {
+        "additionalProperties": true,
+        "title": "Eligibility",
+        "type": "object"
+      },
+      "startedAt": {
+        "title": "Startedat",
+        "type": "string"
+      },
+      "submittedAt": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Submittedat"
+      },
+      "parentAttemptId": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Parentattemptid"
+      }
+    },
+    "required": [
+      "id",
+      "status",
+      "bundleRef",
+      "taskId",
+      "familyId",
+      "originalConditions",
+      "currentConditions",
+      "conditionsRevision",
+      "draftId",
+      "draftRevision",
+      "eligibility",
+      "startedAt"
+    ],
+    "title": "AttemptOut",
+    "type": "object"
+  },
+  "TurnOut": {
+    "$defs": {
+      "BundleRef": {
+        "additionalProperties": false,
+        "properties": {
+          "packId": {
+            "title": "Packid",
+            "type": "string"
+          },
+          "packVersion": {
+            "title": "Packversion",
+            "type": "integer"
+          },
+          "contentHash": {
+            "title": "Contenthash",
+            "type": "string"
+          },
+          "objectiveId": {
+            "title": "Objectiveid",
+            "type": "string"
+          },
+          "objectiveVersion": {
+            "title": "Objectiveversion",
+            "type": "integer"
+          },
+          "rubricVersion": {
+            "title": "Rubricversion",
+            "type": "integer"
+          },
+          "policyVersion": {
+            "title": "Policyversion",
+            "type": "integer"
+          },
+          "familyRegistryVersion": {
+            "title": "Familyregistryversion",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "packId",
+          "packVersion",
+          "contentHash",
+          "objectiveId",
+          "objectiveVersion",
+          "rubricVersion",
+          "policyVersion",
+          "familyRegistryVersion"
+        ],
+        "title": "BundleRef",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "id": {
+        "title": "Id",
+        "type": "string"
+      },
+      "revision": {
+        "title": "Revision",
+        "type": "integer"
+      },
+      "workspaceId": {
+        "title": "Workspaceid",
+        "type": "string"
+      },
+      "sequence": {
+        "title": "Sequence",
+        "type": "integer"
+      },
+      "inputWorkRevision": {
+        "title": "Inputworkrevision",
+        "type": "integer"
+      },
+      "bundleRef": {
+        "$ref": "#/$defs/BundleRef"
+      },
+      "intent": {
+        "title": "Intent",
+        "type": "string"
+      },
+      "runnerKind": {
+        "enum": [
+          "provider",
+          "synthetic"
+        ],
+        "title": "Runnerkind",
+        "type": "string"
+      },
+      "status": {
+        "enum": [
+          "queued",
+          "running",
+          "cancel-requested",
+          "canceled",
+          "completed",
+          "failed",
+          "dispatch-unknown"
+        ],
+        "title": "Status",
+        "type": "string"
+      },
+      "lastEventSequence": {
+        "title": "Lasteventsequence",
+        "type": "integer"
+      },
+      "error": {
+        "anyOf": [
+          {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Error"
+      },
+      "retryAction": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Retryaction"
+      }
+    },
+    "required": [
+      "id",
+      "revision",
+      "workspaceId",
+      "sequence",
+      "inputWorkRevision",
+      "bundleRef",
+      "intent",
+      "runnerKind",
+      "status",
+      "lastEventSequence",
+      "error",
+      "retryAction"
+    ],
+    "title": "TurnOut",
+    "type": "object"
+  },
+  "TurnResponse": {
+    "$defs": {
+      "BundleRef": {
+        "additionalProperties": false,
+        "properties": {
+          "packId": {
+            "title": "Packid",
+            "type": "string"
+          },
+          "packVersion": {
+            "title": "Packversion",
+            "type": "integer"
+          },
+          "contentHash": {
+            "title": "Contenthash",
+            "type": "string"
+          },
+          "objectiveId": {
+            "title": "Objectiveid",
+            "type": "string"
+          },
+          "objectiveVersion": {
+            "title": "Objectiveversion",
+            "type": "integer"
+          },
+          "rubricVersion": {
+            "title": "Rubricversion",
+            "type": "integer"
+          },
+          "policyVersion": {
+            "title": "Policyversion",
+            "type": "integer"
+          },
+          "familyRegistryVersion": {
+            "title": "Familyregistryversion",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "packId",
+          "packVersion",
+          "contentHash",
+          "objectiveId",
+          "objectiveVersion",
+          "rubricVersion",
+          "policyVersion",
+          "familyRegistryVersion"
+        ],
+        "title": "BundleRef",
+        "type": "object"
+      },
+      "MessageOut": {
+        "additionalProperties": false,
+        "properties": {
+          "requestText": {
+            "default": "",
+            "maxLength": 3000,
+            "title": "Requesttext",
+            "type": "string"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "turnId": {
+            "title": "Turnid",
+            "type": "string"
+          },
+          "workspaceId": {
+            "title": "Workspaceid",
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "explanation",
+              "question",
+              "feedback"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "text": {
+            "maxLength": 6000,
+            "minLength": 1,
+            "title": "Text",
+            "type": "string"
+          },
+          "citations": {
+            "items": {
+              "$ref": "#/$defs/PublicCitation"
+            },
+            "maxItems": 8,
+            "title": "Citations",
+            "type": "array"
+          },
+          "workSpans": {
+            "items": {
+              "$ref": "#/$defs/WorkSpan"
+            },
+            "maxItems": 8,
+            "title": "Workspans",
+            "type": "array"
+          },
+          "observations": {
+            "items": {
+              "$ref": "#/$defs/Observation"
+            },
+            "maxItems": 8,
+            "title": "Observations",
+            "type": "array"
+          },
+          "proposalId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Proposalid"
+          },
+          "provenance": {
+            "$ref": "#/$defs/PublicProvenance"
+          },
+          "createdAt": {
+            "title": "Createdat",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "turnId",
+          "workspaceId",
+          "kind",
+          "text",
+          "citations",
+          "workSpans",
+          "observations",
+          "proposalId",
+          "provenance",
+          "createdAt"
+        ],
+        "title": "MessageOut",
+        "type": "object"
+      },
+      "Observation": {
+        "additionalProperties": false,
+        "properties": {
+          "criterionId": {
+            "maxLength": 120,
+            "minLength": 1,
+            "title": "Criterionid",
+            "type": "string"
+          },
+          "text": {
+            "maxLength": 1000,
+            "minLength": 1,
+            "title": "Text",
+            "type": "string"
+          },
+          "workSpanIndexes": {
+            "items": {
+              "type": "integer"
+            },
+            "maxItems": 8,
+            "minItems": 1,
+            "title": "Workspanindexes",
+            "type": "array"
+          }
+        },
+        "required": [
+          "criterionId",
+          "text",
+          "workSpanIndexes"
+        ],
+        "title": "Observation",
+        "type": "object"
+      },
+      "PublicCitation": {
+        "additionalProperties": false,
+        "properties": {
+          "anchorId": {
+            "title": "Anchorid",
+            "type": "string"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          }
+        },
+        "required": [
+          "anchorId",
+          "label"
+        ],
+        "title": "PublicCitation",
+        "type": "object"
+      },
+      "PublicProvenance": {
+        "additionalProperties": false,
+        "properties": {
+          "actorKind": {
+            "const": "ai_formative",
+            "title": "Actorkind",
+            "type": "string"
+          },
+          "runnerKind": {
+            "enum": [
+              "provider",
+              "synthetic"
+            ],
+            "title": "Runnerkind",
+            "type": "string"
+          },
+          "bundleRef": {
+            "$ref": "#/$defs/BundleRef"
+          },
+          "contextManifestId": {
+            "title": "Contextmanifestid",
+            "type": "string"
+          },
+          "workRef": {
+            "$ref": "#/$defs/WorkRef"
+          }
+        },
+        "required": [
+          "actorKind",
+          "runnerKind",
+          "bundleRef",
+          "contextManifestId",
+          "workRef"
+        ],
+        "title": "PublicProvenance",
+        "type": "object"
+      },
+      "PublicTurnEvent": {
+        "additionalProperties": false,
+        "properties": {
+          "sequence": {
+            "minimum": 1,
+            "title": "Sequence",
+            "type": "integer"
+          },
+          "kind": {
+            "enum": [
+              "accepted",
+              "started",
+              "tool_status",
+              "completed",
+              "failed",
+              "canceled",
+              "dispatch_unknown"
+            ],
+            "title": "Kind",
+            "type": "string"
+          }
+        },
+        "required": [
+          "sequence",
+          "kind"
+        ],
+        "title": "PublicTurnEvent",
+        "type": "object"
+      },
+      "TurnOut": {
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "revision": {
+            "title": "Revision",
+            "type": "integer"
+          },
+          "workspaceId": {
+            "title": "Workspaceid",
+            "type": "string"
+          },
+          "sequence": {
+            "title": "Sequence",
+            "type": "integer"
+          },
+          "inputWorkRevision": {
+            "title": "Inputworkrevision",
+            "type": "integer"
+          },
+          "bundleRef": {
+            "$ref": "#/$defs/BundleRef"
+          },
+          "intent": {
+            "title": "Intent",
+            "type": "string"
+          },
+          "runnerKind": {
+            "enum": [
+              "provider",
+              "synthetic"
+            ],
+            "title": "Runnerkind",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "queued",
+              "running",
+              "cancel-requested",
+              "canceled",
+              "completed",
+              "failed",
+              "dispatch-unknown"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "lastEventSequence": {
+            "title": "Lasteventsequence",
+            "type": "integer"
+          },
+          "error": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error"
+          },
+          "retryAction": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Retryaction"
+          }
+        },
+        "required": [
+          "id",
+          "revision",
+          "workspaceId",
+          "sequence",
+          "inputWorkRevision",
+          "bundleRef",
+          "intent",
+          "runnerKind",
+          "status",
+          "lastEventSequence",
+          "error",
+          "retryAction"
+        ],
+        "title": "TurnOut",
+        "type": "object"
+      },
+      "WorkRef": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "enum": [
+              "draft",
+              "attempt"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "revision": {
+            "minimum": 1,
+            "title": "Revision",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "kind",
+          "id",
+          "revision"
+        ],
+        "title": "WorkRef",
+        "type": "object"
+      },
+      "WorkSpan": {
+        "additionalProperties": false,
+        "properties": {
+          "start": {
+            "minimum": 0,
+            "title": "Start",
+            "type": "integer"
+          },
+          "end": {
+            "exclusiveMinimum": 0,
+            "title": "End",
+            "type": "integer"
+          },
+          "quote": {
+            "maxLength": 600,
+            "title": "Quote",
+            "type": "string"
+          }
+        },
+        "required": [
+          "start",
+          "end",
+          "quote"
+        ],
+        "title": "WorkSpan",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "turn": {
+        "$ref": "#/$defs/TurnOut"
+      },
+      "events": {
+        "items": {
+          "$ref": "#/$defs/PublicTurnEvent"
+        },
+        "maxItems": 32,
+        "title": "Events",
+        "type": "array"
+      },
+      "cursor": {
+        "title": "Cursor",
+        "type": "integer"
+      },
+      "workspaceRevision": {
+        "title": "Workspacerevision",
+        "type": "integer"
+      },
+      "terminalMessage": {
+        "anyOf": [
+          {
+            "$ref": "#/$defs/MessageOut"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    },
+    "required": [
+      "turn",
+      "events",
+      "cursor",
+      "workspaceRevision",
+      "terminalMessage"
+    ],
+    "title": "TurnResponse",
+    "type": "object"
+  },
+  "ProposalOut": {
+    "additionalProperties": false,
+    "properties": {
+      "id": {
+        "title": "Id",
+        "type": "string"
+      },
+      "turnId": {
+        "title": "Turnid",
+        "type": "string"
+      },
+      "expectedJourneyRevision": {
+        "title": "Expectedjourneyrevision",
+        "type": "integer"
+      },
+      "targetStepId": {
+        "title": "Targetstepid",
+        "type": "string"
+      },
+      "evidenceIds": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Evidenceids",
+        "type": "array"
+      },
+      "status": {
+        "enum": [
+          "proposed",
+          "accepted",
+          "rejected"
+        ],
+        "title": "Status",
+        "type": "string"
+      },
+      "decisionReasons": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Decisionreasons",
+        "type": "array"
+      }
+    },
+    "required": [
+      "id",
+      "turnId",
+      "expectedJourneyRevision",
+      "targetStepId",
+      "evidenceIds",
+      "status",
+      "decisionReasons"
+    ],
+    "title": "ProposalOut",
+    "type": "object"
+  },
+  "ProposalAcceptOut": {
+    "$defs": {
+      "BundleRef": {
+        "additionalProperties": false,
+        "properties": {
+          "packId": {
+            "title": "Packid",
+            "type": "string"
+          },
+          "packVersion": {
+            "title": "Packversion",
+            "type": "integer"
+          },
+          "contentHash": {
+            "title": "Contenthash",
+            "type": "string"
+          },
+          "objectiveId": {
+            "title": "Objectiveid",
+            "type": "string"
+          },
+          "objectiveVersion": {
+            "title": "Objectiveversion",
+            "type": "integer"
+          },
+          "rubricVersion": {
+            "title": "Rubricversion",
+            "type": "integer"
+          },
+          "policyVersion": {
+            "title": "Policyversion",
+            "type": "integer"
+          },
+          "familyRegistryVersion": {
+            "title": "Familyregistryversion",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "packId",
+          "packVersion",
+          "contentHash",
+          "objectiveId",
+          "objectiveVersion",
+          "rubricVersion",
+          "policyVersion",
+          "familyRegistryVersion"
+        ],
+        "title": "BundleRef",
+        "type": "object"
+      },
+      "JourneyResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "revision": {
+            "title": "Revision",
+            "type": "integer"
+          },
+          "policyVersion": {
+            "title": "Policyversion",
+            "type": "integer"
+          },
+          "steps": {
+            "items": {
+              "$ref": "#/$defs/StepOut"
+            },
+            "title": "Steps",
+            "type": "array"
+          }
+        },
+        "required": [
+          "id",
+          "revision",
+          "policyVersion",
+          "steps"
+        ],
+        "title": "JourneyResponse",
+        "type": "object"
+      },
+      "ProposalOut": {
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "turnId": {
+            "title": "Turnid",
+            "type": "string"
+          },
+          "expectedJourneyRevision": {
+            "title": "Expectedjourneyrevision",
+            "type": "integer"
+          },
+          "targetStepId": {
+            "title": "Targetstepid",
+            "type": "string"
+          },
+          "evidenceIds": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Evidenceids",
+            "type": "array"
+          },
+          "status": {
+            "enum": [
+              "proposed",
+              "accepted",
+              "rejected"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "decisionReasons": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Decisionreasons",
+            "type": "array"
+          }
+        },
+        "required": [
+          "id",
+          "turnId",
+          "expectedJourneyRevision",
+          "targetStepId",
+          "evidenceIds",
+          "status",
+          "decisionReasons"
+        ],
+        "title": "ProposalOut",
+        "type": "object"
+      },
+      "StepOut": {
+        "additionalProperties": false,
+        "properties": {
+          "stepId": {
+            "title": "Stepid",
+            "type": "string"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          },
+          "skill": {
+            "enum": [
+              "reading",
+              "writing"
+            ],
+            "title": "Skill",
+            "type": "string"
+          },
+          "state": {
+            "enum": [
+              "available",
+              "completed",
+              "locked"
+            ],
+            "title": "State",
+            "type": "string"
+          },
+          "bundleRef": {
+            "$ref": "#/$defs/BundleRef"
+          },
+          "conditionPresets": {
+            "items": {
+              "enum": [
+                "supported",
+                "independent"
+              ],
+              "type": "string"
+            },
+            "title": "Conditionpresets",
+            "type": "array"
+          },
+          "reasonEvidenceIds": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Reasonevidenceids",
+            "type": "array"
+          }
+        },
+        "required": [
+          "stepId",
+          "title",
+          "skill",
+          "state",
+          "bundleRef",
+          "conditionPresets",
+          "reasonEvidenceIds"
+        ],
+        "title": "StepOut",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "journey": {
+        "$ref": "#/$defs/JourneyResponse"
+      },
+      "proposal": {
+        "$ref": "#/$defs/ProposalOut"
+      }
+    },
+    "required": [
+      "journey",
+      "proposal"
+    ],
+    "title": "ProposalAcceptOut",
+    "type": "object"
+  },
+  "ResolveIn": {
+    "additionalProperties": false,
+    "properties": {
+      "stepId": {
+        "maxLength": 120,
+        "minLength": 1,
+        "title": "Stepid",
+        "type": "string"
+      },
+      "conditionPreset": {
+        "enum": [
+          "supported",
+          "independent"
+        ],
+        "title": "Conditionpreset",
+        "type": "string"
+      },
+      "expectedJourneyRevision": {
+        "minimum": 1,
+        "title": "Expectedjourneyrevision",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "stepId",
+      "conditionPreset",
+      "expectedJourneyRevision"
+    ],
+    "title": "ResolveIn",
+    "type": "object"
+  },
+  "DraftIn": {
+    "$defs": {
+      "DraftChanges": {
+        "additionalProperties": false,
+        "properties": {
+          "text": {
+            "maxLength": 20000,
+            "title": "Text",
+            "type": "string"
+          }
+        },
+        "required": [
+          "text"
+        ],
+        "title": "DraftChanges",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "expectedDraftRevision": {
+        "minimum": 1,
+        "title": "Expecteddraftrevision",
+        "type": "integer"
+      },
+      "taskId": {
+        "maxLength": 120,
+        "minLength": 1,
+        "title": "Taskid",
+        "type": "string"
+      },
+      "changes": {
+        "$ref": "#/$defs/DraftChanges"
+      }
+    },
+    "required": [
+      "expectedDraftRevision",
+      "taskId",
+      "changes"
+    ],
+    "title": "DraftIn",
+    "type": "object"
+  },
+  "SubmitIn": {
+    "additionalProperties": false,
+    "properties": {
+      "expectedWorkspaceRevision": {
+        "minimum": 1,
+        "title": "Expectedworkspacerevision",
+        "type": "integer"
+      },
+      "expectedDraftRevision": {
+        "minimum": 1,
+        "title": "Expecteddraftrevision",
+        "type": "integer"
+      },
+      "expectedConditionsRevision": {
+        "minimum": 1,
+        "title": "Expectedconditionsrevision",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "expectedWorkspaceRevision",
+      "expectedDraftRevision",
+      "expectedConditionsRevision"
+    ],
+    "title": "SubmitIn",
+    "type": "object"
+  },
+  "AssistanceIn": {
+    "additionalProperties": false,
+    "properties": {
+      "expectedWorkspaceRevision": {
+        "minimum": 1,
+        "title": "Expectedworkspacerevision",
+        "type": "integer"
+      },
+      "expectedConditionsRevision": {
+        "minimum": 1,
+        "title": "Expectedconditionsrevision",
+        "type": "integer"
+      },
+      "action": {
+        "const": "switch_to_supported",
+        "title": "Action",
+        "type": "string"
+      }
+    },
+    "required": [
+      "expectedWorkspaceRevision",
+      "expectedConditionsRevision",
+      "action"
+    ],
+    "title": "AssistanceIn",
+    "type": "object"
+  },
+  "ChildAttemptIn": {
+    "additionalProperties": false,
+    "properties": {
+      "expectedWorkspaceRevision": {
+        "minimum": 1,
+        "title": "Expectedworkspacerevision",
+        "type": "integer"
+      },
+      "parentAttemptId": {
+        "title": "Parentattemptid",
+        "type": "string"
+      },
+      "conditionPreset": {
+        "const": "supported",
+        "title": "Conditionpreset",
+        "type": "string"
+      }
+    },
+    "required": [
+      "expectedWorkspaceRevision",
+      "parentAttemptId",
+      "conditionPreset"
+    ],
+    "title": "ChildAttemptIn",
+    "type": "object"
+  },
+  "TurnIn": {
+    "$defs": {
+      "WorkRef": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "enum": [
+              "draft",
+              "attempt"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "revision": {
+            "minimum": 1,
+            "title": "Revision",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "kind",
+          "id",
+          "revision"
+        ],
+        "title": "WorkRef",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "expectedWorkspaceRevision": {
+        "minimum": 1,
+        "title": "Expectedworkspacerevision",
+        "type": "integer"
+      },
+      "workRef": {
+        "$ref": "#/$defs/WorkRef"
+      },
+      "intent": {
+        "enum": [
+          "explain",
+          "hint",
+          "feedback",
+          "propose_next"
+        ],
+        "title": "Intent",
+        "type": "string"
+      },
+      "message": {
+        "maxLength": 3000,
+        "title": "Message",
+        "type": "string"
+      }
+    },
+    "required": [
+      "expectedWorkspaceRevision",
+      "workRef",
+      "intent",
+      "message"
+    ],
+    "title": "TurnIn",
+    "type": "object"
+  },
+  "CancelIn": {
+    "additionalProperties": false,
+    "properties": {
+      "expectedTurnRevision": {
+        "minimum": 1,
+        "title": "Expectedturnrevision",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "expectedTurnRevision"
+    ],
+    "title": "CancelIn",
+    "type": "object"
+  },
+  "AcceptProposalIn": {
+    "additionalProperties": false,
+    "properties": {
+      "expectedJourneyRevision": {
+        "minimum": 1,
+        "title": "Expectedjourneyrevision",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "expectedJourneyRevision"
+    ],
+    "title": "AcceptProposalIn",
+    "type": "object"
+  }
+}

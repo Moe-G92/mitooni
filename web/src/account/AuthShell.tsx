@@ -218,8 +218,8 @@ export function AuthShell({
 }) {
   return (
     <div className="grid min-h-[100dvh] w-full bg-white font-gabarito text-[15px] leading-normal text-foreground lg:grid-cols-2">
-      <section className="flex min-w-0 flex-col p-4 sm:p-8">
-        <div className="flex items-center justify-between gap-3">
+      <div className="flex min-w-0 flex-col p-4 sm:p-8">
+        <header className="flex items-center justify-between gap-3">
           <Link
             to="/"
             aria-label={brand.name}
@@ -228,14 +228,14 @@ export function AuthShell({
             <Logo />
           </Link>
           <LanguageSwitch className="bg-white" />
-        </div>
+        </header>
         <main
           id="main"
           className="flex flex-1 items-center justify-center py-10"
         >
           <div className="w-full max-w-[448px]">{children}</div>
         </main>
-      </section>
+      </div>
       <section className="hidden min-w-0 p-4 lg:block" aria-hidden="true">
         {panel}
       </section>

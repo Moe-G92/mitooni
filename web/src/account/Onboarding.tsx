@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router";
 import { type EditableProfile, Editable } from "./contracts";
 type Skill = "listening" | "reading" | "writing" | "speaking";
@@ -12,7 +12,7 @@ import { BrandMark } from "./BrandMark";
 import { LanguageSwitch } from "./LanguageSwitch";
 import { Button } from "./Button";
 import { Field, Input, Label, Select } from "@/components/ui/form";
-import { Segmented } from "@/components/ui/misc";
+import { RadioChoices } from "./RadioChoices";
 
 const BANDS = Array.from({ length: 19 }, (_, i) => i * 0.5);
 const SKILLS: Skill[] = ["listening", "reading", "writing", "speaking"];
@@ -32,6 +32,14 @@ export default function Onboarding() {
   const navigate = useNavigate();
   const [name, setName] = useState("");
   const [step, setStep] = useState(1);
+  const stepHeading = useRef<HTMLHeadingElement>(null);
+  const previousStep = useRef(step);
+  useEffect(() => {
+    if (previousStep.current !== step) {
+      stepHeading.current?.focus({ preventScroll: true });
+      previousStep.current = step;
+    }
+  }, [step]);
   const [targets, setTargets] = useState<EditableProfile["targets"]>({
     overall: -1,
     listening: -1,
@@ -131,9 +139,15 @@ export default function Onboarding() {
           className="mt-8 rounded-card border border-border bg-card p-6 sm:p-8"
         >
           {step === 1 && (
-            <fieldset>
-              <legend className="text-2xl font-semibold tracking-tight">
-                {t("onboarding.s1Title")}
+            <fieldset disabled={pending}>
+              <legend>
+                <h1
+                  ref={stepHeading}
+                  tabIndex={-1}
+                  className="text-2xl font-semibold tracking-tight"
+                >
+                  {t("onboarding.s1Title")}
+                </h1>
               </legend>
               <div className="mt-6">
                 <Field label={w.name} htmlFor="onboarding-name">
@@ -148,30 +162,25 @@ export default function Onboarding() {
               <div className="mt-6">
                 <Label id="overall-label">{t("onboarding.overall")}</Label>
                 {/* A band scale reads left to right in both languages, as on the Persian canvas. */}
-                <div
-                  role="radiogroup"
-                  aria-labelledby="overall-label"
+                <RadioChoices
+                  labelledBy="overall-label"
                   dir="ltr"
+                  value={targets.overall}
+                  onChange={setOverall}
+                  options={BANDS.map((band) => ({
+                    value: band,
+                    label: formatBand(band, locale),
+                  }))}
                   className="grid grid-cols-5 gap-2 sm:grid-cols-6"
-                >
-                  {BANDS.map((b) => (
-                    <button
-                      key={b}
-                      type="button"
-                      role="radio"
-                      aria-checked={targets.overall === b}
-                      onClick={() => setOverall(b)}
-                      className={cn(
-                        "h-11 rounded-xl border font-archivo text-[15px] tabular-nums transition-colors",
-                        targets.overall === b
-                          ? "border-primary bg-primary text-primary-foreground"
-                          : "border-border bg-card hover:bg-accent",
-                      )}
-                    >
-                      {formatBand(b, locale)}
-                    </button>
-                  ))}
-                </div>
+                  choiceClassName={(checked) =>
+                    cn(
+                      "rounded-xl font-archivo text-[15px] tabular-nums",
+                      checked
+                        ? "border-primary bg-primary text-primary-foreground"
+                        : "border-border bg-card hover:bg-accent",
+                    )
+                  }
+                />
               </div>
               <label className="mt-5 flex min-h-11 items-center gap-2.5 text-sm">
                 <input
@@ -211,16 +220,31 @@ export default function Onboarding() {
           )}
 
           {step === 2 && (
-            <fieldset className="flex flex-col gap-5">
-              <legend className="text-2xl font-semibold tracking-tight">
-                {t("onboarding.s2Title")}
+            <fieldset disabled={pending} className="flex flex-col gap-5">
+              <legend>
+                <h1
+                  ref={stepHeading}
+                  tabIndex={-1}
+                  className="text-2xl font-semibold tracking-tight"
+                >
+                  {t("onboarding.s2Title")}
+                </h1>
               </legend>
               <div>
-                <Segmented<"yes" | "no">
+                <RadioChoices<"yes" | "no">
                   label={t("onboarding.booked")}
                   value={booked ? "yes" : "no"}
                   onChange={(v) => setBooked(v === "yes")}
-                  items={[
+                  className="inline-flex gap-0.5 rounded-[10px] bg-muted p-0.5"
+                  choiceClassName={(checked) =>
+                    cn(
+                      "rounded-lg px-3 text-xs",
+                      checked
+                        ? "border-primary bg-card text-foreground shadow-sm"
+                        : "border-transparent text-muted-foreground hover:text-foreground",
+                    )
+                  }
+                  options={[
                     { value: "yes", label: t("onboarding.bookedYes") },
                     { value: "no", label: t("onboarding.bookedNo") },
                   ]}
@@ -266,6 +290,7 @@ export default function Onboarding() {
                 key="back"
                 type="button"
                 variant="ghost"
+                disabled={pending}
                 onClick={() => (setError(undefined), setStep(1))}
               >
                 {t("onboarding.back")}

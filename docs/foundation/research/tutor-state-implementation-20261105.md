@@ -1,0 +1,86 @@
+# Tutor state implementation — stable review checkpoint
+
+Owner: reuse_audit, gpt-6.1-sol medium. Branch `codex/foundation-review-20261104`, receiving base `2c667827b4729312820a059ce0ad7f359559c8a0`. Approved generated-prose design `8fafe1ce…`; immutable BarEx source `af57036ad18a45a0aa20a81202c9e0939ebd99d5`. No source working-tree edits, licensed/legal corpus, learner data, env files, live provider calls or production operations.
+
+## Four preflight answers
+
+1. A specialist makes admission, dispatch uncertainty, output release and recovery transactional; checks actual joined provider/state behavior rather than trusting isolated stubs; and keeps historical evidence interpretable after publication changes.
+2. Raw inputs were immutable source service/runtime code, accepted receiving account code, pinned installed SDK definitions, original synthetic fixtures and actual isolated PostgreSQL results. Existing summaries were leads, not runtime proof.
+3. Strict DTOs, owner-scoped PostgreSQL/RLS/member locks, canonical hashes, fault/concurrency/replay tests, the real SDK through MockTransport, actual database restart and independent Mo browser review test the distinct boundaries. No paid request is needed for those proofs.
+4. Independent reproduction of deny/replay/cancel/restart and captured three-turn requests, followed by domain review of actual permitted generated samples, can establish the relevant claims. Engineering fixtures do not establish provider availability, educational efficacy or band calibration.
+
+## What is implemented
+
+The backend supplies journey, resolve/open-before-delivery, durable draft CAS, freeze submission, explicit irreversible supported-help switch, supported child revision, durable turn acceptance/poll/cancel and deterministic next-step proposal acceptance. `app/contracts/study.py` and generated `local/study-contract.json` are the wire contract; `tutor_runtime.py` is the shared provider seam published before deeper implementation.
+
+Study state is a bounded per-owner aggregate under `(product,issuer,subject)` RLS and a membership lock, plus private immutable pack payloads, separate mutable publication authority, bounded operation replay and durable queue metadata. This deliberately serves two toy Reading/Task2 objectives, not a universal platform. Concurrent first opens retain one winning edition/context/draft; later publication cannot repin old work. Draft revisions are separate from structural workspace revisions. Submission freezes work/conditions; post-submit teaching does not rewrite historical independent eligibility. Family exposure is committed before stimulus/model/tool/output release. Independent context has no tutor call before explicit supported switch or permitted post-submit review.
+
+The worker adapts BarEx's lifespan/poll/claim mechanics with receiving fences, leases and fail-closed authority. Accepted turns reserve a configured maximum model-call ceiling, with separate SDK/tool/output/input/time limits. A started dispatch conservatively consumes that ceiling; exact provider billing/token settlement is not claimed. Dispatch uncertainty never transparently redispatches. Cancel monitoring polls independently of SDK events and interrupts even a stalled HTTP iterator; remote provider stop/refund is not guaranteed. Expired leases cannot dispatch, execute tools or publish. Unauthorised/orphaned queue heads and stale crashed cancellation requests are removed/terminalised without releasing output, so a batch of invalid jobs cannot permanently hide healthy later work.
+
+Raw model candidates never enter public events. Public polling is status-only until a validated terminal commit; no-cursor GET is a canonical snapshot, explicit invalid/expired cursor409 directs reload without cursor. `latestTurnId` recovers a lost acceptance acknowledgement without a new generation. Terminal messages carry generated qualitative prose, permitted citations, exact captured-work spans/criterion links, provenance/work revision and paired learner `requestText`. Same-context completed history includes bounded user+assistant pairs with each historical request's workRef/version attribution; current work is separately anchored. Reference/ownership/schema checks are deterministic; prose scoring/grounding/hint checks are explicitly imperfect. Rendered text/quotes must remain inert plain text in Mo's UI.
+
+`app/composition.py` provides explicit receiving production composition using the real configured Agents adapter, matching Supabase verified issuer and PostgreSQL account/study authority. Missing provider fails closed on turn admission with no synthetic fallback. The local-only entry uses synthetic identity/runner with actual local PostgreSQL. `ReceivingPostgresTarget` pins host plus numeric hostaddr, verify-full/system CA and explicit libpq options; rejects ambient service discovery by presence without reading/logging values; and verifies role/database/schema/TLS/non-BYPASSRLS before application transactions. No receiving hosted target has been contacted.
+
+Publication status, fixture flag and allowed uses are trusted SQL authority, not pack/body fields. Full private manifest hashing covers bundle and next-step graph; runtime rechecks exact edition/permissions at start/proposal/claim/dispatch/tool/final publication. Withdrawal retains readable old work but prevents new teaching. Production rejects every fixture even if approved. Real receiving public content hashes exclude private keys/rationales; full private attestation remains server-only. Legacy toy hashes remain historical/local fixtures and are never production eligible.
+
+## Actual reuse and closure
+
+`PORT_PROVENANCE.json` records immutable source hashes/ranges and receiving hashes. The ordered-anchor canonical hash from `study_editions.py:23–25` is retained/adapted; its first-winning-pin behavior (`:28–82`) is implemented with the receiving owner transaction. Workspace pin/resume mechanics derive from `guided_learning.py:3804–3920`; injected execution/replan and per-tool scoped authority are adapted without source prompts/legal models. `revision_job_runtime.py:103–122,211–261` supplies the polling/lifespan/claim pattern; source global clients/env flags, fail-open budget and best-effort settlement are rejected. Existing verified Supabase identity and read-only retry transport remain the admitted source slices. Provider specialist separately owns the actual SDK/agent implementation and report.
+
+The runtime uses canonical role/text history and the Agents SDK, not ChatKit widget/thread storage. The unused new ChatKit converter/tests and direct dependency were removed by the provider worker/coordinator decision; no ChatKit capability is claimed. Exact retained pins are `openai==2.21.0`, `openai-agents==0.9.3`; `uv.lock` is independently generated. Installed package metadata identifies Apache-2.0 (OpenAI), MIT (Agents/Supabase) and LGPL-3.0-only (psycopg); preserve their distributions/licenses. The source-compatible SDK pins are not claimed current or free of advisories: a separate dependency reviewer owns that audit.
+
+## Checks actually run
+
+- Final full command: `.venv/bin/python -m pytest -q --local-postgres` → **170 passed in 6.67s**, no warnings. This comprises 107 unit/provider-mock checks, 31 account PostgreSQL regressions and 32 study PostgreSQL tests.
+- `.venv/bin/python -m local.prove_study_restart` on final code → PASS exact acknowledged Task2 draft, bundle and canonical completed turn/message after restarting only the labelled task-local PostgreSQL container; no reset/redispatch. This is an actual database-process restart, not just a new repository object.
+- Three-turn joined state→real Agents SDK→MockTransport capture includes task stimulus/options/prompt/objective, learning controls, historical learner request/workRef envelopes and assistant replies; excludes private key/actor identity and other contexts. No model generated those fixture HTTP responses.
+- Actual PostgreSQL covers simultaneous open/CAS, same-key replay, lost-ack/canonical recovery, frozen independent conditions/help switch/child revision, raw Reading check, valid proposal acceptance once, member/entitlement/RLS denies, corrupt outcome/terminal/event safe503, publication/allowed-use withdrawal, fixture production rejection, full manifest tampering, pinned hostaddr/service rejection, role-verification transaction compatibility, stale lease/fence, crash uncertainty, 18 invalid queue heads before a healthy job and stalled actual-SDK cancellation.
+- Original account tests now allocate disposable subjects and scope counts to them, preserving browser A/B profiles. Study tests also own disposable subjects. Publication tests temporarily change the synthetic catalog and restore it, so browser writes must pause for the full suite. No source database or production test is involved.
+- Conventional formatting used standalone pinned Ruff0.14.3 in the task temporary cache, not a runtime/project dependency; `git diff --check` passed. Default uv cache permission failure and sandboxed uv/uvx macOS configuration panic were resolved using an explicit task cache/authorised tool execution; no source environment was imported.
+
+The broad pack UPDATE `USING/WITH CHECK true` policy was automatically rejected as excessive sensitive-boundary broadening and **never applied**. The safer approved/attested/delivery-row-only policy was applied with only `UPDATE(lock_revision)` granted; content/version/status/fixture/allowed-use writes remain denied, verified by local RLS tests. No permission question remains outstanding.
+
+## Scope and limits
+
+T1/T3/T4/T5/T6 core engineering boundaries and relevant T2/T7/T8 controls have concrete tests above; full learning-contract T1–T8/P1–P4 are not all pedagogically validated. The catalog contains one original Reading family and one original Writing family, not the full sibling/held-out content matrix. Family transfer semantics are enforced by the ledger but curriculum-family approval, content withdrawal evidence interpretation, human reviewer assignment/delivery and calibrated assessments are not a completed coaching product. No human feedback or teacher approval is fabricated. P1–P4 qualitative usefulness/novice/Persian/advanced adaptation still needs actual permitted model outputs plus domain review; synthetic branches/SDK fixtures prove engineering only.
+
+Hosted Supabase Auth/Data API/RLS parity, production certificate/network/provider behavior, real model availability/cost, backups/retention and actual publication/processing authorisation remain unverified. SQL/config/runbook artifacts are prepared in `deployment/`, never applied remotely. The static entry is not replaced with a permanent fake; production composition selects only configured real provider code.
+
+## Reproduction and handoff
+
+Use existing isolated `mitooni-account-20261105` container/network/volume on `127.0.0.1:55439`, pinned image documented in `local/manage.py`. Existing account initialization precedes explicit additive `uv run python -m local.upgrade_study`; then `uv run python -m local.serve` binds only `127.0.0.1:8009`. Fixture tokens remain `local-a`/`local-b`, fixed original engineering steps `reading-evidence`/`writing-reasons`; no passwords or provider credentials are involved. `local/README.md` has test/restart/cleanup instructions. Stop retains data; destroy intentionally removes the synthetic volume and is not used during review.
+
+Final HTTP process: PID80095, execution session29006, started after final tests/restart. RequestText and server-derived condition availability are active; A/B saved work was preserved. Frontend reviewer was notified to resume. DB mutation/restart test ownership handed explicitly to coordinator/security; this worker performs no further mutations unless a review finding requires correction.
+
+**Verdict:** implementation-stable for independent review, not go-live/provider/domain approval. Coordinator owns integration verdict. No push, deploy, external send or paid request occurred.
+
+## Crash recovery and final integration preflight — 2026-11-05
+
+Owner: backend_finish, gpt-6.1-sol medium; same branch/base and narrow approved scope. Preserved surviving work, externally edited Word brief, and manifest-owner exclusivity.
+
+1. A professional re-inventories actual listeners/jobs, retests repaired HTTP authority and independent-work resume against the final installed graph, and reconciles provenance before declaring a stable snapshot.
+2. Raw evidence is the surviving ASGI middleware/state implementation, raw-ASGI regression inputs, current installed package metadata and isolated PostgreSQL; earlier passes are historical leads.
+3. Use focused pytest, listener/process inventory, full isolated database suite and labelled restart proof, exact file hashing and independent security reproduction. These exercise privacy/routing and durable state separately; no real provider request is required.
+4. Independent evidence is malformed authority rejection with private headers/no payload echo, matching independent attempt and edition after resume, no unrelated service stopped, final regression/restart success and reviewer reproduction of the same file/dependency snapshot.
+
+Inventory: port8009 has no listener and approved read-only process inventory finds no surviving local.serve, uvicorn, pytest or restart jobs. Only Docker Desktop listens on127.0.0.1:55439; task resource labels are checked by the existing restart proof. Focused raw-ASGI authority/resume regression:98 passed in1.15s. No process was paused or killed. Dependency owner reports final environment frozen; final full-suite evidence follows below.
+
+### Final recovery result and freeze
+
+Recovered fixes are now verified on the dependency owner's frozen FastAPI0.133.0/Starlette1.3.1 graph and Python3.13.11. HTTP privacy classification uses server ASGI `scope.path`, not Host-derived URL reconstruction; malformed/missing/duplicate authorities fail400 with safe generic detail and private no-store headers. Valid DNS/IPv4/bracketed IPv6 authorities retain authentication behavior. Independent journey metadata resumes the exact existing attempt/current conditions/pinned bundle even after its own stimulus exposure; a newly exposed sibling still has no new independent offer. No additional product behavior or real AI call was added during recovery.
+
+- `.venv/bin/python -m pytest -q tests/test_http_authority.py tests/test_study_resume.py`:98 passed in1.15s.
+- `.venv/bin/python -m pytest -q --local-postgres`:271 passed in6.86s. One Starlette TestClient/httpx deprecation; all local DB checks executed, no integration skips.
+- `.venv/bin/python -m local.prove_study_restart`:PASS actual labelled DB restart retained exact acknowledged draft, bundle, completed turn and message, no redispatch/reset.
+- `git diff --check`:passed. Existing failed/raced/blocked historical checks above remain evidence; no new regression failed in this recovery.
+- Verified installed versions FastAPI0.133.0, Starlette1.3.1, psycopg3.2.13, OpenAI2.21.0, Agents0.9.3. Package/lock owner records audited installed79/universal81 pairs with zero known findings/no skips; these are separate audit evidence, not this worker's independent advisory reproduction.
+
+Updated both account/tutor provenance hashes to the actual receiving files, adding Host/resume/incident-test closure. Manifest/lock hashes exactly match their exclusive owner. `PORT_PROVENANCE.json` is the final path/hash manifest; its prior170-test metadata is superseded. `local/README.md` now describes disposable test subjects, exclusive API-worker/DB windows and Python support/runtime limitations accurately.
+
+Local API restored on127.0.0.1:8009, process86915/session95347, after owner regression/restart. No unrelated process was paused/killed and no database reset occurred. Final independent reviewer receives exclusive DB mutation/restart ownership next, with browser reviewer holding until that reviewer releases the window. Runtime/schema/test files are frozen; only independent review findings may reopen them. Owner result: stable runnable backend checkpoint, awaiting independent security outcome; no hosted/live-provider/domain/go-live claim.
+
+### Independent final checkpoint outcome
+
+Security reviewer independently reproduced271 passing tests in6.88s and the actual labelled PostgreSQL restart proof on this freeze. Applied roles/RLS/column grants matched the safer design. Reviewer verified only task API86915 was paused with SIGSTOP and resumed with SIGCONT, then released a healthy API to browser acceptance. Independent installed79/universal81 audits returned zero known findings/no skips. All provenance hashes matched manifest58ae9f96aecf4b897294c638393f9de0904c2eef8451d0790097f8a1da196283; reviewer extended43-file digest is `a464f31e157aa523bf32510844e45a0ac333c062ca0fb2eeb2dd4d6a96a1a656`. No correction was requested. Exact independent scope/limits and AGREED verdict are in `tutor-security-review-20261105.md`.
+
+Backend integration checkpoint complete and frozen for coordinator/browser acceptance. This is engineering-local agreement; live provider, teaching quality, hosted parity and separate release approval remain outside this evidence. No push/deploy/external action occurred.

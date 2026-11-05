@@ -67,9 +67,14 @@ def test_local_repo_or_verifier_cannot_be_enabled_in_production():
     with pytest.raises(ValueError):LocalPostgresConfig(database='source')
 
 
-def test_only_accepted_account_surface_with_fixture():
+def test_only_accepted_account_and_study_surface_with_fixture():
     paths={route.path for route in create_local_app().routes}
-    assert paths=={'/health','/api/me','/api/account','/api/profile','/api/profile/onboarding'}
+    assert paths=={'/health','/api/me','/api/account','/api/profile','/api/profile/onboarding',
+        '/api/study/journey','/api/study/workspaces/resolve','/api/study/workspaces/{wid}',
+        '/api/study/workspaces/{wid}/draft','/api/study/attempts/{aid}/submit',
+        '/api/study/workspaces/{wid}/assistance','/api/study/workspaces/{wid}/attempts',
+        '/api/study/workspaces/{wid}/turns','/api/study/turns/{tid}',
+        '/api/study/turns/{tid}/cancel','/api/study/proposals/{pid}/accept'}
 
 
 def test_sdk_construction_misconfiguration_does_not_force_logout():

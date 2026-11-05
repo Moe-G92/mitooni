@@ -4,8 +4,9 @@
  * Real recordings come from the content team; this makes the shell playable
  * with natural-sounding speech.
  *
- *   npm run audio            all files
- *   npm run audio -- part-2  only files whose name contains "part-2"
+ *   npm run audio -- --check             offline tool availability only
+ *   npm run audio -- --generate          all files (model-capable)
+ *   npm run audio -- --generate part-2   filter by filename
  *
  * The first run downloads the model (about 90 MB) from Hugging Face into the
  * local cache. Writes public/audio/academic-1/*.m4a and
@@ -15,13 +16,39 @@ import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, mkdtempSync, readFileSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import * as path from "node:path";
-import { KokoroTTS } from "kokoro-js";
+import { createRequire } from "node:module";
 import { listeningSection, listeningVoices } from "../src/mocks/fixtures/academic-1/listening";
 import { speakingSection, speakingVoice } from "../src/mocks/fixtures/academic-1/writing-speaking";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
+const args = process.argv.slice(2);
+const usage = "Audio generation is idle. Use --check for offline tool availability, or --generate [filename-filter] to load the local speech model (first use may download it).";
+if (args[0] !== "--generate") {
+  if (args.length && !(args.length === 1 && args[0] === "--check")) {
+    console.error(usage);
+    process.exit(2);
+  }
+  if (args[0] === "--check") {
+    const require = createRequire(import.meta.url);
+    let kokoroInstalled = false;
+    try { require.resolve("kokoro-js"); kokoroInstalled = true; } catch { /* report unavailable without importing */ }
+    const available = (command: string): boolean => {
+      try { execFileSync(command, ["-version"], { stdio: "ignore", timeout: 5000 }); return true; } catch { return false; }
+    };
+    const state = { generation: false, modelLoaded: false, kokoroInstalled, ffmpeg: available("ffmpeg"), ffprobe: available("ffprobe") };
+    console.log(JSON.stringify(state));
+    process.exit(Object.values(state).slice(2).every(Boolean) ? 0 : 1);
+  }
+  console.log(usage);
+  process.exit(0);
+}
+if (args.length > 2 || (args[1]?.startsWith("--"))) {
+  console.error(usage);
+  process.exit(2);
+}
+const { KokoroTTS } = await import("kokoro-js");
 const TMP = mkdtempSync(path.join(tmpdir(), "bw-audio-"));
-const ONLY = process.argv[2];
+const ONLY = args[1];
 const RATE = 24000; // Kokoro's output sample rate
 const DURATIONS = path.join(ROOT, "src/mocks/fixtures/academic-1/audio-durations.ts");
 

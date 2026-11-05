@@ -12,9 +12,11 @@ import {
 } from "react";
 import { SessionController } from "@/auth/session";
 import { AccountClient } from "./transport";
+import type { GuardedTransport } from "./request";
 import type { Account, EditableProfile, ProfileChanges } from "./contracts";
 import { setPrefs, prefsGeneration } from "@/lib/prefs";
 type State = {
+  http: GuardedTransport;
   account: Account | null;
   loading: boolean;
   error: unknown;
@@ -132,6 +134,7 @@ export function AccountProvider({
       ? loaded.account
       : null;
   const value: State = {
+    http: client.http,
     account,
     loading: phase.epoch !== snapshot.epoch || phase.loading,
     error: phase.epoch === snapshot.epoch ? phase.error : null,

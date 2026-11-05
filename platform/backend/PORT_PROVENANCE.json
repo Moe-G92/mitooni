@@ -36,10 +36,60 @@
       "app/db/read_retry_transport.py": "93ef45427bddddf8aca5fdf5cfa8aad37f847ff2773dad70e0d998f1c31b8cff",
       "app/db/supabase_client.py": "f9fc008de7e3ea542dbde9e8100ef301182c1ac7e99a38ca59ee98112995e6d2",
       "app/dependencies.py": "47f443a473809141b6d71cbdcfc1104ca0246e2f87f98ad1799bed59278a1a8c",
-      "app/main.py": "77661b26c4cb20bedc832d84ce509df9af4247972851acb65286af0503c9b691",
-      "app/repositories/account.py": "c1ec0b11a99f17cdc7be932dfd00e67e592aaf9c6a53f66717e0698200df3630",
-      "app/repositories/postgres_account.py": "b9edd85d97512a6c0706476fd287606c80ab4c3513e646aba12edadf7707b278",
+      "app/main.py": "6403522464671cf872102a7289cab8fed45f582d29857f5f150aa576fd92b356",
+      "app/repositories/account.py": "6a2c7496aa8eca25001149d2c595645c9b2961136eec3e711a2dda95e12171a2",
+      "app/repositories/postgres_account.py": "912aee3da257a5b7008c3df43dd350f28472d1e7efbdeba50661f6147bce1f5d",
       "app/routers/account.py": "1b6205cfa6d401788fb87ddb496ea3dd794ade16aaa208ddcc861517ac53f5bd"
     }
+  },
+  "receiving_tutor_state_extension": {
+    "source_revision": "af57036ad18a45a0aa20a81202c9e0939ebd99d5",
+    "source_slices": [
+      {
+        "source": "backend/app/services/study_editions.py:23-82",
+        "source_sha256": "8d31408440626ee9eb4a408183fc5e57cba4699e40fb0492ab10cf16c8689c75",
+        "target": "app/services/study_editions.py; app/services/study_state.py",
+        "mode": "canonical ordered-anchor hash function retained/adapted; first-winning-pin pattern implemented with receiving owner transaction"
+      },
+      {
+        "source": "backend/app/services/guided_learning.py:3804-3920",
+        "source_sha256": "cd2c0ede6ddd9883f2c094a8a9594f86bed62935bf8c08a8861e5b8099d0bf97",
+        "target": "app/services/study_state.py",
+        "mode": "workspace pin/resume mechanics adapted; new IELTS conditions/versioned drafts/attempts, no legal code/data/prompts"
+      },
+      {
+        "source": "backend/app/services/revision_job_runtime.py:103-122,211-261",
+        "source_sha256": "7dbf583548ae3b26048343e4e2b312da70c5eb5380263e19ef80a22b22587385",
+        "target": "app/workers/tutor_turns.py; app/repositories/postgres_study.py",
+        "mode": "lifespan/poll/claim pattern adapted; explicit receiving queue/fences, failclosed budgets and no transparent postdispatch retry; source global clients/env/logging not copied"
+      }
+    ],
+    "sdk_versions": {
+      "openai": "2.21.0",
+      "openai-agents": "0.9.3"
+    },
+    "unused_removed": "ChatKit dependency/converter not on actual canonical role/text runtime path; no ChatKit port claimed",
+    "snapshot_sha256": {
+      "app/contracts/tutor_runtime.py": "88e7f1d16c5afbd7c78b29155fe4c6e96c07c76213922c0e6931a6637f6b313b",
+      "app/contracts/study.py": "5805ce4dc35dd8347b1498afd54c7a40dcbd271ad6c051e4bd9b35a02b31eed6",
+      "app/services/study_editions.py": "e4bdbfd71c0423d98b635966ffff6b05251d6be8ebf3d3dd7241f8f349650ee8",
+      "app/services/study_state.py": "a24ae7ac8457666bb6acd33a4af9b2e87a8e2bb1aa3dc1fdeb5b7f377fbfaa17",
+      "app/services/tutor_output.py": "1c2efc5f9011ac2bf04bc67f8486aa860dda91da1482c25dcf4cdd635c7d87ae",
+      "app/repositories/postgres_study.py": "a4edb317757d790000d9e5d45b10e73a430fb0cb0c6f844877b28ff8afa6a702",
+      "app/repositories/postgres_target.py": "fc4fb1b13917d3e4b97971ff4734ce624ef7f46fc590d0f7bf91ae99bd0a1256",
+      "app/workers/tutor_turns.py": "244e0c8a633a8e10f0037a7dfb3ee14cf221328d14d4afe4a3890462bcc043b3",
+      "app/routers/study.py": "337bdab1c3af73956ac235a00b8fa879c2e2c322b381cab34ca6447f9dc45a6c",
+      "app/composition.py": "1e2cb58bc5b01b4f06fb65007b2dd46ac997e5df6356aaf145040366e8a895de",
+      "app/providers/synthetic_runner.py": "618c9ac59577ff596d8d54d522505702b51c93e929bfa574bf5becf6c32f060b",
+      "app/main.py": "6403522464671cf872102a7289cab8fed45f582d29857f5f150aa576fd92b356",
+      "pyproject.toml": "da219d2edd9b67aa7505b3ecf8ef72de6cef880fb591b83eb4c20ce39454c771",
+      "uv.lock": "aae8937fb72a0c28db40b7aa1b15fe74d6eb74a074baa1178a70be227e7bc585",
+      "local/study-upgrade.sql": "fbd8d252a15ae1001143bfa7c816a7b121ce28f043f56404ffdb5d5e83297e51",
+      "app/http_security.py": "c6ef1f4161d30cba0c25649beca486fc1cb48d14fde09d905689ff386e3cdb6a",
+      "tests/test_http_authority.py": "0687875a284541e0930ed283d8319f0fac11d4d766625427402a8e5762abc53e",
+      "tests/test_study_resume.py": "0518aeee789a2ccaaf908df137347c8d83a6c0507b09ed15624ef906a7f5c369",
+      "tests/test_dependency_security.py": "1a6c0f8cfec8fbdbfe6c885c1bb90159ac7f2703cd1c320351e8872048af4fc2"
+    },
+    "validation": "Final patched Python3.13.11 environment: 271 tests passed in6.86s, including actual local account/study PostgreSQL and real-SDK mocked-HTTP checks; one Starlette TestClient/httpx deprecation warning. Actual labelled database restart retained exact acknowledged draft/bundle/completed turn/message without redispatch/reset. Full installed/universal dependency audits independently recorded zero findings/no skips; no paid provider/hosted activation."
   }
 }

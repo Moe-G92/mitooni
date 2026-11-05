@@ -7,7 +7,7 @@ Read `/Users/arashshahrokhi/Projects/AGENTS.md` explicitly before project work. 
 - Codex leads product, engineering, architecture and validation. Arash and Mo own business, services and domain decisions. Arash retains external release/spending approval.
 - IELTS Academic is the first pilot. Both self-study and human coaching are in scope, for all learner levels and target bands. Persian is default with an English option. An IELTS teacher/examiner reviews content and assessments. TOEFL/GRE expansion is future work, not a reason to build a universal exam platform now.
 - The AI tutor delivers the teacher-designed learning sequence, as in BarEx. Teachers design/validate curriculum and assessment; human coaching is an additional service and escalation path. Do not turn the core self-study product into only static packs or assume AI formative feedback establishes calibrated band scores.
-- Use `docs/foundation/CHECKPOINT-2026-11-05.md` for the current checkpoint and latest authority, with CHARTER/DECISIONS as supporting history. Arash clarified on 2026-11-05 that Mo's version governs UI/UX and brand; contrary earlier BarEx-shell decisions are superseded.
+- Use `docs/foundation/CHECKPOINT-TUTOR-2026-11-05.md` for the current checkpoint and `CHECKPOINT-2026-11-05.md` for the accepted account foundation, with CHARTER/DECISIONS as supporting history. Arash clarified on 2026-11-05 that Mo's version governs UI/UX and brand; contrary earlier BarEx-shell decisions are superseded.
 - Delegate substantial specialist work to `gpt-6.1-sol` at `medium` effort, with disjoint ownership, explicit evidence and checkpoints. Save internal project records under `docs/foundation/`; do not expose diligence labels in customer interfaces.
 
 ## Source and data boundaries

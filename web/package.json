@@ -7,16 +7,17 @@
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
-    "lint": "eslint . --max-warnings=0",
+    "lint": "eslint . --ignore-pattern dist-prototype --max-warnings=0",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "e2e": "playwright test",
-    "audio": "tsx scripts/make-audio.ts",
+    "audio": "node --import tsx scripts/make-audio.ts",
     "export:schemas": "tsx scripts/export-schemas.ts",
     "figures": "tsx scripts/make-figures.ts",
     "dev:account-local": "vite --config vite.account-local.config.ts",
     "dev:prototype": "vite --config vite.prototype.config.ts",
-    "build:prototype": "tsc --noEmit && vite build --config vite.prototype.config.ts"
+    "build:prototype": "tsc --noEmit && vite build --config vite.prototype.config.ts",
+    "test:tooling": "node --test scripts/tooling.test.mjs"
   },
   "engines": {
     "node": ">=22.12.0"
@@ -74,10 +75,27 @@
     "prettier": "^3.9.10",
     "tailwindcss": "^4.3.3",
     "tsx": "^4.23.15",
-    "ttf2woff2": "^6",
+    "ttf2woff2": "8.0.1",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8",
     "vite": "^7.3.7",
     "vitest": "^4"
+  },
+  "overrides": {
+    "@huggingface/transformers@3.8.1": {
+      "sharp": "0.35.5"
+    },
+    "@typescript-eslint/typescript-estree@8.72.1": {
+      "minimatch": "11.0.1"
+    },
+    "ttf2woff2@8.0.1": {
+      "node-gyp": {
+        "tar": "7.5.22"
+      },
+      "cacache": {
+        "glob": "14.0.2",
+        "tar": "7.5.22"
+      }
+    }
   }
 }

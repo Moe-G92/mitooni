@@ -6,7 +6,7 @@
       "source": "src/components/ui/sign-in.tsx",
       "target": "src/account/AuthShell.tsx",
       "sourceSha256": "127f220689bd24719974e4fa5a638578e511b84b11f530ce82f8cd64400a6ff9",
-      "targetSha256": "595216c77d3ec277c76dbf16263654b60070e3c1e28dc4fa8a0fd10b40137c1b"
+      "targetSha256": "95ddec917b05289c82b46a318d6b8e8d420a9102ef1dd3b90ab623463bc2fda6"
     },
     {
       "source": "src/components/public/auth/AuthPanel.tsx",
@@ -24,7 +24,7 @@
       "source": "src/pages/app/Onboarding.tsx",
       "target": "src/account/Onboarding.tsx",
       "sourceSha256": "bc4a250acd477e5b39ec2e5f9544447b594f6d469d5d3aa7dae45e618d17518e",
-      "targetSha256": "0926c44d5c1bab118759e0803e67c7c8b6505757b0ab5eb86ce86c49c8ceac8b"
+      "targetSha256": "3af8a31533e23b8d31a31378ffc0b0e960aac72d8a2ed16a40c51432ca80abd7"
     },
     {
       "source": "src/pages/app/Settings.tsx",
@@ -51,7 +51,7 @@
       "targetSha256": "79c7a0b0170f46981e94a371863d41c3876aa9e6bcfe876a72d20243a328c827"
     }
   ],
-  "checkpoint": "Mo account integration; local synthetic auth + isolated real HTTP/Postgres",
+  "checkpoint": "Mo account foundation and study integration; real local HTTP/Postgres with explicit synthetic tutor; no provider activation",
   "copyPolicy": "Frozen Mo prototype is compatibility/reference only. src/account compositions own configured account UI, sharing Mo brand, CSS, primitives, format helpers. No BarEx shell or CSS admitted.",
   "barEx": {
     "revision": "af57036ad18a45a0aa20a81202c9e0939ebd99d5",
@@ -167,11 +167,11 @@
     },
     {
       "path": "package-lock.json",
-      "sha256": "96182969efe1828aab70d203c26b0ac25bf51b80bdbe5a1973d80aab9934c289"
+      "sha256": "98b12dd92edfd59976e77488928f0eb0a06e8c3cf0042d609cbf3bad16e86098"
     },
     {
       "path": "package.json",
-      "sha256": "dc374e4dea7f93591abdc4ae42f39106e67e5d718a38270e8ea4a322140a7cb5"
+      "sha256": "82985c2f945db5fd10e81772508d1696050bcc53301aa8c8e7cae2ee34e57492"
     },
     {
       "path": "playwright.config.ts",
@@ -187,7 +187,7 @@
     },
     {
       "path": "src/account/App.tsx",
-      "sha256": "1c35dc3bd677ec70f66278384801aca861a4cc700a2ab5b8d0166825e45d79c5"
+      "sha256": "92f3cb25222f426415b6a285e6ac5f73c2fdd20ecf0d7830619802b261af10ef"
     },
     {
       "path": "src/account/AppLayout.tsx",
@@ -203,7 +203,7 @@
     },
     {
       "path": "src/account/AuthShell.tsx",
-      "sha256": "595216c77d3ec277c76dbf16263654b60070e3c1e28dc4fa8a0fd10b40137c1b"
+      "sha256": "95ddec917b05289c82b46a318d6b8e8d420a9102ef1dd3b90ab623463bc2fda6"
     },
     {
       "path": "src/account/Boundary.tsx",
@@ -218,6 +218,10 @@
       "sha256": "f72af7e35dff09851102ff0c2a86031676efa1997911e840a0114883e24c5139"
     },
     {
+      "path": "src/account/Capability.tsx",
+      "sha256": "565db3cfad6c0fabf30f16548d6ce56971b6ddf3d3968d7a64983c8793618d53"
+    },
+    {
       "path": "src/account/ErrorNotice.tsx",
       "sha256": "9b0fd61ef3212d56e8b092970697d74c979673e392d63c373dd64002a4df06a2"
     },
@@ -226,12 +230,20 @@
       "sha256": "6558b826a178b131a1497f15516d6bf3e1ea16c0ea87f9d59de29eabee304f74"
     },
     {
+      "path": "src/account/Onboarding.test.tsx",
+      "sha256": "408cd002cbcf9cc402e7d98595504ec25b83b25328935b2cdf243c82e7db85db"
+    },
+    {
       "path": "src/account/Onboarding.tsx",
-      "sha256": "0926c44d5c1bab118759e0803e67c7c8b6505757b0ab5eb86ce86c49c8ceac8b"
+      "sha256": "3af8a31533e23b8d31a31378ffc0b0e960aac72d8a2ed16a40c51432ca80abd7"
     },
     {
       "path": "src/account/PageHeader.tsx",
       "sha256": "2d08329c705b73c98862afd45018802cb959a987aea128f71341534f6f618764"
+    },
+    {
+      "path": "src/account/RadioChoices.tsx",
+      "sha256": "8f1d646e2dcd9dba526e5db0abf64a2ff89e9a9e07a0284b78acb5035adcc523"
     },
     {
       "path": "src/account/Settings.test.tsx",
@@ -262,16 +274,84 @@
       "sha256": "4f8bc74259bad6bf5ec6fdb35bc747e54465644deb1421d2a10b256b6163892f"
     },
     {
+      "path": "src/account/request.ts",
+      "sha256": "c9c52938125d0d6808ebf83bf0f428b3b9a6719a9d2facf26c2cdec9853dc8d4"
+    },
+    {
       "path": "src/account/state.test.tsx",
       "sha256": "35042864e6996dbd4fdfdaeb1bb37d9afdd5711a11307f8a8193c0882e39e08c"
     },
     {
       "path": "src/account/state.tsx",
-      "sha256": "5c1e21db0b7924c1c136b331690ce4f511a28f83ef6ec21fd2555285a61d3a09"
+      "sha256": "c6941c2bd2ab83722c03f4b444ca9ea9d302f35ffb7f742957f9f9e5e225000f"
+    },
+    {
+      "path": "src/account/study/StudyError.tsx",
+      "sha256": "86211e059315405805adfa173e51b8d6e9db6734c33197a0b4a37b81a838ffbb"
+    },
+    {
+      "path": "src/account/study/StudyHome.tsx",
+      "sha256": "61c7477946fa5b4744272a50427c1f308acc54428b333f42fc3fba168452b519"
+    },
+    {
+      "path": "src/account/study/StudyShell.tsx",
+      "sha256": "2d7ab01856ccf8d1d8ed30e2ee1c4fdb56c6b523e3f1dca3fb6d1d18c9582c6f"
+    },
+    {
+      "path": "src/account/study/StudyWorkspace.tsx",
+      "sha256": "9f5c7b58f462da0ffef2fa076a1b9c4e722f456eef4f2f4529447cb9844b11dd"
+    },
+    {
+      "path": "src/account/study/TutorPanel.test.tsx",
+      "sha256": "61c6d671219a75cdf7d1575b46ce8474fd6322b0703d8439933f4ab19495774d"
+    },
+    {
+      "path": "src/account/study/TutorPanel.tsx",
+      "sha256": "fa0757aafb2beda7f0541e6238ba2634aa9465ebf77fc1bd0dbc209b9e80e482"
+    },
+    {
+      "path": "src/account/study/client.test.ts",
+      "sha256": "5a89808ffafb079dee5b995cf98f6358c406347cddbc68fb24ab5c841e42c894"
+    },
+    {
+      "path": "src/account/study/client.ts",
+      "sha256": "378ec925e621b32ad8c3d734475921bbe6000ecdc4fe623f4e237d0738b208d4"
+    },
+    {
+      "path": "src/account/study/contracts.ts",
+      "sha256": "1f8e08da511dcec82ced90a2fc93b94fcba8fcb458a5106d4bfc881d44b2a29b"
+    },
+    {
+      "path": "src/account/study/locale.ts",
+      "sha256": "0a14679182a50e86c512c229424f537e41b1468b9e4a2c77bfe88d15f3a38123"
+    },
+    {
+      "path": "src/account/study/messages.ts",
+      "sha256": "8a2f80974237aa5b2618603647fc66bcab825c123fedeabfb23bd09caddc84bf"
+    },
+    {
+      "path": "src/account/study/redirect.test.ts",
+      "sha256": "358778f0db0f531af15f10c25dcf18942d9fc1fdd29fc1cb0bd5f24933c6abc3"
+    },
+    {
+      "path": "src/account/study/testSupport.ts",
+      "sha256": "29ca74bad51d0e88a70bd45d5efaa8e15291bf9da34e24baa2efdae5931de4e9"
+    },
+    {
+      "path": "src/account/study/useStudy.ts",
+      "sha256": "6f63c2cb208824edb3db482e82ceca48ab87196338c3aa99bf7550daccb6cce8"
+    },
+    {
+      "path": "src/account/study/useWorkspace.test.tsx",
+      "sha256": "4500079931b9f1013936600da6ee0a8f08226a5b431982b56b361706854f26a7"
+    },
+    {
+      "path": "src/account/study/useWorkspace.ts",
+      "sha256": "e5c01a3bb0f7effd02db0ad2d9ea38ccd7f1db473426551c3f64c018675886ac"
     },
     {
       "path": "src/account/transport.ts",
-      "sha256": "3164cee1a59079c7dfbf8868bedc2b897c1d646b000e0c5bea0e4a5ca3eb678a"
+      "sha256": "9236b069414ec767f35093c0b1053b09adf8dec808f280c75d9bb6a5acb870c9"
     },
     {
       "path": "src/auth/buildBoundary.test.ts",
@@ -283,7 +363,7 @@
     },
     {
       "path": "src/auth/redirect.ts",
-      "sha256": "0244bb0ca57443d23d94e23cd256d16a5de84a4d2f46b425e8817d50d59dfce1"
+      "sha256": "7a2e5b22459a51fb16335ff07bcede2cf955d2e4e44a0279edd780d94cc6c070"
     },
     {
       "path": "src/auth/session.test.ts",
@@ -355,17 +435,31 @@
     "src/account/Boundary.tsx",
     "src/account/BrandMark.tsx",
     "src/account/Button.tsx",
+    "src/account/Capability.tsx",
     "src/account/ErrorNotice.tsx",
     "src/account/LanguageSwitch.tsx",
     "src/account/Onboarding.tsx",
     "src/account/PageHeader.tsx",
+    "src/account/RadioChoices.tsx",
     "src/account/Settings.tsx",
     "src/account/TopControls.tsx",
     "src/account/contracts.ts",
     "src/account/locale.ts",
     "src/account/messages.json",
     "src/account/mount.tsx",
+    "src/account/request.ts",
     "src/account/state.tsx",
+    "src/account/study/StudyError.tsx",
+    "src/account/study/StudyHome.tsx",
+    "src/account/study/StudyShell.tsx",
+    "src/account/study/StudyWorkspace.tsx",
+    "src/account/study/TutorPanel.tsx",
+    "src/account/study/client.ts",
+    "src/account/study/contracts.ts",
+    "src/account/study/locale.ts",
+    "src/account/study/messages.ts",
+    "src/account/study/useStudy.ts",
+    "src/account/study/useWorkspace.ts",
     "src/account/transport.ts",
     "src/auth/config.ts",
     "src/auth/redirect.ts",
@@ -388,7 +482,7 @@
     "src/lib/utils.ts",
     "src/main.tsx"
   ],
-  "verification": "Final frozen UI-only delta: account nav and Settings/Signout menu items use min44px hitboxes; global Mo kit unchanged. Build admission remains production by default with role-isolated optimization caches.",
+  "verification": "Source frozen after reviewed exact-operation retry and denied-discovery purge corrections:89tests/lint/typecheck/production build pass.69current receiving hashes/54emitted source modules; tests/helpers/prototype excluded. Final independent runtime/visual/security verdict pending.",
   "authFormReference": {
     "source": "src/pages/public/Auth.tsx",
     "sourceSha256": "726c54da3a00fe373a4e5177fb9720de6ef3b92ea6d6e7c552807db95f9a26c2",
@@ -400,5 +494,89 @@
     "sourceSha256": "b19860db7c4e244d20cf6bb2f79dff1cb6c9f63205d63cc96e50cc45c3cf7f59",
     "target": "src/preview/prototype.tsx",
     "adaptation": "Same original App/MSW bootstrap, relative imports adjusted and explicit prototype entry always enables its own mock worker."
+  },
+  "studyMoPatterns": [
+    {
+      "revision": "2c667827b4729312820a059ce0ad7f359559c8a0",
+      "source": "src/practice/PracticeShell.tsx",
+      "sourceSha256": "cc04e7078893783a134a37544deb13035df55a7545c408098fec91a2ebd84675",
+      "target": "src/account/study/StudyShell.tsx",
+      "adaptation": "Frame, responsive task/tutor panes and skill palette adapted; source controls/data closure rejected.",
+      "targetSha256": "2d7ab01856ccf8d1d8ed30e2ee1c4fdb56c6b523e3f1dca3fb6d1d18c9582c6f"
+    },
+    {
+      "revision": "2c667827b4729312820a059ce0ad7f359559c8a0",
+      "source": "src/pages/practice/ReadingPractice.tsx",
+      "sourceSha256": "b6c54c66504d7858fe7672c36bc7625af8c6f3f5c12c33c37edcf4612537f2c2",
+      "target": "src/account/study/StudyWorkspace.tsx",
+      "adaptation": "English passage/response composition adapted; source answer-bearing data, local marks and samples excluded.",
+      "targetSha256": "9f5c7b58f462da0ffef2fa076a1b9c4e722f456eef4f2f4529447cb9844b11dd"
+    },
+    {
+      "revision": "2c667827b4729312820a059ce0ad7f359559c8a0",
+      "source": "src/pages/practice/WritingPractice.tsx",
+      "sourceSha256": "b13dcadc9c2c193b26a3b23807dec23fbbf97f1062c38f4b7a027c738794a4d8",
+      "target": "src/account/study/StudyWorkspace.tsx",
+      "adaptation": "Textarea/word-count/work-feedback composition adapted; phrase-matched marks, sample injection and canned scores excluded.",
+      "targetSha256": "9f5c7b58f462da0ffef2fa076a1b9c4e722f456eef4f2f4529447cb9844b11dd"
+    },
+    {
+      "revision": "2c667827b4729312820a059ce0ad7f359559c8a0",
+      "source": "src/pages/app/Overview.tsx",
+      "sourceSha256": "c24a33ae89d0f7dff696c031b440b3f4b925e0d0cefae60131bdf44fa2b3b071",
+      "target": "src/account/study/StudyHome.tsx",
+      "adaptation": "Today/next-action composition adapted to server journey; no legacy dashboard/progress/score defaults.",
+      "targetSha256": "61c7477946fa5b4744272a50427c1f308acc54428b333f42fc3fba168452b519"
+    }
+  ],
+  "studyBarExPatterns": [
+    {
+      "revision": "af57036ad18a45a0aa20a81202c9e0939ebd99d5",
+      "source": "frontend/src/pages/WorkspacePage.tsx",
+      "sourceSha256": "441aa80e4e70cd31e1aeba878f00ff78bb298188b8523d1105458b8199c3ff8e",
+      "ranges": "206-274,332-430",
+      "targets": [
+        "src/account/study/useWorkspace.ts",
+        "src/account/study/StudyWorkspace.tsx"
+      ],
+      "adaptation": "Scoped binding, mounted/user validation and stable pane identity adapted with receiving epoch/version guards; no source visual shell."
+    },
+    {
+      "revision": "af57036ad18a45a0aa20a81202c9e0939ebd99d5",
+      "source": "frontend/src/components/ChatKitPanel.tsx",
+      "sourceSha256": "e963d4a26ff6826758b67c2d4f3ff76cacd85711e40727ce6748b79ef1cc35d1",
+      "ranges": "244-282,526-578,963-1025",
+      "targets": [
+        "src/account/study/useWorkspace.ts",
+        "src/account/study/TutorPanel.tsx"
+      ],
+      "adaptation": "Separate readiness/execution/error axes and scoped retry adapted to canonical turn polling; no ChatKit CDN/browser runtime."
+    },
+    {
+      "revision": "af57036ad18a45a0aa20a81202c9e0939ebd99d5",
+      "source": "frontend/src/hooks/useGuidedPlanData.ts",
+      "sourceSha256": "4248d7debe0752089d8db6e64deff7126d6b1d567aa42e17f0316df7f0d8df5e",
+      "ranges": "124-179,190-236",
+      "targets": [
+        "src/account/study/useWorkspace.ts",
+        "src/account/study/StudyHome.tsx"
+      ],
+      "adaptation": "Owned projection refresh/poll cancellation adapted; source null/fabricated fallbacks rejected."
+    }
+  ],
+  "receivingBaseRevision": "2c667827b4729312820a059ce0ad7f359559c8a0",
+  "testOnlyStudyFiles": [
+    "src/account/study/TutorPanel.test.tsx",
+    "src/account/study/client.test.ts",
+    "src/account/study/redirect.test.ts",
+    "src/account/study/testSupport.ts",
+    "src/account/study/useWorkspace.test.tsx"
+  ],
+  "studyBuild": {
+    "main": "index-DqMcJVDv.js",
+    "mainBytes": 472622,
+    "workspace": "StudyWorkspace-DKU5sunX.js",
+    "sourceModuleCount": 54,
+    "evidence": "review/build-production-modules.json"
   }
 }
