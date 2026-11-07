@@ -18,5 +18,5 @@ it("resumes only a canonical study UUID path and keeps all redirects on product 
     "/callback",
     path.toUpperCase(),
   ])
-    expect(safeNext(value)).toBe("/app/settings");
+    expect(safeNext(value)).toBe("/app");
 });

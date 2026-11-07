@@ -65,7 +65,7 @@ it("does not admit missing config or unsafe redirects", () => {
     "/app?next=evil",
     "/app\n",
   ])
-    expect(safeNext(path)).toBe("/app/settings");
+    expect(safeNext(path)).toBe("/app");
   expect(safeNext("/app/practice")).toBe("/app/practice");
 });
 

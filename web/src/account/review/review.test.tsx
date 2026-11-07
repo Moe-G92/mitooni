@@ -123,7 +123,7 @@ it("accepts only canonical invited review paths after sign-in", () => {
     "/app/content-review/a?x=1",
     "/app/content-review/a#x",
   ])
-    expect(safeNext(p)).toBe("/app/settings");
+    expect(safeNext(p)).toBe("/app");
 });
 it("rejects pre-reveal private source, unknown fields, wrong versions and unknown answer bindings", () => {
   const s = snapshot();

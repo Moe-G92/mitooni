@@ -1,0 +1,95 @@
+{
+  "service": {
+    "railwayProjectId": "6687f485-a208-49d9-a6da-e9cd323ce14e",
+    "railwayEnvironmentId": "54ed21ac-3ceb-44b9-a791-591747debfcb",
+    "railwayServiceId": "775a8fd8-9f44-443b-bb0b-58b8344c8a87",
+    "hostname": "teacher-review-production.up.railway.app",
+    "supabaseProject": "syczumdwgabypxkopkpn"
+  },
+  "requiredRuntimeNames": [
+    "PORT",
+    "MITOONI_BETA_HOST",
+    "MITOONI_AUTH_URL",
+    "MITOONI_AUTH_PROJECT",
+    "MITOONI_AUTH_SERVICE_KEY",
+    "MITOONI_DB_HOST",
+    "MITOONI_DB_HOSTADDR",
+    "MITOONI_DB_NAME",
+    "MITOONI_DB_PORT",
+    "MITOONI_DB_PASSWORD",
+    "MITOONI_LEARNER_CATALOG_HASH"
+  ],
+  "publicBuildNames": [
+    "VITE_MITOONI_AUTH_URL",
+    "VITE_MITOONI_AUTH_PUBLISHABLE_KEY"
+  ],
+  "optionalAllOrNoneRuntimeNames": [
+    "MITOONI_AI_API_KEY",
+    "MITOONI_AI_TEXT_MODEL",
+    "MITOONI_AI_AUDIO_MODEL",
+    "MITOONI_AI_BUDGET_POLICY_ID"
+  ],
+  "activatedAIPreconditions": [
+    "Complete receiving provider configuration",
+    "Explicit admin-owned global allocation, owner cap and concurrency policy",
+    "Matching text/audio model binding, price revision, conservative reservations and initialized shared totals",
+    "Reviewed additive learner schema applied separately",
+    "Coordinator review and Arash release approval"
+  ],
+  "listener": "0.0.0.0:$PORT",
+  "healthcheck": "/ready",
+  "imageCommand": [
+    "/srv/backend/.venv/bin/python",
+    "/srv/backend/beta_entrypoint.py"
+  ],
+  "runtimeUser": "10001:10001",
+  "databaseRole": "mitooni_api",
+  "databaseSchema": "mitooni_app",
+  "tls": {
+    "sslmode": "verify-full",
+    "sslrootcert": "system",
+    "SSL_CERT_FILE": "/etc/ssl/certs/ca-certificates.crt"
+  },
+  "mutationsPerformed": false,
+  "proposedHostingRegion": {
+    "status": "applied_by_root_UI_reports_EU_West_1_replica",
+    "observedCurrentPlacement": "US West from coordinator CUA Deployments observation; ServiceInstance.region remains null",
+    "providerRegionName": "EU West Metal",
+    "location": "Amsterdam, Netherlands",
+    "regionIdentifier": "europe-west4-drams3a",
+    "providerAirportId": "ams",
+    "targetDatabaseRegion": "Supabase eu-west-2 (London)",
+    "desiredMultiRegionConfig": {
+      "europe-west4-drams3a": {
+        "numReplicas": 1
+      }
+    },
+    "preserveService": true,
+    "preserveResourceLimits": true,
+    "preserveIPv6Egress": true,
+    "evidenceDate": "2026-11-07",
+    "evidence": [
+      "https://docs.railway.com/deployments/regions",
+      "https://docs.railway.com/config-as-code/reference",
+      "Read-only project-scoped Railway regions query via CLI5.71.0"
+    ],
+    "validationRequired": "Readback actual deployed placement and run strict TLS/readiness/authenticated candidate/media/AI journeys after coordinator-approved activation; no latency improvement claimed"
+  },
+  "approvedProviderAllocation": {
+    "currency": "USD",
+    "totalCap": 10,
+    "scope": "All live AI evaluations and three teacher accounts combined",
+    "authority": "Coordinator reports Arash approval; requires shared database ledger enforcement",
+    "spendingPerformedByPackaging": 0
+  },
+  "publicBuildOrigin": "https://syczumdwgabypxkopkpn.supabase.co",
+  "actualHostedDeploymentMetadata": {
+    "deploymentId": "7dac7692-477c-49f3-8119-49aec5df7a06",
+    "status": "SUCCESS",
+    "replicas": 1,
+    "ipv6EgressEnabled": true,
+    "legacyRegionField": null,
+    "regionUIObservation": "EU West",
+    "evidence": "Exact-service API selected metadata and root CUA Deployments readback; no raw config/variable fetch"
+  }
+}

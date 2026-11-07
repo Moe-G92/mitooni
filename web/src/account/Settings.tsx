@@ -1,19 +1,16 @@
 import { useState } from "react";
+import { Link } from "react-router";
 import type { LearnerProfile as Profile, ProfileChanges } from "./contracts";
-type Skill = "listening" | "reading" | "writing" | "speaking";
 import { useAccount } from "./state";
 import { useWords } from "./locale";
 import { ErrorNotice } from "./ErrorNotice";
 import { useT } from "./locale";
-import { formatBand } from "@/lib/format";
 import { PageHeader } from "./PageHeader";
 import { Card, CardLabel } from "@/components/ui/card";
 import { Button } from "./Button";
-import { Field, Input, Select } from "@/components/ui/form";
+import { Field, Input } from "@/components/ui/form";
 import { LanguageSwitch } from "./LanguageSwitch";
 
-const BANDS = Array.from({ length: 19 }, (_, i) => i * 0.5);
-const SKILLS: Skill[] = ["listening", "reading", "writing", "speaking"];
 
 export default function Settings() {
   const { t, locale } = useT();
@@ -66,13 +63,7 @@ export default function Settings() {
     setErrors({});
     void patch({
       name: draft.name.trim(),
-      targets: draft.targets,
-      testDate: draft.testDate || null,
-      currentLevel: draft.currentLevel,
-      weeklyHours: draft.weeklyHours,
       locale,
-      showFlag: draft.showFlag,
-      notifications: draft.notifications,
     });
   };
   const writable =
@@ -136,66 +127,6 @@ export default function Settings() {
                   />
                 </Field>
               </div>
-              <CardLabel title={t("settings.targets")} className="mt-3" />
-              <div className="grid grid-cols-2 gap-3 sm:grid-cols-5">
-                {(["overall", ...SKILLS] as const).map((k) => (
-                  <Field
-                    key={k}
-                    label={
-                      k === "overall" ? t("skills.overall") : t(`skills.${k}`)
-                    }
-                    htmlFor={`s-${k}`}
-                  >
-                    <Select
-                      id={`s-${k}`}
-                      value={draft.targets[k]}
-                      onChange={(e) =>
-                        setDraft({
-                          ...draft,
-                          targets: {
-                            ...draft.targets,
-                            [k]: Number(e.target.value),
-                          },
-                        })
-                      }
-                    >
-                      {BANDS.map((b) => (
-                        <option key={b} value={b}>
-                          {formatBand(b, locale)}
-                        </option>
-                      ))}
-                    </Select>
-                  </Field>
-                ))}
-              </div>
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                <Field label={t("settings.testDate")} htmlFor="s-date">
-                  <Input
-                    id="s-date"
-                    type="date"
-                    dir="ltr"
-                    value={draft.testDate ?? ""}
-                    onChange={(e) =>
-                      setDraft({ ...draft, testDate: e.target.value || null })
-                    }
-                  />
-                </Field>
-                <Field label={t("onboarding.hours")} htmlFor="s-hours">
-                  <Input
-                    id="s-hours"
-                    type="number"
-                    min={0}
-                    max={60}
-                    value={draft.weeklyHours}
-                    onChange={(e) =>
-                      setDraft({
-                        ...draft,
-                        weeklyHours: Number(e.target.value),
-                      })
-                    }
-                  />
-                </Field>
-              </div>
               <div>
                 <Button type="submit" disabled={pending || !writable}>
                   {t("common.save")}
@@ -206,6 +137,7 @@ export default function Settings() {
         </Card>
 
         <div className="col-span-12 flex flex-col gap-4 lg:col-span-5">
+          <Card><Button asChild variant="outline"><Link to="/app?prepare=1">{locale === "fa" ? "تنظیم برنامه" : "Preparation settings"}</Link></Button></Card>
           <Card>
             <CardLabel title={t("settings.display")} />
             <div className="mt-3 flex flex-col gap-4">

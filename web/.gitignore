@@ -2,6 +2,7 @@ node_modules/
 dist/
 dist-prototype/
 dist-account-local/
+dist-learner-local/
 /review/
 playwright-report/
 test-results/

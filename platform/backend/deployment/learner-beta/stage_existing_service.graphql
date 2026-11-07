@@ -1,0 +1,9 @@
+# REVIEW ARTIFACT ONLY. Mutates exact existing service if authorized operator runs it.
+# Input comes from activation-variables.json, which contains no secrets.
+mutation StageCandidateService($input: ServiceInstanceUpdateInput!) {
+ serviceInstanceUpdate(
+  environmentId:"54ed21ac-3ceb-44b9-a791-591747debfcb"
+  serviceId:"775a8fd8-9f44-443b-bb0b-58b8344c8a87"
+  input:$input
+ )
+}

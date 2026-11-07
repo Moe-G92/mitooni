@@ -1,0 +1,21 @@
+# Direct repository-root builds lack the admitted private catalogue and must fail.
+**
+!web/package.json
+!web/package-lock.json
+!web/index.html
+!web/tsconfig.json
+!web/vite.config.ts
+!web/src/**
+!web/scripts/account-build-boundary.ts
+!platform/backend/pyproject.toml
+!platform/backend/uv.lock
+!platform/backend/app/**/*.py
+platform/backend/app/corpus/**
+!platform/backend/deployment/learner-beta/entrypoint.py
+!platform/backend/deployment/learner-beta/supabase-root-2021.crt
+**/.env
+**/.env.*
+**/__pycache__/**
+**/*.pyc
+**/*.map
+**/node_modules/**

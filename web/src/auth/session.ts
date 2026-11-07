@@ -1,4 +1,4 @@
-// BarEx auth-event lifecycle adapted to isolated, nonpersistent receiving-product sessions.
+// BarEx auth-event lifecycle adapted to isolated receiving-product owner/epoch sessions.
 import type { AuthPort, Session, SessionSnapshot } from "./types";
 import { AccountChanged } from "./types";
 import { SIGNOUT_KEY as TOMBSTONE } from "./signoutBus";
@@ -17,6 +17,13 @@ export class SessionController {
     epoch: number;
     promise: Promise<Session | null>;
   } | null = null;
+  private invalidatePort() {
+    try {
+      this.port.invalidate?.();
+    } catch {
+      this.faulted = true;
+    }
+  }
   constructor(
     private port: AuthPort,
     private storage: Pick<
@@ -64,6 +71,7 @@ export class SessionController {
             timer = setTimeout(() => {
               this.faulted = true;
               this.blocked = true;
+              this.invalidatePort();
               this.emit(null, "signed-out", true);
               reject(Error("auth_restart_required"));
             }, 15_000);
@@ -77,7 +85,9 @@ export class SessionController {
     return result;
   }
   async start() {
+    if (this.blocked) this.invalidatePort();
     const unsubscribe = this.port.subscribe((session) => {
+      if (!session) this.invalidatePort();
       if (this.blocked || this.snapshot.phase === "initializing") return;
       // Only deliberate signIn may change identity. Late refresh events cannot restore A under B.
       if (session && session.subject !== this.snapshot.session?.subject) {
@@ -95,7 +105,10 @@ export class SessionController {
           !this.blocked && session ? "authenticated" : "signed-out",
         );
     } catch {
-      if (this.snapshot.epoch === at) this.emit(null, "signed-out");
+      if (this.snapshot.epoch === at) {
+        this.invalidatePort();
+        this.emit(null, "signed-out");
+      }
     }
     return unsubscribe;
   }
@@ -144,6 +157,7 @@ export class SessionController {
   }
   async signIn(email: string, password: string) {
     this.blocked = true;
+    this.invalidatePort();
     this.emit(null, "signed-out", true);
     const at = this.snapshot.epoch;
     const session = await this.enqueue(async () => {
@@ -154,7 +168,7 @@ export class SessionController {
     try {
       this.storage?.removeItem(TOMBSTONE);
     } catch {
-      /* Nonpersistent SDK never rehydrates a stored session. */
+      /* The port separately controls credential persistence. */
     }
     this.blocked = false;
     this.emit(session, "authenticated", true);
@@ -167,10 +181,11 @@ export class SessionController {
   }
   private async endSession(propagate: boolean) {
     this.blocked = true;
+    this.invalidatePort();
     try {
       if (propagate) this.storage?.setItem(TOMBSTONE, crypto.randomUUID());
     } catch {
-      /* Neither port rehydrates persisted sessions. */
+      /* Credential persistence is synchronously purged by the port. */
     }
     try {
       if (propagate) this.publishSignOut();

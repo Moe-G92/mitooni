@@ -43,7 +43,7 @@ it("keeps native group selection through both steps and saves zero-valued goals/
   ).toHaveLength(1);
   await user.type(screen.getByRole("spinbutton"), "0");
   await user.click(
-    screen.getByRole("button", { name: "Save and open settings" }),
+    screen.getByRole("button", { name: "Save and continue" }),
   );
   await waitFor(() => expect(onboard).toHaveBeenCalledOnce());
   expect(onboard.mock.calls[0][0]).toMatchObject({

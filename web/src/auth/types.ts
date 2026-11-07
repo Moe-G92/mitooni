@@ -1,5 +1,7 @@
 export type Session = { subject: string; token: string };
 export interface AuthPort {
+  /** Synchronous credential purge/revocation, independent of pending SDK work. */
+  invalidate?(): void;
   initialize(): Promise<Session | null>;
   subscribe(listener: (session: Session | null) => void): () => void;
   signIn(email: string, password: string): Promise<Session>;

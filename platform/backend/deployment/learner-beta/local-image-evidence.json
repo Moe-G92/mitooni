@@ -1,0 +1,94 @@
+{
+  "checkpoint": "final07_independent_local_artifact_agreed_root_upload_only",
+  "imageTag": "mitooni-learner-beta:receiving-20261107-07",
+  "imageIndexSHA256": "2cf283c8f3111889623c37393ebc062cd212b11c8365896265a40e133f0f1ff8",
+  "runtimeManifestSHA256": "3d123490855f02e04776c615fdfa7829f01746c4a0b04a837dbb669f8af66dc5",
+  "imageConfigSHA256": "308f5673d403d31657d2ffe48c01378759bdb774c559487325304b723ab99a63",
+  "os": "linux",
+  "architecture": "amd64",
+  "user": "10001:10001",
+  "sizeBytes": 361484098,
+  "command": [
+    "/srv/backend/.venv/bin/python",
+    "/srv/backend/beta_entrypoint.py"
+  ],
+  "context": "/private/tmp/mitooni-learner-context-20261107-07-receiving",
+  "contextManifestSHA256": "acbd11270f534e3a9ab20e66feab7dee676a0ab1ce9939b84847a6c883400a2c",
+  "catalogHash": "4f96e87d94e9188c76287a28c6a5201eee8b201a7a0098a9e8d69a5cb44569f9",
+  "admittedFiles": 398,
+  "privateFiles": 54,
+  "tasks": 42,
+  "assets": 53,
+  "frontendSetSHA256": "93749f7b5b4349ec987aa37811aa4f53c8d44dfdc488ae09bbd3ea5a0382989c",
+  "backendRepositorySHA256": "c029f568b0d920fed6a4339ace82f2a0efe467f48706927ee8cb8dfb620e4c03",
+  "sourceChangesAfterBuild": [],
+  "packagingTestsPassed": 28,
+  "networkDisabledSmoke": {
+    "runtimeModulesImported": 54,
+    "fixtureAuthenticatedMediaTypes": 2,
+    "caActuallyTrusted": true,
+    "privateStaticDenied": true,
+    "missingTamperedMediaDenied": true,
+    "invalidContentStopsBeforeDatabase": true,
+    "unconfiguredCMDExitCode": 1,
+    "receivingBuildOriginMatches": true,
+    "reviewedBackendBytesMatch": true,
+    "reviewedNativeAudioGuardMatches": true
+  },
+  "providerCalls": 0,
+  "hostedAuthDatabaseProviderProven": false,
+  "keyPresenceLiveCheckRun": false,
+  "cloudMutations": 0,
+  "AIProviderSHA256": "41c04d72e45f049cc5909facf8866335dff1c41c25cde0adf2cd0be200d09fb8",
+  "sourceInventoryDifferenceAfterBuild": [],
+  "supersededImage": "mitooni-learner-beta:receiving-20261107-02 (known nullable Listening DTO bug)",
+  "stagedPatchMetadata": {
+    "id": "ff9ad99c-ec91-46c7-aab7-eba5df1658d3",
+    "status": "STAGED",
+    "valuesRequested": false,
+    "keySpecificEvidence": "Root safe CUA name-only observation; whole staged patch was not requested"
+  },
+  "coordinatorReportedKeyState": {
+    "committedKeyPresent": true,
+    "valuesRequested": false,
+    "fourNonsecretBindingsAppliedWithSkipDeploys": true,
+    "deploymentTriggered": false,
+    "observedBy": "root coordinator, not packaging worker"
+  },
+  "supersededImages": [
+    "receiving-20261107-02: nullable Listening DTO bug",
+    "receiving-20261107-03: superseded by Today next-action journey repair"
+  ],
+  "independentReview": {
+    "reviewer": "runtime_security_review",
+    "verdict": "AGREED exact final07 artifact",
+    "imageIndexSHA256": "2cf283c8f3111889623c37393ebc062cd212b11c8365896265a40e133f0f1ff8",
+    "contextPayloadHashesVerified": 398,
+    "expectedBackendFilesChanged": 3,
+    "networkNoneFullSmokePassed": true,
+    "bakedNoMountActualLoopbackHTTPPassed": true,
+    "bundledDriverCATrustPassed": true,
+    "reviewedBackendAgentProviderEntrypointReceivingIdentityPreserved": true,
+    "limitations": "Local artifact/fixture HTTP proof; root must perform new-prompt live quality and global ledger/hosted checks"
+  },
+  "deepLinkPatchProof": {
+    "entrypointSHA256": "d7f897076469d1a320ddd8ce504455c3d871b35d0a2a94158662f62313ff71fd",
+    "image": "receiving-20261107-07",
+    "method": "baked entrypoint, no mount",
+    "freshActualLoopbackHTTPPassed": true,
+    "fullNetworkNoneSmokePassed": true,
+    "noConfigCMDExitCode": 1,
+    "independentReview": "AGREED exact07 no mount"
+  },
+  "entrypointSHA256": "d7f897076469d1a320ddd8ce504455c3d871b35d0a2a94158662f62313ff71fd",
+  "AIAgentSHA256": "0fac95b5239542b0b2532820aad68e3307510932ae823e8ff5bcce41c46ef3d4",
+  "earlierHosted04CoordinatorEvidence": {
+    "deploymentId": "7dac7692-477c-49f3-8119-49aec5df7a06",
+    "image": "04",
+    "status": "SUCCESS",
+    "region": "EU West from root CUA Deployments",
+    "replicas": 1,
+    "legacyAPIRegion": null,
+    "doNotInterruptActiveQualityJobs": true
+  }
+}

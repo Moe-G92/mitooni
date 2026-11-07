@@ -1,4 +1,4 @@
-import { Link, NavLink, Outlet, useMatch } from "react-router";
+import { NavLink, Outlet, useMatch } from "react-router";
 import {
   BarChart3,
   BookOpen,
@@ -9,16 +9,20 @@ import {
   NotebookPen,
   Settings,
 } from "lucide-react";
-import { useAccount, useMe } from "./state";
+import { useMe } from "./state";
 import { useT } from "./locale";
 import { formatBand, formatDate } from "@/lib/format";
 import { cn } from "@/lib/utils";
 import { BrandMark } from "./BrandMark";
 import { TopControls } from "./TopControls";
 import { Chip } from "@/components/ui/misc";
+import { ProductFeedback } from "./learner/ProductFeedback";
+import { useLearnerResource } from "./learner/hooks";
+import type { Bootstrap } from "./learner/contracts";
 
 const NAV = [
   { to: "/app", key: "nav.overview", icon: Home, end: true },
+  { to: "/app/plan", key: "nav.plan", icon: GraduationCap },
   { to: "/app/practice", key: "nav.practice", icon: NotebookPen },
   { to: "/app/mocks", key: "nav.mocks", icon: Clock },
   { to: "/app/results", key: "nav.results", icon: BarChart3 },
@@ -38,18 +42,6 @@ export function AppLayout() {
   return today ? <TopBarShell /> : <SidebarShell />;
 }
 
-function ReviewerLink() {
-  const { account } = useAccount();
-  const { locale } = useT();
-  return account?.membership.roles.includes("reviewer") ? (
-    <Link
-      className="flex min-h-11 items-center rounded-lg px-3 py-2"
-      to="/app/content-review"
-    >
-      {locale === "fa" ? "بازبینی محتوا" : "Content review"}
-    </Link>
-  ) : null;
-}
 function SkipLink() {
   const { t } = useT();
   return (
@@ -68,7 +60,8 @@ function SkipLink() {
  * the nav moves to its own row and scrolls sideways.
  */
 function TopBarShell() {
-  const { t } = useT();
+  const { t, locale } = useT();
+  const { data } = useLearnerResource<Bootstrap>("/bootstrap");
   return (
     <div className="min-h-screen">
       <SkipLink />
@@ -94,15 +87,14 @@ function TopBarShell() {
                     )
                   }
                 >
-                  {to === "/app" ? t("nav.today") : t(key)}
+                  {to === "/app" ? t("nav.today") : key === "nav.plan" ? (locale === "fa" ? "برنامه" : "Plan") : t(key)}
                 </NavLink>
               ),
             )}
-            <ReviewerLink />
           </nav>
           <div className="ms-auto flex items-center gap-2">
             <Chip className="hidden text-foreground sm:inline-flex">
-              {t("common.academic")}
+              {data?.preferences?.examTrack === "general_training" ? "IELTS General Training" : data?.preferences ? "IELTS Academic" : "IELTS"}
             </Chip>
             <TopControls />
           </div>
@@ -113,6 +105,7 @@ function TopBarShell() {
         className="mx-auto min-w-0 max-w-[1280px] px-4 pt-6 pb-14 md:px-8 md:pt-10"
       >
         <Outlet />
+        <ProductFeedback />
       </main>
     </div>
   );
@@ -126,6 +119,8 @@ function TopBarShell() {
 function SidebarShell() {
   const { t, locale } = useT();
   const me = useMe();
+  const { data } = useLearnerResource<Bootstrap>("/bootstrap");
+  const goals = data?.preferences;
   return (
     <div className="grid min-h-screen grid-cols-1 md:grid-cols-[232px_minmax(0,1fr)]">
       <SkipLink />
@@ -142,7 +137,7 @@ function SidebarShell() {
                 key={to}
                 to={to}
                 end={"end" in rest}
-                aria-label={t(key)}
+                aria-label={key === "nav.plan" ? (locale === "fa" ? "برنامه" : "Plan") : t(key)}
                 className={({ isActive }) =>
                   cn(
                     "flex shrink-0 items-center gap-2.5 rounded-[10px] min-h-11 min-w-11 p-2.5 text-[15px] text-white/80 transition-colors hover:bg-white/10 hover:text-white focus-visible:outline-canary-yellow",
@@ -156,21 +151,20 @@ function SidebarShell() {
                   strokeWidth={1.8}
                   aria-hidden="true"
                 />
-                <span className="hidden md:inline">{t(key)}</span>
+                <span className="hidden md:inline">{key === "nav.plan" ? (locale === "fa" ? "برنامه" : "Plan") : t(key)}</span>
               </NavLink>
             ))}
-            <ReviewerLink />
           </nav>
           {me.data && (
             <div className="mt-auto hidden rounded-[14px] border border-white/15 p-3 text-[13px] text-white/80 md:block">
               <b className="block font-medium text-white">
                 {t("nav.target", {
-                  band: formatBand(me.data.targets.overall, locale),
+                  band: formatBand(goals?.targets.overall ?? me.data.targets.overall, locale),
                 })}
               </b>
-              {me.data.testDate
+              {(goals ? goals.testDate : me.data.testDate)
                 ? t("nav.examOn", {
-                    date: formatDate(me.data.testDate, locale),
+                    date: formatDate((goals ? goals.testDate : me.data.testDate)!, locale),
                   })
                 : t("nav.noTestDate")}
             </div>
@@ -179,6 +173,7 @@ function SidebarShell() {
       </aside>
       <main id="main" className="min-w-0 px-4 pt-5 pb-12 md:px-7.5 md:pt-6.5">
         <Outlet />
+        <ProductFeedback />
       </main>
     </div>
   );

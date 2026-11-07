@@ -44,7 +44,7 @@
       "testDate": "Test date",
       "hours": "Hours you can study each week",
       "back": "Back",
-      "finish": "Save and open settings",
+      "finish": "Save and continue",
       "errDate": "Choose a date from today onwards",
       "errHours": "Enter a whole number from 0 to 60"
     },
@@ -129,7 +129,7 @@
       "testDate": "تاریخ آزمون",
       "hours": "هر هفته چند ساعت می‌تونی درس بخونی؟",
       "back": "برگشت",
-      "finish": "ذخیره و باز کردن تنظیمات",
+      "finish": "ذخیره و ادامه",
       "errDate": "یه تاریخ از امروز به بعد انتخاب کن",
       "errHours": "عددی صحیح از ۰ تا ۶۰ وارد کن"
     },

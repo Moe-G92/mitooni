@@ -28,6 +28,9 @@ def create_receiving_app(
     provider: ProviderConfiguration | None = None,
     review_configuration=None,
     speaking_provider: SpeakingProviderConfiguration | None = None,
+    learner_catalog=None,
+    learner_runner=None,
+    learner_budget_policy_id=None,
 ):
     if (
         config.environment != "production"
@@ -48,8 +51,13 @@ def create_receiving_app(
     speaking_runner = SpeakingRunner(api_key=speaking_provider.api_key, model=speaking_provider.model) if speaking_provider else None
     if speaking_provider and review_configuration is None:
         raise ValueError("Speaking requires explicit review package")
+    from app.repositories.postgres_learner import PostgresLearnerRepository
+    learner_repository = PostgresLearnerRepository(target,learner_catalog,provider_enabled=learner_runner is not None,budget_policy_id=learner_budget_policy_id) if learner_catalog is not None else None
     return create_app(
         config,
+        learner_repository=learner_repository,
+        learner_runner=learner_runner,
+        learner_worker_enabled=learner_runner is not None,
         account_repository=PostgresAccountRepository(target),
         study_repository=PostgresStudyRepository(
             target, call_budget=provider.call_budget if provider else 1

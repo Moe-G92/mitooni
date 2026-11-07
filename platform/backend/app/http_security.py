@@ -18,6 +18,8 @@ def account_or_study_path(scope: dict[str, Any]) -> bool:
         path == "/api/account"
         or path.startswith("/api/profile")
         or path.startswith("/api/study/")
+        or path == "/api/learner"
+        or path.startswith("/api/learner/")
         or path == "/api/content-review"
         or path.startswith("/api/content-review/")
     )
@@ -89,7 +91,13 @@ class ReviewBodyLimitMiddleware:
 
     async def __call__(self, scope, receive, send):
         path = routing_path(scope)
-        if scope.get('type') != 'http' or not (path == '/api/content-review' or path.startswith('/api/content-review/')):
+        learner = path == '/api/learner' or path.startswith('/api/learner/')
+        # Candidate audio is admitted by the route after current owner/publication
+        # preflight, with actual streamed 18MiB counting; never prebuffer it here.
+        candidate_audio = scope.get('method') == 'POST' and re.fullmatch(r'/api/learner/attempts/[a-fA-F0-9-]{36}/recordings', path)
+        if candidate_audio:
+            return await self.app(scope,receive,send)
+        if scope.get('type') != 'http' or not (learner or path == '/api/content-review' or path.startswith('/api/content-review/')):
             return await self.app(scope, receive, send)
         # Only this exact POST shape admits audio; all other review routes retain 512 KiB.
         limit = 18 * 1024 * 1024 if scope.get("method") == "POST" and re.fullmatch(r"/api/content-review/targets/[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}/speaking-recordings", path) else self.limit

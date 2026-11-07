@@ -96,7 +96,7 @@ export default function Onboarding() {
     setFailure(null);
     try {
       await account.onboard(op.body, op.key);
-      navigate("/app/settings", { replace: true });
+      navigate("/app", { replace: true });
     } catch (err) {
       setFailure(err);
     } finally {

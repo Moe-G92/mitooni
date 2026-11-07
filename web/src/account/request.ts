@@ -16,6 +16,53 @@ export class GuardedTransport {
     private base = "",
     private fetcher: typeof fetch = (...args) => fetch(...args),
   ) {}
+  /** Candidate media uses a separate allowlist; it never grants reviewer access. */
+  async learnerBytes(
+    path: string,
+    options: { method?: "GET" | "POST"; body?: Blob; operationId?: string; signal?: AbortSignal } = {},
+  ): Promise<Blob> {
+    if (!/^\/learner\/(?:workspaces\/[^/?]+\/assets\/[^/?]+|recordings\/[^/?]+\/audio|attempts\/[^/?]+\/recordings\?itemId=[^&]+&expectedDraftRevision=\d+)$/.test(path) || /[\\#\s]/.test(path) || path.includes("..") || /%2f|%5c|%2e/i.test(path))
+      throw new AccountError(400, "invalid_media_path");
+    const owner = this.session.capture();
+    const send = async (refresh = false) => {
+      const token = await this.session.token(owner, refresh);
+      this.session.assert(owner);
+      const headers = new Headers({ Authorization: `Bearer ${token}` });
+      if (options.body) {
+        if (!options.operationId || options.body.type !== "audio/wav" || options.body.size > 18 * 1024 * 1024) throw new AccountError(400, "invalid_audio");
+        headers.set("Content-Type", "audio/wav");
+        headers.set("Idempotency-Key", options.operationId);
+        headers.set("X-Expected-User-Id", owner.subject);
+      }
+      return this.fetcher(`${this.base}/api${path}`, { method: options.method ?? "GET", headers, body: options.body, signal: options.signal, credentials: "omit", redirect: "error", cache: "no-store" });
+    };
+    let response = await send();
+    this.session.assert(owner);
+    if (response.status === 401) response = await send(true);
+    this.session.assert(owner);
+    if (!response.ok) {
+      const data = await response.json().catch(() => null) as { detail?: { code?: string } } | null;
+      this.session.assert(owner);
+      if (response.status === 401) void this.session.signOut().catch(() => {});
+      throw new AccountError(response.status, data?.detail?.code ?? "invalid_media_request");
+    }
+    if (!response.body) throw new AccountError(502, "missing_media_body");
+    const reader = response.body.getReader();
+    const parts: Uint8Array<ArrayBuffer>[] = [];
+    let total = 0;
+    try {
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        total += value.byteLength;
+        if (total > 48 * 1024 * 1024) throw new AccountError(413, "media_too_large");
+        parts.push(new Uint8Array(value));
+      }
+    } catch (error) { await reader.cancel().catch(() => {}); throw error; }
+    finally { reader.releaseLock(); }
+    this.session.assert(owner);
+    return new Blob(parts, { type: response.headers.get("Content-Type")?.split(";")[0] ?? "application/octet-stream" });
+  }
   /** Raw private media only. Callers construct a fixed receiving API path. */
   async rawResponse(
     path: string,

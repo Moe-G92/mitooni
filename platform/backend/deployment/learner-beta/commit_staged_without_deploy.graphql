@@ -1,0 +1,10 @@
+# Root-approved handoff only. Preserves existing staged values on server.
+# No key/variable value is requested, supplied, echoed or overwritten.
+# skipDeploys:true prevents redeploying the old review image.
+mutation CommitExistingCandidateKeyWithoutDeploy {
+ environmentPatchCommitStaged(
+  environmentId:"54ed21ac-3ceb-44b9-a791-591747debfcb"
+  skipDeploys:true
+  commitMessage:"Prepare approved candidate runtime without deployment"
+ )
+}

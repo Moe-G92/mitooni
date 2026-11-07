@@ -20,9 +20,18 @@ const AppLayout = lazy(() =>
 );
 const Onboarding = lazy(() => import("./Onboarding"));
 const Settings = lazy(() => import("./Settings"));
-const Capability = lazy(() => import("./Capability"));
+const Home = lazy(() => import("./learner/home/HomePage"));
+const Plan = lazy(() => import("./learner/home/PlanPage"));
+const Practice = lazy(() => import("./learner/home/PracticePage"));
+const Mocks = lazy(() => import("./learner/home/MocksPage"));
+const LearnerSession = lazy(() => import("./learner/home/SessionPage"));
+const LearnerWorkspace = lazy(() => import("./learner/WorkspacePage"));
+const Results = lazy(() => import("./learner/secondary/ResultsPage"));
+const ResultDetail = lazy(() => import("./learner/secondary/ResultDetailPage"));
+const Progress = lazy(() => import("./learner/secondary/ProgressPage"));
+const Vocabulary = lazy(() => import("./learner/secondary/VocabularyPage"));
+const Coaching = lazy(() => import("./learner/secondary/CoachingPage"));
 const ContentReview = lazy(() => import("./review/ReviewApp"));
-const StudyHome = lazy(() => import("./study/StudyHome"));
 const StudyWorkspace = lazy(() => import("./study/StudyWorkspace"));
 
 function PrivatePage({
@@ -33,9 +42,10 @@ function PrivatePage({
   standalone?: boolean;
 }) {
   const w = useWords();
-  const loading = <h1>{w.saving}</h1>;
+  const location = useLocation();
+  const loading = <h1>{w.loading}</h1>;
   return (
-    <Suspense
+    <Suspense key={location.pathname}
       fallback={
         standalone ? (
           <Status>{loading}</Status>
@@ -67,7 +77,7 @@ function Gate({ setup = false }: { setup?: boolean }) {
   if (snapshot.phase === "initializing")
     return (
       <Status>
-        <h1>{w.saving}</h1>
+        <h1>{w.loading}</h1>
       </Status>
     );
   if (!snapshot.session)
@@ -96,7 +106,7 @@ function Gate({ setup = false }: { setup?: boolean }) {
   if (loading || !account)
     return (
       <Status>
-        <h1>{w.saving}</h1>
+        <h1>{w.loading}</h1>
       </Status>
     );
   if (account.state === "access-required")
@@ -133,7 +143,7 @@ function Gate({ setup = false }: { setup?: boolean }) {
   if (account.state === "setup-required" && !setup)
     return <Navigate to="/onboarding" replace />;
   if (account.state === "ready" && setup)
-    return <Navigate to="/app/settings" replace />;
+    return <Navigate to="/app" replace />;
   return <Outlet />;
 }
 function Status({ children }: { children: ReactNode }) {
@@ -193,7 +203,7 @@ export function AccountApp() {
               path="/app"
               element={
                 <PrivatePage standalone>
-                  <AppLayout />
+                  <AppLayout key={epoch} />
                 </PrivatePage>
               }
             >
@@ -201,7 +211,7 @@ export function AccountApp() {
                 index
                 element={
                   <PrivatePage>
-                    <StudyHome key={epoch} />
+                    <Home key={epoch} />
                   </PrivatePage>
                 }
               />
@@ -210,7 +220,7 @@ export function AccountApp() {
                 path="practice"
                 element={
                   <PrivatePage>
-                    <StudyHome key={epoch} catalog />
+                    <Practice key={epoch} />
                   </PrivatePage>
                 }
               />
@@ -218,7 +228,7 @@ export function AccountApp() {
                 path="mocks"
                 element={
                   <PrivatePage>
-                    <Capability />
+                    <Mocks key={epoch} />
                   </PrivatePage>
                 }
               />
@@ -226,7 +236,7 @@ export function AccountApp() {
                 path="results"
                 element={
                   <PrivatePage>
-                    <Capability />
+                    <Results key={epoch} />
                   </PrivatePage>
                 }
               />
@@ -234,7 +244,7 @@ export function AccountApp() {
                 path="progress"
                 element={
                   <PrivatePage>
-                    <Capability />
+                    <Progress key={epoch} />
                   </PrivatePage>
                 }
               />
@@ -242,7 +252,7 @@ export function AccountApp() {
                 path="vocabulary"
                 element={
                   <PrivatePage>
-                    <Capability />
+                    <Vocabulary key={epoch} />
                   </PrivatePage>
                 }
               />
@@ -250,11 +260,18 @@ export function AccountApp() {
                 path="coach"
                 element={
                   <PrivatePage>
-                    <Capability />
+                    <Coaching key={epoch} />
                   </PrivatePage>
                 }
               />
+              <Route path="plan" element={<PrivatePage><Plan key={epoch} /></PrivatePage>} />
+              <Route path="results/:attemptId" element={<PrivatePage><ResultDetail key={epoch} /></PrivatePage>} />
+              <Route path="sessions/:sessionId" element={<PrivatePage><LearnerSession key={epoch} /></PrivatePage>} />
             </Route>
+            <Route
+              path="/learn/:workspaceId"
+              element={<PrivatePage standalone><LearnerWorkspace key={epoch} /></PrivatePage>}
+            />
             <Route
               path="/study/:workspaceId"
               element={

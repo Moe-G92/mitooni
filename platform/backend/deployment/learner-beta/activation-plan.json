@@ -1,0 +1,111 @@
+{
+  "status": "deployed_final07_speaking_acceptance_changes_needed",
+  "projectId": "6687f485-a208-49d9-a6da-e9cd323ce14e",
+  "environmentId": "54ed21ac-3ceb-44b9-a791-591747debfcb",
+  "serviceId": "775a8fd8-9f44-443b-bb0b-58b8344c8a87",
+  "serviceInstanceUpdateInput": {
+    "dockerfilePath": "platform/backend/deployment/learner-beta/Dockerfile",
+    "startCommand": null,
+    "healthcheckPath": "/ready",
+    "healthcheckTimeout": 60,
+    "restartPolicyType": "ON_FAILURE",
+    "restartPolicyMaxRetries": 2,
+    "ipv6EgressEnabled": true,
+    "multiRegionConfig": {
+      "europe-west4-drams3a": {
+        "numReplicas": 1
+      }
+    }
+  },
+  "resourceLimits": "preserve_existing",
+  "schemaApplication": "separate_root_reviewed_step_not_startup",
+  "secrets": "preserve_existing_values_in_Railway_never_request_or_echo_values",
+  "keyPresenceHelper": "check_ai_key_presence.py",
+  "context": "/private/tmp/mitooni-learner-context-20261107-07-receiving",
+  "uploadCommand": [
+    "/private/tmp/railway-tooling-20261104/railway",
+    "up",
+    "/private/tmp/mitooni-learner-context-20261107-07-receiving",
+    "--path-as-root",
+    "--project",
+    "6687f485-a208-49d9-a6da-e9cd323ce14e",
+    "--environment",
+    "54ed21ac-3ceb-44b9-a791-591747debfcb",
+    "--service",
+    "775a8fd8-9f44-443b-bb0b-58b8344c8a87",
+    "--detach"
+  ],
+  "mutationsPerformed": true,
+  "contextManifestSHA256": "acbd11270f534e3a9ab20e66feab7dee676a0ab1ce9939b84847a6c883400a2c",
+  "stageCommand": [
+    "/private/tmp/railway-tooling-20261104/railway",
+    "api",
+    "--file",
+    "/Users/arashshahrokhi/Projects/mitooni/app/platform/backend/deployment/learner-beta/stage_existing_service.graphql",
+    "--variables",
+    "@/Users/arashshahrokhi/Projects/mitooni/app/platform/backend/deployment/learner-beta/activation-variables.json",
+    "--compact"
+  ],
+  "imageTag": "mitooni-learner-beta:receiving-20261107-07",
+  "verifiedEnvironmentScope": [
+    "54ed21ac-3ceb-44b9-a791-591747debfcb"
+  ],
+  "commitStagedWithoutDeployCommand": [
+    "/private/tmp/railway-tooling-20261104/railway",
+    "api",
+    "--file",
+    "/Users/arashshahrokhi/Projects/mitooni/app/platform/backend/deployment/learner-beta/commit_staged_without_deploy.graphql",
+    "--compact"
+  ],
+  "nonsecretBindingsFile": "/Users/arashshahrokhi/Projects/mitooni/app/platform/backend/deployment/learner-beta/candidate-nonsecret-bindings.json",
+  "activationSequence": [
+    "Existing credentials/models/shared-policy/catalogue/host configuration remain unchanged",
+    "Exact07 own and independent artifact proof complete",
+    "Root verifies global active0",
+    "Root uploads exact07context only",
+    "Root completes new-prompt live quality/hosted/ledger checks"
+  ],
+  "coordinatorReportedCompleted": [
+    "Committed existing staged key with skipDeploys:true",
+    "Names-only committed keyPresent:true",
+    "Bound exact four nonsecret fields through reviewed skip-deploys stdin binder",
+    "No deployment triggered"
+  ],
+  "remainingCoordinatorActions": [
+    "Investigate invalid_audio_binding from actual native call5; no automatic retry",
+    "Review focused repair before any further bounded live audio check"
+  ],
+  "activationHold": [],
+  "serviceInstanceUpdateRequired": false,
+  "nonsecretBindingsRequired": false,
+  "localImageIndexSHA256": "2cf283c8f3111889623c37393ebc062cd212b11c8365896265a40e133f0f1ff8",
+  "localImageRuntimeManifestSHA256": "3d123490855f02e04776c615fdfa7829f01746c4a0b04a837dbb669f8af66dc5",
+  "localImageConfigSHA256": "308f5673d403d31657d2ffe48c01378759bdb774c559487325304b723ab99a63",
+  "independentReview": {
+    "reviewer": "runtime_security_review",
+    "verdict": "AGREED exact final07 artifact",
+    "imageIndexSHA256": "2cf283c8f3111889623c37393ebc062cd212b11c8365896265a40e133f0f1ff8",
+    "contextPayloadHashesVerified": 398,
+    "expectedBackendFilesChanged": 3,
+    "networkNoneFullSmokePassed": true,
+    "bakedNoMountActualLoopbackHTTPPassed": true,
+    "bundledDriverCATrustPassed": true,
+    "reviewedBackendAgentProviderEntrypointReceivingIdentityPreserved": true,
+    "limitations": "Local artifact/fixture HTTP proof; root must perform new-prompt live quality and global ledger/hosted checks"
+  },
+  "hostedDeploymentId": "29aab4de-3398-4e02-89f2-02a7736596e0",
+  "hostedDeploymentStatus": "SUCCESS",
+  "liveAcceptance": {
+    "textCallsPassed": 4,
+    "nativeAudioCallsFailedClosed": 1,
+    "totalCalls": 5,
+    "settledUSDMicros": 240873,
+    "reservedUSDMicros": 0,
+    "activeJobs": 0,
+    "health": 200,
+    "ready": 200,
+    "anonymousLearnerBootstrap": 401,
+    "privateCatalogue": 404,
+    "completeBetaVerdict": "CHANGES NEEDED"
+  }
+}

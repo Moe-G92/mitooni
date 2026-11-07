@@ -47,6 +47,9 @@ def create_app(
     speaking_review_repository=None,
     speaking_runner=None,
     speaking_worker_enabled=False,
+    learner_repository=None,
+    learner_runner=None,
+    learner_worker_enabled=False,
 ) -> FastAPI:
     if verifier is not None and (config is None or config.environment != "test"):
         raise ValueError(
@@ -96,6 +99,15 @@ def create_app(
         raise ValueError("Explicit Speaking repository and runner required")
     if content_review_repository is not None:
         content_review_repository.speaking_available = bool(speaking_review_repository is not None and speaking_review_repository.provider_enabled and speaking_runner is not None and speaking_worker_enabled)
+    if learner_repository is not None:
+        if config is None or account_repository is None or learner_repository.config != account_repository.config:
+            raise ValueError("Learner and account must share explicit receiving authority")
+        if learner_repository.provider_enabled != (learner_runner is not None and learner_worker_enabled):
+            raise ValueError("Learner provider availability must match explicit runner and worker")
+        if learner_runner is not None and getattr(learner_runner,'kind',None)=='synthetic' and config.environment!='test':
+            raise ValueError("Synthetic learner runner is test-only")
+    if learner_worker_enabled and (learner_repository is None or learner_runner is None):
+        raise ValueError("Explicit learner repository and runner required")
     client = TargetSupabaseClient(config) if config is not None else None
 
     @asynccontextmanager
@@ -108,9 +120,20 @@ def create_app(
         from app.workers.speaking_review import SpeakingReviewWorker
         speaking_worker = SpeakingReviewWorker(speaking_review_repository, speaking_runner) if speaking_worker_enabled else None
         speaking_task = asyncio.create_task(speaking_worker.run()) if speaking_worker else None
+        learner_worker = None
+        learner_task = None
+        if learner_worker_enabled:
+            from app.workers.learner import LearnerWorker
+            learner_repository.validate_budget_policy()
+            learner_worker = LearnerWorker(learner_repository,learner_runner)
+            learner_task = asyncio.create_task(learner_worker.run())
         try:
             yield
         finally:
+            if learner_worker:
+                learner_worker.stop.set()
+                learner_task.cancel()
+                await asyncio.gather(learner_task,return_exceptions=True)
             if speaking_worker:
                 speaking_worker.stop.set()
                 speaking_task.cancel()
@@ -140,6 +163,7 @@ def create_app(
     application.state.content_review_repository = content_review_repository
     application.state.speaking_review_repository = speaking_review_repository
     application.state.tutor_runner = tutor_runner
+    application.state.learner_repository = learner_repository
 
     def account_path(request):
         return account_or_study_path(request.scope)
@@ -255,6 +279,9 @@ def create_app(
     if account_repository is not None:
         application.include_router(account_router)
 
+    if learner_repository is not None:
+        from app.routers.learner import router as learner_router
+        application.include_router(learner_router)
     if study_repository is not None:
         from app.routers.study import router as study_router
 

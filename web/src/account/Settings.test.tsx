@@ -62,6 +62,9 @@ it("locks editable fields during save and preserves an accessible saved confirma
     </BrowserRouter>,
   );
   const name = await screen.findByDisplayValue("A");
+  expect(screen.getByRole("link").getAttribute("href")).toBe("/app?prepare=1");
+  expect(document.getElementById("s-overall")).toBeNull();
+  expect(document.getElementById("s-hours")).toBeNull();
   fireEvent.change(name, { target: { value: "saved A" } });
   fireEvent.submit(name.closest("form")!);
   await waitFor(() => expect(name).toBeDisabled());

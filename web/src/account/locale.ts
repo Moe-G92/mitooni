@@ -46,6 +46,7 @@ export const words = {
     conflict: "اطلاعات تغییر کرده؛ ابتدا نسخهٔ ذخیره‌شده را بررسی کن",
     reload: "کنار گذاشتن تغییرها و بارگذاری نسخهٔ ذخیره‌شده",
     saving: "در حال ذخیره",
+    loading: "در حال بارگذاری",
     required: "نام و همهٔ هدف‌ها را انتخاب کن",
     request: "شناسهٔ پیگیری",
     worker: "پیش‌نمایش قبلی هنوز فعال است؛ این برگه را ببند و دوباره باز کن",
@@ -73,6 +74,7 @@ export const words = {
     conflict: "Your information changed. Review the saved version first",
     reload: "Discard edits and load saved version",
     saving: "Saving",
+    loading: "Loading",
     required: "Enter your name and choose every goal",
     request: "Reference",
     worker:

@@ -17,7 +17,8 @@
     "dev:account-local": "vite --config vite.account-local.config.ts",
     "dev:prototype": "vite --config vite.prototype.config.ts",
     "build:prototype": "tsc --noEmit && vite build --config vite.prototype.config.ts",
-    "test:tooling": "node --test scripts/tooling.test.mjs"
+    "test:tooling": "node --test scripts/tooling.test.mjs",
+    "dev:learner-local": "vite --config vite.learner-local.config.ts"
   },
   "engines": {
     "node": ">=22.12.0"
