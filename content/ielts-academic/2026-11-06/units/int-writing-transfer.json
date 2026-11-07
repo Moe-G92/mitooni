@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "id": "int-writing-transfer",
+  "version": 2,
+  "skill": "writing",
+  "stage": "transfer",
+  "pathwayIds": [
+    "intermediate"
+  ],
+  "objectiveIds": [
+    "writing-chart-features",
+    "writing-data-accuracy",
+    "writing-comparison-language"
+  ],
+  "familyId": "source-ms2-europe-housing-means",
+  "title": "Compare the source’s European housing sizes",
+  "instructions": "Complete both original writing practice tasks in English. Write connected prose. These tasks support learning and do not provide a calibrated band score.",
+  "stimulus": {
+    "kind": "chart_description",
+    "text": "Accessible source table: average house size in selected European countries, square metres. United Kingdom 76; France 112; Denmark 137; Germany 109; Italy 61; Spain 97; Greece 126. These are values in the course exercise, not an updated survey. No date, numbers of houses, trends or causal explanation is supplied.\n\nOriginal flawed draft: “Italy has the largest homes. France is far larger than Germany. Every country’s house size increased because more homes were built.”"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "Independent preparation check, not an IELTS response: In about 60–100 words identify the table’s measure and key comparisons, then correct inaccurate or unsupported claims in the draft. Include a comparison that reflects how close France and Germany are.",
+      "responseType": "extended_text",
+      "options": [],
+      "wordLimit": null
+    },
+    {
+      "id": "q2",
+      "prompt": "Independent Academic Task 1 practice: Describe the European table in at least 150 words of connected prose, reporting main features and relevant comparisons. Include an overview and accurate selected values without inventing a date, trend or cause.",
+      "responseType": "extended_text",
+      "options": [],
+      "wordLimit": null
+    }
+  ],
+  "teachingAnchors": [],
+  "assessment": {
+    "kind": "qualitative",
+    "criteria": [
+      {
+        "id": "task-achievement-response",
+        "label": "Task achievement / Task response",
+        "description": "For preparation identify/correct the measure, rankings and unsupported claims. For the full report present an overview and selected accurate comparisons; do not invent temporal trends, counts or causes from undated average areas."
+      },
+      {
+        "id": "coherence-cohesion",
+        "label": "Coherence and cohesion",
+        "description": "Organise ideas in a clear progression, group relevant information and use references and connections accurately without mechanical overuse."
+      },
+      {
+        "id": "lexical-resource",
+        "label": "Lexical resource",
+        "description": "Choose accurate and appropriate vocabulary, including precise comparisons, process or spatial language where relevant; evaluate flexibility and errors in context."
+      },
+      {
+        "id": "grammatical-range-accuracy",
+        "label": "Grammatical range and accuracy",
+        "description": "Use a suitable range of sentence forms with accurate grammar and punctuation; explain how errors affect meaning rather than rewarding complexity alone."
+      }
+    ],
+    "answerKey": [],
+    "feedbackGuidance": "After submission only. q 1 is preparation evidence and q 2 is a full report attempt. Evaluate all four criteria separately, distinguishing data accuracy, unsupported inference and language. Cite actual response evidence and give one priority revision. No numeric band. Italy 61 is smallest, Denmark 137 largest; Greece 126 is second. France 112 and Germany 109 differ by only 3 m², so far larger is misleading. No time series supports an increase and no building data explain differences. Overview snippet: “Denmark and Greece have the largest averages, whereas Italy and the United Kingdom are at the lower end; France and Germany are close.” Spain 97 is between the lower group and France/Germany. Coherence: group rather than recite all seven entries. Lexis: slightly larger than is justified for France versus Germany. Grammar: compare country averages in parallel forms. Revision: remove a fabricated trend and write one accurate grouped comparison."
+  },
+  "delivery": {
+    "kind": "text",
+    "assetId": null
+  },
+  "locale": {
+    "instructionsFa": "هر دو تمرین نوشتاری را به انگلیسی و به صورت متن پیوسته بنویسید. این تمرین نمرهٔ کالیبره‌شده ارائه نمی‌کند.",
+    "teachingAnchorsFa": [],
+    "feedbackGuidanceFa": "پس از ثبت پاسخ، بازخورد را با پاسخ خود مقایسه کنید. یک خطا را با تکیه بر شواهد اصلاح کنید و سپس تمرین مستقل تازه‌ای انجام دهید."
+  },
+  "provenance": {
+    "origin": "source_based_original",
+    "sourceRefs": [
+      "MS2-W01",
+      "BD-W01"
+    ],
+    "territory": "Iran",
+    "rightsNote": "Source-based Mitooni authoring under user-confirmed Iranian-audience rights and selected-excerpt processing authority. Source files remain read-only; no broader distribution authority claimed.",
+    "transformationNotes": "Reconstructed source values as accessible tables, preserving countries, units and figures. Changed the source’s chart presentation where it implied unrelated means were shares; explicitly disclose that repair. New flawed drafts/prompts/feedback do not copy source sample answers or invent housing datasets, dates, trends or causes.",
+    "objectiveMappings": [
+      {
+        "objectiveId": "writing-chart-features",
+        "sourceRefIds": [
+          "MS2-W01",
+          "BD-W01"
+        ],
+        "sourceLearningPoint": "The actual source average-house-size chart/table supplies the country values and main-feature/data-correction learning sequence, followed by comparative and descriptive language. Local BD-W 01 supplies task coverage, coherent progression, vocabulary precision and grammar dimensions; it is the older public descriptor edition, not current band calibration.",
+        "unitTeachingConnection": "Preparation diagnoses an original inaccurate draft against actual source values, then a full report selects/group comparisons; transfer uses the separate European source table, not the training country set.",
+        "taskTransformation": "Reconstructed source values as accessible tables, preserving countries, units and figures. Changed the source’s chart presentation where it implied unrelated means were shares; explicitly disclose that repair. New flawed drafts/prompts/feedback do not copy source sample answers or invent housing datasets, dates, trends or causes."
+      },
+      {
+        "objectiveId": "writing-data-accuracy",
+        "sourceRefIds": [
+          "MS2-W01",
+          "BD-W01"
+        ],
+        "sourceLearningPoint": "The actual source average-house-size chart/table supplies the country values and main-feature/data-correction learning sequence, followed by comparative and descriptive language. Local BD-W 01 supplies task coverage, coherent progression, vocabulary precision and grammar dimensions; it is the older public descriptor edition, not current band calibration.",
+        "unitTeachingConnection": "Preparation diagnoses an original inaccurate draft against actual source values, then a full report selects/group comparisons; transfer uses the separate European source table, not the training country set.",
+        "taskTransformation": "Reconstructed source values as accessible tables, preserving countries, units and figures. Changed the source’s chart presentation where it implied unrelated means were shares; explicitly disclose that repair. New flawed drafts/prompts/feedback do not copy source sample answers or invent housing datasets, dates, trends or causes."
+      },
+      {
+        "objectiveId": "writing-comparison-language",
+        "sourceRefIds": [
+          "MS2-W01",
+          "BD-W01"
+        ],
+        "sourceLearningPoint": "The actual source average-house-size chart/table supplies the country values and main-feature/data-correction learning sequence, followed by comparative and descriptive language. Local BD-W 01 supplies task coverage, coherent progression, vocabulary precision and grammar dimensions; it is the older public descriptor edition, not current band calibration.",
+        "unitTeachingConnection": "Preparation diagnoses an original inaccurate draft against actual source values, then a full report selects/group comparisons; transfer uses the separate European source table, not the training country set.",
+        "taskTransformation": "Reconstructed source values as accessible tables, preserving countries, units and figures. Changed the source’s chart presentation where it implied unrelated means were shares; explicitly disclose that repair. New flawed drafts/prompts/feedback do not copy source sample answers or invent housing datasets, dates, trends or causes."
+      }
+    ]
+  },
+  "teacherReview": {
+    "status": "pending",
+    "notes": [
+      "Re-authored from inspected licensed teaching selections; independent source-alignment and IELTS teacher review pending. No calibrated level or band claim."
+    ]
+  },
+  "examTrack": "academic"
+}

@@ -1,0 +1,238 @@
+{
+  "schemaVersion": 1,
+  "id": "gt-int-reading-train",
+  "version": 1,
+  "examTrack": "general_training",
+  "skill": "reading",
+  "stage": "train",
+  "pathwayIds": [
+    "gt-intermediate"
+  ],
+  "objectiveIds": [
+    "gt-int-workplace-paraphrase",
+    "gt-int-workplace-sentence-completion",
+    "gt-int-workplace-note-completion"
+  ],
+  "familyId": "gt-cg19-t1-leadership-resignation-adaptation",
+  "title": "Leading a team and leaving a role",
+  "instructions": "Read both workplace texts. For each sentence or note completion, choose ONE WORD ONLY from the indicated text. This is a shorter preparatory set, not a full IELTS Reading section.",
+  "stimulus": {
+    "kind": "passage",
+    "text": "Text A. Establishing leadership\nA new manager’s early behaviour helps colleagues decide whether to trust them. Confidence should be accompanied by respect and a willingness to listen. Goals can be ambitious and take years to reach, but they should still be specific enough for staff to understand and support. Announcing a bold aim without explaining it does not create a shared direction. Equally, a leader should not attempt to carry every responsibility alone when talented colleagues are available.\n\nInvolve staff when designing a new strategy. If they remain too cautious about change, give them another opportunity and make the expected outcome clearer. Work against a division between management and everyone else: a shared message needs to reach people throughout the organisation. Give colleagues time to develop ideas for new problems, but set a deadline for reaching a decision. Space for innovation is not permission to postpone deciding indefinitely.\n\nPast achievements also matter. Remember how the organisation began and recognise its early contributors, so that staff can take pride in what has already been built. Respecting that history need not prevent change. Some situations require risk, and acting promptly may help the organisation remain ahead. Enthusiasm for its future can encourage colleagues who spend much of their lives working there.\n\nText B. Leaving professionally\nThe excitement of a new job is not a good reason to criticise an old employer publicly. Former colleagues or managers may appear again in a later workplace. Tell the manager first in a meeting and follow it with a formal letter. Before the meeting, prepare a list of unfinished tasks, their current status and suggestions for completing them. This turns the conversation towards a workable transition rather than a sudden departure that leaves other people guessing.\n\nClarify the notice period, final working date and how clients or colleagues will hear the news. Ask what kind of reference can be provided. An employer may supply only a basic one, while a line manager may be able to add a more personal account. Plan the handover with that manager, agreeing priorities and leaving documentation about processes or software for the successor.\n\nKeep the resignation letter concise. State the intention to resign and the agreed last date, then acknowledge useful projects, opportunities to develop skills or the experience of working with the team. Avoid turning the letter into a catalogue of organisational weaknesses. Finally, express willingness to finish current projects and transfer responsibilities in an orderly way. Appreciation and a clear handover offer are more useful here than a lengthy justification of every reason for leaving."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "Choose ONE WORD ONLY from the indicated text. Text A: A manager’s early behaviour should help to earn colleagues’ ______.",
+      "responseType": "short_text",
+      "options": [],
+      "wordLimit": 1
+    },
+    {
+      "id": "q2",
+      "prompt": "Choose ONE WORD ONLY from the indicated text. Text A: Staff should be involved in designing a new ______.",
+      "responseType": "short_text",
+      "options": [],
+      "wordLimit": 1
+    },
+    {
+      "id": "q3",
+      "prompt": "Choose ONE WORD ONLY from the indicated text. Text A: Innovation needs time, but reaching a decision requires a ______.",
+      "responseType": "short_text",
+      "options": [],
+      "wordLimit": 1
+    },
+    {
+      "id": "q4",
+      "prompt": "Choose ONE WORD ONLY from the indicated text. Text A: Remembering early contributors can build ______ in past achievements.",
+      "responseType": "short_text",
+      "options": [],
+      "wordLimit": 1
+    },
+    {
+      "id": "q5",
+      "prompt": "Choose ONE WORD ONLY from the indicated text. Text B notes: Before meeting → list unfinished ______ and current status.",
+      "responseType": "short_text",
+      "options": [],
+      "wordLimit": 1
+    },
+    {
+      "id": "q6",
+      "prompt": "Choose ONE WORD ONLY from the indicated text. Text B notes: Ask what kind of ______ can be supplied.",
+      "responseType": "short_text",
+      "options": [],
+      "wordLimit": 1
+    },
+    {
+      "id": "q7",
+      "prompt": "Choose ONE WORD ONLY from the indicated text. Text B notes: Leave process and software ______ for the successor.",
+      "responseType": "short_text",
+      "options": [],
+      "wordLimit": 1
+    },
+    {
+      "id": "q8",
+      "prompt": "Choose ONE WORD ONLY from the indicated text. Text B notes: Final paragraph → offer to transfer ______ in an orderly way.",
+      "responseType": "short_text",
+      "options": [],
+      "wordLimit": 1
+    }
+  ],
+  "teachingAnchors": [
+    {
+      "id": "locate",
+      "label": "Skim, scan, then verify",
+      "text": "Skim each workplace text for its purpose: establishing leadership versus leaving professionally. Then underline the relationship in a question, not just a noun. “Earn colleagues’ confidence” can paraphrase “gain their trust”; “let staff decide eventually” does not preserve “set a deadline”. Use scanning to locate the idea, then read its condition and the surrounding sentence."
+    },
+    {
+      "id": "shape",
+      "label": "Predict the missing word",
+      "text": "Predict the slot before extracting an answer: “a new ___” needs a singular noun, while “transfer ___” may take a plural noun. Read each completed sentence for grammar and sense. Copy ONE WORD ONLY; a whole adjacent noun phrase can exceed the limit. Follow the note sequence within the relevant text rather than jumping between the two workplace topics."
+    },
+    {
+      "id": "test",
+      "label": "Check a completed meaning",
+      "text": "Read the finished sentence against the source text and test obligation, permission and exception separately. Then justify one answer by paraphrasing its evidence without changing must into may. Finish the assessed items alone. During review, revise the retrieval step that failed rather than memorising a key list."
+    }
+  ],
+  "assessment": {
+    "kind": "deterministic",
+    "criteria": [
+      {
+        "id": "textual-evidence",
+        "label": "Textual evidence",
+        "description": "Use only the stated text, respect scope and word limits, and distinguish contradiction from insufficient information."
+      }
+    ],
+    "answerKey": [
+      {
+        "questionId": "q1",
+        "acceptedAnswers": [
+          "trust"
+        ],
+        "rationale": "A links early respectful conduct with gaining trust."
+      },
+      {
+        "questionId": "q2",
+        "acceptedAnswers": [
+          "strategy"
+        ],
+        "rationale": "A explicitly calls for staff involvement in a new strategy."
+      },
+      {
+        "questionId": "q3",
+        "acceptedAnswers": [
+          "deadline"
+        ],
+        "rationale": "A balances creative time with a decision deadline."
+      },
+      {
+        "questionId": "q4",
+        "acceptedAnswers": [
+          "pride"
+        ],
+        "rationale": "A connects recognising history with staff pride."
+      },
+      {
+        "questionId": "q5",
+        "acceptedAnswers": [
+          "tasks"
+        ],
+        "rationale": "B requires a list of unfinished tasks, their status and completion suggestions."
+      },
+      {
+        "questionId": "q6",
+        "acceptedAnswers": [
+          "reference"
+        ],
+        "rationale": "B advises clarifying the type of reference."
+      },
+      {
+        "questionId": "q7",
+        "acceptedAnswers": [
+          "documentation"
+        ],
+        "rationale": "B identifies documentation as part of the handover."
+      },
+      {
+        "questionId": "q8",
+        "acceptedAnswers": [
+          "responsibilities"
+        ],
+        "rationale": "B ends with transferring responsibilities and finishing projects."
+      }
+    ],
+    "feedbackGuidance": "After submission, verify the exact one-word answer and the completed grammar. Ask the learner to identify how the question paraphrases the leadership or resignation advice. Distinguish selecting a related noun from preserving a relationship: giving time for innovation does not remove a decision deadline. Diagnose word-limit errors separately from locating or paraphrase errors. Revise one retrieval step and explain one completed note before a fresh topic. Report raw accuracy only, never a band."
+  },
+  "delivery": {
+    "kind": "text",
+    "assetId": null
+  },
+  "locale": {
+    "instructionsFa": "هر دو متن کاری را بخوانید. برای هر جای خالی جمله یا یادداشت، فقط یک واژه از متن مشخص‌شده بردارید. این مجموعه کوتاه، بخش کامل آزمون نیست.",
+    "teachingAnchorsFa": [
+      {
+        "id": "locate",
+        "label": "یافتن و تأیید",
+        "text": "هدف متن‌ها را جدا کنید: آغاز رهبری و ترک حرفه‌ای کار. رابطهٔ سؤال را بیابید، نه فقط اسم تکراری. «کسب اطمینان همکاران» می‌تواند بازگوییِ «جلب اعتماد» باشد؛ اما «بالاخره تصمیم بگیرند» مهلت مشخص را حفظ نمی‌کند. شرط و جملهٔ اطراف را بخوانید."
+      },
+      {
+        "id": "shape",
+        "label": "شکل پاسخ",
+        "text": "پیش از یافتن پاسخ، نقش دستوری را پیش‌بینی کنید؛ پس از a new اسم مفرد لازم است و پس از transfer ممکن است اسم جمع بیاید. فقط یک واژه بردارید. ترتیب یادداشت‌ها را در متن مربوط دنبال کنید، نه بین دو موضوع متفاوت."
+      },
+      {
+        "id": "test",
+        "label": "بازبینی معنا",
+        "text": "جملهٔ کامل‌شده را با متن مقایسه کنید و الزام، اجازه و استثنا را جدا بسنجید. شاهد یک پاسخ را بدون تغییر حد ادعا بازگو کنید. باقی پرسش‌ها را مستقل پاسخ دهید و در مرور، روش یافتن شاهد را اصلاح کنید."
+      }
+    ],
+    "feedbackGuidanceFa": "پس از ثبت پاسخ، دلیل خطا یا ضعف را بررسی کنید و یک اصلاح مشخص انجام دهید. این بازخورد نمرهٔ معتبر آیلتس نیست."
+  },
+  "provenance": {
+    "origin": "source_based_original",
+    "sourceRefs": [
+      "CG19-R01",
+      "MS2-R01"
+    ],
+    "territory": "Iran",
+    "rightsNote": "Source-based Mitooni reauthoring from user-supplied licensed materials for the Iranian audience; selected source inspection authorized. No source scans, audio or complete original exercises included. Human teacher review remains pending.",
+    "transformationNotes": "CG19 Test1 PDF20–23: leadership advice about trust, staff strategy, decision limits, history and risk; professional resignation requires a meeting, task status, notice/reference discussion and orderly handover. Complete semantic rewrite of the earlier unrelated notices/workshop/street/repair-cafe drafts. New prose, question wording, distractors and keys; retained source facts and conceptual relationships. Mindset contributes staged language/reading support, not unrelated contextual decoration. Train/transfer use distinct source subfamilies and no shared adapted passage.",
+    "objectiveMappings": [
+      {
+        "objectiveId": "gt-int-workplace-paraphrase",
+        "sourceRefIds": [
+          "CG19-R01",
+          "MS2-R01"
+        ],
+        "sourceLearningPoint": "CG19 Test1 PDF20–23: leadership advice about trust, staff strategy, decision limits, history and risk; professional resignation requires a meeting, task status, notice/reference discussion and orderly handover. MS2 PDF9–11 distinguishes skimming/scanning and works from meaning to paraphrase.",
+        "unitTeachingConnection": "Skim the two workplace texts, scan the relevant topic and identify a meaning-preserving paraphrase.",
+        "taskTransformation": "Reorganised faithful source points into two original concise texts, retaining conditions and avoiding a fabricated employer policy."
+      },
+      {
+        "objectiveId": "gt-int-workplace-sentence-completion",
+        "sourceRefIds": [
+          "CG19-R01",
+          "MS2-R01"
+        ],
+        "sourceLearningPoint": "CG19 Test1 PDF20–23: leadership advice about trust, staff strategy, decision limits, history and risk; professional resignation requires a meeting, task status, notice/reference discussion and orderly handover. CG19 workplace tasks use one-word completions; MS2 PDF12–13 explicitly checks grammatical fit and bounded answers.",
+        "unitTeachingConnection": "Predict a noun or role in a sentence gap, then retrieve one exact word and check the completed grammar.",
+        "taskTransformation": "Replaced the old generic mixed-format exercise with original ONE WORD ONLY sentence items on these actual source topics."
+      },
+      {
+        "objectiveId": "gt-int-workplace-note-completion",
+        "sourceRefIds": [
+          "CG19-R01",
+          "MS2-R01"
+        ],
+        "sourceLearningPoint": "CG19 Test1 PDF20–23: leadership advice about trust, staff strategy, decision limits, history and risk; professional resignation requires a meeting, task status, notice/reference discussion and orderly handover. CG19 Test1 workplace note completion compresses advice; MS2 PDF11–14 links locating, paraphrase and controlled completion.",
+        "unitTeachingConnection": "Track a compressed workplace process or advice sequence across a note rather than merely matching a repeated noun.",
+        "taskTransformation": "Created new note sequences and exact keys; no original source question stems, option order or answer-key sequence was copied."
+      }
+    ]
+  },
+  "teacherReview": {
+    "status": "pending",
+    "notes": []
+  }
+}

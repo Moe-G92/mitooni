@@ -1,0 +1,294 @@
+{
+  "schemaVersion": 1,
+  "id": "gt-fnd-reading-transfer",
+  "version": 1,
+  "examTrack": "general_training",
+  "skill": "reading",
+  "stage": "transfer",
+  "pathwayIds": [
+    "gt-foundation"
+  ],
+  "objectiveIds": [
+    "gt-fnd-cross-text-details",
+    "gt-fnd-information-conditions",
+    "gt-fnd-bounded-completion"
+  ],
+  "familyId": "gt-cg19-t1-knitwear-reviews-adaptation",
+  "title": "Comparing sweater reviews",
+  "instructions": "Read the texts and answer in English. This is a shorter preparatory set, not a full IELTS Reading section.",
+  "stimulus": {
+    "kind": "passage",
+    "text": "A. Price made this reviewer hesitate before ordering, but she was pleased when the sweater arrived. Its longer body suited her height. Sleeves on other tops often seemed too short to her, whereas these were long enough. Although she normally selected a medium, she ordered a large on this occasion. That decision left room for a T-shirt underneath. She described wearing the sweater with jeans. Her account distinguishes her usual size from the size she actually purchased, so a reader should not treat the two sizes as interchangeable.\n\nB. For this customer, the sweater’s weight made it suitable for wearing at work. She chose purple but thought the colour would be paler when looking at the online picture. A medium provided enough room over a shirt; she did not report exchanging it for another size. The long sleeves could be rolled back at the wrists, which she liked. She was considering buying a grey version as well, although considering another purchase is not the same as having already made it. Her review contrasts a successful fit with a colour expectation that was not fully met.\n\nC. The pictures attracted this reviewer to an olive-green striped sweater. Before trying it on, she was unsure whether its appearance would suit her. In fact, she liked the way it looked when she wore it and also praised the softness and the long sleeves. The first size she selected, medium, was too tight, so she exchanged it. The disappointing fit and the pleasing appearance are separate judgments. It would be inaccurate to say that she returned the sweater because she disliked its colour or thought it looked unflattering.\n\nD. This customer had bought three sweaters from the company over a two-year period. She found the size accurate and considered the garment appropriate for cold weather. Her caution concerned its loose knitted structure: young dogs or cats might catch and pull threads while playing. She therefore advised care around these animals. Her account does not say that an animal had already damaged her own sweater. A warning about what could happen should not automatically be read as a report of an event that did happen.\n\nE. Unable to choose between deep blue and charcoal grey, this reviewer ordered both, planning to return one. She eventually kept both. In her view, the colours agreed with the website pictures. The small size had the right body length, although she considered the sleeves longer than necessary. She could wear the sweaters with jeans or as part of a smarter outfit for work. Unlike the office wearer who was still thinking about another colour, she had already purchased and kept two."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "Which reviewer received a colour that was different from what she expected? You may use any letter more than once.",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        },
+        {
+          "id": "E",
+          "text": "E"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q2",
+      "prompt": "Which reviewer completed a size exchange? You may use any letter more than once.",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        },
+        {
+          "id": "E",
+          "text": "E"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q3",
+      "prompt": "Which reviewer abandoned a plan to return one purchase? You may use any letter more than once.",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        },
+        {
+          "id": "E",
+          "text": "E"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q4",
+      "prompt": "Does this agree with the information? Choose TRUE, FALSE or NOT GIVEN. Reviewer D reports that her own cat has already damaged her sweater.",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "TRUE"
+        },
+        {
+          "id": "B",
+          "text": "FALSE"
+        },
+        {
+          "id": "C",
+          "text": "NOT GIVEN"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q5",
+      "prompt": "Does this agree with the information? Choose TRUE, FALSE or NOT GIVEN. Reviewer A ordered the same size that she normally selects.",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "TRUE"
+        },
+        {
+          "id": "B",
+          "text": "FALSE"
+        },
+        {
+          "id": "C",
+          "text": "NOT GIVEN"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q6",
+      "prompt": "Complete with ONE WORD ONLY from review E: The sweaters can be worn with jeans or at ______.",
+      "responseType": "short_text",
+      "options": [],
+      "wordLimit": 1
+    },
+    {
+      "id": "q7",
+      "prompt": "Does this agree with the information? Choose TRUE, FALSE or NOT GIVEN. Reviewer C liked the appearance after trying the sweater on.",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "TRUE"
+        },
+        {
+          "id": "B",
+          "text": "FALSE"
+        },
+        {
+          "id": "C",
+          "text": "NOT GIVEN"
+        }
+      ],
+      "wordLimit": null
+    }
+  ],
+  "teachingAnchors": [],
+  "assessment": {
+    "kind": "deterministic",
+    "criteria": [
+      {
+        "id": "textual-evidence",
+        "label": "Textual evidence",
+        "description": "Use only the stated text, respect scope and word limits, and distinguish contradiction from insufficient information."
+      }
+    ],
+    "answerKey": [
+      {
+        "questionId": "q1",
+        "acceptedAnswers": [
+          "B"
+        ],
+        "rationale": "B expected paler purple, unlike E who reports agreement with the images."
+      },
+      {
+        "questionId": "q2",
+        "acceptedAnswers": [
+          "C"
+        ],
+        "rationale": "C exchanged the medium because it was too tight; A initially ordered a different size from usual but does not describe an exchange."
+      },
+      {
+        "questionId": "q3",
+        "acceptedAnswers": [
+          "E"
+        ],
+        "rationale": "E intended to return one of two sweaters but kept both."
+      },
+      {
+        "questionId": "q4",
+        "acceptedAnswers": [
+          "C"
+        ],
+        "rationale": "D gives a possible risk, not an event involving her own cat."
+      },
+      {
+        "questionId": "q5",
+        "acceptedAnswers": [
+          "B"
+        ],
+        "rationale": "A normally chose medium but purchased large."
+      },
+      {
+        "questionId": "q6",
+        "acceptedAnswers": [
+          "work"
+        ],
+        "rationale": "E describes jeans and a smarter work outfit."
+      },
+      {
+        "questionId": "q7",
+        "acceptedAnswers": [
+          "A"
+        ],
+        "rationale": "C was initially unsure, but then liked how the sweater looked."
+      }
+    ],
+    "feedbackGuidance": "After submission, first check whether the learner compared all plausible text sections rather than stopped at a repeated noun. Ask them to paraphrase one matching decision and underline both its positive evidence and the strongest rejected section. Check each condition, frequency word and missing-information decision. For completions, require the exact passage wording within the stated limit and a grammatical finished sentence. Correct one permission/condition confusion, then test a new practical topic independently. Raw accuracy only; no band estimate."
+  },
+  "delivery": {
+    "kind": "text",
+    "assetId": null
+  },
+  "locale": {
+    "instructionsFa": "متن‌ها را بخوانید و به انگلیسی پاسخ دهید. این مجموعهٔ آمادگی کوتاه، بخش کامل آزمون نیست.",
+    "teachingAnchorsFa": [],
+    "feedbackGuidanceFa": "پس از ثبت پاسخ، دلیل خطا یا ضعف را بررسی کنید و یک اصلاح مشخص انجام دهید. این بازخورد نمرهٔ معتبر آیلتس نیست."
+  },
+  "provenance": {
+    "origin": "source_based_original",
+    "sourceRefs": [
+      "CG19-R01",
+      "MSF-R01"
+    ],
+    "territory": "Iran",
+    "rightsNote": "Source-based Mitooni reauthoring from user-supplied licensed materials for the Iranian audience; selected source inspection authorized. No source scans, audio or complete original exercises included. Human teacher review remains pending.",
+    "transformationNotes": "CG19 Test1 PDF18–19: five sweater reviews distinguish expected colour, usual/purchased/exchanged size, intended versus completed return, and conditional animal damage warning. Complete semantic rewrite of the earlier unrelated notices/workshop/street/repair-cafe drafts. New prose, question wording, distractors and keys; retained source facts and conceptual relationships. Mindset contributes staged language/reading support, not unrelated contextual decoration. Train/transfer use distinct source subfamilies and no shared adapted passage.",
+    "objectiveMappings": [
+      {
+        "objectiveId": "gt-fnd-cross-text-details",
+        "sourceRefIds": [
+          "CG19-R01",
+          "MSF-R01"
+        ],
+        "sourceLearningPoint": "CG19 Test1 PDF18–19: five sweater reviews distinguish expected colour, usual/purchased/exchanged size, intended versus completed return, and conditional animal damage warning. MSF PDF13–14 uses parallel daily-life descriptions and warns that similar information occurs in more than one text.",
+        "unitTeachingConnection": "Compare multiple related FAQ sections or customer accounts, retaining shared vocabulary but distinguishing the fact and subject in each.",
+        "taskTransformation": "Retained source scenario and semantic contrasts, paraphrased the facts in new section prose, and wrote new cross-section selection items and distractors."
+      },
+      {
+        "objectiveId": "gt-fnd-information-conditions",
+        "sourceRefIds": [
+          "CG19-R01",
+          "MSF-R01"
+        ],
+        "sourceLearningPoint": "CG19 Test1 PDF18–19: five sweater reviews distinguish expected colour, usual/purchased/exchanged size, intended versus completed return, and conditional animal damage warning. MSF PDF14 contrasts routine/frequency meanings; the source GT questions require attention to what is and is not stated.",
+        "unitTeachingConnection": "Judge routine times, permissions and past or possible events without importing unstated facts; separate contradiction from absent information.",
+        "taskTransformation": "Wrote new factual claims around the retained source contrasts; generated fresh keys from the adapted text rather than copying the source answer sequence."
+      },
+      {
+        "objectiveId": "gt-fnd-bounded-completion",
+        "sourceRefIds": [
+          "CG19-R01",
+          "MSF-R01"
+        ],
+        "sourceLearningPoint": "CG19 Test1 PDF18–19: five sweater reviews distinguish expected colour, usual/purchased/exchanged size, intended versus completed return, and conditional animal damage warning. MSF PDF15 follows controlled reading/grammar work with completion and paraphrase matching.",
+        "unitTeachingConnection": "Supply a bounded exact-text completion after predicting the grammatical slot.",
+        "taskTransformation": "Added original gap sentences around retained tram/review details, with explicit one- or two-word limits and evidence rationales."
+      }
+    ]
+  },
+  "teacherReview": {
+    "status": "pending",
+    "notes": []
+  }
+}

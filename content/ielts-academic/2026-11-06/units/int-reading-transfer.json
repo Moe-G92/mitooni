@@ -1,0 +1,286 @@
+{
+  "schemaVersion": 1,
+  "id": "int-reading-transfer",
+  "version": 2,
+  "skill": "reading",
+  "stage": "transfer",
+  "pathwayIds": [
+    "intermediate"
+  ],
+  "objectiveIds": [
+    "reading-skim",
+    "reading-scan",
+    "reading-paraphrase",
+    "reading-controlled-completion"
+  ],
+  "familyId": "source-ms2-hearst-castle",
+  "title": "Hearst Castle: a course-text property account",
+  "instructions": "Read the original practice passage and answer all questions. This is a shorter practice set, not a full IELTS Reading section.",
+  "stimulus": {
+    "kind": "passage",
+    "text": "A. This adapted account follows the course text’s description of Hearst Castle and is not an updated visitor guide. William Randolph Hearst, an American newspaper publisher, inherited a large area of land when his mother died in 1919. He initially intended a small bungalow, but worked with architect Julia Morgan on a far larger property. The text gives a construction period of 28 years and a cost of ten million dollars. It names 56 bedrooms,61 bathrooms and 19 sitting rooms. The contrast between the modest first intention and the eventual project establishes the opening paragraph’s main idea.\n\nB. Hearst’s childhood journeys to Europe influenced the design. Cathedral-style ceilings and Roman columns appear in the account, and the rooms contain art from his collection. The course text says he spent 3.5 million dollars on that collection during his lifetime. Its stated later values belong to the source account, not a fresh valuation here. The relationship is between travel, architectural influence and collecting: these are not three unrelated lists.\n\nC. The Neptune Pool is described as a major feature. Situated on a hill, it offers views of the mountains, ocean and main building. The front of an ancient Roman temple is incorporated into it. The account gives 15 years for its construction and says it was rebuilt three times before Hearst was satisfied. The surrounding estate also has Californian features, including palm trees and water. Hearst had 70,000 trees planted. A private zoo once contained animals from every continent, and the course account reports zebras remaining on the hillside after the zoo closed.\n\nD. Alongside the main house are three guest houses. Hearst entertained film stars and political figures, some arriving by his private airfield. Guests had to attend formal dinners in the evening but could otherwise choose their daytime activities. They were permitted to remain for as long as they wished. However, those who stayed longer sat progressively farther from Hearst at dinner. The contrast is between freedom in some parts of the visit and a specific social arrangement at meals, rather than between guests being either entirely free or entirely controlled.\n\nE. After Hearst died in 1951, his family discovered how costly maintenance would be. The property was donated to the State of California and opened for public tours in the course account. The family retained permission to use it. The text also states that the castle was never completed. Donation therefore changed the property’s public role without establishing that construction had been finished or that every family connection ended."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "Skim the passage. Which statement best summarises its scope?",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "A source account of Hearst’s property, influences, guests and later public role"
+        },
+        {
+          "id": "B",
+          "text": "A current schedule for booking tours"
+        },
+        {
+          "id": "C",
+          "text": "A proof that the building was completed"
+        },
+        {
+          "id": "D",
+          "text": "A guide to every Californian house"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q2",
+      "prompt": "Answer using NO MORE THAN TWO WORDS: Who helped design the property?",
+      "responseType": "short_text",
+      "options": [],
+      "wordLimit": 2
+    },
+    {
+      "id": "q3",
+      "prompt": "Which paragraph matches: “European experiences shaped both architectural features and collecting”?",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        },
+        {
+          "id": "E",
+          "text": "E"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q4",
+      "prompt": "Complete with NO MORE THAN TWO WORDS: The pool incorporates the front of a Roman ______.",
+      "responseType": "short_text",
+      "options": [],
+      "wordLimit": 2
+    },
+    {
+      "id": "q5",
+      "prompt": "Which paraphrase preserves D?",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "Guests had no rules at any time."
+        },
+        {
+          "id": "B",
+          "text": "Guests attended formal dinners but otherwise chose daytime activities."
+        },
+        {
+          "id": "C",
+          "text": "Guests could stay for only one night."
+        },
+        {
+          "id": "D",
+          "text": "Guests sat nearer Hearst the longer they stayed."
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q6",
+      "prompt": "Answer using ONE WORD: Which animals remained after the zoo closed in the course account?",
+      "responseType": "short_text",
+      "options": [],
+      "wordLimit": 1
+    },
+    {
+      "id": "q7",
+      "prompt": "Which statement accurately represents E?",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "Donation ended every family connection."
+        },
+        {
+          "id": "B",
+          "text": "The castle was finished before donation."
+        },
+        {
+          "id": "C",
+          "text": "Public access coexisted with retained family permission to use the property."
+        },
+        {
+          "id": "D",
+          "text": "The State gave the land back to Hearst’s mother."
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q8",
+      "prompt": "Complete using ONE WORD: The family’s decision followed the cost of ______.",
+      "responseType": "short_text",
+      "options": [],
+      "wordLimit": 1
+    }
+  ],
+  "teachingAnchors": [],
+  "assessment": {
+    "kind": "deterministic",
+    "criteria": [
+      {
+        "id": "textual-evidence",
+        "label": "Textual evidence",
+        "description": "Select or supply the answer warranted by this passage, observing the response limit and distinction between contradiction and absence."
+      }
+    ],
+    "answerKey": [
+      {
+        "questionId": "q1",
+        "acceptedAnswers": [
+          "A"
+        ],
+        "rationale": "A–E cover development, features, guests and donation, not current visitor services."
+      },
+      {
+        "questionId": "q2",
+        "acceptedAnswers": [
+          "Julia Morgan"
+        ],
+        "rationale": "A names the architect."
+      },
+      {
+        "questionId": "q3",
+        "acceptedAnswers": [
+          "B"
+        ],
+        "rationale": "B links childhood travel, European features and art."
+      },
+      {
+        "questionId": "q4",
+        "acceptedAnswers": [
+          "temple"
+        ],
+        "rationale": "C describes the temple front."
+      },
+      {
+        "questionId": "q5",
+        "acceptedAnswers": [
+          "B"
+        ],
+        "rationale": "D gives the required dinners and daytime freedom, with distance increasing for longer stays."
+      },
+      {
+        "questionId": "q6",
+        "acceptedAnswers": [
+          "zebras"
+        ],
+        "rationale": "C names zebras."
+      },
+      {
+        "questionId": "q7",
+        "acceptedAnswers": [
+          "C"
+        ],
+        "rationale": "E describes public tours and continued family access while noting the castle remained unfinished."
+      },
+      {
+        "questionId": "q8",
+        "acceptedAnswers": [
+          "maintenance"
+        ],
+        "rationale": "E gives maintenance costs as the reason."
+      }
+    ],
+    "feedbackGuidance": "After submission classify each error as global gist, relationship-preserving paraphrase, locating detail, or copying/limit. Cite exact paragraph evidence. For a paraphrase error, ask which relationship was changed; for short-answer errors, repair the minimal phrase and verify its fit. Re-read a missed paragraph before a new independent text. Raw accuracy is not a band."
+  },
+  "delivery": {
+    "kind": "text",
+    "assetId": null
+  },
+  "locale": {
+    "instructionsFa": "متن اصلی تمرین را بخوانید و به همهٔ پرسش‌ها به انگلیسی پاسخ دهید. این مجموعه کوتاه، بخش کامل آزمون نیست.",
+    "teachingAnchorsFa": [],
+    "feedbackGuidanceFa": "پس از ثبت پاسخ، بازخورد را با پاسخ خود مقایسه کنید. یک خطا را با تکیه بر شواهد اصلاح کنید و سپس تمرین مستقل تازه‌ای انجام دهید."
+  },
+  "provenance": {
+    "origin": "source_based_original",
+    "sourceRefs": [
+      "MS2-R01"
+    ],
+    "territory": "Iran",
+    "rightsNote": "Source-based Mitooni authoring under user-confirmed Iranian-audience rights and selected-excerpt processing authority. Source files remain read-only; no broader distribution authority claimed.",
+    "transformationNotes": "Faithfully paraphrased actual Antilia training and Hearst transfer details from physical 10/14, preserving owners, locations, features, numerical facts, opinions/guest rules and donation relationships. Added explicit course-account framing to avoid presenting dated source descriptions as current verified guidance. Questions and explanations are new; no unrelated fictional facts.",
+    "objectiveMappings": [
+      {
+        "objectiveId": "reading-skim",
+        "sourceRefIds": [
+          "MS2-R01"
+        ],
+        "sourceLearningPoint": "Level 2 U 1’s actual Antilia and Hearst examples supply descriptive property facts, paragraph paraphrase/synonyms and skim→scan→short-answer progression.",
+        "unitTeachingConnection": "Actual source example relationships—not merely a housing topic—drive global gist, paragraph paraphrase, contrast preservation and copied factual phrases.",
+        "taskTransformation": "Faithfully paraphrased actual Antilia training and Hearst transfer details from physical 10/14, preserving owners, locations, features, numerical facts, opinions/guest rules and donation relationships. Added explicit course-account framing to avoid presenting dated source descriptions as current verified guidance. Questions and explanations are new; no unrelated fictional facts."
+      },
+      {
+        "objectiveId": "reading-scan",
+        "sourceRefIds": [
+          "MS2-R01"
+        ],
+        "sourceLearningPoint": "Level 2 U 1’s actual Antilia and Hearst examples supply descriptive property facts, paragraph paraphrase/synonyms and skim→scan→short-answer progression.",
+        "unitTeachingConnection": "Actual source example relationships—not merely a housing topic—drive global gist, paragraph paraphrase, contrast preservation and copied factual phrases.",
+        "taskTransformation": "Faithfully paraphrased actual Antilia training and Hearst transfer details from physical 10/14, preserving owners, locations, features, numerical facts, opinions/guest rules and donation relationships. Added explicit course-account framing to avoid presenting dated source descriptions as current verified guidance. Questions and explanations are new; no unrelated fictional facts."
+      },
+      {
+        "objectiveId": "reading-paraphrase",
+        "sourceRefIds": [
+          "MS2-R01"
+        ],
+        "sourceLearningPoint": "Level 2 U 1’s actual Antilia and Hearst examples supply descriptive property facts, paragraph paraphrase/synonyms and skim→scan→short-answer progression.",
+        "unitTeachingConnection": "Actual source example relationships—not merely a housing topic—drive global gist, paragraph paraphrase, contrast preservation and copied factual phrases.",
+        "taskTransformation": "Faithfully paraphrased actual Antilia training and Hearst transfer details from physical 10/14, preserving owners, locations, features, numerical facts, opinions/guest rules and donation relationships. Added explicit course-account framing to avoid presenting dated source descriptions as current verified guidance. Questions and explanations are new; no unrelated fictional facts."
+      },
+      {
+        "objectiveId": "reading-controlled-completion",
+        "sourceRefIds": [
+          "MS2-R01"
+        ],
+        "sourceLearningPoint": "Level 2 U 1’s actual Antilia and Hearst examples supply descriptive property facts, paragraph paraphrase/synonyms and skim→scan→short-answer progression.",
+        "unitTeachingConnection": "Actual source example relationships—not merely a housing topic—drive global gist, paragraph paraphrase, contrast preservation and copied factual phrases.",
+        "taskTransformation": "Faithfully paraphrased actual Antilia training and Hearst transfer details from physical 10/14, preserving owners, locations, features, numerical facts, opinions/guest rules and donation relationships. Added explicit course-account framing to avoid presenting dated source descriptions as current verified guidance. Questions and explanations are new; no unrelated fictional facts."
+      }
+    ]
+  },
+  "teacherReview": {
+    "status": "pending",
+    "notes": [
+      "Re-authored from inspected licensed teaching selections; independent source-alignment and IELTS teacher review pending. No calibrated level or band claim."
+    ]
+  },
+  "examTrack": "academic"
+}

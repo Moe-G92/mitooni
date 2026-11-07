@@ -1,0 +1,190 @@
+{
+  "schemaVersion": 1,
+  "id": "adv-speaking-train",
+  "version": 2,
+  "skill": "speaking",
+  "stage": "train",
+  "pathwayIds": [
+    "advanced"
+  ],
+  "objectiveIds": [
+    "adv-speaking-functional-development",
+    "adv-speaking-time-conditions",
+    "adv-speaking-criterion-evidence"
+  ],
+  "familyId": "sem-urban-quieter-living-choices",
+  "title": "Exploring a small town",
+  "instructions": "Complete the language practice in the anchors for up to four minutes. For Part 2, prepare keywords for exactly one minute, then speak for one to two minutes and stop at two minutes. Answer the short follow-up briefly. Discuss the four Part 3 questions for a total of four to five minutes. A partner asks them one at a time and may use neutral clarification questions. If alone, answer in order and label the attempt solo. Review once, then retry one discussion answer with support.",
+  "stimulus": {
+    "kind": "prompt",
+    "text": "Part 2 task card\nDescribe a small town or quieter district that you would like to explore for a day.\nYou should say:\n- how you learned about it\n- what you would expect to find there\n- how you would spend the day\nand explain why it appeals to you.\nFollow-up: Would you go alone or with someone?\nPart 3 discussion: urban and quieter places."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "Give the Part 2 long turn using the task card.",
+      "responseType": "spoken_response",
+      "options": [],
+      "wordLimit": null
+    },
+    {
+      "id": "q2",
+      "prompt": "Would you go alone or with someone?",
+      "responseType": "spoken_response",
+      "options": [],
+      "wordLimit": null
+    },
+    {
+      "id": "q3",
+      "prompt": "How does daily life in a large city differ from life in a small town?",
+      "responseType": "spoken_response",
+      "options": [],
+      "wordLimit": null
+    },
+    {
+      "id": "q4",
+      "prompt": "Why do improvements in transport sometimes change where people choose to live?",
+      "responseType": "spoken_response",
+      "options": [],
+      "wordLimit": null
+    },
+    {
+      "id": "q5",
+      "prompt": "How might the needs of town centres change over the next twenty years?",
+      "responseType": "spoken_response",
+      "options": [],
+      "wordLimit": null
+    },
+    {
+      "id": "q6",
+      "prompt": "If private vehicles were much less convenient, how might people change their routines?",
+      "responseType": "spoken_response",
+      "options": [],
+      "wordLimit": null
+    }
+  ],
+  "teachingAnchors": [
+    {
+      "id": "function",
+      "label": "Choose language for the question’s job",
+      "text": "Before practice, classify these new prompts: “How has a local market changed?”, “What could happen if its road closed?”, “Why do people choose it?”. The jobs are past-present comparison, hypothetical consequence and reason. Give a short answer to each about a place you know. A single memorised opinion does not perform all three jobs."
+    },
+    {
+      "id": "clauses",
+      "label": "Make conditions and detail meaningful",
+      "text": "Use a new note pair: “regular bus → possible move”. Express the condition and result with “as long as”, then try “once”. Explain whether your certainty about the condition changed. Keep a future time clause in the present form where appropriate. Add a concrete consequence, not complexity for its own sake."
+    },
+    {
+      "id": "parts",
+      "label": "Move from a place to a wider issue",
+      "text": "For the card, choose concrete details about one place and keep notes as fragments. For discussion, move to groups, trends or possible consequences and qualify certainty when needed. In review, locate evidence for vocabulary, grammar, coherence and audible pronunciation separately. A listener may disagree with your view and still understand your English easily."
+    }
+  ],
+  "assessment": {
+    "kind": "qualitative",
+    "criteria": [
+      {
+        "id": "fluency-coherence",
+        "label": "Fluency and coherence",
+        "description": "Use the actual recording to review continuity, appropriate pauses, repair and logical connections. Describe where the listener could or could not follow the answer. A transcript cannot establish speed, pause length or spoken fluency. Do not reward length or rehearsed linking phrases alone."
+      },
+      {
+        "id": "lexical-resource",
+        "label": "Lexical resource",
+        "description": "Check whether vocabulary expresses the intended meaning accurately and appropriately, and whether the speaker can paraphrase a missing word. Identify a specific successful choice and one usable alternative; rare vocabulary is not a goal by itself."
+      },
+      {
+        "id": "grammar",
+        "label": "Grammatical range and accuracy",
+        "description": "Review the structures actually used and whether errors obscure time, relationships or meaning. Quote a short learner-produced example in private feedback and offer one targeted repair. Do not infer range from prompt difficulty."
+      },
+      {
+        "id": "pronunciation",
+        "label": "Pronunciation",
+        "description": "Assess only from usable actual audio: intelligibility, word stress, rhythm, connected speech and sounds in context. Note the segment requiring listener effort and a focused practice action. Accent identity is not an error; if audio is missing or unclear, withhold this judgement."
+      }
+    ],
+    "answerKey": [],
+    "feedbackGuidance": "Identify the function of each discussion answer: comparison, cause/effect, prediction and hypothetical reasoning. Check whether the language carries that function: a prediction needs a degree of certainty; a hypothetical needs a stated condition; a comparison needs a meaningful basis. Select one learner-produced conditional/time clause and repair any unclear time relationship. Use audible stress/intonation evidence when commenting on emphasis. All four qualitative criteria require teacher review; pronunciation and temporal fluency require usable audio. Do not infer a band from this drill or reward a memorised script. If only a transcript is available, withhold audio-dependent judgements."
+  },
+  "delivery": {
+    "kind": "recording_required",
+    "assetId": null
+  },
+  "locale": {
+    "instructionsFa": "تمرین زبان راهنماها را حداکثر چهار دقیقه انجام دهید. برای بخش دوم دقیقاً یک دقیقه کلیدواژه آماده کنید؛ سپس یک تا دو دقیقه صحبت کنید و در دو دقیقه متوقف شوید. پیگیری را کوتاه پاسخ دهید. چهار پرسش بخش سوم را در مجموع چهار تا پنج دقیقه بحث کنید. همراه آن‌ها را یکی‌یکی بپرسد و فقط روشن‌سازی خنثی بخواهد. در تمرین انفرادی، ترتیب را رعایت و حالت انفرادی را ثبت کنید. یک بار بازبینی و یک پاسخ بحث را با حمایت تکرار کنید.",
+    "teachingAnchorsFa": [
+      {
+        "id": "function",
+        "label": "زبان را با کارکرد پرسش انتخاب کنید",
+        "text": "پیش از تمرین، این پرسش‌های تازه را دسته‌بندی کنید: بازار محلی چگونه تغییر کرده؟ اگر راه آن بسته شود چه می‌شود؟ چرا مردم آن را انتخاب می‌کنند؟ کارکردها مقایسه گذشته و حال، پیامد فرضی و دلیل هستند. درباره مکانی آشنا برای هرکدام پاسخ کوتاه بدهید؛ یک نظر حفظ‌شده هر سه کار را انجام نمی‌دهد."
+      },
+      {
+        "id": "clauses",
+        "label": "شرط و جزئیات را معنادار کنید",
+        "text": "دو یادداشت تازه را بسط دهید: «اتوبوس منظم ← امکان جابه‌جایی». شرط و نتیجه را با as long as و سپس once بیان کنید. توضیح دهید قطعیت شرط تغییر کرده یا نه. در جای مناسب، جمله‌واره زمانی آینده را در صورت حال نگه دارید. پیامد مشخص اضافه کنید، نه پیچیدگی بی‌هدف."
+      },
+      {
+        "id": "parts",
+        "label": "از یک مکان به مسئله گسترده‌تر بروید",
+        "text": "برای کارت، جزئیات یک مکان مشخص انتخاب کنید و یادداشت را قطعه‌وار نگه دارید. در بحث به گروه‌ها، روندها یا پیامدها بروید و در صورت نیاز قطعیت را محدود کنید. در بازبینی، شاهد واژگان، دستور، انسجام و تلفظ شنیدنی را جدا پیدا کنید. شنونده می‌تواند با نظر مخالف باشد ولی زبان را آسان بفهمد."
+      }
+    ],
+    "feedbackGuidanceFa": "کارکرد هر پاسخ بحث را مشخص کنید: مقایسه، علت‌ومعلول، پیش‌بینی و فرض. بررسی کنید زبان همان کارکرد را می‌رساند: پیش‌بینی میزان قطعیت می‌خواهد؛ فرض شرط می‌خواهد؛ مقایسه مبنای معنادار می‌خواهد. یک جمله شرطی یا زمانی خودتان را انتخاب و رابطه زمانی مبهم را اصلاح کنید. نظر درباره تأکید را به تکیه و آهنگ شنیدنی مستند کنید. چهار معیار کیفی به بازبینی مدرس نیاز دارند؛ تلفظ و روانی زمانی به صدای قابل استفاده نیاز دارند. از این تمرین بند استنباط نکنید و به متن حفظ‌شده پاداش ندهید. اگر فقط متن دارید، درباره ویژگی‌های وابسته به صدا داوری نکنید."
+  },
+  "provenance": {
+    "origin": "source_based_original",
+    "sourceRefs": [
+      "MS3-S01",
+      "MS3-L01"
+    ],
+    "territory": "Iran",
+    "rightsNote": "Source-based Mitooni adaptation for the authorized Iranian audience. Arash authorized full-corpus AI ingestion and synthesis. This unit documents the supplied-source pages actually used; no worldwide distribution authority is inferred.",
+    "transformationNotes": "Selected Mindset pages were actually read before this revision. Teaching progression and semantic domain are adapted from those pages; all dialogue, lecture wording, named examples, questions and keys were newly authored. No source model answer or recording is republished. Foundation/Level1 jointly support the foundation pathway; other level mappings are authoring choices, not band equivalences.",
+    "objectiveMappings": [
+      {
+        "objectiveId": "adv-speaking-functional-development",
+        "sourceRefIds": [
+          "MS3-S01"
+        ],
+        "sourceLearningPoint": "Differentiate personal place description from abstract discussion; identify prediction, comparison, hypothetical, cause-effect and past-present functions.",
+        "unitTeachingConnection": "Train classifies functional prompts then develops urban/quieter-place answers; transfer samples past-present, comparison, transport consequence and hypothetical priority without anchors.",
+        "taskTransformation": "Source urban/rural living, transport and change themes become new town-exploration and neighbourhood-choice cue cards and original discussion questions."
+      },
+      {
+        "objectiveId": "adv-speaking-time-conditions",
+        "sourceRefIds": [
+          "MS3-S01",
+          "MS3-L01"
+        ],
+        "sourceLearningPoint": "Use future time/condition clauses to express the intended relationship accurately and notice how changing a conjunction changes meaning.",
+        "unitTeachingConnection": "Train compares as long as and once in a meaningful condition/result message before speaking; transfer invites conditional choices and asks post-submit review of actual clauses used.",
+        "taskTransformation": "New local-transport and street examples replace source museum/tour and city examples; language is practised for meaning, not complexity counting."
+      },
+      {
+        "objectiveId": "adv-speaking-criterion-evidence",
+        "sourceRefIds": [
+          "MS3-S01"
+        ],
+        "sourceLearningPoint": "Connect observed spoken features with fluency/coherence, lexis, grammar and pronunciation criteria.",
+        "unitTeachingConnection": "Both units require actual-recording evidence; train separates criterion observations and supported retry, transfer withholds review until submission.",
+        "taskTransformation": "Source candidate-performance analysis becomes private evidence-linked review of the learner’s new speech; no source candidate answer or band is republished."
+      }
+    ]
+  },
+  "teacherReview": {
+    "status": "pending",
+    "notes": [
+      "Teacher/examiner review required: check prompt accessibility, natural follow-ups, sequencing and suitability for assigned pathway. Pathways are support levels, not calibrated IELTS bands.",
+      "Recording must be permitted and usable before spoken assessment; do not send learner audio to an external provider without the agreed consent/data boundary. Local authoring includes no recording or external audio call.",
+      "Before timing, provide an unscored microphone check and a clear retry path. Technical failure invalidates timing; retain work privately, mark the attempt interrupted and use a new prompt family for independent evidence. A repeated prompt after coaching is supported practice.",
+      "Agree access needs before starting. Permit a neutral topic alternative where personal disclosure would be uncomfortable; mark changed timing or transcript-only work explicitly rather than claiming equivalent independent speech evidence.",
+      "Qualitative practice feedback is not a calibrated examiner band. Pronunciation and temporal fluency cannot be assessed from a transcript.",
+      "Revision 2 supersedes the held original-only draft. Review source-objective-task fit against the selected Mindset pages; semantic domains and meaningful language practice are adapted, not merely format-cited.",
+      "No source model answer or recording is republished. Inspect English/Persian equivalence and use only actual consented recordings for spoken judgement.",
+      "Part2 plus related Part3 sequence only, not a complete 11–14-minute speaking test. Solo sequential answers do not reproduce an examiner’s live interaction; record this condition.",
+      "Semantic exposure families can span train/transfer and skills. A different unit ID or adapted detail does not establish fresh transfer; consult the per-question semantic groups recorded in syllabus/exposure metadata."
+    ]
+  },
+  "examTrack": "shared"
+}

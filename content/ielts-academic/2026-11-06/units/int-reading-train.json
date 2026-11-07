@@ -1,0 +1,322 @@
+{
+  "schemaVersion": 1,
+  "id": "int-reading-train",
+  "version": 2,
+  "skill": "reading",
+  "stage": "train",
+  "pathwayIds": [
+    "intermediate"
+  ],
+  "objectiveIds": [
+    "reading-skim",
+    "reading-scan",
+    "reading-paraphrase",
+    "reading-controlled-completion"
+  ],
+  "familyId": "source-ms2-antilia",
+  "title": "Inside Antilia: a course-text housing account",
+  "instructions": "Read the original practice passage and answer all questions. This is a shorter practice set, not a full IELTS Reading section.",
+  "stimulus": {
+    "kind": "passage",
+    "text": "A. The following adapted account reports the housing example in the course text, rather than providing current property information. Antilia is presented as Mukesh Ambani’s home in Mumbai. Its name comes from a mythical island. The text locates it on Altamout Road and describes a building of twenty-seven floors whose construction cost exceeded a billion dollars. These opening details establish its owner, location and scale. They do not explain every design choice or show that all expensive homes have the same features. The rest of the account looks inside this particular example.\n\nB. Different floors use different materials and designs. The description includes marble, rare wood and fine rugs, along with repeated images of the lotus flower and the sun. Large windows extend from floor to ceiling and give views towards Mumbai and the Arabian Sea. Thus the interior combines individual treatment of floors with motifs repeated across the home. Describing it simply as expensive would omit both relationships: the floors are not all identical, yet some visual symbols connect them. Materials, decorative motifs and views are separate features of this part of the account.\n\nC. Arrival and everyday facilities occupy another part of the description. The garage can hold 168 cars, while three roof-top helipads provide an alternative way to arrive. Reception areas and nine lifts are in the lobby. Facilities include dining floors, libraries and a health spa with a gym, swimming pools and places for yoga. An ice-room makes artificial snow. A prayer room and garden floors are also listed. These are different kinds of facility: a garage is not a leisure space, and an arrival route is not the same thing as a room’s use.\n\nD. The text then turns to guests and family life. A theatre has room for 50 people, and there are guest bedrooms and a ballroom with chandeliers. The family occupy the upper floor to obtain as much sunlight as possible. Although the residence requires 600 staff in the account, the three children are expected to clean their own rooms when at home. A large staff therefore does not mean that the text assigns every domestic task to employees. The distinction between the residence’s scale and that particular family expectation is important when answering a detail question.\n\nE. Opinions about the architecture differ. The course description contrasts criticism from experts with Mrs Ambani’s favourable view of her home. It does not present those opinions as identical or supply a vote that settles which view is correct. A useful summary of the passage would distinguish the building’s features from people’s judgements about them. The preceding paragraphs describe location, materials, facilities and household arrangements; the last adds contrasting reactions. This change of focus matters when choosing a paragraph paraphrase: a statement about opinion cannot be matched solely by spotting another mention of the house."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "Skim the text. Which title best captures its scope?",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "One home’s scale, design, uses and contrasting reactions"
+        },
+        {
+          "id": "B",
+          "text": "A guide proving all large homes are identical"
+        },
+        {
+          "id": "C",
+          "text": "A comparison of house prices in every city"
+        },
+        {
+          "id": "D",
+          "text": "Instructions for building a helipad"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q2",
+      "prompt": "Which paragraph matches: “Repeated motifs connect individually designed floors”?",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        },
+        {
+          "id": "E",
+          "text": "E"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q3",
+      "prompt": "Answer with NO MORE THAN TWO WORDS: Which sea is visible through the large windows?",
+      "responseType": "short_text",
+      "options": [],
+      "wordLimit": 2
+    },
+    {
+      "id": "q4",
+      "prompt": "Complete with ONE WORD: The lobby contains nine ______.",
+      "responseType": "short_text",
+      "options": [],
+      "wordLimit": 1
+    },
+    {
+      "id": "q5",
+      "prompt": "Which paraphrase matches D?",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "A large staff removes all room-cleaning duties from the children."
+        },
+        {
+          "id": "B",
+          "text": "The children still have a room-cleaning duty despite the number of staff."
+        },
+        {
+          "id": "C",
+          "text": "All family members sleep in guest bedrooms."
+        },
+        {
+          "id": "D",
+          "text": "The theatre is used only by staff."
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q6",
+      "prompt": "Answer with NO MORE THAN THREE WORDS: What does the ice-room make?",
+      "responseType": "short_text",
+      "options": [],
+      "wordLimit": 3
+    },
+    {
+      "id": "q7",
+      "prompt": "Which paragraph contrasts judgements rather than merely listing facilities?",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        },
+        {
+          "id": "E",
+          "text": "E"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q8",
+      "prompt": "Complete with NO MORE THAN TWO WORDS: The family chose the upper floor for ______.",
+      "responseType": "short_text",
+      "options": [],
+      "wordLimit": 2
+    }
+  ],
+  "teachingAnchors": [
+    {
+      "id": "step1",
+      "label": "Skim for structure",
+      "text": "Read the openings and endings quickly; name each paragraph’s job without stopping at unknown words. Choose an overall title before detail questions. This pass finds the map of ideas; it does not supply every answer."
+    },
+    {
+      "id": "step2",
+      "label": "Follow a paraphrase",
+      "text": "For a paragraph match, express the question in simpler words. Look for a preserved relationship, not a repeated noun: “different floors with repeated motifs” needs both variation and a common feature. Reject a paragraph that mentions only one half."
+    },
+    {
+      "id": "step3",
+      "label": "Scan, read, copy",
+      "text": "For a short answer, underline the key noun and anticipate a name, object or time. Scan to locate it, read the surrounding sentence, copy the exact permitted words and check grammar. Try the remaining questions independently before feedback."
+    }
+  ],
+  "assessment": {
+    "kind": "deterministic",
+    "criteria": [
+      {
+        "id": "textual-evidence",
+        "label": "Textual evidence",
+        "description": "Select or supply the answer warranted by this passage, observing the response limit and distinction between contradiction and absence."
+      }
+    ],
+    "answerKey": [
+      {
+        "questionId": "q1",
+        "acceptedAnswers": [
+          "A"
+        ],
+        "rationale": "A–E describe this particular home and distinguish its features from opinions."
+      },
+      {
+        "questionId": "q2",
+        "acceptedAnswers": [
+          "B"
+        ],
+        "rationale": "B contrasts different materials/floor designs with repeated lotus and sun motifs."
+      },
+      {
+        "questionId": "q3",
+        "acceptedAnswers": [
+          "Arabian Sea"
+        ],
+        "rationale": "B names the Arabian Sea."
+      },
+      {
+        "questionId": "q4",
+        "acceptedAnswers": [
+          "lifts"
+        ],
+        "rationale": "C supplies nine lifts."
+      },
+      {
+        "questionId": "q5",
+        "acceptedAnswers": [
+          "B"
+        ],
+        "rationale": "D preserves the contrast between 600 staff and the children’s own rooms."
+      },
+      {
+        "questionId": "q6",
+        "acceptedAnswers": [
+          "artificial snow"
+        ],
+        "rationale": "C uses the exact phrase artificial snow."
+      },
+      {
+        "questionId": "q7",
+        "acceptedAnswers": [
+          "E"
+        ],
+        "rationale": "E explicitly contrasts experts’ criticism and Mrs Ambani’s favourable view."
+      },
+      {
+        "questionId": "q8",
+        "acceptedAnswers": [
+          "sunlight"
+        ],
+        "rationale": "D gives sunlight as the stated reason."
+      }
+    ],
+    "feedbackGuidance": "After submission classify each error as global gist, relationship-preserving paraphrase, locating detail, or copying/limit. Cite exact paragraph evidence. For a paraphrase error, ask which relationship was changed; for short-answer errors, repair the minimal phrase and verify its fit. Re-read a missed paragraph before a new independent text. Raw accuracy is not a band."
+  },
+  "delivery": {
+    "kind": "text",
+    "assetId": null
+  },
+  "locale": {
+    "instructionsFa": "متن اصلی تمرین را بخوانید و به همهٔ پرسش‌ها به انگلیسی پاسخ دهید. این مجموعه کوتاه، بخش کامل آزمون نیست.",
+    "teachingAnchorsFa": [
+      {
+        "id": "step1",
+        "label": "ساختار متن",
+        "text": "ابتدا ابتدا و انتهای بندها را سریع بخوانید و نقش هر بند را مشخص کنید. برای معنی تک‌تک واژه‌ها توقف نکنید. این مرحله نقشهٔ متن را می‌سازد، نه پاسخ همهٔ جزئیات را."
+      },
+      {
+        "id": "step2",
+        "label": "بازگویی معنا",
+        "text": "برای تطبیق بند، رابطهٔ جمله را پیدا کنید، نه فقط اسم تکراری. بند درست باید هر دو بخش ادعا را پوشش دهد. بندی که تنها یک واژهٔ مشابه دارد کافی نیست."
+      },
+      {
+        "id": "step3",
+        "label": "یافتن شاهد",
+        "text": "برای پاسخ کوتاه، واژهٔ کلیدی را مشخص و نوع پاسخ را پیش‌بینی کنید. سپس محل شاهد را پیدا کنید، جملهٔ اطراف را بخوانید و واژه‌های دقیق و مجاز را بردارید. باقی پرسش‌ها را پیش از بازخورد مستقل انجام دهید."
+      }
+    ],
+    "feedbackGuidanceFa": "پس از ثبت پاسخ، بازخورد را با پاسخ خود مقایسه کنید. یک خطا را با تکیه بر شواهد اصلاح کنید و سپس تمرین مستقل تازه‌ای انجام دهید."
+  },
+  "provenance": {
+    "origin": "source_based_original",
+    "sourceRefs": [
+      "MS2-R01"
+    ],
+    "territory": "Iran",
+    "rightsNote": "Source-based Mitooni authoring under user-confirmed Iranian-audience rights and selected-excerpt processing authority. Source files remain read-only; no broader distribution authority claimed.",
+    "transformationNotes": "Faithfully paraphrased actual Antilia training and Hearst transfer details from physical 10/14, preserving owners, locations, features, numerical facts, opinions/guest rules and donation relationships. Added explicit course-account framing to avoid presenting dated source descriptions as current verified guidance. Questions and explanations are new; no unrelated fictional facts.",
+    "objectiveMappings": [
+      {
+        "objectiveId": "reading-skim",
+        "sourceRefIds": [
+          "MS2-R01"
+        ],
+        "sourceLearningPoint": "Level 2 U 1’s actual Antilia and Hearst examples supply descriptive property facts, paragraph paraphrase/synonyms and skim→scan→short-answer progression.",
+        "unitTeachingConnection": "Actual source example relationships—not merely a housing topic—drive global gist, paragraph paraphrase, contrast preservation and copied factual phrases.",
+        "taskTransformation": "Faithfully paraphrased actual Antilia training and Hearst transfer details from physical 10/14, preserving owners, locations, features, numerical facts, opinions/guest rules and donation relationships. Added explicit course-account framing to avoid presenting dated source descriptions as current verified guidance. Questions and explanations are new; no unrelated fictional facts."
+      },
+      {
+        "objectiveId": "reading-scan",
+        "sourceRefIds": [
+          "MS2-R01"
+        ],
+        "sourceLearningPoint": "Level 2 U 1’s actual Antilia and Hearst examples supply descriptive property facts, paragraph paraphrase/synonyms and skim→scan→short-answer progression.",
+        "unitTeachingConnection": "Actual source example relationships—not merely a housing topic—drive global gist, paragraph paraphrase, contrast preservation and copied factual phrases.",
+        "taskTransformation": "Faithfully paraphrased actual Antilia training and Hearst transfer details from physical 10/14, preserving owners, locations, features, numerical facts, opinions/guest rules and donation relationships. Added explicit course-account framing to avoid presenting dated source descriptions as current verified guidance. Questions and explanations are new; no unrelated fictional facts."
+      },
+      {
+        "objectiveId": "reading-paraphrase",
+        "sourceRefIds": [
+          "MS2-R01"
+        ],
+        "sourceLearningPoint": "Level 2 U 1’s actual Antilia and Hearst examples supply descriptive property facts, paragraph paraphrase/synonyms and skim→scan→short-answer progression.",
+        "unitTeachingConnection": "Actual source example relationships—not merely a housing topic—drive global gist, paragraph paraphrase, contrast preservation and copied factual phrases.",
+        "taskTransformation": "Faithfully paraphrased actual Antilia training and Hearst transfer details from physical 10/14, preserving owners, locations, features, numerical facts, opinions/guest rules and donation relationships. Added explicit course-account framing to avoid presenting dated source descriptions as current verified guidance. Questions and explanations are new; no unrelated fictional facts."
+      },
+      {
+        "objectiveId": "reading-controlled-completion",
+        "sourceRefIds": [
+          "MS2-R01"
+        ],
+        "sourceLearningPoint": "Level 2 U 1’s actual Antilia and Hearst examples supply descriptive property facts, paragraph paraphrase/synonyms and skim→scan→short-answer progression.",
+        "unitTeachingConnection": "Actual source example relationships—not merely a housing topic—drive global gist, paragraph paraphrase, contrast preservation and copied factual phrases.",
+        "taskTransformation": "Faithfully paraphrased actual Antilia training and Hearst transfer details from physical 10/14, preserving owners, locations, features, numerical facts, opinions/guest rules and donation relationships. Added explicit course-account framing to avoid presenting dated source descriptions as current verified guidance. Questions and explanations are new; no unrelated fictional facts."
+      }
+    ]
+  },
+  "teacherReview": {
+    "status": "pending",
+    "notes": [
+      "Re-authored from inspected licensed teaching selections; independent source-alignment and IELTS teacher review pending. No calibrated level or band claim."
+    ]
+  },
+  "examTrack": "academic"
+}

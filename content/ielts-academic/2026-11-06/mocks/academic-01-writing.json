@@ -1,0 +1,254 @@
+{
+  "schemaVersion": 1,
+  "id": "academic-01-writing",
+  "version": 2,
+  "skill": "writing",
+  "exam": "ielts-academic",
+  "title": "Academic 01 Writing — source-based review candidate",
+  "familyId": "source-ms3-writing-reserved",
+  "intendedUse": "sealed_evaluation_candidate",
+  "language": "en",
+  "instructions": [
+    "Complete both tasks in 60 minutes.",
+    "Write at least 150 words for Task 1 and at least 250 words for Task 2.",
+    "Task 2 carries twice the weight of Task 1.",
+    "Write connected text. Do not use notes or bullet points as your answer."
+  ],
+  "timing": {
+    "totalSeconds": 3600,
+    "recommendedTask1Seconds": 1200,
+    "recommendedTask2Seconds": 2400,
+    "recommendationsAreSeparateTimers": false
+  },
+  "provenance": {
+    "origin": "source_based_original",
+    "sourceRefs": [
+      "MS3-W01",
+      "CA21-W01",
+      "BD-W01"
+    ],
+    "territory": "Iran",
+    "rightsNote": "Arash authorized selected licensed excerpts on 2026-11-06 for authoring/review and selected model processing; no additional territory authority.",
+    "transformationNotes": "Reauthored after actual selected-page inspection. Task1 retains MS3 city-to-countryside reasons and verified graph values in an accessible table with new instructions/analysis. Task2 adapts the inspected Cambridge21 tall-apartment city-housing claim with new wording and criterion-linked analysis. Supplied2005 descriptors inform comparison only; current2023 official rubric governs. The unrelated initial drafts are held/superseded, not retrospectively cited. No source scan or model essay is bundled.",
+    "sourceMappings": [
+      {
+        "targetPointer": "/tasks/0",
+        "sourceRefIds": [
+          "MS3-W01",
+          "BD-W01"
+        ],
+        "sourceLearningPoint": "Identify and group actual main relocation-reason trends; compare endpoints/peak and report data accurately without speculative explanations.",
+        "taskTransformation": "Convert source graph for1990/2000/2010 rising cost of living65000/85000/80000,traffic20000/35000/60000,lifestyle20000/30000/40000 into semantic table; paraphrase task and author new evidence/feedback checks. Original values retained, not invented."
+      },
+      {
+        "targetPointer": "/tasks/1",
+        "sourceRefIds": [
+          "CA21-W01",
+          "BD-W01"
+        ],
+        "sourceLearningPoint": "Address a degree-of-agreement claim about tall apartment blocks as the best solution to large-city housing demand; develop a consistent position with relevant support rather than a general housing essay.",
+        "taskTransformation": "Paraphrase the source housing-supply claim and preserve its comparative best-solution demand; author new non-prescriptive task analysis and response-linked feedback rules. No source sample answer or invented policy statistics."
+      }
+    ]
+  },
+  "teacherReview": {
+    "status": "pending",
+    "notes": [
+      "Human IELTS review pending after complete source-based rewrite.",
+      "Earlier independent acceptance concerned the superseded source-free draft; it does not approve this rewrite.",
+      "No calibrated bands or empirical difficulty equivalence."
+    ]
+  },
+  "delivery": {
+    "status": "review_only",
+    "playable": false,
+    "runtimeSupported": false,
+    "responseMode": "typed_candidate",
+    "notes": [
+      "Written form is complete for review. Current runtime does not assemble this full section.",
+      "Do not present as an operational or calibrated IELTS simulation."
+    ]
+  },
+  "tasks": [
+    {
+      "id": "academic-01-writing-task1",
+      "familyId": "source-ms3-city-countryside-graph",
+      "taskType": "academic_task1_table",
+      "minimumWords": 150,
+      "weight": 1,
+      "instructions": "You should spend about 20 minutes on this task. Write at least 150 words.",
+      "prompt": "The table compares the numbers of people who gave three reasons for leaving a capital city to live in the countryside in 1990, 2000 and 2010. Describe the main features of the data and make relevant comparisons.",
+      "stimulus": {
+        "type": "table",
+        "title": "Reasons given for moving from a capital city to the countryside",
+        "description": "The figures show the number of people giving each reason in each listed year. Do not assume that the categories can be added to obtain the total number of people who moved.",
+        "unit": "people",
+        "columns": [
+          {
+            "key": "reason",
+            "label": "Reason given"
+          },
+          {
+            "key": "y1990",
+            "label": "1990"
+          },
+          {
+            "key": "y2000",
+            "label": "2000"
+          },
+          {
+            "key": "y2010",
+            "label": "2010"
+          }
+        ],
+        "rows": [
+          {
+            "reason": "Rising cost of living",
+            "y1990": 65000,
+            "y2000": 85000,
+            "y2010": 80000
+          },
+          {
+            "reason": "Traffic",
+            "y1990": 20000,
+            "y2000": 35000,
+            "y2010": 60000
+          },
+          {
+            "reason": "Lifestyle",
+            "y1990": 20000,
+            "y2000": 30000,
+            "y2010": 40000
+          }
+        ],
+        "dataProvenance": "Values retained from the inspected MS3-W01 educational graph, PDF page17/printed15. Source graph and its following corrected discussion were visually/textually compared. Not new empirical research or Mitooni survey data.",
+        "accessibleRendering": "Render semantic table with caption and column/row headers; no source page image is bundled."
+      },
+      "response": {
+        "type": "extended_text",
+        "language": "en",
+        "spellcheck": "delivery_policy_pending",
+        "autosave": "runtime_not_connected"
+      },
+      "semanticExposureGroupIds": [
+        "ms3-u1-city-to-countryside-reasons"
+      ]
+    },
+    {
+      "id": "academic-01-writing-task2",
+      "familyId": "source-ca21-city-highrise-housing",
+      "taskType": "academic_task2_degree_of_agreement",
+      "minimumWords": 250,
+      "weight": 2,
+      "instructions": "You should spend about 40 minutes on this task. Write at least 250 words. Give reasons for your answer and include relevant examples from your own knowledge or experience.",
+      "prompt": "Building high-rise apartment buildings is the most effective solution to the shortage of homes in large cities. How far do you agree or disagree with this view?",
+      "response": {
+        "type": "extended_text",
+        "language": "en",
+        "spellcheck": "delivery_policy_pending",
+        "autosave": "runtime_not_connected"
+      },
+      "semanticExposureGroupIds": [
+        "ca21-t1-highrise-city-housing"
+      ]
+    }
+  ],
+  "teacherOnly": {
+    "release": "Restricted teacher/author analysis; not learner or tutor pre-submit context.",
+    "rubric": {
+      "sourceVersion": "IELTS public Writing descriptors, updated May 2023",
+      "criteria": [
+        "task_achievement_task1_or_task_response_task2",
+        "coherence_and_cohesion",
+        "lexical_resource",
+        "grammatical_range_and_accuracy"
+      ],
+      "equalCriterionWeightWithinTask": true,
+      "taskWeightRatio": [
+        1,
+        2
+      ],
+      "numericBandPolicy": "Not enabled in this review edition. Descriptor alignment is not score calibration."
+    },
+    "task1Analysis": {
+      "demands": [
+        "Give a coherent overview and select significant comparisons.",
+        "Compare source values accurately, retaining reason labels, units and years.",
+        "Distinguish a category remaining highest from the category with the greatest increase."
+      ],
+      "verifiedFacts": [
+        "Cost of living is the largest reason in all three years:65000,85000,80000.",
+        "Cost of living rises20000 and then falls5000, finishing15000 above its initial value.",
+        "Traffic and lifestyle are equal at20000 in1990.",
+        "Traffic grows40000 overall, the largest absolute increase, to60000 in2010.",
+        "Lifestyle grows steadily by10000 in each interval to40000.",
+        "The values are counts for stated reasons; mutual exclusivity and a total population are not established."
+      ],
+      "doNotInfer": [
+        "That the source was a verified contemporary survey or represents all capital cities.",
+        "That the reasons are mutually exclusive, or that sums equal unique migrants.",
+        "Unstated economic policies, causal mechanisms or values between observations."
+      ],
+      "sourceReconciliation": "The older MS3 lesson discusses a final summary/conclusion. Current public2023 descriptors require overview/key features, not a mandatory final-paragraph location. Review substance, not a rigid paragraph recipe.",
+      "reviewQuestions": [
+        "Are the actual source values transcribed correctly?",
+        "Does the table transformation preserve the comparison/overview demand?",
+        "Are alternate accurate overview structures accepted?"
+      ],
+      "feedbackEvidenceExamples": [
+        {
+          "criterion": "task_achievement",
+          "observation": "If a response identifies traffic as the largest category, quote its exact sentence and compare all three source rows; distinguish largest category from largest increase.",
+          "requiresActualResponseQuote": true
+        },
+        {
+          "criterion": "coherence_and_cohesion",
+          "observation": "If the answer mechanically lists every observation, invite grouping the persistent highest category, the equal starting point and the different growth patterns.",
+          "requiresActualResponseQuote": true
+        }
+      ]
+    },
+    "task2Analysis": {
+      "demands": [
+        "Evaluate the claim that high-rise apartments are the most effective solution to housing shortages in large cities.",
+        "State the extent of agreement and develop it consistently.",
+        "Support relevant reasoning and examples in connected paragraphs.",
+        "Where alternatives or limitations are discussed, relate them to the comparative claim rather than changing the topic."
+      ],
+      "acceptableApproaches": [
+        "Agree with sufficient relevant support.",
+        "Disagree by developing a justified alternative or limitation.",
+        "Partly agree with a clear conditional/comparative position."
+      ],
+      "noRequiredPosition": true,
+      "noRequiredFacts": [
+        "No specialist building-policy knowledge or named-city statistics are required.",
+        "The task claim is a proposition to evaluate, not a source-verified policy conclusion.",
+        "Illustrative examples must not be presented as fabricated research."
+      ],
+      "commonReviewIssues": [
+        "Discussing city life generally rather than the housing-supply claim.",
+        "Listing generic advantages/disadvantages without indicating extent of agreement.",
+        "Using unsupported numerical or universal claims.",
+        "An unexplained shift in position between introduction and conclusion."
+      ],
+      "feedbackRule": "Quote actual submitted work and ask for one criterion-linked repair; do not require a particular political position or essay template.",
+      "sourceDescriptorReconciliation": "Supplied BD-W01 is2005; retain four-criterion comparison, but use current2023 public descriptors as authority. No numeric bands are assigned."
+    },
+    "preReleaseChecks": [
+      "Independent IELTS reviewer checks task demands and potential ambiguity.",
+      "Recompute table totals and all analysis facts.",
+      "Review render at mobile and desktop sizes with semantic table navigation.",
+      "Keep task stimuli isolated from prior teaching and all private analysis.",
+      "Verify full-section timing and durable submission in an implemented runner before operational availability.",
+      "Validate sourceIndex entries and page/excerpt hashes; confirm authorized Iran-only provenance.",
+      "Review overlap with source-based training families before sealed admission: shared source semantics may make this form exposed."
+    ],
+    "semanticExposureRule": "Treat prior release of a task/prompt/answer or related source-semantic sibling in these groups as exposure across every pathway and track. Sharing a taught skill or public rubric alone is not prompt exposure. Actual group history is required before independent admission; different IDs do not guarantee unseen work."
+  },
+  "kind": "mock",
+  "semanticExposureGroupIds": [
+    "ca21-t1-highrise-city-housing",
+    "ms3-u1-city-to-countryside-reasons"
+  ]
+}

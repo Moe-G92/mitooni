@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "id": "gt-fnd-writing-transfer",
+  "version": 1,
+  "examTrack": "general_training",
+  "skill": "writing",
+  "stage": "transfer",
+  "pathwayIds": [
+    "gt-foundation"
+  ],
+  "objectiveIds": [
+    "gt-letter-bullet-development",
+    "gt-letter-audience-register",
+    "gt-letter-time-and-reason-language"
+  ],
+  "familyId": "cg18-t1-new-year-project",
+  "title": "Helping a friend’s New Year project",
+  "instructions": "Write in English in connected paragraphs. Complete all the requested points. Task 1 requires at least 150 words. This is letter preparation, not a full IELTS Writing test.",
+  "stimulus": {
+    "kind": "prompt",
+    "text": "Task 1\nYour English-speaking friend Amir is preparing a college project about New Year celebrations in different countries. He has asked you to help. Write a letter to Amir. In your letter:\n• explain how important New Year is to people in your country\n• describe how people celebrate it\n• explain what you personally enjoy about these celebrations.\nBegin your letter: Dear Amir,\nWrite at least 150 words in connected paragraphs. You do not need to write any addresses. Aim to spend about 20 minutes. Use a personal style."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "Write your letter. Develop every part of all three bullet points and write at least 150 words.",
+      "responseType": "extended_text",
+      "options": [],
+      "wordLimit": null
+    }
+  ],
+  "teachingAnchors": [],
+  "assessment": {
+    "kind": "qualitative",
+    "criteria": [
+      {
+        "id": "task-achievement",
+        "label": "Task achievement — Task 1",
+        "description": "For Task 1 only: clear letter purpose, appropriate personal relationship and register, and sufficiently developed, relevant coverage of every component in the three bullet points. Do not replace the requested function with a related but different one; at least 150 words."
+      },
+      {
+        "id": "coherence-cohesion",
+        "label": "Coherence and cohesion",
+        "description": "Assess logical progression, purposeful paragraphs and clear referencing/linking within each response; avoid mechanical connector counts."
+      },
+      {
+        "id": "lexical-resource",
+        "label": "Lexical resource",
+        "description": "Assess accurate, appropriate vocabulary and collocation, flexibility of expression and the effect of spelling or word-formation errors in each response."
+      },
+      {
+        "id": "grammatical-range-accuracy",
+        "label": "Grammatical range and accuracy",
+        "description": "Assess control of simple and complex structures, sentence boundaries and punctuation, with attention to errors that obscure meaning in each response."
+      }
+    ],
+    "answerKey": [],
+    "feedbackGuidance": "After submission only: Private annotated snippets, after submission only: “For many families, New Year is an important chance to spend time together.” explains importance without making an absolute claim about everyone. “We usually visit relatives during the holiday.” describes a custom with a frequency qualifier. “I especially enjoy these visits because we have time to talk without rushing.” adds a personal preference and reason instead of repeating the custom. These are illustrative possibilities, not required claims about a culture; accept the learner’s relevant accurate account. Map all three bullet functions to actual learner spans and identify any missing component. Separate missing content from vague development or inappropriate register. Explain one useful paragraphing choice, one lexical choice and one grammar issue with evidence; ask the learner to revise an underdeveloped point and an unclear sentence, then explain the revisions. Do not require these exemplar details, memorised text, real contact details or a fixed greeting/closing formula beyond the task. No band, score, calibrated estimate or official examiner claim."
+  },
+  "delivery": {
+    "kind": "text",
+    "assetId": null
+  },
+  "locale": {
+    "instructionsFa": "به انگلیسی و در بندهای پیوسته بنویسید. همهٔ موارد نامه را پاسخ دهید و دست‌کم ۱۵۰ واژه بنویسید. این تمرین نامه‌نویسی است و آزمون کامل نیست.",
+    "teachingAnchorsFa": [],
+    "feedbackGuidanceFa": "پس از ثبت پاسخ، برای هر جزء خواسته‌شده یک شاهد از نوشته بیابید. نبود محتوا، توضیح ناکافی و لحن نامناسب را جدا بررسی کنید. یک دلیل را به پیامد مرتبط کنید و یک عبارت زمانی یا جمله را اصلاح کنید. بازخورد، نمره یا برآورد معتبر آیلتس نیست."
+  },
+  "provenance": {
+    "origin": "source_based_original",
+    "sourceRefs": [
+      "CG18-W01",
+      "MSF-W01"
+    ],
+    "territory": "Iran",
+    "rightsNote": "Source-based Mitooni reauthoring from user-supplied licensed materials for the Iranian audience; selected source inspection authorized. No source scans, audio or complete original exercises included. Human teacher review remains pending.",
+    "transformationNotes": "CG18GT Test1 physical PDF31/printed29: a friend’s college project about New Year; significance, celebration practices and personal preference. Semantically distinct source family cg18-t1-new-year-project. This replaces the earlier repeated food/work-study adaptation; changed names alone are not treated as freshness. Retained actual situation, all three source task functions and source chronology; paraphrased the task and wrote new private guidance.  Exposure to this source family, including the original licensed task, must disable an unseen-transfer claim.",
+    "objectiveMappings": [
+      {
+        "objectiveId": "gt-letter-bullet-development",
+        "sourceRefIds": [
+          "CG18-W01"
+        ],
+        "sourceLearningPoint": "CG18GT Test1 physical PDF31/printed29: a friend’s college project about New Year; significance, celebration practices and personal preference. The three requested rhetorical functions differ and each needs development.",
+        "unitTeachingConnection": "Develop the actual three source-derived bullet functions in a connected letter.",
+        "taskTransformation": "Rephrased the actual source situation and retained all three core task demands; added original private annotated snippets with optional plausible detail."
+      },
+      {
+        "objectiveId": "gt-letter-audience-register",
+        "sourceRefIds": [
+          "CG18-W01"
+        ],
+        "sourceLearningPoint": "CG18GT Test1 physical PDF31/printed29: a friend’s college project about New Year; significance, celebration practices and personal preference. The original task’s recipient and purpose define register; the adapted relationship is made explicit.",
+        "unitTeachingConnection": "Match greeting, request/information and closing to the explicitly stated relationship.",
+        "taskTransformation": "Kept the source scenario while specifying the intended personal, semi-formal or formal relationship; no name-only change is claimed as a new source family."
+      },
+      {
+        "objectiveId": "gt-letter-time-and-reason-language",
+        "sourceRefIds": [
+          "CG18-W01",
+          "MSF-W01"
+        ],
+        "sourceLearningPoint": "MSF PDF15–16 supports controlled present-simple/frequency and sequenced description followed by correction. CG18GT Test1 physical PDF31/printed29: a friend’s college project about New Year; significance, celebration practices and personal preference. supplies the actual letter language needs.",
+        "unitTeachingConnection": "Use accurate time, reason, descriptive or experience language as the task requires, then revise an unclear sentence.",
+        "taskTransformation": "Applied controlled-to-connected language practice to the actual source letter; no Academic diagram overview is required."
+      }
+    ]
+  },
+  "teacherReview": {
+    "status": "pending",
+    "notes": []
+  }
+}

@@ -16,6 +16,80 @@ export class GuardedTransport {
     private base = "",
     private fetcher: typeof fetch = (...args) => fetch(...args),
   ) {}
+  /** Raw private media only. Callers construct a fixed receiving API path. */
+  async rawResponse(
+    path: string,
+    options: {
+      method?: "GET" | "POST";
+      body?: Blob;
+      headers?: HeadersInit;
+      operationId?: string;
+      signal?: AbortSignal;
+    } = {},
+  ): Promise<Response> {
+    if (
+      !path.startsWith("/content-review/targets/") ||
+      path.startsWith("//") ||
+      /[\\#\s]/.test(path) ||
+      Array.from(path).some(
+        (char) => char.charCodeAt(0) < 32 || char.charCodeAt(0) === 127,
+      ) ||
+      path.includes("..") ||
+      /%2f|%5c|%2e/i.test(path)
+    )
+      throw new AccountError(400, "invalid_media_path");
+    const owner = this.session.capture();
+    const send = async (refresh = false) => {
+      const token = await this.session.token(owner, refresh);
+      this.session.assert(owner);
+      const headers = new Headers(options.headers);
+      headers.set("Authorization", `Bearer ${token}`);
+      if (options.body !== undefined) {
+        if (!options.operationId)
+          throw new AccountError(400, "missing_operation_key");
+        headers.set("Idempotency-Key", options.operationId);
+        headers.set("X-Expected-User-Id", owner.subject);
+      }
+      return this.fetcher(`${this.base}/api${path}`, {
+        method: options.method ?? "GET",
+        body: options.body,
+        headers,
+        signal: options.signal,
+        credentials: "omit",
+        redirect: "error",
+        cache: "no-store",
+      });
+    };
+    let response = await send();
+    this.session.assert(owner);
+    if (response.status === 401) {
+      response = await send(true);
+      this.session.assert(owner);
+    }
+    if (response.status === 401) {
+      void this.session.signOut().catch(() => {});
+      throw new AccountError(401, "unauthenticated");
+    }
+    if (!response.ok) {
+      const data: unknown = await response.json().catch(() => null);
+      this.session.assert(owner);
+      const value = data as {
+        detail?: { code?: unknown };
+        requestId?: unknown;
+      } | null;
+      throw new AccountError(
+        response.status,
+        typeof value?.detail?.code === "string"
+          ? value.detail.code
+          : response.status === 503
+            ? "store_unavailable"
+            : "invalid_media_request",
+        typeof value?.requestId === "string" ? value.requestId : null,
+      );
+    }
+    this.session.assert(owner);
+    return response;
+  }
   async request(
     path: string,
     body?: unknown,

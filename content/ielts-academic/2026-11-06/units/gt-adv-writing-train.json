@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 1,
+  "id": "gt-adv-writing-train",
+  "version": 1,
+  "examTrack": "general_training",
+  "skill": "writing",
+  "stage": "train",
+  "pathwayIds": [
+    "gt-advanced"
+  ],
+  "objectiveIds": [
+    "gt-letter-bullet-development",
+    "gt-letter-audience-register",
+    "gt-letter-time-and-reason-language",
+    "gt-essay-two-part-response"
+  ],
+  "familyId": "cg19-t4-internal-transfer",
+  "title": "Requesting an internal department move",
+  "instructions": "Write in English in connected paragraphs. Complete all the requested points. Task 1 requires at least 150 words. Complete the separate Task 2 essay with at least 250 words.",
+  "stimulus": {
+    "kind": "prompt",
+    "text": "Task 1\nYou began your present job two years ago. You now believe that moving to another department in the same organisation would help your career development. Requests go to a manager responsible for internal moves, whom you have not met. Write a letter to that manager. In your letter:\n• explain what you have learned in your current role\n• explain how the organisation could benefit from your move to a different department\n• give your reasons for wanting to remain with the organisation.\nBegin your letter: Dear Sir or Madam,\nWrite at least 150 words in connected paragraphs. You do not need to write any addresses. Aim to spend about 20 minutes. Use a formal style.\n\nTask 2\nAt some well-known visitor attractions, people concentrate on taking photographs of themselves instead of looking closely at the place. Why might this happen? Do you consider this a positive or a negative development?\nGive reasons for your answers and relevant examples from your own knowledge or experience. Write at least 250 words in connected paragraphs. Aim to spend about 40 minutes."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "Write your letter. Develop every part of all three bullet points and write at least 150 words.",
+      "responseType": "extended_text",
+      "options": [],
+      "wordLimit": null
+    },
+    {
+      "id": "q2",
+      "prompt": "Write a separate essay answering both questions in Task 2. Write at least 250 words.",
+      "responseType": "extended_text",
+      "options": [],
+      "wordLimit": null
+    }
+  ],
+  "teachingAnchors": [
+    {
+      "id": "language",
+      "label": "Build the language first",
+      "text": "Separate experience already gained from a proposed future contribution. “I have learned to ... over two years” describes accumulated experience; “I could use this to ...” proposes a contribution, not a guaranteed outcome. Choose one real skill and show how it transfers to another department. Connect a reason to its consequence without promising an unsupported result."
+    },
+    {
+      "id": "plan",
+      "label": "Plan for the recipient",
+      "text": "Make a three-part plan: what you have learned, what the organisation gains from the internal move, and why you want to stay. Each part needs a developed answer; enthusiasm alone does not explain the organisational benefit. Use a respectful formal request and keep the career move distinct from resignation. For the essay, plan the cause question and the evaluation question separately."
+    },
+    {
+      "id": "revise",
+      "label": "Draft, then check coverage",
+      "text": "Write the complete letter in connected paragraphs. Check every component of each bullet against an actual sentence; a vague mention is not full development. Read time phrases and references aloud to test clarity. Revise one underdeveloped reason and one inaccurate sentence, then explain the changes. For the separate essay, make a two-column plan, one for each question. A cause is not an evaluation: answer both with explanation and a relevant example."
+    }
+  ],
+  "assessment": {
+    "kind": "qualitative",
+    "criteria": [
+      {
+        "id": "task-achievement",
+        "label": "Task achievement — Task 1",
+        "description": "For Task 1 only: clear letter purpose, appropriate formal relationship and register, and sufficiently developed, relevant coverage of every component in the three bullet points. Do not replace the requested function with a related but different one; at least 150 words."
+      },
+      {
+        "id": "task-response",
+        "label": "Task response — Task 2",
+        "description": "For Task 2 only: address both stated questions with clear, developed answers and relevant support. Explain possible causes of the photography focus and evaluate the development. Write at least 250 words."
+      },
+      {
+        "id": "coherence-cohesion",
+        "label": "Coherence and cohesion",
+        "description": "Assess logical progression, purposeful paragraphs and clear referencing/linking within each response; avoid mechanical connector counts."
+      },
+      {
+        "id": "lexical-resource",
+        "label": "Lexical resource",
+        "description": "Assess accurate, appropriate vocabulary and collocation, flexibility of expression and the effect of spelling or word-formation errors in each response."
+      },
+      {
+        "id": "grammatical-range-accuracy",
+        "label": "Grammatical range and accuracy",
+        "description": "Assess control of simple and complex structures, sentence boundaries and punctuation, with attention to errors that obscure meaning in each response."
+      }
+    ],
+    "answerKey": [],
+    "feedbackGuidance": "After submission only: Private annotated letter snippets: “Over the past two years, I have learned to coordinate orders across several teams.” supplies relevant learning instead of only naming a role. “In the planning department, I could use that experience to identify delays before they affect other teams.” links existing learning with a plausible organisational benefit. “I would like to continue here because the collaborative approach suits the way I work.” explains retention rather than treating a move as a resignation. Do not require these job details. Private essay snippet: “A photograph can become evidence of having visited a place, so the image may become the goal rather than a record of the experience.” develops a cause; evaluation of the development remains a separate requirement. Map all three bullet functions to actual learner spans and identify any missing component. Separate missing content from vague development or inappropriate register. Explain one useful paragraphing choice, one lexical choice and one grammar issue with evidence; ask the learner to revise an underdeveloped point and an unclear sentence, then explain the revisions. Do not require these exemplar details, memorised text, real contact details or a fixed greeting/closing formula beyond the task. No band, score, calibrated estimate or official examiner claim. Review q1 and q2 separately: Task achievement for the letter, Task response for the essay; Coherence and cohesion, Lexical resource and Grammatical range and accuracy apply separately to each. The essay must develop answers to both stated questions, with reasons and relevant examples. Do not convert the two practice responses into a combined Writing score."
+  },
+  "delivery": {
+    "kind": "text",
+    "assetId": null
+  },
+  "locale": {
+    "instructionsFa": "به انگلیسی و در بندهای پیوسته بنویسید. همهٔ موارد نامه را پاسخ دهید و دست‌کم ۱۵۰ واژه بنویسید. مقالهٔ جداگانهٔ بخش دوم را با دست‌کم ۲۵۰ واژه کامل کنید.",
+    "teachingAnchorsFa": [
+      {
+        "id": "language",
+        "label": "ابتدا زبان",
+        "text": "تجربهٔ به‌دست‌آمده را از کمک پیشنهادی آینده جدا کنید. I have learned با over two years تجربهٔ انباشته را می‌رساند؛ I could use this پیشنهاد است، نه تضمین. یک مهارت مشخص و کاربردش در بخش دیگر را توضیح دهید و نتیجهٔ بی‌پشتوانه وعده ندهید."
+      },
+      {
+        "id": "plan",
+        "label": "طرح برای مخاطب",
+        "text": "سه بخش طرح را جدا کنید: یادگیری در نقش فعلی، سود جابه‌جایی برای سازمان، و دلیل ماندن. هر بخش توضیح می‌خواهد؛ اشتیاق به‌تنهایی سود سازمان را ثابت نمی‌کند. درخواست رسمی و محترمانه باشد و جابه‌جایی را با استعفا یکی نگیرید. دو سؤال مقاله را جدا طرح‌ریزی کنید."
+      },
+      {
+        "id": "revise",
+        "label": "نوشتن و بازبینی",
+        "text": "نامه را کامل و در بندهای پیوسته بنویسید. هر جزء خواسته‌شده را به جمله‌ای مشخص وصل کنید. زمان‌ها و ضمیرها را بخوانید. یک دلیل کم‌توضیح و یک جملهٔ نادرست را اصلاح کنید. برای مقالهٔ جداگانه، هر یک از دو سؤال را مستقل طرح‌ریزی و پاسخ دهید؛ توضیح علت جای ارزیابی را نمی‌گیرد."
+      }
+    ],
+    "feedbackGuidanceFa": "پس از ثبت پاسخ، برای هر جزء خواسته‌شده یک شاهد از نوشته بیابید. نبود محتوا، توضیح ناکافی و لحن نامناسب را جدا بررسی کنید. یک دلیل را به پیامد مرتبط کنید و یک عبارت زمانی یا جمله را اصلاح کنید. بازخورد، نمره یا برآورد معتبر آیلتس نیست. نامه و مقاله جدا ارزیابی شوند؛ مقاله باید به هر دو سؤال پاسخ دهد."
+  },
+  "provenance": {
+    "origin": "source_based_original",
+    "sourceRefs": [
+      "CG19-W04",
+      "MSF-W01",
+      "CG19-W01"
+    ],
+    "territory": "Iran",
+    "rightsNote": "Source-based Mitooni reauthoring from user-supplied licensed materials for the Iranian audience; selected source inspection authorized. No source scans, audio or complete original exercises included. Human teacher review remains pending.",
+    "transformationNotes": "CG19GT Test4 physical/printed97: two years in a current job; describe learning, benefit of moving departments and reasons for staying in the company. Semantically distinct source family cg19-t4-internal-transfer. This replaces the earlier repeated food/work-study adaptation; changed names alone are not treated as freshness. Retained actual situation, all three source task functions and source chronology; paraphrased the task and wrote new private guidance. The separate essay remains grounded in CG19 Test1 PDF30 selfie-tourism cause/evaluation. Exposure to this source family, including the original licensed task, must disable an unseen-transfer claim.",
+    "objectiveMappings": [
+      {
+        "objectiveId": "gt-letter-bullet-development",
+        "sourceRefIds": [
+          "CG19-W04"
+        ],
+        "sourceLearningPoint": "CG19GT Test4 physical/printed97: two years in a current job; describe learning, benefit of moving departments and reasons for staying in the company. The three requested rhetorical functions differ and each needs development.",
+        "unitTeachingConnection": "Develop the actual three source-derived bullet functions in a connected letter.",
+        "taskTransformation": "Rephrased the actual source situation and retained all three core task demands; added original private annotated snippets with optional plausible detail."
+      },
+      {
+        "objectiveId": "gt-letter-audience-register",
+        "sourceRefIds": [
+          "CG19-W04"
+        ],
+        "sourceLearningPoint": "CG19GT Test4 physical/printed97: two years in a current job; describe learning, benefit of moving departments and reasons for staying in the company. The original task’s recipient and purpose define register; the adapted relationship is made explicit.",
+        "unitTeachingConnection": "Match greeting, request/information and closing to the explicitly stated relationship.",
+        "taskTransformation": "Kept the source scenario while specifying the intended personal, semi-formal or formal relationship; no name-only change is claimed as a new source family."
+      },
+      {
+        "objectiveId": "gt-letter-time-and-reason-language",
+        "sourceRefIds": [
+          "CG19-W04",
+          "MSF-W01"
+        ],
+        "sourceLearningPoint": "MSF PDF15–16 supports controlled present-simple/frequency and sequenced description followed by correction. CG19GT Test4 physical/printed97: two years in a current job; describe learning, benefit of moving departments and reasons for staying in the company. supplies the actual letter language needs.",
+        "unitTeachingConnection": "Use accurate time, reason, descriptive or experience language as the task requires, then revise an unclear sentence.",
+        "taskTransformation": "Applied controlled-to-connected language practice to the actual source letter; no Academic diagram overview is required."
+      },
+      {
+        "objectiveId": "gt-essay-two-part-response",
+        "sourceRefIds": [
+          "CG19-W01"
+        ],
+        "sourceLearningPoint": "CG19 Test1 PDF30 asks why visitors focus on photographs of themselves and whether that trend is positive or negative.",
+        "unitTeachingConnection": "Plan and answer both distinct questions with developed reasoning and relevant examples; assess Task response separately from the letter’s Task achievement.",
+        "taskTransformation": "Paraphrased the actual source situation and two-part demand; added a new private annotated reasoning snippet and separate qualitative criteria, without copying an essay or claiming a band."
+      }
+    ]
+  },
+  "teacherReview": {
+    "status": "pending",
+    "notes": []
+  }
+}

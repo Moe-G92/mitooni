@@ -1,0 +1,397 @@
+{
+  "schemaVersion": 1,
+  "id": "gt-adv-reading-transfer",
+  "version": 1,
+  "examTrack": "general_training",
+  "skill": "reading",
+  "stage": "transfer",
+  "pathwayIds": [
+    "gt-advanced"
+  ],
+  "objectiveIds": [
+    "gt-adv-whole-paragraph-headings",
+    "gt-adv-qualified-writer-views",
+    "gt-adv-summary-completion"
+  ],
+  "familyId": "gt-cg19-t2-henry-adaptation",
+  "title": "Reading evidence about a parenting programme",
+  "instructions": "Read the five-paragraph text. Match paragraphs A–E to the same shared list of headings A–H; use a heading at most once. Answer the remaining view and summary questions. This is a shorter preparatory set, not a full IELTS Reading section.",
+  "stimulus": {
+    "kind": "passage",
+    "text": "A. A historical report describes Leeds recording a fall in childhood obesity, with the clearest change among families in the most disadvantaged areas. It compares that pattern with improvement in Amsterdam, another city where the problem had proved difficult to address. The contrast matters because a city-wide average can conceal different experiences among groups. In the Leeds account, the improvement among poorer children attracted particular attention, rather than being treated as an incidental detail beneath one overall number. These are findings described in that report, not a claim about present-day rates.\n\nB. Researchers examined several years of measurements rather than one isolated result. A national programme measured children at the beginning and end of primary school, and comparable places offered a background against which to consider Leeds. However, the researcher did not claim certainty about the reason for the decline. A programme called Henry, introduced as part of the city’s strategy, was a possible contributor. The evidence could support interest in that programme without establishing that it alone caused the observed change. Repeated observations and a confident causal explanation are different forms of claim.\n\nC. Henry’s approach was described as authoritative rather than authoritarian. Parents retained responsibility and set limits, while responding to their children and offering bounded choices. This differed both from imposing every decision and from allowing children unrestricted freedom. A child might choose between two vegetables rather than decide whether there would be any vegetables. A bedtime choice could concern where a story would be read. These examples illustrate a relationship between clear boundaries and participation, rather than a simple instruction to refuse every request a child makes.\n\nD. A parent who attended the programme described learning about healthy eating and saving money through planning meals. She also reported benefits beyond food. Sharing ideas with her partner helped the family, and she associated the approach with calmer, happier children and lower stress for the adults. Her account conveys why participation felt worthwhile to her. It remains an individual’s experience, however, rather than a separate statistical measurement of outcomes for every participating household. The different types of evidence can be read together without being mistaken for each other.\n\nE. The local public-health perspective emphasised helping families early, before an established problem became harder to tackle. It also recognised that parents know their own circumstances and what changes they can realistically make. The aim was to work alongside them, rather than assume that one solution fitted everyone. A national minister welcomed local work that made healthy choices easier for busy parents. Taken together, these comments frame practical support and prevention as important aims, while leaving room for the uncertainty about causation already acknowledged by the researcher."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "Choose the best heading for paragraph A from the shared list A–H. Use each heading at most once; three headings are not used.",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "Combining parental limits with children’s choices"
+        },
+        {
+          "id": "B",
+          "text": "Giving children unrestricted control over meals"
+        },
+        {
+          "id": "C",
+          "text": "Supporting realistic early changes in families"
+        },
+        {
+          "id": "D",
+          "text": "An improvement especially visible in disadvantaged groups"
+        },
+        {
+          "id": "E",
+          "text": "Current obesity rates in every British city"
+        },
+        {
+          "id": "F",
+          "text": "Separating a repeated pattern from a certain cause"
+        },
+        {
+          "id": "G",
+          "text": "Proof that one programme alone caused the decline"
+        },
+        {
+          "id": "H",
+          "text": "A participant’s account of benefits across family life"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q2",
+      "prompt": "Choose the best heading for paragraph B from the shared list A–H. Use each heading at most once; three headings are not used.",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "Combining parental limits with children’s choices"
+        },
+        {
+          "id": "B",
+          "text": "Giving children unrestricted control over meals"
+        },
+        {
+          "id": "C",
+          "text": "Supporting realistic early changes in families"
+        },
+        {
+          "id": "D",
+          "text": "An improvement especially visible in disadvantaged groups"
+        },
+        {
+          "id": "E",
+          "text": "Current obesity rates in every British city"
+        },
+        {
+          "id": "F",
+          "text": "Separating a repeated pattern from a certain cause"
+        },
+        {
+          "id": "G",
+          "text": "Proof that one programme alone caused the decline"
+        },
+        {
+          "id": "H",
+          "text": "A participant’s account of benefits across family life"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q3",
+      "prompt": "Choose the best heading for paragraph C from the shared list A–H. Use each heading at most once; three headings are not used.",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "Combining parental limits with children’s choices"
+        },
+        {
+          "id": "B",
+          "text": "Giving children unrestricted control over meals"
+        },
+        {
+          "id": "C",
+          "text": "Supporting realistic early changes in families"
+        },
+        {
+          "id": "D",
+          "text": "An improvement especially visible in disadvantaged groups"
+        },
+        {
+          "id": "E",
+          "text": "Current obesity rates in every British city"
+        },
+        {
+          "id": "F",
+          "text": "Separating a repeated pattern from a certain cause"
+        },
+        {
+          "id": "G",
+          "text": "Proof that one programme alone caused the decline"
+        },
+        {
+          "id": "H",
+          "text": "A participant’s account of benefits across family life"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q4",
+      "prompt": "Choose the best heading for paragraph D from the shared list A–H. Use each heading at most once; three headings are not used.",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "Combining parental limits with children’s choices"
+        },
+        {
+          "id": "B",
+          "text": "Giving children unrestricted control over meals"
+        },
+        {
+          "id": "C",
+          "text": "Supporting realistic early changes in families"
+        },
+        {
+          "id": "D",
+          "text": "An improvement especially visible in disadvantaged groups"
+        },
+        {
+          "id": "E",
+          "text": "Current obesity rates in every British city"
+        },
+        {
+          "id": "F",
+          "text": "Separating a repeated pattern from a certain cause"
+        },
+        {
+          "id": "G",
+          "text": "Proof that one programme alone caused the decline"
+        },
+        {
+          "id": "H",
+          "text": "A participant’s account of benefits across family life"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q5",
+      "prompt": "Choose the best heading for paragraph E from the shared list A–H. Use each heading at most once; three headings are not used.",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "Combining parental limits with children’s choices"
+        },
+        {
+          "id": "B",
+          "text": "Giving children unrestricted control over meals"
+        },
+        {
+          "id": "C",
+          "text": "Supporting realistic early changes in families"
+        },
+        {
+          "id": "D",
+          "text": "An improvement especially visible in disadvantaged groups"
+        },
+        {
+          "id": "E",
+          "text": "Current obesity rates in every British city"
+        },
+        {
+          "id": "F",
+          "text": "Separating a repeated pattern from a certain cause"
+        },
+        {
+          "id": "G",
+          "text": "Proof that one programme alone caused the decline"
+        },
+        {
+          "id": "H",
+          "text": "A participant’s account of benefits across family life"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q6",
+      "prompt": "Do the statements agree with the writer’s views? Choose YES, NO or NOT GIVEN. The repeated measurements establish with certainty that Henry alone caused the decline.",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "YES"
+        },
+        {
+          "id": "B",
+          "text": "NO"
+        },
+        {
+          "id": "C",
+          "text": "NOT GIVEN"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q7",
+      "prompt": "Complete the summary. Choose ONE WORD ONLY from paragraph C: Parents can offer children choices while retaining clear ______.",
+      "responseType": "short_text",
+      "options": [],
+      "wordLimit": 1
+    },
+    {
+      "id": "q8",
+      "prompt": "Do the statements agree with the writer’s views? Choose YES, NO or NOT GIVEN. The parent in paragraph D attended more sessions than every other participant.",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "YES"
+        },
+        {
+          "id": "B",
+          "text": "NO"
+        },
+        {
+          "id": "C",
+          "text": "NOT GIVEN"
+        }
+      ],
+      "wordLimit": null
+    }
+  ],
+  "teachingAnchors": [],
+  "assessment": {
+    "kind": "deterministic",
+    "criteria": [
+      {
+        "id": "textual-evidence",
+        "label": "Textual evidence",
+        "description": "Use only the stated text, respect scope and word limits, and distinguish contradiction from insufficient information."
+      }
+    ],
+    "answerKey": [
+      {
+        "questionId": "q1",
+        "acceptedAnswers": [
+          "D"
+        ],
+        "rationale": "The whole of paragraph A develops: An improvement especially visible in disadvantaged groups. Read its central relationship and qualification, not an isolated repeated word."
+      },
+      {
+        "questionId": "q2",
+        "acceptedAnswers": [
+          "F"
+        ],
+        "rationale": "The whole of paragraph B develops: Separating a repeated pattern from a certain cause. Read its central relationship and qualification, not an isolated repeated word."
+      },
+      {
+        "questionId": "q3",
+        "acceptedAnswers": [
+          "A"
+        ],
+        "rationale": "The whole of paragraph C develops: Combining parental limits with children’s choices. Read its central relationship and qualification, not an isolated repeated word."
+      },
+      {
+        "questionId": "q4",
+        "acceptedAnswers": [
+          "H"
+        ],
+        "rationale": "The whole of paragraph D develops: A participant’s account of benefits across family life. Read its central relationship and qualification, not an isolated repeated word."
+      },
+      {
+        "questionId": "q5",
+        "acceptedAnswers": [
+          "C"
+        ],
+        "rationale": "The whole of paragraph E develops: Supporting realistic early changes in families. Read its central relationship and qualification, not an isolated repeated word."
+      },
+      {
+        "questionId": "q6",
+        "acceptedAnswers": [
+          "B"
+        ],
+        "rationale": "B distinguishes repeated observations from certainty about a single cause."
+      },
+      {
+        "questionId": "q7",
+        "acceptedAnswers": [
+          "boundaries"
+        ],
+        "rationale": "C explains choices within boundaries."
+      },
+      {
+        "questionId": "q8",
+        "acceptedAnswers": [
+          "C"
+        ],
+        "rationale": "No attendance comparison is given."
+      }
+    ],
+    "feedbackGuidance": "After submission, state each paragraph’s main claim before discussing the heading. Identify a distractor that repeats the subject but changes the relationship or scope. In the city teaching example, northern location is introductory while unusual regulation is the paragraph’s focus; a topic word is not the whole argument. For YES/NO/NOT GIVEN use the writer’s actual position, and distinguish uncertainty about cause from denial of an observed change. For summary completion copy one exact word with grammatical fit. Revise one gist statement and explain one rejected qualifier. Raw accuracy only; no band."
+  },
+  "delivery": {
+    "kind": "text",
+    "assetId": null
+  },
+  "locale": {
+    "instructionsFa": "متن پنج‌بندی را بخوانید. هر بند را به یک عنوان از فهرست مشترک A تا H وصل کنید؛ هر عنوان حداکثر یک بار به کار می‌رود. سپس پرسش دیدگاه و خلاصه را پاسخ دهید. این مجموعه بخش کامل آزمون نیست.",
+    "teachingAnchorsFa": [],
+    "feedbackGuidanceFa": "پس از ثبت پاسخ، دلیل خطا یا ضعف را بررسی کنید و یک اصلاح مشخص انجام دهید. این بازخورد نمرهٔ معتبر آیلتس نیست."
+  },
+  "provenance": {
+    "origin": "source_based_original",
+    "sourceRefs": [
+      "CG19-R02",
+      "MS3-R01"
+    ],
+    "territory": "Iran",
+    "rightsNote": "Source-based Mitooni reauthoring from user-supplied licensed materials for the Iranian audience; selected source inspection authorized. No source scans, audio or complete original exercises included. Human teacher review remains pending.",
+    "transformationNotes": "CG19 Test2 PDF47–51: historical Leeds childhood-obesity findings, researcher uncertainty about causation, Henry’s bounded-choice parenting, one participant account and prevention within family circumstances. Complete semantic rewrite of the earlier unrelated notices/workshop/street/repair-cafe drafts. New prose, question wording, distractors and keys; retained source facts and conceptual relationships. Mindset contributes staged language/reading support, not unrelated contextual decoration. Train/transfer use distinct source subfamilies and no shared adapted passage.",
+    "objectiveMappings": [
+      {
+        "objectiveId": "gt-adv-whole-paragraph-headings",
+        "sourceRefIds": [
+          "CG19-R02",
+          "MS3-R01"
+        ],
+        "sourceLearningPoint": "CG19 Test2 PDF47–51: historical Leeds childhood-obesity findings, researcher uncertainty about causation, Henry’s bounded-choice parenting, one participant account and prevention within family circumstances. MS3 PDF10–15 shows that the full paragraph may change the impression created by its opening, and qualifiers can eliminate headings.",
+        "unitTeachingConnection": "Read each full paragraph, identify the main relationship and select a paraphrased heading from a shared overcomplete list.",
+        "taskTransformation": "Faithfully paraphrased the actual five-part article into a shorter five-paragraph text; wrote a new shared eight-heading list with three distractors."
+      },
+      {
+        "objectiveId": "gt-adv-qualified-writer-views",
+        "sourceRefIds": [
+          "CG19-R02",
+          "MS3-R01"
+        ],
+        "sourceLearningPoint": "CG19 Test2 PDF47–51: historical Leeds childhood-obesity findings, researcher uncertainty about causation, Henry’s bounded-choice parenting, one participant account and prevention within family circumstances. CG19 distinguishes author explanations and source evidence; MS3 PDF12 focuses on scope-changing adjectives/adverbs.",
+        "unitTeachingConnection": "Preserve qualified claims and distinguish observed trends from unsupported personal details or causal certainty.",
+        "taskTransformation": "Wrote new YES/NO/NOT GIVEN items around the adapted argument and deliberately unspecified personal comparisons; did not import outside present-day claims."
+      },
+      {
+        "objectiveId": "gt-adv-summary-completion",
+        "sourceRefIds": [
+          "CG19-R02",
+          "MS3-R01"
+        ],
+        "sourceLearningPoint": "CG19 Test2 PDF47–51: historical Leeds childhood-obesity findings, researcher uncertainty about causation, Henry’s bounded-choice parenting, one participant account and prevention within family circumstances. CG19 includes bounded summary completion; meaning must survive the compression, rather than only a topic word.",
+        "unitTeachingConnection": "Complete a short summary with one exact word while retaining the source relationship.",
+        "taskTransformation": "Wrote an original summary gap on emotional framing or parental boundaries with exact-text key and rationale."
+      }
+    ]
+  },
+  "teacherReview": {
+    "status": "pending",
+    "notes": []
+  }
+}

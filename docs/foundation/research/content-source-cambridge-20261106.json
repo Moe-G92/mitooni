@@ -1,0 +1,317 @@
+{
+  "recordType": "internal-source-inspection",
+  "date": "2026-11-06",
+  "owner": "source_cambridge",
+  "preflight": {
+    "professionalAdditionalConsideration": "Verify print/PDF offsets, source scenario fidelity, task-family coverage and descriptor revision; distinguish question sheets from unheard audio.",
+    "rawestMaterial": "Actual local selected PDF pages; official IELTS descriptor PDF and dated announcement.",
+    "methodsAndTools": "PyMuPDF page text and rendered-page inspection; SHA256 source and selected text; web opening of official IELTS PDF.",
+    "independentEvidence": "Reproducible hashes and verified printed-page mapping; source-specific task/scenario observations; dated official descriptor contrasted with undated local file."
+  },
+  "design": {
+    "chosen": "Cambridge19GT plus Cambridge21Academic selected source pages; paraphrased scenario/fact/learning evidence with exact hashes.",
+    "alternatives": "Cambridge19Academic and20Academic checked: main text unavailable/image-only apart from watermarks; avoided unverified OCR.21Academic readable.",
+    "rightsBoundary": "Source directories read-only; no original/excerpt files/assets copied into app; original reauthoring within user-authorized licensed-source scope. Rights/territory are human-owned decisions."
+  },
+  "entries": [
+    {
+      "id": "CG19-F01",
+      "relativePath": "Cambridge Questions/Cambridge 19/Cambridge-IELTS-19-General.pdf",
+      "fileSha256": "846ae061aeb56ee6636bd20166623bb621379b0053c451985f38b0cc12443251",
+      "pdfPages": [
+        5,
+        6
+      ],
+      "excerptSha256": "17594097f9d605679493b79fcd55408e304b664a4fbd3b389cc9fc9dc8040b13",
+      "learningObjectives": [
+        "Distinguish everyday/workplace/extended GT reading demands",
+        "plan letter and argument tasks"
+      ],
+      "excerptBoundary": "Only selected PDF pages. Hash algorithm: PyMuPDF get_text(sort=True) per page; join U+000C; UTF-8 SHA256. No extracted text persisted.",
+      "sourceContentSummary": "GT three reading sections40 items60min. Letter150 words20min; essay250 words40min; Task2twice Task1. Speaking11\u201314min. Paper format answer-transfer convention must not be assumed for computer delivery.",
+      "transformationBoundaries": "Reauthor/paraphrase the selected source facts, scenarios and teaching demands with traceable provenance. Do not attach a method-only citation to unrelated invented learning content. No wholesale passage/exercise copying, scan/chart assets, verbatim options or keys. Preserve faithful source meaning and verify every new key.",
+      "inspectionNotes": {
+        "printedPageMapping": "PDF=printed",
+        "textStatus": "Readable embedded OCR-like text with errors; representative rendered pages visually inspected."
+      }
+    },
+    {
+      "id": "CG19-L01",
+      "relativePath": "Cambridge Questions/Cambridge 19/Cambridge-IELTS-19-General.pdf",
+      "fileSha256": "846ae061aeb56ee6636bd20166623bb621379b0053c451985f38b0cc12443251",
+      "pdfPages": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "excerptSha256": "3af3dfb361ba7afb40cb78c011e717382e07f5e85fca66373d0db09195d80cf8",
+      "learningObjectives": [
+        "Extract precise facts",
+        "follow spatial language",
+        "identify views",
+        "track lecture structure"
+      ],
+      "excerptBoundary": "Only selected PDF pages. Hash algorithm: PyMuPDF get_text(sort=True) per page; join U+000C; UTF-8 SHA256. No extracted text persisted.",
+      "sourceContentSummary": "Country park note completion; twinning association multiple-choice; house map; student bread-reuse discussion and food-trend opinions; Neolithic archaeological-site lecture notes. Four parts10items each.",
+      "transformationBoundaries": "Reauthor/paraphrase the selected source facts, scenarios and teaching demands with traceable provenance. Do not attach a method-only citation to unrelated invented learning content. No wholesale passage/exercise copying, scan/chart assets, verbatim options or keys. Preserve faithful source meaning and verify every new key.",
+      "inspectionNotes": {
+        "printedPageMapping": "PDF=printed",
+        "textStatus": "Readable embedded OCR-like text with errors; representative rendered pages visually inspected."
+      }
+    },
+    {
+      "id": "CG19-R01",
+      "relativePath": "Cambridge Questions/Cambridge 19/Cambridge-IELTS-19-General.pdf",
+      "fileSha256": "846ae061aeb56ee6636bd20166623bb621379b0053c451985f38b0cc12443251",
+      "pdfPages": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+      ],
+      "excerptSha256": "c59ef53940b43f7953c582434174289e6aee1f186009d6538aa08e52bcc5eb23",
+      "learningObjectives": [
+        "Identify evidence and absence",
+        "match short texts",
+        "preserve word limits",
+        "identify paragraph purpose"
+      ],
+      "excerptBoundary": "Only selected PDF pages. Hash algorithm: PyMuPDF get_text(sort=True) per page; join U+000C; UTF-8 SHA256. No extracted text persisted.",
+      "sourceContentSummary": "Everyday tram FAQ with TFNG; knitwear customer reviews with matching; workplace leadership sentence completion and resignation note completion; extended emoji communication prose with headings, summary and multiple-choice.40items across3sections.",
+      "transformationBoundaries": "Reauthor/paraphrase the selected source facts, scenarios and teaching demands with traceable provenance. Do not attach a method-only citation to unrelated invented learning content. No wholesale passage/exercise copying, scan/chart assets, verbatim options or keys. Preserve faithful source meaning and verify every new key.",
+      "inspectionNotes": {
+        "printedPageMapping": "PDF=printed",
+        "textStatus": "Readable embedded OCR-like text with errors; representative rendered pages visually inspected."
+      }
+    },
+    {
+      "id": "CG19-W01",
+      "relativePath": "Cambridge Questions/Cambridge 19/Cambridge-IELTS-19-General.pdf",
+      "fileSha256": "846ae061aeb56ee6636bd20166623bb621379b0053c451985f38b0cc12443251",
+      "pdfPages": [
+        29,
+        30
+      ],
+      "excerptSha256": "234cf79f9a8cbc8cf64451d62f7385170e3a153071c08fff7cfa625a71929bcf",
+      "learningObjectives": [
+        "Cover letter bullet points with appropriate register",
+        "answer causal and evaluative essay demands"
+      ],
+      "excerptBoundary": "Only selected PDF pages. Hash algorithm: PyMuPDF get_text(sort=True) per page; join U+000C; UTF-8 SHA256. No extracted text persisted.",
+      "sourceContentSummary": "Task1 letter to employer requesting reduced hours for part-time study: reason, proposed working hours, benefit to employer. Task2 asks causes and evaluation of visitors taking photographs of themselves rather than attending to famous places.",
+      "transformationBoundaries": "Reauthor/paraphrase the selected source facts, scenarios and teaching demands with traceable provenance. Do not attach a method-only citation to unrelated invented learning content. No wholesale passage/exercise copying, scan/chart assets, verbatim options or keys. Preserve faithful source meaning and verify every new key.",
+      "inspectionNotes": {
+        "printedPageMapping": "PDF=printed",
+        "textStatus": "Readable embedded OCR-like text with errors; representative rendered pages visually inspected."
+      }
+    },
+    {
+      "id": "CG19-S01",
+      "relativePath": "Cambridge Questions/Cambridge 19/Cambridge-IELTS-19-General.pdf",
+      "fileSha256": "846ae061aeb56ee6636bd20166623bb621379b0053c451985f38b0cc12443251",
+      "pdfPages": [
+        31
+      ],
+      "excerptSha256": "9ebf0e675732e91584657f3c969da7b7bbf2500dde01023ceae840084dc40aaf",
+      "learningObjectives": [
+        "Extend personal answers",
+        "organise cue-card long turn",
+        "generalise to societal discussion"
+      ],
+      "excerptBoundary": "Only selected PDF pages. Hash algorithm: PyMuPDF get_text(sort=True) per page; join U+000C; UTF-8 SHA256. No extracted text persisted.",
+      "sourceContentSummary": "Part1 international food questions; Part2 describe positively evaluated law and explain introduction/purpose/evaluation; Part3 school rules and legal profession.1minute preparation,1\u20132minute long turn.",
+      "transformationBoundaries": "Reauthor/paraphrase the selected source facts, scenarios and teaching demands with traceable provenance. Do not attach a method-only citation to unrelated invented learning content. No wholesale passage/exercise copying, scan/chart assets, verbatim options or keys. Preserve faithful source meaning and verify every new key.",
+      "inspectionNotes": {
+        "printedPageMapping": "PDF=printed",
+        "textStatus": "Readable embedded OCR-like text with errors; representative rendered pages visually inspected."
+      }
+    },
+    {
+      "id": "CA21-F01",
+      "relativePath": "Cambridge Questions/Cambridge 21/Cambridge-IELTS-21-Academic.pdf",
+      "fileSha256": "5c522f4df0f868faf97c50629639466395418530766727100f38d6f9f9df9902",
+      "pdfPages": [
+        7,
+        8
+      ],
+      "excerptSha256": "19c8aa5ccd2f35614292d76ec63753a51f070d68f46592e9d8a448a076d3f75d",
+      "learningObjectives": [
+        "Distinguish Academic data reporting and long-text reading from GT"
+      ],
+      "excerptBoundary": "Only selected PDF pages. Hash algorithm: PyMuPDF get_text(sort=True) per page; join U+000C; UTF-8 SHA256. No extracted text persisted.",
+      "sourceContentSummary": "Academic reading3texts40items60min. Academic Task1 data/diagram/process reporting; Task2 reasoned argument. Common four-part listening and three-part speaking. Paper answer-transfer convention not computer-delivery authority.",
+      "transformationBoundaries": "Reauthor/paraphrase the selected source facts, scenarios and teaching demands with traceable provenance. Do not attach a method-only citation to unrelated invented learning content. No wholesale passage/exercise copying, scan/chart assets, verbatim options or keys. Preserve faithful source meaning and verify every new key.",
+      "inspectionNotes": {
+        "printedPageMapping": "PDF-2=printed",
+        "textStatus": "Readable embedded OCR-like text with errors; representative rendered pages visually inspected."
+      }
+    },
+    {
+      "id": "CA21-L01",
+      "relativePath": "Cambridge Questions/Cambridge 21/Cambridge-IELTS-21-Academic.pdf",
+      "fileSha256": "5c522f4df0f868faf97c50629639466395418530766727100f38d6f9f9df9902",
+      "pdfPages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "excerptSha256": "1e4ee142658e9aabbf78dc6e53a17569d8d8f12bf22fec8d823662735e554de4",
+      "learningObjectives": [
+        "Predict answer type",
+        "distinguish speaker views",
+        "track academic explanation"
+      ],
+      "excerptBoundary": "Only selected PDF pages. Hash algorithm: PyMuPDF get_text(sort=True) per page; join U+000C; UTF-8 SHA256. No extracted text persisted.",
+      "sourceContentSummary": "Sailing club courses table and sentence completion; photography-workshop MCQ and duties/abilities matching; student discussion of floating marine-city resources choose-two and opinion matching; natural/synthetic rubber lecture note completion. Four parts10items each.",
+      "transformationBoundaries": "Reauthor/paraphrase the selected source facts, scenarios and teaching demands with traceable provenance. Do not attach a method-only citation to unrelated invented learning content. No wholesale passage/exercise copying, scan/chart assets, verbatim options or keys. Preserve faithful source meaning and verify every new key.",
+      "inspectionNotes": {
+        "printedPageMapping": "PDF-2=printed",
+        "textStatus": "Readable embedded OCR-like text with errors; representative rendered pages visually inspected."
+      }
+    },
+    {
+      "id": "CA21-R01",
+      "relativePath": "Cambridge Questions/Cambridge 21/Cambridge-IELTS-21-Academic.pdf",
+      "fileSha256": "5c522f4df0f868faf97c50629639466395418530766727100f38d6f9f9df9902",
+      "pdfPages": [
+        7,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        120
+      ],
+      "excerptSha256": "4323eb6c822f6c7d8e6e3a8d079a12addf4d653119185c5ebc0f87b3c7d7e007",
+      "learningObjectives": [
+        "Find details",
+        "distinguish factual from writer-view judgements",
+        "match sections and named sources",
+        "infer argument"
+      ],
+      "excerptBoundary": "Only selected PDF pages. Hash algorithm: PyMuPDF get_text(sort=True) per page; join U+000C; UTF-8 SHA256. No extracted text persisted.",
+      "sourceContentSummary": "P1 Davies sisters art collecting biography textPDF18\u201319; notes20 and TFNG21. P2 therapeutic silence/flotation research text22\u201323; section matching24,summary25,person matching26. P3 sugar-history book review text27\u201328;MCQ29,word-list summary and YNNG30.40items total. PDF7 frontmatter methods and PDF120 printed118 Test1 Reading key are included in selected evidence. Source key privately ties40 numbered answers to question families; adapted questions must rebuild and independently verify answer evidence.",
+      "transformationBoundaries": "Reauthor/paraphrase the selected source facts, scenarios and teaching demands with traceable provenance. Do not attach a method-only citation to unrelated invented learning content. No wholesale passage/exercise copying, scan/chart assets, verbatim options or keys. Preserve faithful source meaning and verify every new key.",
+      "inspectionNotes": {
+        "printedPageMapping": "PDF7=printed5;PDF18\u201330=printed16\u201328;PDF120=printed118",
+        "textStatus": "Readable embedded OCR-like text with errors; representative rendered pages visually inspected."
+      }
+    },
+    {
+      "id": "CA21-W01",
+      "relativePath": "Cambridge Questions/Cambridge 21/Cambridge-IELTS-21-Academic.pdf",
+      "fileSha256": "5c522f4df0f868faf97c50629639466395418530766727100f38d6f9f9df9902",
+      "pdfPages": [
+        31,
+        32
+      ],
+      "excerptSha256": "117ce2faf0a25e0f97a023eb9f94114eb6e9dc9a06a662dc95306d5f229654f9",
+      "learningObjectives": [
+        "Select trends and compare series",
+        "develop supported consistent position"
+      ],
+      "excerptBoundary": "Only selected PDF pages. Hash algorithm: PyMuPDF get_text(sort=True) per page; join U+000C; UTF-8 SHA256. No extracted text persisted.",
+      "sourceContentSummary": "Task1 US jobs in four economic sectors1960\u20132020 line graph. Task2 degree-of-agreement argument about tall apartment blocks as best response to large-city housing needs.150/250word minima,20/40minutes.",
+      "transformationBoundaries": "Reauthor/paraphrase the selected source facts, scenarios and teaching demands with traceable provenance. Do not attach a method-only citation to unrelated invented learning content. No wholesale passage/exercise copying, scan/chart assets, verbatim options or keys. Preserve faithful source meaning and verify every new key.",
+      "inspectionNotes": {
+        "printedPageMapping": "PDF-2=printed",
+        "textStatus": "Readable embedded OCR-like text with errors; representative rendered pages visually inspected."
+      }
+    },
+    {
+      "id": "CA21-S01",
+      "relativePath": "Cambridge Questions/Cambridge 21/Cambridge-IELTS-21-Academic.pdf",
+      "fileSha256": "5c522f4df0f868faf97c50629639466395418530766727100f38d6f9f9df9902",
+      "pdfPages": [
+        33
+      ],
+      "excerptSha256": "1b211b3ba0e05e94c7099111a54666c2d5a4822d3f51c51546a7a9607e0d1b1f",
+      "learningObjectives": [
+        "Answer familiar questions",
+        "develop evaluative recount",
+        "generalise discussion"
+      ],
+      "excerptBoundary": "Only selected PDF pages. Hash algorithm: PyMuPDF get_text(sort=True) per page; join U+000C; UTF-8 SHA256. No extracted text persisted.",
+      "sourceContentSummary": "Part1 hairstyle/haircut experiences; Part2 experience using tourist information with source,place,information and usefulness; Part3 holiday types and tourist attractions.",
+      "transformationBoundaries": "Reauthor/paraphrase the selected source facts, scenarios and teaching demands with traceable provenance. Do not attach a method-only citation to unrelated invented learning content. No wholesale passage/exercise copying, scan/chart assets, verbatim options or keys. Preserve faithful source meaning and verify every new key.",
+      "inspectionNotes": {
+        "printedPageMapping": "PDF-2=printed",
+        "textStatus": "Readable embedded OCR-like text with errors; representative rendered pages visually inspected."
+      }
+    },
+    {
+      "id": "BD-W01",
+      "relativePath": "Band Descriptors/IELTS_Writing_Band_Descriptors.pdf",
+      "fileSha256": "470cbcb8e4128763e3cd4d27215bb51511616ba50ef2c7c2fcc64ed33a40bc44",
+      "pdfPages": [
+        1,
+        2
+      ],
+      "excerptSha256": "4154b3034f02cd7af2ad03dfa445f8e40c7df34ddac148be0a4cf615229468d7",
+      "learningObjectives": [
+        "Separate Task1achievement from Task2response and the other3criteria",
+        "Recognise historic2005document cannot establish current benchmark"
+      ],
+      "excerptBoundary": "Only selected PDF pages. Hash algorithm: PyMuPDF get_text(sort=True) per page; join U+000C; UTF-8 SHA256. No extracted text persisted.",
+      "sourceContentSummary": "Historic2page public-version writing grids with footer \u00a9UCLES2005 on both pages, confirmed in actual extracted footer text. Not the officially accessible9page May2023descriptor PDF.",
+      "transformationBoundaries": "Reauthor/paraphrase the selected source facts, scenarios and teaching demands with traceable provenance. Do not attach a method-only citation to unrelated invented learning content. No wholesale passage/exercise copying, scan/chart assets, verbatim options or keys. Preserve faithful source meaning and verify every new key.",
+      "inspectionNotes": {
+        "printedPageMapping": "PDF1=Task1grid;PDF2=Task2grid;both footers\u00a9UCLES2005",
+        "textStatus": "Readable embedded OCR-like text with errors; representative rendered pages visually inspected."
+      }
+    }
+  ],
+  "descriptorComparison": {
+    "local": "2page historic public-version grids, both footers\u00a9UCLES2005 confirmed from actual source text. Visually inspected both pages; first-pass contact sheet missed tiny copyright footer; corrected after exact text verification.",
+    "officialUrl": "https://ielts.org/cdn/Guides/ielts-writing-band-descriptors.pdf",
+    "officialObservation": "Opened2026-11-06;9pages; visibly Updated May2023. Latest official descriptor located in this check, not a guarantee no other revision exists.",
+    "announcementUrl": "https://ielts.org/news-and-insights/ielts-writing-band-descriptors-and-key-assessment-criteria",
+    "announcementDate": "2023-05-03",
+    "implication": "Use current located official criteria for formative feedback design and teacher review. Local undated sheet cannot establish current benchmark. No calibrated band authority established."
+  },
+  "checksActuallyRun": [
+    "Read root/repo AGENTS and PDF skill.",
+    "Enumerated PDFs and inspected text availability for19Academic/General,20Academic,21Academic,local descriptors.",
+    "Read selected page-level text, retaining no extracted files.",
+    "Rendered/visually inspected GT PDF5,16,24,29,31;Academic7,18,30,31,33;descriptor1\u20132.",
+    "Opened official IELTS9page descriptor and dated announcement.",
+    "Computed file SHA and selected-text SHA.",
+    "Verified both local descriptor footers \u00a9UCLES2005 and CA21PDF120 Reading key heading; extended CA21-R01 selected hash to PDF7,18\u201330,120."
+  ],
+  "limits": [
+    "No audio listened to; pacing,accent/audio quality unvalidated.",
+    "No answer-key checks or exhaustive all-test inspection.",
+    "Cambridge21 local scan/distributor frontmatter not independent publisher authenticity/rights proof.",
+    "Embedded OCR-like text has errors; source authors must inspect needed visuals/details.",
+    "No scoring calibration or teacher approval claimed."
+  ],
+  "checkpoint": {
+    "status": "STOPPED_AT_SOURCE_EVIDENCE",
+    "nextOwner": "licensed_source_review coordinator and author workers",
+    "acceptance": "11 source anchors with exact required fields and additional factual summaries.",
+    "restart": "Verify file SHA,then inspect allocated pages read-only. No implementation edits by this worker."
+  }
+}

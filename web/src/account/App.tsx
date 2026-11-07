@@ -21,6 +21,7 @@ const AppLayout = lazy(() =>
 const Onboarding = lazy(() => import("./Onboarding"));
 const Settings = lazy(() => import("./Settings"));
 const Capability = lazy(() => import("./Capability"));
+const ContentReview = lazy(() => import("./review/ReviewApp"));
 const StudyHome = lazy(() => import("./study/StudyHome"));
 const StudyWorkspace = lazy(() => import("./study/StudyWorkspace"));
 
@@ -169,6 +170,14 @@ export function AccountApp() {
         <Routes>
           <Route path="/" element={<Navigate to="/sign-in" replace />} />
           <Route path="/sign-in" element={<Auth />} />
+          <Route
+            path="/app/content-review/:targetId?"
+            element={
+              <PrivatePage standalone>
+                <ContentReview key={epoch} />
+              </PrivatePage>
+            }
+          />
           <Route element={<Gate setup />}>
             <Route
               path="/onboarding"

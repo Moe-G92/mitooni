@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "id": "int-speaking-transfer",
+  "version": 2,
+  "skill": "speaking",
+  "stage": "transfer",
+  "pathwayIds": [
+    "intermediate"
+  ],
+  "objectiveIds": [
+    "int-speaking-question-focus",
+    "int-speaking-place-development",
+    "int-speaking-word-stress"
+  ],
+  "familyId": "sem-accommodation-feature-choices",
+  "title": "Describing useful accommodation",
+  "instructions": "Record one independent attempt. Answer the three opening questions for about 20 seconds each. Then take exactly one minute for keyword notes and give a one-to-two-minute long turn, stopping at two minutes. Answer the follow-up briefly. No hints, scripted answers or retries before submission. Submit before listening back or viewing feedback. This is a combined familiar-topic and long-turn drill, not a complete test.",
+  "stimulus": {
+    "kind": "prompt",
+    "text": "Answer the three opening questions, then use the card. You may describe accommodation you know or a plausible imagined choice without revealing an address.\nPart 2 task card\nDescribe a room or home that would suit someone studying or working away from home.\nYou should say:\n- where it would be\n- what features it would have\n- who it would suit\nand explain which feature would matter most.\nFollow-up: Would that feature matter to everyone?"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "What sort of accommodation do people commonly use in your area?",
+      "responseType": "spoken_response",
+      "options": [],
+      "wordLimit": null
+    },
+    {
+      "id": "q2",
+      "prompt": "Why might someone choose to share rather than live alone?",
+      "responseType": "spoken_response",
+      "options": [],
+      "wordLimit": null
+    },
+    {
+      "id": "q3",
+      "prompt": "Would you prefer a quiet location or a short journey to work or study?",
+      "responseType": "spoken_response",
+      "options": [],
+      "wordLimit": null
+    },
+    {
+      "id": "q4",
+      "prompt": "Give the long turn using the task card.",
+      "responseType": "spoken_response",
+      "options": [],
+      "wordLimit": null
+    },
+    {
+      "id": "q5",
+      "prompt": "Would that feature matter to everyone?",
+      "responseType": "spoken_response",
+      "options": [],
+      "wordLimit": null
+    }
+  ],
+  "teachingAnchors": [],
+  "assessment": {
+    "kind": "qualitative",
+    "criteria": [
+      {
+        "id": "fluency-coherence",
+        "label": "Fluency and coherence",
+        "description": "Use the actual recording to review continuity, appropriate pauses, repair and logical connections. Describe where the listener could or could not follow the answer. A transcript cannot establish speed, pause length or spoken fluency. Do not reward length or rehearsed linking phrases alone."
+      },
+      {
+        "id": "lexical-resource",
+        "label": "Lexical resource",
+        "description": "Check whether vocabulary expresses the intended meaning accurately and appropriately, and whether the speaker can paraphrase a missing word. Identify a specific successful choice and one usable alternative; rare vocabulary is not a goal by itself."
+      },
+      {
+        "id": "grammar",
+        "label": "Grammatical range and accuracy",
+        "description": "Review the structures actually used and whether errors obscure time, relationships or meaning. Quote a short learner-produced example in private feedback and offer one targeted repair. Do not infer range from prompt difficulty."
+      },
+      {
+        "id": "pronunciation",
+        "label": "Pronunciation",
+        "description": "Assess only from usable actual audio: intelligibility, word stress, rhythm, connected speech and sounds in context. Note the segment requiring listener effort and a focused practice action. Accent identity is not an error; if audio is missing or unclear, withhold this judgement."
+      }
+    ],
+    "answerKey": [],
+    "feedbackGuidance": "After submission, check question focus and whether the speaker moves from a feature to a relevant benefit. Compare the hypothetical would statements with any description of current facts; note an actual unclear example rather than penalising a preferred grammatical form. Review word stress only from audio. Next practice should use a fresh place/accommodation question, preserving independent exposure. All four qualitative criteria require teacher review; pronunciation and temporal fluency require usable audio. Do not infer a band from this drill or reward a memorised script. If only a transcript is available, withhold audio-dependent judgements."
+  },
+  "delivery": {
+    "kind": "recording_required",
+    "assetId": null
+  },
+  "locale": {
+    "instructionsFa": "یک تلاش مستقل ضبط کنید. سه پرسش آغازین را هرکدام حدود ۲۰ ثانیه پاسخ دهید. سپس دقیقاً یک دقیقه یادداشت کلیدی بردارید و گفتار بلندِ یک تا دو دقیقه‌ای داشته باشید؛ در دو دقیقه متوقف شوید. پیگیری را کوتاه پاسخ دهید. پیش از ثبت، راهنما، متن آماده و تکرار مجاز نیست. پیش از بازشنوی یا دیدن بازخورد ثبت کنید. این تمرین ترکیبی است، نه آزمون کامل.",
+    "teachingAnchorsFa": [],
+    "feedbackGuidanceFa": "پس از ثبت، تمرکز پاسخ بر پرسش و پیوند ویژگی با فایده مرتبط را بررسی کنید. جمله‌های فرضی با would را از واقعیت فعلی جدا کنید؛ یک نمونه واقعاً مبهم را مشخص کنید، نه اینکه شکل دستوری دلخواهی را تحمیل کنید. تکیه واژه را فقط از صدا بررسی کنید. تمرین بعدی باید پرسش تازه‌ای درباره مکان یا محل سکونت داشته باشد. چهار معیار کیفی به بازبینی مدرس نیاز دارند؛ تلفظ و روانی زمانی به صدای قابل استفاده نیاز دارند. از این تمرین بند استنباط نکنید و به متن حفظ‌شده پاداش ندهید. اگر فقط متن دارید، درباره ویژگی‌های وابسته به صدا داوری نکنید."
+  },
+  "provenance": {
+    "origin": "source_based_original",
+    "sourceRefs": [
+      "MS2-S01"
+    ],
+    "territory": "Iran",
+    "rightsNote": "Source-based Mitooni adaptation for the authorized Iranian audience. Arash authorized full-corpus AI ingestion and synthesis. This unit documents the supplied-source pages actually used; no worldwide distribution authority is inferred.",
+    "transformationNotes": "Selected Mindset pages were actually read before this revision. Teaching progression and semantic domain are adapted from those pages; all dialogue, lecture wording, named examples, questions and keys were newly authored. No source model answer or recording is republished. Foundation/Level1 jointly support the foundation pathway; other level mappings are authoring choices, not band equivalences.",
+    "objectiveMappings": [
+      {
+        "objectiveId": "int-speaking-question-focus",
+        "sourceRefIds": [
+          "MS2-S01"
+        ],
+        "sourceLearningPoint": "Respond distinctly to WH/why/yes-no/would prompts about hometown and accommodation.",
+        "unitTeachingConnection": "Both units include three short opening questions before the card; train explicitly categorises and generates questions, while transfer independently applies question focus.",
+        "taskTransformation": "Source hometown/accommodation meaning categories become a visitor-place and away-from-home accommodation sequence, with new questions and no model transcript."
+      },
+      {
+        "objectiveId": "int-speaking-place-development",
+        "sourceRefIds": [
+          "MS2-S01"
+        ],
+        "sourceLearningPoint": "Organise place vocabulary by meaning and generate ideas from a topic map instead of relying on rehearsed answers.",
+        "unitTeachingConnection": "Train builds map branches and connects feature/person/reason; the card extends that familiar-question practice to a long turn; transfer uses a different accommodation choice.",
+        "taskTransformation": "The long-turn bridge is an explicit Mitooni extension of source Part1 idea-generation, not a claim that these selected pages themselves teach the entire Part2 construct."
+      },
+      {
+        "objectiveId": "int-speaking-word-stress",
+        "sourceRefIds": [
+          "MS2-S01"
+        ],
+        "sourceLearningPoint": "Attend to syllable stress in topic vocabulary and practise it in speech.",
+        "unitTeachingConnection": "Train checks new place-related words with an actual model/listener; post-submit transfer review identifies an audible stress target.",
+        "taskTransformation": "Different lexical examples replace the source word list; pronunciation remains audio-dependent and no source audio is reused."
+      }
+    ]
+  },
+  "teacherReview": {
+    "status": "pending",
+    "notes": [
+      "Teacher/examiner review required: check prompt accessibility, natural follow-ups, sequencing and suitability for assigned pathway. Pathways are support levels, not calibrated IELTS bands.",
+      "Recording must be permitted and usable before spoken assessment; do not send learner audio to an external provider without the agreed consent/data boundary. Local authoring includes no recording or external audio call.",
+      "Before timing, provide an unscored microphone check and a clear retry path. Technical failure invalidates timing; retain work privately, mark the attempt interrupted and use a new prompt family for independent evidence. A repeated prompt after coaching is supported practice.",
+      "Agree access needs before starting. Permit a neutral topic alternative where personal disclosure would be uncomfortable; mark changed timing or transcript-only work explicitly rather than claiming equivalent independent speech evidence.",
+      "Qualitative practice feedback is not a calibrated examiner band. Pronunciation and temporal fluency cannot be assessed from a transcript.",
+      "Revision 2 supersedes the held original-only draft. Review source-objective-task fit against the selected Mindset pages; semantic domains and meaningful language practice are adapted, not merely format-cited.",
+      "No source model answer or recording is republished. Inspect English/Persian equivalence and use only actual consented recordings for spoken judgement.",
+      "Selected Level2 source pages teach familiar-topic Part1 language. This unit transparently extends that language into Part2 after a three-question bridge; teacher must review whether support is sufficient. It is not a claim of full source or Part2 coverage.",
+      "No teaching anchors, example answers or formative review before submission. New prompts apply the source objectives within a distinct task family; coached repeat attempts are supported practice.",
+      "Semantic exposure families can span train/transfer and skills. A different unit ID or adapted detail does not establish fresh transfer; consult the per-question semantic groups recorded in syllabus/exposure metadata."
+    ]
+  },
+  "examTrack": "shared"
+}

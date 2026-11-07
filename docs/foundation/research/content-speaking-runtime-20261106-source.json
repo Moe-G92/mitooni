@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "scope": "speaking runtime owner and shared integration snapshot",
+  "files": {
+    "platform/backend/app/composition.py": "d9a1afec50d8d6bd4556116c8f627f68e765c8423ebab1c868c6767a3b25a2ce",
+    "platform/backend/app/http_security.py": "19c7dd095fc833f074ea1ceb0715dfe6456c8d9bf98bcc7f97d95add89511a68",
+    "platform/backend/app/main.py": "464fbc85ca31200497b101e7e0c0855109af85beb849ebf13edba8bca285540a",
+    "platform/backend/app/repositories/postgres_speaking_review.py": "b56143fcce522ceef09786934f0bf9c8e57903de1f2af3f16646ba51eecb52cf",
+    "platform/backend/app/routers/speaking_review.py": "a2fd6c4485bfa8fc9c63f16de987c07107ebc8f18f13d9726a9daa3aa3eec04a",
+    "platform/backend/app/services/speaking_review.py": "f8c854a1c6f59b3821b07c0d84dd4e66eca3de85d9c4ad368ea362300e4fa0b2",
+    "platform/backend/app/workers/speaking_review.py": "8c3feab07ba071991b51857b59a3fca27b6db463a6306dfdbc4c6d4701bfeb90",
+    "platform/backend/deployment/speaking-review-schema.sql": "e4b437a175bee8be922c8d390f12e699426750332a5424380d310ef247500e72",
+    "platform/backend/local/SPEAKING.md": "52cc8bb14e1319bba598816371929057298b26c2053c10f844bf35285e9372e7",
+    "platform/backend/local/serve.py": "027eda6d7331913e47257fa7cb50f443ca2c02db3745bec20bffc728a28591ce",
+    "platform/backend/local/speaking-review-upgrade.sql": "e4b437a175bee8be922c8d390f12e699426750332a5424380d310ef247500e72",
+    "platform/backend/local/speaking_fixtures.py": "1f005d5df3f6a67b25839f0626f2cfebf161b635b031837a2d70b47a3e77974e",
+    "platform/backend/local/upgrade_speaking_review.py": "faf4eed9c02d626153ffcce350b82ebd7bffaccf3b167493ae87c2e607cc9283",
+    "platform/backend/tests/test_private_response_boundary.py": "382906966ee21676fe2cf6abe44d8411e9c271a231232a6271d4bb3d4772eb0b",
+    "platform/backend/tests/test_speaking_review_runtime.py": "913b1095ec32c1ad41f962899731f21830dc28631198cf4bfa8c7eaffff692ea"
+  },
+  "digest": "759515b005e84f9415593fb5cd19886e69a5857712e2f5a83ed949672d498047"
+}

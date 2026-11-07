@@ -1,0 +1,23 @@
+# Repository-root guard only. Use prepare_context.py; generated context has exact private-file exceptions.
+# Deny by default, including .env, Git, originals, batches, SQLite and media.
+**
+!web/package.json
+!web/package-lock.json
+!web/index.html
+!web/tsconfig.json
+!web/vite.config.ts
+!web/src/**
+!web/scripts/account-build-boundary.ts
+!platform/backend/pyproject.toml
+!platform/backend/uv.lock
+!platform/backend/app/**/*.py
+platform/backend/app/corpus/**
+!platform/backend/deployment/content-review-beta/entrypoint.py
+!platform/backend/deployment/content-review-beta/supabase-root-2021.crt
+# Defense in depth: never reinclude environment files or generated caches.
+**/.env
+**/.env.*
+**/__pycache__/**
+**/*.pyc
+**/*.map
+**/node_modules/**

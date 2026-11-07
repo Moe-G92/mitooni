@@ -1,0 +1,216 @@
+{
+  "schemaVersion": 1,
+  "id": "int-listening-train",
+  "version": 2,
+  "skill": "listening",
+  "stage": "train",
+  "pathwayIds": [
+    "intermediate"
+  ],
+  "objectiveIds": [
+    "int-listening-property-specifics",
+    "int-listening-reason-distractors"
+  ],
+  "familyId": "sem-accommodation-feature-choices",
+  "title": "Planning a student housing comparison",
+  "instructions": "Complete the teaching practice first, using a teacher or approved audio for sound-based exercises. Then read the five questions for 45 seconds. Listen once and answer, then use one supported replay to check the evidence before submitting. For short answers, use NO MORE THAN TWO WORDS AND/OR A NUMBER from the recording. For a choice question, select ONE option. After the recording ends, take 60 seconds to check your answers. This is a practice drill, not a complete IELTS test.",
+  "stimulus": {
+    "kind": "script",
+    "text": "Tutor: You want to compare local student accommodation for your small research project. Have you decided what information your comparison should include?\nNadia: We started with photographs of buildings. They make the report attractive, but they do not tell a new student much about living there. We now want to compare the features that would affect an ordinary day.\nOwen: For example, the number of bedrooms is not enough. Four bedrooms might share one bathroom, while a smaller property could have two. We need to record what is shared, not just count rooms.\nTutor: That is a more useful question. How will you get reliable details?\nNadia: We thought of copying the advertisements, but some descriptions are vague. We will arrange viewings and use the same note sheet at each property. Then we can check details rather than assuming that a phrase such as “good facilities” means the same thing everywhere.\nOwen: We have two sample descriptions to test the sheet. The first property has a kitchen measuring three point eight by two point six metres. I initially wrote three point six for the second measurement, but I checked the floor plan. It is definitely two point six.\nTutor: Good to catch that. Keep units clear. Are you asking students to calculate areas?\nNadia: No. We just want to see whether our note fields capture information consistently. The second description says that residents can reach the garden through a shared sun room. We nearly wrote that there was a private garden for every room, but the description does not say that.\nOwen: I will change the field to “route to outside space” and record sun room for that example. We can ask the agent if we cannot establish whether the space is shared.\nTutor: What about appliances? Students may care whether they have to buy equipment when they move in.\nNadia: Exactly. One advertisement mentions a cooker and a fridge. It also shows a washing machine in the photograph, but that does not establish that the machine is included. We will ask about it instead of treating the photograph as an inventory.\nOwen: For our first viewing, the agent offered Thursday afternoon or Friday morning. Friday would give us more time to prepare, but Nadia has a compulsory class then. We have chosen Thursday so both of us can attend and check how we use the form.\nTutor: That reason belongs in your project notes. Finally, how will you decide which property is best?\nNadia: We should not give one universal ranking. A place that suits someone who studies late may not suit a person with an early journey to work. We can show the features clearly and explain the trade-offs.\nOwen: We will also separate what we observed from what the agent told us. If a detail is missing, we will mark it unknown rather than fill the gap with a guess.\nTutor: Good. Test your sheet on those two descriptions first, and bring the revised version before you begin the viewings."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "Why will the students visit the properties?",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "To take attractive photographs"
+        },
+        {
+          "id": "B",
+          "text": "To check details consistently"
+        },
+        {
+          "id": "C",
+          "text": "To produce a universal ranking"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q2",
+      "prompt": "Correct second kitchen measurement: ______ metres.",
+      "responseType": "short_text",
+      "options": [],
+      "wordLimit": 2
+    },
+    {
+      "id": "q3",
+      "prompt": "Garden access is through a shared ______.",
+      "responseType": "short_text",
+      "options": [],
+      "wordLimit": 2
+    },
+    {
+      "id": "q4",
+      "prompt": "Which pictured appliance needs confirmation?",
+      "responseType": "short_text",
+      "options": [],
+      "wordLimit": 2
+    },
+    {
+      "id": "q5",
+      "prompt": "Why is Thursday selected for the first viewing?",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "The agent is unavailable on Friday"
+        },
+        {
+          "id": "B",
+          "text": "They will have longer to prepare"
+        },
+        {
+          "id": "C",
+          "text": "Both students can attend"
+        }
+      ],
+      "wordLimit": null
+    }
+  ],
+  "teachingAnchors": [
+    {
+      "id": "vocabulary",
+      "label": "Describe a property precisely",
+      "text": "Make three headings: rooms, access and included equipment. Sort “hallway”, “bedroom”, “fridge”, “courtyard door”, “cooker”, “stairs” by meaning; some fit more than one heading. Explain a choice, then describe an imagined home in two sentences. Use “through” for a route and “includes” for equipment; neither word tells you who owns an item."
+    },
+    {
+      "id": "gap-types",
+      "label": "Predict and record exact information",
+      "text": "Before playback, label gaps as dimension, route or appliance. Ask a partner to read a new measurement such as four point seven by three point two metres; record both numbers and their units, then read them back. In the timed drill, write the requested value only. Do not calculate an area unless asked."
+    },
+    {
+      "id": "reason-distractors",
+      "label": "Separate a true detail from the reason",
+      "text": "Try this original contrast: “The flat has a balcony, but we chose it because the entrance has no steps.” For “Why was it chosen?”, the balcony is a true detail but not the reason. Make your own because/but sentence with a different property feature. In the recording, track the reason attached to the actual decision."
+    }
+  ],
+  "assessment": {
+    "kind": "deterministic",
+    "criteria": [
+      {
+        "id": "audible-evidence",
+        "label": "Accurate listening",
+        "description": "One point per keyed answer within its word limit. Accept only the listed answer variants after case/outer-space normalization; no semantic guessing. Multiple-choice responses use the option ID. Wrong, blank or over-limit answers receive no point."
+      }
+    ],
+    "answerKey": [
+      {
+        "questionId": "q1",
+        "acceptedAnswers": [
+          "B"
+        ],
+        "rationale": "They want to check comparable details; attractive images do not establish facilities."
+      },
+      {
+        "questionId": "q2",
+        "acceptedAnswers": [
+          "2.6"
+        ],
+        "rationale": "The corrected dimension is two point six, not three point six. Write 2.6 as the requested numeric value; spelling it out would exceed the two-word limit."
+      },
+      {
+        "questionId": "q3",
+        "acceptedAnswers": [
+          "sun room"
+        ],
+        "rationale": "The source description gives the route via the sun room; it does not promise private gardens."
+      },
+      {
+        "questionId": "q4",
+        "acceptedAnswers": [
+          "washing machine"
+        ],
+        "rationale": "A pictured washing machine may not be included; cooker and fridge are stated."
+      },
+      {
+        "questionId": "q5",
+        "acceptedAnswers": [
+          "C"
+        ],
+        "rationale": "Friday offers more preparation time but conflicts with Nadia’s class; Thursday permits both researchers to attend."
+      }
+    ],
+    "feedbackGuidance": "After submission, compare each answer with its evidence and the final version of any corrected detail. Label each miss: lost place, wrong speaker, distractor, spelling or word limit. Choose one cause, then practise that operation on a new recording. Report only drill accuracy; do not convert five answers to an IELTS band."
+  },
+  "delivery": {
+    "kind": "audio_required",
+    "assetId": null
+  },
+  "locale": {
+    "instructionsFa": "ابتدا تمرین‌های آموزشی را انجام دهید؛ برای تمرین‌های وابسته به صدا از مدرس یا صدای تأییدشده استفاده کنید. سپس ابتدا ۴۵ ثانیه پرسش‌ها را بخوانید. یک بار گوش دهید و پاسخ دهید؛ سپس برای بررسی شواهد، یک بار بازپخشِ حمایتی مجاز است. برای پاسخ کوتاه، حداکثر دو واژه و/یا یک عدد از فایل صوتی بنویسید. در پرسش چندگزینه‌ای فقط یک گزینه انتخاب کنید. پس از پایان صدا، ۶۰ ثانیه برای بررسی پاسخ‌ها فرصت دارید. این یک تمرین است، نه آزمون کامل آیلتس.",
+    "teachingAnchorsFa": [
+      {
+        "id": "vocabulary",
+        "label": "ملک را دقیق توصیف کنید",
+        "text": "سه عنوان اتاق‌ها، دسترسی و وسایل موجود بسازید. hallway، bedroom، fridge، courtyard door، cooker و stairs را دسته‌بندی کنید؛ بعضی بیش از یک جای مناسب دارند. دلیل یک انتخاب را بگویید و خانه‌ای فرضی را در دو جمله توصیف کنید. through مسیر را نشان می‌دهد و includes وسیله موجود را؛ هیچ‌یک مالکیت را ثابت نمی‌کند."
+      },
+      {
+        "id": "gap-types",
+        "label": "نوع اطلاعات و مقدار دقیق را مشخص کنید",
+        "text": "پیش از پخش، نوع جای خالی را اندازه، مسیر یا وسیله مشخص کنید. همراه تمرین اندازه تازه‌ای مثل four point seven by three point two metres بگوید؛ هر دو عدد و واحد را بنویسید و بازخوانی کنید. در تمرین فقط مقدار خواسته‌شده را بنویسید و بدون درخواست مساحت را حساب نکنید."
+      },
+      {
+        "id": "reason-distractors",
+        "label": "واقعیت درست را از دلیل جدا کنید",
+        "text": "این تفاوت را بررسی کنید: The flat has a balcony, but we chose it because the entrance has no steps. در پرسش «چرا انتخاب شد؟» بالکن یک واقعیت است، نه دلیل. با ویژگی دیگری جمله‌ای با because و but بسازید. در فایل، دلیلِ متصل به تصمیم واقعی را دنبال کنید."
+      }
+    ],
+    "feedbackGuidanceFa": "پس از ثبت پاسخ، هر پاسخ را با شاهد صوتی و آخرین اصلاح گوینده مقایسه کنید. علت خطا را مشخص کنید: گم کردن ترتیب، اشتباه در تشخیص گوینده، گزینه انحرافی، املا یا محدودیت واژه. برای یکی از این علت‌ها تمرین تازه انتخاب کنید. فقط دقت همین تمرین گزارش شود؛ پنج پاسخ را به نمره بند آیلتس تبدیل نکنید."
+  },
+  "provenance": {
+    "origin": "source_based_original",
+    "sourceRefs": [
+      "MS2-L01"
+    ],
+    "territory": "Iran",
+    "rightsNote": "Source-based Mitooni adaptation for the authorized Iranian audience. Arash authorized full-corpus AI ingestion and synthesis. This unit documents the supplied-source pages actually used; no worldwide distribution authority is inferred.",
+    "transformationNotes": "Selected Mindset pages were actually read before this revision. Teaching progression and semantic domain are adapted from those pages; all dialogue, lecture wording, named examples, questions and keys were newly authored. No source model answer or recording is republished. Foundation/Level1 jointly support the foundation pathway; other level mappings are authoring choices, not band equivalences.",
+    "objectiveMappings": [
+      {
+        "objectiveId": "int-listening-property-specifics",
+        "sourceRefIds": [
+          "MS2-L01"
+        ],
+        "sourceLearningPoint": "Predict gap information types and identify property features and complex numeric detail accurately.",
+        "unitTeachingConnection": "Train moves vocabulary categorisation to a corrected dimension and garden-route/appliance gaps; transfer applies it to an asking price, room count and access route.",
+        "taskTransformation": "The source property-sale semantic material becomes a student housing-comparison project and a different family’s ground-floor search, with new numbers, details and wording."
+      },
+      {
+        "objectiveId": "int-listening-reason-distractors",
+        "sourceRefIds": [
+          "MS2-L01"
+        ],
+        "sourceLearningPoint": "Reject a plausible or true detail when it does not answer the requested reason.",
+        "unitTeachingConnection": "Train asks the reason for viewings and final appointment choice; transfer distinguishes the main moving reason and day-change reason from desirable features and afternoon timing.",
+        "taskTransformation": "New decisions/distractors preserve reason-versus-detail logic without transplanting the source client’s circumstances or keyed answers."
+      }
+    ]
+  },
+  "teacherReview": {
+    "status": "pending",
+    "notes": [
+      "Teacher-only script and answer key: never expose before attempt submission. No learner listening attempt until reviewed audio exists; rendering the script is not listening.",
+      "Media review required: natural delivery, distinguishable speakers where applicable, clean intelligibility and no emphasis revealing answers. Verify durations and question-order gaps against the actual recording.",
+      "If playback fails, preserve answers but invalidate timing/exposure evidence; restart with a new family after recovery. Agree accessible delivery adjustments with the learner; transcript-supported practice must be labelled separately and cannot count as independent listening evidence.",
+      "Five-item drill samples a part context; it is not a 40-item test or validated band estimate. Teacher checks difficulty, alternatives, Persian clarity and scoring tolerance before approval.",
+      "Revision 2 supersedes the held original-only draft. Review source-objective-task fit against the mapped selected Mindset pages, including meaningful English-development practice; citations alone do not establish fidelity.",
+      "English examples, task detail and semantic scenario are adaptations within the source topic boundary, not copied source exercises. Supplied Mindset audio was not available or auditioned; new audio requires separate review.",
+      "Semantic exposure families can span train/transfer and skills. A different unit ID or adapted detail does not establish fresh transfer; consult the per-question semantic groups recorded in syllabus/exposure metadata."
+    ]
+  },
+  "examTrack": "shared"
+}

@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 1,
+  "id": "int-listening-transfer",
+  "version": 2,
+  "skill": "listening",
+  "stage": "transfer",
+  "pathwayIds": [
+    "intermediate"
+  ],
+  "objectiveIds": [
+    "int-listening-property-specifics",
+    "int-listening-reason-distractors"
+  ],
+  "familyId": "sem-accommodation-feature-choices",
+  "title": "Choosing a new home",
+  "instructions": "Read the five questions for 45 seconds. Listen once only and answer without hints or replay. Submit before viewing any explanations. For short answers, use NO MORE THAN TWO WORDS AND/OR A NUMBER from the recording. For a choice question, select ONE option. After the recording ends, take 60 seconds to check your answers. This is a practice drill, not a complete IELTS test.",
+  "stimulus": {
+    "kind": "script",
+    "text": "Agent: Good morning, Ms Farzan. You asked about two homes near the station. Shall we go through what matters most to you before we arrange a viewing?\nClient: Yes, please. We currently live in a small flat, and it has become difficult for my father to visit. He cannot manage several flights of stairs. A bigger kitchen would be nice, but easy access is the main reason we are looking elsewhere.\nAgent: Then the ground-floor apartment in Orchard Lane is worth seeing. The house in Valley Road has a larger garden, but both its bathroom and bedrooms are upstairs. There is no lift, of course.\nClient: Let us focus on Orchard Lane. I saw a price on the advertisement, but my copy may be old.\nAgent: It is. The owner originally asked for two hundred and eighty thousand pounds. The current asking price is two hundred and sixty-five thousand. That is the advertised price, not an offer that has already been accepted.\nClient: Thank you. I will discuss that with the bank before I make any offer. How many bedrooms are there? The photograph shows a desk in one room, so I wondered whether it was only a study.\nAgent: There are three bedrooms. The owner uses the smallest as a study, but it is described and measured as a bedroom. We can show you the floor plan when you visit, so you can judge whether the size is useful for you.\nClient: And the outdoor space? I do not need a large garden, but I would like somewhere to sit.\nAgent: There is a small courtyard. The door to it is in the kitchen. The living-room windows face it as well, but they do not open as doors. A narrow passage connects it to the front, so you can bring a bicycle round without carrying it through the rooms.\nClient: That sounds practical. Could we see it on Tuesday morning?\nAgent: The owner suggested Tuesday first, but she has now arranged building work in the hallway that day. Wednesday would be quieter, and she can leave the rooms clear for you.\nClient: Wednesday is fine. Please put us down for the afternoon rather than the morning, because my father has an appointment early that day. He wants to come with us to check the entrance himself.\nAgent: Certainly. I will send written confirmation and ask whether you need any additional access information. Please tell me if the entrance photographs leave anything unclear.\nClient: One other question. Would the owner be able to move out quickly if we decided to proceed?\nAgent: She has found somewhere to rent, but nothing is final yet. We should not promise a moving date before everyone has agreed the arrangements. At the viewing, we can discuss your preferred timing and record it with any offer. For now, the useful next step is to see whether the access and room sizes actually suit your family."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "What is the client’s main reason for moving?",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "A larger kitchen"
+        },
+        {
+          "id": "B",
+          "text": "A larger garden"
+        },
+        {
+          "id": "C",
+          "text": "Easier access for a family member"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q2",
+      "prompt": "Current asking price in pounds: ______",
+      "responseType": "short_text",
+      "options": [],
+      "wordLimit": 2
+    },
+    {
+      "id": "q3",
+      "prompt": "Number of bedrooms: ______",
+      "responseType": "short_text",
+      "options": [],
+      "wordLimit": 2
+    },
+    {
+      "id": "q4",
+      "prompt": "The courtyard door is in the ______.",
+      "responseType": "short_text",
+      "options": [],
+      "wordLimit": 2
+    },
+    {
+      "id": "q5",
+      "prompt": "Why will the viewing be on Wednesday?",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "The client has a Tuesday appointment"
+        },
+        {
+          "id": "B",
+          "text": "Work is planned in the hallway on Tuesday"
+        },
+        {
+          "id": "C",
+          "text": "The owner will move out on Wednesday"
+        }
+      ],
+      "wordLimit": null
+    }
+  ],
+  "teachingAnchors": [],
+  "assessment": {
+    "kind": "deterministic",
+    "criteria": [
+      {
+        "id": "audible-evidence",
+        "label": "Accurate listening",
+        "description": "One point per keyed answer within its word limit. Accept only the listed answer variants after case/outer-space normalization; no semantic guessing. Multiple-choice responses use the option ID. Wrong, blank or over-limit answers receive no point."
+      }
+    ],
+    "answerKey": [
+      {
+        "questionId": "q1",
+        "acceptedAnswers": [
+          "C"
+        ],
+        "rationale": "The client identifies access for her father as the main reason; a larger kitchen is only desirable."
+      },
+      {
+        "questionId": "q2",
+        "acceptedAnswers": [
+          "265000",
+          "265,000"
+        ],
+        "rationale": "The agent replaces the original 280,000 with 265,000; no offer has been accepted."
+      },
+      {
+        "questionId": "q3",
+        "acceptedAnswers": [
+          "three",
+          "3"
+        ],
+        "rationale": "The study is officially described as a third bedroom."
+      },
+      {
+        "questionId": "q4",
+        "acceptedAnswers": [
+          "kitchen"
+        ],
+        "rationale": "Living-room windows face the courtyard but are not doors; access is through the kitchen."
+      },
+      {
+        "questionId": "q5",
+        "acceptedAnswers": [
+          "B"
+        ],
+        "rationale": "Tuesday hallway work makes Wednesday more suitable; the father’s appointment explains afternoon timing, not the change of day."
+      }
+    ],
+    "feedbackGuidance": "After submission, compare each answer with its evidence and the final version of any corrected detail. Label each miss: lost place, wrong speaker, distractor, spelling or word limit. Choose one cause, then practise that operation on a new recording. Report only drill accuracy; do not convert five answers to an IELTS band."
+  },
+  "delivery": {
+    "kind": "audio_required",
+    "assetId": null
+  },
+  "locale": {
+    "instructionsFa": "ابتدا ۴۵ ثانیه پرسش‌ها را بخوانید. فقط یک بار و بدون راهنما یا بازپخش گوش دهید. پیش از دیدن توضیح‌ها پاسخ‌ها را ثبت کنید. برای پاسخ کوتاه، حداکثر دو واژه و/یا یک عدد از فایل صوتی بنویسید. در پرسش چندگزینه‌ای فقط یک گزینه انتخاب کنید. پس از پایان صدا، ۶۰ ثانیه برای بررسی پاسخ‌ها فرصت دارید. این یک تمرین است، نه آزمون کامل آیلتس.",
+    "teachingAnchorsFa": [],
+    "feedbackGuidanceFa": "پس از ثبت پاسخ، هر پاسخ را با شاهد صوتی و آخرین اصلاح گوینده مقایسه کنید. علت خطا را مشخص کنید: گم کردن ترتیب، اشتباه در تشخیص گوینده، گزینه انحرافی، املا یا محدودیت واژه. برای یکی از این علت‌ها تمرین تازه انتخاب کنید. فقط دقت همین تمرین گزارش شود؛ پنج پاسخ را به نمره بند آیلتس تبدیل نکنید."
+  },
+  "provenance": {
+    "origin": "source_based_original",
+    "sourceRefs": [
+      "MS2-L01"
+    ],
+    "territory": "Iran",
+    "rightsNote": "Source-based Mitooni adaptation for the authorized Iranian audience. Arash authorized full-corpus AI ingestion and synthesis. This unit documents the supplied-source pages actually used; no worldwide distribution authority is inferred.",
+    "transformationNotes": "Selected Mindset pages were actually read before this revision. Teaching progression and semantic domain are adapted from those pages; all dialogue, lecture wording, named examples, questions and keys were newly authored. No source model answer or recording is republished. Foundation/Level1 jointly support the foundation pathway; other level mappings are authoring choices, not band equivalences.",
+    "objectiveMappings": [
+      {
+        "objectiveId": "int-listening-property-specifics",
+        "sourceRefIds": [
+          "MS2-L01"
+        ],
+        "sourceLearningPoint": "Predict gap information types and identify property features and complex numeric detail accurately.",
+        "unitTeachingConnection": "Train moves vocabulary categorisation to a corrected dimension and garden-route/appliance gaps; transfer applies it to an asking price, room count and access route.",
+        "taskTransformation": "The source property-sale semantic material becomes a student housing-comparison project and a different family’s ground-floor search, with new numbers, details and wording."
+      },
+      {
+        "objectiveId": "int-listening-reason-distractors",
+        "sourceRefIds": [
+          "MS2-L01"
+        ],
+        "sourceLearningPoint": "Reject a plausible or true detail when it does not answer the requested reason.",
+        "unitTeachingConnection": "Train asks the reason for viewings and final appointment choice; transfer distinguishes the main moving reason and day-change reason from desirable features and afternoon timing.",
+        "taskTransformation": "New decisions/distractors preserve reason-versus-detail logic without transplanting the source client’s circumstances or keyed answers."
+      }
+    ]
+  },
+  "teacherReview": {
+    "status": "pending",
+    "notes": [
+      "Teacher-only script and answer key: never expose before attempt submission. No learner listening attempt until reviewed audio exists; rendering the script is not listening.",
+      "Media review required: natural delivery, distinguishable speakers where applicable, clean intelligibility and no emphasis revealing answers. Verify durations and question-order gaps against the actual recording.",
+      "If playback fails, preserve answers but invalidate timing/exposure evidence; restart with a new family after recovery. Agree accessible delivery adjustments with the learner; transcript-supported practice must be labelled separately and cannot count as independent listening evidence.",
+      "Five-item drill samples a part context; it is not a 40-item test or validated band estimate. Teacher checks difficulty, alternatives, Persian clarity and scoring tolerance before approval.",
+      "Revision 2 supersedes the held original-only draft. Review source-objective-task fit against the mapped selected Mindset pages, including meaningful English-development practice; citations alone do not establish fidelity.",
+      "English examples, task detail and semantic scenario are adaptations within the source topic boundary, not copied source exercises. Supplied Mindset audio was not available or auditioned; new audio requires separate review.",
+      "Semantic exposure families can span train/transfer and skills. A different unit ID or adapted detail does not establish fresh transfer; consult the per-question semantic groups recorded in syllabus/exposure metadata."
+    ]
+  },
+  "examTrack": "shared"
+}

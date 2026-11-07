@@ -1,0 +1,273 @@
+{
+  "schemaVersion": 1,
+  "id": "academic-01-speaking",
+  "version": 2,
+  "skill": "speaking",
+  "exam": "ielts-academic",
+  "title": "Academic 01 Speaking — source-based review candidate",
+  "familyId": "source-ca21-ms3-speaking-reserved",
+  "intendedUse": "sealed_evaluation_candidate",
+  "language": "en",
+  "instructions": [
+    "Answer the interviewer's questions in English.",
+    "In Part 2, you have one minute to prepare and can make notes. Then speak for up to two minutes.",
+    "The interviewer may ask follow-up questions."
+  ],
+  "timing": {
+    "minimumTotalSeconds": 660,
+    "maximumTotalSeconds": 840,
+    "parts": [
+      {
+        "part": 1,
+        "minimumSeconds": 240,
+        "maximumSeconds": 300
+      },
+      {
+        "part": 2,
+        "minimumSeconds": 180,
+        "maximumSeconds": 240,
+        "preparationSeconds": 60,
+        "maximumLongTurnSeconds": 120
+      },
+      {
+        "part": 3,
+        "minimumSeconds": 240,
+        "maximumSeconds": 300
+      }
+    ],
+    "note": "Select a coherent run within 11–14 minutes; do not add independent maximums as a mandatory duration."
+  },
+  "provenance": {
+    "origin": "source_based_original",
+    "sourceRefs": [
+      "MS3-S01",
+      "CA21-S01"
+    ],
+    "territory": "Iran",
+    "rightsNote": "Arash authorized selected licensed excerpts on 2026-11-06 for authoring/review and selected model processing; no additional territory authority.",
+    "transformationNotes": "Reauthored after selected Mindset3 PDF27–31 and Cambridge21 PDF33 actual text/render inspection. Familiar local leisure/countryside and hairstyle scenarios, a tourist-information long turn and holidays/attractions discussion retain source subject matter. Questions are paraphrased, related follow-ups and review analysis newly authored; no source scan, model speech or invented unrelated scenario. Earlier possessions draft is held/superseded.",
+    "sourceMappings": [
+      {
+        "targetPointer": "/parts/0",
+        "sourceRefIds": [
+          "MS3-S01",
+          "CA21-S01"
+        ],
+        "sourceLearningPoint": "Answer familiar personal questions about weekend/local leisure, countryside visits and haircut choices; keep abstract analysis for Part3.",
+        "taskTransformation": "Paraphrase the actual source Part1 topics into two short question sets, preserving personal experience focus and adding neutral responsive expansion."
+      },
+      {
+        "targetPointer": "/parts/1",
+        "sourceRefIds": [
+          "CA21-S01",
+          "MS3-S01"
+        ],
+        "sourceLearningPoint": "Organise a concrete past experience using tourist information: source,place,content and usefulness; use the one-minute preparation for a sustained long turn.",
+        "taskTransformation": "Rephrase the actual Cambridge cue with equivalent semantic points; apply Mindset note-planning/long-turn distinctions without copying a sample speech or forcing equal time per point."
+      },
+      {
+        "targetPointer": "/parts/2",
+        "sourceRefIds": [
+          "CA21-S01",
+          "MS3-S01"
+        ],
+        "sourceLearningPoint": "Move from tourist-information experience to general holiday preferences,attraction quality and local museum access; compare,explain and consider hypothetical effects.",
+        "taskTransformation": "Paraphrase Cambridge holiday/attraction questions; author neutral comparison/cause/hypothesis probes reflecting the inspected Mindset Part3 functional sequence. Keep the Part2–3 tourism relationship."
+      }
+    ]
+  },
+  "teacherReview": {
+    "status": "pending",
+    "notes": [
+      "Actual human IELTS review pending after source-based rewrite.",
+      "Earlier independent acceptance referred to the superseded source-free draft and does not approve this edition.",
+      "Audio/interviewer/timed administration and scoring validity remain pending."
+    ]
+  },
+  "delivery": {
+    "status": "review_only",
+    "playable": false,
+    "runtimeSupported": false,
+    "interaction": "responsive_interviewer_required",
+    "recordingRequired": true,
+    "notes": [
+      "Complete written interview guide; no interviewer or recording runner connected.",
+      "A fixed recording of these questions would be rehearsal, not an equivalent responsive examiner interview.",
+      "No real identity documents are requested in practice."
+    ]
+  },
+  "parts": [
+    {
+      "id": "academic-01-speaking-part1",
+      "part": 1,
+      "type": "introduction_and_interview",
+      "instructions": "Answer questions about familiar topics. The interviewer chooses an appropriate selection and follows up where useful.",
+      "opening": [
+        "What name would you like me to use?",
+        "Do you work, study, or do something else at the moment?"
+      ],
+      "topicSets": [
+        {
+          "topic": "Leisure and nearby places",
+          "questions": [
+            "What do you tend to do in your town or city at weekends?",
+            "Tell me about the last time you went to the countryside.",
+            "Which local activities do you enjoy most?"
+          ]
+        },
+        {
+          "topic": "Haircuts and hairstyles",
+          "questions": [
+            "Who usually cuts your hair?",
+            "Has your hairstyle changed much in recent years?",
+            "How do you feel about trying a different hair colour?",
+            "What do you like or dislike about having your hair cut?"
+          ]
+        }
+      ],
+      "followUpPrompts": [
+        "Why is that?",
+        "Can you tell me a little more?",
+        "Can you give an example?"
+      ],
+      "interviewerGuidance": "Use a natural selection within 4–5 minutes. Do not demand every question if time is reached; do not coach or correct during the attempt.",
+      "semanticExposureGroupIds": [
+        "ms3-u1-local-city-countryside-speaking",
+        "ca21-t1-hairstyles"
+      ]
+    },
+    {
+      "id": "academic-01-speaking-part2",
+      "part": 2,
+      "type": "individual_long_turn",
+      "instructions": "You have one minute to prepare. You can make notes. Then speak for up to two minutes.",
+      "cueCard": {
+        "topic": "Describe an occasion when you used information intended for visitors to a place.",
+        "points": [
+          "where you found the information",
+          "which place it concerned",
+          "what you learned from it"
+        ],
+        "explain": "Explain how useful this information was to you."
+      },
+      "roundingOffQuestions": [
+        "Would you use that source of visitor information again?",
+        "Did you share the information with anyone?"
+      ],
+      "interviewerGuidance": "Allow exactly one minute preparation under standard practice conditions. Invite the long turn, allow up to two minutes, and stop politely at the limit. Use one or two short rounding-off questions as appropriate; preserve 3–4 minutes for Part 2 including preparation. If the learner stops early, invite continuation neutrally without supplying content.",
+      "semanticExposureGroupIds": [
+        "ca21-t1-tourist-information-and-attractions"
+      ]
+    },
+    {
+      "id": "academic-01-speaking-part3",
+      "part": 3,
+      "type": "related_discussion",
+      "instructions": "Discuss wider questions about holidays and visitor attractions.",
+      "questions": [
+        {
+          "question": "What kinds of holiday are especially common among people where you live?",
+          "neutralProbes": [
+            "Why might these appeal to different people?",
+            "Have preferences changed?"
+          ]
+        },
+        {
+          "question": "Why might someone choose a trip within their own country instead of travelling abroad?",
+          "neutralProbes": [
+            "Could the reasons differ at different times in life?",
+            "Can you explain that comparison?"
+          ]
+        },
+        {
+          "question": "Why do some holidaymakers prefer rest to a busy programme of activities?",
+          "neutralProbes": [
+            "Could one type of holiday suit everyone?",
+            "What might influence that choice?"
+          ]
+        },
+        {
+          "question": "What can cause visitors to feel let down by an attraction?",
+          "neutralProbes": [
+            "How might expectations affect the experience?",
+            "Could better visitor information change the outcome?"
+          ]
+        },
+        {
+          "question": "Should residents be able to enter local museums without paying?",
+          "neutralProbes": [
+            "Who might benefit, and what difficulties could arise?",
+            "Would your answer be the same for every museum?"
+          ]
+        }
+      ],
+      "interviewerGuidance": "Select questions and responsive neutral probes to explore explanation, comparison and speculation within 4–5 minutes. Do not supply arguments, vocabulary or an ideal answer. Do not mechanically read every probe. The discussion relates to Part 2 but moves to general issues.",
+      "semanticExposureGroupIds": [
+        "ca21-t1-tourist-information-and-attractions"
+      ]
+    }
+  ],
+  "teacherOnly": {
+    "release": "Restricted reviewer guide; no pre-submit coaching/answer guidance in independent conditions.",
+    "rubric": {
+      "sourceVersion": "Current official public Speaking descriptors, accessed 2026-11-06",
+      "criteria": [
+        "fluency_and_coherence",
+        "lexical_resource",
+        "grammatical_range_and_accuracy",
+        "pronunciation"
+      ],
+      "equalCriterionWeights": true,
+      "scope": "Performance across the interview; do not average three invented part bands.",
+      "numericBandPolicy": "No band estimates in this review edition."
+    },
+    "intendedEvidence": {
+      "part1": "Relevant answers and accessible expansion on familiar experience.",
+      "part2": "Organisation and sustained speech from brief notes, with specific relevant details.",
+      "part3": "Responsive explanation, analysis, comparison and qualified speculation.",
+      "audio": "Preserve pauses, self-repair, rhythm, stress, intonation and intelligibility; transcript alone is insufficient."
+    },
+    "interviewerPolicy": {
+      "actor": "Human IELTS teacher/interviewer for review; any AI interviewer needs separate reviewed policy and evaluation.",
+      "noTeachingDuringIndependentAttempt": true,
+      "noScriptedRequiredAnswer": true,
+      "followUps": "Responsive neutral requests for elaboration; not hints that introduce answer content.",
+      "accessArrangements": "Define reviewed alternate conditions explicitly; never infer weak ability from an accommodation.",
+      "interruption": "Save actual audio and timestamps. Mark material interruption/failed capture; do not silently count the run as standard-condition evidence."
+    },
+    "insufficientEvidence": [
+      "Missing or inaudible recording.",
+      "Capture ends before sufficient connected speech is available.",
+      "Only transcript exists for a pronunciation judgement.",
+      "Interviewer supplies substantive content or corrects language during the independent attempt."
+    ],
+    "feedbackRules": [
+      "Quote a real transcript span where relevant and attach the audio timecode.",
+      "Listen to original audio before pronunciation/fluency observations; report uncertain ASR text as uncertain.",
+      "Prioritise a concrete repair task without treating accent imitation, speed or number of advanced words as a score.",
+      "Keep sensitive personal disclosures out of examples and reports."
+    ],
+    "reviewQuestions": [
+      "Do actual source topics remain faithfully transformed rather than replaced by unrelated invention?",
+      "Do personal Part1 questions stay distinct from abstract Part3 demands?",
+      "Does Part3 retain the tourism link to the visitor-information long turn?",
+      "Can a responsive interviewer administer a selection within11–14minutes without coaching?",
+      "Has source-family overlap with training/transfer material been reviewed before independent admission?"
+    ],
+    "preReleaseChecks": [
+      "Named IELTS teacher reviews complete guide and performs a synthetic timed administration.",
+      "Obtain consent and data controls for any later learner recordings.",
+      "Implement recording, replay, durable save, microphone error and interrupted-attempt recovery.",
+      "Keep teacher-only guidance out of learner/tutor independent context.",
+      "Human approval plus operational checks are required before this candidate becomes available."
+    ],
+    "sourceExposure": "CA21-S01 and MS3-S01 source families may also ground teaching units; shared source/topic exposure must be audited conservatively. This written candidate is not guaranteed unseen or equivalent to a Cambridge form.",
+    "semanticExposureRule": "Treat prior release of a task/prompt/answer or related source-semantic sibling in these groups as exposure across every pathway and track. Sharing a taught skill or public rubric alone is not prompt exposure. Actual group history is required before independent admission; different IDs do not guarantee unseen work."
+  },
+  "kind": "mock",
+  "semanticExposureGroupIds": [
+    "ca21-t1-hairstyles",
+    "ca21-t1-tourist-information-and-attractions",
+    "ms3-u1-local-city-countryside-speaking"
+  ]
+}

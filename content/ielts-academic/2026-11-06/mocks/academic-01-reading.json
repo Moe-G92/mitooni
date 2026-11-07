@@ -1,0 +1,1243 @@
+{
+  "schemaVersion": 1,
+  "id": "academic-01-reading",
+  "version": 2,
+  "skill": "reading",
+  "durationMinutes": 60,
+  "instructions": "Read all three passages and answer questions 1–40 in 60 minutes, including checking your answers. Each question is worth one mark. Follow each word limit. Work independently without a dictionary, tutor or answer explanations. Submit your answers when finished. This is an original practice test, not an official IELTS test.",
+  "passages": [
+    {
+      "id": "passage-1",
+      "title": "The decisions behind a public collection",
+      "text": "A\nA public collection can conceal the decisions that brought it into existence. Paintings displayed together in a museum may appear to have arrived through a single, consistent plan, although their owners' interests changed over time. The French paintings given to the National Museum Wales by Gwendoline and Margaret Davies provide a case in point. Their collection included work that attracted little attention from many other collectors when the sisters bought it. Understanding this achievement requires more than noting that they had enough money to purchase pictures. Their education, access to advice, personal preferences and responses to the First World War all contributed to the collection that eventually became publicly available.\n\nB\nThe financial foundation came from their grandfather, David Davies, whose business interests included shipping and mining. Gwendoline received her inheritance in 1907 and Margaret in 1909. Yet money alone does not explain how they chose to use it. They had grown up with religious beliefs that encouraged responsibility towards other people. Their schooling in London emphasised cultural subjects rather than academic study, and journeys with their governess, Jane Blaker, included visits to galleries. They made detailed notes about what they saw. These experiences gave the sisters opportunities to develop informed preferences before their purchases became a regular activity. Their later collecting can therefore be understood partly through experiences that preceded their inheritance, rather than simply as an immediate consequence of wealth.\n\nC\nAdvice was important, but its existence has sometimes obscured the sisters' own role. Two dealers, Hugh Blaker and David Croal Thompson, helped them; Hugh was Jane Blaker's brother. An earlier interpretation gave such advisers much of the credit for the character of the collection. A more recent understanding assigns a greater part to the sisters themselves. The distinction matters because receiving specialist advice does not necessarily mean surrendering a decision. They travelled to Paris and London and considered paintings sent to their home. Their residence in rural Wales did not cut them off from the art market. Nor did the absence of close friendships with artists prevent them from examining work and developing preferences of their own.\n\nD\nThose preferences were not identical to their earliest purchases. Their journals indicate an attraction to Old Master paintings, works by respected European artists from before about 1800. High-quality examples, however, commanded prices that exceeded what the sisters were prepared to pay. Compared with exceptionally wealthy American buyers, their spending power had limits. Early acquisitions consequently included fashionable paintings such as those by Corot. Later they bought work by French Impressionists, artists associated with a movement that developed in the nineteenth century. Monet paintings showing Venice entered their collection in October 1912. Hugh Blaker supported contemporary French art, and visits to Paris also exposed the sisters to it; the account does not identify a single decisive cause for their change of direction.\n\nE\nWar introduced other demands on their attention and resources. They helped artists leave occupied Belgium for Wales, combining humanitarian assistance with hopes for an active artistic community. Both sisters later worked in a canteen serving troops in France. Gwendoline began in 1916, and Margaret followed in 1917. This work was distressing, and Gwendoline's health suffered lasting effects. Collecting nevertheless continued during the conflict. On a visit to a Paris gallery, Gwendoline acquired two paintings by Cezanne. They were sent to Bath, where they became the first works by that artist displayed in a British public gallery. The account establishes that public display occurred, but that fact alone tells us nothing about how many visitors attended or what they thought.\n\nF\nThe conflict also altered the balance between cultural collecting and other commitments. In the early 1920s, poverty and social disruption made Gwendoline increasingly uneasy about buying pictures. She directed more attention towards social causes and the sisters' home at Gregynog Hall, which became a conference venue and a setting for music and poetry. Her last art purchase came in March 1926. Margaret stopped at roughly the same period but later returned to buying art, acquiring contemporary British work during the 1930s. The sisters' histories therefore should not be compressed into one shared decision followed by an identical outcome. Their interests overlapped, but the later courses of their collecting were not the same.\n\nG\nTheir eventual gifts to the National Museum Wales came in different years: Gwendoline's in 1951 and Margaret's in 1963. These donations gave a public destination to choices originally made for a private collection. Calling the sisters unexpected collectors can highlight their distance from fashionable artistic circles, but it can also obscure the opportunities they actively used. They sought advice, travelled, read paintings through their own preferences and adjusted their priorities. Their legacy is not evidence that a collection needs an unchanging strategy from its beginning. Rather, it shows how an important group of works can emerge from a succession of decisions, some shaped by practical constraints and others by events far beyond the gallery.",
+      "questions": [
+        {
+          "id": 1,
+          "type": "true_false_not_given",
+          "instructions": "Do the statements agree with the information in Passage 1? Choose TRUE if the statement agrees, FALSE if it contradicts the passage, or NOT GIVEN if the passage provides insufficient information.",
+          "prompt": "The sisters inherited wealth connected with both shipping and mining.",
+          "options": [],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "TRUE"
+            ],
+            "evidenceQuote": "whose business interests included shipping and mining",
+            "rationale": "The named business activities supplied the financial foundation."
+          },
+          "sourceRefIds": [
+            "CA21-R01"
+          ],
+          "transformationNotes": "New item and key authored from the rewritten source-based passage; The named business activities supplied the financial foundation."
+        },
+        {
+          "id": 2,
+          "type": "true_false_not_given",
+          "instructions": "Do the statements agree with the information in Passage 1? Choose TRUE if the statement agrees, FALSE if it contradicts the passage, or NOT GIVEN if the passage provides insufficient information.",
+          "prompt": "The more recent interpretation gives the sisters less influence over their collection than earlier accounts did.",
+          "options": [],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "FALSE"
+            ],
+            "evidenceQuote": "A more recent understanding assigns a greater part to the sisters themselves.",
+            "rationale": "Recent interpretation increases, rather than reduces, their role."
+          },
+          "sourceRefIds": [
+            "CA21-R01"
+          ],
+          "transformationNotes": "New item and key authored from the rewritten source-based passage; Recent interpretation increases, rather than reduces, their role."
+        },
+        {
+          "id": 3,
+          "type": "true_false_not_given",
+          "instructions": "Do the statements agree with the information in Passage 1? Choose TRUE if the statement agrees, FALSE if it contradicts the passage, or NOT GIVEN if the passage provides insufficient information.",
+          "prompt": "The sisters acquired their Corot paintings during visits to London.",
+          "options": [],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "NOT GIVEN"
+            ],
+            "evidenceQuote": "Early acquisitions consequently included fashionable paintings such as those by Corot.",
+            "rationale": "The purchases are described but their location is not specified."
+          },
+          "sourceRefIds": [
+            "CA21-R01"
+          ],
+          "transformationNotes": "New item and key authored from the rewritten source-based passage; The purchases are described but their location is not specified."
+        },
+        {
+          "id": 4,
+          "type": "true_false_not_given",
+          "instructions": "Do the statements agree with the information in Passage 1? Choose TRUE if the statement agrees, FALSE if it contradicts the passage, or NOT GIVEN if the passage provides insufficient information.",
+          "prompt": "Margaret began canteen work after Gwendoline.",
+          "options": [],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "TRUE"
+            ],
+            "evidenceQuote": "Gwendoline began in 1916, and Margaret followed in 1917.",
+            "rationale": "The two starting years establish the order."
+          },
+          "sourceRefIds": [
+            "CA21-R01"
+          ],
+          "transformationNotes": "New item and key authored from the rewritten source-based passage; The two starting years establish the order."
+        },
+        {
+          "id": 5,
+          "type": "true_false_not_given",
+          "instructions": "Do the statements agree with the information in Passage 1? Choose TRUE if the statement agrees, FALSE if it contradicts the passage, or NOT GIVEN if the passage provides insufficient information.",
+          "prompt": "Margaret permanently abandoned art buying at the same time as Gwendoline.",
+          "options": [],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "FALSE"
+            ],
+            "evidenceQuote": "Margaret stopped at roughly the same period but later returned to buying art",
+            "rationale": "The resumption contradicts permanent abandonment."
+          },
+          "sourceRefIds": [
+            "CA21-R01"
+          ],
+          "transformationNotes": "New item and key authored from the rewritten source-based passage; The resumption contradicts permanent abandonment."
+        },
+        {
+          "id": 6,
+          "type": "sentence_completion",
+          "instructions": "Complete the sentence. Choose NO MORE THAN TWO WORDS from Passage 1 for the gap.",
+          "prompt": "The sisters’ London schooling emphasised ______ rather than academic study.",
+          "options": [],
+          "wordLimit": 2,
+          "answer": {
+            "acceptedAnswers": [
+              "cultural subjects"
+            ],
+            "evidenceQuote": "Their schooling in London emphasised cultural subjects rather than academic study",
+            "rationale": "The educational emphasis is explicit."
+          },
+          "sourceRefIds": [
+            "CA21-R01"
+          ],
+          "transformationNotes": "New item and key authored from the rewritten source-based passage; The educational emphasis is explicit."
+        },
+        {
+          "id": 7,
+          "type": "sentence_completion",
+          "instructions": "Complete the sentence. Choose NO MORE THAN TWO WORDS from Passage 1 for the gap.",
+          "prompt": "The sisters’ attraction to Old Master paintings is documented in their ______.",
+          "options": [],
+          "wordLimit": 2,
+          "answer": {
+            "acceptedAnswers": [
+              "journals"
+            ],
+            "evidenceQuote": "Their journals indicate an attraction to Old Master paintings",
+            "rationale": "Journals supply the stated evidence of preference."
+          },
+          "sourceRefIds": [
+            "CA21-R01"
+          ],
+          "transformationNotes": "New item and key authored from the rewritten source-based passage; Journals supply the stated evidence of preference."
+        },
+        {
+          "id": 8,
+          "type": "sentence_completion",
+          "instructions": "Complete the sentence. Choose NO MORE THAN TWO WORDS from Passage 1 for the gap.",
+          "prompt": "Gwendoline and Margaret both served soldiers in a ______ in France.",
+          "options": [],
+          "wordLimit": 2,
+          "answer": {
+            "acceptedAnswers": [
+              "canteen"
+            ],
+            "evidenceQuote": "Both sisters later worked in a canteen serving troops in France.",
+            "rationale": "Canteen is the place of service."
+          },
+          "sourceRefIds": [
+            "CA21-R01"
+          ],
+          "transformationNotes": "New item and key authored from the rewritten source-based passage; Canteen is the place of service."
+        },
+        {
+          "id": 9,
+          "type": "sentence_completion",
+          "instructions": "Complete the sentence. Choose NO MORE THAN TWO WORDS from Passage 1 for the gap.",
+          "prompt": "Gregynog Hall became a ______ as well as a setting for music and poetry.",
+          "options": [],
+          "wordLimit": 2,
+          "answer": {
+            "acceptedAnswers": [
+              "conference venue"
+            ],
+            "evidenceQuote": "which became a conference venue and a setting for music and poetry",
+            "rationale": "The new wording categorises the use of the home."
+          },
+          "sourceRefIds": [
+            "CA21-R01"
+          ],
+          "transformationNotes": "New item and key authored from the rewritten source-based passage; The new wording categorises the use of the home."
+        },
+        {
+          "id": 10,
+          "type": "short_answer",
+          "instructions": "Answer the question. Choose NO MORE THAN TWO WORDS from Passage 1.",
+          "prompt": "Who accompanied the sisters on early gallery visits?",
+          "options": [],
+          "wordLimit": 2,
+          "answer": {
+            "acceptedAnswers": [
+              "Jane Blaker",
+              "their governess",
+              "governess"
+            ],
+            "evidenceQuote": "journeys with their governess, Jane Blaker, included visits to galleries",
+            "rationale": "Jane Blaker is named as their governess. The unique role forms their governess and governess also identify the same accompanying person and fit the two-word limit."
+          },
+          "sourceRefIds": [
+            "CA21-R01"
+          ],
+          "transformationNotes": "New item and key authored from the rewritten source-based passage; The accompanying governess is named."
+        },
+        {
+          "id": 11,
+          "type": "short_answer",
+          "instructions": "Answer the question. Choose NO MORE THAN TWO WORDS from Passage 1.",
+          "prompt": "Which city was depicted in the Monet paintings acquired in October 1912?",
+          "options": [],
+          "wordLimit": 2,
+          "answer": {
+            "acceptedAnswers": [
+              "Venice"
+            ],
+            "evidenceQuote": "Monet paintings showing Venice entered their collection in October 1912.",
+            "rationale": "The city is the subject, not the purchase location."
+          },
+          "sourceRefIds": [
+            "CA21-R01"
+          ],
+          "transformationNotes": "New item and key authored from the rewritten source-based passage; The city is the subject, not the purchase location."
+        },
+        {
+          "id": 12,
+          "type": "short_answer",
+          "instructions": "Answer the question. Choose NO MORE THAN TWO WORDS from Passage 1.",
+          "prompt": "To which British city were the two Cezanne paintings sent?",
+          "options": [],
+          "wordLimit": 2,
+          "answer": {
+            "acceptedAnswers": [
+              "Bath"
+            ],
+            "evidenceQuote": "They were sent to Bath",
+            "rationale": "The destination is Bath; the question does not ask where acquired."
+          },
+          "sourceRefIds": [
+            "CA21-R01"
+          ],
+          "transformationNotes": "New item and key authored from the rewritten source-based passage; The destination is Bath; the question does not ask where acquired."
+        },
+        {
+          "id": 13,
+          "type": "short_answer",
+          "instructions": "Answer the question. Choose NO MORE THAN TWO WORDS from Passage 1.",
+          "prompt": "What country appears in the name of the museum that received the sisters’ gifts?",
+          "options": [],
+          "wordLimit": 2,
+          "answer": {
+            "acceptedAnswers": [
+              "Wales"
+            ],
+            "evidenceQuote": "Their eventual gifts to the National Museum Wales",
+            "rationale": "The museum name supplies Wales, not an invented institution."
+          },
+          "sourceRefIds": [
+            "CA21-R01"
+          ],
+          "transformationNotes": "New item and key authored from the rewritten source-based passage; The museum name supplies Wales, not an invented institution."
+        }
+      ],
+      "sourceRefIds": [
+        "CA21-R01"
+      ],
+      "transformationNotes": "Reorganised source biography around explanations and evidence for agency; rewrote all prose and all13 items, adding new contrast/ordering/extraction questions instead of copying source notes or source keys."
+    },
+    {
+      "id": "passage-2",
+      "title": "Quiet, evidence and choice",
+      "text": "A\nWhat makes quiet helpful? One possible answer is simply the absence of noise, but accounts of silence research suggest a more complicated picture. Tai Dotan Ben-Soussan, a neurobiologist, emphasises a person's willingness to take part. Quiet that someone actively seeks is not equivalent to quiet imposed against their wishes. She argues that becoming quieter internally as well as externally can increase awareness of a situation and support an appropriate response to it. She also warns that unwanted silence can be distressing. This distinction makes personal choice central to the discussion. It would be misleading to assume that reducing sensory input must produce the same experience for everyone, regardless of their intentions or their emotional state at the time.\n\nB\nThere are nevertheless practical reasons to reduce excessive environmental noise. The acoustic consultant Nick Antonio has helped develop noise standards and describes measures adopted in London, including quieter buses and attention to road and aircraft noise. Other urban responses include surfaces that reduce traffic sound and planting that softens it. Some measures target particular activities, such as restrictions on petrol-powered leaf blowers in Washington DC or penalties for making vehicles noisier in New York. These examples do not amount to a programme for eliminating every sound from a city. They concern reducing unwanted exposure through decisions about transport, equipment and public space. Antonio expects further interest in quieter urban environments, rather than treating the existing measures as the end of that work.\n\nC\nThe reason noise matters is connected with the usefulness of hearing. A sudden sound can alert a person to danger, and the body prepares for action through changes that include increased blood pressure and muscle tension. Such responses can be valuable in the short term. The difficulty arises when exposure is prolonged: repeated activation is associated with problems including disturbed sleep and cardiovascular illness, meaning illness affecting the heart and blood vessels. An immediate protective response and a long-term health burden are therefore not contradictory descriptions. They concern different patterns of exposure. This also helps explain why the issue cannot be reduced to whether a particular individual happens to dislike a particular sound. Public-health concerns extend beyond a momentary judgement of pleasantness.\n\nD\nResearchers have investigated unusually quiet settings as well as changes to ordinary urban environments. Justin Feinstein has studied flotation tanks, containers of salt water designed to block light and sound while a person floats. Some users report faint sounds or visual experiences even in this reduced-input setting. Feinstein explains these perceptions as the brain's response to missing external stimulation, rather than as evidence that the tank necessarily contains an unnoticed source. He identifies attention to breathing as important in relaxation. The account therefore distinguishes the physical conditions provided by the tank from what a participant may experience within it. A setting can greatly reduce incoming stimulation without making the mind inactive or preventing someone from noticing sensations arising within the body.\n\nE\nTwo studies illustrate different ways of investigating these experiences. In one, fifty participants with stress-related conditions completed a questionnaire before and after an hour of floating. Their reports indicated reduced tension, pain and symptoms, together with greater relaxation and wellbeing. In a second study, Feinstein's team had forty-eight people spend three sessions either floating or resting in a reclining chair. Each session lasted ninety minutes, and brain scans were obtained at the beginning and end of the trial. Only the flotation sessions were associated with reduced activity in the default mode network, a group of brain regions linked with depression. These studies did not use the same measure: one description centres on reported experience, while the other includes changes detected through brain imaging. The distinction should remain visible when their findings are discussed.\n\nF\nEric Pfeifer, who researches psychotherapy, stresses that quiet need not mean complete silence. In one comparison, participants reported greater relaxation and less boredom in a quiet garden than in a room without sound. He also recognises that people experiencing intense stress may struggle to relax in silence and may need professional guidance to approach it gradually. His advice includes finding brief opportunities for quiet in everyday life, rather than assuming that benefit requires occasional lengthy sessions. This view broadens the possible settings beyond specialised equipment. It does not establish that every garden will suit every visitor or that guidance is unnecessary; it challenges the idea that an ordinary environment must become entirely silent before a useful quiet experience is possible.\n\nG\nTaken together, these accounts concern several different questions: how cities can limit harmful noise, what people report after floating, what changes appear in brain scans, and how intention affects experience. Keeping the questions distinct prevents an attractive general message from outrunning the evidence described. A questionnaire and a scan provide different information, while a comparison of two quiet settings addresses something different again. The research does not require a choice between treating sound as harmless and prescribing absolute silence to everyone. It invites a more careful account of exposure, environment and individual readiness. Quiet can be considered a resource whose usefulness depends partly on how it is encountered, rather than a single condition with one automatic result.",
+      "questions": [
+        {
+          "id": 14,
+          "type": "matching_headings",
+          "instructions": "Choose the correct heading for the specified paragraph of Passage 2 from headings i–vi. No heading may be used more than once.",
+          "prompt": "Paragraph A",
+          "options": [
+            {
+              "id": "i",
+              "text": "The importance of choosing quiet"
+            },
+            {
+              "id": "ii",
+              "text": "Practical action in public environments"
+            },
+            {
+              "id": "iii",
+              "text": "A useful response with a long-term cost"
+            },
+            {
+              "id": "iv",
+              "text": "Reduced input does not stop perception"
+            },
+            {
+              "id": "v",
+              "text": "Identical methods in every study"
+            },
+            {
+              "id": "vi",
+              "text": "The complete elimination of city sound"
+            }
+          ],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "i"
+            ],
+            "evidenceQuote": "Quiet that someone actively seeks is not equivalent to quiet imposed against their wishes.",
+            "rationale": "Willing participation is the paragraph’s organising distinction."
+          },
+          "sourceRefIds": [
+            "CA21-R01"
+          ],
+          "transformationNotes": "New item and key authored from the rewritten source-based passage; Willing participation is the paragraph’s organising distinction."
+        },
+        {
+          "id": 15,
+          "type": "matching_headings",
+          "instructions": "Choose the correct heading for the specified paragraph of Passage 2 from headings i–vi. No heading may be used more than once.",
+          "prompt": "Paragraph B",
+          "options": [
+            {
+              "id": "i",
+              "text": "The importance of choosing quiet"
+            },
+            {
+              "id": "ii",
+              "text": "Practical action in public environments"
+            },
+            {
+              "id": "iii",
+              "text": "A useful response with a long-term cost"
+            },
+            {
+              "id": "iv",
+              "text": "Reduced input does not stop perception"
+            },
+            {
+              "id": "v",
+              "text": "Identical methods in every study"
+            },
+            {
+              "id": "vi",
+              "text": "The complete elimination of city sound"
+            }
+          ],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "ii"
+            ],
+            "evidenceQuote": "These examples do not amount to a programme for eliminating every sound from a city.",
+            "rationale": "The paragraph describes targeted urban interventions, not total elimination."
+          },
+          "sourceRefIds": [
+            "CA21-R01"
+          ],
+          "transformationNotes": "New item and key authored from the rewritten source-based passage; The paragraph describes targeted urban interventions, not total elimination."
+        },
+        {
+          "id": 16,
+          "type": "matching_headings",
+          "instructions": "Choose the correct heading for the specified paragraph of Passage 2 from headings i–vi. No heading may be used more than once.",
+          "prompt": "Paragraph C",
+          "options": [
+            {
+              "id": "i",
+              "text": "The importance of choosing quiet"
+            },
+            {
+              "id": "ii",
+              "text": "Practical action in public environments"
+            },
+            {
+              "id": "iii",
+              "text": "A useful response with a long-term cost"
+            },
+            {
+              "id": "iv",
+              "text": "Reduced input does not stop perception"
+            },
+            {
+              "id": "v",
+              "text": "Identical methods in every study"
+            },
+            {
+              "id": "vi",
+              "text": "The complete elimination of city sound"
+            }
+          ],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "iii"
+            ],
+            "evidenceQuote": "An immediate protective response and a long-term health burden are therefore not contradictory descriptions.",
+            "rationale": "The paragraph contrasts immediate usefulness with prolonged exposure."
+          },
+          "sourceRefIds": [
+            "CA21-R01"
+          ],
+          "transformationNotes": "New item and key authored from the rewritten source-based passage; The paragraph contrasts immediate usefulness with prolonged exposure."
+        },
+        {
+          "id": 17,
+          "type": "matching_headings",
+          "instructions": "Choose the correct heading for the specified paragraph of Passage 2 from headings i–vi. No heading may be used more than once.",
+          "prompt": "Paragraph D",
+          "options": [
+            {
+              "id": "i",
+              "text": "The importance of choosing quiet"
+            },
+            {
+              "id": "ii",
+              "text": "Practical action in public environments"
+            },
+            {
+              "id": "iii",
+              "text": "A useful response with a long-term cost"
+            },
+            {
+              "id": "iv",
+              "text": "Reduced input does not stop perception"
+            },
+            {
+              "id": "v",
+              "text": "Identical methods in every study"
+            },
+            {
+              "id": "vi",
+              "text": "The complete elimination of city sound"
+            }
+          ],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "iv"
+            ],
+            "evidenceQuote": "A setting can greatly reduce incoming stimulation without making the mind inactive",
+            "rationale": "Perception continues despite reduced external input."
+          },
+          "sourceRefIds": [
+            "CA21-R01"
+          ],
+          "transformationNotes": "New item and key authored from the rewritten source-based passage; Perception continues despite reduced external input."
+        },
+        {
+          "id": 18,
+          "type": "matching_features",
+          "instructions": "Match the statement with the person in Passage 2. Choose A–D. You may use any option more than once.",
+          "prompt": "Investigated sessions whose effects were examined through brain imaging.",
+          "options": [
+            {
+              "id": "A",
+              "text": "Nick Antonio"
+            },
+            {
+              "id": "B",
+              "text": "Justin Feinstein"
+            },
+            {
+              "id": "C",
+              "text": "Tai Dotan Ben-Soussan"
+            },
+            {
+              "id": "D",
+              "text": "Eric Pfeifer"
+            }
+          ],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "B"
+            ],
+            "evidenceQuote": "In a second study, Feinstein's team had forty-eight people spend three sessions either floating or resting in a reclining chair.",
+            "rationale": "The second study is explicitly assigned to Feinstein’s team, and its following description specifies brain scans at the beginning and end."
+          },
+          "sourceRefIds": [
+            "CA21-R01"
+          ],
+          "transformationNotes": "New attribution item based on the source’s second flotation study, requiring connection between a named research team and its measurement method."
+        },
+        {
+          "id": 19,
+          "type": "matching_features",
+          "instructions": "Match the statement with the person in Passage 2. Choose A–D. You may use any option more than once.",
+          "prompt": "Discussed a comparison between a quiet garden and a soundless room.",
+          "options": [
+            {
+              "id": "A",
+              "text": "Nick Antonio"
+            },
+            {
+              "id": "B",
+              "text": "Justin Feinstein"
+            },
+            {
+              "id": "C",
+              "text": "Tai Dotan Ben-Soussan"
+            },
+            {
+              "id": "D",
+              "text": "Eric Pfeifer"
+            }
+          ],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "D"
+            ],
+            "evidenceQuote": "Eric Pfeifer, who researches psychotherapy, stresses that quiet need not mean complete silence.",
+            "rationale": "The following garden comparison belongs explicitly to Pfeifer."
+          },
+          "sourceRefIds": [
+            "CA21-R01"
+          ],
+          "transformationNotes": "New item and key authored from the rewritten source-based passage; The following garden comparison belongs explicitly to Pfeifer."
+        },
+        {
+          "id": 20,
+          "type": "matching_features",
+          "instructions": "Match the statement with the person in Passage 2. Choose A–D. You may use any option more than once.",
+          "prompt": "Contributed to developing technical standards for noise.",
+          "options": [
+            {
+              "id": "A",
+              "text": "Nick Antonio"
+            },
+            {
+              "id": "B",
+              "text": "Justin Feinstein"
+            },
+            {
+              "id": "C",
+              "text": "Tai Dotan Ben-Soussan"
+            },
+            {
+              "id": "D",
+              "text": "Eric Pfeifer"
+            }
+          ],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "A"
+            ],
+            "evidenceQuote": "Nick Antonio has helped develop noise standards",
+            "rationale": "This professional contribution is explicitly attributed to Antonio."
+          },
+          "sourceRefIds": [
+            "CA21-R01"
+          ],
+          "transformationNotes": "New item and key authored from the rewritten source-based passage; This professional contribution is explicitly attributed to Antonio."
+        },
+        {
+          "id": 21,
+          "type": "matching_features",
+          "instructions": "Match the statement with the person in Passage 2. Choose A–D. You may use any option more than once.",
+          "prompt": "Connects relaxation in a flotation tank with attention to breathing.",
+          "options": [
+            {
+              "id": "A",
+              "text": "Nick Antonio"
+            },
+            {
+              "id": "B",
+              "text": "Justin Feinstein"
+            },
+            {
+              "id": "C",
+              "text": "Tai Dotan Ben-Soussan"
+            },
+            {
+              "id": "D",
+              "text": "Eric Pfeifer"
+            }
+          ],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "B"
+            ],
+            "evidenceQuote": "He identifies attention to breathing as important in relaxation.",
+            "rationale": "The pronoun in paragraph D refers unambiguously to Feinstein."
+          },
+          "sourceRefIds": [
+            "CA21-R01"
+          ],
+          "transformationNotes": "New item and key authored from the rewritten source-based passage; The pronoun in paragraph D refers unambiguously to Feinstein."
+        },
+        {
+          "id": 22,
+          "type": "matching_features",
+          "instructions": "Match the statement with the person in Passage 2. Choose A–D. You may use any option more than once.",
+          "prompt": "Links inner quiet with awareness and an appropriate response to a situation.",
+          "options": [
+            {
+              "id": "A",
+              "text": "Nick Antonio"
+            },
+            {
+              "id": "B",
+              "text": "Justin Feinstein"
+            },
+            {
+              "id": "C",
+              "text": "Tai Dotan Ben-Soussan"
+            },
+            {
+              "id": "D",
+              "text": "Eric Pfeifer"
+            }
+          ],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "C"
+            ],
+            "evidenceQuote": "She argues that becoming quieter internally as well as externally can increase awareness of a situation and support an appropriate response to it.",
+            "rationale": "Paragraph A attributes this view to Ben-Soussan."
+          },
+          "sourceRefIds": [
+            "CA21-R01"
+          ],
+          "transformationNotes": "New item and key authored from the rewritten source-based passage; Paragraph A attributes this view to Ben-Soussan."
+        },
+        {
+          "id": 23,
+          "type": "summary_completion",
+          "instructions": "Complete the summary of the studies in paragraph E. Choose NO MORE THAN TWO WORDS from Passage 2 for each gap.",
+          "prompt": "In the study involving fifty people, participants completed a ______.",
+          "options": [],
+          "wordLimit": 2,
+          "answer": {
+            "acceptedAnswers": [
+              "questionnaire"
+            ],
+            "evidenceQuote": "fifty participants with stress-related conditions completed a questionnaire",
+            "rationale": "This is the self-report collection instrument, not the scanning method."
+          },
+          "sourceRefIds": [
+            "CA21-R01"
+          ],
+          "transformationNotes": "New item and key authored from the rewritten source-based passage; This is the self-report collection instrument, not the scanning method."
+        },
+        {
+          "id": 24,
+          "type": "summary_completion",
+          "instructions": "Complete the summary of the studies in paragraph E. Choose NO MORE THAN TWO WORDS from Passage 2 for each gap.",
+          "prompt": "In the other study, participants rested in a ______ when they were not assigned to floating.",
+          "options": [],
+          "wordLimit": 2,
+          "answer": {
+            "acceptedAnswers": [
+              "reclining chair",
+              "chair"
+            ],
+            "evidenceQuote": "either floating or resting in a reclining chair",
+            "rationale": "Both reclining chair and chair are verbatim, fit after a, and identify the only chair comparison condition described."
+          },
+          "sourceRefIds": [
+            "CA21-R01"
+          ],
+          "transformationNotes": "New item and key authored from the rewritten source-based passage; The comparison condition is the reclining chair."
+        },
+        {
+          "id": 25,
+          "type": "summary_completion",
+          "instructions": "Complete the summary of the studies in paragraph E. Choose NO MORE THAN TWO WORDS from Passage 2 for each gap.",
+          "prompt": "The second study obtained ______ at the start and finish of the trial.",
+          "options": [],
+          "wordLimit": 2,
+          "answer": {
+            "acceptedAnswers": [
+              "brain scans",
+              "scans"
+            ],
+            "evidenceQuote": "brain scans were obtained at the beginning and end of the trial",
+            "rationale": "Both brain scans and scans are grammatical plural objects of obtained and refer to the only scans described in the study."
+          },
+          "sourceRefIds": [
+            "CA21-R01"
+          ],
+          "transformationNotes": "New item and key authored from the rewritten source-based passage; Brain scans are the repeated measurements."
+        },
+        {
+          "id": 26,
+          "type": "summary_completion",
+          "instructions": "Complete the summary of the studies in paragraph E. Choose NO MORE THAN TWO WORDS from Passage 2 for each gap.",
+          "prompt": "The network showing reduced activity is linked with ______.",
+          "options": [],
+          "wordLimit": 2,
+          "answer": {
+            "acceptedAnswers": [
+              "depression"
+            ],
+            "evidenceQuote": "a group of brain regions linked with depression",
+            "rationale": "The association is stated, without claiming that the trial cured a condition."
+          },
+          "sourceRefIds": [
+            "CA21-R01"
+          ],
+          "transformationNotes": "New item and key authored from the rewritten source-based passage; The association is stated, without claiming that the trial cured a condition."
+        }
+      ],
+      "sourceRefIds": [
+        "CA21-R01"
+      ],
+      "transformationNotes": "Reorganised source exposition to start with consent, distinguish city interventions from response mechanisms, and compare research measures; newly wrote headings, researcher matches and a four-gap study summary."
+    },
+    {
+      "id": "passage-3",
+      "title": "Reading a commodity as a connected history",
+      "text": "A\nA history of one commodity can become an argument about how the world works. The review of Ulbe Bosma's The World of Sugar presents just such an ambitious history: it moves among different regions, labour arrangements, industrial techniques and forms of political influence. The account includes sugar made from beet as well as cane, resisting the assumption that the industry's history belongs only to tropical plantations. This breadth is valuable because the same finished product can conceal very different routes to production. My concern here is not to rank every region mentioned in the book, but to consider what this account allows a reader to connect. Its strength lies in bringing activities usually discussed separately into the same explanation.\n\nB\nOne useful example concerns the changing supply of sugar to Britain. The historical account moves from cane produced on British colonial plantations using enslaved labour to imports from other countries where slavery continued after its abolition in the British Empire. Later came beet sugar from continental Europe, followed in the twentieth century by the development of a domestic beet industry. This sequence should not be read as a simple progression from an unethical source to an ethical one. A change in where a product is bought does not by itself establish a corresponding change in the conditions under which it is made. The example is valuable precisely because it makes an easy story about national progress harder to sustain.\n\nC\nThe review also challenges a familiar picture of sugar production as the exclusive business of wealthy plantation owners. Its account of Java describes small farmers cultivating cane alongside rice through labour-intensive methods. Elsewhere, small-scale growing persisted while larger enterprises relied on workers who had moved from other places. These arrangements differ, yet neither permits labour to disappear from the history. It would be a mistake to treat a difference in farm size as proof that one system was automatically easy for those working in it. The important contribution is to make different forms of work visible. Description of variation is more informative here than a single image of a plantation standing for every place and period.\n\nD\nProduction was also shaped by people and organisations able to influence government. The account describes powerful commercial interests whose position was supported through trade barriers and subsidies, financial assistance intended to support an activity. Beet sugar could consequently reach world markets at prices lowered by public support, creating difficulties for cane producers. This complicates any explanation based only on natural conditions or the efficiency of farming. What appears at the point of sale as a cheap product may partly reflect decisions made elsewhere about who receives assistance and whose market is protected. I consider this connection between political decisions and commercial outcomes essential to the history, rather than an optional background to a story that is fundamentally about crops.\n\nE\nThe technological account is equally important. Obtaining sugar required more than harvesting a plant: material had to be processed using equipment and energy. The review describes machinery powered in different ways, later developments in boiling and refinement, and the movement of techniques across national boundaries. Cuba's railways, for example, helped move both workers and cane, linking transport with production. Calling this merely an agricultural history would therefore hide part of its explanation. Fields, processing sites and transport systems belonged to a connected undertaking. Nor is there any reason to assume that a technique remained within the country where it appeared. The account's attention to movement is useful because the finished commodity alone cannot reveal how knowledge and equipment travelled.\n\nF\nThe consequences of expansion do not fit comfortably into a narrative of improvement. Increased production made sugar widely available, and it was promoted as a source of energy. The review also describes harm associated with rising consumption and resistance by commercial interests to attempts to reduce it. A cheaper means of supplying sweetness can thus be an industrial achievement without being an uncomplicated public benefit. I reject the idea that lower production cost settles the question of social value. At the same time, the account ends with a difficulty that condemnation alone cannot resolve: some of the world's poorest people still depend on sugar for their income. Criticism of a product does not remove the need to consider those livelihoods.\n\nG\nThe strongest way to read this history is consequently to resist a single explanation. Changes in equipment matter, but so do working arrangements, trading rules and the uses to which the product is put. A reader who notices only technical expansion will miss the distribution of its costs; one who notices only harm may overlook the dependence that makes change difficult. I regard the review's wide geographical and historical reach as a strength because it gives these tensions room to appear together. That does not mean breadth answers every question a reader might ask. It means that a useful account can expose connections without resolving all their consequences. Such a history earns attention by complicating a familiar object, rather than making the object serve as proof of one reassuring conclusion.",
+      "questions": [
+        {
+          "id": 27,
+          "type": "yes_no_not_given",
+          "instructions": "Do the statements agree with the views of the writer in Passage 3? Choose YES if the statement agrees, NO if it contradicts the writer, or NOT GIVEN if the writer’s view is not stated.",
+          "prompt": "Changing a country’s source of supply necessarily demonstrates ethical progress.",
+          "options": [],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "NO"
+            ],
+            "evidenceQuote": "This sequence should not be read as a simple progression from an unethical source to an ethical one.",
+            "rationale": "The writer explicitly rejects this conclusion."
+          },
+          "sourceRefIds": [
+            "CA21-R01"
+          ],
+          "transformationNotes": "New item and key authored from the rewritten source-based passage; The writer explicitly rejects this conclusion."
+        },
+        {
+          "id": 28,
+          "type": "yes_no_not_given",
+          "instructions": "Do the statements agree with the views of the writer in Passage 3? Choose YES if the statement agrees, NO if it contradicts the writer, or NOT GIVEN if the writer’s view is not stated.",
+          "prompt": "Differences in farm size automatically establish how easy the work was.",
+          "options": [],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "NO"
+            ],
+            "evidenceQuote": "It would be a mistake to treat a difference in farm size as proof that one system was automatically easy",
+            "rationale": "The writer denies automatic inference from scale to working conditions."
+          },
+          "sourceRefIds": [
+            "CA21-R01"
+          ],
+          "transformationNotes": "New item and key authored from the rewritten source-based passage; The writer denies automatic inference from scale to working conditions."
+        },
+        {
+          "id": 29,
+          "type": "yes_no_not_given",
+          "instructions": "Do the statements agree with the views of the writer in Passage 3? Choose YES if the statement agrees, NO if it contradicts the writer, or NOT GIVEN if the writer’s view is not stated.",
+          "prompt": "Connections between political choices and commercial results are central to the history.",
+          "options": [],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "YES"
+            ],
+            "evidenceQuote": "I consider this connection between political decisions and commercial outcomes essential to the history",
+            "rationale": "Essential explicitly endorses central importance."
+          },
+          "sourceRefIds": [
+            "CA21-R01"
+          ],
+          "transformationNotes": "New item and key authored from the rewritten source-based passage; Essential explicitly endorses central importance."
+        },
+        {
+          "id": 30,
+          "type": "yes_no_not_given",
+          "instructions": "Do the statements agree with the views of the writer in Passage 3? Choose YES if the statement agrees, NO if it contradicts the writer, or NOT GIVEN if the writer’s view is not stated.",
+          "prompt": "Present-day governments should replace all sugar subsidies with direct payments to workers.",
+          "options": [],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "NOT GIVEN"
+            ],
+            "evidenceQuote": "the account ends with a difficulty that condemnation alone cannot resolve",
+            "rationale": "The writer recognises dependence but states no view on this specific replacement policy."
+          },
+          "sourceRefIds": [
+            "CA21-R01"
+          ],
+          "transformationNotes": "New item and key authored from the rewritten source-based passage; The writer recognises dependence but states no view on this specific replacement policy."
+        },
+        {
+          "id": 31,
+          "type": "yes_no_not_given",
+          "instructions": "Do the statements agree with the views of the writer in Passage 3? Choose YES if the statement agrees, NO if it contradicts the writer, or NOT GIVEN if the writer’s view is not stated.",
+          "prompt": "The review’s breadth is valuable because it allows competing considerations to be seen together.",
+          "options": [],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "YES"
+            ],
+            "evidenceQuote": "I regard the review's wide geographical and historical reach as a strength because it gives these tensions room to appear together.",
+            "rationale": "The writer directly values breadth for accommodating tensions."
+          },
+          "sourceRefIds": [
+            "CA21-R01"
+          ],
+          "transformationNotes": "New item and key authored from the rewritten source-based passage; The writer directly values breadth for accommodating tensions."
+        },
+        {
+          "id": 32,
+          "type": "matching_information",
+          "instructions": "Which paragraph of Passage 3 contains the information? Choose A–G. You may use any paragraph more than once.",
+          "prompt": "A farming example that contradicts an exclusive focus on large estates.",
+          "options": [
+            {
+              "id": "A",
+              "text": "Paragraph A"
+            },
+            {
+              "id": "B",
+              "text": "Paragraph B"
+            },
+            {
+              "id": "C",
+              "text": "Paragraph C"
+            },
+            {
+              "id": "D",
+              "text": "Paragraph D"
+            },
+            {
+              "id": "E",
+              "text": "Paragraph E"
+            },
+            {
+              "id": "F",
+              "text": "Paragraph F"
+            },
+            {
+              "id": "G",
+              "text": "Paragraph G"
+            }
+          ],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "C"
+            ],
+            "evidenceQuote": "Its account of Java describes small farmers cultivating cane alongside rice",
+            "rationale": "The small-farm example challenges plantation-only assumptions."
+          },
+          "sourceRefIds": [
+            "CA21-R01"
+          ],
+          "transformationNotes": "New item and key authored from the rewritten source-based passage; The small-farm example challenges plantation-only assumptions."
+        },
+        {
+          "id": 33,
+          "type": "matching_information",
+          "instructions": "Which paragraph of Passage 3 contains the information? Choose A–G. You may use any paragraph more than once.",
+          "prompt": "A mechanism through which financial assistance changes international prices.",
+          "options": [
+            {
+              "id": "A",
+              "text": "Paragraph A"
+            },
+            {
+              "id": "B",
+              "text": "Paragraph B"
+            },
+            {
+              "id": "C",
+              "text": "Paragraph C"
+            },
+            {
+              "id": "D",
+              "text": "Paragraph D"
+            },
+            {
+              "id": "E",
+              "text": "Paragraph E"
+            },
+            {
+              "id": "F",
+              "text": "Paragraph F"
+            },
+            {
+              "id": "G",
+              "text": "Paragraph G"
+            }
+          ],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "D"
+            ],
+            "evidenceQuote": "Beet sugar could consequently reach world markets at prices lowered by public support",
+            "rationale": "Subsidies connect policy to price competition."
+          },
+          "sourceRefIds": [
+            "CA21-R01"
+          ],
+          "transformationNotes": "New item and key authored from the rewritten source-based passage; Subsidies connect policy to price competition."
+        },
+        {
+          "id": 34,
+          "type": "matching_information",
+          "instructions": "Which paragraph of Passage 3 contains the information? Choose A–G. You may use any paragraph more than once.",
+          "prompt": "Transport infrastructure connecting a workforce and raw material with production.",
+          "options": [
+            {
+              "id": "A",
+              "text": "Paragraph A"
+            },
+            {
+              "id": "B",
+              "text": "Paragraph B"
+            },
+            {
+              "id": "C",
+              "text": "Paragraph C"
+            },
+            {
+              "id": "D",
+              "text": "Paragraph D"
+            },
+            {
+              "id": "E",
+              "text": "Paragraph E"
+            },
+            {
+              "id": "F",
+              "text": "Paragraph F"
+            },
+            {
+              "id": "G",
+              "text": "Paragraph G"
+            }
+          ],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "E"
+            ],
+            "evidenceQuote": "Cuba's railways, for example, helped move both workers and cane",
+            "rationale": "The railway example connects movement of workers and cane."
+          },
+          "sourceRefIds": [
+            "CA21-R01"
+          ],
+          "transformationNotes": "New item and key authored from the rewritten source-based passage; The railway example connects movement of workers and cane."
+        },
+        {
+          "id": 35,
+          "type": "matching_information",
+          "instructions": "Which paragraph of Passage 3 contains the information? Choose A–G. You may use any paragraph more than once.",
+          "prompt": "A reference to people among the world’s poorest earning an income from sugar.",
+          "options": [
+            {
+              "id": "A",
+              "text": "Paragraph A"
+            },
+            {
+              "id": "B",
+              "text": "Paragraph B"
+            },
+            {
+              "id": "C",
+              "text": "Paragraph C"
+            },
+            {
+              "id": "D",
+              "text": "Paragraph D"
+            },
+            {
+              "id": "E",
+              "text": "Paragraph E"
+            },
+            {
+              "id": "F",
+              "text": "Paragraph F"
+            },
+            {
+              "id": "G",
+              "text": "Paragraph G"
+            }
+          ],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "F"
+            ],
+            "evidenceQuote": "some of the world's poorest people still depend on sugar for their income",
+            "rationale": "Paragraph F explicitly identifies both the economic relationship (income) and the people affected (some of the world’s poorest); paragraph G summarises dependence without identifying this group or income."
+          },
+          "sourceRefIds": [
+            "CA21-R01"
+          ],
+          "transformationNotes": "Narrowed the information match after a fresh blind reviewer found the earlier broad dependence prompt also supported by the concluding paragraph; now requires the explicit income-and-group detail."
+        },
+        {
+          "id": 36,
+          "type": "multiple_choice",
+          "instructions": "Choose ONE correct answer, A, B, C or D, according to Passage 3.",
+          "prompt": "What function does the distinction between beet and cane serve in paragraph A?",
+          "options": [
+            {
+              "id": "A",
+              "text": "It establishes that one source makes a healthier product"
+            },
+            {
+              "id": "B",
+              "text": "It ranks the regions by the quality of their sugar"
+            },
+            {
+              "id": "C",
+              "text": "It broadens the reader’s picture of the industry"
+            },
+            {
+              "id": "D",
+              "text": "It identifies a technique developed by the reviewer"
+            }
+          ],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "C"
+            ],
+            "evidenceQuote": "resisting the assumption that the industry's history belongs only to tropical plantations",
+            "rationale": "The distinction widens the historical frame beyond a familiar image."
+          },
+          "sourceRefIds": [
+            "CA21-R01"
+          ],
+          "transformationNotes": "New item and key authored from the rewritten source-based passage; The distinction widens the historical frame beyond a familiar image."
+        },
+        {
+          "id": 37,
+          "type": "multiple_choice",
+          "instructions": "Choose ONE correct answer, A, B, C or D, according to Passage 3.",
+          "prompt": "Why does the writer describe changes in Britain’s sources of sugar?",
+          "options": [
+            {
+              "id": "A",
+              "text": "To question a straightforward story of ethical progress"
+            },
+            {
+              "id": "B",
+              "text": "To prove that British demand steadily declined"
+            },
+            {
+              "id": "C",
+              "text": "To show that domestic cultivation began before imports"
+            },
+            {
+              "id": "D",
+              "text": "To recommend one modern source over the others"
+            }
+          ],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "A"
+            ],
+            "evidenceQuote": "A change in where a product is bought does not by itself establish a corresponding change in the conditions under which it is made.",
+            "rationale": "The example challenges an easy ethical-progress interpretation."
+          },
+          "sourceRefIds": [
+            "CA21-R01"
+          ],
+          "transformationNotes": "New item and key authored from the rewritten source-based passage; The example challenges an easy ethical-progress interpretation."
+        },
+        {
+          "id": 38,
+          "type": "multiple_choice",
+          "instructions": "Choose ONE correct answer, A, B, C or D, according to Passage 3.",
+          "prompt": "What does the discussion of subsidies add to the explanation?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Evidence that growing conditions have no effect on output"
+            },
+            {
+              "id": "B",
+              "text": "Proof that all producers received equal financial help"
+            },
+            {
+              "id": "C",
+              "text": "A claim that transport replaced agricultural production"
+            },
+            {
+              "id": "D",
+              "text": "An influence on price beyond farming conditions and efficiency"
+            }
+          ],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "D"
+            ],
+            "evidenceQuote": "This complicates any explanation based only on natural conditions or the efficiency of farming.",
+            "rationale": "It introduces political assistance as an influence beyond farming efficiency."
+          },
+          "sourceRefIds": [
+            "CA21-R01"
+          ],
+          "transformationNotes": "New item and key authored from the rewritten source-based passage; It introduces political assistance as an influence beyond farming efficiency."
+        },
+        {
+          "id": 39,
+          "type": "multiple_choice",
+          "instructions": "Choose ONE correct answer, A, B, C or D, according to Passage 3.",
+          "prompt": "What conclusion does the writer draw from lower production costs?",
+          "options": [
+            {
+              "id": "A",
+              "text": "They guarantee that the product benefits everyone"
+            },
+            {
+              "id": "B",
+              "text": "They are insufficient to establish the product’s social value"
+            },
+            {
+              "id": "C",
+              "text": "They remove the need to consider livelihoods"
+            },
+            {
+              "id": "D",
+              "text": "They show that health effects have been exaggerated"
+            }
+          ],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "B"
+            ],
+            "evidenceQuote": "I reject the idea that lower production cost settles the question of social value.",
+            "rationale": "The writer separates cheaper production from an overall social judgement."
+          },
+          "sourceRefIds": [
+            "CA21-R01"
+          ],
+          "transformationNotes": "New item and key authored from the rewritten source-based passage; The writer separates cheaper production from an overall social judgement."
+        },
+        {
+          "id": 40,
+          "type": "multiple_choice",
+          "instructions": "Choose ONE correct answer, A, B, C or D, according to Passage 3.",
+          "prompt": "Which description best captures the writer’s final assessment?",
+          "options": [
+            {
+              "id": "A",
+              "text": "A useful history must reduce its subject to one cause"
+            },
+            {
+              "id": "B",
+              "text": "Geographical breadth makes every remaining question unimportant"
+            },
+            {
+              "id": "C",
+              "text": "A strong account can reveal important tensions without settling them all"
+            },
+            {
+              "id": "D",
+              "text": "Technological expansion supplies a sufficient explanation on its own"
+            }
+          ],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "C"
+            ],
+            "evidenceQuote": "a useful account can expose connections without resolving all their consequences",
+            "rationale": "The final evaluation values connected explanation while retaining unresolved consequences."
+          },
+          "sourceRefIds": [
+            "CA21-R01"
+          ],
+          "transformationNotes": "New item and key authored from the rewritten source-based passage; The final evaluation values connected explanation while retaining unresolved consequences."
+        }
+      ],
+      "sourceRefIds": [
+        "CA21-R01"
+      ],
+      "transformationNotes": "New critical discussion based on source review facts; no claim to independent reading of the full book; rewrote evaluative claims and all14 items, adding causal mechanisms and rhetorical-purpose distractors rather than reproducing source questions."
+    }
+  ],
+  "provenance": {
+    "origin": "source_based_original",
+    "sourceRefs": [
+      "CA21-R01"
+    ],
+    "territory": "Iran",
+    "rightsNote": "Arash authorised processing and ingestion of the full supplied licensed corpus on 2026-11-06, superseding the earlier selected-excerpt restriction. Authoring and review are for the Iran pilot; no additional territory authority is asserted. Source originals remain read-only and are not copied as public assets.",
+    "transformationNotes": "Replaces the held invented, official-format-only draft with newly organised prose and forty newly authored propositions derived from actual Cambridge IELTS21 Academic Test1 Reading knowledge and task demands. Factual source knowledge is preserved; wording, structure, questions and distractors are new. Source statements about research remain source-reported, not independently verified study claims. No long source passage, image or source answer key is reproduced.",
+    "sourceMappings": [
+      {
+        "targetPointer": "/passages/0",
+        "sourceRefIds": [
+          "CA21-R01"
+        ],
+        "sourceLearningPoint": "Chronological cultural biography; distinguish education, advice, constraints, choices and absent circumstances, using source Davies facts rather than invented history.",
+        "taskTransformation": "Reorganised source biography around explanations and evidence for agency; rewrote all prose and all13 items, adding new contrast/ordering/extraction questions instead of copying source notes or source keys."
+      },
+      {
+        "targetPointer": "/passages/1",
+        "sourceRefIds": [
+          "CA21-R01"
+        ],
+        "sourceLearningPoint": "Multi-expert exposition of real source-reported silence research; distinguish voluntary participation, targeted noise control, study measures and attributed interpretations.",
+        "taskTransformation": "Reorganised source exposition to start with consent, distinguish city interventions from response mechanisms, and compare research measures; newly wrote headings, researcher matches and a four-gap study summary."
+      },
+      {
+        "targetPointer": "/passages/2",
+        "sourceRefIds": [
+          "CA21-R01"
+        ],
+        "sourceLearningPoint": "Critical interpretation of the supplied review of global sugar history; connect labour, state support, technology and dependence while separating new writer evaluations from reported book content.",
+        "taskTransformation": "New critical discussion based on source review facts; no claim to independent reading of the full book; rewrote evaluative claims and all14 items, adding causal mechanisms and rhetorical-purpose distractors rather than reproducing source questions."
+      }
+    ]
+  },
+  "teacherReview": {
+    "status": "pending",
+    "notes": [
+      "Source-based rewrite requires a fresh independent blind solve and human IELTS teacher review of source fidelity, item exclusivity, lexical accessibility and pacing.",
+      "Source-reported research and history are adapted from the supplied Cambridge passage/review; the underlying studies and Bosma’s full book were not independently examined.",
+      "This original adapted form has no empirical item calibration or validated IELTS band conversion. Report raw practice marks only.",
+      "Answers, evidence, rationales and source/review metadata are teacher/server-only. Before submission, deliver only whitelisted learner fields. Server timing, pinned versions and authorization remain integration requirements."
+    ]
+  },
+  "delivery": {
+    "status": "text_ready_teacher_review",
+    "missingRequirements": []
+  },
+  "kind": "mock",
+  "examTrack": "academic"
+}

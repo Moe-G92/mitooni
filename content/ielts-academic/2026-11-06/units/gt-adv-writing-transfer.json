@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "id": "gt-adv-writing-transfer",
+  "version": 1,
+  "examTrack": "general_training",
+  "skill": "writing",
+  "stage": "transfer",
+  "pathwayIds": [
+    "gt-advanced"
+  ],
+  "objectiveIds": [
+    "gt-letter-bullet-development",
+    "gt-letter-audience-register",
+    "gt-letter-time-and-reason-language",
+    "gt-essay-two-part-response"
+  ],
+  "familyId": "cg18-t2-work-experience",
+  "title": "Preparing for a work-experience placement",
+  "instructions": "Write in English in connected paragraphs. Complete all the requested points. Task 1 requires at least 150 words. Complete the separate Task 2 essay with at least 250 words.",
+  "stimulus": {
+    "kind": "prompt",
+    "text": "Task 1\nYou will soon spend three months gaining work experience in an organisation. You have not met its manager. Write a letter to the manager. In your letter:\n• thank the manager for the opportunity\n• explain what you hope to learn during the placement\n• ask questions about the work experience so that you can prepare.\nBegin your letter: Dear Sir or Madam,\nWrite at least 150 words in connected paragraphs. You do not need to write any addresses. Aim to spend about 20 minutes. Use a formal style.\n\nTask 2\nPeople can pay others to do household tasks or provide care when they have little time or do not want to do these tasks themselves. Is this a useful way to create work for others? Should people instead carry out these responsibilities themselves?\nGive reasons for your answers and relevant examples from your own knowledge or experience. Write at least 250 words in connected paragraphs. Aim to spend about 40 minutes."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "Write your letter. Develop every part of all three bullet points and write at least 150 words.",
+      "responseType": "extended_text",
+      "options": [],
+      "wordLimit": null
+    },
+    {
+      "id": "q2",
+      "prompt": "Write a separate essay answering both questions in Task 2. Write at least 250 words.",
+      "responseType": "extended_text",
+      "options": [],
+      "wordLimit": null
+    }
+  ],
+  "teachingAnchors": [],
+  "assessment": {
+    "kind": "qualitative",
+    "criteria": [
+      {
+        "id": "task-achievement",
+        "label": "Task achievement — Task 1",
+        "description": "For Task 1 only: clear letter purpose, appropriate formal relationship and register, and sufficiently developed, relevant coverage of every component in the three bullet points. Do not replace the requested function with a related but different one; at least 150 words."
+      },
+      {
+        "id": "task-response",
+        "label": "Task response — Task 2",
+        "description": "For Task 2 only: address both stated questions with clear, developed answers and relevant support. Evaluate the employment benefit of paying others and whether people should do the responsibilities themselves; neither answer may be assumed from the other. Write at least 250 words."
+      },
+      {
+        "id": "coherence-cohesion",
+        "label": "Coherence and cohesion",
+        "description": "Assess logical progression, purposeful paragraphs and clear referencing/linking within each response; avoid mechanical connector counts."
+      },
+      {
+        "id": "lexical-resource",
+        "label": "Lexical resource",
+        "description": "Assess accurate, appropriate vocabulary and collocation, flexibility of expression and the effect of spelling or word-formation errors in each response."
+      },
+      {
+        "id": "grammatical-range-accuracy",
+        "label": "Grammatical range and accuracy",
+        "description": "Assess control of simple and complex structures, sentence boundaries and punctuation, with attention to errors that obscure meaning in each response."
+      }
+    ],
+    "answerKey": [],
+    "feedbackGuidance": "After submission only: Private annotated letter snippets, after submission only: “Thank you for offering me the opportunity to gain experience with your organisation.” directly acknowledges the opportunity. “I hope to learn how the team turns a client’s initial request into a completed project.” gives a concrete learning goal. “Could you let me know which team I will join and whether I should complete any preparation beforehand?” asks more than one relevant practical question. These are optional details, not a fixed answer. Private essay snippet: “Paying for a task can create work for someone with suitable skills, but that benefit does not decide whether every household should outsource it.” separates the employment question from the responsibility question. Map all three bullet functions to actual learner spans and identify any missing component. Separate missing content from vague development or inappropriate register. Explain one useful paragraphing choice, one lexical choice and one grammar issue with evidence; ask the learner to revise an underdeveloped point and an unclear sentence, then explain the revisions. Do not require these exemplar details, memorised text, real contact details or a fixed greeting/closing formula beyond the task. No band, score, calibrated estimate or official examiner claim. Review q1 and q2 separately: Task achievement for the letter, Task response for the essay; Coherence and cohesion, Lexical resource and Grammatical range and accuracy apply separately to each. The essay must develop answers to both stated questions, with reasons and relevant examples. Do not convert the two practice responses into a combined Writing score."
+  },
+  "delivery": {
+    "kind": "text",
+    "assetId": null
+  },
+  "locale": {
+    "instructionsFa": "به انگلیسی و در بندهای پیوسته بنویسید. همهٔ موارد نامه را پاسخ دهید و دست‌کم ۱۵۰ واژه بنویسید. مقالهٔ جداگانهٔ بخش دوم را با دست‌کم ۲۵۰ واژه کامل کنید.",
+    "teachingAnchorsFa": [],
+    "feedbackGuidanceFa": "پس از ثبت پاسخ، برای هر جزء خواسته‌شده یک شاهد از نوشته بیابید. نبود محتوا، توضیح ناکافی و لحن نامناسب را جدا بررسی کنید. یک دلیل را به پیامد مرتبط کنید و یک عبارت زمانی یا جمله را اصلاح کنید. بازخورد، نمره یا برآورد معتبر آیلتس نیست. نامه و مقاله جدا ارزیابی شوند؛ مقاله باید به هر دو سؤال پاسخ دهد."
+  },
+  "provenance": {
+    "origin": "source_based_original",
+    "sourceRefs": [
+      "CG18-W02",
+      "MSF-W01",
+      "CG19-W02"
+    ],
+    "territory": "Iran",
+    "rightsNote": "Source-based Mitooni reauthoring from user-supplied licensed materials for the Iranian audience; selected source inspection authorized. No source scans, audio or complete original exercises included. Human teacher review remains pending.",
+    "transformationNotes": "CG18GT Test2 physical PDF56/printed54: an upcoming three-month work-experience placement; thank the manager, explain desired learning and ask about the placement. Semantically distinct source family cg18-t2-work-experience. This replaces the earlier repeated food/work-study adaptation; changed names alone are not treated as freshness. Retained actual situation, all three source task functions and source chronology; paraphrased the task and wrote new private guidance. The separate essay remains grounded in CG19 Test2 PDF53 outsourced-tasks employment/responsibility questions. Exposure to this source family, including the original licensed task, must disable an unseen-transfer claim.",
+    "objectiveMappings": [
+      {
+        "objectiveId": "gt-letter-bullet-development",
+        "sourceRefIds": [
+          "CG18-W02"
+        ],
+        "sourceLearningPoint": "CG18GT Test2 physical PDF56/printed54: an upcoming three-month work-experience placement; thank the manager, explain desired learning and ask about the placement. The three requested rhetorical functions differ and each needs development.",
+        "unitTeachingConnection": "Develop the actual three source-derived bullet functions in a connected letter.",
+        "taskTransformation": "Rephrased the actual source situation and retained all three core task demands; added original private annotated snippets with optional plausible detail."
+      },
+      {
+        "objectiveId": "gt-letter-audience-register",
+        "sourceRefIds": [
+          "CG18-W02"
+        ],
+        "sourceLearningPoint": "CG18GT Test2 physical PDF56/printed54: an upcoming three-month work-experience placement; thank the manager, explain desired learning and ask about the placement. The original task’s recipient and purpose define register; the adapted relationship is made explicit.",
+        "unitTeachingConnection": "Match greeting, request/information and closing to the explicitly stated relationship.",
+        "taskTransformation": "Kept the source scenario while specifying the intended personal, semi-formal or formal relationship; no name-only change is claimed as a new source family."
+      },
+      {
+        "objectiveId": "gt-letter-time-and-reason-language",
+        "sourceRefIds": [
+          "CG18-W02",
+          "MSF-W01"
+        ],
+        "sourceLearningPoint": "MSF PDF15–16 supports controlled present-simple/frequency and sequenced description followed by correction. CG18GT Test2 physical PDF56/printed54: an upcoming three-month work-experience placement; thank the manager, explain desired learning and ask about the placement. supplies the actual letter language needs.",
+        "unitTeachingConnection": "Use accurate time, reason, descriptive or experience language as the task requires, then revise an unclear sentence.",
+        "taskTransformation": "Applied controlled-to-connected language practice to the actual source letter; no Academic diagram overview is required."
+      },
+      {
+        "objectiveId": "gt-essay-two-part-response",
+        "sourceRefIds": [
+          "CG19-W02"
+        ],
+        "sourceLearningPoint": "CG19 Test2 PDF53 asks about creating work by paying others for unwanted/time-consuming tasks and whether people should do the tasks themselves.",
+        "unitTeachingConnection": "Plan and answer both distinct questions with developed reasoning and relevant examples; assess Task response separately from the letter’s Task achievement.",
+        "taskTransformation": "Paraphrased the actual source situation and two-part demand; added a new private annotated reasoning snippet and separate qualitative criteria, without copying an essay or claiming a band."
+      }
+    ]
+  },
+  "teacherReview": {
+    "status": "pending",
+    "notes": []
+  }
+}

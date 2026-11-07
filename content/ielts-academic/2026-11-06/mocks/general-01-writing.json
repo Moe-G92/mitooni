@@ -1,0 +1,226 @@
+{
+  "schemaVersion": 1,
+  "kind": "mock",
+  "id": "general-01-writing",
+  "version": 2,
+  "examTrack": "general_training",
+  "skill": "writing",
+  "durationMinutes": 60,
+  "instructions": "Complete both tasks in 60 minutes. Spend about 20 minutes on Task 1 and 40 minutes on Task 2. Task 2 carries twice as much weight as Task 1. Write connected text, not notes or bullet points. Work independently without a tutor or exemplar. This is an original practice test, not an official IELTS test.",
+  "tasks": [
+    {
+      "id": "task-1",
+      "title": "Writing Task 1",
+      "taskType": "letter",
+      "suggestedMinutes": 20,
+      "minimumWords": 150,
+      "weight": 1,
+      "register": "semi_formal",
+      "prompt": "You have been offered a place on a part-time course related to your work. Attending it would require a temporary change to your weekly working schedule. Write a letter to your manager, Ms Lewis. In your letter:",
+      "bullets": [
+        "Explain what you want to study and why it matters to your work.",
+        "Describe the temporary change to your working schedule that you are requesting.",
+        "Explain how your responsibilities would be covered and how the learning could help your team."
+      ],
+      "instructions": "Write at least 150 words in connected paragraphs. You do not need to write any addresses. Begin your letter: Dear Ms Lewis,"
+    },
+    {
+      "id": "task-2",
+      "title": "Writing Task 2",
+      "taskType": "causes_evaluation_essay",
+      "suggestedMinutes": 40,
+      "minimumWords": 250,
+      "weight": 2,
+      "register": "neutral_discursive",
+      "prompt": "At popular visitor attractions, some people spend most of their time arranging photographs of themselves and give little attention to the place they have come to see. Why might visitors behave this way? Do you think this is a positive or a negative development?",
+      "instructions": "Write at least 250 words in connected paragraphs. Give reasons for your answer and include relevant examples from your own knowledge or experience."
+    }
+  ],
+  "teacherOnly": {
+    "access": "teacher_only",
+    "assessmentPolicy": "Qualitative formative guidance only. This mock has not been calibrated. Do not assign a numeric band from these notes or claim official examiner endorsement. Do not expose exemplars or answer guidance during a timed attempt.",
+    "criteria": [
+      {
+        "id": "task_achievement",
+        "taskId": "task-1",
+        "name": "Task achievement",
+        "focus": "Clear purpose; developed study, schedule, continuity and benefit demands; respectful and consistent register for a known manager."
+      },
+      {
+        "id": "task_response",
+        "taskId": "task-2",
+        "name": "Task response",
+        "focus": "Plausible causes explained; a clear positive/negative evaluation developed and maintained; relevant supporting examples or reasoning."
+      },
+      {
+        "id": "coherence_cohesion",
+        "taskId": "both",
+        "name": "Coherence and cohesion",
+        "focus": "Logical progression, purposeful paragraphs, clear reference and appropriate connections."
+      },
+      {
+        "id": "lexical_resource",
+        "taskId": "both",
+        "name": "Lexical resource",
+        "focus": "Relevant vocabulary, appropriate register, precise meaning, accurate word choice, spelling and word formation."
+      },
+      {
+        "id": "grammatical_range_accuracy",
+        "taskId": "both",
+        "name": "Grammatical range and accuracy",
+        "focus": "A suitable range of sentence structures with control of grammar and punctuation."
+      }
+    ],
+    "taskGuidance": [
+      {
+        "taskId": "task-1",
+        "taskDemands": [
+          "Explain the proposed study and its relevance to the current role.",
+          "Make the temporary schedule request concrete and internally consistent.",
+          "Explain realistic coverage of duties and an expected benefit to the team.",
+          "Use respectful semi-formal language for a known manager; do not assume consent from colleagues."
+        ],
+        "exemplar": {
+          "text": "Dear Ms Lewis,\n\nI am writing to ask whether I could make a temporary change to my working schedule so that I can attend a part-time course in stock management. The course covers forecasting and organising records, both of which are relevant to the purchasing work I now do for our team.\n\nThe classes take place on Wednesday afternoons for one term. I would like to finish at lunchtime on those days and work the remaining hours on Monday and Tuesday mornings. This would allow me to attend without reducing my total weekly hours. I would return to my usual timetable when the course ends.\n\nBefore each Wednesday, I could prepare the routine order checks and leave a clear list of any delivery queries for my colleague. I would discuss this arrangement with her first rather than assume she can take on extra work. If the change is approved, I would also review it with you after the first month.\n\nI believe the course would help me identify likely shortages earlier and make our records easier for the whole team to use. Could we meet to discuss whether this plan would work for the department?\n\nYours sincerely,\nSam Taylor",
+          "annotations": [
+            {
+              "quote": "a temporary change to my working schedule",
+              "comment": "The purpose is immediately clear."
+            },
+            {
+              "quote": "without reducing my total weekly hours",
+              "comment": "The requested arrangement explains how the schedule would change."
+            },
+            {
+              "quote": "discuss this arrangement with her first",
+              "comment": "Coverage is proposed realistically, with the colleague’s agreement still necessary."
+            },
+            {
+              "quote": "identify likely shortages earlier",
+              "comment": "A specific workplace benefit develops the final bullet."
+            }
+          ]
+        },
+        "errorsAndRevision": [
+          {
+            "error": "I will be absent whenever the course needs me.",
+            "issue": "The schedule request is vague and assumes approval.",
+            "revision": "Specify the days, hours, duration and proposed arrangement, using a courteous request."
+          },
+          {
+            "error": "My colleague will do all my work.",
+            "issue": "Coverage is asserted without a feasible plan or agreement.",
+            "revision": "Identify preparation you can do and explain how remaining work would be agreed."
+          },
+          {
+            "error": "The course help our team.",
+            "issue": "Subject–verb agreement is inaccurate.",
+            "revision": "The course would help our team."
+          }
+        ],
+        "revisionInstructions": [
+          "Check the study, schedule and coverage/benefit demands separately.",
+          "Make hours and duration consistent throughout.",
+          "Use an appropriate greeting and closing for a known manager."
+        ]
+      },
+      {
+        "taskId": "task-2",
+        "taskDemands": [
+          "Explain plausible causes of visitors prioritising self-photographs.",
+          "Give and maintain an evaluation of the development.",
+          "Distinguish ordinary memory-making from photography displacing attention to the site.",
+          "Develop relevant reasons with mechanisms or examples; do not invent survey findings."
+        ],
+        "exemplar": {
+          "text": "Visitors sometimes spend so long preparing photographs of themselves that the attraction becomes little more than a background. This behaviour may be encouraged by the wish to share an impressive record of a trip and by habits developed through social media. Although photographs can preserve enjoyable memories, I consider the trend negative when making them displaces the experience of the place itself.\n\nOne reason is that a photograph offers visible evidence of having been somewhere recognisable. People who cannot accompany the visitor can immediately identify a famous building or landscape. Sharing such an image can be a way of including friends in a journey. However, if the photograph becomes the main purpose of the visit, the traveller may concentrate on finding the expected angle rather than noticing anything unfamiliar. The desire for a recognisable image can therefore narrow what receives attention.\n\nA second possible reason is the search for approval from an online audience. A visitor can repeatedly adjust a pose and check the result, hoping to create an image that others will admire. The next attempt may then seem more urgent than reading an explanation or looking closely at the surroundings. This is a plausible motivation, rather than an explanation that applies to every person holding a camera.\n\nThere are benefits to taking personal photographs. Looking at them later can recall a shared occasion, and choosing a view carefully can encourage observation. The problem lies in the balance. Someone who pauses for a photograph and then explores the site has not necessarily lost anything valuable. Someone who leaves knowing only how the background appeared on a screen has missed an opportunity to understand it.\n\nOverall, recording a visit is worthwhile, but replacing the visit with the production of an image is a poorer experience. Photographs should support attention to a place rather than consume nearly all of it.",
+          "annotations": [
+            {
+              "quote": "the attraction becomes little more than a background",
+              "comment": "Paraphrases the particular behaviour rather than discussing all tourism."
+            },
+            {
+              "quote": "Sharing such an image can be a way of including friends",
+              "comment": "A cause is developed through an explanation of its social function."
+            },
+            {
+              "quote": "rather than an explanation that applies to every person",
+              "comment": "Qualifies an inference instead of making an unsupported universal claim."
+            },
+            {
+              "quote": "The problem lies in the balance",
+              "comment": "Evaluates the specific trend while acknowledging a relevant benefit."
+            }
+          ]
+        },
+        "errorsAndRevision": [
+          {
+            "error": "People take photographs because they like photographs.",
+            "issue": "Repeats the behaviour instead of explaining a cause.",
+            "revision": "Explain a purpose, such as sharing a recognisable record, then show how it changes attention."
+          },
+          {
+            "error": "However, people seek online approval because it is another cause.",
+            "issue": "The connector signals contrast where the sentence adds a second cause.",
+            "revision": "Use an additive connection only if necessary, then explain the causal link."
+          },
+          {
+            "error": "All visitors ignore everything they see.",
+            "issue": "An unsupported universal assertion overstates the prompt.",
+            "revision": "Qualify the claim and focus on visitors who spend most of the visit arranging images."
+          }
+        ],
+        "revisionInstructions": [
+          "Locate a developed cause and a supported overall evaluation.",
+          "Give each paragraph a clear main idea with supporting explanation or an example.",
+          "Check whether each connector expresses addition, contrast, cause or consequence accurately; remove unnecessary ones.",
+          "Keep the conclusion consistent with the position in the introduction."
+        ]
+      }
+    ],
+    "reviewChecklist": [
+      "Teacher checks prompt clarity, task coverage, register and the accuracy of all annotations.",
+      "Teacher may accept a different supported opinion and different plausible details; exemplars are illustrations, not model answers to memorise.",
+      "Apply the four criteria to each response, using Task achievement for Task 1 and Task response for Task 2. Task 2 carries twice Task 1’s weight; no overall practice band is generated here."
+    ]
+  },
+  "provenance": {
+    "origin": "source_based_original",
+    "sourceRefs": [
+      "CG19-W01",
+      "MS3-W02"
+    ],
+    "territory": "Iran",
+    "rightsNote": "Arash authorized selected licensed excerpts on 2026-11-06 for authoring/review and selected model processing; no additional territory authority.",
+    "transformationNotes": "Both tasks and all exemplars/annotations substantially rewritten after direct source inspection. Cambridge supplies semantic work-study and photography-tourism foundations. Mindset supplies paragraph-development and discourse-function teaching; its health subject matter is not claimed as the semantic source.",
+    "sourceMappings": [
+      {
+        "targetPointer": "/tasks/0",
+        "sourceRefIds": [
+          "CG19-W01"
+        ],
+        "sourceLearningPoint": "An employee explains a study-related scheduling need, specifies hours and connects learning with employer benefit.",
+        "taskTransformation": "New temporary redistribution rather than reduced weekly hours; explicit continuity planning, known-manager register, original stock-management exemplar and error revisions."
+      },
+      {
+        "targetPointer": "/tasks/1",
+        "sourceRefIds": [
+          "CG19-W01",
+          "MS3-W02"
+        ],
+        "sourceLearningPoint": "Photography-focused attraction visits invite causal explanation and evaluation; effective paragraphs distinguish main claims, supporting mechanisms and properly functioning discourse markers.",
+        "taskTransformation": "Reworded cause/evaluation task focuses on attention displaced by image-making. Original qualified argument and annotated errors transfer topic/support and connector-revision methods to the licensed tourism scenario."
+      }
+    ]
+  },
+  "teacherReview": {
+    "status": "pending",
+    "notes": [
+      "IELTS teacher must review before use; no calibration or band estimate is established."
+    ]
+  },
+  "delivery": {
+    "status": "text_ready_teacher_review",
+    "missingRequirements": []
+  }
+}

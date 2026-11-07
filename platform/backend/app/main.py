@@ -43,6 +43,10 @@ def create_app(
     study_repository=None,
     tutor_runner=None,
     worker_enabled=False,
+    content_review_repository=None,
+    speaking_review_repository=None,
+    speaking_runner=None,
+    speaking_worker_enabled=False,
 ) -> FastAPI:
     if verifier is not None and (config is None or config.environment != "test"):
         raise ValueError(
@@ -78,6 +82,20 @@ def create_app(
             raise ValueError("Synthetic runner is test-only")
     if worker_enabled and (study_repository is None or tutor_runner is None):
         raise ValueError("Explicit repository and runner required for worker")
+    if content_review_repository is not None:
+        if config is None or account_repository is None or content_review_repository.config != account_repository.config:
+            raise ValueError("Review and account must share explicit receiving authority")
+    if speaking_review_repository is not None:
+        if config is None or account_repository is None or content_review_repository is None or speaking_review_repository.config != account_repository.config:
+            raise ValueError("Speaking and review must share explicit receiving authority")
+        if speaking_runner is not None and speaking_runner.kind == "synthetic" and config.environment != "test":
+            raise ValueError("Synthetic Speaking runner is test-only")
+        if speaking_review_repository.provider_enabled != (speaking_runner is not None and speaking_worker_enabled):
+            raise ValueError("Speaking availability must match explicit worker and runner")
+    if speaking_worker_enabled and (speaking_review_repository is None or speaking_runner is None):
+        raise ValueError("Explicit Speaking repository and runner required")
+    if content_review_repository is not None:
+        content_review_repository.speaking_available = bool(speaking_review_repository is not None and speaking_review_repository.provider_enabled and speaking_runner is not None and speaking_worker_enabled)
     client = TargetSupabaseClient(config) if config is not None else None
 
     @asynccontextmanager
@@ -87,9 +105,16 @@ def create_app(
 
         worker = TutorWorker(study_repository, tutor_runner) if worker_enabled else None
         task = asyncio.create_task(worker.run()) if worker else None
+        from app.workers.speaking_review import SpeakingReviewWorker
+        speaking_worker = SpeakingReviewWorker(speaking_review_repository, speaking_runner) if speaking_worker_enabled else None
+        speaking_task = asyncio.create_task(speaking_worker.run()) if speaking_worker else None
         try:
             yield
         finally:
+            if speaking_worker:
+                speaking_worker.stop.set()
+                speaking_task.cancel()
+                await asyncio.gather(speaking_task, return_exceptions=True)
             if worker:
                 worker.stop.set()
                 task.cancel()
@@ -112,6 +137,8 @@ def create_app(
 
     application.state.account_repository = account_repository
     application.state.study_repository = study_repository
+    application.state.content_review_repository = content_review_repository
+    application.state.speaking_review_repository = speaking_review_repository
     application.state.tutor_runner = tutor_runner
 
     def account_path(request):
@@ -207,10 +234,12 @@ def create_app(
                 request, 400, "invalid_request", "Invalid request authority"
             )
             response.headers["Cache-Control"] = "private, no-store"
+            response.headers["X-Content-Type-Options"] = "nosniff"
         else:
             response = await call_next(request)
         if private_api_path(request.scope):
             response.headers["Cache-Control"] = "private, no-store"
+            response.headers["X-Content-Type-Options"] = "nosniff"
             response.headers["Vary"] = "Authorization"
         return response
 
@@ -230,6 +259,15 @@ def create_app(
         from app.routers.study import router as study_router
 
         application.include_router(study_router)
+    if content_review_repository is not None:
+        from app.routers.content_review import router as review_router
+        application.include_router(review_router)
+    if speaking_review_repository is not None:
+        from app.routers.speaking_review import router as speaking_router
+        application.include_router(speaking_router)
+    from app.http_security import ReviewBodyLimitMiddleware, PrivateResponseBoundaryMiddleware
+    application.add_middleware(ReviewBodyLimitMiddleware)
+    application.add_middleware(PrivateResponseBoundaryMiddleware)
     return application
 
 

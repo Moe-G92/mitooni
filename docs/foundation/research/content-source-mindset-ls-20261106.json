@@ -1,0 +1,424 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-11-06",
+  "status": "Selected-source checkpoint; authoring/teacher validation still required",
+  "scope": "Internal bounded review of supplied Mindset Listening/Speaking teaching pages. Learning content must derive supplied semantic content, not only pedagogical methods. No source passages/exercises copied into this index.",
+  "preflight": {
+    "professional_addition": "Separate language prerequisites from exam technique; inspect teaching progression, actual learner output and feedback before mapping levels. Record audio and sampling limits.",
+    "raw_material": "Four supplied local publisher PDFs, copyright/frontmatter pages and selected Unit1 teaching pages; not summaries or external reproductions.",
+    "methods": "Local pdftotext -layout selected page ranges; SHA256 original bytes and exact extraction output; pdftoppm representative renders to verify printed numbering and task layout.",
+    "independent_evidence": "Another reviewer can hash each source, reproduce bounded extraction hashes, visually confirm numbering and trace each lesson objective to the anchored teaching pages."
+  },
+  "authority_boundary": {
+    "basis": "Parent reports user explicitly authorized selected licensed-source excerpts for AI processing; commercial/distribution scope remains Iran per project instructions.",
+    "constraints": [
+      "Source directories read only.",
+      "No bulk uploads, source Git copies or public source assets.",
+      "No authority inferred for worldwide distribution.",
+      "No learner data used."
+    ]
+  },
+  "hash_method": "SHA256 bytes; excerpt hash is exact stdout from pdftotext -f START -l END -layout SOURCE - (including formfeeds and terminal newline). Text not retained in artifact.",
+  "sources": [
+    {
+      "id": "mindset-foundation",
+      "path": "/Users/arashshahrokhi/Projects/mitooni/Mindset for IELTs Books/Mindset-For-IELTS-Level_Foundation [www.languagecentre.ir].pdf",
+      "sha256": "b7fc05cf7eeb8bbf42563e3b1c36d2ed82778120f05020f266d65caf312d12e5",
+      "edition": 2017,
+      "isbn": "9781316636688",
+      "frontmatter_pdf_pages_read": [
+        3,
+        7,
+        9
+      ],
+      "frontmatter_excerpt_hashes": {
+        "3": "efd41b445ce0b49cb6710cfb4e427d5a0c689b3157b2deabac643014e65c0a84",
+        "7": "004bc0c99e78d9c48067f78edef891d629662ec1589d2db1bdee7a3316df0678",
+        "9": "bae0448c42a4ed18c49f9aa1874b3cde3a89f9bb818f509effbf6a1c76b052df"
+      },
+      "printed_offset": 1,
+      "visual_check": {
+        "pdf_page": 12,
+        "visible_printed_page": 11
+      },
+      "publisher_target": null,
+      "foundation_current_level": "A2 (PDF9)"
+    },
+    {
+      "id": "mindset-1",
+      "path": "/Users/arashshahrokhi/Projects/mitooni/Mindset for IELTs Books/Mindset-For-IELTS-Level_1 [www.languagecentre.ir].pdf",
+      "sha256": "0ab70afb6fa6ef387edf57459e180054052a4e468e36bc6a56ebc3a012b4eb3a",
+      "edition": 2017,
+      "isbn": "9781316640050",
+      "frontmatter_pdf_pages_read": [
+        3,
+        7
+      ],
+      "frontmatter_excerpt_hashes": {
+        "3": "1079588019c4729a8967c621d8b1b08cbe0e0dbda91cac2362e30613bdbb1482",
+        "7": "63d22c07befeec0bb76231f612793de9c252d3ecf21af7c03a8268f6d033038d"
+      },
+      "printed_offset": 1,
+      "visual_check": {
+        "pdf_page": 18,
+        "visible_printed_page": 17
+      },
+      "publisher_target": 5.5,
+      "foundation_current_level": null
+    },
+    {
+      "id": "mindset-2",
+      "path": "/Users/arashshahrokhi/Projects/mitooni/Mindset for IELTs Books/Mindset-For-IELTS-Level_2 [www.languagecentre.ir].pdf",
+      "sha256": "393720e617f31940e5da07e94b7ce5f44e77120f7e2d9d75c67b15c3c7e041fc",
+      "edition": 2017,
+      "isbn": "9781316640159",
+      "frontmatter_pdf_pages_read": [
+        3,
+        7
+      ],
+      "frontmatter_excerpt_hashes": {
+        "3": "24d370a4f081cb3cb66d51f6a66885c2bcffe928a066111078f54b76c41210a3",
+        "7": "0af9fdb7e2c233000999f10f56dabefbef473f5fc764c90a472434ee3b3ff994"
+      },
+      "printed_offset": 1,
+      "visual_check": {
+        "pdf_page": 26,
+        "visible_printed_page": 25
+      },
+      "publisher_target": 6.5,
+      "foundation_current_level": null
+    },
+    {
+      "id": "mindset-3",
+      "path": "/Users/arashshahrokhi/Projects/mitooni/Mindset for IELTs Books/Mindset-For-IELTS-Level_3 [www.languagecentre.ir].pdf",
+      "sha256": "529e37b5094aeb010cffaeee8ca05b743e672d26549c17585e707d58432e4f53",
+      "edition": 2018,
+      "isbn": "9781316649268",
+      "frontmatter_pdf_pages_read": [
+        3,
+        8
+      ],
+      "frontmatter_excerpt_hashes": {
+        "3": "abab1c52a745bdd935cb454ec0cdd2699cc2a788c3a95f45d7710300be48d047",
+        "8": "ff734fdf3bfbb5bd0c2b1c3b27f5df989a99b71d2442ca30736829618e5f36ce"
+      },
+      "printed_offset": 2,
+      "visual_check": {
+        "pdf_page": 29,
+        "visible_printed_page": 27
+      },
+      "publisher_target": 7.5,
+      "foundation_current_level": null
+    }
+  ],
+  "anchors": [
+    {
+      "id": "MSF-L01",
+      "source_level": "Foundation",
+      "pdf_pages_inclusive": [
+        11,
+        17
+      ],
+      "printed_pages_inclusive": [
+        10,
+        16
+      ],
+      "extraction_sha256": "8e12842806f3fd1fc4ff501a5b56bb49ac230f09259aab6f4a7dec188aea3a27",
+      "teaching_progression": [
+        "Picture/word activation and personal comparison; contextual collocation choice.",
+        "Read familiar routines; notice present simple and frequency; reconstruct another routine orally.",
+        "Paraphrase household activities; preview exchange context; listen for gist then person/activity matching.",
+        "Plan with short notes; speak for 1–2 minutes; peer checks on intelligibility, hesitation, relevance and length; exchange feedback."
+      ],
+      "actual_read": "Selected range text read; representative visual check recorded by source, not every page.",
+      "audio_status": "Audio not supplied/listened in this review; printed task evidence only.",
+      "learningObjectives": [
+        "Routine activity collocations, time expressions, present simple and third-person agreement, frequency adverbs, sequencing.",
+        "Use known daily-life language to understand an exchange conversation and produce a comprehensible sustained account."
+      ],
+      "sourceContentSummary": "Daily routine activities and times, household activity paraphrases, and an exchange-trip conversation linking host-family members to preferred activities; distinguish activity mentions from correct person/activity matches.",
+      "transformationBoundaries": {
+        "required": "Derive actual learning content, factual/semantic relationships, scenarios and teaching examples from this selected range as well as its pedagogy. Preserve source ID and page range per adapted lesson.",
+        "permitted": "Paraphrase, simplify, sequence and create new questions grounded in the selected semantic material. Teacher must verify intended answer relationships against source before publishing.",
+        "excluded": "Unrelated invented scenario with only method citation; unsupported factual/answer claims; verbatim source passage/exercise copy in this index; claiming a full exam or calibrated band from this sample."
+      }
+    },
+    {
+      "id": "MSF-S01",
+      "source_level": "Foundation",
+      "pdf_pages_inclusive": [
+        11,
+        17
+      ],
+      "printed_pages_inclusive": [
+        10,
+        16
+      ],
+      "extraction_sha256": "8e12842806f3fd1fc4ff501a5b56bb49ac230f09259aab6f4a7dec188aea3a27",
+      "teaching_progression": [
+        "Picture/word activation and personal comparison; contextual collocation choice.",
+        "Read familiar routines; notice present simple and frequency; reconstruct another routine orally.",
+        "Paraphrase household activities; preview exchange context; listen for gist then person/activity matching.",
+        "Plan with short notes; speak for 1–2 minutes; peer checks on intelligibility, hesitation, relevance and length; exchange feedback."
+      ],
+      "actual_read": "Selected range text read; representative visual check recorded by source, not every page.",
+      "audio_status": "Audio not supplied/listened in this review; printed task evidence only.",
+      "learningObjectives": [
+        "Routine activity collocations, time expressions, present simple and third-person agreement, frequency adverbs, sequencing.",
+        "Use known daily-life language to understand an exchange conversation and produce a comprehensible sustained account."
+      ],
+      "sourceContentSummary": "International students describe their daily routines, college travel, family activities and free time. Learner uses routine verbs, frequency and sequencing, then plans and gives a sustained account of an average day with who/where/enjoyment and reason.",
+      "transformationBoundaries": {
+        "required": "Derive actual learning content, factual/semantic relationships, scenarios and teaching examples from this selected range as well as its pedagogy. Preserve source ID and page range per adapted lesson.",
+        "permitted": "Paraphrase, simplify, sequence and create new questions grounded in the selected semantic material. Teacher must verify intended answer relationships against source before publishing.",
+        "excluded": "Unrelated invented scenario with only method citation; unsupported factual/answer claims; verbatim source passage/exercise copy in this index; claiming a full exam or calibrated band from this sample."
+      }
+    },
+    {
+      "id": "MS1-L01",
+      "source_level": "1",
+      "pdf_pages_inclusive": [
+        17,
+        19
+      ],
+      "printed_pages_inclusive": [
+        16,
+        18
+      ],
+      "extraction_sha256": "33110c7707fbb467a5182b66d3a1126dcc6de9dfd6c3105b233bb4d78c327737",
+      "teaching_progression": [
+        "Distinguish context and speakers; replay for roles.",
+        "Contrast similar sounding numbers, dates and prices; notice changed information.",
+        "Match equivalent expressions, predict question topic; apply to an ordered multiple-choice set."
+      ],
+      "actual_read": "Selected range text read; representative visual check recorded by source, not every page.",
+      "audio_status": "Audio not supplied/listened in this review; printed task evidence only.",
+      "learningObjectives": [
+        "Identify everyday conversational setting and who provides information.",
+        "Discriminate numbers and corrections; interpret synonyms before choosing an answer."
+      ],
+      "sourceContentSummary": "Everyday celebration restaurant booking and jewelry purchase; identify manager/customer or assistant/customer, numbers for dates/headcounts and costs, a corrected date, changing sale prices and wrapping cost. Later conversation concerns an event, relationship, symbolic gifts, colours and food.",
+      "transformationBoundaries": {
+        "required": "Derive actual learning content, factual/semantic relationships, scenarios and teaching examples from this selected range as well as its pedagogy. Preserve source ID and page range per adapted lesson.",
+        "permitted": "Paraphrase, simplify, sequence and create new questions grounded in the selected semantic material. Teacher must verify intended answer relationships against source before publishing.",
+        "excluded": "Unrelated invented scenario with only method citation; unsupported factual/answer claims; verbatim source passage/exercise copy in this index; claiming a full exam or calibrated band from this sample."
+      }
+    },
+    {
+      "id": "MS1-S01",
+      "source_level": "1",
+      "pdf_pages_inclusive": [
+        20,
+        24
+      ],
+      "printed_pages_inclusive": [
+        19,
+        23
+      ],
+      "extraction_sha256": "b32b2b2ed62947c31e384d951160f83527a09377a5cb3e201515c12d004dca58",
+      "teaching_progression": [
+        "Short familiar-topic speaking baseline.",
+        "Notice collocations in a model, listen for frequency information, personalize.",
+        "Identify likes/preferences/frequency/similarity intent; compare relevant, short and off-topic models.",
+        "Join own ideas with conjunctions; discriminate and repeat third-person endings.",
+        "Answer familiar questions, peer-note useful vocabulary, repeat speaking."
+      ],
+      "actual_read": "Selected range text read; representative visual check recorded by source, not every page.",
+      "audio_status": "Audio not supplied/listened in this review; printed task evidence only.",
+      "learningObjectives": [
+        "Develop family vocabulary/collocations and frequency language.",
+        "Answer the actual personal question, extend with reason/detail/contrast and pronounce third-person endings."
+      ],
+      "sourceContentSummary": "Family size and closeness, an older brother and parents, shared cooking/eating, frequency of outings and park activities, future family hopes, similarities/preferences and reasons. Third-person habitual actions ground pronunciation practice.",
+      "transformationBoundaries": {
+        "required": "Derive actual learning content, factual/semantic relationships, scenarios and teaching examples from this selected range as well as its pedagogy. Preserve source ID and page range per adapted lesson.",
+        "permitted": "Paraphrase, simplify, sequence and create new questions grounded in the selected semantic material. Teacher must verify intended answer relationships against source before publishing.",
+        "excluded": "Unrelated invented scenario with only method citation; unsupported factual/answer claims; verbatim source passage/exercise copy in this index; claiming a full exam or calibrated band from this sample."
+      }
+    },
+    {
+      "id": "MS2-L01",
+      "source_level": "2",
+      "pdf_pages_inclusive": [
+        22,
+        24
+      ],
+      "printed_pages_inclusive": [
+        21,
+        23
+      ],
+      "extraction_sha256": "da05267304817104fa4c83246c675b36d98a13302547e7fec781b98ca476ac47",
+      "teaching_progression": [
+        "Match spoken property descriptions to pictures; identify evidence words.",
+        "Predict gap types then complete bounded notes; practise numbers and dimensions.",
+        "Consider why alternatives mislead; match meaning/paraphrase rather than repeated words; apply to multiple choice."
+      ],
+      "actual_read": "Selected range text read; representative visual check recorded by source, not every page.",
+      "audio_status": "Audio not supplied/listened in this review; printed task evidence only.",
+      "learningObjectives": [
+        "Predict information category before note completion.",
+        "Decode complex prices/measurements and distinguish a true detail from the reason requested."
+      ],
+      "sourceContentSummary": "Estate agent describes three properties; client notes address, bedrooms/lounges, garden access and fitted kitchen, appointment and agent contact. Follow-up concerns price, room/garden measurements, current home, offer amount, selling/bank timing and family moving priorities.",
+      "transformationBoundaries": {
+        "required": "Derive actual learning content, factual/semantic relationships, scenarios and teaching examples from this selected range as well as its pedagogy. Preserve source ID and page range per adapted lesson.",
+        "permitted": "Paraphrase, simplify, sequence and create new questions grounded in the selected semantic material. Teacher must verify intended answer relationships against source before publishing.",
+        "excluded": "Unrelated invented scenario with only method citation; unsupported factual/answer claims; verbatim source passage/exercise copy in this index; claiming a full exam or calibrated band from this sample."
+      }
+    },
+    {
+      "id": "MS2-S01",
+      "source_level": "2",
+      "pdf_pages_inclusive": [
+        25,
+        28
+      ],
+      "printed_pages_inclusive": [
+        24,
+        27
+      ],
+      "extraction_sha256": "981f7cd09f13eb0bb576ff6083b257fcfc8daf9e178d9856b113a3c9d6ce8b3f",
+      "teaching_progression": [
+        "Group topic vocabulary by personal attitude.",
+        "Analyze model questions and answer length; retrieve useful language.",
+        "Practise WH/why/would and Yes/No with expanded explanations.",
+        "Build topic question mindmaps; discriminate and repeat word stress.",
+        "Answer mixed personal questions in a constrained three-sentence practice."
+      ],
+      "actual_read": "Selected range text read; representative visual check recorded by source, not every page.",
+      "audio_status": "Audio not supplied/listened in this review; printed task evidence only.",
+      "learningObjectives": [
+        "Expand hometown/accommodation vocabulary, explanations and hypothetical would responses.",
+        "Generate ideas for unfamiliar wording and use appropriate lexical syllable stress."
+      ],
+      "sourceContentSummary": "Hometown and accommodation: architecture, monuments, museums, natural features, shopping, leisure places and weather; likes/dislikes/wishes, where and with whom learner lives, favorite room, recommendations and hypothetical moving preferences.",
+      "transformationBoundaries": {
+        "required": "Derive actual learning content, factual/semantic relationships, scenarios and teaching examples from this selected range as well as its pedagogy. Preserve source ID and page range per adapted lesson.",
+        "permitted": "Paraphrase, simplify, sequence and create new questions grounded in the selected semantic material. Teacher must verify intended answer relationships against source before publishing.",
+        "excluded": "Unrelated invented scenario with only method citation; unsupported factual/answer claims; verbatim source passage/exercise copy in this index; claiming a full exam or calibrated band from this sample."
+      }
+    },
+    {
+      "id": "MS3-L01",
+      "source_level": "3",
+      "pdf_pages_inclusive": [
+        21,
+        26
+      ],
+      "printed_pages_inclusive": [
+        19,
+        24
+      ],
+      "extraction_sha256": "8dceacde9828268e07465ad86a5fbf738203cfb4dcb8ea60d2378fcff3897710",
+      "teaching_progression": [
+        "Explain synonym mismatches in city-visit language; predict gap possibilities.",
+        "Complete notes then inspect paraphrase correspondence; predict form fields and complete booking information.",
+        "Discriminate conventional numeric/spelling expressions; identify paraphrasable stems and fixed names.",
+        "Analyze distractor order and delayed correction; notice conditional clauses and produce meaningful condition/result statements.",
+        "Transfer to a different moving-service conversation with note completion plus multiple choice."
+      ],
+      "actual_read": "Selected range text read; representative visual check recorded by source, not every page.",
+      "audio_status": "Audio not supplied/listened in this review; printed task evidence only.",
+      "learningObjectives": [
+        "Distinguish near synonyms, anticipate paraphrase but transcribe exact spoken answer under word limits.",
+        "Decode conventional number/name/date forms and track corrections/conditions."
+      ],
+      "sourceContentSummary": "City visit choices lead into a museum covering ancient/prehistoric to contemporary and future city history, exhibits and guide talk. Museum booking captures contact details, group/student discounts, price/exhibition/date and booking proof. Different-context transfer concerns removals contact/address/time/insurance/package/service/additional charges.",
+      "transformationBoundaries": {
+        "required": "Derive actual learning content, factual/semantic relationships, scenarios and teaching examples from this selected range as well as its pedagogy. Preserve source ID and page range per adapted lesson.",
+        "permitted": "Paraphrase, simplify, sequence and create new questions grounded in the selected semantic material. Teacher must verify intended answer relationships against source before publishing.",
+        "excluded": "Unrelated invented scenario with only method citation; unsupported factual/answer claims; verbatim source passage/exercise copy in this index; claiming a full exam or calibrated band from this sample."
+      }
+    },
+    {
+      "id": "MS3-S01",
+      "source_level": "3",
+      "pdf_pages_inclusive": [
+        27,
+        31
+      ],
+      "printed_pages_inclusive": [
+        25,
+        29
+      ],
+      "extraction_sha256": "e97a1dc03df0d0138fcee1c1eb8ca386270e03260de463a9062674f2fe4db359",
+      "teaching_progression": [
+        "Review test and assessment concepts; reject unsuitable Part1 question types and analyze weak responses.",
+        "Distinguish appropriate Part2 task shape; examine uneven but relevant prompt development.",
+        "Match Part3 model responses to questions and communicative functions; connect observable performance to four assessment criteria.",
+        "Repair time-clause grammar, contrast meanings, notice and reproduce sentence stress.",
+        "Transfer through Part1 response, one-minute Part2 planning and long turn, then related Part3 discussion."
+      ],
+      "actual_read": "Selected range text read; representative visual check recorded by source, not every page.",
+      "audio_status": "Audio not supplied/listened in this review; printed task evidence only.",
+      "learningObjectives": [
+        "Distinguish familiar personal answers, sustained narrative and abstract discussion.",
+        "Use prediction, comparison, hypothetical, cause/effect and past/present functions; control future time clauses and stress."
+      ],
+      "sourceContentSummary": "Urban/rural places and personal life, future visits and past residence; abstract discussion concerns private car bans, transport links and family life, apartment/countryside preference, moving from cities, overpopulation, migration effects on small towns and hypothetical future cities.",
+      "transformationBoundaries": {
+        "required": "Derive actual learning content, factual/semantic relationships, scenarios and teaching examples from this selected range as well as its pedagogy. Preserve source ID and page range per adapted lesson.",
+        "permitted": "Paraphrase, simplify, sequence and create new questions grounded in the selected semantic material. Teacher must verify intended answer relationships against source before publishing.",
+        "excluded": "Unrelated invented scenario with only method citation; unsupported factual/answer claims; verbatim source passage/exercise copy in this index; claiming a full exam or calibrated band from this sample."
+      }
+    }
+  ],
+  "design": {
+    "alternatives": [
+      "Force four publisher levels into three pathways: rejected because Foundation explicitly targets A2 and integrated general language; would hide necessary remediation.",
+      "Use Foundation as diagnostic-selected prerequisite support within foundation, then core L1/L2/L3 progression: recommended design inference, subject to teacher validation."
+    ],
+    "chosen_mapping": {
+      "foundation": "MSF prerequisite microsteps where diagnosis requires them, then MS1 core. Do not assume every foundation learner needs all Foundation material.",
+      "intermediate": "MS2 core; recycle MS1 number/meaning and short-answer fundamentals when demonstrated gaps remain.",
+      "advanced": "MS3 core; keep precise details/form completion rather than equating advanced work solely with abstract tasks."
+    },
+    "mapping_evidence": "Foundation PDF9 explicitly current A2, integrated language/skills and progression into full IELTS course. Series chart gives L1/L2/L3 target bands5.5/6.5/7.5. These are publisher course targets, not entry cutoffs, validated placement or promised learner outcomes.",
+    "train_transfer": {
+      "foundation_listening": {
+        "train": "Teach familiar activity/time vocabulary, speaker roles, number contrasts, corrections and equivalent expressions with replay and explanation.",
+        "transfer": "Adapt another source-derived everyday booking/purchase or exchange activity conversation using source number/meaning relationships; remove hints and compare error evidence, not a band."
+      },
+      "foundation_speaking": {
+        "train": "Activate familiar words; model present simple/frequency, collocations and short answer plus reason; rehearse intelligible third-person endings.",
+        "transfer": "Unseen personal routine/family questions using own short notes; record/review relevance, intelligibility and useful extensions."
+      },
+      "intermediate_listening": {
+        "train": "Predict gap category, decode quantities/dimensions and explain why a repeated detail does not answer a reason question.",
+        "transfer": "Recombine source property/service information into bounded note completion and reason-sensitive alternatives; explain distractor decisions afterward."
+      },
+      "intermediate_speaking": {
+        "train": "Group topic vocabulary, retrieve model language, generate question ideas and contrast WH/why/would responses with lexical stress.",
+        "transfer": "Newly worded hometown/accommodation questions derived from the selected source content, with reduced scaffolding; own explanation and targeted feedback."
+      },
+      "advanced_listening": {
+        "train": "Contrast near synonyms, preserve exact spoken answer, decode conventions and track delayed corrections and condition/result meaning.",
+        "transfer": "Adapt source moving-service note/MCQ information (the source itself transfers from museum booking); no transcript or coaching during attempt, retrospective evidence review."
+      },
+      "advanced_speaking": {
+        "train": "Analyze question function, develop support across Part2/3, control future time clauses and sentence stress.",
+        "transfer": "Reword source city/rural long-turn and urban-change discussion sequence to test source prediction/comparison/cause/hypothesis with formative rubric evidence."
+      }
+    },
+    "shared_mock": "Use one common assessment contract across pathways with equivalent mode, timing, answer visibility, content-version pinning and teacher-reviewed task specifications. Training scaffolds are absent during mock attempts. These selected Unit1 pages do not constitute a full Listening mock blueprint (all four parts), calibrated difficulty, scoring rules or band conversion; obtain wider source and current official specification evidence before finalizing.",
+    "ux_ax_dx": "Keep source IDs/page references in internal provenance; give learner primary task instructions and meaningful feedback. Lesson schema should separate prerequisites, model noticing, guided production, independent transfer and feedback evidence.",
+    "semantic_requirement": "Train and transfer tasks must stay within source-derived semantic content/scenarios and preserve source-backed relationships; transfer changes support and question construction, not into unrelated invented subject matter."
+  },
+  "limits": [
+    "Only listed selected Unit1 and frontmatter pages support conclusions; not whole-book coverage or full curriculum.",
+    "No audio files listened, transcript answer verification performed or acoustic authenticity checked.",
+    "No Foundation numeric IELTS target found in reviewed frontmatter.",
+    "Publisher targets are not validated mapping to Mitooni pathways or assessment bands.",
+    "No source text exercises, answer keys, passages or recordings stored in this index."
+  ],
+  "validation": {
+    "performed": [
+      "Read root/repo instructions and PDF skill.",
+      "Extracted and read selected teaching ranges; re-extracted truncated output in bounded calls.",
+      "Rendered and inspected four representative page images; verified +1 offset for Foundation/L1/L2 and +2 for L3.",
+      "Computed source and bounded extraction SHA256."
+    ],
+    "independent_review_required": "Coordinator/teacher should reproduce anchors, approve adapted language progression and validate all lesson/assessment content.",
+    "restart": "Reproduce extraction using source paths and page ranges below; do not infer that unlisted pages or recordings were read."
+  }
+}

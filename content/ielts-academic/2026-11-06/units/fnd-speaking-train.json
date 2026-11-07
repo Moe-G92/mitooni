@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 1,
+  "id": "fnd-speaking-train",
+  "version": 2,
+  "skill": "speaking",
+  "stage": "train",
+  "pathwayIds": [
+    "foundation"
+  ],
+  "objectiveIds": [
+    "fnd-speaking-routine-language",
+    "fnd-speaking-relevant-extension",
+    "fnd-speaking-audible-endings"
+  ],
+  "familyId": "sem-household-shared-routines",
+  "title": "Describing household routines",
+  "instructions": "Complete the language practice in the teaching anchors first, taking up to four minutes. Then use keywords only and record the four answers in order, about 20–30 seconds each. This is a short Part 1 drill, not a complete interview. Listen once with a partner or teacher, choose one language change and one clarity change, then make one supported retry. Keep both recordings.",
+  "stimulus": {
+    "kind": "prompt",
+    "text": "Part 1 practice: routines and people you know. You can talk about friends, a shared household or imagined ordinary people instead of disclosing private family details."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "What do you usually do after your main meal of the day?",
+      "responseType": "spoken_response",
+      "options": [],
+      "wordLimit": null
+    },
+    {
+      "id": "q2",
+      "prompt": "How often do you share an activity with someone in your household?",
+      "responseType": "spoken_response",
+      "options": [],
+      "wordLimit": null
+    },
+    {
+      "id": "q3",
+      "prompt": "What does someone you know enjoy doing in the evening?",
+      "responseType": "spoken_response",
+      "options": [],
+      "wordLimit": null
+    },
+    {
+      "id": "q4",
+      "prompt": "Do you prefer spending a free evening at home or going out? Why?",
+      "responseType": "spoken_response",
+      "options": [],
+      "wordLimit": null
+    }
+  ],
+  "teachingAnchors": [
+    {
+      "id": "activities",
+      "label": "Build useful activity phrases",
+      "text": "Match “prepare” with “a meal”, “spend” with “time together”, and “take” with “a walk”. Say two true sentences, then change one into a sentence about another person. Compare “I take” with “she takes” or “he takes”. You may choose a friend or invented person. These fragments support your own meaning; do not memorise complete answers."
+    },
+    {
+      "id": "question-focus",
+      "label": "Answer the kind of question asked",
+      "text": "Sort four new questions into habit, frequency, preference and reason: “What do you do on a break?”, “How often?”, “Which do you prefer?”, “Why?”. Pick one household activity and give a different useful answer to each. Add because for a reason or so for a result; explain why the connection makes sense instead of inserting both automatically."
+    },
+    {
+      "id": "spoken-endings",
+      "label": "Make meaning audible",
+      "text": "With an approved voice model or teacher, practise “helps”, “reads” and “washes” in your own short activity sentences: their endings are /s/, /z/ and /ɪz/. Record, listen and ask which activity the listener heard. Then speak from three keywords for 30 seconds and check relevance, clarity and duration before the timed drill. If no usable model/audio is available, defer pronunciation practice rather than judge it from spelling."
+    }
+  ],
+  "assessment": {
+    "kind": "qualitative",
+    "criteria": [
+      {
+        "id": "fluency-coherence",
+        "label": "Fluency and coherence",
+        "description": "Use the actual recording to review continuity, appropriate pauses, repair and logical connections. Describe where the listener could or could not follow the answer. A transcript cannot establish speed, pause length or spoken fluency. Do not reward length or rehearsed linking phrases alone."
+      },
+      {
+        "id": "lexical-resource",
+        "label": "Lexical resource",
+        "description": "Check whether vocabulary expresses the intended meaning accurately and appropriately, and whether the speaker can paraphrase a missing word. Identify a specific successful choice and one usable alternative; rare vocabulary is not a goal by itself."
+      },
+      {
+        "id": "grammar",
+        "label": "Grammatical range and accuracy",
+        "description": "Review the structures actually used and whether errors obscure time, relationships or meaning. Quote a short learner-produced example in private feedback and offer one targeted repair. Do not infer range from prompt difficulty."
+      },
+      {
+        "id": "pronunciation",
+        "label": "Pronunciation",
+        "description": "Assess only from usable actual audio: intelligibility, word stress, rhythm, connected speech and sounds in context. Note the segment requiring listener effort and a focused practice action. Accent identity is not an error; if audio is missing or unclear, withhold this judgement."
+      }
+    ],
+    "answerKey": [],
+    "feedbackGuidance": "After submission, check that frequency questions receive a frequency, preference questions a choice and reason, and another person’s habit uses a clear subject and verb. Choose one learner-produced sentence to repair and say again. From actual audio, check whether the listener can hear the intended verb ending without demanding a particular accent. Compare meaning and comprehensibility across both recordings. All four qualitative criteria require teacher review; pronunciation and temporal fluency require usable audio. Do not infer a band from this drill or reward a memorised script. If only a transcript is available, withhold audio-dependent judgements."
+  },
+  "delivery": {
+    "kind": "recording_required",
+    "assetId": null
+  },
+  "locale": {
+    "instructionsFa": "ابتدا تمرین زبان راهنماها را انجام دهید؛ حداکثر چهار دقیقه وقت بگذارید. سپس فقط با واژه‌های کلیدی، چهار پاسخ را به ترتیب و هرکدام حدود ۲۰ تا ۳۰ ثانیه ضبط کنید. این تمرین کوتاه بخش اول است، نه مصاحبه کامل. یک بار با همراه یا مدرس گوش دهید، یک تغییر زبانی و یک تغییر برای وضوح انتخاب کنید و یک تلاش حمایتی دیگر ضبط کنید. هر دو ضبط را نگه دارید.",
+    "teachingAnchorsFa": [
+      {
+        "id": "activities",
+        "label": "ترکیب‌های کاربردی فعالیت بسازید",
+        "text": "prepare را با a meal، spend را با time together و take را با a walk پیوند دهید. دو جمله واقعی بگویید و سپس یکی را درباره فردی دیگر تغییر دهید. I take را با she takes یا he takes مقایسه کنید. دوست یا فرد فرضی هم مجاز است. این قطعه‌ها برای ساخت معنای خودتان هستند، نه حفظ پاسخ کامل."
+      },
+      {
+        "id": "question-focus",
+        "label": "نوع پرسش را پاسخ دهید",
+        "text": "چهار پرسش تازه را به عادت، بسامد، ترجیح و دلیل دسته‌بندی کنید. یک فعالیت خانه انتخاب کنید و برای هر نوع پاسخ مرتبط متفاوتی بدهید. because را برای دلیل و so را برای نتیجه به کار ببرید و رابطه را توضیح دهید؛ هر دو را خودکار اضافه نکنید."
+      },
+      {
+        "id": "spoken-endings",
+        "label": "معنا را شنیدنی کنید",
+        "text": "با مدل صوتی تأییدشده یا مدرس، helps، reads و washes را در جمله‌های کوتاه خودتان تمرین کنید؛ پایان آن‌ها به‌ترتیب /s/، /z/ و /ɪz/ است. ضبط کنید و بپرسید شنونده چه فعالیتی شنید. سپس با سه واژه کلیدی ۳۰ ثانیه صحبت کنید و پیش از تمرین زمان‌دار ارتباط، وضوح و مدت را بررسی کنید. بدون صدا یا مدل مناسب، تلفظ را از روی املا داوری نکنید."
+      }
+    ],
+    "feedbackGuidanceFa": "پس از ثبت، بررسی کنید پاسخِ بسامد، بسامد دارد؛ پاسخ ترجیح، انتخاب و دلیل دارد؛ و عادت فرد دیگر با فاعل و فعل روشن بیان شده است. یک جمله خودتان را اصلاح کنید و دوباره بگویید. از روی صدا بررسی کنید شنونده پایان فعل را می‌شنود یا نه؛ لهجه مشخصی مطالبه نکنید. معنا و قابل‌فهم بودن دو ضبط را مقایسه کنید. چهار معیار کیفی به بازبینی مدرس نیاز دارند؛ تلفظ و روانی زمانی به صدای قابل استفاده نیاز دارند. از این تمرین بند استنباط نکنید و به متن حفظ‌شده پاداش ندهید. اگر فقط متن دارید، درباره ویژگی‌های وابسته به صدا داوری نکنید."
+  },
+  "provenance": {
+    "origin": "source_based_original",
+    "sourceRefs": [
+      "MSF-S01",
+      "MS1-S01"
+    ],
+    "territory": "Iran",
+    "rightsNote": "Source-based Mitooni adaptation for the authorized Iranian audience. Arash authorized full-corpus AI ingestion and synthesis. This unit documents the supplied-source pages actually used; no worldwide distribution authority is inferred.",
+    "transformationNotes": "Selected Mindset pages were actually read before this revision. Teaching progression and semantic domain are adapted from those pages; all dialogue, lecture wording, named examples, questions and keys were newly authored. No source model answer or recording is republished. Foundation/Level1 jointly support the foundation pathway; other level mappings are authoring choices, not band equivalences.",
+    "objectiveMappings": [
+      {
+        "objectiveId": "fnd-speaking-routine-language",
+        "sourceRefIds": [
+          "MSF-S01",
+          "MS1-S01"
+        ],
+        "sourceLearningPoint": "Develop daily/family activity collocations, present-simple habits and frequency expressions before longer spoken production.",
+        "unitTeachingConnection": "Train constructs activity phrases and switches I to a third-person subject before answering; transfer independently describes shared activities and another person’s routine.",
+        "taskTransformation": "International-student routines and family activity themes become original household/free-time questions; source names, routine texts and answers are excluded."
+      },
+      {
+        "objectiveId": "fnd-speaking-relevant-extension",
+        "sourceRefIds": [
+          "MS1-S01"
+        ],
+        "sourceLearningPoint": "Distinguish facts, preferences and frequency questions, then extend appropriately with a reason, result or relevant detail.",
+        "unitTeachingConnection": "Train classifies question function and practises because/so links; transfer asks new questions requiring those functions without teaching.",
+        "taskTransformation": "New questions about shared evenings and outings replace source family comparisons; no fixed sentence count is treated as an exam rule."
+      },
+      {
+        "objectiveId": "fnd-speaking-audible-endings",
+        "sourceRefIds": [
+          "MSF-S01",
+          "MS1-S01"
+        ],
+        "sourceLearningPoint": "Use keyword notes and actual listener feedback, including intelligible third-person present endings.",
+        "unitTeachingConnection": "Train uses new /s z ɪz/ examples, then a 30-second message and retry; transfer reviews recorded third-person verbs only after submission.",
+        "taskTransformation": "Source model speech becomes a teacher-modelled micropractice and original learner-generated sentences, not a memorisation script."
+      }
+    ]
+  },
+  "teacherReview": {
+    "status": "pending",
+    "notes": [
+      "Teacher/examiner review required: check prompt accessibility, natural follow-ups, sequencing and suitability for assigned pathway. Pathways are support levels, not calibrated IELTS bands.",
+      "Recording must be permitted and usable before spoken assessment; do not send learner audio to an external provider without the agreed consent/data boundary. Local authoring includes no recording or external audio call.",
+      "Before timing, provide an unscored microphone check and a clear retry path. Technical failure invalidates timing; retain work privately, mark the attempt interrupted and use a new prompt family for independent evidence. A repeated prompt after coaching is supported practice.",
+      "Agree access needs before starting. Permit a neutral topic alternative where personal disclosure would be uncomfortable; mark changed timing or transcript-only work explicitly rather than claiming equivalent independent speech evidence.",
+      "Qualitative practice feedback is not a calibrated examiner band. Pronunciation and temporal fluency cannot be assessed from a transcript.",
+      "Revision 2 supersedes the held original-only draft. Review source-objective-task fit against the selected Mindset pages; semantic domains and meaningful language practice are adapted, not merely format-cited.",
+      "No source model answer or recording is republished. Inspect English/Persian equivalence and use only actual consented recordings for spoken judgement.",
+      "Semantic exposure families can span train/transfer and skills. A different unit ID or adapted detail does not establish fresh transfer; consult the per-question semantic groups recorded in syllabus/exposure metadata."
+    ]
+  },
+  "examTrack": "shared"
+}

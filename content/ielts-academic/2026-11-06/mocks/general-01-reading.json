@@ -1,0 +1,1054 @@
+{
+  "schemaVersion": 1,
+  "kind": "mock",
+  "id": "general-01-reading",
+  "version": 2,
+  "examTrack": "general_training",
+  "skill": "reading",
+  "durationMinutes": 60,
+  "instructions": "Read all three sections and answer questions 1–40 in 60 minutes, including checking and entering answers. Each correct answer is worth one mark. Follow each answer limit. Work independently without a dictionary or answer explanations. This is an original practice test, not an official IELTS test.",
+  "sections": [
+    {
+      "id": "section-1",
+      "title": "Travel information and customer reviews",
+      "texts": [
+        {
+          "id": "A",
+          "title": "Eastmere tram questions",
+          "text": "The Eastmere tram network connects residential districts with the centre, railway station and airport. It operates all year, although passengers should consult the current timetable because services are reviewed twice annually. Buses begin running at six in the morning. The first tram leaves the central square thirty minutes later. A route shown on an old leaflet may therefore be out of date even if the stop itself has not moved.\n\nFrom the airport, daytime trams run every fifteen minutes until early evening. After that, departures become less frequent and the service terminates at the railway station rather than continuing through the centre. The final airport tram departs at eleven thirty. Passengers arriving after it has left can use the overnight bus, which runs hourly. The bus timetable is displayed beside the airport information desk.\n\nBuy a ticket before boarding from the machine at your stop. The fare depends on the journey, so select your destination before paying. Neither drivers nor inspectors sell tickets. If a machine is faulty, use its call button to report the problem before entering the tram. Staff can notify the inspector, who will then know why you have boarded without a ticket. Reporting a fault through this system prevents a penalty; discovering that a machine is broken does not itself amount to reporting it.\n\nA tram can carry up to two bicycles, but this limit is not a guarantee of space. Drivers may refuse a bicycle when passenger numbers make boarding unsafe. Bicycles are accepted only during the advertised quieter travel periods. They are excluded during the morning peak, and special restrictions may apply at large events. Riders must stay beside their bicycles and keep doorways clear. A passenger who boards outside a permitted period cannot rely on an empty bicycle space as permission to travel."
+        },
+        {
+          "id": "B",
+          "title": "Jacket reviews",
+          "text": "A — Rana\nI hesitated before buying this jacket because it cost more than I normally spend. The extra length persuaded me: I am tall and often find outdoor clothes too short. I ordered one size larger than usual so that I could wear a thick layer underneath. That worked well, although the jacket takes more room in my bag than I expected.\n\nB — Jules\nThe colour looked pale on my screen, but the jacket that arrived was considerably darker. I kept it because the fit was comfortable and the fabric suited the journey to my office. The sleeves are long enough to fold back. I might order another colour later, but I would like to see it in a shop first.\n\nC — Mei\nI liked the photograph but doubted whether the shape would suit me. Once I tried it on, that concern disappeared. Unfortunately, the size I had selected was too small across the shoulders. I exchanged it for a larger one. The soft lining was an unexpected advantage, and I now wear it frequently.\n\nD — Owen\nThis is my second jacket from the same range. It fits as expected and is warm enough for cold mornings. The loosely woven outer fabric needs care around sharp objects, which can catch a thread. I would not wear it while carrying rough timber, though it works well for ordinary walks.\n\nE — Salma\nI ordered two colours intending to return whichever I liked less. In the end I kept both. Their appearance matched the website photographs, and either can be worn with casual trousers or smarter clothes. The sleeves are longer than I need, but otherwise the smaller size fits well."
+        }
+      ],
+      "questions": [
+        {
+          "id": 1,
+          "type": "true_false_not_given",
+          "instructions": "Do the statements agree with the information in the text? Choose TRUE, FALSE or NOT GIVEN. NOT GIVEN means the text neither confirms nor contradicts the statement.",
+          "prompt": "The first tram leaves before the first bus.",
+          "options": [],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "FALSE"
+            ],
+            "evidenceQuote": "The first tram leaves the central square thirty minutes later.",
+            "rationale": "The bus begins first."
+          }
+        },
+        {
+          "id": 2,
+          "type": "true_false_not_given",
+          "instructions": "Do the statements agree with the information in the text? Choose TRUE, FALSE or NOT GIVEN. NOT GIVEN means the text neither confirms nor contradicts the statement.",
+          "prompt": "The last airport tram continues through the town centre.",
+          "options": [],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "FALSE"
+            ],
+            "evidenceQuote": "the service terminates at the railway station rather than continuing through the centre",
+            "rationale": "Evening services end at the station."
+          }
+        },
+        {
+          "id": 3,
+          "type": "true_false_not_given",
+          "instructions": "Do the statements agree with the information in the text? Choose TRUE, FALSE or NOT GIVEN. NOT GIVEN means the text neither confirms nor contradicts the statement.",
+          "prompt": "The overnight bus stops at the railway station.",
+          "options": [],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "NOT GIVEN"
+            ],
+            "evidenceQuote": "the overnight bus, which runs hourly",
+            "rationale": "The text gives frequency, not stops or route."
+          }
+        },
+        {
+          "id": 4,
+          "type": "true_false_not_given",
+          "instructions": "Do the statements agree with the information in the text? Choose TRUE, FALSE or NOT GIVEN. NOT GIVEN means the text neither confirms nor contradicts the statement.",
+          "prompt": "Tram fares depend on the selected destination.",
+          "options": [],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "TRUE"
+            ],
+            "evidenceQuote": "The fare depends on the journey",
+            "rationale": "Journey determines fare."
+          }
+        },
+        {
+          "id": 5,
+          "type": "true_false_not_given",
+          "instructions": "Do the statements agree with the information in the text? Choose TRUE, FALSE or NOT GIVEN. NOT GIVEN means the text neither confirms nor contradicts the statement.",
+          "prompt": "A traveller can buy a ticket from an inspector.",
+          "options": [],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "FALSE"
+            ],
+            "evidenceQuote": "Neither drivers nor inspectors sell tickets.",
+            "rationale": "Both are explicitly excluded."
+          }
+        },
+        {
+          "id": 6,
+          "type": "true_false_not_given",
+          "instructions": "Do the statements agree with the information in the text? Choose TRUE, FALSE or NOT GIVEN. NOT GIVEN means the text neither confirms nor contradicts the statement.",
+          "prompt": "An available bicycle space always guarantees permission to board.",
+          "options": [],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "FALSE"
+            ],
+            "evidenceQuote": "this limit is not a guarantee of space",
+            "rationale": "Crowding and permitted periods impose further conditions."
+          }
+        },
+        {
+          "id": 7,
+          "type": "true_false_not_given",
+          "instructions": "Do the statements agree with the information in the text? Choose TRUE, FALSE or NOT GIVEN. NOT GIVEN means the text neither confirms nor contradicts the statement.",
+          "prompt": "The network adds extra trams during special events.",
+          "options": [],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "NOT GIVEN"
+            ],
+            "evidenceQuote": "special restrictions may apply at large events",
+            "rationale": "Restrictions on bicycles are stated, not extra tram provision."
+          }
+        },
+        {
+          "id": 8,
+          "type": "matching_features",
+          "instructions": "Match each statement to the reviewer A–E. You may use any letter more than once.",
+          "prompt": "Who found the delivered colour different from the screen image?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Rana"
+            },
+            {
+              "id": "B",
+              "text": "Jules"
+            },
+            {
+              "id": "C",
+              "text": "Mei"
+            },
+            {
+              "id": "D",
+              "text": "Owen"
+            },
+            {
+              "id": "E",
+              "text": "Salma"
+            }
+          ],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "B"
+            ],
+            "evidenceQuote": "the jacket that arrived was considerably darker",
+            "rationale": "Jules describes a colour mismatch."
+          }
+        },
+        {
+          "id": 9,
+          "type": "matching_features",
+          "instructions": "Match each statement to the reviewer A–E. You may use any letter more than once.",
+          "prompt": "Who deliberately selected a larger size than normal?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Rana"
+            },
+            {
+              "id": "B",
+              "text": "Jules"
+            },
+            {
+              "id": "C",
+              "text": "Mei"
+            },
+            {
+              "id": "D",
+              "text": "Owen"
+            },
+            {
+              "id": "E",
+              "text": "Salma"
+            }
+          ],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "A"
+            ],
+            "evidenceQuote": "I ordered one size larger than usual",
+            "rationale": "Rana deliberately sized up."
+          }
+        },
+        {
+          "id": 10,
+          "type": "matching_features",
+          "instructions": "Match each statement to the reviewer A–E. You may use any letter more than once.",
+          "prompt": "Who needed to replace an initially unsuitable size?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Rana"
+            },
+            {
+              "id": "B",
+              "text": "Jules"
+            },
+            {
+              "id": "C",
+              "text": "Mei"
+            },
+            {
+              "id": "D",
+              "text": "Owen"
+            },
+            {
+              "id": "E",
+              "text": "Salma"
+            }
+          ],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "C"
+            ],
+            "evidenceQuote": "I exchanged it for a larger one.",
+            "rationale": "Mei exchanged the too-small jacket."
+          }
+        },
+        {
+          "id": 11,
+          "type": "matching_features",
+          "instructions": "Match each statement to the reviewer A–E. You may use any letter more than once.",
+          "prompt": "Who decided against a planned return?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Rana"
+            },
+            {
+              "id": "B",
+              "text": "Jules"
+            },
+            {
+              "id": "C",
+              "text": "Mei"
+            },
+            {
+              "id": "D",
+              "text": "Owen"
+            },
+            {
+              "id": "E",
+              "text": "Salma"
+            }
+          ],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "E"
+            ],
+            "evidenceQuote": "In the end I kept both.",
+            "rationale": "Salma had intended to return one."
+          }
+        },
+        {
+          "id": 12,
+          "type": "matching_features",
+          "instructions": "Match each statement to the reviewer A–E. You may use any letter more than once.",
+          "prompt": "Who describes a risk of damaging the fabric?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Rana"
+            },
+            {
+              "id": "B",
+              "text": "Jules"
+            },
+            {
+              "id": "C",
+              "text": "Mei"
+            },
+            {
+              "id": "D",
+              "text": "Owen"
+            },
+            {
+              "id": "E",
+              "text": "Salma"
+            }
+          ],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "D"
+            ],
+            "evidenceQuote": "sharp objects, which can catch a thread",
+            "rationale": "Owen identifies snagging."
+          }
+        },
+        {
+          "id": 13,
+          "type": "matching_features",
+          "instructions": "Match each statement to the reviewer A–E. You may use any letter more than once.",
+          "prompt": "Who was initially unsure about how the garment would look on them?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Rana"
+            },
+            {
+              "id": "B",
+              "text": "Jules"
+            },
+            {
+              "id": "C",
+              "text": "Mei"
+            },
+            {
+              "id": "D",
+              "text": "Owen"
+            },
+            {
+              "id": "E",
+              "text": "Salma"
+            }
+          ],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "C"
+            ],
+            "evidenceQuote": "doubted whether the shape would suit me",
+            "rationale": "Mei feared the shape would not suit."
+          }
+        },
+        {
+          "id": 14,
+          "type": "matching_features",
+          "instructions": "Match each statement to the reviewer A–E. You may use any letter more than once.",
+          "prompt": "Who mentions suitability for different degrees of formality?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Rana"
+            },
+            {
+              "id": "B",
+              "text": "Jules"
+            },
+            {
+              "id": "C",
+              "text": "Mei"
+            },
+            {
+              "id": "D",
+              "text": "Owen"
+            },
+            {
+              "id": "E",
+              "text": "Salma"
+            }
+          ],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "E"
+            ],
+            "evidenceQuote": "casual trousers or smarter clothes",
+            "rationale": "Salma describes both casual and smarter uses."
+          }
+        }
+      ]
+    },
+    {
+      "id": "section-2",
+      "title": "Managing work and changing jobs",
+      "texts": [
+        {
+          "id": "C",
+          "title": "Leading a team",
+          "text": "Taking responsibility for a team means influencing how other people work, rather than trying to perform every task yourself. In the first weeks, colleagues form an impression of your leadership. Clear instructions matter, but so do respectful conversations and careful listening. Trust cannot be demanded with a job title. A manager who hears a concern and explains what will happen next gives staff a reason to believe that speaking honestly is worthwhile.\n\nSet goals that are ambitious enough to give the team direction, yet specific enough for everyone to recognise progress. A distant aspiration is not useful if each person interprets it differently. Discuss what achieving the goal would change in everyday work. This helps staff understand why their contribution matters. Agreement does not require pretending that every suggestion is equally practical; it requires explaining decisions and allowing people to raise obstacles before those obstacles undermine the work.\n\nDo not design every new strategy alone. Colleagues who carry out a process often notice difficulties that are invisible from a manager's desk. Involve them in planning changes and trust capable people to take responsibility. If a first proposal is too cautious, explain the intended outcome more clearly and invite another attempt. Taking the task away immediately can teach the team that consultation was only decorative.\n\nInnovation needs time, but discussion without a decision can become its own difficulty. Give staff space to develop solutions and agree a deadline for choosing what to try. A limited trial can reveal problems without committing the whole organisation to a permanent change. Some risk may be necessary; avoiding every uncertain step can prevent useful improvement. At the same time, enthusiasm is not a substitute for checking what happened.\n\nAcknowledge earlier achievements rather than presenting the organisation as though nothing worthwhile existed before your arrival. Understanding its history can create pride and help explain established habits. Then connect that history with a credible future. Staff are more likely to engage when leaders show informed enthusiasm and treat success as shared work, rather than divide the organisation into those who decide and those who merely follow."
+        },
+        {
+          "id": "D",
+          "title": "A professional departure",
+          "text": "Leaving a job professionally begins before the final working day. However dissatisfied you feel, an angry departure can damage relationships that may matter later. Former colleagues can become future collaborators. Tell your manager privately before announcing the decision widely. Arrange a meeting and prepare a brief account of unfinished work, including its current status and possible next steps. This preparation makes the conversation useful instead of leaving everyone to reconstruct your responsibilities afterwards.\n\nUse the meeting to clarify your notice period and agree a leaving date. Ask how colleagues and outside contacts should be informed. It is also reasonable to discuss a reference. An organisation may provide only basic employment details, while a manager may be willing to give a fuller account of your contribution. Do not assume that the two kinds of reference are identical or that a detailed one is automatic.\n\nPlan the handover with your manager. Finish what can realistically be completed and identify the priorities for anything remaining. Leave documentation that another person can follow, particularly for software or routines that have become familiar only to you. A list of passwords is not a substitute for explaining a process; access arrangements should follow the organisation's own secure procedure. The purpose is continuity, so distinguish instructions from personal notes that would make little sense to a successor.\n\nThe resignation letter should confirm the decision and the agreed final date. Keep it concise. It need not repeat a long account of every disappointment. A courteous expression of thanks can mention useful experience, skill development or a valued team relationship. Offer to complete outstanding work and support an orderly transfer. This does not require promising to finish an impossible amount or remain available indefinitely after leaving.\n\nBefore departure, check that the agreed records can actually be found by the person taking over. Tell your manager about any unresolved matter instead of quietly assuming someone else knows. A professional handover reduces disruption, but it does not erase every inconvenience caused by a staff change. Its value lies in making the remaining work visible and manageable, while preserving respectful relationships."
+        }
+      ],
+      "questions": [
+        {
+          "id": 15,
+          "type": "sentence_completion",
+          "instructions": "Complete the sentence. Write ONE WORD ONLY from the text.",
+          "prompt": "New managers should aim to earn their colleagues’ ____.",
+          "options": [],
+          "wordLimit": 1,
+          "answer": {
+            "acceptedAnswers": [
+              "Trust"
+            ],
+            "evidenceQuote": "Trust cannot be demanded with a job title.",
+            "rationale": "The extracted noun completes the paraphrase."
+          }
+        },
+        {
+          "id": 16,
+          "type": "sentence_completion",
+          "instructions": "Complete the sentence. Write ONE WORD ONLY from the text.",
+          "prompt": "Team ____ must be ambitious but sufficiently specific.",
+          "options": [],
+          "wordLimit": 1,
+          "answer": {
+            "acceptedAnswers": [
+              "goals"
+            ],
+            "evidenceQuote": "Set goals that are ambitious enough",
+            "rationale": "The extracted noun completes the paraphrase."
+          }
+        },
+        {
+          "id": 17,
+          "type": "sentence_completion",
+          "instructions": "Complete the sentence. Write ONE WORD ONLY from the text.",
+          "prompt": "Staff should help develop a new ____.",
+          "options": [],
+          "wordLimit": 1,
+          "answer": {
+            "acceptedAnswers": [
+              "strategy"
+            ],
+            "evidenceQuote": "Do not design every new strategy alone.",
+            "rationale": "The extracted noun completes the paraphrase."
+          }
+        },
+        {
+          "id": 18,
+          "type": "sentence_completion",
+          "instructions": "Complete the sentence. Write ONE WORD ONLY from the text.",
+          "prompt": "A decision-making ____ prevents endless discussion.",
+          "options": [],
+          "wordLimit": 1,
+          "answer": {
+            "acceptedAnswers": [
+              "deadline"
+            ],
+            "evidenceQuote": "agree a deadline for choosing what to try",
+            "rationale": "The extracted noun completes the paraphrase."
+          }
+        },
+        {
+          "id": 19,
+          "type": "sentence_completion",
+          "instructions": "Complete the sentence. Write ONE WORD ONLY from the text.",
+          "prompt": "A controlled ____ can expose difficulties before a permanent change.",
+          "options": [],
+          "wordLimit": 1,
+          "answer": {
+            "acceptedAnswers": [
+              "trial"
+            ],
+            "evidenceQuote": "A limited trial can reveal problems",
+            "rationale": "The extracted noun completes the paraphrase."
+          }
+        },
+        {
+          "id": 20,
+          "type": "sentence_completion",
+          "instructions": "Complete the sentence. Write ONE WORD ONLY from the text.",
+          "prompt": "Leaders can strengthen ____ by recognising earlier achievements.",
+          "options": [],
+          "wordLimit": 1,
+          "answer": {
+            "acceptedAnswers": [
+              "pride"
+            ],
+            "evidenceQuote": "Understanding its history can create pride",
+            "rationale": "The extracted noun completes the paraphrase."
+          }
+        },
+        {
+          "id": 21,
+          "type": "sentence_completion",
+          "instructions": "Complete the sentence. Write ONE WORD ONLY from the text.",
+          "prompt": "A credible ____ connects the organisation’s history with what comes next.",
+          "options": [],
+          "wordLimit": 1,
+          "answer": {
+            "acceptedAnswers": [
+              "future"
+            ],
+            "evidenceQuote": "connect that history with a credible future",
+            "rationale": "The extracted noun completes the paraphrase."
+          }
+        },
+        {
+          "id": 22,
+          "type": "sentence_completion",
+          "instructions": "Complete the sentence. Write NO MORE THAN TWO WORDS from the text for each answer.",
+          "prompt": "Before announcing a departure widely, arrange a ____ with the manager.",
+          "options": [],
+          "wordLimit": 2,
+          "answer": {
+            "acceptedAnswers": [
+              "meeting"
+            ],
+            "evidenceQuote": "Arrange a meeting",
+            "rationale": "The phrase is stated in the departure guide."
+          }
+        },
+        {
+          "id": 23,
+          "type": "sentence_completion",
+          "instructions": "Complete the sentence. Write NO MORE THAN TWO WORDS from the text for each answer.",
+          "prompt": "Discuss the notice period and agree a ____.",
+          "options": [],
+          "wordLimit": 2,
+          "answer": {
+            "acceptedAnswers": [
+              "leaving date"
+            ],
+            "evidenceQuote": "agree a leaving date",
+            "rationale": "The phrase is stated in the departure guide."
+          }
+        },
+        {
+          "id": 24,
+          "type": "sentence_completion",
+          "instructions": "Complete the sentence. Write NO MORE THAN TWO WORDS from the text for each answer.",
+          "prompt": "Ask whether the manager can supply a fuller ____.",
+          "options": [],
+          "wordLimit": 2,
+          "answer": {
+            "acceptedAnswers": [
+              "reference"
+            ],
+            "evidenceQuote": "a manager may be willing to give a fuller account of your contribution",
+            "rationale": "The phrase is stated in the departure guide."
+          }
+        },
+        {
+          "id": 25,
+          "type": "sentence_completion",
+          "instructions": "Complete the sentence. Write NO MORE THAN TWO WORDS from the text for each answer.",
+          "prompt": "Leave clear ____ for the next person to follow.",
+          "options": [],
+          "wordLimit": 2,
+          "answer": {
+            "acceptedAnswers": [
+              "documentation",
+              "instructions"
+            ],
+            "evidenceQuote": "Leave documentation that another person can follow",
+            "rationale": "Both documentation and instructions name written process guidance for the successor; either fits the unrestricted prompt."
+          }
+        },
+        {
+          "id": 26,
+          "type": "sentence_completion",
+          "instructions": "Complete the sentence. Write NO MORE THAN TWO WORDS from the text for each answer.",
+          "prompt": "The resignation letter should include the agreed ____.",
+          "options": [],
+          "wordLimit": 2,
+          "answer": {
+            "acceptedAnswers": [
+              "final date"
+            ],
+            "evidenceQuote": "confirm the decision and the agreed final date",
+            "rationale": "The phrase is stated in the departure guide."
+          }
+        },
+        {
+          "id": 27,
+          "type": "sentence_completion",
+          "instructions": "Complete the sentence. Write NO MORE THAN TWO WORDS from the text for each answer.",
+          "prompt": "An effective handover aims to reduce ____.",
+          "options": [],
+          "wordLimit": 2,
+          "answer": {
+            "acceptedAnswers": [
+              "disruption"
+            ],
+            "evidenceQuote": "A professional handover reduces disruption",
+            "rationale": "The phrase is stated in the departure guide."
+          }
+        }
+      ]
+    },
+    {
+      "id": "section-3",
+      "title": "Pictures in our messages",
+      "texts": [
+        {
+          "id": "article",
+          "title": "Pictures in our messages",
+          "text": "A\nA short message can deliver information while leaving its emotional meaning uncertain. A reply such as “fine” may express genuine agreement, impatience or disappointment. In conversation, listeners have clues beyond the word itself: the speaker's voice, expression and timing. On a small screen, many of those clues disappear. Picture characters known as emojis give writers another way to indicate how a message should be understood. A smile placed after a brief reply may suggest warmth where the words alone would seem abrupt. The picture does not replace the whole sentence; it can provide a frame for reading it.\n\nB\nLanguage has never remained fixed. As communities change, people need ways to express new experiences and ideas. Groups also use language to show who they are and how they relate to others. A phrase that feels natural within one generation may sound unfamiliar to another. New vocabulary therefore serves more than the need to name new objects. It can express belonging and mark a shared attitude. Emojis participate in this process, although they add visual characters rather than simply expand the list of words. Their interest lies partly in this different route to meeting familiar communicative needs.\n\nC\nThe equipment through which people communicate also influences their choices. Mobile messages are often written quickly, read on small displays and separated from the immediate reactions of a listener. A writer may not discover at once that a remark sounded unfriendly. An emoji can restore some emotional context without requiring a long explanation. This does not mean pictures communicate every feeling perfectly. It means that users have found them useful for a particular limitation of written exchanges. Their role becomes easier to understand when they are compared with the missing signals of conversation, rather than treated as a replacement alphabet that must perform every task of language.\n\nD\nA striking feature of these characters is their connection with changing technology. A familiar spoken word does not normally need to be redesigned when someone buys a new telephone. The visual characters available on a phone, however, belong to software that is repeatedly revised. Images may acquire a slightly different appearance, and new choices are added. Users thus encounter a communication system whose visible form can change through a product update. An image that once felt current may later seem old. This relationship joins design and consumer technology to everyday expression in a way that purchasing a different landline handset did not.\n\nE\nPublic recognition can make one image appear to represent a particular moment. A dictionary's annual choice of a word, for example, is concerned with what captures the mood or preoccupations of a period. If a picture character receives that attention, the selection tells us something about its cultural presence. It does not prove that the character will remain equally fashionable forever. Expressions associated with one year can fade as attention moves elsewhere. Their eventual datedness can itself be informative: it shows how closely communication follows social changes. Studying what becomes familiar, and what later stops feeling fresh, gives a view of both a communication system's history and its possible future.\n\nF\nThe influence of emojis extends beyond private exchanges. They appear in advertising, clothing, entertainment and creative work. A character first encountered in a message can become a recognisable design outside the device on which it was sent. This spread makes the subject more than a question of whether people type quickly enough. It raises questions about how commercial products and shared symbols move between different areas of life. Their popularity does not establish that all these uses are equally valuable. It does show why understanding them can reveal something about society's relationship with technology as well as its habits of language.\n\nG\nIt would be easy to discuss pictures and words as opposing systems, with the growth of one necessarily announcing the disappearance of the other. The more useful observation is that users combine resources. A sentence carries detail, while a visual character may guide the reader's interpretation of its tone. New concepts still require expression, communities still signal identity, and messages still need emotional context. The tools available for those purposes have broadened. Asking only whether emojis will defeat words overlooks the varied jobs that communication must do. Examining why people choose a particular resource provides a better starting point than assuming all exchanges serve a single purpose.\n\nH\nThis perspective also changes how a new character might be evaluated. Counting how often it appears can establish that it is widespread, but frequency alone does not explain its role in an exchange. One would also need to examine the surrounding message and the relationship between its participants. A popular image in an advertisement may do something different from the same image in a private reassurance. The question is therefore not merely which small pictures are fashionable. It is what their use reveals about changing ways of connecting with other people. Attention to that question makes an apparently playful feature of a phone a subject worthy of careful observation.\n\nThe same approach discourages an automatic judgement that every technological change is either progress or decline. A new visual resource may be helpful for one purpose and insufficient for another. To explain its significance, the observer needs to connect the form of the message with the need it serves. This is why the relationship among users, language and the devices they use matters more than a simple count of pictures."
+        }
+      ],
+      "questions": [
+        {
+          "id": 28,
+          "type": "matching_headings",
+          "instructions": "Choose the correct heading i–vii for each paragraph. There are more headings than paragraphs. Use each heading only once.",
+          "prompt": "Choose the heading for paragraph A.",
+          "options": [
+            {
+              "id": "i",
+              "text": "How pictures supply missing emotional clues"
+            },
+            {
+              "id": "ii",
+              "text": "Language changing with social needs"
+            },
+            {
+              "id": "iii",
+              "text": "A communication system redesigned with software"
+            },
+            {
+              "id": "iv",
+              "text": "Why a cultural selection can become dated"
+            },
+            {
+              "id": "v",
+              "text": "Influence beyond personal messages"
+            },
+            {
+              "id": "vi",
+              "text": "A plan to prohibit pictures in messages"
+            },
+            {
+              "id": "vii",
+              "text": "The physical construction of early telephones"
+            }
+          ],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "i"
+            ],
+            "evidenceQuote": "it can provide a frame for reading it",
+            "rationale": "The paragraph explains emotional framing."
+          }
+        },
+        {
+          "id": 29,
+          "type": "matching_headings",
+          "instructions": "Choose the correct heading i–vii for each paragraph. There are more headings than paragraphs. Use each heading only once.",
+          "prompt": "Choose the heading for paragraph B.",
+          "options": [
+            {
+              "id": "i",
+              "text": "How pictures supply missing emotional clues"
+            },
+            {
+              "id": "ii",
+              "text": "Language changing with social needs"
+            },
+            {
+              "id": "iii",
+              "text": "A communication system redesigned with software"
+            },
+            {
+              "id": "iv",
+              "text": "Why a cultural selection can become dated"
+            },
+            {
+              "id": "v",
+              "text": "Influence beyond personal messages"
+            },
+            {
+              "id": "vi",
+              "text": "A plan to prohibit pictures in messages"
+            },
+            {
+              "id": "vii",
+              "text": "The physical construction of early telephones"
+            }
+          ],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "ii"
+            ],
+            "evidenceQuote": "people need ways to express new experiences and ideas",
+            "rationale": "Social needs drive language changes."
+          }
+        },
+        {
+          "id": 30,
+          "type": "matching_headings",
+          "instructions": "Choose the correct heading i–vii for each paragraph. There are more headings than paragraphs. Use each heading only once.",
+          "prompt": "Choose the heading for paragraph D.",
+          "options": [
+            {
+              "id": "i",
+              "text": "How pictures supply missing emotional clues"
+            },
+            {
+              "id": "ii",
+              "text": "Language changing with social needs"
+            },
+            {
+              "id": "iii",
+              "text": "A communication system redesigned with software"
+            },
+            {
+              "id": "iv",
+              "text": "Why a cultural selection can become dated"
+            },
+            {
+              "id": "v",
+              "text": "Influence beyond personal messages"
+            },
+            {
+              "id": "vi",
+              "text": "A plan to prohibit pictures in messages"
+            },
+            {
+              "id": "vii",
+              "text": "The physical construction of early telephones"
+            }
+          ],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "iii"
+            ],
+            "evidenceQuote": "software that is repeatedly revised",
+            "rationale": "The communication system changes with software."
+          }
+        },
+        {
+          "id": 31,
+          "type": "matching_headings",
+          "instructions": "Choose the correct heading i–vii for each paragraph. There are more headings than paragraphs. Use each heading only once.",
+          "prompt": "Choose the heading for paragraph E.",
+          "options": [
+            {
+              "id": "i",
+              "text": "How pictures supply missing emotional clues"
+            },
+            {
+              "id": "ii",
+              "text": "Language changing with social needs"
+            },
+            {
+              "id": "iii",
+              "text": "A communication system redesigned with software"
+            },
+            {
+              "id": "iv",
+              "text": "Why a cultural selection can become dated"
+            },
+            {
+              "id": "v",
+              "text": "Influence beyond personal messages"
+            },
+            {
+              "id": "vi",
+              "text": "A plan to prohibit pictures in messages"
+            },
+            {
+              "id": "vii",
+              "text": "The physical construction of early telephones"
+            }
+          ],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "iv"
+            ],
+            "evidenceQuote": "Their eventual datedness can itself be informative",
+            "rationale": "Cultural recognition and later datedness organise the paragraph."
+          }
+        },
+        {
+          "id": 32,
+          "type": "matching_headings",
+          "instructions": "Choose the correct heading i–vii for each paragraph. There are more headings than paragraphs. Use each heading only once.",
+          "prompt": "Choose the heading for paragraph F.",
+          "options": [
+            {
+              "id": "i",
+              "text": "How pictures supply missing emotional clues"
+            },
+            {
+              "id": "ii",
+              "text": "Language changing with social needs"
+            },
+            {
+              "id": "iii",
+              "text": "A communication system redesigned with software"
+            },
+            {
+              "id": "iv",
+              "text": "Why a cultural selection can become dated"
+            },
+            {
+              "id": "v",
+              "text": "Influence beyond personal messages"
+            },
+            {
+              "id": "vi",
+              "text": "A plan to prohibit pictures in messages"
+            },
+            {
+              "id": "vii",
+              "text": "The physical construction of early telephones"
+            }
+          ],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "v"
+            ],
+            "evidenceQuote": "extends beyond private exchanges",
+            "rationale": "The paragraph explores wider cultural uses."
+          }
+        },
+        {
+          "id": 33,
+          "type": "sentence_completion",
+          "instructions": "Complete the sentence. Write NO MORE THAN TWO WORDS from the text for each answer.",
+          "prompt": "In conversation, emotional clues can come from a speaker’s ____ as well as their expression.",
+          "options": [],
+          "wordLimit": 2,
+          "answer": {
+            "acceptedAnswers": [
+              "voice",
+              "timing"
+            ],
+            "evidenceQuote": "the speaker's voice, expression and timing",
+            "rationale": "Both voice and timing are explicitly listed alongside expression as conversational clues; either completes this unrestricted prompt."
+          }
+        },
+        {
+          "id": 34,
+          "type": "sentence_completion",
+          "instructions": "Complete the sentence. Write NO MORE THAN TWO WORDS from the text for each answer.",
+          "prompt": "Groups may use language to express a sense of ____.",
+          "options": [],
+          "wordLimit": 2,
+          "answer": {
+            "acceptedAnswers": [
+              "belonging"
+            ],
+            "evidenceQuote": "It can express belonging",
+            "rationale": "The word occurs explicitly in the relevant explanation."
+          }
+        },
+        {
+          "id": 35,
+          "type": "sentence_completion",
+          "instructions": "Complete the sentence. Write NO MORE THAN TWO WORDS from the text for each answer.",
+          "prompt": "New visual characters are added through revisions to ____.",
+          "options": [],
+          "wordLimit": 2,
+          "answer": {
+            "acceptedAnswers": [
+              "software"
+            ],
+            "evidenceQuote": "belong to software that is repeatedly revised",
+            "rationale": "The word occurs explicitly in the relevant explanation."
+          }
+        },
+        {
+          "id": 36,
+          "type": "sentence_completion",
+          "instructions": "Complete the sentence. Write NO MORE THAN TWO WORDS from the text for each answer.",
+          "prompt": "One public use of emojis outside private messaging is ____.",
+          "options": [],
+          "wordLimit": 2,
+          "answer": {
+            "acceptedAnswers": [
+              "advertising",
+              "clothing",
+              "entertainment",
+              "creative work"
+            ],
+            "evidenceQuote": "They appear in advertising, clothing, entertainment and creative work.",
+            "rationale": "All four are explicitly listed uses outside private exchanges; each fits the open request for one public use."
+          }
+        },
+        {
+          "id": 37,
+          "type": "sentence_completion",
+          "instructions": "Complete the sentence. Write NO MORE THAN TWO WORDS from the text for each answer.",
+          "prompt": "To understand a character’s role, examine the surrounding ____ and the participants’ relationship.",
+          "options": [],
+          "wordLimit": 2,
+          "answer": {
+            "acceptedAnswers": [
+              "message"
+            ],
+            "evidenceQuote": "the surrounding message and the relationship between its participants",
+            "rationale": "The word occurs explicitly in the relevant explanation."
+          }
+        },
+        {
+          "id": 38,
+          "type": "multiple_choice",
+          "instructions": "Choose the correct letter, A, B, C or D.",
+          "prompt": "Why does paragraph C compare messaging with conversation?",
+          "options": [
+            {
+              "id": "A",
+              "text": "To show that messages are always misunderstood."
+            },
+            {
+              "id": "B",
+              "text": "To explain why visual emotional clues can be useful."
+            },
+            {
+              "id": "C",
+              "text": "To prove pictures express every possible feeling."
+            },
+            {
+              "id": "D",
+              "text": "To recommend abandoning written communication."
+            }
+          ],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "B"
+            ],
+            "evidenceQuote": "the missing signals of conversation",
+            "rationale": "The comparison explains the problem emojis help address."
+          }
+        },
+        {
+          "id": 39,
+          "type": "multiple_choice",
+          "instructions": "Choose the correct letter, A, B, C or D.",
+          "prompt": "What contrast does paragraph D make with landline telephones?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Older phones displayed more picture characters."
+            },
+            {
+              "id": "B",
+              "text": "Landlines were routinely used for advertising."
+            },
+            {
+              "id": "C",
+              "text": "Changing a handset previously did not redesign the communication system."
+            },
+            {
+              "id": "D",
+              "text": "Modern devices prevent language change."
+            }
+          ],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "C"
+            ],
+            "evidenceQuote": "A familiar spoken word does not normally need to be redesigned when someone buys a new telephone.",
+            "rationale": "The language system itself now changes with the product."
+          }
+        },
+        {
+          "id": 40,
+          "type": "multiple_choice",
+          "instructions": "Choose the correct letter, A, B, C or D.",
+          "prompt": "Which title best expresses the article’s main concern?",
+          "options": [
+            {
+              "id": "A",
+              "text": "A guide to choosing the most fashionable phone."
+            },
+            {
+              "id": "B",
+              "text": "Why words will soon disappear."
+            },
+            {
+              "id": "C",
+              "text": "How to draw a successful new character."
+            },
+            {
+              "id": "D",
+              "text": "What message pictures reveal about communication."
+            }
+          ],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "D"
+            ],
+            "evidenceQuote": "what their use reveals about changing ways of connecting with other people",
+            "rationale": "The article studies wider significance of image use."
+          }
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "origin": "source_based_original",
+    "sourceRefs": [
+      "CG19-R01"
+    ],
+    "territory": "Iran",
+    "rightsNote": "Arash authorized selected licensed excerpts on 2026-11-06 for authoring/review and selected model processing; no additional territory authority.",
+    "transformationNotes": "All three sections substantially replaced after direct reading of the supplied General Training selection. Original wording and question keys use its transport/review, workplace and technology-language semantic foundations; no source item sequence is reproduced.",
+    "sourceMappings": [
+      {
+        "targetPointer": "/sections/0",
+        "sourceRefIds": [
+          "CG19-R01"
+        ],
+        "sourceLearningPoint": "Transport information combines timetable comparisons, ticket conditions and bicycle restrictions; reviews distinguish expectation, sizing and purchasing decisions.",
+        "taskTransformation": "New tram organisation and times; new outerwear review details; reauthored factual statements and reviewer matches test conditional relations, paraphrase and unstated route facts."
+      },
+      {
+        "targetPointer": "/sections/1",
+        "sourceRefIds": [
+          "CG19-R01"
+        ],
+        "sourceLearningPoint": "Leadership requires trust, goals, participation, bounded innovation and shared pride; resignation involves courtesy, notice, reference and continuity documentation.",
+        "taskTransformation": "Reorganised original workplace prose; new one-word leadership and two-word departure completions, including distinction between reference types and realistic handover obligations."
+      },
+      {
+        "targetPointer": "/sections/2",
+        "sourceRefIds": [
+          "CG19-R01"
+        ],
+        "sourceLearningPoint": "Emojis relate to identity, new concepts, missing emotional cues, technological updates and wider cultural uses.",
+        "taskTransformation": "New eight-paragraph explanatory article develops these mechanisms; fresh headings, local detail completions and inference MCQ use changed wording, sequencing and distractors."
+      }
+    ]
+  },
+  "teacherReview": {
+    "status": "pending",
+    "notes": [
+      "Teacher must review answerability, language and difficulty before learner release. No calibrated band conversion."
+    ]
+  },
+  "delivery": {
+    "status": "text_ready_teacher_review",
+    "missingRequirements": []
+  }
+}

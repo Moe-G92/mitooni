@@ -1,4 +1,4 @@
-import { NavLink, Outlet, useMatch } from "react-router";
+import { Link, NavLink, Outlet, useMatch } from "react-router";
 import {
   BarChart3,
   BookOpen,
@@ -9,7 +9,7 @@ import {
   NotebookPen,
   Settings,
 } from "lucide-react";
-import { useMe } from "./state";
+import { useAccount, useMe } from "./state";
 import { useT } from "./locale";
 import { formatBand, formatDate } from "@/lib/format";
 import { cn } from "@/lib/utils";
@@ -38,6 +38,18 @@ export function AppLayout() {
   return today ? <TopBarShell /> : <SidebarShell />;
 }
 
+function ReviewerLink() {
+  const { account } = useAccount();
+  const { locale } = useT();
+  return account?.membership.roles.includes("reviewer") ? (
+    <Link
+      className="flex min-h-11 items-center rounded-lg px-3 py-2"
+      to="/app/content-review"
+    >
+      {locale === "fa" ? "بازبینی محتوا" : "Content review"}
+    </Link>
+  ) : null;
+}
 function SkipLink() {
   const { t } = useT();
   return (
@@ -86,6 +98,7 @@ function TopBarShell() {
                 </NavLink>
               ),
             )}
+            <ReviewerLink />
           </nav>
           <div className="ms-auto flex items-center gap-2">
             <Chip className="hidden text-foreground sm:inline-flex">
@@ -146,6 +159,7 @@ function SidebarShell() {
                 <span className="hidden md:inline">{t(key)}</span>
               </NavLink>
             ))}
+            <ReviewerLink />
           </nav>
           {me.data && (
             <div className="mt-auto hidden rounded-[14px] border border-white/15 p-3 text-[13px] text-white/80 md:block">

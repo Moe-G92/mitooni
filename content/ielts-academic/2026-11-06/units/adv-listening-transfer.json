@@ -1,0 +1,200 @@
+{
+  "schemaVersion": 1,
+  "id": "adv-listening-transfer",
+  "version": 2,
+  "skill": "listening",
+  "stage": "transfer",
+  "pathwayIds": [
+    "advanced"
+  ],
+  "objectiveIds": [
+    "adv-listening-contextual-paraphrase",
+    "adv-listening-condition-result"
+  ],
+  "familyId": "sem-city-museum-evidence-visit",
+  "title": "Planning a city-history study visit",
+  "instructions": "Read the five questions for 45 seconds. Listen once only and answer without hints or replay. Submit before viewing any explanations. For short answers, use NO MORE THAN TWO WORDS AND/OR A NUMBER from the recording. For a choice question, select ONE option. After the recording ends, take 60 seconds to check your answers. This is a practice drill, not a complete IELTS test.",
+  "stimulus": {
+    "kind": "script",
+    "text": "Tutor: Before we confirm the museum visit, tell me what you want your student group to learn. A visit can be enjoyable without necessarily supporting your course project.\nSara: We first suggested letting everyone choose a favourite exhibit and describe it. We now think that would produce a collection of unrelated accounts. We want to compare how the museum explains changes in the city’s transport.\nDaniel: That connects with our project on urban life. The museum has an older street map, a model of the first station and recordings from people who used the early buses. We can ask groups to look at different kinds of evidence rather than simply photograph the same object.\nTutor: Good. Have you checked the booking arrangements?\nSara: Yes. The booking confirmation lists the wrong date. I requested the twenty-third, but the message says the thirteenth. I spoke to the museum this morning, and they have corrected it to the twenty-third. I will bring the revised confirmation, not the original message.\nDaniel: We also need to understand the conditions for the educational reduction. It is not enough for the visitors to be students individually. The museum said we can use the group rate as long as we arrive together. If people arrive separately, the front desk cannot process them as one educational group.\nTutor: Then arrange a meeting point before the entrance. What proof will the museum need when you collect the tickets?\nSara: The email said to bring a printout, but the bookings officer explained that we can show the booking reference on a phone instead. We do not all need separate printouts. I will keep a copy on my phone and write the reference in my notebook in case the battery fails.\nDaniel: There is also a guided tour. I liked the idea at first, especially because it would cover the whole building, but it leaves very little time for our comparison task. We have decided against it for this visit. We can give everyone a simple route sheet instead.\nTutor: That seems reasonable. What will happen after the groups have looked at the evidence?\nSara: We asked to use the upstairs learning room, but it is reserved for another class. The museum can offer the courtyard, provided the weather is dry. If it rains, we will return to college for the discussion rather than block a gallery with our group.\nDaniel: I will tell everyone to keep their notes brief: identify what the object shows, what it cannot establish and what other evidence might help. We are not asking them to copy every label.\nTutor: And how will you know whether the visit was useful?\nSara: Afterwards, each group will explain how two exhibits support or complicate the same claim about transport. That should show whether they can connect evidence, rather than only list what they saw.\nTutor: Good. Send the corrected plan to the class once the museum has confirmed those arrangements. Today, keep the draft marked as provisional."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "What is the main learning purpose of the visit?",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "To describe favourite exhibits separately"
+        },
+        {
+          "id": "B",
+          "text": "To compare evidence about transport change"
+        },
+        {
+          "id": "C",
+          "text": "To photograph the most popular exhibit"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q2",
+      "prompt": "Correct date in the month: ______",
+      "responseType": "short_text",
+      "options": [],
+      "wordLimit": 2
+    },
+    {
+      "id": "q3",
+      "prompt": "What condition applies to the educational group rate?",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "The group arrives together"
+        },
+        {
+          "id": "B",
+          "text": "Each visitor brings a printout"
+        },
+        {
+          "id": "C",
+          "text": "Everyone joins the guided tour"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q4",
+      "prompt": "Why do the students decide against the guided tour?",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "It does not cover the whole building"
+        },
+        {
+          "id": "B",
+          "text": "The tour has been cancelled"
+        },
+        {
+          "id": "C",
+          "text": "It would leave too little time for their task"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q5",
+      "prompt": "Where can the group discuss its work if the weather is dry?",
+      "responseType": "short_text",
+      "options": [],
+      "wordLimit": 2
+    }
+  ],
+  "teachingAnchors": [],
+  "assessment": {
+    "kind": "deterministic",
+    "criteria": [
+      {
+        "id": "audible-evidence",
+        "label": "Accurate listening",
+        "description": "One point per keyed answer within its word limit. Accept only the listed answer variants after case/outer-space normalization; no semantic guessing. Multiple-choice responses use the option ID. Wrong, blank or over-limit answers receive no point."
+      }
+    ],
+    "answerKey": [
+      {
+        "questionId": "q1",
+        "acceptedAnswers": [
+          "B"
+        ],
+        "rationale": "The agreed purpose is comparing explanations of transport change, not listing favourite objects."
+      },
+      {
+        "questionId": "q2",
+        "acceptedAnswers": [
+          "twenty-third",
+          "23rd",
+          "23"
+        ],
+        "rationale": "The thirteenth is the erroneous confirmation; twenty-third is the corrected booking."
+      },
+      {
+        "questionId": "q3",
+        "acceptedAnswers": [
+          "A"
+        ],
+        "rationale": "They must arrive together; individual student status alone is insufficient."
+      },
+      {
+        "questionId": "q4",
+        "acceptedAnswers": [
+          "C"
+        ],
+        "rationale": "The tour covers the building but reduces time for the comparison task."
+      },
+      {
+        "questionId": "q5",
+        "acceptedAnswers": [
+          "courtyard",
+          "the courtyard"
+        ],
+        "rationale": "The learning room is unavailable; the courtyard is offered only in dry weather."
+      }
+    ],
+    "feedbackGuidance": "After submission, compare each answer with its evidence and the final version of any corrected detail. Label each miss: lost place, wrong speaker, distractor, spelling or word limit. Choose one cause, then practise that operation on a new recording. Report only drill accuracy; do not convert five answers to an IELTS band."
+  },
+  "delivery": {
+    "kind": "audio_required",
+    "assetId": null
+  },
+  "locale": {
+    "instructionsFa": "ابتدا ۴۵ ثانیه پرسش‌ها را بخوانید. فقط یک بار و بدون راهنما یا بازپخش گوش دهید. پیش از دیدن توضیح‌ها پاسخ‌ها را ثبت کنید. برای پاسخ کوتاه، حداکثر دو واژه و/یا یک عدد از فایل صوتی بنویسید. در پرسش چندگزینه‌ای فقط یک گزینه انتخاب کنید. پس از پایان صدا، ۶۰ ثانیه برای بررسی پاسخ‌ها فرصت دارید. این یک تمرین است، نه آزمون کامل آیلتس.",
+    "teachingAnchorsFa": [],
+    "feedbackGuidanceFa": "پس از ثبت پاسخ، هر پاسخ را با شاهد صوتی و آخرین اصلاح گوینده مقایسه کنید. علت خطا را مشخص کنید: گم کردن ترتیب، اشتباه در تشخیص گوینده، گزینه انحرافی، املا یا محدودیت واژه. برای یکی از این علت‌ها تمرین تازه انتخاب کنید. فقط دقت همین تمرین گزارش شود؛ پنج پاسخ را به نمره بند آیلتس تبدیل نکنید."
+  },
+  "provenance": {
+    "origin": "source_based_original",
+    "sourceRefs": [
+      "MS3-L01"
+    ],
+    "territory": "Iran",
+    "rightsNote": "Source-based Mitooni adaptation for the authorized Iranian audience. Arash authorized full-corpus AI ingestion and synthesis. This unit documents the supplied-source pages actually used; no worldwide distribution authority is inferred.",
+    "transformationNotes": "Selected Mindset pages were actually read before this revision. Teaching progression and semantic domain are adapted from those pages; all dialogue, lecture wording, named examples, questions and keys were newly authored. No source model answer or recording is republished. Foundation/Level1 jointly support the foundation pathway; other level mappings are authoring choices, not band equivalences.",
+    "objectiveMappings": [
+      {
+        "objectiveId": "adv-listening-contextual-paraphrase",
+        "sourceRefIds": [
+          "MS3-L01"
+        ],
+        "sourceLearningPoint": "Distinguish real synonyms from near-synonyms and identify exact audible answers in museum/city-history material.",
+        "unitTeachingConnection": "Train requires agricultural-land and evidence paraphrase discrimination in a lecture; transfer identifies the educational purpose of a city-history visit and corrected booking detail.",
+        "taskTransformation": "Museum interpretation and city-history visit scenarios adapt source semantic themes into wholly new lecture and tutorial wording; no original exhibit list, names, values or answer sequence is retained."
+      },
+      {
+        "objectiveId": "adv-listening-condition-result",
+        "sourceRefIds": [
+          "MS3-L01"
+        ],
+        "sourceLearningPoint": "Identify what must occur first for a future result using provided/as long as/once-type clauses.",
+        "unitTeachingConnection": "Train tests headphones and staffing conditions; transfer tests the arrival condition for a group rate and the dry-weather condition on a discussion space.",
+        "taskTransformation": "New conditions control audio access, later opening, group processing and meeting space instead of copying source tour conditions."
+      }
+    ]
+  },
+  "teacherReview": {
+    "status": "pending",
+    "notes": [
+      "Teacher-only script and answer key: never expose before attempt submission. No learner listening attempt until reviewed audio exists; rendering the script is not listening.",
+      "Media review required: natural delivery, distinguishable speakers where applicable, clean intelligibility and no emphasis revealing answers. Verify durations and question-order gaps against the actual recording.",
+      "If playback fails, preserve answers but invalidate timing/exposure evidence; restart with a new family after recovery. Agree accessible delivery adjustments with the learner; transcript-supported practice must be labelled separately and cannot count as independent listening evidence.",
+      "Five-item drill samples a part context; it is not a 40-item test or validated band estimate. Teacher checks difficulty, alternatives, Persian clarity and scoring tolerance before approval.",
+      "Revision 2 supersedes the held original-only draft. Review source-objective-task fit against the mapped selected Mindset pages, including meaningful English-development practice; citations alone do not establish fidelity.",
+      "English examples, task detail and semantic scenario are adaptations within the source topic boundary, not copied source exercises. Supplied Mindset audio was not available or auditioned; new audio requires separate review.",
+      "Semantic exposure families can span train/transfer and skills. A different unit ID or adapted detail does not establish fresh transfer; consult the per-question semantic groups recorded in syllabus/exposure metadata."
+    ]
+  },
+  "examTrack": "shared"
+}

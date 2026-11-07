@@ -1,0 +1,229 @@
+{
+  "schemaVersion": 1,
+  "id": "adv-listening-train",
+  "version": 2,
+  "skill": "listening",
+  "stage": "train",
+  "pathwayIds": [
+    "advanced"
+  ],
+  "objectiveIds": [
+    "adv-listening-contextual-paraphrase",
+    "adv-listening-condition-result"
+  ],
+  "familyId": "sem-city-museum-evidence-visit",
+  "title": "Interpreting a city museum exhibition",
+  "instructions": "Complete the teaching practice first, using a teacher or approved audio for sound-based exercises. Then read the five questions for 45 seconds. Listen once and answer, then use one supported replay to check the evidence before submitting. For short answers, use NO MORE THAN TWO WORDS AND/OR A NUMBER from the recording. For a choice question, select ONE option. After the recording ends, take 60 seconds to check your answers. This is a practice drill, not a complete IELTS test.",
+  "stimulus": {
+    "kind": "script",
+    "text": "This morning’s lecture considers how a city museum turns objects into an account of urban change. Our example is a proposed exhibition following one district from farmland to an industrial neighbourhood and then to its present mixture of homes and offices. The curators cannot display everything, so their choices will shape what visitors understand about the district.\nThe opening section will contain maps, household tools and a few fragments of building material. An early proposal described the area as empty before factories arrived. That wording was misleading: the maps show farms and footpaths. The team now describes it as agricultural land, not an unoccupied landscape. Recognising that difference changes the story from the arrival of people to a change in how people used the land.\nThe next section examines factory work. The museum owns several large machines, but their size alone does not make them the best evidence of working life. The team has chosen to place workers’ notebooks beside a single machine. The notebooks record shifts, payments and occasional interruptions. They make it possible to connect a physical object with the routines of people who used it.\nInterviews will also be available through headphones. These recordings were made much later than the events being described, so the labels must identify them as memories rather than contemporary reports. That does not make them worthless. It means visitors need to understand what sort of evidence they are hearing and where uncertainty remains.\nThere is a practical condition on how the interviews can be used. Visitors may listen to the recordings provided they use headphones. Playing them through the room’s loudspeakers would make the neighbouring exhibit difficult to hear. The rule protects the listening conditions for both groups, rather than restricting access to the historical material itself.\nThe final gallery will look at recent changes in housing and transport. The first design ended with a wall of dramatic predictions about the future. The curators have replaced that with a set of questions which visitors can discuss. They cannot know exactly how the district will develop, and presenting speculation as established history would weaken the exhibition’s argument.\nA second condition concerns that discussion area. It will remain open after the main galleries close as long as a staff member is present. If no member of staff is available, visitors will leave with the rest of the museum. The team does not want a timetable that promises access regardless of staffing.\nFinally, the exhibition will be tested with a small group before it opens. The purpose is to find places where the intended sequence is unclear, not to ask whether every visitor likes the same object. If people mistake later memories for records made at the time, that will signal a labelling problem. Clear interpretation requires more than attractive displays: it requires making the relationship between objects, claims and uncertainty understandable."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "The opening section now describes the district as ______.",
+      "responseType": "short_text",
+      "options": [],
+      "wordLimit": 2
+    },
+    {
+      "id": "q2",
+      "prompt": "Which evidence connects the machine with everyday working routines?",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "The size of the machines"
+        },
+        {
+          "id": "B",
+          "text": "Workers’ notebooks"
+        },
+        {
+          "id": "C",
+          "text": "Predictions about the district"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q3",
+      "prompt": "Visitors may hear the interviews provided they use ______.",
+      "responseType": "short_text",
+      "options": [],
+      "wordLimit": 2
+    },
+    {
+      "id": "q4",
+      "prompt": "What replaces confident predictions in the final gallery?",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "Questions for visitors to discuss"
+        },
+        {
+          "id": "B",
+          "text": "Additional factory machines"
+        },
+        {
+          "id": "C",
+          "text": "More contemporary reports"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q5",
+      "prompt": "What condition allows the discussion area to stay open later?",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "The main galleries remain open"
+        },
+        {
+          "id": "B",
+          "text": "All visitors use headphones"
+        },
+        {
+          "id": "C",
+          "text": "A staff member is present"
+        }
+      ],
+      "wordLimit": null
+    }
+  ],
+  "teachingAnchors": [
+    {
+      "id": "near-synonyms",
+      "label": "Test a paraphrase in context",
+      "text": "Compare “empty”, “unoccupied” and “used for farming”: they cannot all describe the same land in the same way. Explain which claim each phrase makes. Then paraphrase “a record made at the time” without turning it into “a later memory”. Similar topic words can change the historical claim."
+    },
+    {
+      "id": "condition-result",
+      "label": "Separate condition and result",
+      "text": "In this new museum sentence, underline the condition: “The archive room will open once the guide arrives.” Say the result, then rewrite the condition with “after” without adding a guarantee about the arrival time. Make a new sentence with “provided” or “as long as”. The future result does not require “will” in the time-condition clause."
+    },
+    {
+      "id": "evidence",
+      "label": "Track exact answer wording",
+      "text": "Predict whether each gap needs a place, object or description. Listen for paraphrased meaning but write the precise permitted words or number from the audio. During the supported replay, locate a whole condition and its consequence; do not choose an answer from a shared museum keyword alone."
+    }
+  ],
+  "assessment": {
+    "kind": "deterministic",
+    "criteria": [
+      {
+        "id": "audible-evidence",
+        "label": "Accurate listening",
+        "description": "One point per keyed answer within its word limit. Accept only the listed answer variants after case/outer-space normalization; no semantic guessing. Multiple-choice responses use the option ID. Wrong, blank or over-limit answers receive no point."
+      }
+    ],
+    "answerKey": [
+      {
+        "questionId": "q1",
+        "acceptedAnswers": [
+          "agricultural land"
+        ],
+        "rationale": "“Empty” is rejected because farms and footpaths demonstrate an agricultural landscape."
+      },
+      {
+        "questionId": "q2",
+        "acceptedAnswers": [
+          "B"
+        ],
+        "rationale": "Notebooks record shifts and payments; machine size alone is rejected as sufficient."
+      },
+      {
+        "questionId": "q3",
+        "acceptedAnswers": [
+          "headphones"
+        ],
+        "rationale": "Headphones are the explicit condition; room loudspeakers would interfere with another exhibit."
+      },
+      {
+        "questionId": "q4",
+        "acceptedAnswers": [
+          "A"
+        ],
+        "rationale": "Visitors will discuss questions instead of being shown speculative predictions as settled history."
+      },
+      {
+        "questionId": "q5",
+        "acceptedAnswers": [
+          "C"
+        ],
+        "rationale": "A staff member must be present; the timetable alone does not guarantee access."
+      }
+    ],
+    "feedbackGuidance": "After submission, compare each answer with its evidence and the final version of any corrected detail. Label each miss: lost place, wrong speaker, distractor, spelling or word limit. Choose one cause, then practise that operation on a new recording. Report only drill accuracy; do not convert five answers to an IELTS band."
+  },
+  "delivery": {
+    "kind": "audio_required",
+    "assetId": null
+  },
+  "locale": {
+    "instructionsFa": "ابتدا تمرین‌های آموزشی را انجام دهید؛ برای تمرین‌های وابسته به صدا از مدرس یا صدای تأییدشده استفاده کنید. سپس ابتدا ۴۵ ثانیه پرسش‌ها را بخوانید. یک بار گوش دهید و پاسخ دهید؛ سپس برای بررسی شواهد، یک بار بازپخشِ حمایتی مجاز است. برای پاسخ کوتاه، حداکثر دو واژه و/یا یک عدد از فایل صوتی بنویسید. در پرسش چندگزینه‌ای فقط یک گزینه انتخاب کنید. پس از پایان صدا، ۶۰ ثانیه برای بررسی پاسخ‌ها فرصت دارید. این یک تمرین است، نه آزمون کامل آیلتس.",
+    "teachingAnchorsFa": [
+      {
+        "id": "near-synonyms",
+        "label": "هم‌معنی را در بافت بررسی کنید",
+        "text": "empty، unoccupied و used for farming یک ادعای یکسان درباره زمین ندارند. ادعای هر عبارت را توضیح دهید. سپس a record made at the time را بازگویی کنید، بی‌آنکه به a later memory تبدیلش کنید. واژه‌های مربوط به یک موضوع ممکن است ادعای تاریخی را عوض کنند."
+      },
+      {
+        "id": "condition-result",
+        "label": "شرط و نتیجه را جدا کنید",
+        "text": "در The archive room will open once the guide arrives شرط را مشخص کنید. نتیجه را بگویید و شرط را با after بازنویسی کنید، بدون تضمین ساعت رسیدن راهنما. با provided یا as long as جمله تازه‌ای بسازید. نتیجه آینده به معنی نیاز به will در جمله‌واره زمانی یا شرطی نیست."
+      },
+      {
+        "id": "evidence",
+        "label": "صورت دقیق پاسخ را دنبال کنید",
+        "text": "نوع اطلاعات جای خالی را پیش‌بینی کنید. معنی بازگویی‌شده را بشنوید، اما واژه یا عدد مجاز را دقیق از صدا ثبت کنید. در بازپخش حمایتی، شرط کامل و پیامدش را پیدا کنید؛ یک واژه مشترک درباره موزه، پاسخ را ثابت نمی‌کند."
+      }
+    ],
+    "feedbackGuidanceFa": "پس از ثبت پاسخ، هر پاسخ را با شاهد صوتی و آخرین اصلاح گوینده مقایسه کنید. علت خطا را مشخص کنید: گم کردن ترتیب، اشتباه در تشخیص گوینده، گزینه انحرافی، املا یا محدودیت واژه. برای یکی از این علت‌ها تمرین تازه انتخاب کنید. فقط دقت همین تمرین گزارش شود؛ پنج پاسخ را به نمره بند آیلتس تبدیل نکنید."
+  },
+  "provenance": {
+    "origin": "source_based_original",
+    "sourceRefs": [
+      "MS3-L01"
+    ],
+    "territory": "Iran",
+    "rightsNote": "Source-based Mitooni adaptation for the authorized Iranian audience. Arash authorized full-corpus AI ingestion and synthesis. This unit documents the supplied-source pages actually used; no worldwide distribution authority is inferred.",
+    "transformationNotes": "Selected Mindset pages were actually read before this revision. Teaching progression and semantic domain are adapted from those pages; all dialogue, lecture wording, named examples, questions and keys were newly authored. No source model answer or recording is republished. Foundation/Level1 jointly support the foundation pathway; other level mappings are authoring choices, not band equivalences.",
+    "objectiveMappings": [
+      {
+        "objectiveId": "adv-listening-contextual-paraphrase",
+        "sourceRefIds": [
+          "MS3-L01"
+        ],
+        "sourceLearningPoint": "Distinguish real synonyms from near-synonyms and identify exact audible answers in museum/city-history material.",
+        "unitTeachingConnection": "Train requires agricultural-land and evidence paraphrase discrimination in a lecture; transfer identifies the educational purpose of a city-history visit and corrected booking detail.",
+        "taskTransformation": "Museum interpretation and city-history visit scenarios adapt source semantic themes into wholly new lecture and tutorial wording; no original exhibit list, names, values or answer sequence is retained."
+      },
+      {
+        "objectiveId": "adv-listening-condition-result",
+        "sourceRefIds": [
+          "MS3-L01"
+        ],
+        "sourceLearningPoint": "Identify what must occur first for a future result using provided/as long as/once-type clauses.",
+        "unitTeachingConnection": "Train tests headphones and staffing conditions; transfer tests the arrival condition for a group rate and the dry-weather condition on a discussion space.",
+        "taskTransformation": "New conditions control audio access, later opening, group processing and meeting space instead of copying source tour conditions."
+      }
+    ]
+  },
+  "teacherReview": {
+    "status": "pending",
+    "notes": [
+      "Teacher-only script and answer key: never expose before attempt submission. No learner listening attempt until reviewed audio exists; rendering the script is not listening.",
+      "Media review required: natural delivery, distinguishable speakers where applicable, clean intelligibility and no emphasis revealing answers. Verify durations and question-order gaps against the actual recording.",
+      "If playback fails, preserve answers but invalidate timing/exposure evidence; restart with a new family after recovery. Agree accessible delivery adjustments with the learner; transcript-supported practice must be labelled separately and cannot count as independent listening evidence.",
+      "Five-item drill samples a part context; it is not a 40-item test or validated band estimate. Teacher checks difficulty, alternatives, Persian clarity and scoring tolerance before approval.",
+      "Revision 2 supersedes the held original-only draft. Review source-objective-task fit against the mapped selected Mindset pages, including meaningful English-development practice; citations alone do not establish fidelity.",
+      "English examples, task detail and semantic scenario are adaptations within the source topic boundary, not copied source exercises. Supplied Mindset audio was not available or auditioned; new audio requires separate review.",
+      "Semantic exposure families can span train/transfer and skills. A different unit ID or adapted detail does not establish fresh transfer; consult the per-question semantic groups recorded in syllabus/exposure metadata."
+    ]
+  },
+  "examTrack": "shared"
+}

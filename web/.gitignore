@@ -2,7 +2,7 @@ node_modules/
 dist/
 dist-prototype/
 dist-account-local/
-review/
+/review/
 playwright-report/
 test-results/
 .taste-skill/

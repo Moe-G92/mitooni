@@ -1,0 +1,462 @@
+{
+  "schemaVersion": 1,
+  "id": "adv-reading-train",
+  "version": 2,
+  "skill": "reading",
+  "stage": "train",
+  "pathwayIds": [
+    "advanced"
+  ],
+  "objectiveIds": [
+    "reading-main-idea",
+    "reading-heading-qualifiers",
+    "reading-reference",
+    "reading-word-formation"
+  ],
+  "familyId": "source-ms3-unusual-places",
+  "title": "Unusual places: reading the whole relationship",
+  "instructions": "Read the original practice passage and answer all questions. This is a shorter practice set, not a full IELTS Reading section.",
+  "stimulus": {
+    "kind": "passage",
+    "text": "A. This adapted reading follows examples of unusual places presented in the course text; it is not a current travel or legal guide. Auroville in India is introduced through a contrast between an imperfect wider world and an ideal of unity and peace. The account describes a community without conventional leadership or private property and says its residents continue to believe in its founding aspiration. It also mentions criticism about increasing crime. The paragraph’s central relationship is between an urban ideal and the determination to maintain it despite criticism, not proof that an ideal community must either completely succeed or completely fail.\n\nB. The course account first introduces Longyearbyen through its extreme northern location, school, airport and university. Its main emphasis then shifts to unusual rules and freedoms. It discusses the effects of cold on burial arrangements, the carrying of guns in an area with polar bears, and a prohibition on cats intended to protect birds. These are reported features of the source’s description, not updated advice about regulations. A heading concerned only with latitude would capture the opening but miss the direction of the paragraph as a whole. The geographical introduction creates an expectation that the later sentences redirect.\n\nC. In the Marloth Park example, human settlement and wild animals are brought into close contact. The account places the town near Kruger National Park and describes restrictions on household fences. A fence made by the authority is intended to keep people out of the park rather than keep animals in. Animals may enter the streets, and the text presents danger as recurrent rather than merely exceptional. Residents disagree about how to respond. The significant relationship is cautious coexistence under continuing risk, not a general statement that the occasional appearance of wildlife makes a town picturesque.\n\nD. The source next compares the Austrian town it calls Hallstat with a reproduction in China. Wooden houses, narrow streets and a funicular railway are among the copied features. Austrian visitors are described as proud that their town inspired the project, yet unhappy about the process used to copy it. The company had promised consultation but instead gathered photographs without speaking to residents. Admiration and objection therefore appear together. It would be misleading to treat the visitors’ response as simple rejection of imitation or as complete approval without qualification. Their complaint concerns the relationship between copying and consultation.\n\nE. These examples require readers to look beyond a place name or a striking first fact. An ideal is tested by criticism, a northern location introduces unusual regulation, coexistence includes persistent danger, and pride in a reproduction exists alongside a procedural complaint. A paragraph heading needs to preserve those relationships. Its adjectives and adverbs matter: occasional is not the same as continuing, and complete approval is not mixed approval. Some examples give a clear opening topic; others reveal their main point through accumulated detail. The whole paragraph, rather than a single shared noun, provides the evidence for choosing."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "Choose the best heading for paragraph A. Use each heading only once.",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "Human–wildlife coexistence under recurrent risk"
+        },
+        {
+          "id": "B",
+          "text": "Latitude as a sufficient account of a town’s distinction"
+        },
+        {
+          "id": "C",
+          "text": "Whole-paragraph relationships as the basis for selection"
+        },
+        {
+          "id": "D",
+          "text": "An urban ideal sustained despite criticism"
+        },
+        {
+          "id": "E",
+          "text": "Pride that removes the need for consultation"
+        },
+        {
+          "id": "F",
+          "text": "Admiration complicated by an unfulfilled promise"
+        },
+        {
+          "id": "G",
+          "text": "Geography as an opening to a different central theme"
+        },
+        {
+          "id": "H",
+          "text": "A community’s shared rejection of its founding ideal"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q2",
+      "prompt": "Choose the best heading for paragraph B. Use each heading only once.",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "Human–wildlife coexistence under recurrent risk"
+        },
+        {
+          "id": "B",
+          "text": "Latitude as a sufficient account of a town’s distinction"
+        },
+        {
+          "id": "C",
+          "text": "Whole-paragraph relationships as the basis for selection"
+        },
+        {
+          "id": "D",
+          "text": "An urban ideal sustained despite criticism"
+        },
+        {
+          "id": "E",
+          "text": "Pride that removes the need for consultation"
+        },
+        {
+          "id": "F",
+          "text": "Admiration complicated by an unfulfilled promise"
+        },
+        {
+          "id": "G",
+          "text": "Geography as an opening to a different central theme"
+        },
+        {
+          "id": "H",
+          "text": "A community’s shared rejection of its founding ideal"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q3",
+      "prompt": "Choose the best heading for paragraph C. Use each heading only once.",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "Human–wildlife coexistence under recurrent risk"
+        },
+        {
+          "id": "B",
+          "text": "Latitude as a sufficient account of a town’s distinction"
+        },
+        {
+          "id": "C",
+          "text": "Whole-paragraph relationships as the basis for selection"
+        },
+        {
+          "id": "D",
+          "text": "An urban ideal sustained despite criticism"
+        },
+        {
+          "id": "E",
+          "text": "Pride that removes the need for consultation"
+        },
+        {
+          "id": "F",
+          "text": "Admiration complicated by an unfulfilled promise"
+        },
+        {
+          "id": "G",
+          "text": "Geography as an opening to a different central theme"
+        },
+        {
+          "id": "H",
+          "text": "A community’s shared rejection of its founding ideal"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q4",
+      "prompt": "Choose the best heading for paragraph D. Use each heading only once.",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "Human–wildlife coexistence under recurrent risk"
+        },
+        {
+          "id": "B",
+          "text": "Latitude as a sufficient account of a town’s distinction"
+        },
+        {
+          "id": "C",
+          "text": "Whole-paragraph relationships as the basis for selection"
+        },
+        {
+          "id": "D",
+          "text": "An urban ideal sustained despite criticism"
+        },
+        {
+          "id": "E",
+          "text": "Pride that removes the need for consultation"
+        },
+        {
+          "id": "F",
+          "text": "Admiration complicated by an unfulfilled promise"
+        },
+        {
+          "id": "G",
+          "text": "Geography as an opening to a different central theme"
+        },
+        {
+          "id": "H",
+          "text": "A community’s shared rejection of its founding ideal"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q5",
+      "prompt": "Choose the best heading for paragraph E. Use each heading only once.",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "Human–wildlife coexistence under recurrent risk"
+        },
+        {
+          "id": "B",
+          "text": "Latitude as a sufficient account of a town’s distinction"
+        },
+        {
+          "id": "C",
+          "text": "Whole-paragraph relationships as the basis for selection"
+        },
+        {
+          "id": "D",
+          "text": "An urban ideal sustained despite criticism"
+        },
+        {
+          "id": "E",
+          "text": "Pride that removes the need for consultation"
+        },
+        {
+          "id": "F",
+          "text": "Admiration complicated by an unfulfilled promise"
+        },
+        {
+          "id": "G",
+          "text": "Geography as an opening to a different central theme"
+        },
+        {
+          "id": "H",
+          "text": "A community’s shared rejection of its founding ideal"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q6",
+      "prompt": "In D, what does “Their complaint” refer to?",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "The Austrian visitors’ objection to copying without the promised consultation"
+        },
+        {
+          "id": "B",
+          "text": "The Chinese company’s objection to Austrian houses"
+        },
+        {
+          "id": "C",
+          "text": "A rejection of every feature in the copied town"
+        },
+        {
+          "id": "D",
+          "text": "A complaint about the funicular’s fare"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q7",
+      "prompt": "Which description loses a key qualification in C?",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "People and wild animals live near one another."
+        },
+        {
+          "id": "B",
+          "text": "Danger is only an occasional feature of the town."
+        },
+        {
+          "id": "C",
+          "text": "Residents disagree about a response."
+        },
+        {
+          "id": "D",
+          "text": "The authority’s fence has a particular purpose."
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q8",
+      "prompt": "What meaning does the prefix in “imperfect” add in A?",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "Before"
+        },
+        {
+          "id": "B",
+          "text": "Not"
+        },
+        {
+          "id": "C",
+          "text": "Together"
+        },
+        {
+          "id": "D",
+          "text": "Again"
+        }
+      ],
+      "wordLimit": null
+    }
+  ],
+  "teachingAnchors": [
+    {
+      "id": "step1",
+      "label": "Find the paragraph’s job",
+      "text": "Read a full paragraph and state its central message in a sentence. A topic sentence can help, but a later contrast may qualify it. Do not assume the first vivid example is the main idea."
+    },
+    {
+      "id": "step2",
+      "label": "Test the whole heading",
+      "text": "Compare each heading’s noun and its modifiers with the whole paragraph. “May”, “all”, “proven” and “ideal” change claims. Reject a heading that matches the topic but contradicts the qualification. Use each heading once; retain more options than paragraphs."
+    },
+    {
+      "id": "step3",
+      "label": "Resolve language in context",
+      "text": "Trace a pronoun to the specific earlier idea that the surrounding sentences require. For an unfamiliar prefixed word, separate the prefix, propose its contribution and test that meaning in the paragraph. Now complete the set independently before seeing the key."
+    }
+  ],
+  "assessment": {
+    "kind": "deterministic",
+    "criteria": [
+      {
+        "id": "textual-evidence",
+        "label": "Textual evidence",
+        "description": "Select or supply the answer warranted by this passage, observing the response limit and distinction between contradiction and absence."
+      }
+    ],
+    "answerKey": [
+      {
+        "questionId": "q1",
+        "acceptedAnswers": [
+          "D"
+        ],
+        "rationale": "A contrasts the ideal with criticism and continued commitment."
+      },
+      {
+        "questionId": "q2",
+        "acceptedAnswers": [
+          "G"
+        ],
+        "rationale": "B shifts from northern location to unusual regulation."
+      },
+      {
+        "questionId": "q3",
+        "acceptedAnswers": [
+          "A"
+        ],
+        "rationale": "C describes persistent danger and cautious coexistence."
+      },
+      {
+        "questionId": "q4",
+        "acceptedAnswers": [
+          "F"
+        ],
+        "rationale": "D combines pride with complaint about promised consultation."
+      },
+      {
+        "questionId": "q5",
+        "acceptedAnswers": [
+          "C"
+        ],
+        "rationale": "E synthesises why whole relationships and modifiers govern heading choice."
+      },
+      {
+        "questionId": "q6",
+        "acceptedAnswers": [
+          "A"
+        ],
+        "rationale": "D attributes the mixed response to Austrian visitors and identifies missing consultation as the complaint."
+      },
+      {
+        "questionId": "q7",
+        "acceptedAnswers": [
+          "B"
+        ],
+        "rationale": "C explicitly contrasts recurrent risk with merely exceptional danger; only occasional misrepresents it."
+      },
+      {
+        "questionId": "q8",
+        "acceptedAnswers": [
+          "B"
+        ],
+        "rationale": "Im- negates perfect, establishing contrast with the ideal."
+      }
+    ],
+    "feedbackGuidance": "After submission compare a selected heading with the whole paragraph: state its central message and the modifier that made the strongest rival wrong. Do not accept matching nouns as sufficient. For reference and prefix items, explain both the antecedent or affix and the surrounding context. Ask for a revised one-sentence paragraph summary; use a new context next. Raw accuracy is not a band."
+  },
+  "delivery": {
+    "kind": "text",
+    "assetId": null
+  },
+  "locale": {
+    "instructionsFa": "متن اصلی تمرین را بخوانید و به همهٔ پرسش‌ها به انگلیسی پاسخ دهید. این مجموعه کوتاه، بخش کامل آزمون نیست.",
+    "teachingAnchorsFa": [
+      {
+        "id": "step1",
+        "label": "پیام اصلی بند",
+        "text": "هر بند را کامل بخوانید و پیام اصلی آن را در یک جمله بگویید. جملهٔ موضوعی کمک می‌کند، اما یک تقابل بعدی ممکن است آن را محدود کند. مثال جذاب لزوماً موضوع اصلی نیست."
+      },
+      {
+        "id": "step2",
+        "label": "بررسی عنوان",
+        "text": "اسم و قیدهای عنوان را با کل بند تطبیق دهید. «ممکن است»، «همه»، «ثابت‌شده» و «آرمانی» ادعا را تغییر می‌دهند. تطبیق موضوع بدون تطبیق حد ادعا کافی نیست. هر عنوان را فقط یک بار به کار ببرید."
+      },
+      {
+        "id": "step3",
+        "label": "زبان در بافت",
+        "text": "مرجع ضمیر را با توجه به جمله‌های اطراف پیدا کنید. در واژهٔ پیشونددار، معنی پیشوند را حدس بزنید و آن را در متن امتحان کنید. سپس مجموعه را مستقل انجام دهید و بعد پاسخ‌نامه را ببینید."
+      }
+    ],
+    "feedbackGuidanceFa": "پس از ثبت پاسخ، بازخورد را با پاسخ خود مقایسه کنید. یک خطا را با تکیه بر شواهد اصلاح کنید و سپس تمرین مستقل تازه‌ای انجام دهید."
+  },
+  "provenance": {
+    "origin": "source_based_original",
+    "sourceRefs": [
+      "MS3-R01"
+    ],
+    "territory": "Iran",
+    "rightsNote": "Source-based Mitooni authoring under user-confirmed Iranian-audience rights and selected-excerpt processing authority. Source files remain read-only; no broader distribution authority claimed.",
+    "transformationNotes": "Replaced unrelated invented urban scenarios with faithful paraphrases of the actual selected source semantic content. Source claims are explicitly framed as course accounts rather than current verified travel/regulatory/archaeological guidance. Preserved uncertainty and contrasting viewpoints, omitted sensational incidental detail, regrouped Cahokia to five paragraphs and authored new headings/questions/keys independently. Train/transfer heading lists have separate order and plausible inference distortions.",
+    "objectiveMappings": [
+      {
+        "objectiveId": "reading-main-idea",
+        "sourceRefIds": [
+          "MS3-R01"
+        ],
+        "sourceLearningPoint": "The source uses Auroville/Longyearbyen/Marloth/Hallstat paragraphs for topic/whole-idea/qualifier selection and prefixes, then Cahokia for independent heading practice.",
+        "unitTeachingConnection": "Training adapts the actual place examples and their contrast/qualification relationships; transfer adapts the actual Cahokia evidence, theory, construction, abandonment and mixed-findings account. New eight-heading sets require whole-paragraph comparison; reference/prefix/qualifier items extend the taught operations.",
+        "taskTransformation": "Replaced unrelated invented urban scenarios with faithful paraphrases of the actual selected source semantic content. Source claims are explicitly framed as course accounts rather than current verified travel/regulatory/archaeological guidance. Preserved uncertainty and contrasting viewpoints, omitted sensational incidental detail, regrouped Cahokia to five paragraphs and authored new headings/questions/keys independently. Train/transfer heading lists have separate order and plausible inference distortions."
+      },
+      {
+        "objectiveId": "reading-heading-qualifiers",
+        "sourceRefIds": [
+          "MS3-R01"
+        ],
+        "sourceLearningPoint": "The source uses Auroville/Longyearbyen/Marloth/Hallstat paragraphs for topic/whole-idea/qualifier selection and prefixes, then Cahokia for independent heading practice.",
+        "unitTeachingConnection": "Training adapts the actual place examples and their contrast/qualification relationships; transfer adapts the actual Cahokia evidence, theory, construction, abandonment and mixed-findings account. New eight-heading sets require whole-paragraph comparison; reference/prefix/qualifier items extend the taught operations.",
+        "taskTransformation": "Replaced unrelated invented urban scenarios with faithful paraphrases of the actual selected source semantic content. Source claims are explicitly framed as course accounts rather than current verified travel/regulatory/archaeological guidance. Preserved uncertainty and contrasting viewpoints, omitted sensational incidental detail, regrouped Cahokia to five paragraphs and authored new headings/questions/keys independently. Train/transfer heading lists have separate order and plausible inference distortions."
+      },
+      {
+        "objectiveId": "reading-reference",
+        "sourceRefIds": [
+          "MS3-R01"
+        ],
+        "sourceLearningPoint": "The source uses Auroville/Longyearbyen/Marloth/Hallstat paragraphs for topic/whole-idea/qualifier selection and prefixes, then Cahokia for independent heading practice.",
+        "unitTeachingConnection": "Training adapts the actual place examples and their contrast/qualification relationships; transfer adapts the actual Cahokia evidence, theory, construction, abandonment and mixed-findings account. New eight-heading sets require whole-paragraph comparison; reference/prefix/qualifier items extend the taught operations.",
+        "taskTransformation": "Replaced unrelated invented urban scenarios with faithful paraphrases of the actual selected source semantic content. Source claims are explicitly framed as course accounts rather than current verified travel/regulatory/archaeological guidance. Preserved uncertainty and contrasting viewpoints, omitted sensational incidental detail, regrouped Cahokia to five paragraphs and authored new headings/questions/keys independently. Train/transfer heading lists have separate order and plausible inference distortions."
+      },
+      {
+        "objectiveId": "reading-word-formation",
+        "sourceRefIds": [
+          "MS3-R01"
+        ],
+        "sourceLearningPoint": "The source uses Auroville/Longyearbyen/Marloth/Hallstat paragraphs for topic/whole-idea/qualifier selection and prefixes, then Cahokia for independent heading practice.",
+        "unitTeachingConnection": "Training adapts the actual place examples and their contrast/qualification relationships; transfer adapts the actual Cahokia evidence, theory, construction, abandonment and mixed-findings account. New eight-heading sets require whole-paragraph comparison; reference/prefix/qualifier items extend the taught operations.",
+        "taskTransformation": "Replaced unrelated invented urban scenarios with faithful paraphrases of the actual selected source semantic content. Source claims are explicitly framed as course accounts rather than current verified travel/regulatory/archaeological guidance. Preserved uncertainty and contrasting viewpoints, omitted sensational incidental detail, regrouped Cahokia to five paragraphs and authored new headings/questions/keys independently. Train/transfer heading lists have separate order and plausible inference distortions."
+      }
+    ]
+  },
+  "teacherReview": {
+    "status": "pending",
+    "notes": [
+      "Re-authored from inspected licensed teaching selections; independent source-alignment and IELTS teacher review pending. No calibrated level or band claim."
+    ]
+  },
+  "examTrack": "academic"
+}

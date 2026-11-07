@@ -3,6 +3,10 @@ import "../index.css";
 import { mountAccount } from "../account/mount";
 import type { AuthPort, Session } from "../auth/types";
 const identities: Record<string, { subject: string; token: string }> = {
+  "reviewer@example.invalid": {
+    subject: "00000006-0000-4000-8000-000000000000",
+    token: "local-reviewer",
+  },
   "a@example.invalid": {
     subject: "00000001-0000-4000-8000-000000000000",
     token: "local-a",

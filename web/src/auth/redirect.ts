@@ -11,6 +11,7 @@ export function safeNext(value: string | null) {
     (/^\/app(?:\/(?:settings|practice|mocks|results|progress|vocabulary|coach))?$/.test(
       value,
     ) ||
+      /^\/app\/content-review(?:\/[a-z0-9][a-z0-9-]{0,127})?$/.test(value) ||
       /^\/study\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/.test(
         value,
       ))

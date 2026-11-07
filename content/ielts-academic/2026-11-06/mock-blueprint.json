@@ -1,0 +1,220 @@
+{
+  "schemaVersion": 1,
+  "kind": "mock_blueprint",
+  "id": "ielts-first-review-mock-blueprint",
+  "version": 2,
+  "title": "Academic 01 and General Training 01 — written form review blueprint",
+  "teacherReview": {
+    "status": "pending",
+    "notes": [
+      "Human teacher review and reviewer identity pending; manifest entries do not imply approval."
+    ]
+  },
+  "status": "written_candidates_not_operational",
+  "playable": false,
+  "calibrated": false,
+  "forms": [
+    {
+      "id": "academic-01",
+      "exam": "ielts-academic",
+      "sections": [
+        {
+          "skill": "listening",
+          "id": "academic-01-listening",
+          "file": "mocks/academic-01-listening.json",
+          "shared": true
+        },
+        {
+          "skill": "reading",
+          "id": "academic-01-reading",
+          "file": "mocks/academic-01-reading.json",
+          "shared": false
+        },
+        {
+          "skill": "writing",
+          "id": "academic-01-writing",
+          "file": "mocks/academic-01-writing.json",
+          "shared": false
+        },
+        {
+          "skill": "speaking",
+          "id": "academic-01-speaking",
+          "file": "mocks/academic-01-speaking.json",
+          "shared": true
+        }
+      ]
+    },
+    {
+      "id": "general-01",
+      "exam": "ielts-general-training",
+      "sections": [
+        {
+          "skill": "listening",
+          "id": "academic-01-listening",
+          "file": "mocks/academic-01-listening.json",
+          "shared": true
+        },
+        {
+          "skill": "reading",
+          "id": "general-01-reading",
+          "file": "mocks/general-01-reading.json",
+          "shared": false
+        },
+        {
+          "skill": "writing",
+          "id": "general-01-writing",
+          "file": "mocks/general-01-writing.json",
+          "shared": false
+        },
+        {
+          "skill": "speaking",
+          "id": "academic-01-speaking",
+          "file": "mocks/academic-01-speaking.json",
+          "shared": true
+        }
+      ]
+    }
+  ],
+  "requirements": {
+    "listening": {
+      "parts": 4,
+      "questionsPerPart": 10,
+      "totalMarks": 40,
+      "approximateAudioAndInstructionSeconds": 1800,
+      "finalComputerCheckingSeconds": 120,
+      "timingPolicy": "Verify actual audio sequence including preparation/checking pauses; do not mechanically pad a short script or count the final checking interval twice.",
+      "contexts": [
+        "everyday_dialogue",
+        "everyday_monologue",
+        "education_training_conversation",
+        "academic_monologue"
+      ],
+      "ordinaryPlaybackCount": 1,
+      "audioGate": "Scripts are reviewable text, not playable Listening. Generate/record permitted original voices, verify every word/key/timecode, audition full files and test delivery before availability."
+    },
+    "academicReading": {
+      "sections": 3,
+      "questions": 40,
+      "durationSeconds": 3600,
+      "minimumTotalWords": 2150,
+      "maximumTotalWords": 2750,
+      "wordCountConvention": "Stimulus text only; document headings/prompt exclusions.",
+      "construct": "Non-specialist descriptive/narrative/argumentative texts including detailed logical argument."
+    },
+    "generalTrainingReading": {
+      "sections": 3,
+      "questions": 40,
+      "durationSeconds": 3600,
+      "minimumTotalWords": 2150,
+      "maximumTotalWords": 2375,
+      "source": "https://ielts.org/take-a-test/test-types/ielts-general-training-test/ielts-general-training-format-reading",
+      "section1": "Two/three short or several shorter everyday texts.",
+      "section2": "Two work/training texts.",
+      "section3": "One longer general-interest text; increasing difficulty across sections.",
+      "notAcademicRelabelled": true
+    },
+    "writing": {
+      "tasks": 2,
+      "durationSeconds": 3600,
+      "minimumWords": [
+        150,
+        250
+      ],
+      "recommendedTaskSeconds": [
+        1200,
+        2400
+      ],
+      "taskWeightRatio": [
+        1,
+        2
+      ],
+      "academicTask1": "Actual accessible table/visual source.",
+      "generalTask1": "Letter with purpose, audience and three requested points; appropriate tone.",
+      "task2": "Relevant developed argument addressing every demand.",
+      "scoring": "Four equally weighted criteria within each task; qualitative review only in this edition."
+    },
+    "speaking": {
+      "parts": 3,
+      "durationRangeSeconds": [
+        660,
+        840
+      ],
+      "part1RangeSeconds": [
+        240,
+        300
+      ],
+      "part2RangeSeconds": [
+        180,
+        240
+      ],
+      "part2PreparationSeconds": 60,
+      "part2MaximumLongTurnSeconds": 120,
+      "part3RangeSeconds": [
+        240,
+        300
+      ],
+      "interactionGate": "Responsive approved interviewer and complete audio evidence required. Fixed questions alone are rehearsal.",
+      "scoring": "Qualitative four-criterion review; no part-band arithmetic or text-only pronunciation judgement."
+    }
+  },
+  "holdoutPolicy": {
+    "unitFamiliesExcluded": false,
+    "differentExamFormsShareListeningSpeaking": true,
+    "crossFormExposure": "Completing Academic 01 shared Listening/Speaking exposes those same sections for General Training 01; the second form is not independently unseen across all four skills.",
+    "familyBoundary": "Source-based families may overlap. Audit actual source semantic exposure across units/forms before any unseen admission; changed wording or fileID cannot create a fresh family.",
+    "teacherPreview": "Authorized teacher exposure is not learner exposure, but restricted content cannot enter learner/tutor retrieval.",
+    "laterForms": "A separate new family pool is required for repeated unseen progress evaluation; no equating claim.",
+    "holdoutValidated": false
+  },
+  "releaseGates": [
+    {
+      "id": "written_structure",
+      "status": "requires_independent_validation",
+      "evidence": "Original complete stimuli, instructions, private keys/rationale or criterion analysis, coherent task assembly."
+    },
+    {
+      "id": "media",
+      "status": "pending",
+      "evidence": "Actual approved audio; accessible verified visual/data assets; hashes/timecodes/full audition."
+    },
+    {
+      "id": "interaction_and_timing",
+      "status": "pending",
+      "evidence": "Server-authoritative full runner, one-play sequence, responsive Speaking, capture/recovery and timed synthetic administration."
+    },
+    {
+      "id": "human_review",
+      "status": "pending",
+      "evidence": "Named IELTS reviewer decision on exact content/asset editions plus independent key solving."
+    },
+    {
+      "id": "score_validity",
+      "status": "not_established",
+      "evidence": "Separate rater, held-out form/outcome and calibration work before any score prediction claim."
+    },
+    {
+      "id": "external_release",
+      "status": "not_approved",
+      "evidence": "Arash release approval remains separate."
+    }
+  ],
+  "sourceAccessDate": "2026-11-06",
+  "deliveryChangeSource": "https://ielts.org/news-and-insights/updates-to-ielts-test-delivery",
+  "notes": [
+    "Current directory name is historical Academic-first naming; these are separate Academic/General form blueprints.",
+    "Written form review is useful before audio production; it must never be presented as a completed playable full test.",
+    "No fixed estimated total is created by adding inconsistent official approximations; enforce component timing according to reviewed delivery policy.",
+    "Source-based reauthoring supersedes source-free written drafts. This blueprint specifies validity requirements, not demonstrated unseen/calibrated forms."
+  ],
+  "examTracks": [
+    "academic",
+    "general_training"
+  ],
+  "sourceCorrection": {
+    "status": "all_initial_source_free_drafts_held",
+    "sourceIndexFile": "source-index.json",
+    "requiredOrigin": "source_based_original",
+    "taskMapping": "Each passage/part/task maps once to inspected selected sources.",
+    "exposure": "Source-semantic overlap between teaching and mock invalidates a blanket unseen claim. Candidate forms need family audit before independent release."
+  }
+}

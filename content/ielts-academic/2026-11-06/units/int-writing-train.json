@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 1,
+  "id": "int-writing-train",
+  "version": 2,
+  "skill": "writing",
+  "stage": "train",
+  "pathwayIds": [
+    "intermediate"
+  ],
+  "objectiveIds": [
+    "writing-chart-features",
+    "writing-data-accuracy",
+    "writing-comparison-language"
+  ],
+  "familyId": "source-ms2-world-housing-means",
+  "title": "Compare the source’s international housing sizes",
+  "instructions": "Complete both original writing practice tasks in English. Write connected prose. These tasks support learning and do not provide a calibrated band score.",
+  "stimulus": {
+    "kind": "chart_description",
+    "text": "Accessible table adapted from the course’s average-house-size chart. Countries and mean floor area in square metres: Canada 181; United States 201; Australia 214; Hong Kong 45; Japan 95. These are the source exercise’s values, not a current housing survey. The source gives no year, household counts or explanation of differences. Because these are separate country averages rather than parts of one total, they are presented here as a table, not as slices of a whole.\n\nOriginal flawed draft: “The figures show house prices. Canada has the largest average at 214 square metres. Hong Kong is smallest because its population is too large.”"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "Preparation task, not an IELTS response: In about 60–100 words identify the measure, largest/smallest values and a useful grouping. Correct the flawed draft’s errors and unsupported explanation. Include a precise comparison using than.",
+      "responseType": "extended_text",
+      "options": [],
+      "wordLimit": null
+    },
+    {
+      "id": "q2",
+      "prompt": "Academic Task 1 practice: Describe the table in at least 150 words of connected prose, selecting main features and relevant comparisons. Give an introduction and an overview supported by selected values. Do not invent a year or explanation.",
+      "responseType": "extended_text",
+      "options": [],
+      "wordLimit": null
+    }
+  ],
+  "teachingAnchors": [
+    {
+      "id": "step1",
+      "label": "Decode and select",
+      "text": "Read the title, units and country labels. Name the largest and smallest values, then identify close or clearly separated groups. These data compare average sizes, not changes over time; a source without dates cannot support a trend."
+    },
+    {
+      "id": "step2",
+      "label": "Repair a draft",
+      "text": "Check the flawed draft against each value and unit. Separate a wrong category/number from an unsupported explanation. Practise “larger than”, “the largest” and “slightly larger” on comparisons the values support; do not choose a strong modifier merely to sound advanced."
+    },
+    {
+      "id": "step3",
+      "label": "Group into a report",
+      "text": "Write an introduction identifying the measure, an overview of the key groups and supporting comparisons with selected figures. First complete the preparation response, then write the full report before feedback. Avoid listing each row mechanically or explaining differences without supplied evidence."
+    }
+  ],
+  "assessment": {
+    "kind": "qualitative",
+    "criteria": [
+      {
+        "id": "task-achievement-response",
+        "label": "Task achievement / Task response",
+        "description": "For preparation identify/correct the measure, rankings and unsupported claims. For the full report present an overview and selected accurate comparisons; do not invent temporal trends, counts or causes from undated average areas."
+      },
+      {
+        "id": "coherence-cohesion",
+        "label": "Coherence and cohesion",
+        "description": "Organise ideas in a clear progression, group relevant information and use references and connections accurately without mechanical overuse."
+      },
+      {
+        "id": "lexical-resource",
+        "label": "Lexical resource",
+        "description": "Choose accurate and appropriate vocabulary, including precise comparisons, process or spatial language where relevant; evaluate flexibility and errors in context."
+      },
+      {
+        "id": "grammatical-range-accuracy",
+        "label": "Grammatical range and accuracy",
+        "description": "Use a suitable range of sentence forms with accurate grammar and punctuation; explain how errors affect meaning rather than rewarding complexity alone."
+      }
+    ],
+    "answerKey": [],
+    "feedbackGuidance": "After submission only. q 1 is preparation evidence and q 2 is a full report attempt. Evaluate all four criteria separately, distinguishing data accuracy, unsupported inference and language. Cite actual response evidence and give one priority revision. No numeric band. Preparation: the measure is average floor area, not price; Australia 214 is largest, not Canada; the population explanation is not supplied. Hong Kong 45 is smallest. Overview snippet: “Australia and the United States have the largest averages, while the two Asian entries are substantially smaller.” Canada 181 is below United States 201 but above Japan 95; Hong Kong 45 is below Japan 95. Do not turn average size into total housing stock or percentages. Coherence: group larger three and smaller two, with relevant comparisons. Lexis: largest average differs from most houses. Grammar: no date is supplied, so present-tense description is suitable. Revision: replace an unsupported cause with an evidence-based comparison. This adaptation intentionally avoids treating unrelated country means as shares summing to 100."
+  },
+  "delivery": {
+    "kind": "text",
+    "assetId": null
+  },
+  "locale": {
+    "instructionsFa": "هر دو تمرین نوشتاری را به انگلیسی و به صورت متن پیوسته بنویسید. این تمرین نمرهٔ کالیبره‌شده ارائه نمی‌کند.",
+    "teachingAnchorsFa": [
+      {
+        "id": "step1",
+        "label": "خواندن و انتخاب",
+        "text": "عنوان، واحد و نام کشورها را بخوانید. بیشترین و کمترین و گروه‌های نزدیک را پیدا کنید. این داده‌ها میانگین اندازه را مقایسه می‌کنند، نه تغییر زمانی را؛ بدون تاریخ، روند نسازید."
+      },
+      {
+        "id": "step2",
+        "label": "اصلاح پیش‌نویس",
+        "text": "پیش‌نویس را با عدد و واحد تطبیق دهید. خطای عدد یا گروه را از علت بی‌شاهد جدا کنید. مقایسه و صفت برترین و شدت‌هایی مثل کمی بزرگ‌تر را فقط بر اساس مقدارها به کار ببرید."
+      },
+      {
+        "id": "step3",
+        "label": "ساخت گزارش",
+        "text": "معرفی شاخص، مرور گروه‌های اصلی و مقایسه‌های عدددار بنویسید. ابتدا آماده‌سازی و سپس گزارش کامل را پیش از بازخورد انجام دهید. ردیف‌ها را صرفاً فهرست نکنید و علت بی‌شاهد نسازید."
+      }
+    ],
+    "feedbackGuidanceFa": "پس از ثبت پاسخ، بازخورد را با پاسخ خود مقایسه کنید. یک خطا را با تکیه بر شواهد اصلاح کنید و سپس تمرین مستقل تازه‌ای انجام دهید."
+  },
+  "provenance": {
+    "origin": "source_based_original",
+    "sourceRefs": [
+      "MS2-W01",
+      "BD-W01"
+    ],
+    "territory": "Iran",
+    "rightsNote": "Source-based Mitooni authoring under user-confirmed Iranian-audience rights and selected-excerpt processing authority. Source files remain read-only; no broader distribution authority claimed.",
+    "transformationNotes": "Reconstructed source values as accessible tables, preserving countries, units and figures. Changed the source’s chart presentation where it implied unrelated means were shares; explicitly disclose that repair. New flawed drafts/prompts/feedback do not copy source sample answers or invent housing datasets, dates, trends or causes.",
+    "objectiveMappings": [
+      {
+        "objectiveId": "writing-chart-features",
+        "sourceRefIds": [
+          "MS2-W01",
+          "BD-W01"
+        ],
+        "sourceLearningPoint": "The actual source average-house-size chart/table supplies the country values and main-feature/data-correction learning sequence, followed by comparative and descriptive language. Local BD-W 01 supplies task coverage, coherent progression, vocabulary precision and grammar dimensions; it is the older public descriptor edition, not current band calibration.",
+        "unitTeachingConnection": "Preparation diagnoses an original inaccurate draft against actual source values, then a full report selects/group comparisons; transfer uses the separate European source table, not the training country set.",
+        "taskTransformation": "Reconstructed source values as accessible tables, preserving countries, units and figures. Changed the source’s chart presentation where it implied unrelated means were shares; explicitly disclose that repair. New flawed drafts/prompts/feedback do not copy source sample answers or invent housing datasets, dates, trends or causes."
+      },
+      {
+        "objectiveId": "writing-data-accuracy",
+        "sourceRefIds": [
+          "MS2-W01",
+          "BD-W01"
+        ],
+        "sourceLearningPoint": "The actual source average-house-size chart/table supplies the country values and main-feature/data-correction learning sequence, followed by comparative and descriptive language. Local BD-W 01 supplies task coverage, coherent progression, vocabulary precision and grammar dimensions; it is the older public descriptor edition, not current band calibration.",
+        "unitTeachingConnection": "Preparation diagnoses an original inaccurate draft against actual source values, then a full report selects/group comparisons; transfer uses the separate European source table, not the training country set.",
+        "taskTransformation": "Reconstructed source values as accessible tables, preserving countries, units and figures. Changed the source’s chart presentation where it implied unrelated means were shares; explicitly disclose that repair. New flawed drafts/prompts/feedback do not copy source sample answers or invent housing datasets, dates, trends or causes."
+      },
+      {
+        "objectiveId": "writing-comparison-language",
+        "sourceRefIds": [
+          "MS2-W01",
+          "BD-W01"
+        ],
+        "sourceLearningPoint": "The actual source average-house-size chart/table supplies the country values and main-feature/data-correction learning sequence, followed by comparative and descriptive language. Local BD-W 01 supplies task coverage, coherent progression, vocabulary precision and grammar dimensions; it is the older public descriptor edition, not current band calibration.",
+        "unitTeachingConnection": "Preparation diagnoses an original inaccurate draft against actual source values, then a full report selects/group comparisons; transfer uses the separate European source table, not the training country set.",
+        "taskTransformation": "Reconstructed source values as accessible tables, preserving countries, units and figures. Changed the source’s chart presentation where it implied unrelated means were shares; explicitly disclose that repair. New flawed drafts/prompts/feedback do not copy source sample answers or invent housing datasets, dates, trends or causes."
+      }
+    ]
+  },
+  "teacherReview": {
+    "status": "pending",
+    "notes": [
+      "Re-authored from inspected licensed teaching selections; independent source-alignment and IELTS teacher review pending. No calibrated level or band claim."
+    ]
+  },
+  "examTrack": "academic"
+}

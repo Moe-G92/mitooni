@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "id": "fnd-writing-transfer",
+  "version": 2,
+  "skill": "writing",
+  "stage": "transfer",
+  "pathwayIds": [
+    "foundation"
+  ],
+  "objectiveIds": [
+    "writing-routine-paragraph",
+    "writing-process-sequence",
+    "writing-process-overview"
+  ],
+  "familyId": "source-msf-julia-ms1-cherry-jam",
+  "title": "Julia’s activities and the cherry-jam process",
+  "instructions": "Complete the short foundation paragraph, then attempt the separate full Academic Task 1 bridge. These have different purposes and lengths; neither is a calibrated band assessment.",
+  "stimulus": {
+    "kind": "chart_description",
+    "text": "Foundation paragraph input, adapted from the source picture exercise: Julia Grant is 21 and volunteers on a science project in Fiji. Pictures show getting out of bed, using a computer, preparing food with another person, washing dishes, hanging laundry, reading beside the sea, camping, working or studying at a table and diving near fish and coral. The pictures do not supply exact clock times or measured frequencies.\n\nAcademic Task 1 bridge, accessible equivalent of the source cherry-jam diagram:1 A sheet is placed below a cherry tree and the tree is shaken.2 Cherries are collected and transported to a processing plant.3 Leaves and stems are removed.4 Cherries are washed.5 Stones are removed.6 The fruit is cooked and extra ingredients—sugar, pectin and lemon juice—are added.7 Quality is checked.8 Jam is put into jars.9 Labels are attached. The source diagram gives no quantities, duration, temperature, rejection branch or return loop."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "Independent foundation practice, not an IELTS task: In about 50–70 words describe several of Julia’s pictured activities. Use clear present-simple sentences. You may use a possible sequence to connect the activities, but do not present invented clock times or frequency as facts supplied by the pictures.",
+      "responseType": "extended_text",
+      "options": [],
+      "wordLimit": null
+    },
+    {
+      "id": "q2",
+      "prompt": "Independent Academic Task 1 bridge: Describe the cherry-jam process in at least 150 words of connected prose, including an introduction, an overview and the major stages. Use the supplied sequence and ingredients without adding unshown branches.",
+      "responseType": "extended_text",
+      "options": [],
+      "wordLimit": null
+    }
+  ],
+  "teachingAnchors": [],
+  "assessment": {
+    "kind": "qualitative",
+    "criteria": [
+      {
+        "id": "task-achievement-response",
+        "label": "Task achievement / Task response",
+        "description": "For q 1 evaluate accurate routine information, simple-present/frequency control and connected description as foundation language evidence, not an IELTS task. For q 2 evaluate a main-stage overview and accurate supplied process coverage as an Academic Task 1 bridge. Evaluate lengths separately."
+      },
+      {
+        "id": "coherence-cohesion",
+        "label": "Coherence and cohesion",
+        "description": "Organise ideas in a clear progression, group relevant information and use references and connections accurately without mechanical overuse."
+      },
+      {
+        "id": "lexical-resource",
+        "label": "Lexical resource",
+        "description": "Choose accurate and appropriate vocabulary, including precise comparisons, process or spatial language where relevant; evaluate flexibility and errors in context."
+      },
+      {
+        "id": "grammatical-range-accuracy",
+        "label": "Grammatical range and accuracy",
+        "description": "Use a suitable range of sentence forms with accurate grammar and punctuation; explain how errors affect meaning rather than rewarding complexity alone."
+      }
+    ],
+    "answerKey": [],
+    "feedbackGuidance": "After submission only: q 1 is foundation language development, not a full IELTS task; q 2 is a separate fullTask 1 attempt. Use all four criteria qualitatively and cite learner evidence, without numeric bands. If writing is short, state the evidence limit rather than inventing performance. Original partial feedback examples, not copied complete model answers: q 1: distinguish supplied identity/activities from any proposed organisation; do not penalise a sensible connective as if the picture fixed exact times, but do correct invented timing presented as given. A short developmental description is not an IELTS response. q 2 overview snippet: “The process runs from harvesting cherries to filling and labelling jars, with preparation and cooking before the final packaging stages.” Preserve collection/transport, leaves/stems removal, washing, stone removal, cooking with the three named ingredients, quality checking, jars and labels. No reject/return branch is depicted. Coherence: group harvesting/preparation, cooking/checking and packaging. Lexis: stones are removed from cherries; labels go on jars. Grammar: passive participles should be accurate, for example “are removed”, not “are remove”. Revision: trace each main arrow and rewrite the least clear reference; do not add numerical cooking advice."
+  },
+  "delivery": {
+    "kind": "text",
+    "assetId": null
+  },
+  "locale": {
+    "instructionsFa": "ابتدا بند کوتاه پایه و سپس گزارش مستقل تکلیف اول را امتحان کنید. هدف و طول این دو متفاوت است و هیچ‌کدام نمرهٔ کالیبره‌شده ارائه نمی‌کند.",
+    "teachingAnchorsFa": [],
+    "feedbackGuidanceFa": "پس از ثبت پاسخ، بازخورد را با پاسخ خود مقایسه کنید. یک خطا را با تکیه بر شواهد اصلاح کنید و سپس تمرین مستقل تازه‌ای انجام دهید."
+  },
+  "provenance": {
+    "origin": "source_based_original",
+    "sourceRefs": [
+      "MSF-W01",
+      "MSF-R01",
+      "MS1-W01",
+      "BD-W01"
+    ],
+    "territory": "Iran",
+    "rightsNote": "Source-based Mitooni authoring under user-confirmed Iranian-audience rights and selected-excerpt processing authority. Source files remain read-only; no broader distribution authority claimed.",
+    "transformationNotes": "Retained actual source identities, activities, timings where supplied, named ingredients/equipment and process arrows. Paraphrased notes, rebuilt prompts and authored new feedback snippets; no synthetic compote/soup or unshown loop. Julia pictures inspected visually at physical 16; missing clock/frequency data remains explicitly missing.",
+    "objectiveMappings": [
+      {
+        "objectiveId": "writing-routine-paragraph",
+        "sourceRefIds": [
+          "MSF-W01",
+          "MSF-R01",
+          "MS1-W01",
+          "BD-W01"
+        ],
+        "sourceLearningPoint": "Foundation uses Dan’s actual routine and Julia Grant’s science-volunteer picture exercise; Level 1 uses the actual stringhopper/cherry-jam process sequence, action/passive language, model introduction/overview and full process description. Local BD-W 01 supplies task coverage, coherent progression, vocabulary precision and grammar dimensions; it is the older public descriptor edition, not current band calibration.",
+        "unitTeachingConnection": "Short source-based description precedes a separately labelled full food-process bridge. Controlled form/sequence/model analysis is retained in training; transfer uses the source’s different pictured person and second process.",
+        "taskTransformation": "Retained actual source identities, activities, timings where supplied, named ingredients/equipment and process arrows. Paraphrased notes, rebuilt prompts and authored new feedback snippets; no synthetic compote/soup or unshown loop. Julia pictures inspected visually at physical 16; missing clock/frequency data remains explicitly missing."
+      },
+      {
+        "objectiveId": "writing-process-sequence",
+        "sourceRefIds": [
+          "MSF-W01",
+          "MSF-R01",
+          "MS1-W01",
+          "BD-W01"
+        ],
+        "sourceLearningPoint": "Foundation uses Dan’s actual routine and Julia Grant’s science-volunteer picture exercise; Level 1 uses the actual stringhopper/cherry-jam process sequence, action/passive language, model introduction/overview and full process description. Local BD-W 01 supplies task coverage, coherent progression, vocabulary precision and grammar dimensions; it is the older public descriptor edition, not current band calibration.",
+        "unitTeachingConnection": "Short source-based description precedes a separately labelled full food-process bridge. Controlled form/sequence/model analysis is retained in training; transfer uses the source’s different pictured person and second process.",
+        "taskTransformation": "Retained actual source identities, activities, timings where supplied, named ingredients/equipment and process arrows. Paraphrased notes, rebuilt prompts and authored new feedback snippets; no synthetic compote/soup or unshown loop. Julia pictures inspected visually at physical 16; missing clock/frequency data remains explicitly missing."
+      },
+      {
+        "objectiveId": "writing-process-overview",
+        "sourceRefIds": [
+          "MSF-W01",
+          "MSF-R01",
+          "MS1-W01",
+          "BD-W01"
+        ],
+        "sourceLearningPoint": "Foundation uses Dan’s actual routine and Julia Grant’s science-volunteer picture exercise; Level 1 uses the actual stringhopper/cherry-jam process sequence, action/passive language, model introduction/overview and full process description. Local BD-W 01 supplies task coverage, coherent progression, vocabulary precision and grammar dimensions; it is the older public descriptor edition, not current band calibration.",
+        "unitTeachingConnection": "Short source-based description precedes a separately labelled full food-process bridge. Controlled form/sequence/model analysis is retained in training; transfer uses the source’s different pictured person and second process.",
+        "taskTransformation": "Retained actual source identities, activities, timings where supplied, named ingredients/equipment and process arrows. Paraphrased notes, rebuilt prompts and authored new feedback snippets; no synthetic compote/soup or unshown loop. Julia pictures inspected visually at physical 16; missing clock/frequency data remains explicitly missing."
+      }
+    ]
+  },
+  "teacherReview": {
+    "status": "pending",
+    "notes": [
+      "Re-authored from inspected licensed teaching selections; independent source-alignment and IELTS teacher review pending. No calibrated level or band claim."
+    ]
+  },
+  "examTrack": "academic"
+}

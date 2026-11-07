@@ -1,0 +1,430 @@
+{
+  "schemaVersion": 1,
+  "id": "adv-reading-transfer",
+  "version": 2,
+  "skill": "reading",
+  "stage": "transfer",
+  "pathwayIds": [
+    "advanced"
+  ],
+  "objectiveIds": [
+    "reading-main-idea",
+    "reading-heading-qualifiers",
+    "reading-reference",
+    "reading-word-formation"
+  ],
+  "familyId": "source-ms3-cahokia",
+  "title": "Cahokia: achievement, evidence and limits",
+  "instructions": "Read the original practice passage and answer all questions. This is a shorter practice set, not a full IELTS Reading section.",
+  "stimulus": {
+    "kind": "passage",
+    "text": "A. The following adapted reading presents the course text’s account of Cahokia, not a new archaeological assessment. A community beside the Mississippi developed from a village into a major urban centre. The text places it within the society of the Mississippians and compares its scale in the eleventh century with London’s. It presents the settlement as sophisticated and outward-looking rather than as an isolated collection of dwellings. The comparison is intended to establish its urban significance. It is not a claim that its buildings or institutions were identical to those of a European city.\n\nB. Archaeological work in the account suggests that roughly thirty-five percent of the population came from elsewhere. The text connects this unusual movement of people with a possible explanation: planners redesigned the village and made it attractive to surrounding communities. The explanation is presented as a theory rather than direct knowledge of every migrant’s motives. Few comparable examples of tribal relocation had been found by the researchers described. The evidence concerns population movement; the proposed attraction remains an interpretation of that evidence.\n\nC. Carrying out the plans involved substantial labour. The inhabitants moved soil in baskets and by hand rather than with machinery, creating 120 mounds. The largest reached a height of about 100 feet. Buildings and a large plaza formed part of the new urban environment. The passage then describes cooperation in construction, hunting, fishing, cultivation and household work. Together these details show a community implementing ambitious plans through coordinated effort. The scale of the result is contrasted with the available means, not used to imply that mechanical equipment must have been present.\n\nD. Despite its activity and growth, Cahokia was largely abandoned by 1350 after becoming a major population centre around 1050. The course account emphasises that its decline remains unexplained. Weapons found at other sites were absent here, and the text does not consider familiar explanations such as European invasion sufficient in this case. That absence does not reveal a replacement cause. It limits what can confidently be concluded.\n\nE. Archaeological discoveries also give a mixed picture of life. Jewellery, cooking pots and a small workshop reveal everyday activities and skilled work. The account then turns to much darker findings: mass burials and evidence interpreted as frequent human sacrifice, especially involving young women. It does not claim to know with certainty whether the motive was religious or something else. Admiration for the city’s achievements consequently coexists with disturbing evidence about its practices."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "Choose the best heading for paragraph A. Use each heading only once.",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "Everyday skill alongside troubling evidence with uncertain motives"
+        },
+        {
+          "id": "B",
+          "text": "A proposed attraction distinguished from evidence of migration"
+        },
+        {
+          "id": "C",
+          "text": "Proof that religious belief caused the city’s end"
+        },
+        {
+          "id": "D",
+          "text": "An unexplained decline that familiar comparisons do not resolve"
+        },
+        {
+          "id": "E",
+          "text": "Impressive construction made possible by imported machinery"
+        },
+        {
+          "id": "F",
+          "text": "Establishing an urban centre’s significance by comparison"
+        },
+        {
+          "id": "G",
+          "text": "A migration explained with certainty"
+        },
+        {
+          "id": "H",
+          "text": "Ambitious plans realised through coordinated manual effort"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q2",
+      "prompt": "Choose the best heading for paragraph B. Use each heading only once.",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "Everyday skill alongside troubling evidence with uncertain motives"
+        },
+        {
+          "id": "B",
+          "text": "A proposed attraction distinguished from evidence of migration"
+        },
+        {
+          "id": "C",
+          "text": "Proof that religious belief caused the city’s end"
+        },
+        {
+          "id": "D",
+          "text": "An unexplained decline that familiar comparisons do not resolve"
+        },
+        {
+          "id": "E",
+          "text": "Impressive construction made possible by imported machinery"
+        },
+        {
+          "id": "F",
+          "text": "Establishing an urban centre’s significance by comparison"
+        },
+        {
+          "id": "G",
+          "text": "A migration explained with certainty"
+        },
+        {
+          "id": "H",
+          "text": "Ambitious plans realised through coordinated manual effort"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q3",
+      "prompt": "Choose the best heading for paragraph C. Use each heading only once.",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "Everyday skill alongside troubling evidence with uncertain motives"
+        },
+        {
+          "id": "B",
+          "text": "A proposed attraction distinguished from evidence of migration"
+        },
+        {
+          "id": "C",
+          "text": "Proof that religious belief caused the city’s end"
+        },
+        {
+          "id": "D",
+          "text": "An unexplained decline that familiar comparisons do not resolve"
+        },
+        {
+          "id": "E",
+          "text": "Impressive construction made possible by imported machinery"
+        },
+        {
+          "id": "F",
+          "text": "Establishing an urban centre’s significance by comparison"
+        },
+        {
+          "id": "G",
+          "text": "A migration explained with certainty"
+        },
+        {
+          "id": "H",
+          "text": "Ambitious plans realised through coordinated manual effort"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q4",
+      "prompt": "Choose the best heading for paragraph D. Use each heading only once.",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "Everyday skill alongside troubling evidence with uncertain motives"
+        },
+        {
+          "id": "B",
+          "text": "A proposed attraction distinguished from evidence of migration"
+        },
+        {
+          "id": "C",
+          "text": "Proof that religious belief caused the city’s end"
+        },
+        {
+          "id": "D",
+          "text": "An unexplained decline that familiar comparisons do not resolve"
+        },
+        {
+          "id": "E",
+          "text": "Impressive construction made possible by imported machinery"
+        },
+        {
+          "id": "F",
+          "text": "Establishing an urban centre’s significance by comparison"
+        },
+        {
+          "id": "G",
+          "text": "A migration explained with certainty"
+        },
+        {
+          "id": "H",
+          "text": "Ambitious plans realised through coordinated manual effort"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q5",
+      "prompt": "Choose the best heading for paragraph E. Use each heading only once.",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "Everyday skill alongside troubling evidence with uncertain motives"
+        },
+        {
+          "id": "B",
+          "text": "A proposed attraction distinguished from evidence of migration"
+        },
+        {
+          "id": "C",
+          "text": "Proof that religious belief caused the city’s end"
+        },
+        {
+          "id": "D",
+          "text": "An unexplained decline that familiar comparisons do not resolve"
+        },
+        {
+          "id": "E",
+          "text": "Impressive construction made possible by imported machinery"
+        },
+        {
+          "id": "F",
+          "text": "Establishing an urban centre’s significance by comparison"
+        },
+        {
+          "id": "G",
+          "text": "A migration explained with certainty"
+        },
+        {
+          "id": "H",
+          "text": "Ambitious plans realised through coordinated manual effort"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q6",
+      "prompt": "What does “That absence” in D refer to?",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "The absence of the kinds of weapons found at other sites"
+        },
+        {
+          "id": "B",
+          "text": "The disappearance of all buildings in Europe"
+        },
+        {
+          "id": "C",
+          "text": "The absence of every person by 1050"
+        },
+        {
+          "id": "D",
+          "text": "The absence of archaeologists"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q7",
+      "prompt": "Which statement removes an essential qualification in E?",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "The objects give evidence of everyday activities."
+        },
+        {
+          "id": "B",
+          "text": "The account establishes religious motives for all the sacrifices."
+        },
+        {
+          "id": "C",
+          "text": "The discoveries include disturbing findings."
+        },
+        {
+          "id": "D",
+          "text": "The picture combines achievement and troubling practices."
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q8",
+      "prompt": "What does the prefix in “unexplained” contribute in D?",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "The explanation is repeated."
+        },
+        {
+          "id": "B",
+          "text": "The explanation comes later than another."
+        },
+        {
+          "id": "C",
+          "text": "A satisfactory explanation is not supplied."
+        },
+        {
+          "id": "D",
+          "text": "The explanation involves several people."
+        }
+      ],
+      "wordLimit": null
+    }
+  ],
+  "teachingAnchors": [],
+  "assessment": {
+    "kind": "deterministic",
+    "criteria": [
+      {
+        "id": "textual-evidence",
+        "label": "Textual evidence",
+        "description": "Select or supply the answer warranted by this passage, observing the response limit and distinction between contradiction and absence."
+      }
+    ],
+    "answerKey": [
+      {
+        "questionId": "q1",
+        "acceptedAnswers": [
+          "F"
+        ],
+        "rationale": "A establishes urban significance through a comparison without asserting identity."
+      },
+      {
+        "questionId": "q2",
+        "acceptedAnswers": [
+          "B"
+        ],
+        "rationale": "B distinguishes population movement from a theory of its cause."
+      },
+      {
+        "questionId": "q3",
+        "acceptedAnswers": [
+          "H"
+        ],
+        "rationale": "C connects manual methods, scale and cooperation."
+      },
+      {
+        "questionId": "q4",
+        "acceptedAnswers": [
+          "D"
+        ],
+        "rationale": "D emphasises unexplained abandonment and limits of familiar explanations."
+      },
+      {
+        "questionId": "q5",
+        "acceptedAnswers": [
+          "A"
+        ],
+        "rationale": "E balances everyday artefacts with sacrifice evidence while retaining motive uncertainty."
+      },
+      {
+        "questionId": "q6",
+        "acceptedAnswers": [
+          "A"
+        ],
+        "rationale": "D has just contrasted weapons at other sites with their absence at Cahokia; the following sentence limits inference from it."
+      },
+      {
+        "questionId": "q7",
+        "acceptedAnswers": [
+          "B"
+        ],
+        "rationale": "E explicitly leaves religious versus other motives uncertain."
+      },
+      {
+        "questionId": "q8",
+        "acceptedAnswers": [
+          "C"
+        ],
+        "rationale": "Un- negates explained, fitting D’s stated uncertainty."
+      }
+    ],
+    "feedbackGuidance": "After submission compare a selected heading with the whole paragraph: state its central message and the modifier that made the strongest rival wrong. Do not accept matching nouns as sufficient. For reference and prefix items, explain both the antecedent or affix and the surrounding context. Ask for a revised one-sentence paragraph summary; use a new context next. Raw accuracy is not a band."
+  },
+  "delivery": {
+    "kind": "text",
+    "assetId": null
+  },
+  "locale": {
+    "instructionsFa": "متن اصلی تمرین را بخوانید و به همهٔ پرسش‌ها به انگلیسی پاسخ دهید. این مجموعه کوتاه، بخش کامل آزمون نیست.",
+    "teachingAnchorsFa": [],
+    "feedbackGuidanceFa": "پس از ثبت پاسخ، بازخورد را با پاسخ خود مقایسه کنید. یک خطا را با تکیه بر شواهد اصلاح کنید و سپس تمرین مستقل تازه‌ای انجام دهید."
+  },
+  "provenance": {
+    "origin": "source_based_original",
+    "sourceRefs": [
+      "MS3-R01"
+    ],
+    "territory": "Iran",
+    "rightsNote": "Source-based Mitooni authoring under user-confirmed Iranian-audience rights and selected-excerpt processing authority. Source files remain read-only; no broader distribution authority claimed.",
+    "transformationNotes": "Replaced unrelated invented urban scenarios with faithful paraphrases of the actual selected source semantic content. Source claims are explicitly framed as course accounts rather than current verified travel/regulatory/archaeological guidance. Preserved uncertainty and contrasting viewpoints, omitted sensational incidental detail, regrouped Cahokia to five paragraphs and authored new headings/questions/keys independently. Train/transfer heading lists have separate order and plausible inference distortions.",
+    "objectiveMappings": [
+      {
+        "objectiveId": "reading-main-idea",
+        "sourceRefIds": [
+          "MS3-R01"
+        ],
+        "sourceLearningPoint": "The source uses Auroville/Longyearbyen/Marloth/Hallstat paragraphs for topic/whole-idea/qualifier selection and prefixes, then Cahokia for independent heading practice.",
+        "unitTeachingConnection": "Training adapts the actual place examples and their contrast/qualification relationships; transfer adapts the actual Cahokia evidence, theory, construction, abandonment and mixed-findings account. New eight-heading sets require whole-paragraph comparison; reference/prefix/qualifier items extend the taught operations.",
+        "taskTransformation": "Replaced unrelated invented urban scenarios with faithful paraphrases of the actual selected source semantic content. Source claims are explicitly framed as course accounts rather than current verified travel/regulatory/archaeological guidance. Preserved uncertainty and contrasting viewpoints, omitted sensational incidental detail, regrouped Cahokia to five paragraphs and authored new headings/questions/keys independently. Train/transfer heading lists have separate order and plausible inference distortions."
+      },
+      {
+        "objectiveId": "reading-heading-qualifiers",
+        "sourceRefIds": [
+          "MS3-R01"
+        ],
+        "sourceLearningPoint": "The source uses Auroville/Longyearbyen/Marloth/Hallstat paragraphs for topic/whole-idea/qualifier selection and prefixes, then Cahokia for independent heading practice.",
+        "unitTeachingConnection": "Training adapts the actual place examples and their contrast/qualification relationships; transfer adapts the actual Cahokia evidence, theory, construction, abandonment and mixed-findings account. New eight-heading sets require whole-paragraph comparison; reference/prefix/qualifier items extend the taught operations.",
+        "taskTransformation": "Replaced unrelated invented urban scenarios with faithful paraphrases of the actual selected source semantic content. Source claims are explicitly framed as course accounts rather than current verified travel/regulatory/archaeological guidance. Preserved uncertainty and contrasting viewpoints, omitted sensational incidental detail, regrouped Cahokia to five paragraphs and authored new headings/questions/keys independently. Train/transfer heading lists have separate order and plausible inference distortions."
+      },
+      {
+        "objectiveId": "reading-reference",
+        "sourceRefIds": [
+          "MS3-R01"
+        ],
+        "sourceLearningPoint": "The source uses Auroville/Longyearbyen/Marloth/Hallstat paragraphs for topic/whole-idea/qualifier selection and prefixes, then Cahokia for independent heading practice.",
+        "unitTeachingConnection": "Training adapts the actual place examples and their contrast/qualification relationships; transfer adapts the actual Cahokia evidence, theory, construction, abandonment and mixed-findings account. New eight-heading sets require whole-paragraph comparison; reference/prefix/qualifier items extend the taught operations.",
+        "taskTransformation": "Replaced unrelated invented urban scenarios with faithful paraphrases of the actual selected source semantic content. Source claims are explicitly framed as course accounts rather than current verified travel/regulatory/archaeological guidance. Preserved uncertainty and contrasting viewpoints, omitted sensational incidental detail, regrouped Cahokia to five paragraphs and authored new headings/questions/keys independently. Train/transfer heading lists have separate order and plausible inference distortions."
+      },
+      {
+        "objectiveId": "reading-word-formation",
+        "sourceRefIds": [
+          "MS3-R01"
+        ],
+        "sourceLearningPoint": "The source uses Auroville/Longyearbyen/Marloth/Hallstat paragraphs for topic/whole-idea/qualifier selection and prefixes, then Cahokia for independent heading practice.",
+        "unitTeachingConnection": "Training adapts the actual place examples and their contrast/qualification relationships; transfer adapts the actual Cahokia evidence, theory, construction, abandonment and mixed-findings account. New eight-heading sets require whole-paragraph comparison; reference/prefix/qualifier items extend the taught operations.",
+        "taskTransformation": "Replaced unrelated invented urban scenarios with faithful paraphrases of the actual selected source semantic content. Source claims are explicitly framed as course accounts rather than current verified travel/regulatory/archaeological guidance. Preserved uncertainty and contrasting viewpoints, omitted sensational incidental detail, regrouped Cahokia to five paragraphs and authored new headings/questions/keys independently. Train/transfer heading lists have separate order and plausible inference distortions."
+      }
+    ]
+  },
+  "teacherReview": {
+    "status": "pending",
+    "notes": [
+      "Re-authored from inspected licensed teaching selections; independent source-alignment and IELTS teacher review pending. No calibrated level or band claim."
+    ]
+  },
+  "examTrack": "academic"
+}

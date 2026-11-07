@@ -1,0 +1,1275 @@
+{
+  "schemaVersion": 1,
+  "id": "academic-01-listening",
+  "version": 3,
+  "skill": "listening",
+  "durationMinutes": 30,
+  "instructions": "Answer all 40 questions. Listen to each recording ONCE. Read each question group during the pauses. Follow the word limit for completion questions. Transcripts and explanations are available only after submission.",
+  "parts": [
+    {
+      "id": "part-1",
+      "title": "Choosing a sailing course",
+      "context": "A beginner asks a sailing-club adviser to compare introductory course options.",
+      "speakers": [
+        {
+          "id": "adviser",
+          "description": "Adult adviser, natural British English."
+        },
+        {
+          "id": "learner",
+          "description": "Adult prospective learner, natural Australian English."
+        }
+      ],
+      "script": [
+        {
+          "speakerId": "adviser",
+          "text": "Good morning, sailing course enquiries. I can help you compare the beginner options. Are you looking for a course yourself, or asking on behalf of a group? The choice depends partly on whether you want to try sailing for a day or begin a more structured course."
+        },
+        {
+          "speakerId": "learner",
+          "text": "Just for myself. I've been reading the course information, but I'm not yet sure how much to commit to. I've enjoyed being near the water, although I've never actually learned to sail. I'd rather understand what each option involves before choosing. A friend may be interested later, but I don't want to book for somebody who hasn't decided."
+        },
+        {
+          "speakerId": "adviser",
+          "text": "Then the introductory day is worth considering. It gives someone with no experience a chance to see whether sailing is something they want to continue. A single place on the introductory day costs 120 pounds. That's the price for one person booking independently, rather than part of a pair."
+        },
+        {
+          "speakerId": "learner",
+          "text": "I had another figure in mind. I think I saw a lower price when I was looking through the information. Was I looking at an old offer, or does it depend on when you go?"
+        },
+        {
+          "speakerId": "adviser",
+          "text": "The lower figure concerns booking together. If two people book, the price is 110 pounds each. It's a reduction per person, not a total price for both. If your friend decides to join you, that distinction matters when you're comparing costs. You don't need previous experience for the introductory day."
+        },
+        {
+          "speakerId": "learner",
+          "text": "That explains it. I wouldn't want to tell my friend the wrong total. Would we be joining a very large group? I know group activities can be enjoyable, but I also want a chance to ask questions rather than just watch from a distance."
+        },
+        {
+          "speakerId": "adviser",
+          "text": "The groups are small: eight would be usual, with ten as the maximum. Everyone is a beginner, so people are normally willing to ask basic questions. But if you already know you want to start learning systematically, the first-level course offers a clearer sequence of practical work and theory."
+        },
+        {
+          "speakerId": "learner",
+          "text": "Is that spread over several weeks? I could attend a weekend more easily than a series of evenings. My work pattern varies, and promising to be available on the same evening every week would be difficult."
+        },
+        {
+          "speakerId": "adviser",
+          "text": "The first-level course lasts 2 days. Both are at the weekend, so it isn't a weekly evening commitment. It's a more substantial start than the introductory day, while still being a beginner course. Completing it also prepares you to move on to the next level rather than repeat an introduction."
+        },
+        {
+          "speakerId": "learner",
+          "text": "I assumed I might have to wait until summer. Is that a seasonal restriction, or is it simply that summer is when most people think about taking up sailing? I don't want to confuse what is popular with what is actually available."
+        },
+        {
+          "speakerId": "adviser",
+          "text": "The weekend course runs throughout the year. You don't have to wait for a summer-only season. There is classroom learning as well as practical work, so don't imagine the course is only a matter of getting into a boat and hoping you understand what to do."
+        },
+        {
+          "speakerId": "learner",
+          "text": "That sounds sensible. What does the classroom part cover? I can imagine learning names for parts of the boat, but I'm less sure what else a complete beginner needs to know before going out."
+        },
+        {
+          "speakerId": "adviser",
+          "text": "The theory includes weather, together with tides. Those are important to understanding the conditions in which you'll sail. The practical element takes you into the harbour in training dinghies. You share with another learner and an instructor, who explains the safety aspects as well as the sailing skills. Being a beginner is expected, so you aren't supposed to arrive knowing the terminology."
+        },
+        {
+          "speakerId": "learner",
+          "text": "Good. The language is one thing I thought I might struggle with. I can follow an explanation if I can connect a new term to what I'm looking at, but a long list of unfamiliar words without pictures would be rather difficult."
+        },
+        {
+          "speakerId": "adviser",
+          "text": "There's help with that. A dictionary is included in the first-level course fee. It explains sailing terms with pictures, so you can return to a word after the instructor has introduced it. The course costs two hundred pounds, with a discount for club members. You can consider membership separately; you don't need to decide that simply to understand the course options."
+        },
+        {
+          "speakerId": "learner",
+          "text": "And is there any record of completing the course? I don't mean a professional licence. I just want to know how the beginner level connects with whatever comes next, especially if I take a break before continuing."
+        },
+        {
+          "speakerId": "adviser",
+          "text": "At the end you receive a certificate. That marks completion of this course, after which the second-level course is the next step. It's useful to distinguish completing a beginner programme from being ready to do every kind of sailing independently. The course is a starting point, with instruction throughout."
+        },
+        {
+          "speakerId": "learner",
+          "text": "Yes, that's what I meant. Before I choose, could we go through what I would need to bring? I can swim confidently, but I don't have specialist sailing clothing. I'd prefer to know which equipment is provided rather than buy things unnecessarily."
+        },
+        {
+          "speakerId": "adviser",
+          "text": "You do need to be able to swim. The club provides the wetsuit and life jacket. Bring swimming clothing and some old trainers yourself. You'll also need a towel. Toiletries such as shampoo are your own choice, but people generally appreciate having them after being on the water. Don't assume that because specialist equipment is supplied, ordinary personal items are included too."
+        },
+        {
+          "speakerId": "learner",
+          "text": "I would certainly have forgotten at least one of those. What about food? I could carry lunch, although it would be easier if I could buy something rather than pack everything before setting off."
+        },
+        {
+          "speakerId": "adviser",
+          "text": "The club has a cafe. It sells sandwiches, cakes and other snacks, so there is a place to buy food and drink. That gives you an option; it doesn't mean the course is a catered holiday. When comparing the courses, keep the teaching and included equipment separate from whatever you choose to purchase to eat."
+        },
+        {
+          "speakerId": "learner",
+          "text": "Understood. Is there something I can do beforehand so that the first explanation feels a little less unfamiliar? I wouldn't want to teach myself incorrectly, but seeing the setting before arriving might help."
+        },
+        {
+          "speakerId": "adviser",
+          "text": "The recommended preparation is to watch the training videos online. They introduce what to expect and make the first day less unfamiliar. They support the course rather than replace the instructor, so you shouldn't feel you need to master every skill from a screen before attending."
+        },
+        {
+          "speakerId": "learner",
+          "text": "That would help. One last thing: I'll be travelling by bicycle, which means I may have a few personal items with me. I don't want to keep anything valuable in the boat or leave it loose while we're on the water."
+        },
+        {
+          "speakerId": "adviser",
+          "text": "There are lockers in the changing rooms. You can store valuables there while you take part. So, to recap the decision rather than book you immediately: the introductory day lets you try sailing, while the weekend course combines theory and practical skills and leads towards the next level. Think about which suits your aim, and whether your friend is genuinely ready to book as well."
+        }
+      ],
+      "questions": [
+        {
+          "id": 1,
+          "type": "note_completion",
+          "instructions": "Write ONE NUMBER for the answer.",
+          "prompt": "Introductory day — one person booking alone: £____",
+          "options": [],
+          "wordLimit": 1,
+          "answer": {
+            "acceptedAnswers": [
+              "120"
+            ],
+            "evidenceQuote": "A single place on the introductory day costs 120 pounds.",
+            "rationale": "This is the independent booking price, not the paired rate."
+          }
+        },
+        {
+          "id": 2,
+          "type": "note_completion",
+          "instructions": "Write ONE NUMBER for the answer.",
+          "prompt": "Introductory day — price for each person when two book together: £____",
+          "options": [],
+          "wordLimit": 1,
+          "answer": {
+            "acceptedAnswers": [
+              "110"
+            ],
+            "evidenceQuote": "If two people book, the price is 110 pounds each.",
+            "rationale": "The amount is per person, not the price of both places."
+          }
+        },
+        {
+          "id": 3,
+          "type": "note_completion",
+          "instructions": "Write ONE NUMBER for the answer.",
+          "prompt": "First-level course — length: ____ days",
+          "options": [],
+          "wordLimit": 1,
+          "answer": {
+            "acceptedAnswers": [
+              "2"
+            ],
+            "evidenceQuote": "The first-level course lasts 2 days.",
+            "rationale": "It is a weekend course rather than weekly evening sessions."
+          }
+        },
+        {
+          "id": 4,
+          "type": "note_completion",
+          "instructions": "Write ONE WORD ONLY for the answer.",
+          "prompt": "First-level course — available throughout the ____",
+          "options": [],
+          "wordLimit": 1,
+          "answer": {
+            "acceptedAnswers": [
+              "year"
+            ],
+            "evidenceQuote": "The weekend course runs throughout the year.",
+            "rationale": "Summer popularity is not a restriction on availability."
+          }
+        },
+        {
+          "id": 5,
+          "type": "note_completion",
+          "instructions": "Write ONE WORD ONLY for the answer.",
+          "prompt": "Theory — tides and ____",
+          "options": [],
+          "wordLimit": 1,
+          "answer": {
+            "acceptedAnswers": [
+              "weather"
+            ],
+            "evidenceQuote": "The theory includes weather, together with tides.",
+            "rationale": "Both are named as classroom topics."
+          }
+        },
+        {
+          "id": 6,
+          "type": "note_completion",
+          "instructions": "Write ONE WORD ONLY for the answer.",
+          "prompt": "Fee includes a picture ____ explaining sailing terms.",
+          "options": [],
+          "wordLimit": 1,
+          "answer": {
+            "acceptedAnswers": [
+              "dictionary"
+            ],
+            "evidenceQuote": "A dictionary is included in the first-level course fee.",
+            "rationale": "Pictures support understanding of technical vocabulary."
+          }
+        },
+        {
+          "id": 7,
+          "type": "note_completion",
+          "instructions": "Write ONE WORD ONLY for the answer.",
+          "prompt": "On completing the course, learners receive a ____.",
+          "options": [],
+          "wordLimit": 1,
+          "answer": {
+            "acceptedAnswers": [
+              "certificate"
+            ],
+            "evidenceQuote": "At the end you receive a certificate.",
+            "rationale": "Completion is distinguished from unrestricted independent competence."
+          }
+        },
+        {
+          "id": 8,
+          "type": "note_completion",
+          "instructions": "Write ONE WORD ONLY for the answer.",
+          "prompt": "Personal items — swimming clothing, old trainers and a ____",
+          "options": [],
+          "wordLimit": 1,
+          "answer": {
+            "acceptedAnswers": [
+              "towel"
+            ],
+            "evidenceQuote": "You'll also need a towel.",
+            "rationale": "Wetsuit and life jacket are supplied; the towel is personal equipment."
+          }
+        },
+        {
+          "id": 9,
+          "type": "note_completion",
+          "instructions": "Write ONE WORD ONLY for the answer.",
+          "prompt": "Recommended preparation — online training ____",
+          "options": [],
+          "wordLimit": 1,
+          "answer": {
+            "acceptedAnswers": [
+              "videos"
+            ],
+            "evidenceQuote": "The recommended preparation is to watch the training videos online.",
+            "rationale": "These introduce the setting rather than replace instruction."
+          }
+        },
+        {
+          "id": 10,
+          "type": "note_completion",
+          "instructions": "Write ONE WORD ONLY for the answer.",
+          "prompt": "Storage for valuables — ____ in the changing rooms",
+          "options": [],
+          "wordLimit": 1,
+          "answer": {
+            "acceptedAnswers": [
+              "lockers"
+            ],
+            "evidenceQuote": "There are lockers in the changing rooms.",
+            "rationale": "This answers the storage question, not transport arrangements."
+          }
+        }
+      ],
+      "sourceRefIds": [
+        "CA21-L01",
+        "CA21-L02",
+        "MS2-L01"
+      ],
+      "transformationNotes": "Reconstruct the same sailing-course factual case in a newly worded enquiry. Change target selection and order: assess independent versus paired prices, duration, availability, weather, terminology resource, completion record, personal equipment, preparation and storage rather than replicate the source table and notes. No source dialogue or full exercise copied."
+    },
+    {
+      "id": "part-2",
+      "title": "Entering film makeup work",
+      "context": "A makeup artist explains career preparation and everyday trainee duties in film production.",
+      "speakers": [
+        {
+          "id": "speaker",
+          "description": "Adult careers speaker, natural New Zealand English."
+        }
+      ],
+      "script": [
+        {
+          "speakerId": "speaker",
+          "text": "Welcome. Today I will describe entering film makeup work through a trainee role. We will consider gaining experience, working with other people, building a portfolio and carrying out daily duties. A trainee role can sound glamorous when described only in terms of the finished film. We will look at the practical side, including routine work that audiences never see."
+        },
+        {
+          "speakerId": "speaker",
+          "text": "The route I am describing involves about two years of trainee work before becoming a film makeup artist. For someone seeking a first opportunity, a short film with a small budget may offer experience. However, we need to distinguish the chance to learn from the conditions under which the work happens. On a small-budget project, ensure transport expenses are covered. That isn't the same as promising a wage. Food is another separate consideration: trainees are told to bring supplies because catering may not be available. These distinctions matter when someone hears the word 'expenses' and imagines that every personal cost has been provided for."
+        },
+        {
+          "speakerId": "speaker",
+          "text": "A large production can offer a different range of experience. Hair and makeup are separate departments on such films. That means you shouldn't assume that being in the makeup department will automatically teach you a variety of hair styles. Nor should you expect immediate practical access to specialist effects work, which has its own expertise. One valuable opportunity is working with people from different ethnic backgrounds. There is also a range of ages. The benefit is breadth of experience with people, rather than a promise that a beginner will be assigned every specialist technique."
+        },
+        {
+          "speakerId": "speaker",
+          "text": "The working atmosphere can be demanding. Long empty hours are not the defining difficulty of the makeup department. Instead, there can be considerable pressure to keep working while responding professionally to other people. Directors may be impatient or dissatisfied with the result. An experienced makeup artist has to manage that interaction without losing control of the task. A trainee can learn from how a supervisor responds. That is different from learning only a technical procedure: professional conduct is visible in the response to an awkward situation as well as in the finished appearance."
+        },
+        {
+          "speakerId": "speaker",
+          "text": "Meeting well-known actors is another adjustment. I remember feeling so shy that conversation was difficult. It wasn't a feeling of pride in having reached the same status, and it wasn't disappointment that the actors looked different in person. Over time, meeting performers became an ordinary part of work. The useful distinction is between an initial emotional reaction and a continuing professional relationship. Treating a workplace meeting as an opportunity to seek personal photographs would miss the purpose of being there."
+        },
+        {
+          "speakerId": "speaker",
+          "text": "Now consider the trainee's kit. It needs to be available when a task arises, but that doesn't mean buying an elaborate collection of expensive products at the outset. The recommendation is a kit containing the essentials. A beginner may learn from observing what experienced colleagues carry, while respecting that somebody else's equipment is not automatically available to borrow. Looking carefully and asking permission are different actions. The required kit should match the tasks a trainee is actually expected to carry out, rather than an imagined role involving every specialist effect on a film."
+        },
+        {
+          "speakerId": "speaker",
+          "text": "A portfolio helps show the work a trainee has done. Photographs can show development across the stages of an application, rather than only a finished face. However, making a useful record does not remove the need for authorisation. Obtain approval from the makeup designer before using work photographs in the portfolio. Your portfolio can be sent digitally, so printing a complete collection is not the priority. Later I will mention printed continuity records. Those serve a different purpose, and the instruction about them should not be transferred automatically to a personal portfolio."
+        },
+        {
+          "speakerId": "speaker",
+          "text": "Let us move from career preparation to everyday duties. An actor may arrive with skin already cleansed and moisturised. When that preparation hasn't been done, a trainee may be asked to do it before the makeup artist starts. It has to happen quickly enough to avoid delaying the rest of the work. This is not an invitation to rush carelessly; it describes the need to complete a familiar supporting task efficiently within a schedule. Being prepared and understanding the next step help someone work at the required pace."
+        },
+        {
+          "speakerId": "speaker",
+          "text": "Another duty concerns continuity. Scenes may be filmed out of sequence, and a reshoot can happen much later. The makeup has to be reproduced, which makes reliable records important. Photographs are logged digitally and a printed copy is kept in the actor's file. Here the central requirement is organisation. If a record cannot be found when it is needed, taking it originally has done little good. Notice again the difference from the portfolio: the continuity record supports reproducing a particular appearance, while the portfolio presents work to others."
+        },
+        {
+          "speakerId": "speaker",
+          "text": "General duties may be far less specialised. They can include making drinks and putting washing on, not simply preparing an actor for the camera. The useful attitude here is flexibility: being ready to help with a range of requests. A trainee who treats every ordinary task as beneath them is misunderstanding the role being described. That doesn't mean confusing the work with independent responsibility for the entire department. It means recognising that supporting a production involves small practical contributions as well as opportunities to develop a craft."
+        },
+        {
+          "speakerId": "speaker",
+          "text": "Finally, we need to distinguish between principal cast members and extras. Trainees may apply makeup to extras, rather than taking charge of the principal cast. When many people need to be ready, pace matters again. Spending too long with each person can delay the group. Confidence develops through understanding the limited task, doing it competently and keeping the whole schedule in view. The overall picture is a combination of technical learning, reliable records, appropriate permission and professional behaviour. Together, they explain why a trainee's day involves much more than the most visible creative work."
+        }
+      ],
+      "questions": [
+        {
+          "id": 11,
+          "type": "multiple_choice",
+          "instructions": "Choose ONE letter, A, B or C.",
+          "prompt": "In the small-budget example, what should a trainee ensure is covered?",
+          "options": [
+            {
+              "id": "A",
+              "text": "All food costs"
+            },
+            {
+              "id": "B",
+              "text": "Travel costs"
+            },
+            {
+              "id": "C",
+              "text": "A regular wage"
+            }
+          ],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "B"
+            ],
+            "evidenceQuote": "ensure transport expenses are covered.",
+            "rationale": "Transport is distinguished from wages and catering."
+          }
+        },
+        {
+          "id": 12,
+          "type": "multiple_choice",
+          "instructions": "Choose ONE letter, A, B or C.",
+          "prompt": "What experience is a large production described as offering?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Leading specialist effects work"
+            },
+            {
+              "id": "B",
+              "text": "Learning many hair styles"
+            },
+            {
+              "id": "C",
+              "text": "Working with a diverse group of people"
+            }
+          ],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "C"
+            ],
+            "evidenceQuote": "working with people from different ethnic backgrounds.",
+            "rationale": "Separate hair departments and specialist effects are not promised trainee experiences."
+          }
+        },
+        {
+          "id": 13,
+          "type": "multiple_choice",
+          "instructions": "Choose ONE letter, A, B or C.",
+          "prompt": "Which situation illustrates interpersonal pressure?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Dealing with an unhappy director"
+            },
+            {
+              "id": "B",
+              "text": "Finding activities during long idle periods"
+            },
+            {
+              "id": "C",
+              "text": "Competing with the hair department"
+            }
+          ],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "A"
+            ],
+            "evidenceQuote": "Directors may be impatient or dissatisfied with the result.",
+            "rationale": "The example concerns responding professionally to criticism."
+          }
+        },
+        {
+          "id": 14,
+          "type": "multiple_choice",
+          "instructions": "Choose ONE letter, A, B or C.",
+          "prompt": "How did the speaker initially react to famous actors?",
+          "options": [
+            {
+              "id": "A",
+              "text": "With a sense of equal status"
+            },
+            {
+              "id": "B",
+              "text": "With difficulty speaking comfortably"
+            },
+            {
+              "id": "C",
+              "text": "With disappointment at their appearance"
+            }
+          ],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "B"
+            ],
+            "evidenceQuote": "I remember feeling so shy that conversation was difficult.",
+            "rationale": "Later familiarity is contrasted with initial shyness."
+          }
+        },
+        {
+          "id": 15,
+          "type": "multiple_choice",
+          "instructions": "Choose ONE letter, A, B or C.",
+          "prompt": "What does the speaker recommend for a beginner’s kit?",
+          "options": [
+            {
+              "id": "A",
+              "text": "A full set of specialist-effects products"
+            },
+            {
+              "id": "B",
+              "text": "Products borrowed from colleagues"
+            },
+            {
+              "id": "C",
+              "text": "A basic selection suited to trainee tasks"
+            }
+          ],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "C"
+            ],
+            "evidenceQuote": "The recommendation is a kit containing the essentials.",
+            "rationale": "Watching colleagues does not imply using their equipment without permission."
+          }
+        },
+        {
+          "id": 16,
+          "type": "note_completion",
+          "instructions": "Write ONE WORD ONLY for the answer.",
+          "prompt": "Before portfolio use, obtain the makeup designer’s ____.",
+          "options": [],
+          "wordLimit": 1,
+          "answer": {
+            "acceptedAnswers": [
+              "approval"
+            ],
+            "evidenceQuote": "Obtain approval from the makeup designer before using work photographs in the portfolio.",
+            "rationale": "Photographic usefulness does not replace permission."
+          }
+        },
+        {
+          "id": 17,
+          "type": "note_completion",
+          "instructions": "Write ONE WORD ONLY for the answer.",
+          "prompt": "Skin preparation must be done ____ enough to prevent delays.",
+          "options": [],
+          "wordLimit": 1,
+          "answer": {
+            "acceptedAnswers": [
+              "quickly",
+              "efficiently"
+            ],
+            "evidenceQuote": "It has to happen quickly enough to avoid delaying the rest of the work.",
+            "rationale": "Quickly is the direct completion; efficiently is also spoken of completing this same supporting task within the schedule and fits the gap."
+          }
+        },
+        {
+          "id": 18,
+          "type": "note_completion",
+          "instructions": "Write ONE WORD ONLY for the answer.",
+          "prompt": "Digital logs and actor files support ____.",
+          "options": [],
+          "wordLimit": 1,
+          "answer": {
+            "acceptedAnswers": [
+              "continuity"
+            ],
+            "evidenceQuote": "Another duty concerns continuity.",
+            "rationale": "The following explanation connects records with reproducing a look."
+          }
+        },
+        {
+          "id": 19,
+          "type": "note_completion",
+          "instructions": "Write ONE WORD ONLY for the answer.",
+          "prompt": "For varied general duties, the important attitude is ____.",
+          "options": [],
+          "wordLimit": 1,
+          "answer": {
+            "acceptedAnswers": [
+              "flexibility"
+            ],
+            "evidenceQuote": "The useful attitude here is flexibility:",
+            "rationale": "The speaker contrasts willingness to help with dismissing ordinary tasks."
+          }
+        },
+        {
+          "id": 20,
+          "type": "note_completion",
+          "instructions": "Write ONE WORD ONLY for the answer.",
+          "prompt": "Trainees may apply makeup to ____ rather than principal cast members.",
+          "options": [],
+          "wordLimit": 1,
+          "answer": {
+            "acceptedAnswers": [
+              "extras"
+            ],
+            "evidenceQuote": "Trainees may apply makeup to extras,",
+            "rationale": "The distinction specifies who is within the trainee role."
+          }
+        }
+      ],
+      "sourceRefIds": [
+        "CA21-L01",
+        "CA21-L02",
+        "MS2-L01",
+        "MS2-L02"
+      ],
+      "transformationNotes": "Reorganise source conditions and duties into a careers-case monologue. New single-answer MCQ and grammatical notes distinguish travel from catering, diverse people from specialist techniques, portfolio permission from continuity prints, and speed from flexibility. The account is scoped to its source case rather than current employment advice."
+    },
+    {
+      "id": "part-3",
+      "title": "Evaluating marine-biodiversity resources",
+      "context": "Two students evaluate a marine-biodiversity lecture and resources for a seminar.",
+      "speakers": [
+        {
+          "id": "maya",
+          "description": "Adult student, natural North American English."
+        },
+        {
+          "id": "leo",
+          "description": "Adult student, natural British English."
+        }
+      ],
+      "script": [
+        {
+          "speakerId": "maya",
+          "text": "Before we choose material for the seminar, can we compare our notes on the visiting lecture? I'd read about ocean biodiversity before, so I wasn't starting with no knowledge. What stayed with me was the attention to long-term threats. Some aren't attracting much public attention yet, but that doesn't make them unimportant."
+        },
+        {
+          "speakerId": "leo",
+          "text": "I agree. My first note says 'useful solutions', but looking back that isn't quite right. We were shown problems that may be difficult to solve, rather than a convenient action for every threat. The important change was looking further ahead. I should rewrite that note before I repeat it in the seminar."
+        },
+        {
+          "speakerId": "maya",
+          "text": "There were suggestions about policy, though, particularly ways countries could protect marine and coastal environments. I don't want to imply that the speaker offered nothing practical. We need to separate what was included from what had the strongest effect on us. Something can be useful without being the reason a lecture changes your view."
+        },
+        {
+          "speakerId": "leo",
+          "text": "The examples also showed how worldwide the threats are. The national policy points were one part, but the examples weren't restricted to a single country's coastline. That broader scale made a difference to my understanding. A local example might be easier to picture, but it wasn't the defining feature of this lecture."
+        },
+        {
+          "speakerId": "maya",
+          "text": "Then there was the research team. I wrote down that some members had been warning about ocean pollution years earlier. It would be tempting to say the main strength was their record of previous work, because that's easy to put in a sentence. But that wasn't what I found most impressive about the project."
+        },
+        {
+          "speakerId": "leo",
+          "text": "For me, it was the range of expertise in one team. People with very different backgrounds were contributing to the same investigation. Being international is useful, but remote collaboration isn't unusual in itself. The mix of specialisms was the point. We should explain why bringing those perspectives together mattered, rather than list the countries represented."
+        },
+        {
+          "speakerId": "maya",
+          "text": "Yes. I also liked how the speaker handled numerical evidence. There were figures available, but she explained the general implications instead of filling the lecture with numbers. That helped me understand the argument without confusing the amount of data shown with the strength of the explanation."
+        },
+        {
+          "speakerId": "leo",
+          "text": "And the technology was memorable. The description of robots used to investigate threats was especially interesting. Improved tracking systems were mentioned too. Those examples explained how researchers could find things out, rather than merely telling us to be impressed by a new device. Technology was connected to a research purpose."
+        },
+        {
+          "speakerId": "maya",
+          "text": "That gives us an introduction. Now we need to be more critical about the reading and listening resources. I don't think 'interesting' is a sufficient judgment for every one. We have to say whether a resource explains its claims, fits our audience and gives a balanced account. Otherwise our seminar contribution will become a list of titles."
+        },
+        {
+          "speakerId": "leo",
+          "text": "Let's start with the article on invasive lionfish. The claim was that their habitat was expanding through the Mediterranean. The writer described the environmental danger quite strongly. My first reaction was that forceful language meant it must be a convincing article, but I couldn't find enough support for the claims."
+        },
+        {
+          "speakerId": "maya",
+          "text": "That's the same distinction I made. I wasn't dismissing the possibility of harm. The problem was the lack of evidence explaining the danger. We shouldn't criticise it for being too specialised; the language wasn't what prevented us evaluating the claim. It needed a clearer basis for the conclusions. In our notes, 'not sufficiently supported' is more accurate than simply 'wrong'."
+        },
+        {
+          "speakerId": "leo",
+          "text": "Next, the documentary about microplastics. I started watching it and then noticed when it had been produced. I stopped because it was old. You watched the whole thing, didn't you? I wondered whether I'd been unfair to reject it before seeing the end."
+        },
+        {
+          "speakerId": "maya",
+          "text": "I did finish it. Some explanations might help a complete beginner, but for our seminar it felt outdated. The account belonged to a stage when microplastics were much less familiar to the public. We need to be careful: its age doesn't prove that every statement is false. It means it doesn't give the current perspective our discussion needs. We can describe that limitation without inventing a scientific error we didn't actually identify."
+        },
+        {
+          "speakerId": "leo",
+          "text": "The ocean-pollution podcast had a different weakness. It referred to pesticides and plastic and explained that they were harmful. I kept expecting it to go beyond the points we already knew. There wasn't much to challenge or extend our understanding."
+        },
+        {
+          "speakerId": "maya",
+          "text": "I found it predictable too. That's different from saying it was too old or impossible to follow. It was easy enough to understand; it simply offered little beyond familiar points. We could mention it as a basic introduction, but we shouldn't present it as the most useful preparation for people who've already attended the lecture."
+        },
+        {
+          "speakerId": "leo",
+          "text": "The book on coastal ecosystems was almost the reverse. Initially I thought it might be too detailed. It went into offshore wind farms and fish farms, which took more concentration than the podcast. But when I finished, the relationships between the issues were clearer. The diagrams helped me follow the explanation."
+        },
+        {
+          "speakerId": "maya",
+          "text": "Me too. So we shouldn't equate difficulty at the beginning with failure overall. The detail and diagrams contributed to understanding. For this resource, a positive evaluation needs to say what became clearer, rather than only report that we enjoyed it. We can recommend selected sections and explain how the illustrations support the written discussion."
+        },
+        {
+          "speakerId": "leo",
+          "text": "I can't make the same recommendation for the metal-toxicity article at our present level. It deals with metals from industrial emissions and reactions in the sea, but I couldn't follow the explanation. I kept rereading without getting a usable account of the process."
+        },
+        {
+          "speakerId": "maya",
+          "text": "It seemed to expect specialist knowledge. That's an audience problem for us, rather than proof that the researchers are mistaken. We should avoid writing 'weak evidence' just because the argument was beyond our understanding. Our evaluation can say who the resource might suit and why we need a more accessible introduction first."
+        },
+        {
+          "speakerId": "leo",
+          "text": "Finally, the floating-marine-cities podcast. I found the idea engaging, and the account of possible benefits to people was easy to follow. At first I thought that made it a good conclusion to our seminar. But then I noticed what was missing."
+        },
+        {
+          "speakerId": "maya",
+          "text": "It gave a one-sided account. The environmental effects received little attention compared with the benefits for people. That matters in a seminar about biodiversity. An interesting proposal still needs its costs examined. We can use it to raise a question, as long as we don't treat the podcast's emphasis as a balanced evaluation."
+        },
+        {
+          "speakerId": "leo",
+          "text": "So our notes need different reasons for different judgments: support for claims, age and relevance, new insight, clarity, assumed knowledge and balance. That should make the discussion more useful than putting each resource into a simple good-or-bad column. Let's organise the seminar around those distinctions, with one clear example for each."
+        }
+      ],
+      "questions": [
+        {
+          "id": 21,
+          "type": "multiple_choice",
+          "instructions": "Choose ONE letter, A, B or C.",
+          "prompt": "What aspect of the lecture most changed the students’ perspective?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Its focus on future threats"
+            },
+            {
+              "id": "B",
+              "text": "Its solution for every problem"
+            },
+            {
+              "id": "C",
+              "text": "Its assumption that listeners knew nothing"
+            }
+          ],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "A"
+            ],
+            "evidenceQuote": "The important change was looking further ahead.",
+            "rationale": "Leo corrects his original note about easy solutions."
+          }
+        },
+        {
+          "id": 22,
+          "type": "multiple_choice",
+          "instructions": "Choose ONE letter, A, B or C.",
+          "prompt": "Why did the examples matter to Leo?",
+          "options": [
+            {
+              "id": "A",
+              "text": "They focused on his local coastline"
+            },
+            {
+              "id": "B",
+              "text": "They replaced the policy discussion"
+            },
+            {
+              "id": "C",
+              "text": "They demonstrated the geographical breadth of threats"
+            }
+          ],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "C"
+            ],
+            "evidenceQuote": "The examples also showed how worldwide the threats are.",
+            "rationale": "National policy is mentioned, but the examples establish broader scale."
+          }
+        },
+        {
+          "id": 23,
+          "type": "multiple_choice",
+          "instructions": "Choose ONE letter, A, B or C.",
+          "prompt": "What most impressed Leo about the research team?",
+          "options": [
+            {
+              "id": "A",
+              "text": "The countries where members lived"
+            },
+            {
+              "id": "B",
+              "text": "The combination of different specialisms"
+            },
+            {
+              "id": "C",
+              "text": "The researchers’ previous warnings"
+            }
+          ],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "B"
+            ],
+            "evidenceQuote": "For me, it was the range of expertise in one team.",
+            "rationale": "Prior work and international membership are true details, but not his main judgment."
+          }
+        },
+        {
+          "id": 24,
+          "type": "multiple_choice",
+          "instructions": "Choose ONE letter, A, B or C.",
+          "prompt": "Which technology example did Leo find especially interesting?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Robots used in investigations"
+            },
+            {
+              "id": "B",
+              "text": "A system for remote team meetings"
+            },
+            {
+              "id": "C",
+              "text": "A device displaying more statistics"
+            }
+          ],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "A"
+            ],
+            "evidenceQuote": "The description of robots used to investigate threats was especially interesting.",
+            "rationale": "Technology is valued for what it enables researchers to investigate."
+          }
+        },
+        {
+          "id": 25,
+          "type": "multiple_choice",
+          "instructions": "Choose ONE letter, A, B or C.",
+          "prompt": "What is the students’ main criticism of the lionfish article?",
+          "options": [
+            {
+              "id": "A",
+              "text": "It disproves a claim about environmental harm"
+            },
+            {
+              "id": "B",
+              "text": "It requires advanced technical knowledge"
+            },
+            {
+              "id": "C",
+              "text": "It gives insufficient support for its claims"
+            }
+          ],
+          "wordLimit": null,
+          "answer": {
+            "acceptedAnswers": [
+              "C"
+            ],
+            "evidenceQuote": "The problem was the lack of evidence explaining the danger.",
+            "rationale": "They do not reject the possibility of harm or find the language too specialised."
+          }
+        },
+        {
+          "id": 26,
+          "type": "note_completion",
+          "instructions": "Write ONE WORD ONLY for the answer.",
+          "prompt": "Microplastics documentary — for this seminar, Maya finds it ____.",
+          "options": [],
+          "wordLimit": 1,
+          "answer": {
+            "acceptedAnswers": [
+              "outdated"
+            ],
+            "evidenceQuote": "for our seminar it felt outdated.",
+            "rationale": "Age limits relevance; she does not say every statement is false."
+          }
+        },
+        {
+          "id": 27,
+          "type": "note_completion",
+          "instructions": "Write ONE WORD ONLY for the answer.",
+          "prompt": "Ocean-pollution podcast — Maya’s judgment: ____",
+          "options": [],
+          "wordLimit": 1,
+          "answer": {
+            "acceptedAnswers": [
+              "predictable"
+            ],
+            "evidenceQuote": "I found it predictable too.",
+            "rationale": "It adds little beyond points the students already know."
+          }
+        },
+        {
+          "id": 28,
+          "type": "note_completion",
+          "instructions": "Write ONE WORD ONLY for the answer.",
+          "prompt": "Coastal-ecosystems book — helpful visual feature: ____",
+          "options": [],
+          "wordLimit": 1,
+          "answer": {
+            "acceptedAnswers": [
+              "diagrams",
+              "illustrations"
+            ],
+            "evidenceQuote": "The diagrams helped me follow the explanation.",
+            "rationale": "Both diagrams and illustrations refer to the book’s helpful visual explanations in the dialogue; initial difficulty is distinguished from eventual clarity."
+          }
+        },
+        {
+          "id": 29,
+          "type": "note_completion",
+          "instructions": "Write ONE WORD ONLY for the answer.",
+          "prompt": "Metal-toxicity article — assumes ____ knowledge",
+          "options": [],
+          "wordLimit": 1,
+          "answer": {
+            "acceptedAnswers": [
+              "specialist"
+            ],
+            "evidenceQuote": "It seemed to expect specialist knowledge.",
+            "rationale": "The audience mismatch does not establish scientific error."
+          }
+        },
+        {
+          "id": 30,
+          "type": "note_completion",
+          "instructions": "Write ONE WORD ONLY for the answer.",
+          "prompt": "Floating-marine-cities podcast — the account was ____.",
+          "options": [],
+          "wordLimit": 1,
+          "answer": {
+            "acceptedAnswers": [
+              "one-sided"
+            ],
+            "evidenceQuote": "It gave a one-sided account.",
+            "rationale": "Human benefits dominate while environmental effects are neglected."
+          }
+        }
+      ],
+      "sourceRefIds": [
+        "CA21-L01",
+        "CA21-L02",
+        "MS2-L03"
+      ],
+      "transformationNotes": "Reconstruct the same seminar/resource content in new dialogue with explicit revisions of initial interpretations. Replace two-answer selection and shared opinion-letter matching with five single-answer choices and five one-word notes. Source judgments are preserved; explanations are expanded to make their distinctions teachable."
+    },
+    {
+      "id": "part-4",
+      "title": "Examining sources of rubber",
+      "context": "A lecturer explains constraints on rubber production, threats to supply and alternative sources.",
+      "speakers": [
+        {
+          "id": "lecturer",
+          "description": "Adult lecturer, natural British English, steady academic pace."
+        }
+      ],
+      "script": [
+        {
+          "speakerId": "lecturer",
+          "text": "Today we will examine the production and supply of rubber. The purpose is to understand a chain of explanation: what makes a material useful, why supply may be constrained, what can threaten that supply, and how an alternative source might address some limitations while introducing others. We will keep those questions separate. A material can be useful without being suitable for every application, and a plant can contain rubber without immediately becoming a practical replacement for existing production. We will use these examples to understand the different constraints on production."
+        },
+        {
+          "speakerId": "lecturer",
+          "text": "Rubber belongs alongside metals and fossil fuels as an important material in an industrial economy. Metals provide structures and machinery, while fuels provide power. Rubber contributes flexible parts such as belts, pipes and components that absorb shocks. These are less visually prominent than a large machine, but they help connect parts and make systems function. The everyday range extends from footwear to medical gloves. This introduction is a reminder that the importance of a resource cannot be judged simply by how noticeable it is in a finished object."
+        },
+        {
+          "speakerId": "lecturer",
+          "text": "Most natural rubber comes from the Para rubber tree. The tree originated in Brazil, although the plantations discussed are in South-East Asia. To obtain the material, workers make small cuts in the trunk and collect the liquid that emerges. The liquid collected from the tree is called latex. Collection is manual and labour-intensive. That matters because increasing output is not simply a matter of pressing a button on a machine: people and a suitable living crop are involved at several stages."
+        },
+        {
+          "speakerId": "lecturer",
+          "text": "The first constraint is time. A planted tree may take 8 to 10 years before it begins producing. That is very different from changing the area devoted to an annual crop. Suppose demand rises after a farmer has made a planting decision. The long wait limits how quickly that decision can produce additional material. Conversely, if demand falls, a tree planted years earlier has not become a short-term crop that can easily be replaced. For our purposes, the key point is the delay between committing land and obtaining output."
+        },
+        {
+          "speakerId": "lecturer",
+          "text": "Eight years is the lower end of that range, rather than a guaranteed wait for every tree. A range communicates uncertainty and variation; replacing it with one exact promise would misrepresent how the crop develops. This is also why a long production cycle is connected to demand. The problem is not simply that trees grow slowly in an abstract sense. It is that producers must make decisions well before they know precisely what the market will require."
+        },
+        {
+          "speakerId": "lecturer",
+          "text": "Location imposes another constraint. The tree needs an appropriate combination of rainfall, temperature and altitude. We can group those requirements under suitable climate, while remembering that height above sea level also affects growing conditions. Having land available somewhere does not mean it is suitable land for this particular crop. Production is concentrated close to the equator. We cannot assume that the same trees can simply be moved into any northern or southern region when extra supply is needed. Geography and the long lead time therefore limit different aspects of expansion."
+        },
+        {
+          "speakerId": "lecturer",
+          "text": "There is also a problem after manufacture and use. Some materials can return relatively easily to a production cycle. Rubber is difficult to recycle. Notice the wording: difficult does not mean impossible. Comparing this difficulty with more familiar recycling streams explains why recovering used material cannot be assumed to solve a shortage. This is a useful example of how an absolute statement can distort an argument. If we write that rubber can never be recovered, we have made a much stronger claim than the evidence supports."
+        },
+        {
+          "speakerId": "lecturer",
+          "text": "Now turn from long-standing production constraints to threats. The plantations we are discussing derive from a small number of seeds taken from Brazil during the nineteenth century. That restricted starting population means low genetic diversity. When many trees are closely related, a disease to which they are susceptible can threaten a large share of the crop. This is a biological vulnerability, not the same thing as slow growth. Even if a tree has reached productive age, its relationship to the wider population may still make supply vulnerable to a shared disease."
+        },
+        {
+          "speakerId": "lecturer",
+          "text": "A fungus presents a particularly serious disease threat. Damage to Brazilian rubber trees illustrates the potential consequence for plantations elsewhere. We should preserve that distinction between an observed example and a wider potential risk. That does not mean every plantation has already suffered the same event. The underlying reasoning is that a population with little variation may have limited resilience when a relevant disease arrives. A dramatic example needs to be connected to that mechanism, rather than used as a substitute for explaining it."
+        },
+        {
+          "speakerId": "lecturer",
+          "text": "A different pressure comes from farmers' choices. Farmers may move towards palm oil because it may be easier and more profitable to cultivate. This is an economic competition for land and labour, rather than a disease of the rubber tree. Extreme weather is a further threat, again with a different mechanism. It is tempting to put every pressure under one heading such as environmental change, but doing so can hide why an intervention might address one problem and leave another untouched. Better disease resistance would not by itself remove an incentive to grow a more profitable crop."
+        },
+        {
+          "speakerId": "lecturer",
+          "text": "What about synthetic rubber? It is useful for certain engine components and cooking equipment, so the comparison is not a choice between a universally useful natural material and a useless manufactured one. The limitation concerns properties needed for particular applications. The strength required in demanding uses, including aircraft tyres, limits the extent to which synthetic material can replace natural rubber. The important point is that materials must be compared against the demands of a particular application. A tyre formulation is an engineering decision; our concern is the argument that one substitute may serve some functions without replacing the original in all of them."
+        },
+        {
+          "speakerId": "lecturer",
+          "text": "That explains the search for another biological source of natural rubber. The example is a type of dandelion. The familiar yellow flower may seem an unlikely industrial resource, but rubber is found in its roots. The relevant part is below the ground, so recognising the flower does not identify where the material is extracted. There is also a limitation: compared with the tree, the plant yields relatively small amounts. An alternative is not established by mentioning only its most attractive feature and omitting the scale of what it produces."
+        },
+        {
+          "speakerId": "lecturer",
+          "text": "The attraction is adaptability. These dandelions can grow in many locations and do not require rich soil. That contrasts with the tree's more restrictive growing conditions. It suggests why researchers would investigate the plant, not why every supply difficulty has already been solved. Yield and cultivation possibilities need to be considered together. The final lesson is therefore about comparing constraints: the tree's delayed production, suitable growing region, labour requirements and biological vulnerability; the limits of recycling and substitution; and the trade-off between a potential alternative's adaptability and its smaller output."
+        }
+      ],
+      "questions": [
+        {
+          "id": 31,
+          "type": "note_completion",
+          "instructions": "Write ONE WORD ONLY for the answer.",
+          "prompt": "Collection — liquid obtained from cuts in the tree: ____",
+          "options": [],
+          "wordLimit": 1,
+          "answer": {
+            "acceptedAnswers": [
+              "latex"
+            ],
+            "evidenceQuote": "The liquid collected from the tree is called latex.",
+            "rationale": "The answer names the collected liquid, not the finished product."
+          }
+        },
+        {
+          "id": 32,
+          "type": "note_completion",
+          "instructions": "Write ONE NUMBER for the answer.",
+          "prompt": "Production delay — lower end of the range before output begins: ____ years",
+          "options": [],
+          "wordLimit": 1,
+          "answer": {
+            "acceptedAnswers": [
+              "8"
+            ],
+            "evidenceQuote": "A planted tree may take 8 to 10 years before it begins producing.",
+            "rationale": "The question asks for the lower end, not the upper end or whole range."
+          }
+        },
+        {
+          "id": 33,
+          "type": "note_completion",
+          "instructions": "Write ONE WORD ONLY for the answer.",
+          "prompt": "Growing conditions — rainfall and temperature require a suitable ____.",
+          "options": [],
+          "wordLimit": 1,
+          "answer": {
+            "acceptedAnswers": [
+              "climate"
+            ],
+            "evidenceQuote": "We can group those requirements under suitable climate",
+            "rationale": "Altitude is also discussed, but the requested general term is explicit."
+          }
+        },
+        {
+          "id": 34,
+          "type": "note_completion",
+          "instructions": "Write ONE WORD ONLY for the answer.",
+          "prompt": "Growing region — production is close to the ____.",
+          "options": [],
+          "wordLimit": 1,
+          "answer": {
+            "acceptedAnswers": [
+              "equator"
+            ],
+            "evidenceQuote": "Production is concentrated close to the equator.",
+            "rationale": "Available land elsewhere need not suit the crop."
+          }
+        },
+        {
+          "id": 35,
+          "type": "note_completion",
+          "instructions": "Write ONE WORD ONLY for the answer.",
+          "prompt": "After use — rubber is difficult to ____.",
+          "options": [],
+          "wordLimit": 1,
+          "answer": {
+            "acceptedAnswers": [
+              "recycle"
+            ],
+            "evidenceQuote": "Rubber is difficult to recycle.",
+            "rationale": "The speaker warns against changing difficult into impossible."
+          }
+        },
+        {
+          "id": 36,
+          "type": "note_completion",
+          "instructions": "Write ONE WORD ONLY for the answer.",
+          "prompt": "Biological vulnerability — low genetic ____ in the plantation population",
+          "options": [],
+          "wordLimit": 1,
+          "answer": {
+            "acceptedAnswers": [
+              "diversity"
+            ],
+            "evidenceQuote": "That restricted starting population means low genetic diversity.",
+            "rationale": "The small seed population is linked to susceptibility."
+          }
+        },
+        {
+          "id": 37,
+          "type": "note_completion",
+          "instructions": "Write ONE WORD ONLY for the answer.",
+          "prompt": "Disease example — the serious threat is a ____.",
+          "options": [],
+          "wordLimit": 1,
+          "answer": {
+            "acceptedAnswers": [
+              "fungus"
+            ],
+            "evidenceQuote": "A fungus presents a particularly serious disease threat.",
+            "rationale": "The question asks for the disease agent, not the affected trees."
+          }
+        },
+        {
+          "id": 38,
+          "type": "note_completion",
+          "instructions": "Write ONE WORD ONLY for the answer.",
+          "prompt": "Economic competition — farmers may choose palm ____ instead.",
+          "options": [],
+          "wordLimit": 1,
+          "answer": {
+            "acceptedAnswers": [
+              "oil"
+            ],
+            "evidenceQuote": "Farmers may move towards palm oil",
+            "rationale": "This is distinguished from disease and extreme weather."
+          }
+        },
+        {
+          "id": 39,
+          "type": "note_completion",
+          "instructions": "Write ONE WORD ONLY for the answer.",
+          "prompt": "Alternative plant — rubber is found in the dandelion’s ____.",
+          "options": [],
+          "wordLimit": 1,
+          "answer": {
+            "acceptedAnswers": [
+              "roots"
+            ],
+            "evidenceQuote": "rubber is found in its roots.",
+            "rationale": "The flower identifies the plant but is not the extraction location."
+          }
+        },
+        {
+          "id": 40,
+          "type": "note_completion",
+          "instructions": "Write ONE WORD ONLY for the answer.",
+          "prompt": "Adaptability — the alternative does not require rich ____.",
+          "options": [],
+          "wordLimit": 1,
+          "answer": {
+            "acceptedAnswers": [
+              "soil"
+            ],
+            "evidenceQuote": "These dandelions can grow in many locations and do not require rich soil.",
+            "rationale": "Adaptability is balanced against smaller output."
+          }
+        }
+      ],
+      "sourceRefIds": [
+        "CA21-L01",
+        "CA21-L02",
+        "MS2-L03"
+      ],
+      "transformationNotes": "Reauthor as a structured source-case lecture, selecting a different ten-item sequence and explanatory hierarchy from the original notes. Contrast difficult/impossible, observed/potential and partial/universal substitution. Retain source facts while avoiding claims of a new/current scientific or market survey; no original lecture copied."
+    }
+  ],
+  "provenance": {
+    "origin": "source_based_original",
+    "sourceRefs": [
+      "CA21-L01",
+      "CA21-L02",
+      "MS2-L01",
+      "MS2-L02",
+      "MS2-L03"
+    ],
+    "territory": "Iran",
+    "rightsNote": "Arash authorized selected licensed excerpts on 2026-11-06 for authoring/review and selected model processing; no additional territory authority.",
+    "transformationNotes": "Version 3 supersedes unrelated original-only and method-only drafts. All four settings, factual content and critical distinctions derive from the selected Cambridge source question sheets and scripts; Mindset supplies explicit listening/answer-form pedagogy. Scripts, explanations and item presentation are newly authored, not a copy of the source exercise. Selected source knowledge is presented as a case study, not independently updated current guidance.",
+    "sourceMappings": [
+      {
+        "targetPointer": "/parts/0",
+        "sourceRefIds": [
+          "CA21-L01",
+          "CA21-L02",
+          "MS2-L01"
+        ],
+        "sourceLearningPoint": "Sailing comparison: course purpose, individual/paired prices, short weekend structure, theory/practical work and personal equipment; Mindset predicts numeric/noun answer categories and resolves plausible distractors.",
+        "taskTransformation": "Reconstruct the same sailing-course factual case in a newly worded enquiry. Change target selection and order: assess independent versus paired prices, duration, availability, weather, terminology resource, completion record, personal equipment, preparation and storage rather than replicate the source table and notes. No source dialogue or full exercise copied."
+      },
+      {
+        "targetPointer": "/parts/1",
+        "sourceRefIds": [
+          "CA21-L01",
+          "CA21-L02",
+          "MS2-L01",
+          "MS2-L02"
+        ],
+        "sourceLearningPoint": "Film makeup trainee account: expenses versus food/wages; large-production departmental limits; dealing with directors and famous actors; basic kit; permission; preparation, continuity and flexible duties. Mindset separates stated details from the reason a question asks for.",
+        "taskTransformation": "Reorganise source conditions and duties into a careers-case monologue. New single-answer MCQ and grammatical notes distinguish travel from catering, diverse people from specialist techniques, portfolio permission from continuity prints, and speed from flexibility. The account is scoped to its source case rather than current employment advice."
+      },
+      {
+        "targetPointer": "/parts/2",
+        "sourceRefIds": [
+          "CA21-L01",
+          "CA21-L02",
+          "MS2-L03"
+        ],
+        "sourceLearningPoint": "Ocean-biodiversity lecture: long-term/global threats, multidisciplinary expertise and investigative technology; critical evaluations of six resources distinguish evidence, currency, predictability, clarity, audience and balance. Mindset follows speaker judgments and corrected notes in educational dialogue.",
+        "taskTransformation": "Reconstruct the same seminar/resource content in new dialogue with explicit revisions of initial interpretations. Replace two-answer selection and shared opinion-letter matching with five single-answer choices and five one-word notes. Source judgments are preserved; explanations are expanded to make their distinctions teachable."
+      },
+      {
+        "targetPointer": "/parts/3",
+        "sourceRefIds": [
+          "CA21-L01",
+          "CA21-L02",
+          "MS2-L03"
+        ],
+        "sourceLearningPoint": "Rubber supply case: manual latex collection; eight-to-ten-year delay; location/climate; recycling difficulty; seed-population diversity and fungal threat; palm oil; restricted substitution; dandelion roots, smaller yield and adaptable growing conditions.",
+        "taskTransformation": "Reauthor as a structured source-case lecture, selecting a different ten-item sequence and explanatory hierarchy from the original notes. Contrast difficult/impossible, observed/potential and partial/universal substitution. Retain source facts while avoiding claims of a new/current scientific or market survey; no original lecture copied."
+      }
+    ]
+  },
+  "teacherReview": {
+    "status": "pending",
+    "notes": []
+  },
+  "delivery": {
+    "status": "audio_pending",
+    "assetId": null,
+    "missingRequirements": [
+      "Version 3 completely replaces prior scripts; regenerate every voice track from these source-based scripts before media freeze.",
+      "Produce actual locally approved audio; script text is never the learner listening stimulus.",
+      "Record distinct consistent voices and verify British, Australian, New Zealand and North American accent intelligibility without caricature.",
+      "Measure the complete audio sequence against the planned approximately 30-minute delivery; script word counts do not verify duration.",
+      "Review natural speaking rates, turn-taking, corrections, articulation of spelling/numbers, and answer windows; revise and rerecord rather than pad with unexplained silence.",
+      "Include recorded or player-controlled question-reading and checking pauses; validate cue placement after final edit.",
+      "Independent teacher must answer from final audio once without transcript, reconcile all 40 keys and assess ambiguity and accessibility before release.",
+      "Verify one-play attempt control, no transcript or answer-key exposure before submission, and server-only teacher assets.",
+      "Check recording levels, clipping, background noise, cross-device playback and recovery from interrupted media without enabling unauthorised replay."
+    ],
+    "access": "teacher_only",
+    "attemptPolicy": {
+      "playCount": 1,
+      "transcriptAvailable": "after_submission",
+      "learnerStimulus": "approved_audio_only"
+    },
+    "productionPlan": {
+      "status": "provisional_unmeasured",
+      "targetTotalSeconds": 1920,
+      "openingInstructionsSeconds": 40,
+      "parts": [
+        {
+          "partId": "part-1",
+          "targetSpeechSeconds": 380,
+          "readingPauses": [
+            {
+              "beforeQuestion": 1,
+              "seconds": 25
+            },
+            {
+              "beforeQuestion": 6,
+              "seconds": 25
+            }
+          ],
+          "checkingSeconds": 10
+        },
+        {
+          "partId": "part-2",
+          "targetSpeechSeconds": 350,
+          "readingPauses": [
+            {
+              "beforeQuestion": 11,
+              "seconds": 25
+            },
+            {
+              "beforeQuestion": 16,
+              "seconds": 25
+            }
+          ],
+          "checkingSeconds": 10
+        },
+        {
+          "partId": "part-3",
+          "targetSpeechSeconds": 410,
+          "readingPauses": [
+            {
+              "beforeQuestion": 21,
+              "seconds": 25
+            },
+            {
+              "beforeQuestion": 26,
+              "seconds": 25
+            }
+          ],
+          "checkingSeconds": 10
+        },
+        {
+          "partId": "part-4",
+          "targetSpeechSeconds": 380,
+          "readingPauses": [
+            {
+              "beforeQuestion": 31,
+              "seconds": 25
+            },
+            {
+              "beforeQuestion": 36,
+              "seconds": 25
+            }
+          ],
+          "checkingSeconds": 10
+        }
+      ],
+      "finalReviewSeconds": 120,
+      "note": "Provisional editorial budgets only: listening sequence 1800 seconds plus separate computer checking 120 seconds. Actual audio has not been produced or timed. Twenty-five-second reading pauses precede each five-question group; check their usability in the final audio pilot. Revise or shorten scripts rather than force rushed speech.",
+      "targetListeningSequenceSeconds": 1800,
+      "finalReviewIncludedInListeningSequence": false,
+      "mode": "computer_practice",
+      "paperTransferNote": "No paper answer-transfer period is included. The final 120 seconds are computer answer checking after the listening sequence."
+    }
+  },
+  "kind": "mock",
+  "examTrack": "shared"
+}

@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "id": "adv-writing-transfer",
+  "version": 2,
+  "skill": "writing",
+  "stage": "transfer",
+  "pathwayIds": [
+    "advanced"
+  ],
+  "objectiveIds": [
+    "writing-task2-developed-support",
+    "writing-task2-cohesion"
+  ],
+  "familyId": "source-ms3-life-expectancy",
+  "title": "Develop a paragraph about increasing life expectancy",
+  "instructions": "Complete both original writing practice tasks in English. Write connected prose. These tasks support learning and do not provide a calibrated band score.",
+  "stimulus": {
+    "kind": "prompt",
+    "text": "Source-based Academic Task 2 topic: Life expectancy is increasing in many countries. Discuss the advantages and disadvantages of this situation and give your own opinion. The prompt supplies no numerical trend, named country or guaranteed individual outcome."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "Independent paragraph-development check, not a full IELTS response: In about 80–120 words develop one relevant advantage or disadvantage into a clear topic sentence and supporting explanation/example. Use logical connections accurately. Do not submit a disconnected list.",
+      "responseType": "extended_text",
+      "options": [],
+      "wordLimit": null
+    },
+    {
+      "id": "q2",
+      "prompt": "Independent Academic Task 2 practice: Answer the life-expectancy question in at least 250 words of connected prose. Address advantages and disadvantages, develop the main ideas and state your own opinion. Do not invent demographic statistics or research evidence.",
+      "responseType": "extended_text",
+      "options": [],
+      "wordLimit": null
+    }
+  ],
+  "teachingAnchors": [],
+  "assessment": {
+    "kind": "qualitative",
+    "criteria": [
+      {
+        "id": "task-achievement-response",
+        "label": "Task achievement / Task response",
+        "description": "For q 1 evaluate development of one relevant main idea into connected support. For q 2 address advantages and disadvantages of increasing life expectancy and give a sustained opinion with developed support. Neither a generic essay about health nor a list is sufficient."
+      },
+      {
+        "id": "coherence-cohesion",
+        "label": "Coherence and cohesion",
+        "description": "Organise ideas in a clear progression, group relevant information and use references and connections accurately without mechanical overuse."
+      },
+      {
+        "id": "lexical-resource",
+        "label": "Lexical resource",
+        "description": "Choose accurate and appropriate vocabulary, including precise comparisons, process or spatial language where relevant; evaluate flexibility and errors in context."
+      },
+      {
+        "id": "grammatical-range-accuracy",
+        "label": "Grammatical range and accuracy",
+        "description": "Use a suitable range of sentence forms with accurate grammar and punctuation; explain how errors affect meaning rather than rewarding complexity alone."
+      }
+    ],
+    "answerKey": [],
+    "feedbackGuidance": "After submission only: apply the four qualitative criteria to each response’s actual purpose. A preparation paragraph is not a complete IELTS response. No numeric bands. Cite learner evidence, explain the most consequential issue and propose a concrete revision. Original partial analysis: Preparation: look for one main idea developed by a relevant mechanism/example, not a list or a repeated topic sentence. Example snippet: “A longer life can allow family members to spend more time together, although the value of those years depends partly on health and support.” This is a qualified possible benefit, not a universal fact. A full response also needs drawbacks, such as potential demands on care resources, developed without assuming all older people have the same needs. Task response: explicitly weigh the situation and sustain an opinion. Coherence: introduction, body and conclusion should agree; a supporting sentence must explain, exemplify, add to or qualify the same main idea. Lexis: life expectancy differs from guaranteed individual lifespan or years of good health. Grammar: check qualifying modal/conditional forms and ambiguous pronouns. Revision: replace an unsupported absolute with a developed conditional claim, then show why the final judgement follows."
+  },
+  "delivery": {
+    "kind": "text",
+    "assetId": null
+  },
+  "locale": {
+    "instructionsFa": "هر دو تمرین نوشتاری را به انگلیسی و به صورت متن پیوسته بنویسید. این تمرین نمرهٔ کالیبره‌شده ارائه نمی‌کند.",
+    "teachingAnchorsFa": [],
+    "feedbackGuidanceFa": "پس از ثبت پاسخ، بازخورد را با پاسخ خود مقایسه کنید. یک خطا را با تکیه بر شواهد اصلاح کنید و سپس تمرین مستقل تازه‌ای انجام دهید."
+  },
+  "provenance": {
+    "origin": "source_based_original",
+    "sourceRefs": [
+      "MS3-W02",
+      "BD-W01"
+    ],
+    "territory": "Iran",
+    "rightsNote": "Source-based Mitooni authoring under user-confirmed Iranian-audience rights and selected-excerpt processing authority. Source files remain read-only; no broader distribution authority claimed.",
+    "transformationNotes": "Preserved actual 1990/2000/2010 migration values/categories and actual source health topics rather than invented city datasets or future projections. New draft errors, partial examples, questions and qualitative explanations are authored. Transfer is a distinct source topic; it does not claim to be a heldout novel Task 1 graph.",
+    "objectiveMappings": [
+      {
+        "objectiveId": "writing-task2-developed-support",
+        "sourceRefIds": [
+          "MS3-W02",
+          "BD-W01"
+        ],
+        "sourceLearningPoint": "Actual Level 3 migration-reason graph/model-error critique and actual health-care/life-expectancy tasks supply the semantic content; paragraph support functions and marker repair supply the teaching progression. Local BD-W 01 supplies task coverage, coherent progression, vocabulary precision and grammar dimensions; it is the older public descriptor edition, not current band calibration.",
+        "unitTeachingConnection": "Training combines source-value graph evaluation with source health-care argument development. Transfer uses the source’s distinct life-expectancy prompt and paragraph-to-full-essay progression, without reusing graph input.",
+        "taskTransformation": "Preserved actual 1990/2000/2010 migration values/categories and actual source health topics rather than invented city datasets or future projections. New draft errors, partial examples, questions and qualitative explanations are authored. Transfer is a distinct source topic; it does not claim to be a heldout novel Task 1 graph."
+      },
+      {
+        "objectiveId": "writing-task2-cohesion",
+        "sourceRefIds": [
+          "MS3-W02",
+          "BD-W01"
+        ],
+        "sourceLearningPoint": "Actual Level 3 migration-reason graph/model-error critique and actual health-care/life-expectancy tasks supply the semantic content; paragraph support functions and marker repair supply the teaching progression. Local BD-W 01 supplies task coverage, coherent progression, vocabulary precision and grammar dimensions; it is the older public descriptor edition, not current band calibration.",
+        "unitTeachingConnection": "Training combines source-value graph evaluation with source health-care argument development. Transfer uses the source’s distinct life-expectancy prompt and paragraph-to-full-essay progression, without reusing graph input.",
+        "taskTransformation": "Preserved actual 1990/2000/2010 migration values/categories and actual source health topics rather than invented city datasets or future projections. New draft errors, partial examples, questions and qualitative explanations are authored. Transfer is a distinct source topic; it does not claim to be a heldout novel Task 1 graph."
+      }
+    ]
+  },
+  "teacherReview": {
+    "status": "pending",
+    "notes": [
+      "Re-authored from inspected licensed teaching selections; independent source-alignment and IELTS teacher review pending. No calibrated level or band claim."
+    ]
+  },
+  "examTrack": "academic"
+}

@@ -1,0 +1,199 @@
+{
+  "schemaVersion": 1,
+  "id": "fnd-listening-transfer",
+  "version": 2,
+  "skill": "listening",
+  "stage": "transfer",
+  "pathwayIds": [
+    "foundation"
+  ],
+  "objectiveIds": [
+    "fnd-listening-everyday-meaning",
+    "fnd-listening-final-details"
+  ],
+  "familyId": "sem-household-shared-routines",
+  "title": "An exchange student’s host-family week",
+  "instructions": "Read the five questions for 45 seconds. Listen once only and answer without hints or replay. Submit before viewing any explanations. For short answers, use NO MORE THAN TWO WORDS AND/OR A NUMBER from the recording. For a choice question, select ONE option. After the recording ends, take 60 seconds to check your answers. This is a practice drill, not a complete IELTS test.",
+  "stimulus": {
+    "kind": "script",
+    "text": "Welcome to our home, Amir. Before you unpack, I will tell you a little about our family’s week. You have already met my partner and our daughter, but my father will come over tomorrow. He lives nearby and often joins us for lunch. Nobody expects you to remember all of this immediately. Ask whenever something is unclear.\nOn school mornings, we have breakfast together before everyone leaves. I normally take the bus to work, but this week I am working from home. Our daughter goes to college by bicycle. You will travel with her on your first day, but she will walk beside you so that you can learn the route without trying to cycle at the same time. It takes about twenty minutes on foot.\nAfter college, people do different things. Our daughter used to go swimming, but she now prefers team games. She plays basketball with a group at the sports centre. The swimming pool is in the same building, so do not be surprised if someone tells you she has gone to the pool; they may be using the name of the whole centre.\nMy partner enjoys making things work again. He spends some evenings in the shed with old radios and other small objects. He does not sell them. He likes discovering why something stopped working and seeing whether it can be repaired. If that interests you, ask him to show you what he is doing, but wait for him before touching the tools.\nMy father spends much of his free time with plants. He grows vegetables in a small plot behind his house and brings some when he visits. I enjoy preparing meals with them. On Fridays, I try a dish that I have not cooked before. Sometimes it succeeds and sometimes we decide not to make it again. You are welcome to help, but you do not have to teach us a special dish from your country.\nWe share the ordinary jobs in the house. You will not need to wash everyone’s clothes; each person deals with their own laundry. After dinner, though, we take turns washing dishes. The machine under the kitchen counter is broken, so for now we do that job by hand. We will show you where everything goes.\nOn Sunday, we often have a family outing. We first thought of going to the cinema this weekend, but the weather forecast is good. We have decided on a picnic instead. There is a quiet spot near the river, and we can take a blanket and some lunch. If you need time to study, that is fine; tell us beforehand so we do not wait for you.\nFinally, the front door needs a firm pull to close properly. Keep your key with you and save our phone number. If you get lost on the way back, call us rather than worrying that you have to find the house by yourself."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "How will the student travel to college on the first day?",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "On foot with the daughter"
+        },
+        {
+          "id": "B",
+          "text": "By bicycle with the daughter"
+        },
+        {
+          "id": "C",
+          "text": "By bus with the host"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q2",
+      "prompt": "Which activity does the daughter now enjoy?",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "Swimming"
+        },
+        {
+          "id": "B",
+          "text": "Growing vegetables"
+        },
+        {
+          "id": "C",
+          "text": "Playing a team sport"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q3",
+      "prompt": "What does the partner enjoy doing?",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "Selling old equipment"
+        },
+        {
+          "id": "B",
+          "text": "Repairing objects"
+        },
+        {
+          "id": "C",
+          "text": "Preparing new dishes"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q4",
+      "prompt": "What shared job will the student take turns doing?",
+      "responseType": "short_text",
+      "options": [],
+      "wordLimit": 2
+    },
+    {
+      "id": "q5",
+      "prompt": "Final plan for Sunday: a ______.",
+      "responseType": "short_text",
+      "options": [],
+      "wordLimit": 2
+    }
+  ],
+  "teachingAnchors": [],
+  "assessment": {
+    "kind": "deterministic",
+    "criteria": [
+      {
+        "id": "audible-evidence",
+        "label": "Accurate listening",
+        "description": "One point per keyed answer within its word limit. Accept only the listed answer variants after case/outer-space normalization; no semantic guessing. Multiple-choice responses use the option ID. Wrong, blank or over-limit answers receive no point."
+      }
+    ],
+    "answerKey": [
+      {
+        "questionId": "q1",
+        "acceptedAnswers": [
+          "A"
+        ],
+        "rationale": "The daughter normally cycles but will walk beside the new student on day one."
+      },
+      {
+        "questionId": "q2",
+        "acceptedAnswers": [
+          "C"
+        ],
+        "rationale": "Swimming is the old activity; basketball is the current team game."
+      },
+      {
+        "questionId": "q3",
+        "acceptedAnswers": [
+          "B"
+        ],
+        "rationale": "Making old radios work again paraphrases repairing objects."
+      },
+      {
+        "questionId": "q4",
+        "acceptedAnswers": [
+          "washing dishes"
+        ],
+        "rationale": "The host distinguishes personal laundry from the shared after-dinner task."
+      },
+      {
+        "questionId": "q5",
+        "acceptedAnswers": [
+          "picnic"
+        ],
+        "rationale": "The cinema is rejected after the weather forecast; picnic is the final plan."
+      }
+    ],
+    "feedbackGuidance": "After submission, compare each answer with its evidence and the final version of any corrected detail. Label each miss: lost place, wrong speaker, distractor, spelling or word limit. Choose one cause, then practise that operation on a new recording. Report only drill accuracy; do not convert five answers to an IELTS band."
+  },
+  "delivery": {
+    "kind": "audio_required",
+    "assetId": null
+  },
+  "locale": {
+    "instructionsFa": "ابتدا ۴۵ ثانیه پرسش‌ها را بخوانید. فقط یک بار و بدون راهنما یا بازپخش گوش دهید. پیش از دیدن توضیح‌ها پاسخ‌ها را ثبت کنید. برای پاسخ کوتاه، حداکثر دو واژه و/یا یک عدد از فایل صوتی بنویسید. در پرسش چندگزینه‌ای فقط یک گزینه انتخاب کنید. پس از پایان صدا، ۶۰ ثانیه برای بررسی پاسخ‌ها فرصت دارید. این یک تمرین است، نه آزمون کامل آیلتس.",
+    "teachingAnchorsFa": [],
+    "feedbackGuidanceFa": "پس از ثبت پاسخ، هر پاسخ را با شاهد صوتی و آخرین اصلاح گوینده مقایسه کنید. علت خطا را مشخص کنید: گم کردن ترتیب، اشتباه در تشخیص گوینده، گزینه انحرافی، املا یا محدودیت واژه. برای یکی از این علت‌ها تمرین تازه انتخاب کنید. فقط دقت همین تمرین گزارش شود؛ پنج پاسخ را به نمره بند آیلتس تبدیل نکنید."
+  },
+  "provenance": {
+    "origin": "source_based_original",
+    "sourceRefs": [
+      "MSF-L01",
+      "MS1-L01"
+    ],
+    "territory": "Iran",
+    "rightsNote": "Source-based Mitooni adaptation for the authorized Iranian audience. Arash authorized full-corpus AI ingestion and synthesis. This unit documents the supplied-source pages actually used; no worldwide distribution authority is inferred.",
+    "transformationNotes": "Selected Mindset pages were actually read before this revision. Teaching progression and semantic domain are adapted from those pages; all dialogue, lecture wording, named examples, questions and keys were newly authored. No source model answer or recording is republished. Foundation/Level1 jointly support the foundation pathway; other level mappings are authoring choices, not band equivalences.",
+    "objectiveMappings": [
+      {
+        "objectiveId": "fnd-listening-everyday-meaning",
+        "sourceRefIds": [
+          "MSF-L01",
+          "MS1-L01"
+        ],
+        "sourceLearningPoint": "Connect everyday/family activity descriptions with paraphrased meanings after establishing speaker and situation.",
+        "unitTeachingConnection": "Train uses celebration-service vocabulary before reason-sensitive choice; transfer applies meaning association to host-family activities.",
+        "taskTransformation": "Exchange/family and celebration-booking semantic strands are recast as a new cafe call and a new host welcome; no source dialogue or key reused."
+      },
+      {
+        "objectiveId": "fnd-listening-final-details",
+        "sourceRefIds": [
+          "MS1-L01"
+        ],
+        "sourceLearningPoint": "Distinguish number forms and track corrections rather than accepting the first mentioned value.",
+        "unitTeachingConnection": "Train asks final headcount/date/time; transfer tracks changed family activities and the final outing plan with no advance hints.",
+        "taskTransformation": "New values and correction sequences replace the restaurant/jewellery examples; host-family welcome tests corrected activity/plan reference in a fresh family."
+      }
+    ]
+  },
+  "teacherReview": {
+    "status": "pending",
+    "notes": [
+      "Teacher-only script and answer key: never expose before attempt submission. No learner listening attempt until reviewed audio exists; rendering the script is not listening.",
+      "Media review required: natural delivery, distinguishable speakers where applicable, clean intelligibility and no emphasis revealing answers. Verify durations and question-order gaps against the actual recording.",
+      "If playback fails, preserve answers but invalidate timing/exposure evidence; restart with a new family after recovery. Agree accessible delivery adjustments with the learner; transcript-supported practice must be labelled separately and cannot count as independent listening evidence.",
+      "Five-item drill samples a part context; it is not a 40-item test or validated band estimate. Teacher checks difficulty, alternatives, Persian clarity and scoring tolerance before approval.",
+      "Revision 2 supersedes the held original-only draft. Review source-objective-task fit against the mapped selected Mindset pages, including meaningful English-development practice; citations alone do not establish fidelity.",
+      "English examples, task detail and semantic scenario are adaptations within the source topic boundary, not copied source exercises. Supplied Mindset audio was not available or auditioned; new audio requires separate review.",
+      "Semantic exposure families can span train/transfer and skills. A different unit ID or adapted detail does not establish fresh transfer; consult the per-question semantic groups recorded in syllabus/exposure metadata."
+    ]
+  },
+  "examTrack": "shared"
+}

@@ -1,0 +1,880 @@
+{
+  "schemaVersion": 1,
+  "kind": "source_index",
+  "id": "ielts-licensed-source-index",
+  "version": 1,
+  "teacherReview": {
+    "status": "pending",
+    "notes": [
+      "Selected licensed-source evidence only; content review, transformations and pathway alignment require human IELTS review."
+    ]
+  },
+  "territory": "Iran",
+  "rightsNote": "Arash confirms commercial/distribution authority for supplied resources for Iranian audience and on2026-11-06 explicitly authorizes full-corpus AI ingestion and synthesis. These entries record actual selected-source review anchors; they do not claim the full corpus was reviewed or worldwide distribution authority.",
+  "entries": [
+    {
+      "id": "MSF-COURSE",
+      "relativePath": "Mindset for IELTs Books/Mindset-For-IELTS-Level_Foundation [www.languagecentre.ir].pdf",
+      "fileSha256": "b7fc05cf7eeb8bbf42563e3b1c36d2ed82778120f05020f266d65caf312d12e5",
+      "pdfPages": [
+        3,
+        4,
+        8,
+        9,
+        10
+      ],
+      "excerptSha256": "a4b7a07cd598170e606ae25e585b03a54ed6fd0f9e93e649604167b529b7e001",
+      "learningObjectives": [
+        "Identify source level and prerequisite assumptions",
+        "Preserve integrated language and exam-skill progression"
+      ],
+      "excerptBoundary": "Selected physical PDF pages only; pdftotext -layout one page per call, UTF-8 stdout concatenated in listed order; no source text stored.",
+      "sourceContentSummary": "2017 ISBN9781316636688. A2 general-English preparation, 10 topic-based integrated units; teaching supports later IELTS work. No Foundation numeric band target.",
+      "transformationBoundaries": "Derive substantive topic, facts, scenario and teaching sequence from these selected pages; paraphrase and adapt questions with evidence. Do not attach method citations to unrelated invented contexts. Preserve source limits and distinguish publisher examples from verified current real-world facts.",
+      "inspectionNotes": "Selected text read; physical page offset verified using original page labels by source author; full book not reviewed."
+    },
+    {
+      "id": "MS1-COURSE",
+      "relativePath": "Mindset for IELTs Books/Mindset-For-IELTS-Level_1 [www.languagecentre.ir].pdf",
+      "fileSha256": "0ab70afb6fa6ef387edf57459e180054052a4e468e36bc6a56ebc3a012b4eb3a",
+      "pdfPages": [
+        3,
+        4,
+        7,
+        8
+      ],
+      "excerptSha256": "3b0b2e2840880ffbdd3a779bba893c619d6c50bdf9cf670a3d39241bcc7e6406",
+      "learningObjectives": [
+        "Identify source level and prerequisite assumptions",
+        "Preserve integrated language and exam-skill progression"
+      ],
+      "excerptBoundary": "Selected physical PDF pages only; pdftotext -layout one page per call, UTF-8 stdout concatenated in listed order; no source text stored.",
+      "sourceContentSummary": "2017 ISBN9781316640050. Eight topic units each four skills. Publisher target5.5; not Mitooni calibrated placement.",
+      "transformationBoundaries": "Derive substantive topic, facts, scenario and teaching sequence from these selected pages; paraphrase and adapt questions with evidence. Do not attach method citations to unrelated invented contexts. Preserve source limits and distinguish publisher examples from verified current real-world facts.",
+      "inspectionNotes": "Selected text read; physical page offset verified using original page labels by source author; full book not reviewed."
+    },
+    {
+      "id": "MS2-COURSE",
+      "relativePath": "Mindset for IELTs Books/Mindset-For-IELTS-Level_2 [www.languagecentre.ir].pdf",
+      "fileSha256": "393720e617f31940e5da07e94b7ce5f44e77120f7e2d9d75c67b15c3c7e041fc",
+      "pdfPages": [
+        3,
+        4,
+        7,
+        8
+      ],
+      "excerptSha256": "27eda73e1af84c39c083ea6aa2a029df51472763f93be126b9cf55854dfca265",
+      "learningObjectives": [
+        "Identify source level and prerequisite assumptions",
+        "Preserve integrated language and exam-skill progression"
+      ],
+      "excerptBoundary": "Selected physical PDF pages only; pdftotext -layout one page per call, UTF-8 stdout concatenated in listed order; no source text stored.",
+      "sourceContentSummary": "2017 ISBN9781316640159. Eight topic units each four skills. Publisher target6.5; not Mitooni calibrated placement.",
+      "transformationBoundaries": "Derive substantive topic, facts, scenario and teaching sequence from these selected pages; paraphrase and adapt questions with evidence. Do not attach method citations to unrelated invented contexts. Preserve source limits and distinguish publisher examples from verified current real-world facts.",
+      "inspectionNotes": "Selected text read; physical page offset verified using original page labels by source author; full book not reviewed."
+    },
+    {
+      "id": "MS3-COURSE",
+      "relativePath": "Mindset for IELTs Books/Mindset-For-IELTS-Level_3 [www.languagecentre.ir].pdf",
+      "fileSha256": "529e37b5094aeb010cffaeee8ca05b743e672d26549c17585e707d58432e4f53",
+      "pdfPages": [
+        3,
+        5,
+        8,
+        9
+      ],
+      "excerptSha256": "5ecd15109a583083d6adebb25a3c7c43861c51bb5f54ac5bbf13210e530cb175",
+      "learningObjectives": [
+        "Identify source level and prerequisite assumptions",
+        "Preserve integrated language and exam-skill progression"
+      ],
+      "excerptBoundary": "Selected physical PDF pages only; pdftotext -layout one page per call, UTF-8 stdout concatenated in listed order; no source text stored.",
+      "sourceContentSummary": "2018 ISBN9781316649268. Eight topic units each four skills. Publisher target7.5; not Mitooni calibrated placement.",
+      "transformationBoundaries": "Derive substantive topic, facts, scenario and teaching sequence from these selected pages; paraphrase and adapt questions with evidence. Do not attach method citations to unrelated invented contexts. Preserve source limits and distinguish publisher examples from verified current real-world facts.",
+      "inspectionNotes": "Selected text read; physical page offset verified using original page labels by source author; full book not reviewed."
+    },
+    {
+      "id": "MSF-R01",
+      "relativePath": "Mindset for IELTs Books/Mindset-For-IELTS-Level_Foundation [www.languagecentre.ir].pdf",
+      "fileSha256": "b7fc05cf7eeb8bbf42563e3b1c36d2ed82778120f05020f266d65caf312d12e5",
+      "pdfPages": [
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "excerptSha256": "2afea180aa3b896bb2fbe2f7d151283906fb01acf398c5d22e3adf2c685527ba",
+      "learningObjectives": [
+        "Read routine-based short personal accounts",
+        "Discriminate cross-text evidence",
+        "Use present-simple forms and sentence completion"
+      ],
+      "excerptBoundary": "Selected physical PDF pages only; pdftotext -layout one page per call, UTF-8 stdout concatenated in listed order; no source text stored.",
+      "sourceContentSummary": "Daily activities, a language-course student with a host family, teenagers in Norway/Australia/Peru, and a university routine anchor supported vocabulary, gist, cross-text factual choices and grammar-based completion.",
+      "transformationBoundaries": "Derive substantive topic, facts, scenario and teaching sequence from these selected pages; paraphrase and adapt questions with evidence. Do not attach method citations to unrelated invented contexts. Preserve source limits and distinguish publisher examples from verified current real-world facts.",
+      "inspectionNotes": "Selected text read; physical page offset verified using original page labels by source author; full book not reviewed."
+    },
+    {
+      "id": "MSF-W01",
+      "relativePath": "Mindset for IELTs Books/Mindset-For-IELTS-Level_Foundation [www.languagecentre.ir].pdf",
+      "fileSha256": "b7fc05cf7eeb8bbf42563e3b1c36d2ed82778120f05020f266d65caf312d12e5",
+      "pdfPages": [
+        15,
+        16
+      ],
+      "excerptSha256": "7fd773a06a2f94609f356ee4561516f0475ee8f3d01a7c7f338d3b09d6356030",
+      "learningObjectives": [
+        "Build a sequenced routine description",
+        "Use present simple and frequency adverbs",
+        "Revise spelling grammar and punctuation"
+      ],
+      "excerptBoundary": "Selected physical PDF pages only; pdftotext -layout one page per call, UTF-8 stdout concatenated in listed order; no source text stored.",
+      "sourceContentSummary": "University routine verbs lead to a science-project volunteer in Fiji daily-routine description; activities and times from pictures, sequencing and frequency language, peer repair. This is prerequisite language development, not a full Academic Task1.",
+      "transformationBoundaries": "Derive substantive topic, facts, scenario and teaching sequence from these selected pages; paraphrase and adapt questions with evidence. Do not attach method citations to unrelated invented contexts. Preserve source limits and distinguish publisher examples from verified current real-world facts.",
+      "inspectionNotes": "Selected text read; physical page offset verified using original page labels by source author; full book not reviewed."
+    },
+    {
+      "id": "MS1-R01",
+      "relativePath": "Mindset for IELTs Books/Mindset-For-IELTS-Level_1 [www.languagecentre.ir].pdf",
+      "fileSha256": "0ab70afb6fa6ef387edf57459e180054052a4e468e36bc6a56ebc3a012b4eb3a",
+      "pdfPages": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "excerptSha256": "b79b87c8b1bea71e4b2c741dc81e3db59c3641f05af0f00e5553b4657687dfbd",
+      "learningObjectives": [
+        "Identify question keywords",
+        "Scan for specific evidence with answer limits",
+        "Infer contextual vocabulary",
+        "Use frequency adverbs"
+      ],
+      "excerptBoundary": "Selected physical PDF pages only; pdftotext -layout one page per call, UTF-8 stdout concatenated in listed order; no source text stored.",
+      "sourceContentSummary": "Extended families and friendship texts ground factual short answers and scanning; compare grandparents/parents/children roles and contextual meanings. New teaching and transfers must retain this supplied semantic family instead of unrelated narratives.",
+      "transformationBoundaries": "Derive substantive topic, facts, scenario and teaching sequence from these selected pages; paraphrase and adapt questions with evidence. Do not attach method citations to unrelated invented contexts. Preserve source limits and distinguish publisher examples from verified current real-world facts.",
+      "inspectionNotes": "Selected text read; physical page offset verified using original page labels by source author; full book not reviewed."
+    },
+    {
+      "id": "MS1-W01",
+      "relativePath": "Mindset for IELTs Books/Mindset-For-IELTS-Level_1 [www.languagecentre.ir].pdf",
+      "fileSha256": "0ab70afb6fa6ef387edf57459e180054052a4e468e36bc6a56ebc3a012b4eb3a",
+      "pdfPages": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "excerptSha256": "ce7579e196e10ecf5b933991b242fac034af99c22611a5e1ce1f4446e5890f03",
+      "learningObjectives": [
+        "Describe manufacturing/food preparation process",
+        "Use sequencing and passive voice",
+        "Write introduction and overview"
+      ],
+      "excerptBoundary": "Selected physical PDF pages only; pdftotext -layout one page per call, UTF-8 stdout concatenated in listed order; no source text stored.",
+      "sourceContentSummary": "Stringhopper preparation supplies the guided process; cherry-jam production supplies a later process application. Material/shape vocabulary, passive formation, ordered stages, introduction and overview support a150word description.",
+      "transformationBoundaries": "Derive substantive topic, facts, scenario and teaching sequence from these selected pages; paraphrase and adapt questions with evidence. Do not attach method citations to unrelated invented contexts. Preserve source limits and distinguish publisher examples from verified current real-world facts.",
+      "inspectionNotes": "Selected text read; physical page offset verified using original page labels by source author; full book not reviewed."
+    },
+    {
+      "id": "MS2-R01",
+      "relativePath": "Mindset for IELTs Books/Mindset-For-IELTS-Level_2 [www.languagecentre.ir].pdf",
+      "fileSha256": "393720e617f31940e5da07e94b7ce5f44e77120f7e2d9d75c67b15c3c7e041fc",
+      "pdfPages": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "excerptSha256": "9e0be3b88d1401220160ece991745814d6e92af8fa7a69a682161801937df0e3",
+      "learningObjectives": [
+        "Distinguish skimming from scanning",
+        "Recognise paraphrases",
+        "Answer factual short questions",
+        "Distinguish stable facts from current activity"
+      ],
+      "excerptBoundary": "Selected physical PDF pages only; pdftotext -layout one page per call, UTF-8 stdout concatenated in listed order; no source text stored.",
+      "sourceContentSummary": "Housing vocabulary and the Ambani family home develop gist/order/detail/paraphrase, present simple vs continuous; Hearst Castle supplies exam-skill application. Examples are source texts, not newly verified property facts.",
+      "transformationBoundaries": "Derive substantive topic, facts, scenario and teaching sequence from these selected pages; paraphrase and adapt questions with evidence. Do not attach method citations to unrelated invented contexts. Preserve source limits and distinguish publisher examples from verified current real-world facts.",
+      "inspectionNotes": "Selected text read; physical page offset verified using original page labels by source author; full book not reviewed."
+    },
+    {
+      "id": "MS2-W01",
+      "relativePath": "Mindset for IELTs Books/Mindset-For-IELTS-Level_2 [www.languagecentre.ir].pdf",
+      "fileSha256": "393720e617f31940e5da07e94b7ce5f44e77120f7e2d9d75c67b15c3c7e041fc",
+      "pdfPages": [
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "excerptSha256": "60812817b227edb091f4a010ed876dbdb9b353ec17a5eefaeceb03791f874046",
+      "learningObjectives": [
+        "Select graph chart and table key features",
+        "Check figures accurately",
+        "Describe trends and comparisons"
+      ],
+      "excerptBoundary": "Selected physical PDF pages only; pdftotext -layout one page per call, UTF-8 stdout concatenated in listed order; no source text stored.",
+      "sourceContentSummary": "Housing and property data: purchasing power by expensive city, average house sizes and property-price trends, followed by UK25–34ownership/renting. Guided data-error repair precedes trend verbs/adjectives/adverbs and full Task1. Read actual graphs before adapting values.",
+      "transformationBoundaries": "Derive substantive topic, facts, scenario and teaching sequence from these selected pages; paraphrase and adapt questions with evidence. Do not attach method citations to unrelated invented contexts. Preserve source limits and distinguish publisher examples from verified current real-world facts.",
+      "inspectionNotes": "Selected text read; physical page offset verified using original page labels by source author; full book not reviewed."
+    },
+    {
+      "id": "MS3-R01",
+      "relativePath": "Mindset for IELTs Books/Mindset-For-IELTS-Level_3 [www.languagecentre.ir].pdf",
+      "fileSha256": "529e37b5094aeb010cffaeee8ca05b743e672d26549c17585e707d58432e4f53",
+      "pdfPages": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "excerptSha256": "09b61461e581e76f46173f23dfed755b30395ed257c29a0c9995e0cc63038b55",
+      "learningObjectives": [
+        "Identify whole-paragraph main ideas",
+        "Reject detail-based heading distractors",
+        "Interpret qualification and prefixes"
+      ],
+      "excerptBoundary": "Selected physical PDF pages only; pdftotext -layout one page per call, UTF-8 stdout concatenated in listed order; no source text stored.",
+      "sourceContentSummary": "Urban/rural places including Auroville, Longyearbyen, Marloth Park and copied Hallstatt develop provisional-heading re-evaluation after full paragraphs; Cahokia is the extended matching-headings application. Preserve source historical framing; do not assert source anecdotes as newly verified current facts.",
+      "transformationBoundaries": "Derive substantive topic, facts, scenario and teaching sequence from these selected pages; paraphrase and adapt questions with evidence. Do not attach method citations to unrelated invented contexts. Preserve source limits and distinguish publisher examples from verified current real-world facts.",
+      "inspectionNotes": "Selected text read; physical page offset verified using original page labels by source author; full book not reviewed."
+    },
+    {
+      "id": "MS3-W01",
+      "relativePath": "Mindset for IELTs Books/Mindset-For-IELTS-Level_3 [www.languagecentre.ir].pdf",
+      "fileSha256": "529e37b5094aeb010cffaeee8ca05b743e672d26549c17585e707d58432e4f53",
+      "pdfPages": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "excerptSha256": "e091f46ed8fe0702f3b1eb261fa5e333a7ca1de3ee345e8774d69c49042062b0",
+      "learningObjectives": [
+        "Select major line-graph features",
+        "Repair data misreporting and unsupported speculation",
+        "Produce comparative overview"
+      ],
+      "excerptBoundary": "Selected physical PDF pages only; pdftotext -layout one page per call, UTF-8 stdout concatenated in listed order; no source text stored.",
+      "sourceContentSummary": "Movement from city to countryside for cost-of-living/traffic/lifestyle reasons anchors flawed-response diagnosis and better comparative summaries. Follow-up moves to capital for employment/study/family-friends/adventure. Actual data must be taken from licensed graph inspection, not invented.",
+      "transformationBoundaries": "Derive substantive topic, facts, scenario and teaching sequence from these selected pages; paraphrase and adapt questions with evidence. Do not attach method citations to unrelated invented contexts. Preserve source limits and distinguish publisher examples from verified current real-world facts.",
+      "inspectionNotes": "Selected text read; physical page offset verified using original page labels by source author; full book not reviewed."
+    },
+    {
+      "id": "MS3-W02",
+      "relativePath": "Mindset for IELTs Books/Mindset-For-IELTS-Level_3 [www.languagecentre.ir].pdf",
+      "fileSha256": "529e37b5094aeb010cffaeee8ca05b743e672d26549c17585e707d58432e4f53",
+      "pdfPages": [
+        40,
+        41,
+        42,
+        43
+      ],
+      "excerptSha256": "477bd24d57d4b2fad98104bd2223ebf6d09399185e718f248eaa1f5141e95db5",
+      "learningObjectives": [
+        "Plan advantages disadvantages response with position",
+        "Develop topic sentence through relevant support",
+        "Use logical cohesion without excessive linkers",
+        "Write purposeful introduction and conclusion"
+      ],
+      "excerptBoundary": "Selected physical PDF pages only; pdftotext -layout one page per call, UTF-8 stdout concatenated in listed order; no source text stored.",
+      "sourceContentSummary": "Health: contact sports benefits/risks; busy-city fitness facilities; ageing populations and healthcare-service demand; free public versus private healthcare. Guided paragraph and linker-function critique lead to increasing-life-expectancy advantages/disadvantages+opinion Task2. Source hypothetical fitness/health claims are teaching examples, not medical advice or verified research.",
+      "transformationBoundaries": "Derive substantive topic, facts, scenario and teaching sequence from these selected pages; paraphrase and adapt questions with evidence. Do not attach method citations to unrelated invented contexts. Preserve source limits and distinguish publisher examples from verified current real-world facts.",
+      "inspectionNotes": "Selected text read; physical page offset verified using original page labels by source author; full book not reviewed."
+    },
+    {
+      "id": "MSF-L01",
+      "relativePath": "Mindset for IELTs Books/Mindset-For-IELTS-Level_Foundation [www.languagecentre.ir].pdf",
+      "fileSha256": "b7fc05cf7eeb8bbf42563e3b1c36d2ed82778120f05020f266d65caf312d12e5",
+      "pdfPages": [
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "excerptSha256": "8e12842806f3fd1fc4ff501a5b56bb49ac230f09259aab6f4a7dec188aea3a27",
+      "learningObjectives": [
+        "Routine activity collocations, time expressions, present simple and third-person agreement, frequency adverbs, sequencing.",
+        "Use known daily-life language to understand an exchange conversation and produce a comprehensible sustained account."
+      ],
+      "excerptBoundary": "SHA256 bytes; excerpt hash is exact stdout from pdftotext -f START -l END -layout SOURCE - (including formfeeds and terminal newline). Text not retained in artifact.",
+      "sourceContentSummary": "Daily routine activities and times, household activity paraphrases, and an exchange-trip conversation linking host-family members to preferred activities; distinguish activity mentions from correct person/activity matches.",
+      "transformationBoundaries": "{\"required\": \"Derive actual learning content, factual/semantic relationships, scenarios and teaching examples from this selected range as well as its pedagogy. Preserve source ID and page range per adapted lesson.\", \"permitted\": \"Paraphrase, simplify, sequence and create new questions grounded in the selected semantic material. Teacher must verify intended answer relationships against source before publishing.\", \"excluded\": \"Unrelated invented scenario with only method citation; unsupported factual/answer claims; verbatim source passage/exercise copy in this index; claiming a full exam or calibrated band from this sample.\"}",
+      "inspectionNotes": "Selected range text read; representative visual check recorded by source, not every page. Audio not supplied/listened in this review; printed task evidence only."
+    },
+    {
+      "id": "MSF-S01",
+      "relativePath": "Mindset for IELTs Books/Mindset-For-IELTS-Level_Foundation [www.languagecentre.ir].pdf",
+      "fileSha256": "b7fc05cf7eeb8bbf42563e3b1c36d2ed82778120f05020f266d65caf312d12e5",
+      "pdfPages": [
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "excerptSha256": "8e12842806f3fd1fc4ff501a5b56bb49ac230f09259aab6f4a7dec188aea3a27",
+      "learningObjectives": [
+        "Routine activity collocations, time expressions, present simple and third-person agreement, frequency adverbs, sequencing.",
+        "Use known daily-life language to understand an exchange conversation and produce a comprehensible sustained account."
+      ],
+      "excerptBoundary": "SHA256 bytes; excerpt hash is exact stdout from pdftotext -f START -l END -layout SOURCE - (including formfeeds and terminal newline). Text not retained in artifact.",
+      "sourceContentSummary": "International students describe their daily routines, college travel, family activities and free time. Learner uses routine verbs, frequency and sequencing, then plans and gives a sustained account of an average day with who/where/enjoyment and reason.",
+      "transformationBoundaries": "{\"required\": \"Derive actual learning content, factual/semantic relationships, scenarios and teaching examples from this selected range as well as its pedagogy. Preserve source ID and page range per adapted lesson.\", \"permitted\": \"Paraphrase, simplify, sequence and create new questions grounded in the selected semantic material. Teacher must verify intended answer relationships against source before publishing.\", \"excluded\": \"Unrelated invented scenario with only method citation; unsupported factual/answer claims; verbatim source passage/exercise copy in this index; claiming a full exam or calibrated band from this sample.\"}",
+      "inspectionNotes": "Selected range text read; representative visual check recorded by source, not every page. Audio not supplied/listened in this review; printed task evidence only."
+    },
+    {
+      "id": "MS1-L01",
+      "relativePath": "Mindset for IELTs Books/Mindset-For-IELTS-Level_1 [www.languagecentre.ir].pdf",
+      "fileSha256": "0ab70afb6fa6ef387edf57459e180054052a4e468e36bc6a56ebc3a012b4eb3a",
+      "pdfPages": [
+        17,
+        18,
+        19
+      ],
+      "excerptSha256": "33110c7707fbb467a5182b66d3a1126dcc6de9dfd6c3105b233bb4d78c327737",
+      "learningObjectives": [
+        "Identify everyday conversational setting and who provides information.",
+        "Discriminate numbers and corrections; interpret synonyms before choosing an answer."
+      ],
+      "excerptBoundary": "SHA256 bytes; excerpt hash is exact stdout from pdftotext -f START -l END -layout SOURCE - (including formfeeds and terminal newline). Text not retained in artifact.",
+      "sourceContentSummary": "Everyday celebration restaurant booking and jewelry purchase; identify manager/customer or assistant/customer, numbers for dates/headcounts and costs, a corrected date, changing sale prices and wrapping cost. Later conversation concerns an event, relationship, symbolic gifts, colours and food.",
+      "transformationBoundaries": "{\"required\": \"Derive actual learning content, factual/semantic relationships, scenarios and teaching examples from this selected range as well as its pedagogy. Preserve source ID and page range per adapted lesson.\", \"permitted\": \"Paraphrase, simplify, sequence and create new questions grounded in the selected semantic material. Teacher must verify intended answer relationships against source before publishing.\", \"excluded\": \"Unrelated invented scenario with only method citation; unsupported factual/answer claims; verbatim source passage/exercise copy in this index; claiming a full exam or calibrated band from this sample.\"}",
+      "inspectionNotes": "Selected range text read; representative visual check recorded by source, not every page. Audio not supplied/listened in this review; printed task evidence only."
+    },
+    {
+      "id": "MS1-S01",
+      "relativePath": "Mindset for IELTs Books/Mindset-For-IELTS-Level_1 [www.languagecentre.ir].pdf",
+      "fileSha256": "0ab70afb6fa6ef387edf57459e180054052a4e468e36bc6a56ebc3a012b4eb3a",
+      "pdfPages": [
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "excerptSha256": "b32b2b2ed62947c31e384d951160f83527a09377a5cb3e201515c12d004dca58",
+      "learningObjectives": [
+        "Develop family vocabulary/collocations and frequency language.",
+        "Answer the actual personal question, extend with reason/detail/contrast and pronounce third-person endings."
+      ],
+      "excerptBoundary": "SHA256 bytes; excerpt hash is exact stdout from pdftotext -f START -l END -layout SOURCE - (including formfeeds and terminal newline). Text not retained in artifact.",
+      "sourceContentSummary": "Family size and closeness, an older brother and parents, shared cooking/eating, frequency of outings and park activities, future family hopes, similarities/preferences and reasons. Third-person habitual actions ground pronunciation practice.",
+      "transformationBoundaries": "{\"required\": \"Derive actual learning content, factual/semantic relationships, scenarios and teaching examples from this selected range as well as its pedagogy. Preserve source ID and page range per adapted lesson.\", \"permitted\": \"Paraphrase, simplify, sequence and create new questions grounded in the selected semantic material. Teacher must verify intended answer relationships against source before publishing.\", \"excluded\": \"Unrelated invented scenario with only method citation; unsupported factual/answer claims; verbatim source passage/exercise copy in this index; claiming a full exam or calibrated band from this sample.\"}",
+      "inspectionNotes": "Selected range text read; representative visual check recorded by source, not every page. Audio not supplied/listened in this review; printed task evidence only."
+    },
+    {
+      "id": "MS2-L01",
+      "relativePath": "Mindset for IELTs Books/Mindset-For-IELTS-Level_2 [www.languagecentre.ir].pdf",
+      "fileSha256": "393720e617f31940e5da07e94b7ce5f44e77120f7e2d9d75c67b15c3c7e041fc",
+      "pdfPages": [
+        22,
+        23,
+        24
+      ],
+      "excerptSha256": "da05267304817104fa4c83246c675b36d98a13302547e7fec781b98ca476ac47",
+      "learningObjectives": [
+        "Predict information category before note completion.",
+        "Decode complex prices/measurements and distinguish a true detail from the reason requested."
+      ],
+      "excerptBoundary": "SHA256 bytes; excerpt hash is exact stdout from pdftotext -f START -l END -layout SOURCE - (including formfeeds and terminal newline). Text not retained in artifact.",
+      "sourceContentSummary": "Estate agent describes three properties; client notes address, bedrooms/lounges, garden access and fitted kitchen, appointment and agent contact. Follow-up concerns price, room/garden measurements, current home, offer amount, selling/bank timing and family moving priorities.",
+      "transformationBoundaries": "{\"required\": \"Derive actual learning content, factual/semantic relationships, scenarios and teaching examples from this selected range as well as its pedagogy. Preserve source ID and page range per adapted lesson.\", \"permitted\": \"Paraphrase, simplify, sequence and create new questions grounded in the selected semantic material. Teacher must verify intended answer relationships against source before publishing.\", \"excluded\": \"Unrelated invented scenario with only method citation; unsupported factual/answer claims; verbatim source passage/exercise copy in this index; claiming a full exam or calibrated band from this sample.\"}",
+      "inspectionNotes": "Selected range text read; representative visual check recorded by source, not every page. Audio not supplied/listened in this review; printed task evidence only."
+    },
+    {
+      "id": "MS2-S01",
+      "relativePath": "Mindset for IELTs Books/Mindset-For-IELTS-Level_2 [www.languagecentre.ir].pdf",
+      "fileSha256": "393720e617f31940e5da07e94b7ce5f44e77120f7e2d9d75c67b15c3c7e041fc",
+      "pdfPages": [
+        25,
+        26,
+        27,
+        28
+      ],
+      "excerptSha256": "981f7cd09f13eb0bb576ff6083b257fcfc8daf9e178d9856b113a3c9d6ce8b3f",
+      "learningObjectives": [
+        "Expand hometown/accommodation vocabulary, explanations and hypothetical would responses.",
+        "Generate ideas for unfamiliar wording and use appropriate lexical syllable stress."
+      ],
+      "excerptBoundary": "SHA256 bytes; excerpt hash is exact stdout from pdftotext -f START -l END -layout SOURCE - (including formfeeds and terminal newline). Text not retained in artifact.",
+      "sourceContentSummary": "Hometown and accommodation: architecture, monuments, museums, natural features, shopping, leisure places and weather; likes/dislikes/wishes, where and with whom learner lives, favorite room, recommendations and hypothetical moving preferences.",
+      "transformationBoundaries": "{\"required\": \"Derive actual learning content, factual/semantic relationships, scenarios and teaching examples from this selected range as well as its pedagogy. Preserve source ID and page range per adapted lesson.\", \"permitted\": \"Paraphrase, simplify, sequence and create new questions grounded in the selected semantic material. Teacher must verify intended answer relationships against source before publishing.\", \"excluded\": \"Unrelated invented scenario with only method citation; unsupported factual/answer claims; verbatim source passage/exercise copy in this index; claiming a full exam or calibrated band from this sample.\"}",
+      "inspectionNotes": "Selected range text read; representative visual check recorded by source, not every page. Audio not supplied/listened in this review; printed task evidence only."
+    },
+    {
+      "id": "MS3-L01",
+      "relativePath": "Mindset for IELTs Books/Mindset-For-IELTS-Level_3 [www.languagecentre.ir].pdf",
+      "fileSha256": "529e37b5094aeb010cffaeee8ca05b743e672d26549c17585e707d58432e4f53",
+      "pdfPages": [
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "excerptSha256": "8dceacde9828268e07465ad86a5fbf738203cfb4dcb8ea60d2378fcff3897710",
+      "learningObjectives": [
+        "Distinguish near synonyms, anticipate paraphrase but transcribe exact spoken answer under word limits.",
+        "Decode conventional number/name/date forms and track corrections/conditions."
+      ],
+      "excerptBoundary": "SHA256 bytes; excerpt hash is exact stdout from pdftotext -f START -l END -layout SOURCE - (including formfeeds and terminal newline). Text not retained in artifact.",
+      "sourceContentSummary": "City visit choices lead into a museum covering ancient/prehistoric to contemporary and future city history, exhibits and guide talk. Museum booking captures contact details, group/student discounts, price/exhibition/date and booking proof. Different-context transfer concerns removals contact/address/time/insurance/package/service/additional charges.",
+      "transformationBoundaries": "{\"required\": \"Derive actual learning content, factual/semantic relationships, scenarios and teaching examples from this selected range as well as its pedagogy. Preserve source ID and page range per adapted lesson.\", \"permitted\": \"Paraphrase, simplify, sequence and create new questions grounded in the selected semantic material. Teacher must verify intended answer relationships against source before publishing.\", \"excluded\": \"Unrelated invented scenario with only method citation; unsupported factual/answer claims; verbatim source passage/exercise copy in this index; claiming a full exam or calibrated band from this sample.\"}",
+      "inspectionNotes": "Selected range text read; representative visual check recorded by source, not every page. Audio not supplied/listened in this review; printed task evidence only."
+    },
+    {
+      "id": "MS3-S01",
+      "relativePath": "Mindset for IELTs Books/Mindset-For-IELTS-Level_3 [www.languagecentre.ir].pdf",
+      "fileSha256": "529e37b5094aeb010cffaeee8ca05b743e672d26549c17585e707d58432e4f53",
+      "pdfPages": [
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "excerptSha256": "e97a1dc03df0d0138fcee1c1eb8ca386270e03260de463a9062674f2fe4db359",
+      "learningObjectives": [
+        "Distinguish familiar personal answers, sustained narrative and abstract discussion.",
+        "Use prediction, comparison, hypothetical, cause/effect and past/present functions; control future time clauses and stress."
+      ],
+      "excerptBoundary": "SHA256 bytes; excerpt hash is exact stdout from pdftotext -f START -l END -layout SOURCE - (including formfeeds and terminal newline). Text not retained in artifact.",
+      "sourceContentSummary": "Urban/rural places and personal life, future visits and past residence; abstract discussion concerns private car bans, transport links and family life, apartment/countryside preference, moving from cities, overpopulation, migration effects on small towns and hypothetical future cities.",
+      "transformationBoundaries": "{\"required\": \"Derive actual learning content, factual/semantic relationships, scenarios and teaching examples from this selected range as well as its pedagogy. Preserve source ID and page range per adapted lesson.\", \"permitted\": \"Paraphrase, simplify, sequence and create new questions grounded in the selected semantic material. Teacher must verify intended answer relationships against source before publishing.\", \"excluded\": \"Unrelated invented scenario with only method citation; unsupported factual/answer claims; verbatim source passage/exercise copy in this index; claiming a full exam or calibrated band from this sample.\"}",
+      "inspectionNotes": "Selected range text read; representative visual check recorded by source, not every page. Audio not supplied/listened in this review; printed task evidence only."
+    },
+    {
+      "id": "CG19-F01",
+      "relativePath": "Cambridge Questions/Cambridge 19/Cambridge-IELTS-19-General.pdf",
+      "fileSha256": "846ae061aeb56ee6636bd20166623bb621379b0053c451985f38b0cc12443251",
+      "pdfPages": [
+        5,
+        6
+      ],
+      "excerptSha256": "17594097f9d605679493b79fcd55408e304b664a4fbd3b389cc9fc9dc8040b13",
+      "learningObjectives": [
+        "Distinguish everyday/workplace/extended GT reading demands",
+        "plan letter and argument tasks"
+      ],
+      "excerptBoundary": "Only selected PDF pages. Hash algorithm: PyMuPDF get_text(sort=True) per page; join U+000C; UTF-8 SHA256. No extracted text persisted.",
+      "sourceContentSummary": "GT three reading sections40 items60min. Letter150 words20min; essay250 words40min; Task2twice Task1. Speaking11–14min. Paper format answer-transfer convention must not be assumed for computer delivery.",
+      "transformationBoundaries": "Reauthor/paraphrase the selected source facts, scenarios and teaching demands with traceable provenance. Do not attach a method-only citation to unrelated invented learning content. No wholesale passage/exercise copying, scan/chart assets, verbatim options or keys. Preserve faithful source meaning and verify every new key.",
+      "inspectionNotes": "{\"printedPageMapping\": \"PDF=printed\", \"textStatus\": \"Readable embedded OCR-like text with errors; representative rendered pages visually inspected.\"}"
+    },
+    {
+      "id": "CG19-L01",
+      "relativePath": "Cambridge Questions/Cambridge 19/Cambridge-IELTS-19-General.pdf",
+      "fileSha256": "846ae061aeb56ee6636bd20166623bb621379b0053c451985f38b0cc12443251",
+      "pdfPages": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "excerptSha256": "3af3dfb361ba7afb40cb78c011e717382e07f5e85fca66373d0db09195d80cf8",
+      "learningObjectives": [
+        "Extract precise facts",
+        "follow spatial language",
+        "identify views",
+        "track lecture structure"
+      ],
+      "excerptBoundary": "Only selected PDF pages. Hash algorithm: PyMuPDF get_text(sort=True) per page; join U+000C; UTF-8 SHA256. No extracted text persisted.",
+      "sourceContentSummary": "Country park note completion; twinning association multiple-choice; house map; student bread-reuse discussion and food-trend opinions; Neolithic archaeological-site lecture notes. Four parts10items each.",
+      "transformationBoundaries": "Reauthor/paraphrase the selected source facts, scenarios and teaching demands with traceable provenance. Do not attach a method-only citation to unrelated invented learning content. No wholesale passage/exercise copying, scan/chart assets, verbatim options or keys. Preserve faithful source meaning and verify every new key.",
+      "inspectionNotes": "{\"printedPageMapping\": \"PDF=printed\", \"textStatus\": \"Readable embedded OCR-like text with errors; representative rendered pages visually inspected.\"}"
+    },
+    {
+      "id": "CG19-R01",
+      "relativePath": "Cambridge Questions/Cambridge 19/Cambridge-IELTS-19-General.pdf",
+      "fileSha256": "846ae061aeb56ee6636bd20166623bb621379b0053c451985f38b0cc12443251",
+      "pdfPages": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+      ],
+      "excerptSha256": "c59ef53940b43f7953c582434174289e6aee1f186009d6538aa08e52bcc5eb23",
+      "learningObjectives": [
+        "Identify evidence and absence",
+        "match short texts",
+        "preserve word limits",
+        "identify paragraph purpose"
+      ],
+      "excerptBoundary": "Only selected PDF pages. Hash algorithm: PyMuPDF get_text(sort=True) per page; join U+000C; UTF-8 SHA256. No extracted text persisted.",
+      "sourceContentSummary": "Everyday tram FAQ with TFNG; knitwear customer reviews with matching; workplace leadership sentence completion and resignation note completion; extended emoji communication prose with headings, summary and multiple-choice.40items across3sections.",
+      "transformationBoundaries": "Reauthor/paraphrase the selected source facts, scenarios and teaching demands with traceable provenance. Do not attach a method-only citation to unrelated invented learning content. No wholesale passage/exercise copying, scan/chart assets, verbatim options or keys. Preserve faithful source meaning and verify every new key.",
+      "inspectionNotes": "{\"printedPageMapping\": \"PDF=printed\", \"textStatus\": \"Readable embedded OCR-like text with errors; representative rendered pages visually inspected.\"}"
+    },
+    {
+      "id": "CG19-W01",
+      "relativePath": "Cambridge Questions/Cambridge 19/Cambridge-IELTS-19-General.pdf",
+      "fileSha256": "846ae061aeb56ee6636bd20166623bb621379b0053c451985f38b0cc12443251",
+      "pdfPages": [
+        29,
+        30
+      ],
+      "excerptSha256": "234cf79f9a8cbc8cf64451d62f7385170e3a153071c08fff7cfa625a71929bcf",
+      "learningObjectives": [
+        "Cover letter bullet points with appropriate register",
+        "answer causal and evaluative essay demands"
+      ],
+      "excerptBoundary": "Only selected PDF pages. Hash algorithm: PyMuPDF get_text(sort=True) per page; join U+000C; UTF-8 SHA256. No extracted text persisted.",
+      "sourceContentSummary": "Task1 letter to employer requesting reduced hours for part-time study: reason, proposed working hours, benefit to employer. Task2 asks causes and evaluation of visitors taking photographs of themselves rather than attending to famous places.",
+      "transformationBoundaries": "Reauthor/paraphrase the selected source facts, scenarios and teaching demands with traceable provenance. Do not attach a method-only citation to unrelated invented learning content. No wholesale passage/exercise copying, scan/chart assets, verbatim options or keys. Preserve faithful source meaning and verify every new key.",
+      "inspectionNotes": "{\"printedPageMapping\": \"PDF=printed\", \"textStatus\": \"Readable embedded OCR-like text with errors; representative rendered pages visually inspected.\"}"
+    },
+    {
+      "id": "CG19-S01",
+      "relativePath": "Cambridge Questions/Cambridge 19/Cambridge-IELTS-19-General.pdf",
+      "fileSha256": "846ae061aeb56ee6636bd20166623bb621379b0053c451985f38b0cc12443251",
+      "pdfPages": [
+        31
+      ],
+      "excerptSha256": "9ebf0e675732e91584657f3c969da7b7bbf2500dde01023ceae840084dc40aaf",
+      "learningObjectives": [
+        "Extend personal answers",
+        "organise cue-card long turn",
+        "generalise to societal discussion"
+      ],
+      "excerptBoundary": "Only selected PDF pages. Hash algorithm: PyMuPDF get_text(sort=True) per page; join U+000C; UTF-8 SHA256. No extracted text persisted.",
+      "sourceContentSummary": "Part1 international food questions; Part2 describe positively evaluated law and explain introduction/purpose/evaluation; Part3 school rules and legal profession.1minute preparation,1–2minute long turn.",
+      "transformationBoundaries": "Reauthor/paraphrase the selected source facts, scenarios and teaching demands with traceable provenance. Do not attach a method-only citation to unrelated invented learning content. No wholesale passage/exercise copying, scan/chart assets, verbatim options or keys. Preserve faithful source meaning and verify every new key.",
+      "inspectionNotes": "{\"printedPageMapping\": \"PDF=printed\", \"textStatus\": \"Readable embedded OCR-like text with errors; representative rendered pages visually inspected.\"}"
+    },
+    {
+      "id": "CA21-F01",
+      "relativePath": "Cambridge Questions/Cambridge 21/Cambridge-IELTS-21-Academic.pdf",
+      "fileSha256": "5c522f4df0f868faf97c50629639466395418530766727100f38d6f9f9df9902",
+      "pdfPages": [
+        7,
+        8
+      ],
+      "excerptSha256": "19c8aa5ccd2f35614292d76ec63753a51f070d68f46592e9d8a448a076d3f75d",
+      "learningObjectives": [
+        "Distinguish Academic data reporting and long-text reading from GT"
+      ],
+      "excerptBoundary": "Only selected PDF pages. Hash algorithm: PyMuPDF get_text(sort=True) per page; join U+000C; UTF-8 SHA256. No extracted text persisted.",
+      "sourceContentSummary": "Academic reading3texts40items60min. Academic Task1 data/diagram/process reporting; Task2 reasoned argument. Common four-part listening and three-part speaking. Paper answer-transfer convention not computer-delivery authority.",
+      "transformationBoundaries": "Reauthor/paraphrase the selected source facts, scenarios and teaching demands with traceable provenance. Do not attach a method-only citation to unrelated invented learning content. No wholesale passage/exercise copying, scan/chart assets, verbatim options or keys. Preserve faithful source meaning and verify every new key.",
+      "inspectionNotes": "{\"printedPageMapping\": \"PDF-2=printed\", \"textStatus\": \"Readable embedded OCR-like text with errors; representative rendered pages visually inspected.\"}"
+    },
+    {
+      "id": "CA21-L01",
+      "relativePath": "Cambridge Questions/Cambridge 21/Cambridge-IELTS-21-Academic.pdf",
+      "fileSha256": "5c522f4df0f868faf97c50629639466395418530766727100f38d6f9f9df9902",
+      "pdfPages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "excerptSha256": "1e4ee142658e9aabbf78dc6e53a17569d8d8f12bf22fec8d823662735e554de4",
+      "learningObjectives": [
+        "Predict answer type",
+        "distinguish speaker views",
+        "track academic explanation"
+      ],
+      "excerptBoundary": "Only selected PDF pages. Hash algorithm: PyMuPDF get_text(sort=True) per page; join U+000C; UTF-8 SHA256. No extracted text persisted.",
+      "sourceContentSummary": "Sailing-club courses table and note completion; film-makeup trainee work multiple choice and duties/abilities matching; students discussing an ocean-biodiversity lecture/research project and evaluating resources including lionfish, microplastics and floating marine cities; natural/synthetic rubber lecture note completion. Four parts, ten questions each. Coordinator directly rechecked physicalPDF12–17 to correct an earlier source-worker summary.",
+      "transformationBoundaries": "Reauthor/paraphrase the selected source facts, scenarios and teaching demands with traceable provenance. Do not attach a method-only citation to unrelated invented learning content. No wholesale passage/exercise copying, scan/chart assets, verbatim options or keys. Preserve faithful source meaning and verify every new key.",
+      "inspectionNotes": "{\"printedPageMapping\": \"PDF-2=printed\", \"textStatus\": \"Readable embedded OCR-like text with errors; representative rendered pages visually inspected.\"}"
+    },
+    {
+      "id": "CA21-R01",
+      "relativePath": "Cambridge Questions/Cambridge 21/Cambridge-IELTS-21-Academic.pdf",
+      "fileSha256": "5c522f4df0f868faf97c50629639466395418530766727100f38d6f9f9df9902",
+      "pdfPages": [
+        7,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        120
+      ],
+      "excerptSha256": "4323eb6c822f6c7d8e6e3a8d079a12addf4d653119185c5ebc0f87b3c7d7e007",
+      "learningObjectives": [
+        "Find details",
+        "distinguish factual from writer-view judgements",
+        "match sections and named sources",
+        "infer argument"
+      ],
+      "excerptBoundary": "Only selected PDF pages. Hash algorithm: PyMuPDF get_text(sort=True) per page; join U+000C; UTF-8 SHA256. No extracted text persisted.",
+      "sourceContentSummary": "P1 Davies sisters art collecting biography textPDF18–19; notes20 and TFNG21. P2 therapeutic silence/flotation research text22–23; section matching24,summary25,person matching26. P3 sugar-history book review text27–28;MCQ29,word-list summary and YNNG30.40items total. PDF7 frontmatter methods and PDF120 printed118 Test1 Reading key are included in selected evidence. Source key privately ties40 numbered answers to question families; adapted questions must rebuild and independently verify answer evidence.",
+      "transformationBoundaries": "Reauthor/paraphrase the selected source facts, scenarios and teaching demands with traceable provenance. Do not attach a method-only citation to unrelated invented learning content. No wholesale passage/exercise copying, scan/chart assets, verbatim options or keys. Preserve faithful source meaning and verify every new key.",
+      "inspectionNotes": "{\"printedPageMapping\": \"PDF7=printed5;PDF18\\u201330=printed16\\u201328;PDF120=printed118\", \"textStatus\": \"Readable embedded OCR-like text with errors; representative rendered pages visually inspected.\"}"
+    },
+    {
+      "id": "CA21-W01",
+      "relativePath": "Cambridge Questions/Cambridge 21/Cambridge-IELTS-21-Academic.pdf",
+      "fileSha256": "5c522f4df0f868faf97c50629639466395418530766727100f38d6f9f9df9902",
+      "pdfPages": [
+        31,
+        32
+      ],
+      "excerptSha256": "117ce2faf0a25e0f97a023eb9f94114eb6e9dc9a06a662dc95306d5f229654f9",
+      "learningObjectives": [
+        "Select trends and compare series",
+        "develop supported consistent position"
+      ],
+      "excerptBoundary": "Only selected PDF pages. Hash algorithm: PyMuPDF get_text(sort=True) per page; join U+000C; UTF-8 SHA256. No extracted text persisted.",
+      "sourceContentSummary": "Task1 US jobs in four economic sectors1960–2020 line graph. Task2 degree-of-agreement argument about tall apartment blocks as best response to large-city housing needs.150/250word minima,20/40minutes.",
+      "transformationBoundaries": "Reauthor/paraphrase the selected source facts, scenarios and teaching demands with traceable provenance. Do not attach a method-only citation to unrelated invented learning content. No wholesale passage/exercise copying, scan/chart assets, verbatim options or keys. Preserve faithful source meaning and verify every new key.",
+      "inspectionNotes": "{\"printedPageMapping\": \"PDF-2=printed\", \"textStatus\": \"Readable embedded OCR-like text with errors; representative rendered pages visually inspected.\"}"
+    },
+    {
+      "id": "CA21-S01",
+      "relativePath": "Cambridge Questions/Cambridge 21/Cambridge-IELTS-21-Academic.pdf",
+      "fileSha256": "5c522f4df0f868faf97c50629639466395418530766727100f38d6f9f9df9902",
+      "pdfPages": [
+        33
+      ],
+      "excerptSha256": "1b211b3ba0e05e94c7099111a54666c2d5a4822d3f51c51546a7a9607e0d1b1f",
+      "learningObjectives": [
+        "Answer familiar questions",
+        "develop evaluative recount",
+        "generalise discussion"
+      ],
+      "excerptBoundary": "Only selected PDF pages. Hash algorithm: PyMuPDF get_text(sort=True) per page; join U+000C; UTF-8 SHA256. No extracted text persisted.",
+      "sourceContentSummary": "Part1 hairstyle/haircut experiences; Part2 experience using tourist information with source,place,information and usefulness; Part3 holiday types and tourist attractions.",
+      "transformationBoundaries": "Reauthor/paraphrase the selected source facts, scenarios and teaching demands with traceable provenance. Do not attach a method-only citation to unrelated invented learning content. No wholesale passage/exercise copying, scan/chart assets, verbatim options or keys. Preserve faithful source meaning and verify every new key.",
+      "inspectionNotes": "{\"printedPageMapping\": \"PDF-2=printed\", \"textStatus\": \"Readable embedded OCR-like text with errors; representative rendered pages visually inspected.\"}"
+    },
+    {
+      "id": "BD-W01",
+      "relativePath": "Band Descriptors/IELTS_Writing_Band_Descriptors.pdf",
+      "fileSha256": "470cbcb8e4128763e3cd4d27215bb51511616ba50ef2c7c2fcc64ed33a40bc44",
+      "pdfPages": [
+        1,
+        2
+      ],
+      "excerptSha256": "4154b3034f02cd7af2ad03dfa445f8e40c7df34ddac148be0a4cf615229468d7",
+      "learningObjectives": [
+        "Separate Task1achievement from Task2response and the other3criteria",
+        "Recognise historic2005document cannot establish current benchmark"
+      ],
+      "excerptBoundary": "Only selected PDF pages. Hash algorithm: PyMuPDF get_text(sort=True) per page; join U+000C; UTF-8 SHA256. No extracted text persisted.",
+      "sourceContentSummary": "Historic2page public-version writing grids with footer ©UCLES2005 on both pages, confirmed in actual extracted footer text. Not the officially accessible9page May2023descriptor PDF.",
+      "transformationBoundaries": "Reauthor/paraphrase the selected source facts, scenarios and teaching demands with traceable provenance. Do not attach a method-only citation to unrelated invented learning content. No wholesale passage/exercise copying, scan/chart assets, verbatim options or keys. Preserve faithful source meaning and verify every new key.",
+      "inspectionNotes": "{\"printedPageMapping\": \"PDF1=Task1grid;PDF2=Task2grid;both footers\\u00a9UCLES2005\", \"textStatus\": \"Readable embedded OCR-like text with errors; representative rendered pages visually inspected.\"}"
+    },
+    {
+      "id": "CA21-L02",
+      "relativePath": "Cambridge Questions/Cambridge 21/Cambridge-IELTS-21-Academic.pdf",
+      "fileSha256": "5c522f4df0f868faf97c50629639466395418530766727100f38d6f9f9df9902",
+      "pdfPages": [
+        99,
+        100,
+        101,
+        102,
+        103,
+        104
+      ],
+      "excerptSha256": "13940b436ecbd3783831fd867cea020f9c4db85b360370d52372114ee813f21d",
+      "learningObjectives": [
+        "Track source facts and speaker corrections across four parts",
+        "Preserve semantic relationships when reauthoring scripts and distractors"
+      ],
+      "excerptBoundary": "Physical PDF pages; pdftotext -layout per page stdout concatenated in listed order. No extracted text stored.",
+      "sourceContentSummary": "Test1 audioscripts: sailing-club beginner courses and practical requirements; film-makeup trainee career, permissions and duties; ocean-biodiversity lecture/research discussion and critical evaluation of resources; natural/synthetic rubber supply, threats and alternative sources. Final selected page104 also startsTest2; firstmock adaptation uses onlyTest1 before that boundary. Coordinator directly read selected page openings and relevant sections; no source transcript reproduced.",
+      "transformationBoundaries": "Ground adapted semantic content, scenarios, facts and teaching examples in these pages; faithful source paraphrase and new questions, not unrelated invented contexts. No wholesale source exercise, transcript or asset copying.",
+      "inspectionNotes": "Actual selected text inspected by assigned mock_listening worker; index coordinator verifies file hashes and excerpt hashing. Not audio audition or full-book review."
+    },
+    {
+      "id": "MS2-L02",
+      "relativePath": "Mindset for IELTs Books/Mindset-For-IELTS-Level_2 [www.languagecentre.ir].pdf",
+      "fileSha256": "393720e617f31940e5da07e94b7ce5f44e77120f7e2d9d75c67b15c3c7e041fc",
+      "pdfPages": [
+        40,
+        41,
+        42
+      ],
+      "excerptSha256": "2ccf83cecc58d4d70559b375488b704286aac55be85853f26800777e6b03dbfc",
+      "learningObjectives": [
+        "Follow everyday monologue structure",
+        "Maintain source-order note completion"
+      ],
+      "excerptBoundary": "Physical PDF pages; pdftotext -layout per page stdout concatenated in listed order. No extracted text stored.",
+      "sourceContentSummary": "Level2 leisure/education Listening monologue and ordered notes; subordinate pedagogical anchor, not source of unrelated semantic domains.",
+      "transformationBoundaries": "Ground adapted semantic content, scenarios, facts and teaching examples in these pages; faithful source paraphrase and new questions, not unrelated invented contexts. No wholesale source exercise, transcript or asset copying.",
+      "inspectionNotes": "Actual selected text inspected by assigned mock_listening worker; index coordinator verifies file hashes and excerpt hashing. Not audio audition or full-book review."
+    },
+    {
+      "id": "MS2-L03",
+      "relativePath": "Mindset for IELTs Books/Mindset-For-IELTS-Level_2 [www.languagecentre.ir].pdf",
+      "fileSha256": "393720e617f31940e5da07e94b7ce5f44e77120f7e2d9d75c67b15c3c7e041fc",
+      "pdfPages": [
+        139,
+        140,
+        141,
+        142,
+        143
+      ],
+      "excerptSha256": "6a1053821bcd58c40494e5d3f3771f845da3b1a64b2c0861f5ea9f8e5e3993af",
+      "learningObjectives": [
+        "Follow academic lecture and educational discussion",
+        "Identify transitions and answer-order cues"
+      ],
+      "excerptBoundary": "Physical PDF pages; pdftotext -layout per page stdout concatenated in listed order. No extracted text stored.",
+      "sourceContentSummary": "Level2 education systems Listening academic lecture and educational conversation; actual selected tasks ground lecture/conversation teaching sequence.",
+      "transformationBoundaries": "Ground adapted semantic content, scenarios, facts and teaching examples in these pages; faithful source paraphrase and new questions, not unrelated invented contexts. No wholesale source exercise, transcript or asset copying.",
+      "inspectionNotes": "Actual selected text inspected by assigned mock_listening worker; index coordinator verifies file hashes and excerpt hashing. Not audio audition or full-book review."
+    },
+    {
+      "id": "CG19-R02",
+      "relativePath": "Cambridge Questions/Cambridge 19/Cambridge-IELTS-19-General.pdf",
+      "fileSha256": "846ae061aeb56ee6636bd20166623bb621379b0053c451985f38b0cc12443251",
+      "pdfPages": [
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51
+      ],
+      "excerptSha256": "b36be81bc1806b16d356b16d9a9662720749143ab881b2b82cf5990ce8025c0e",
+      "learningObjectives": [
+        "Compare facilities access and conditional restrictions across short notices",
+        "Distinguish stated contradiction from missing evidence",
+        "Follow procedural work sequence and paraphrased one-word completion",
+        "Interpret attributed findings and distinguish reported association from causal claims"
+      ],
+      "excerptBoundary": "Physical PDF pages; pdftotext -layout per page stdout concatenated in listed order; UTF-8 SHA256. Text not stored in index.",
+      "sourceContentSummary": "Cambridge19General Test2: five campsite descriptions, access/fitness/safety conditions; residents newsletter about urgent water penetration, fire safety and maintenance; a care-worker daily routine; work-life balance guidance; Leeds Henry parenting programme and reported childhood-obesity findings, multiple viewpoints and bounded choices. Source health/employment statements remain historical reading material, not newly verified medical or occupational advice.",
+      "transformationBoundaries": "Ground adapted semantics, factual relationships and task functions in these exact source pages. Paraphrase and adapt with new question wording and faithful evidence. No unrelated invented contexts with method-only citations; no wholesale source passage/exercise copying. Do not treat source examples as newly verified real-world or medical claims.",
+      "inspectionNotes": "GT unit author reports actual complete selected reading; coordinator independently read selected source text/representative substantive page openings and task instructions. Not learner efficacy or full-book review."
+    },
+    {
+      "id": "CG19-W02",
+      "relativePath": "Cambridge Questions/Cambridge 19/Cambridge-IELTS-19-General.pdf",
+      "fileSha256": "846ae061aeb56ee6636bd20166623bb621379b0053c451985f38b0cc12443251",
+      "pdfPages": [
+        52,
+        53
+      ],
+      "excerptSha256": "346060cde609a0e27bdfac4db2006209d1f1cd6f80094f9d2badba4f769f023b",
+      "learningObjectives": [
+        "Cover all three communicative functions for a named reader",
+        "Explain a food-event contribution with relevant description and justification",
+        "Address both household-service outsourcing questions with developed reasons"
+      ],
+      "excerptBoundary": "Physical PDF pages; pdftotext -layout per page stdout concatenated in listed order; UTF-8 SHA256. Text not stored in index.",
+      "sourceContentSummary": "Cambridge19General Test2: international students club food celebration, letter to named organiser offering a popular national dish, describing it and justifying inclusion; essay on paying others for household chores/childcare, employment opportunity versus doing tasks oneself. Semantic context and task demands are the adaptation basis, not unrelated scenario invention.",
+      "transformationBoundaries": "Ground adapted semantics, factual relationships and task functions in these exact source pages. Paraphrase and adapt with new question wording and faithful evidence. No unrelated invented contexts with method-only citations; no wholesale source passage/exercise copying. Do not treat source examples as newly verified real-world or medical claims.",
+      "inspectionNotes": "GT unit author reports actual complete selected reading; coordinator independently read selected source text/representative substantive page openings and task instructions. Not learner efficacy or full-book review."
+    },
+    {
+      "id": "CG19-W03",
+      "relativePath": "Cambridge Questions/Cambridge 19/Cambridge-IELTS-19-General.pdf",
+      "fileSha256": "846ae061aeb56ee6636bd20166623bb621379b0053c451985f38b0cc12443251",
+      "pdfPages": [
+        74
+      ],
+      "excerptSha256": "d1522b22a48f4f340395b2281fac2fe71e00c0d96fd97534fa13bf4acbe00a92",
+      "learningObjectives": [
+        "Make a rental extension request with duration and changed circumstances",
+        "Explain an apartment problem to the property owner"
+      ],
+      "excerptBoundary": "Physical PDF page raster: PyMuPDF get_pixmap(matrix=Matrix(1.2,1.2),alpha=False).tobytes(\"png\"); SHA256 of exact PNG bytes. Embedded text is watermark-only and NOT used as content evidence; original page visually inspected. No image stored in index.",
+      "sourceContentSummary": "Cambridge19GeneralTest3: renter five months into six-month agreement seeks a longer stay; specify desired new duration, changed plans and an apartment problem. Preserve recipient and linked communicative functions.",
+      "transformationBoundaries": "Derive actual adapted letter situation, recipient relationship and all communicative functions from this source family; paraphrase prompt and author new teaching/response analysis. Do not reuse the same source scenario as unseen transfer from training; source-family exposure remains shared even if wording and characters change. No wholesale source exercise or scan copying.",
+      "inspectionNotes": "Coordinator directly rendered and visually inspected actual task page; source author separately reports visual read."
+    },
+    {
+      "id": "CG19-W04",
+      "relativePath": "Cambridge Questions/Cambridge 19/Cambridge-IELTS-19-General.pdf",
+      "fileSha256": "846ae061aeb56ee6636bd20166623bb621379b0053c451985f38b0cc12443251",
+      "pdfPages": [
+        97
+      ],
+      "excerptSha256": "43d319ac4aeff3cfaba5f6c61378d9e1a4856e1778f1707cd241e233dcf5e545",
+      "learningObjectives": [
+        "Explain experience and internal career-development request",
+        "Connect proposed move to employer benefit and continued commitment"
+      ],
+      "excerptBoundary": "Physical PDF page raster: PyMuPDF get_pixmap(matrix=Matrix(1.2,1.2),alpha=False).tobytes(\"png\"); SHA256 of exact PNG bytes. Embedded text is watermark-only and NOT used as content evidence; original page visually inspected. No image stored in index.",
+      "sourceContentSummary": "Cambridge19GeneralTest4: employee after two years seeks a different department in the same company; explain learning, organisational benefit and reason for remaining with employer.",
+      "transformationBoundaries": "Derive actual adapted letter situation, recipient relationship and all communicative functions from this source family; paraphrase prompt and author new teaching/response analysis. Do not reuse the same source scenario as unseen transfer from training; source-family exposure remains shared even if wording and characters change. No wholesale source exercise or scan copying.",
+      "inspectionNotes": "Coordinator directly rendered and visually inspected actual task page; source author separately reports visual read."
+    },
+    {
+      "id": "CG18-W01",
+      "relativePath": "Cambridge Questions/Cambridge 18/Cambridge-IELTS-18-General.pdf",
+      "fileSha256": "12b44ce588d399c8f38603b449511b1ff0e9ee145569a806923f84e6f71e8aa8",
+      "pdfPages": [
+        31
+      ],
+      "excerptSha256": "771d96ade17844fd9e3fc19df07e5a3a315ee7bcfb8cffb4377e2780e65d587e",
+      "learningObjectives": [
+        "Respond to an informal information request across three functions",
+        "Explain national celebration significance practices and personal evaluation"
+      ],
+      "excerptBoundary": "Physical PDF page embedded text: PyMuPDF get_text(sort=True), UTF-8 SHA256. No source text stored in index.",
+      "sourceContentSummary": "Cambridge18GeneralTest1: English-speaking friend needs help for a college project on NewYear in different countries; explain importance, celebrations and personal enjoyment. Distinct informal source family from food-event/study-work letters.",
+      "transformationBoundaries": "Derive actual adapted letter situation, recipient relationship and all communicative functions from this source family; paraphrase prompt and author new teaching/response analysis. Do not reuse the same source scenario as unseen transfer from training; source-family exposure remains shared even if wording and characters change. No wholesale source exercise or scan copying.",
+      "inspectionNotes": "Coordinator directly read actual embedded task text; source author separately reports text read/render."
+    },
+    {
+      "id": "CG18-W02",
+      "relativePath": "Cambridge Questions/Cambridge 18/Cambridge-IELTS-18-General.pdf",
+      "fileSha256": "12b44ce588d399c8f38603b449511b1ff0e9ee145569a806923f84e6f71e8aa8",
+      "pdfPages": [
+        56
+      ],
+      "excerptSha256": "cab5150d90704ef975a043c705ac491d660c1566798f4e2d2d96c74c4386d4af",
+      "learningObjectives": [
+        "Write a formal prospective workplace letter",
+        "Express thanks explain learning goals and ask relevant questions"
+      ],
+      "excerptBoundary": "Physical PDF page embedded text: PyMuPDF get_text(sort=True), UTF-8 SHA256. No source text stored in index.",
+      "sourceContentSummary": "Cambridge18GeneralTest2: forthcoming three-month work-experience placement; thank organisation manager, explain hoped-for learning and ask about placement. Distinct prospective-work-experience family from existing-employee study/internal-move letters.",
+      "transformationBoundaries": "Derive actual adapted letter situation, recipient relationship and all communicative functions from this source family; paraphrase prompt and author new teaching/response analysis. Do not reuse the same source scenario as unseen transfer from training; source-family exposure remains shared even if wording and characters change. No wholesale source exercise or scan copying.",
+      "inspectionNotes": "Coordinator directly read actual embedded task text; source author separately reports text read/render."
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "schemaVersion": 1,
+  "id": "adv-writing-train",
+  "version": 2,
+  "skill": "writing",
+  "stage": "train",
+  "pathwayIds": [
+    "advanced"
+  ],
+  "objectiveIds": [
+    "writing-task1-feature-synthesis",
+    "writing-task1-objective-language",
+    "writing-task2-developed-support",
+    "writing-task2-cohesion"
+  ],
+  "familyId": "source-ms3-migration-free-healthcare",
+  "title": "Migration reasons and public health-care provision",
+  "instructions": "Complete both original writing practice tasks in English. Write connected prose. These tasks support learning and do not provide a calibrated band score.",
+  "stimulus": {
+    "kind": "chart_description",
+    "text": "Accessible reconstruction of the source line graph: numbers of people giving main reasons for moving from a capital city to the countryside, years 1990,2000,2010. Rising cost of living:65,000;85,000;80,000. Traffic:20,000;35,000;60,000. Lifestyle:20,000;30,000;40,000. These are the course graph’s values, not current migration statistics. No future projection or explanation beyond the stated categories is given.\n\nOriginal flawed planning draft: “Traffic was the main reason in every year. Cost of living rose continuously. The final decline occurred because people had less money.”\n\nTask 2, adapted from the source health-care exercise: Some countries provide publicly funded health care instead of depending on private provision. Discuss advantages and disadvantages of a free system and give your own opinion. Consider free at the point of use rather than assuming provision has no cost."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "Academic Task 1 practice: Check the flawed planning draft against the source graph, then write at least 150 words describing main trends and comparisons. Give an overview and selected supporting figures. Do not invent an explanation for the final decline.",
+      "responseType": "extended_text",
+      "options": [],
+      "wordLimit": null
+    },
+    {
+      "id": "q2",
+      "prompt": "Academic Task 2 practice: Answer the health-care question in at least 250 words of connected prose, developing advantages and disadvantages and giving your opinion. Use explanations and relevant examples without invented research statistics.",
+      "responseType": "extended_text",
+      "options": [],
+      "wordLimit": null
+    }
+  ],
+  "teachingAnchors": [
+    {
+      "id": "step1",
+      "label": "Challenge the graph draft",
+      "text": "Check each model claim against the source graph’s complete period. Living costs lead but do not rise throughout; the largest endpoint is not the greatest increase. Correct wrong data and unsupported causes, then choose an overview and selected figures. The task is objective reporting, not an explanation of why the changes happened."
+    },
+    {
+      "id": "step2",
+      "label": "Develop, do not list",
+      "text": "For Task 2, brainstorm both sides, prioritise the strongest ideas and state your position. Write a topic sentence, then develop it through an explanation and a relevant hypothetical example. A second sentence must support the idea or qualify it, not merely repeat it. Test a counterargument before settling the paragraph order."
+    },
+    {
+      "id": "step3",
+      "label": "Check connections",
+      "text": "Name the logical job of each connection: example, cause/effect, addition or contrast. Replace a wrong connector and remove one that adds no meaning. Ensure the introduction and conclusion give the same reasoned position. Then write both full responses before feedback; no model paragraph is a universal template."
+    }
+  ],
+  "assessment": {
+    "kind": "qualitative",
+    "criteria": [
+      {
+        "id": "task-achievement-response",
+        "label": "Task achievement / Task response",
+        "description": "For q 1, accurately cover the supplied main features with an overview and relevant support; for q 2, address all parts, sustain a clear position where required and develop relevant reasons and examples."
+      },
+      {
+        "id": "coherence-cohesion",
+        "label": "Coherence and cohesion",
+        "description": "Organise ideas in a clear progression, group relevant information and use references and connections accurately without mechanical overuse."
+      },
+      {
+        "id": "lexical-resource",
+        "label": "Lexical resource",
+        "description": "Choose accurate and appropriate vocabulary, including precise comparisons, process or spatial language where relevant; evaluate flexibility and errors in context."
+      },
+      {
+        "id": "grammatical-range-accuracy",
+        "label": "Grammatical range and accuracy",
+        "description": "Use a suitable range of sentence forms with accurate grammar and punctuation; explain how errors affect meaning rather than rewarding complexity alone."
+      }
+    ],
+    "answerKey": [],
+    "feedbackGuidance": "After submission only: apply the four qualitative criteria to each response’s actual purpose. A preparation paragraph is not a complete IELTS response. No numeric bands. Cite learner evidence, explain the most consequential issue and propose a concrete revision. Original partial analysis: Task 1: living cost is highest throughout and peaks at 85,000 in 2000 before falling 5,000. Traffic has the greatest overall increase 40,000; lifestyle has the smallest 20,000. Traffic and lifestyle start equal at 20,000. Overview snippet: “Living costs remained the leading reason despite a later decline, while traffic recorded the greatest overall rise.” Avoid unsupported explanations, subjective shockingly and mechanical lists. Use past forms because all years are completed. Coherence: group common rises and contrast living-cost decline. Lexis: greatest increase differs from highest figure. Revision: repair the planning draft before checking the full report. Task 2: develop access without fees and the funding/resource tradeoff rather than merely listing good and bad. A partial supporting example: “A patient’s access need not depend on an immediate payment, although the service still requires resources that could fund other priorities.” This is reasoning, not an empirical result. Coherence: explain or exemplify a topic sentence; choose addition/contrast/cause markers by function and avoid redundant connectors. Lexis: free access is not costless provision. Grammar: maintain clear referents and accurate qualifying clauses. Revision: strengthen the weaker side and make the final opinion follow from the developed comparison."
+  },
+  "delivery": {
+    "kind": "text",
+    "assetId": null
+  },
+  "locale": {
+    "instructionsFa": "هر دو تمرین نوشتاری را به انگلیسی و به صورت متن پیوسته بنویسید. این تمرین نمرهٔ کالیبره‌شده ارائه نمی‌کند.",
+    "teachingAnchorsFa": [
+      {
+        "id": "step1",
+        "label": "بررسی گزارش نمودار",
+        "text": "هر ادعا را با کل دورهٔ نمودار تطبیق دهید. هزینهٔ زندگی در صدر است اما پیوسته افزایش ندارد؛ بیشترین مقدار با بیشترین افزایش یکی نیست. دادهٔ غلط و علت بی‌شاهد را اصلاح کنید و سپس مرور و عددهای پشتیبان را انتخاب کنید."
+      },
+      {
+        "id": "step2",
+        "label": "بسط استدلال",
+        "text": "دو طرف را ایده‌پردازی و قوی‌ترین دلیل‌ها را انتخاب کنید. برای هر بند جملهٔ موضوعی، توضیح و مثال فرضی مرتبط بنویسید. جملهٔ بعدی باید دلیل را بسط یا محدود کند، نه تکرار. پیش از ترتیب بندها، یک استدلال مخالف را بررسی کنید."
+      },
+      {
+        "id": "step3",
+        "label": "بررسی پیوندها",
+        "text": "نقش هر پیوند را مشخص کنید: مثال، علت‌ومعلول، افزودن یا تقابل. پیوند نادرست را عوض و پیوند بی‌فایده را حذف کنید. نظر معرفی و نتیجه باید سازگار باشد. سپس هر دو متن کامل را پیش از بازخورد بنویسید."
+      }
+    ],
+    "feedbackGuidanceFa": "پس از ثبت پاسخ، بازخورد را با پاسخ خود مقایسه کنید. یک خطا را با تکیه بر شواهد اصلاح کنید و سپس تمرین مستقل تازه‌ای انجام دهید."
+  },
+  "provenance": {
+    "origin": "source_based_original",
+    "sourceRefs": [
+      "MS3-W01",
+      "MS3-W02",
+      "BD-W01"
+    ],
+    "territory": "Iran",
+    "rightsNote": "Source-based Mitooni authoring under user-confirmed Iranian-audience rights and selected-excerpt processing authority. Source files remain read-only; no broader distribution authority claimed.",
+    "transformationNotes": "Preserved actual 1990/2000/2010 migration values/categories and actual source health topics rather than invented city datasets or future projections. New draft errors, partial examples, questions and qualitative explanations are authored. Transfer is a distinct source topic; it does not claim to be a heldout novel Task 1 graph.",
+    "objectiveMappings": [
+      {
+        "objectiveId": "writing-task1-feature-synthesis",
+        "sourceRefIds": [
+          "MS3-W01",
+          "MS3-W02",
+          "BD-W01"
+        ],
+        "sourceLearningPoint": "Actual Level 3 migration-reason graph/model-error critique and actual health-care/life-expectancy tasks supply the semantic content; paragraph support functions and marker repair supply the teaching progression. Local BD-W 01 supplies task coverage, coherent progression, vocabulary precision and grammar dimensions; it is the older public descriptor edition, not current band calibration.",
+        "unitTeachingConnection": "Training combines source-value graph evaluation with source health-care argument development. Transfer uses the source’s distinct life-expectancy prompt and paragraph-to-full-essay progression, without reusing graph input.",
+        "taskTransformation": "Preserved actual 1990/2000/2010 migration values/categories and actual source health topics rather than invented city datasets or future projections. New draft errors, partial examples, questions and qualitative explanations are authored. Transfer is a distinct source topic; it does not claim to be a heldout novel Task 1 graph."
+      },
+      {
+        "objectiveId": "writing-task1-objective-language",
+        "sourceRefIds": [
+          "MS3-W01",
+          "MS3-W02",
+          "BD-W01"
+        ],
+        "sourceLearningPoint": "Actual Level 3 migration-reason graph/model-error critique and actual health-care/life-expectancy tasks supply the semantic content; paragraph support functions and marker repair supply the teaching progression. Local BD-W 01 supplies task coverage, coherent progression, vocabulary precision and grammar dimensions; it is the older public descriptor edition, not current band calibration.",
+        "unitTeachingConnection": "Training combines source-value graph evaluation with source health-care argument development. Transfer uses the source’s distinct life-expectancy prompt and paragraph-to-full-essay progression, without reusing graph input.",
+        "taskTransformation": "Preserved actual 1990/2000/2010 migration values/categories and actual source health topics rather than invented city datasets or future projections. New draft errors, partial examples, questions and qualitative explanations are authored. Transfer is a distinct source topic; it does not claim to be a heldout novel Task 1 graph."
+      },
+      {
+        "objectiveId": "writing-task2-developed-support",
+        "sourceRefIds": [
+          "MS3-W01",
+          "MS3-W02",
+          "BD-W01"
+        ],
+        "sourceLearningPoint": "Actual Level 3 migration-reason graph/model-error critique and actual health-care/life-expectancy tasks supply the semantic content; paragraph support functions and marker repair supply the teaching progression. Local BD-W 01 supplies task coverage, coherent progression, vocabulary precision and grammar dimensions; it is the older public descriptor edition, not current band calibration.",
+        "unitTeachingConnection": "Training combines source-value graph evaluation with source health-care argument development. Transfer uses the source’s distinct life-expectancy prompt and paragraph-to-full-essay progression, without reusing graph input.",
+        "taskTransformation": "Preserved actual 1990/2000/2010 migration values/categories and actual source health topics rather than invented city datasets or future projections. New draft errors, partial examples, questions and qualitative explanations are authored. Transfer is a distinct source topic; it does not claim to be a heldout novel Task 1 graph."
+      },
+      {
+        "objectiveId": "writing-task2-cohesion",
+        "sourceRefIds": [
+          "MS3-W01",
+          "MS3-W02",
+          "BD-W01"
+        ],
+        "sourceLearningPoint": "Actual Level 3 migration-reason graph/model-error critique and actual health-care/life-expectancy tasks supply the semantic content; paragraph support functions and marker repair supply the teaching progression. Local BD-W 01 supplies task coverage, coherent progression, vocabulary precision and grammar dimensions; it is the older public descriptor edition, not current band calibration.",
+        "unitTeachingConnection": "Training combines source-value graph evaluation with source health-care argument development. Transfer uses the source’s distinct life-expectancy prompt and paragraph-to-full-essay progression, without reusing graph input.",
+        "taskTransformation": "Preserved actual 1990/2000/2010 migration values/categories and actual source health topics rather than invented city datasets or future projections. New draft errors, partial examples, questions and qualitative explanations are authored. Transfer is a distinct source topic; it does not claim to be a heldout novel Task 1 graph."
+      }
+    ]
+  },
+  "teacherReview": {
+    "status": "pending",
+    "notes": [
+      "Re-authored from inspected licensed teaching selections; independent source-alignment and IELTS teacher review pending. No calibrated level or band claim."
+    ]
+  },
+  "examTrack": "academic"
+}

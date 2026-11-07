@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "id": "gt-fnd-writing-train",
+  "version": 1,
+  "examTrack": "general_training",
+  "skill": "writing",
+  "stage": "train",
+  "pathwayIds": [
+    "gt-foundation"
+  ],
+  "objectiveIds": [
+    "gt-letter-bullet-development",
+    "gt-letter-audience-register",
+    "gt-letter-time-and-reason-language"
+  ],
+  "familyId": "cg19-t2-food-event",
+  "title": "Offering a dish for a friend’s event",
+  "instructions": "Write in English in connected paragraphs. Complete all the requested points. Task 1 requires at least 150 words. This is letter preparation, not a full IELTS Writing test.",
+  "stimulus": {
+    "kind": "prompt",
+    "text": "Task 1\nYou belong to a group that is holding an evening of food from different countries. Your close friend Leila is helping organise it. Write a letter to Leila. In your letter:\n• offer to prepare a dish from your country\n• describe the dish and what people usually eat it with\n• explain why you think it would be a good choice for this event.\nBegin your letter: Dear Leila,\nWrite at least 150 words in connected paragraphs. You do not need to write any addresses. Aim to spend about 20 minutes. Use a personal style."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "Write your letter. Develop every part of all three bullet points and write at least 150 words.",
+      "responseType": "extended_text",
+      "options": [],
+      "wordLimit": null
+    }
+  ],
+  "teachingAnchors": [
+    {
+      "id": "language",
+      "label": "Build the language first",
+      "text": "Use simple present for the dish: “It contains ...”; use usually to describe a customary serving, not an absolute rule. A first-person offer such as “I can bring ...” needs no third-person -s. Choose everyday collocations such as prepare a dish and serve a portion. Practise one short description before planning the letter."
+    },
+    {
+      "id": "plan",
+      "label": "Plan for the recipient",
+      "text": "For each bullet, write a short answer and one detail that develops it. Trace the practical connection: why this request or offer, what exactly you propose or describe, and why it matters to the reader. Do not answer a description bullet by repeating a name. Match greeting, request and closing to the stated relationship, and keep invented details plausible and consistent."
+    },
+    {
+      "id": "revise",
+      "label": "Draft, then check coverage",
+      "text": "Write the complete letter in connected paragraphs. Check every component of each bullet against an actual sentence; a vague mention is not full development. Read time phrases and references aloud to test clarity. Revise one underdeveloped reason and one inaccurate sentence, then explain the changes. Try a fresh independent situation only after reviewing the completed draft."
+    }
+  ],
+  "assessment": {
+    "kind": "qualitative",
+    "criteria": [
+      {
+        "id": "task-achievement",
+        "label": "Task achievement — Task 1",
+        "description": "For Task 1 only: clear purpose, appropriate personal relationship and register, with relevant development of every component in the three bullet points, including a concrete proposal or description and a reason connected to the reader; at least 150 words."
+      },
+      {
+        "id": "coherence-cohesion",
+        "label": "Coherence and cohesion",
+        "description": "Assess logical progression, purposeful paragraphs and clear referencing/linking within each response; avoid mechanical connector counts."
+      },
+      {
+        "id": "lexical-resource",
+        "label": "Lexical resource",
+        "description": "Assess accurate, appropriate vocabulary and collocation, flexibility of expression and the effect of spelling or word-formation errors in each response."
+      },
+      {
+        "id": "grammatical-range-accuracy",
+        "label": "Grammatical range and accuracy",
+        "description": "Assess control of simple and complex structures, sentence boundaries and punctuation, with attention to errors that obscure meaning in each response."
+      }
+    ],
+    "answerKey": [],
+    "feedbackGuidance": "After submission only: Private annotated snippets: “I’d love to bring a dish for the food evening.” makes an offer suited to a friend. “It contains rice and herbs, and we usually serve it with yoghurt.” models simple present plus frequency language while giving useful description; do not require these particular ingredients. “People could try a small portion, so it would fit an evening with several dishes.” links a reason to the event rather than simply calling the dish delicious. Map each bullet and its compound parts to a specific learner span. Diagnose missing content separately from vague development and inappropriate register. Ask the learner to expand one reason into a reason→consequence link and revise one unclear time expression or sentence. Do not require these exemplar details, a memorised letter or real personal information. Comment on Coherence and cohesion, Lexical resource, and Grammatical range and accuracy using actual evidence. Do not supply a band, score, calibrated estimate or official examiner claim."
+  },
+  "delivery": {
+    "kind": "text",
+    "assetId": null
+  },
+  "locale": {
+    "instructionsFa": "به انگلیسی و در بندهای پیوسته بنویسید. همهٔ موارد نامه را پاسخ دهید و دست‌کم ۱۵۰ واژه بنویسید. این تمرین نامه‌نویسی است و آزمون کامل نیست.",
+    "teachingAnchorsFa": [
+      {
+        "id": "language",
+        "label": "ابتدا زبان",
+        "text": "برای مواد غذا از حال ساده مانند It contains استفاده کنید. usually یعنی معمولاً، نه همیشه. در I can bring شناسهٔ سوم‌شخص لازم نیست. prepare a dish و serve a portion را تمرین کنید و ابتدا یک توصیف کوتاه بسازید."
+      },
+      {
+        "id": "plan",
+        "label": "طرح برای مخاطب",
+        "text": "برای هر مورد، یک پاسخ کوتاه و یک جزئیات بسط‌دهنده بنویسید: چرا این درخواست یا پیشنهاد، دقیقاً چه چیزی، و چه اهمیتی برای مخاطب دارد. نام‌بردن به‌تنهایی توصیف نیست. لحن آغاز، درخواست و پایان با رابطهٔ مخاطب هماهنگ باشد."
+      },
+      {
+        "id": "revise",
+        "label": "نوشتن و بازبینی",
+        "text": "نامه را کامل و در بندهای پیوسته بنویسید. هر جزء خواسته‌شده را به جمله‌ای مشخص وصل کنید. زمان‌ها و ضمیرها را بخوانید. یک دلیل کم‌توضیح و یک جملهٔ نادرست را اصلاح کنید."
+      }
+    ],
+    "feedbackGuidanceFa": "پس از ثبت پاسخ، برای هر جزء خواسته‌شده یک شاهد از نوشته بیابید. نبود محتوا، توضیح ناکافی و لحن نامناسب را جدا بررسی کنید. یک دلیل را به پیامد مرتبط کنید و یک عبارت زمانی یا جمله را اصلاح کنید. بازخورد، نمره یا برآورد معتبر آیلتس نیست."
+  },
+  "provenance": {
+    "origin": "source_based_original",
+    "sourceRefs": [
+      "CG19-W02",
+      "MSF-W01"
+    ],
+    "territory": "Iran",
+    "rightsNote": "Source-based Mitooni reauthoring from user-supplied licensed materials for the Iranian audience; selected source inspection authorized. No source scans, audio or complete original exercises included. Human teacher review remains pending.",
+    "transformationNotes": "CG19 Test2 PDF52: international students’ food event, offer a dish, describe it, explain its inclusion. Replaced the earlier unrelated lost-notebook/moving/absence/plants/travel-pass/museum prompts with a source-derived situation and functional demands. Kept the food-event contribution, dish description and inclusion rationale; changed audience/register and added serving detail or reader benefit, without reproducing the source prompt verbatim. Exemplar snippets are original, not required facts or memorised answers. Transfer uses a distinct scenario family from training; advanced essay retains the actual separate source topic and two-question demand. Stable semantic exposure family: cg19-t2-food-event. Names/register variations of this source are the same exposure family.",
+    "objectiveMappings": [
+      {
+        "objectiveId": "gt-letter-bullet-development",
+        "sourceRefIds": [
+          "CG19-W02"
+        ],
+        "sourceLearningPoint": "CG19 Test2 PDF52: international students’ food event, offer a dish, describe it, explain its inclusion. Three bullet functions require content development, not just a topic mention.",
+        "unitTeachingConnection": "Plan and develop every component in the three bullets as a connected letter.",
+        "taskTransformation": "Kept the food-event contribution, dish description and inclusion rationale; changed audience/register and added serving detail or reader benefit, without reproducing the source prompt verbatim."
+      },
+      {
+        "objectiveId": "gt-letter-audience-register",
+        "sourceRefIds": [
+          "CG19-W02"
+        ],
+        "sourceLearningPoint": "CG19 Test2 PDF52: international students’ food event, offer a dish, describe it, explain its inclusion. The stated recipient defines why and how to write; the source employer/organiser relationship is deliberately varied for personal, semi-formal or formal practice.",
+        "unitTeachingConnection": "Keep the greeting, offer/request and close consistent with the unit’s explicitly stated relationship.",
+        "taskTransformation": "Kept the food-event contribution, dish description and inclusion rationale; changed audience/register and added serving detail or reader benefit, without reproducing the source prompt verbatim. Preserve register as a task demand rather than a memorised template."
+      },
+      {
+        "objectiveId": "gt-letter-time-and-reason-language",
+        "sourceRefIds": [
+          "CG19-W02",
+          "MSF-W01"
+        ],
+        "sourceLearningPoint": "MSF PDF15–16 moves from controlled present-simple/frequency and sequencing support to a connected description with peer correction; the GT letter source requires time, explanation and recipient relevance.",
+        "unitTeachingConnection": "Use accurate descriptive or schedule language and connect a reason to its practical consequence before revising one sentence.",
+        "taskTransformation": "Adapted controlled present-simple/time and sequencing practice to letter descriptions or proposed schedules; no Academic process/overview requirement is imposed on GT letters."
+      }
+    ]
+  },
+  "teacherReview": {
+    "status": "pending",
+    "notes": []
+  }
+}

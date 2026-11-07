@@ -1,0 +1,209 @@
+{
+  "schemaVersion": 1,
+  "id": "fnd-listening-train",
+  "version": 2,
+  "skill": "listening",
+  "stage": "train",
+  "pathwayIds": [
+    "foundation"
+  ],
+  "objectiveIds": [
+    "fnd-listening-everyday-meaning",
+    "fnd-listening-final-details"
+  ],
+  "familyId": "sem-family-celebration-booking",
+  "title": "Arranging a family celebration",
+  "instructions": "Complete the teaching practice first, using a teacher or approved audio for sound-based exercises. Then read the five questions for 45 seconds. Listen once and answer, then use one supported replay to check the evidence before submitting. For short answers, use NO MORE THAN TWO WORDS AND/OR A NUMBER from the recording. For a choice question, select ONE option. After the recording ends, take 60 seconds to check your answers. This is a practice drill, not a complete IELTS test.",
+  "stimulus": {
+    "kind": "script",
+    "text": "Assistant: Good afternoon, Willow Cafe. How can I help you?\nCaller: Hello. My family would like to have a meal together next month. My aunt has finished a training course, and we want to celebrate. It is not a birthday party, although we will bring a cake.\nAssistant: That sounds lovely. Would you like to book a table in the main cafe or use our small dining room?\nCaller: I am not sure yet. There will be eight people, I think. Let me check the message from my cousin. Sorry, there will actually be twelve. His children are coming as well.\nAssistant: Twelve is fine for the dining room. Eight would have fitted round our largest cafe table, but the room will give the children more space. You would still order from the same menu.\nCaller: Good. We want to come on the sixteenth. Is the room free then?\nAssistant: The sixteenth is a Friday, and another group has it that evening. Did you mean Saturday, the seventeenth?\nCaller: Yes, the seventeenth. I was looking at the wrong week on my paper calendar. Saturday is the day everyone can come, so please book that date.\nAssistant: Certainly. We usually serve group meals at six, but your message mentioned seven. Which would suit you best?\nCaller: Seven is a little late for the children. We will take six. Some of us can arrive earlier to put flowers on the tables, if that is allowed.\nAssistant: Of course. A member of staff will be here to let you in. We provide plates and water jugs, and there is somewhere safe to keep the cake until you need it.\nCaller: My aunt does not like very sweet drinks. Can people just have water with their meal?\nAssistant: Yes. There is no need to order other drinks. People can choose separately, and we will explain the choices when you arrive. Does anyone have any food requirements we should know about?\nCaller: My cousin avoids dairy products. Could you send me the menu so he can check which meals are suitable? I would rather not choose for him.\nAssistant: Certainly. The menu lists the ingredients, but he can also speak to our cook if anything is unclear. We will not make assumptions about what he can eat.\nCaller: One more thing. We are bringing the flowers and cake, so should we bring table covers too?\nAssistant: No, we have those. Please bring candles if you would like them on the cake. We do not keep any here because groups usually prefer to choose their own.\nCaller: Thank you. Could you confirm the booking by email?\nAssistant: Yes. I will send the details today. Please check them and reply if anything is wrong. If the number of guests changes, let us know before the day so we can arrange the chairs."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "Final number of guests: ______",
+      "responseType": "short_text",
+      "options": [],
+      "wordLimit": 2
+    },
+    {
+      "id": "q2",
+      "prompt": "Date in the month: ______",
+      "responseType": "short_text",
+      "options": [],
+      "wordLimit": 2
+    },
+    {
+      "id": "q3",
+      "prompt": "Meal begins at ______.",
+      "responseType": "short_text",
+      "options": [],
+      "wordLimit": 2
+    },
+    {
+      "id": "q4",
+      "prompt": "Why does the caller ask for the menu?",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "To choose a cake for the aunt"
+        },
+        {
+          "id": "B",
+          "text": "To check suitable food for a guest"
+        },
+        {
+          "id": "C",
+          "text": "To compare prices with another cafe"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q5",
+      "prompt": "What should the family bring if wanted on the cake?",
+      "responseType": "short_text",
+      "options": [],
+      "wordLimit": 2
+    }
+  ],
+  "teachingAnchors": [
+    {
+      "id": "meaning",
+      "label": "Practise everyday meanings",
+      "text": "Before the timed drill, pair these new expressions: “an evening meal” / “dinner”; “people invited” / “guests”; “reserve a room” / “book a room”. Cover the right-hand phrases and explain the left-hand ones aloud. Then make one sentence about a celebration you could arrange. These practice examples do not supply the recording’s answers."
+    },
+    {
+      "id": "numbers",
+      "label": "Distinguish and correct numbers",
+      "text": "Ask a teacher or partner to say fourteen or forty, then eighteen or eighty in a new booking sentence. Write what you hear, compare, then say the sentence yourself and check that the listener gets the same number. A printed list is not listening evidence. In the drill, cross out an earlier value only when the speaker replaces it; keep date, guest count and time separate."
+    },
+    {
+      "id": "meaning-choice",
+      "label": "Choose the reason, not a repeated word",
+      "text": "For each choice question, say what is being asked before playback: purpose, reason or detail. During the supported replay, explain why the other mentioned detail does not answer that question. Do not choose an option only because its words occur in the audio."
+    }
+  ],
+  "assessment": {
+    "kind": "deterministic",
+    "criteria": [
+      {
+        "id": "audible-evidence",
+        "label": "Accurate listening",
+        "description": "One point per keyed answer within its word limit. Accept only the listed answer variants after case/outer-space normalization; no semantic guessing. Multiple-choice responses use the option ID. Wrong, blank or over-limit answers receive no point."
+      }
+    ],
+    "answerKey": [
+      {
+        "questionId": "q1",
+        "acceptedAnswers": [
+          "twelve",
+          "12"
+        ],
+        "rationale": "The caller corrects eight to twelve after checking the cousin’s message."
+      },
+      {
+        "questionId": "q2",
+        "acceptedAnswers": [
+          "seventeenth",
+          "17th",
+          "17"
+        ],
+        "rationale": "The caller confirms Saturday the seventeenth, rejecting the sixteenth."
+      },
+      {
+        "questionId": "q3",
+        "acceptedAnswers": [
+          "six",
+          "6"
+        ],
+        "rationale": "Seven is too late; the caller chooses six."
+      },
+      {
+        "questionId": "q4",
+        "acceptedAnswers": [
+          "B"
+        ],
+        "rationale": "The cousin avoids dairy and needs to check suitability; the cake and sweet-drink details are not this reason."
+      },
+      {
+        "questionId": "q5",
+        "acceptedAnswers": [
+          "candles"
+        ],
+        "rationale": "Table covers are supplied; the assistant asks them to bring candles."
+      }
+    ],
+    "feedbackGuidance": "After submission, compare each answer with its evidence and the final version of any corrected detail. Label each miss: lost place, wrong speaker, distractor, spelling or word limit. Choose one cause, then practise that operation on a new recording. Report only drill accuracy; do not convert five answers to an IELTS band."
+  },
+  "delivery": {
+    "kind": "audio_required",
+    "assetId": null
+  },
+  "locale": {
+    "instructionsFa": "ابتدا تمرین‌های آموزشی را انجام دهید؛ برای تمرین‌های وابسته به صدا از مدرس یا صدای تأییدشده استفاده کنید. سپس ابتدا ۴۵ ثانیه پرسش‌ها را بخوانید. یک بار گوش دهید و پاسخ دهید؛ سپس برای بررسی شواهد، یک بار بازپخشِ حمایتی مجاز است. برای پاسخ کوتاه، حداکثر دو واژه و/یا یک عدد از فایل صوتی بنویسید. در پرسش چندگزینه‌ای فقط یک گزینه انتخاب کنید. پس از پایان صدا، ۶۰ ثانیه برای بررسی پاسخ‌ها فرصت دارید. این یک تمرین است، نه آزمون کامل آیلتس.",
+    "teachingAnchorsFa": [
+      {
+        "id": "meaning",
+        "label": "معنای عبارت‌های روزمره را تمرین کنید",
+        "text": "پیش از تمرین زمان‌دار، این هم‌معنی‌ها را پیوند دهید: an evening meal و dinner؛ people invited و guests؛ reserve a room و book a room. سمت دوم را بپوشانید و سمت اول را توضیح دهید. سپس درباره جشنی که می‌توانید ترتیب دهید یک جمله بسازید. این مثال‌ها پاسخ فایل را نمی‌دهند."
+      },
+      {
+        "id": "numbers",
+        "label": "عددها و اصلاح آن‌ها را تشخیص دهید",
+        "text": "از مدرس یا همراه بخواهید در جمله‌ای تازه برای رزرو، fourteen یا forty و سپس eighteen یا eighty را بگوید. عدد شنیده‌شده را بنویسید و مقایسه کنید؛ سپس خودتان جمله را بگویید و درستی دریافت شنونده را بررسی کنید. فهرست چاپی شاهد شنیداری نیست. در تمرین، تاریخ، تعداد و ساعت را جدا نگه دارید و فقط هنگام اصلاح گوینده مقدار قبلی را خط بزنید."
+      },
+      {
+        "id": "meaning-choice",
+        "label": "دلیل را انتخاب کنید، نه واژه تکرارشده را",
+        "text": "پیش از پخش مشخص کنید پرسش هدف، دلیل یا جزئیات می‌خواهد. در بازپخش حمایتی توضیح دهید چرا جزئیات دیگری که شنیده‌اید پاسخ همان پرسش نیست. فقط به دلیل شنیدن واژه‌های یک گزینه آن را انتخاب نکنید."
+      }
+    ],
+    "feedbackGuidanceFa": "پس از ثبت پاسخ، هر پاسخ را با شاهد صوتی و آخرین اصلاح گوینده مقایسه کنید. علت خطا را مشخص کنید: گم کردن ترتیب، اشتباه در تشخیص گوینده، گزینه انحرافی، املا یا محدودیت واژه. برای یکی از این علت‌ها تمرین تازه انتخاب کنید. فقط دقت همین تمرین گزارش شود؛ پنج پاسخ را به نمره بند آیلتس تبدیل نکنید."
+  },
+  "provenance": {
+    "origin": "source_based_original",
+    "sourceRefs": [
+      "MSF-L01",
+      "MS1-L01"
+    ],
+    "territory": "Iran",
+    "rightsNote": "Source-based Mitooni adaptation for the authorized Iranian audience. Arash authorized full-corpus AI ingestion and synthesis. This unit documents the supplied-source pages actually used; no worldwide distribution authority is inferred.",
+    "transformationNotes": "Selected Mindset pages were actually read before this revision. Teaching progression and semantic domain are adapted from those pages; all dialogue, lecture wording, named examples, questions and keys were newly authored. No source model answer or recording is republished. Foundation/Level1 jointly support the foundation pathway; other level mappings are authoring choices, not band equivalences. Some small headcount/date numerals deliberately overlap the source number-contrast pool; they are not claimed to be unseen facts. The new dialogue and final combination are adapted, not source-audio transcriptions.",
+    "objectiveMappings": [
+      {
+        "objectiveId": "fnd-listening-everyday-meaning",
+        "sourceRefIds": [
+          "MSF-L01",
+          "MS1-L01"
+        ],
+        "sourceLearningPoint": "Connect everyday/family activity descriptions with paraphrased meanings after establishing speaker and situation.",
+        "unitTeachingConnection": "Train uses celebration-service vocabulary before reason-sensitive choice; transfer applies meaning association to host-family activities.",
+        "taskTransformation": "Exchange/family and celebration-booking semantic strands are recast as a new cafe call and a new host welcome; no source dialogue or key reused."
+      },
+      {
+        "objectiveId": "fnd-listening-final-details",
+        "sourceRefIds": [
+          "MS1-L01"
+        ],
+        "sourceLearningPoint": "Distinguish number forms and track corrections rather than accepting the first mentioned value.",
+        "unitTeachingConnection": "Train asks final headcount/date/time; transfer tracks changed family activities and the final outing plan with no advance hints.",
+        "taskTransformation": "Celebration-booking number/correction semantics are adapted into a new cafe dialogue. Some count/date numerals overlap the source contrast pool; final response combinations and dialogue are newly authored, not guaranteed fresh source facts. Host-family transfer changes activity/plan references within the same learned language domain."
+      }
+    ]
+  },
+  "teacherReview": {
+    "status": "pending",
+    "notes": [
+      "Teacher-only script and answer key: never expose before attempt submission. No learner listening attempt until reviewed audio exists; rendering the script is not listening.",
+      "Media review required: natural delivery, distinguishable speakers where applicable, clean intelligibility and no emphasis revealing answers. Verify durations and question-order gaps against the actual recording.",
+      "If playback fails, preserve answers but invalidate timing/exposure evidence; restart with a new family after recovery. Agree accessible delivery adjustments with the learner; transcript-supported practice must be labelled separately and cannot count as independent listening evidence.",
+      "Five-item drill samples a part context; it is not a 40-item test or validated band estimate. Teacher checks difficulty, alternatives, Persian clarity and scoring tolerance before approval.",
+      "Revision 2 supersedes the held original-only draft. Review source-objective-task fit against the mapped selected Mindset pages, including meaningful English-development practice; citations alone do not establish fidelity.",
+      "English examples, task detail and semantic scenario are adaptations within the source topic boundary, not copied source exercises. Supplied Mindset audio was not available or auditioned; new audio requires separate review.",
+      "Semantic exposure families can span train/transfer and skills. A different unit ID or adapted detail does not establish fresh transfer; consult the per-question semantic groups recorded in syllabus/exposure metadata."
+    ]
+  },
+  "examTrack": "shared"
+}

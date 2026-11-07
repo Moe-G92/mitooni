@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "id": "fnd-writing-train",
+  "version": 2,
+  "skill": "writing",
+  "stage": "train",
+  "pathwayIds": [
+    "foundation"
+  ],
+  "objectiveIds": [
+    "writing-routine-paragraph",
+    "writing-process-sequence",
+    "writing-process-overview"
+  ],
+  "familyId": "source-msf-dan-ms1-stringhoppers",
+  "title": "Dan’s routine and the stringhopper process",
+  "instructions": "Complete the short foundation paragraph, then attempt the separate full Academic Task 1 bridge. These have different purposes and lengths; neither is a calibrated band assessment.",
+  "stimulus": {
+    "kind": "chart_description",
+    "text": "Foundation paragraph input, adapted from the course routine: Dan gets up at 8, showers and eats breakfast, gets his books ready, then attends lectures until midday. He generally returns home and makes lunch at 12:30. Sometimes he watches TV. Around 3 he often meets a friend for coffee; at 3:30 they go to the library. He studies until returning home around 6:30 and usually cooks for his flatmates.\n\nAcademic Task 1 bridge, accessible process equivalent of the source diagram: Stringhoppers are made from rice. Rice is ground into flour using a rice grinder. Water is added to the flour. It is mixed to make dough. The dough is pushed through a stringhopper press onto stringhopper mats, forming thin noodles. The mats hold the noodles for cooking in a steamer. The stringhoppers are served with spicy curries. Equipment shown: a press with handles and holes; round shallow mats made of thin wood. No quantities, temperature, timing, rejection branch or rework loop is shown."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "Foundation practice, not an IELTS task: Describe Dan’s day in about 50–70 words, selecting routine details and preserving their times and frequency. Use complete present-simple sentences and sequence them clearly.",
+      "responseType": "extended_text",
+      "options": [],
+      "wordLimit": null
+    },
+    {
+      "id": "q2",
+      "prompt": "Academic Task 1 bridge: Describe the supplied stringhopper process in at least 150 words of connected prose, with an introduction and an overview. Use the stages and equipment given; do not invent temperatures, ingredients or extra steps.",
+      "responseType": "extended_text",
+      "options": [],
+      "wordLimit": null
+    }
+  ],
+  "teachingAnchors": [
+    {
+      "id": "step1",
+      "label": "Build the language",
+      "text": "Read Dan’s routine notes and mark times, regular actions and sometimes/often. Practise “I study; he studies” and “I make; he makes”. Write two complete routine sentences, then connect them in the order supplied. These are language steps before a full exam-style report."
+    },
+    {
+      "id": "step2",
+      "label": "Read a process model",
+      "text": "For the process, first name rice, flour, dough and noodles; track how the material changes. Separate an introduction naming the diagram from an overview of its start/end and major transformations. Compare a topic-only sentence with one summarising preparation, shaping and steaming. Outline the actual supplied sequence without adding facts."
+    },
+    {
+      "id": "step3",
+      "label": "Move towards the full report",
+      "text": "Convert actions into accurate sentences: “rice is ground”; “water is added”; “the dough is pressed”. Place the six source stages in order, then draft the introduction and overview. Write the short routine paragraph first; next attempt the full process report. If 150 words is not yet manageable, submit the writing you can produce for language feedback rather than copying or inventing stages."
+    }
+  ],
+  "assessment": {
+    "kind": "qualitative",
+    "criteria": [
+      {
+        "id": "task-achievement-response",
+        "label": "Task achievement / Task response",
+        "description": "For q 1 evaluate accurate routine information, simple-present/frequency control and connected description as foundation language evidence, not an IELTS task. For q 2 evaluate a main-stage overview and accurate supplied process coverage as an Academic Task 1 bridge. Evaluate lengths separately."
+      },
+      {
+        "id": "coherence-cohesion",
+        "label": "Coherence and cohesion",
+        "description": "Organise ideas in a clear progression, group relevant information and use references and connections accurately without mechanical overuse."
+      },
+      {
+        "id": "lexical-resource",
+        "label": "Lexical resource",
+        "description": "Choose accurate and appropriate vocabulary, including precise comparisons, process or spatial language where relevant; evaluate flexibility and errors in context."
+      },
+      {
+        "id": "grammatical-range-accuracy",
+        "label": "Grammatical range and accuracy",
+        "description": "Use a suitable range of sentence forms with accurate grammar and punctuation; explain how errors affect meaning rather than rewarding complexity alone."
+      }
+    ],
+    "answerKey": [],
+    "feedbackGuidance": "After submission only: q 1 is foundation language development, not a full IELTS task; q 2 is a separate fullTask 1 attempt. Use all four criteria qualitatively and cite learner evidence, without numeric bands. If writing is short, state the evidence limit rather than inventing performance. Original partial feedback examples, not copied complete model answers: q 1: check third-person forms and actual timing; “Dan often meets a friend at about three” preserves frequency, while always would change it. Full paragraph need not mechanically list every minute. q 2 overview snippet: “The preparation starts with grinding rice and proceeds through dough formation and shaping before the noodles are steamed and served.” Main stages: grind→add water→mix→press onto mats→steam→serve curries. The source exercise names six stages; maintain the transformations without inventing additional branches. Equipment details can support the description without becoming a separate instruction list. Coherence: distinguish flour, dough and noodles; lexical reference must follow the changing material. Grammar: “water is added” and “the noodles are steamed” illustrate accurate passives; do not reward complexity that obscures order. Revision: repair one wrong material reference and one omitted stage."
+  },
+  "delivery": {
+    "kind": "text",
+    "assetId": null
+  },
+  "locale": {
+    "instructionsFa": "ابتدا بند کوتاه پایه و سپس گزارش مستقل تکلیف اول را امتحان کنید. هدف و طول این دو متفاوت است و هیچ‌کدام نمرهٔ کالیبره‌شده ارائه نمی‌کند.",
+    "teachingAnchorsFa": [
+      {
+        "id": "step1",
+        "label": "ساخت جمله",
+        "text": "یادداشت‌های روز دن را بخوانید؛ زمان‌ها و کارهای معمول یا گاه‌به‌گاه را جدا کنید. شکل فعل با he را تمرین کنید و دو جملهٔ کامل را به ترتیب متن وصل کنید."
+      },
+      {
+        "id": "step2",
+        "label": "مدل فرایند",
+        "text": "در فرایند، برنج، آرد، خمیر و رشته‌ها را دنبال کنید. معرفی موضوع را از مرور آغاز، پایان و دگرگونی‌های اصلی جدا کنید. فقط مراحل داده‌شده را به کار ببرید."
+      },
+      {
+        "id": "step3",
+        "label": "گزارش کامل",
+        "text": "جمله‌های مجهول دقیق بسازید و شش مرحله را مرتب کنید. ابتدا بند کوتاه روزمره و سپس گزارش کامل را امتحان کنید. اگر هنوز ۱۵۰ واژه دشوار است، متن خود را برای بازخورد زبان ثبت کنید؛ مرحلهٔ تازه نسازید."
+      }
+    ],
+    "feedbackGuidanceFa": "پس از ثبت پاسخ، بازخورد را با پاسخ خود مقایسه کنید. یک خطا را با تکیه بر شواهد اصلاح کنید و سپس تمرین مستقل تازه‌ای انجام دهید."
+  },
+  "provenance": {
+    "origin": "source_based_original",
+    "sourceRefs": [
+      "MSF-W01",
+      "MSF-R01",
+      "MS1-W01",
+      "BD-W01"
+    ],
+    "territory": "Iran",
+    "rightsNote": "Source-based Mitooni authoring under user-confirmed Iranian-audience rights and selected-excerpt processing authority. Source files remain read-only; no broader distribution authority claimed.",
+    "transformationNotes": "Retained actual source identities, activities, timings where supplied, named ingredients/equipment and process arrows. Paraphrased notes, rebuilt prompts and authored new feedback snippets; no synthetic compote/soup or unshown loop. Julia pictures inspected visually at physical 16; missing clock/frequency data remains explicitly missing.",
+    "objectiveMappings": [
+      {
+        "objectiveId": "writing-routine-paragraph",
+        "sourceRefIds": [
+          "MSF-W01",
+          "MSF-R01",
+          "MS1-W01",
+          "BD-W01"
+        ],
+        "sourceLearningPoint": "Foundation uses Dan’s actual routine and Julia Grant’s science-volunteer picture exercise; Level 1 uses the actual stringhopper/cherry-jam process sequence, action/passive language, model introduction/overview and full process description. Local BD-W 01 supplies task coverage, coherent progression, vocabulary precision and grammar dimensions; it is the older public descriptor edition, not current band calibration.",
+        "unitTeachingConnection": "Short source-based description precedes a separately labelled full food-process bridge. Controlled form/sequence/model analysis is retained in training; transfer uses the source’s different pictured person and second process.",
+        "taskTransformation": "Retained actual source identities, activities, timings where supplied, named ingredients/equipment and process arrows. Paraphrased notes, rebuilt prompts and authored new feedback snippets; no synthetic compote/soup or unshown loop. Julia pictures inspected visually at physical 16; missing clock/frequency data remains explicitly missing."
+      },
+      {
+        "objectiveId": "writing-process-sequence",
+        "sourceRefIds": [
+          "MSF-W01",
+          "MSF-R01",
+          "MS1-W01",
+          "BD-W01"
+        ],
+        "sourceLearningPoint": "Foundation uses Dan’s actual routine and Julia Grant’s science-volunteer picture exercise; Level 1 uses the actual stringhopper/cherry-jam process sequence, action/passive language, model introduction/overview and full process description. Local BD-W 01 supplies task coverage, coherent progression, vocabulary precision and grammar dimensions; it is the older public descriptor edition, not current band calibration.",
+        "unitTeachingConnection": "Short source-based description precedes a separately labelled full food-process bridge. Controlled form/sequence/model analysis is retained in training; transfer uses the source’s different pictured person and second process.",
+        "taskTransformation": "Retained actual source identities, activities, timings where supplied, named ingredients/equipment and process arrows. Paraphrased notes, rebuilt prompts and authored new feedback snippets; no synthetic compote/soup or unshown loop. Julia pictures inspected visually at physical 16; missing clock/frequency data remains explicitly missing."
+      },
+      {
+        "objectiveId": "writing-process-overview",
+        "sourceRefIds": [
+          "MSF-W01",
+          "MSF-R01",
+          "MS1-W01",
+          "BD-W01"
+        ],
+        "sourceLearningPoint": "Foundation uses Dan’s actual routine and Julia Grant’s science-volunteer picture exercise; Level 1 uses the actual stringhopper/cherry-jam process sequence, action/passive language, model introduction/overview and full process description. Local BD-W 01 supplies task coverage, coherent progression, vocabulary precision and grammar dimensions; it is the older public descriptor edition, not current band calibration.",
+        "unitTeachingConnection": "Short source-based description precedes a separately labelled full food-process bridge. Controlled form/sequence/model analysis is retained in training; transfer uses the source’s different pictured person and second process.",
+        "taskTransformation": "Retained actual source identities, activities, timings where supplied, named ingredients/equipment and process arrows. Paraphrased notes, rebuilt prompts and authored new feedback snippets; no synthetic compote/soup or unshown loop. Julia pictures inspected visually at physical 16; missing clock/frequency data remains explicitly missing."
+      }
+    ]
+  },
+  "teacherReview": {
+    "status": "pending",
+    "notes": [
+      "Re-authored from inspected licensed teaching selections; independent source-alignment and IELTS teacher review pending. No calibrated level or band claim."
+    ]
+  },
+  "examTrack": "academic"
+}

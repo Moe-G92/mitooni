@@ -1,0 +1,297 @@
+{
+  "schemaVersion": 1,
+  "id": "gt-fnd-reading-train",
+  "version": 1,
+  "examTrack": "general_training",
+  "skill": "reading",
+  "stage": "train",
+  "pathwayIds": [
+    "gt-foundation"
+  ],
+  "objectiveIds": [
+    "gt-fnd-cross-text-details",
+    "gt-fnd-information-conditions",
+    "gt-fnd-bounded-completion"
+  ],
+  "familyId": "gt-cg19-t1-tram-faq-adaptation",
+  "title": "Using the town tram",
+  "instructions": "Read the texts and answer in English. This is a shorter preparatory set, not a full IELTS Reading section.",
+  "stimulus": {
+    "kind": "passage",
+    "text": "A. Planning a journey\nThe town tram connects important services, stations and the airport. It operates throughout the year, but passengers should still check the timetable before travelling. The timetable is reviewed in March and October and may change a little after a review. The first departure from the town centre is at half past six in the morning. The city bus begins half an hour earlier. These times describe the first services, not the length of every journey. A passenger choosing between bus and tram needs to distinguish when a service begins from when a particular traveller will arrive.\n\nB. Arriving at the airport\nThe first tram from the airport towards the centre leaves at a quarter past six in the morning. During the daytime service, another leaves every fifteen minutes. At half past seven in the evening, the timetable changes. The evening trams go to the main railway station, leaving at intervals of thirty-five minutes, and the last service ends at eleven thirty-five. Someone landing after the trams stop can use the number 207 bus, which runs hourly overnight. The information does not list every stop served by that night bus, so travellers should not assume that its route is identical to the tram route.\n\nC. Getting a valid ticket\nThere is no ticket seller on the tram. Passengers buy the appropriate ticket from a vending machine at a tram shelter, checking the route and price before purchase. A broken machine does not mean that buying a ticket on board becomes possible. Instead, press the machine’s red button and explain the problem through its microphone. Staff may repair the machine immediately or contact the inspector on the tram. The inspector cannot sell a ticket either. However, when this reporting procedure has been followed, the passenger will not have to pay the usual eight-pound fine for being on board without one.\n\nD. Travelling with a bicycle\nA tram can carry no more than two bicycles, and a driver may refuse a bicycle when the vehicle is crowded. Bicycles are permitted only during specified quieter periods: before half past seven in the morning, between ten in the morning and half past two in the afternoon, and after seven in the evening. A festival or another large event may lead to an additional bicycle restriction because more passengers need space. On board, cyclists must stay with their bicycles and keep entrances, exits and other public access areas clear. Permission to bring a bicycle is therefore conditional, rather than a guarantee for every cyclist arriving at a stop."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "Which notice explains what to do when a ticket machine fails?",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "Notice A"
+        },
+        {
+          "id": "B",
+          "text": "Notice B"
+        },
+        {
+          "id": "C",
+          "text": "Notice C"
+        },
+        {
+          "id": "D",
+          "text": "Notice D"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q2",
+      "prompt": "Complete with ONE WORD ONLY from notice C: A passenger reports a fault through the machine’s ______.",
+      "responseType": "short_text",
+      "options": [],
+      "wordLimit": 1
+    },
+    {
+      "id": "q3",
+      "prompt": "Does this agree with the information? Choose TRUE, FALSE or NOT GIVEN. The city bus begins operating before the first town-centre tram.",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "TRUE"
+        },
+        {
+          "id": "B",
+          "text": "FALSE"
+        },
+        {
+          "id": "C",
+          "text": "NOT GIVEN"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q4",
+      "prompt": "Does this agree with the information? Choose TRUE, FALSE or NOT GIVEN. The number 207 bus calls at every tram stop.",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "TRUE"
+        },
+        {
+          "id": "B",
+          "text": "FALSE"
+        },
+        {
+          "id": "C",
+          "text": "NOT GIVEN"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q5",
+      "prompt": "Which notice describes restrictions that may change during a crowded event?",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "Notice A"
+        },
+        {
+          "id": "B",
+          "text": "Notice B"
+        },
+        {
+          "id": "C",
+          "text": "Notice C"
+        },
+        {
+          "id": "D",
+          "text": "Notice D"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q6",
+      "prompt": "Complete with NO MORE THAN TWO WORDS from notice D: Bicycles must not obstruct areas of ______.",
+      "responseType": "short_text",
+      "options": [],
+      "wordLimit": 2
+    },
+    {
+      "id": "q7",
+      "prompt": "Does this agree with the information? Choose TRUE, FALSE or NOT GIVEN. The tram inspector can sell a ticket when a machine has broken.",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "TRUE"
+        },
+        {
+          "id": "B",
+          "text": "FALSE"
+        },
+        {
+          "id": "C",
+          "text": "NOT GIVEN"
+        }
+      ],
+      "wordLimit": null
+    }
+  ],
+  "teachingAnchors": [
+    {
+      "id": "language",
+      "label": "Read routine and condition language",
+      "text": "Start with routine language: “The service begins at six” gives a regular starting time; “A driver may refuse a bicycle” gives permission, not a prediction that every driver will refuse. Complete aloud: “Trams run; the tram ___” (runs). Check travel collocations: catch a tram, buy a ticket, check a timetable. Convert half past six to 6:30 and a quarter past six to 6:15 before tackling a timetable claim."
+    },
+    {
+      "id": "compare",
+      "label": "Compare before choosing",
+      "text": "Skim the four FAQ sections by purpose: journey, airport, ticket, bicycle. For a detail, compare all relevant sections. Both B and C discuss a traveller’s problem, but only one explains machine failure. Paraphrase the question, locate the full condition, and check the strongest competing section. For a gap, predict the part of speech and copy only the permitted words."
+    },
+    {
+      "id": "judge",
+      "label": "Check what is established",
+      "text": "TRUE requires support; FALSE requires contradiction; NOT GIVEN means neither is established. A night bus continuing after the tram stops does not establish all its stops. Distinguish before from after, can from must, and a licensed bicycle maximum from a guarantee of space. Finish independently, then review the evidence after submission."
+    }
+  ],
+  "assessment": {
+    "kind": "deterministic",
+    "criteria": [
+      {
+        "id": "textual-evidence",
+        "label": "Textual evidence",
+        "description": "Use only the stated text, respect scope and word limits, and distinguish contradiction from insufficient information."
+      }
+    ],
+    "answerKey": [
+      {
+        "questionId": "q1",
+        "acceptedAnswers": [
+          "C"
+        ],
+        "rationale": "C gives the button, microphone and reporting procedure. B concerns the airport timetable, not machine faults."
+      },
+      {
+        "questionId": "q2",
+        "acceptedAnswers": [
+          "microphone"
+        ],
+        "rationale": "C states that the passenger explains the fault through the microphone."
+      },
+      {
+        "questionId": "q3",
+        "acceptedAnswers": [
+          "A"
+        ],
+        "rationale": "A places the bus half an hour before the tram. "
+      },
+      {
+        "questionId": "q4",
+        "acceptedAnswers": [
+          "C"
+        ],
+        "rationale": "B does not give the night bus’s stops and explicitly warns against assuming the same route."
+      },
+      {
+        "questionId": "q5",
+        "acceptedAnswers": [
+          "D"
+        ],
+        "rationale": "D says festivals may create an additional bicycle restriction."
+      },
+      {
+        "questionId": "q6",
+        "acceptedAnswers": [
+          "public access"
+        ],
+        "rationale": "D names public access areas."
+      },
+      {
+        "questionId": "q7",
+        "acceptedAnswers": [
+          "B"
+        ],
+        "rationale": "C explicitly says the inspector cannot sell a ticket."
+      }
+    ],
+    "feedbackGuidance": "After submission, first check whether the learner compared all plausible text sections rather than stopped at a repeated noun. Ask them to paraphrase one matching decision and underline both its positive evidence and the strongest rejected section. Check each condition, frequency word and missing-information decision. For completions, require the exact passage wording within the stated limit and a grammatical finished sentence. Correct one permission/condition confusion, then test a new practical topic independently. Raw accuracy only; no band estimate."
+  },
+  "delivery": {
+    "kind": "text",
+    "assetId": null
+  },
+  "locale": {
+    "instructionsFa": "متن‌ها را بخوانید و به انگلیسی پاسخ دهید. این مجموعهٔ آمادگی کوتاه، بخش کامل آزمون نیست.",
+    "teachingAnchorsFa": [
+      {
+        "id": "language",
+        "label": "زبان سفر و زمان",
+        "text": "begins زمان شروع منظم را نشان می‌دهد، اما may refuse یعنی اجازهٔ نپذیرفتن، نه رد قطعی همه. در the tram runs به شناسهٔ سوم‌شخص توجه کنید. catch a tram، buy a ticket و check a timetable را تمرین کنید. half past six یعنی ۶:۳۰ و a quarter past six یعنی ۶:۱۵."
+      },
+      {
+        "id": "compare",
+        "label": "مقایسهٔ بخش‌ها",
+        "text": "هدف چهار بخش را مشخص کنید: سفر، فرودگاه، بلیت و دوچرخه. برای جزئیات، همهٔ بخش‌های مرتبط را مقایسه کنید. سؤال را بازگو کنید و شرط کامل را بیابید. در جای خالی، نقش دستوری و تعداد مجاز واژه مهم است."
+      },
+      {
+        "id": "judge",
+        "label": "سنجش شاهد",
+        "text": "TRUE به تأیید و FALSE به تناقض نیاز دارد؛ اگر هیچ‌کدام ثابت نشود NOT GIVEN است. ادامهٔ حرکت اتوبوس شبانه، همهٔ توقف‌هایش را ثابت نمی‌کند. قبل و بعد، اجازه و الزام، و حداکثر ظرفیت و تضمین جا را جدا کنید."
+      }
+    ],
+    "feedbackGuidanceFa": "پس از ثبت پاسخ، دلیل خطا یا ضعف را بررسی کنید و یک اصلاح مشخص انجام دهید. این بازخورد نمرهٔ معتبر آیلتس نیست."
+  },
+  "provenance": {
+    "origin": "source_based_original",
+    "sourceRefs": [
+      "CG19-R01",
+      "MSF-R01"
+    ],
+    "territory": "Iran",
+    "rightsNote": "Source-based Mitooni reauthoring from user-supplied licensed materials for the Iranian audience; selected source inspection authorized. No source scans, audio or complete original exercises included. Human teacher review remains pending.",
+    "transformationNotes": "CG19 Test1 PDF16–17: town tram FAQ, first services, airport timetable, machine-failure reporting and conditional bicycle access. Complete semantic rewrite of the earlier unrelated notices/workshop/street/repair-cafe drafts. New prose, question wording, distractors and keys; retained source facts and conceptual relationships. Mindset contributes staged language/reading support, not unrelated contextual decoration. Train/transfer use distinct source subfamilies and no shared adapted passage.",
+    "objectiveMappings": [
+      {
+        "objectiveId": "gt-fnd-cross-text-details",
+        "sourceRefIds": [
+          "CG19-R01",
+          "MSF-R01"
+        ],
+        "sourceLearningPoint": "CG19 Test1 PDF16–17: town tram FAQ, first services, airport timetable, machine-failure reporting and conditional bicycle access. MSF PDF13–14 uses parallel daily-life descriptions and warns that similar information occurs in more than one text.",
+        "unitTeachingConnection": "Compare multiple related FAQ sections or customer accounts, retaining shared vocabulary but distinguishing the fact and subject in each.",
+        "taskTransformation": "Retained source scenario and semantic contrasts, paraphrased the facts in new section prose, and wrote new cross-section selection items and distractors."
+      },
+      {
+        "objectiveId": "gt-fnd-information-conditions",
+        "sourceRefIds": [
+          "CG19-R01",
+          "MSF-R01"
+        ],
+        "sourceLearningPoint": "CG19 Test1 PDF16–17: town tram FAQ, first services, airport timetable, machine-failure reporting and conditional bicycle access. MSF PDF14 contrasts routine/frequency meanings; the source GT questions require attention to what is and is not stated.",
+        "unitTeachingConnection": "Judge routine times, permissions and past or possible events without importing unstated facts; separate contradiction from absent information.",
+        "taskTransformation": "Wrote new factual claims around the retained source contrasts; generated fresh keys from the adapted text rather than copying the source answer sequence."
+      },
+      {
+        "objectiveId": "gt-fnd-bounded-completion",
+        "sourceRefIds": [
+          "CG19-R01",
+          "MSF-R01"
+        ],
+        "sourceLearningPoint": "CG19 Test1 PDF16–17: town tram FAQ, first services, airport timetable, machine-failure reporting and conditional bicycle access. MSF PDF15 follows controlled reading/grammar work with completion and paraphrase matching.",
+        "unitTeachingConnection": "Supply a bounded exact-text completion after predicting the grammatical slot.",
+        "taskTransformation": "Added original gap sentences around retained tram/review details, with explicit one- or two-word limits and evidence rationales."
+      }
+    ]
+  },
+  "teacherReview": {
+    "status": "pending",
+    "notes": []
+  }
+}

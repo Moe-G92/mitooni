@@ -1,0 +1,305 @@
+{
+  "schemaVersion": 1,
+  "id": "fnd-reading-train",
+  "version": 2,
+  "skill": "reading",
+  "stage": "train",
+  "pathwayIds": [
+    "foundation"
+  ],
+  "objectiveIds": [
+    "reading-routine-language",
+    "reading-cross-text-detail",
+    "reading-controlled-completion"
+  ],
+  "familyId": "source-msf-three-student-routines",
+  "title": "Three students’ daily lives",
+  "instructions": "Read the three short profiles. Complete the language and detail questions in order. This is foundation language practice, not an IELTS Reading section.",
+  "stimulus": {
+    "kind": "passage",
+    "text": "A. Nina lives in a Norwegian village near the Atlantic. She rises at seven thirty and walks to college. Her classes run from eight thirty until three. Afterwards she joins college clubs, including athletics and football. Activities cost a little money. When her parents return from work, her father prepares the family meal. Later her mother takes her out in the car to practise driving because Nina has a test coming soon.\n\nB. Ava lives on a cattle farm in the centre of Queensland, far from the Australian coast. She rises at about seven. Her mother teaches at the college, so Ava generally travels there with her by car rather than by bus. College begins at eight thirty and ends at four. Back at home, Ava spends several hours helping her father on the farm. She tries to watch television in the evening but is often too tired. She goes to bed around ten.\n\nC. Michael lives in Rio de Janeiro. He rises at six and catches a bus half an hour later. Lessons begin at seven twenty. After a morning break, he studies until twelve thirty and reaches home around one forty. He often meets friends at the beach to swim or play volleyball, although sometimes he stays home to rest or study. In the evening he cooks for his family. They watch television or listen to the radio, and he turns his light off around ten."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "Which routine word in B means “gets out of bed”?",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "travels"
+        },
+        {
+          "id": "B",
+          "text": "helps"
+        },
+        {
+          "id": "C",
+          "text": "rises"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q2",
+      "prompt": "Choose the form that fits A: Nina ______ to college.",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "walk"
+        },
+        {
+          "id": "B",
+          "text": "walks"
+        },
+        {
+          "id": "C",
+          "text": "walking"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q3",
+      "prompt": "Who helps a parent with farm work?",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "Nina"
+        },
+        {
+          "id": "B",
+          "text": "Ava"
+        },
+        {
+          "id": "C",
+          "text": "Michael"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q4",
+      "prompt": "Who prepares the family’s evening meal?",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "Nina"
+        },
+        {
+          "id": "B",
+          "text": "Ava"
+        },
+        {
+          "id": "C",
+          "text": "Michael"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q5",
+      "prompt": "Complete using NO MORE THAN TWO WORDS from A: Nina practises ______ after the family meal.",
+      "responseType": "short_text",
+      "options": [],
+      "wordLimit": 2
+    },
+    {
+      "id": "q6",
+      "prompt": "Answer using NO MORE THAN TWO WORDS from B: Where does Ava live?",
+      "responseType": "short_text",
+      "options": [],
+      "wordLimit": 2
+    },
+    {
+      "id": "q7",
+      "prompt": "Who finishes studying before one in the afternoon?",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "Nina"
+        },
+        {
+          "id": "B",
+          "text": "Ava"
+        },
+        {
+          "id": "C",
+          "text": "Michael"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q8",
+      "prompt": "Complete using ONE WORD from C: Michael sometimes stays at home to rest or ______.",
+      "responseType": "short_text",
+      "options": [],
+      "wordLimit": 1
+    }
+  ],
+  "teachingAnchors": [
+    {
+      "id": "step1",
+      "label": "Recognise routine language",
+      "text": "Start with the action words: walk, catch a bus, prepare and return. Read the whole sentence to check meaning. In a routine, “she walks” has -s; “they walk” does not. Practise aloud: “I work; she works”. Then identify one routine action in each profile."
+    },
+    {
+      "id": "step2",
+      "label": "Compare the profiles",
+      "text": "Skim all three profiles once. For a “who” question, find the activity in each profile before choosing a person. A shared word is not enough: one person may travel by bus to work while another takes a bus home. Check time and direction."
+    },
+    {
+      "id": "step3",
+      "label": "Complete and check",
+      "text": "For completion, locate the sentence, copy only the requested word or words, then read the completed sentence. First answer the language items, then attempt the detail questions independently. Before submitting, distinguish usually, sometimes and never; they do not mean the same frequency."
+    }
+  ],
+  "assessment": {
+    "kind": "deterministic",
+    "criteria": [
+      {
+        "id": "textual-evidence",
+        "label": "Textual evidence",
+        "description": "Select or supply the answer warranted by this passage, observing the response limit and distinction between contradiction and absence."
+      }
+    ],
+    "answerKey": [
+      {
+        "questionId": "q1",
+        "acceptedAnswers": [
+          "C"
+        ],
+        "rationale": "B uses rises for getting up at the beginning of the day, before describing travel and farm work."
+      },
+      {
+        "questionId": "q2",
+        "acceptedAnswers": [
+          "B"
+        ],
+        "rationale": "A uses present simple third-person walks for her routine."
+      },
+      {
+        "questionId": "q3",
+        "acceptedAnswers": [
+          "B"
+        ],
+        "rationale": "B: Ava helps her father on the farm."
+      },
+      {
+        "questionId": "q4",
+        "acceptedAnswers": [
+          "C"
+        ],
+        "rationale": "C: Michael cooks for his family; in A Nina’s father cooks."
+      },
+      {
+        "questionId": "q5",
+        "acceptedAnswers": [
+          "driving"
+        ],
+        "rationale": "A describes driving practice with her mother."
+      },
+      {
+        "questionId": "q6",
+        "acceptedAnswers": [
+          "cattle farm"
+        ],
+        "rationale": "B places her on a cattle farm."
+      },
+      {
+        "questionId": "q7",
+        "acceptedAnswers": [
+          "C"
+        ],
+        "rationale": "C: Michael finishes at twelve thirty, unlike A at three and B at four."
+      },
+      {
+        "questionId": "q8",
+        "acceptedAnswers": [
+          "study"
+        ],
+        "rationale": "C explicitly gives rest or study."
+      }
+    ],
+    "feedbackGuidance": "After submission, use each explicit profile rationale. Separate an incorrect verb form, misunderstood frequency word, confused person/time/direction and copying/limit error. Model one correction using another original sentence: “She cycles; they cycle.” Then ask for a corrected answer and one new routine sentence. Raw practice accuracy is not a band or proof of A 2 mastery."
+  },
+  "delivery": {
+    "kind": "text",
+    "assetId": null
+  },
+  "locale": {
+    "instructionsFa": "سه متن کوتاه را بخوانید. پرسش‌های واژگان و جزئیات را به ترتیب پاسخ دهید. این تمرین زبان پایه است، نه بخش کامل خواندن آیلتس.",
+    "teachingAnchorsFa": [
+      {
+        "id": "step1",
+        "label": "زبان روزمره",
+        "text": "ابتدا فعل‌های کارهای روزانه را پیدا کنید. برای عادت، با he یا she معمولاً به فعل s اضافه می‌شود. معنی را در جمله بررسی کنید و یک کار روزانه در هر متن پیدا کنید."
+      },
+      {
+        "id": "step2",
+        "label": "مقایسهٔ متن‌ها",
+        "text": "هر سه متن را یک بار سریع بخوانید. برای پرسش «چه کسی»، همان فعالیت را در هر سه متن بررسی کنید. ممکن است یکی با اتوبوس به کار برود و دیگری با اتوبوس برگردد؛ زمان و جهت مهم است."
+      },
+      {
+        "id": "step3",
+        "label": "تکمیل و بررسی",
+        "text": "برای جای خالی، جملهٔ مرتبط را پیدا و فقط تعداد مجاز واژه را کپی کنید. ابتدا پرسش‌های زبان و سپس جزئیات را مستقل انجام دهید. معمولاً، گاهی و هرگز یک معنی ندارند."
+      }
+    ],
+    "feedbackGuidanceFa": "پس از ثبت پاسخ، بازخورد را با پاسخ خود مقایسه کنید. یک خطا را با تکیه بر شواهد اصلاح کنید و سپس تمرین مستقل تازه‌ای انجام دهید."
+  },
+  "provenance": {
+    "origin": "source_based_original",
+    "sourceRefs": [
+      "MSF-R01",
+      "MS1-R01"
+    ],
+    "territory": "Iran",
+    "rightsNote": "Source-based Mitooni authoring under user-confirmed Iranian-audience rights and selected-excerpt processing authority. Source files remain read-only; no broader distribution authority claimed.",
+    "transformationNotes": "Actual source semantic details are retained: named students, timings, transport and family roles for training; Dan’s day and the source housework allocation for transfer. Wording, grouping and questions are adapted; no invented factual scenario. Source-specific exercise answers are not pasted.",
+    "objectiveMappings": [
+      {
+        "objectiveId": "reading-routine-language",
+        "sourceRefIds": [
+          "MSF-R01",
+          "MS1-R01"
+        ],
+        "sourceLearningPoint": "MSF-R 01 provides Nina/Ava/Michael daily profiles, Dan’s routine and household chores, simple-present/frequency language, cross-text selection and completion. MS 1-R 01 adds exact short-answer handling.",
+        "unitTeachingConnection": "Paraphrased the actual source profiles/routines, then authored controlled-language items, cross-text details and exact completion. Training models language before selection; transfer uses the source’s different routine/household example.",
+        "taskTransformation": "Actual source semantic details are retained: named students, timings, transport and family roles for training; Dan’s day and the source housework allocation for transfer. Wording, grouping and questions are adapted; no invented factual scenario. Source-specific exercise answers are not pasted."
+      },
+      {
+        "objectiveId": "reading-cross-text-detail",
+        "sourceRefIds": [
+          "MSF-R01",
+          "MS1-R01"
+        ],
+        "sourceLearningPoint": "MSF-R 01 provides Nina/Ava/Michael daily profiles, Dan’s routine and household chores, simple-present/frequency language, cross-text selection and completion. MS 1-R 01 adds exact short-answer handling.",
+        "unitTeachingConnection": "Paraphrased the actual source profiles/routines, then authored controlled-language items, cross-text details and exact completion. Training models language before selection; transfer uses the source’s different routine/household example.",
+        "taskTransformation": "Actual source semantic details are retained: named students, timings, transport and family roles for training; Dan’s day and the source housework allocation for transfer. Wording, grouping and questions are adapted; no invented factual scenario. Source-specific exercise answers are not pasted."
+      },
+      {
+        "objectiveId": "reading-controlled-completion",
+        "sourceRefIds": [
+          "MSF-R01",
+          "MS1-R01"
+        ],
+        "sourceLearningPoint": "MSF-R 01 provides Nina/Ava/Michael daily profiles, Dan’s routine and household chores, simple-present/frequency language, cross-text selection and completion. MS 1-R 01 adds exact short-answer handling.",
+        "unitTeachingConnection": "Paraphrased the actual source profiles/routines, then authored controlled-language items, cross-text details and exact completion. Training models language before selection; transfer uses the source’s different routine/household example.",
+        "taskTransformation": "Actual source semantic details are retained: named students, timings, transport and family roles for training; Dan’s day and the source housework allocation for transfer. Wording, grouping and questions are adapted; no invented factual scenario. Source-specific exercise answers are not pasted."
+      }
+    ]
+  },
+  "teacherReview": {
+    "status": "pending",
+    "notes": [
+      "Re-authored from inspected licensed teaching selections; independent source-alignment and IELTS teacher review pending. No calibrated level or band claim."
+    ]
+  },
+  "examTrack": "academic"
+}

@@ -1,0 +1,273 @@
+{
+  "schemaVersion": 1,
+  "id": "fnd-reading-transfer",
+  "version": 2,
+  "skill": "reading",
+  "stage": "transfer",
+  "pathwayIds": [
+    "foundation"
+  ],
+  "objectiveIds": [
+    "reading-routine-language",
+    "reading-cross-text-detail",
+    "reading-controlled-completion"
+  ],
+  "familyId": "source-msf-dan-and-household",
+  "title": "A student day and household jobs",
+  "instructions": "Read the three short profiles. Complete the language and detail questions in order. This is foundation language practice, not an IELTS Reading section.",
+  "stimulus": {
+    "kind": "passage",
+    "text": "A. Dan is a university student in the source example. His day begins at eight with a shower and breakfast. Before going to lectures, he gets his books ready. His lectures continue until midday. He generally returns home and prepares lunch around twelve thirty. Sometimes he watches television afterwards. Around three he often meets a friend for coffee. Half an hour later they go to the library. He studies there for several hours before returning home around six thirty. He usually makes dinner for himself and the other people in his flat. Later he may exercise or see friends, and usually falls asleep near midnight.\n\nB. Another household description divides jobs among family members. The narrator usually helps the mother do the laundry and always puts the bedroom in order after school. The brother does not wash his clothes: he leaves them on the bedroom floor. Sometimes he takes the rubbish outside, but often leaves it by the back door instead of carrying it to the bins. The father sometimes washes dishes because the dishwasher has broken. The sister enjoys cooking and helps prepare meals. After the housework, the family relaxes and watches television together."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "Complete using NO MORE THAN TWO WORDS from A: Dan gets his ______ ready before lectures.",
+      "responseType": "short_text",
+      "options": [],
+      "wordLimit": 2
+    },
+    {
+      "id": "q2",
+      "prompt": "Which phrase in B means “wash clothes”?",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "puts the bedroom in order"
+        },
+        {
+          "id": "B",
+          "text": "do the laundry"
+        },
+        {
+          "id": "C",
+          "text": "takes the rubbish outside"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q3",
+      "prompt": "Who sometimes washes dishes?",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "The brother"
+        },
+        {
+          "id": "B",
+          "text": "The father"
+        },
+        {
+          "id": "C",
+          "text": "The sister"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q4",
+      "prompt": "Complete using ONE WORD from A: After coffee Dan goes to the ______.",
+      "responseType": "short_text",
+      "options": [],
+      "wordLimit": 1
+    },
+    {
+      "id": "q5",
+      "prompt": "Choose the correct form: Dan usually ______ dinner for his flatmates.",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "make"
+        },
+        {
+          "id": "B",
+          "text": "making"
+        },
+        {
+          "id": "C",
+          "text": "makes"
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q6",
+      "prompt": "Which description matches the brother in B?",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "He always takes rubbish to the bins."
+        },
+        {
+          "id": "B",
+          "text": "He sometimes moves it outside but often leaves it by the back door."
+        },
+        {
+          "id": "C",
+          "text": "He washes everyone’s clothes."
+        }
+      ],
+      "wordLimit": null
+    },
+    {
+      "id": "q7",
+      "prompt": "Complete using NO MORE THAN TWO WORDS from B: The dishwasher has ______.",
+      "responseType": "short_text",
+      "options": [],
+      "wordLimit": 2
+    },
+    {
+      "id": "q8",
+      "prompt": "Which sentence preserves the frequency in A?",
+      "responseType": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "text": "Dan has coffee with a friend often, not necessarily every day."
+        },
+        {
+          "id": "B",
+          "text": "Dan never has coffee."
+        },
+        {
+          "id": "C",
+          "text": "Dan always has coffee at midnight."
+        }
+      ],
+      "wordLimit": null
+    }
+  ],
+  "teachingAnchors": [],
+  "assessment": {
+    "kind": "deterministic",
+    "criteria": [
+      {
+        "id": "textual-evidence",
+        "label": "Textual evidence",
+        "description": "Select or supply the answer warranted by this passage, observing the response limit and distinction between contradiction and absence."
+      }
+    ],
+    "answerKey": [
+      {
+        "questionId": "q1",
+        "acceptedAnswers": [
+          "books"
+        ],
+        "rationale": "A states he gets his books ready."
+      },
+      {
+        "questionId": "q2",
+        "acceptedAnswers": [
+          "B"
+        ],
+        "rationale": "B uses do the laundry for washing clothes; the alternatives concern tidying or rubbish."
+      },
+      {
+        "questionId": "q3",
+        "acceptedAnswers": [
+          "B"
+        ],
+        "rationale": "B assigns dishwashing to the father."
+      },
+      {
+        "questionId": "q4",
+        "acceptedAnswers": [
+          "library"
+        ],
+        "rationale": "A gives the library after the three o’clock coffee."
+      },
+      {
+        "questionId": "q5",
+        "acceptedAnswers": [
+          "C"
+        ],
+        "rationale": "A describes his regular meal preparation; third-person simple-present makes is required."
+      },
+      {
+        "questionId": "q6",
+        "acceptedAnswers": [
+          "B"
+        ],
+        "rationale": "B qualifies the rubbish activity and says he does not wash his clothes."
+      },
+      {
+        "questionId": "q7",
+        "acceptedAnswers": [
+          "broken"
+        ],
+        "rationale": "B gives the broken dishwasher as the reason for hand-washing dishes."
+      },
+      {
+        "questionId": "q8",
+        "acceptedAnswers": [
+          "A"
+        ],
+        "rationale": "A says often meets a friend around three, not always or never."
+      }
+    ],
+    "feedbackGuidance": "After submission, use each explicit profile rationale. Separate an incorrect verb form, misunderstood frequency word, confused person/time/direction and copying/limit error. Model one correction using another original sentence: “She cycles; they cycle.” Then ask for a corrected answer and one new routine sentence. Raw practice accuracy is not a band or proof of A 2 mastery."
+  },
+  "delivery": {
+    "kind": "text",
+    "assetId": null
+  },
+  "locale": {
+    "instructionsFa": "سه متن کوتاه را بخوانید. پرسش‌های واژگان و جزئیات را به ترتیب پاسخ دهید. این تمرین زبان پایه است، نه بخش کامل خواندن آیلتس.",
+    "teachingAnchorsFa": [],
+    "feedbackGuidanceFa": "پس از ثبت پاسخ، بازخورد را با پاسخ خود مقایسه کنید. یک خطا را با تکیه بر شواهد اصلاح کنید و سپس تمرین مستقل تازه‌ای انجام دهید."
+  },
+  "provenance": {
+    "origin": "source_based_original",
+    "sourceRefs": [
+      "MSF-R01",
+      "MS1-R01"
+    ],
+    "territory": "Iran",
+    "rightsNote": "Source-based Mitooni authoring under user-confirmed Iranian-audience rights and selected-excerpt processing authority. Source files remain read-only; no broader distribution authority claimed.",
+    "transformationNotes": "Actual source semantic details are retained: named students, timings, transport and family roles for training; Dan’s day and the source housework allocation for transfer. Wording, grouping and questions are adapted; no invented factual scenario. Source-specific exercise answers are not pasted.",
+    "objectiveMappings": [
+      {
+        "objectiveId": "reading-routine-language",
+        "sourceRefIds": [
+          "MSF-R01",
+          "MS1-R01"
+        ],
+        "sourceLearningPoint": "MSF-R 01 provides Nina/Ava/Michael daily profiles, Dan’s routine and household chores, simple-present/frequency language, cross-text selection and completion. MS 1-R 01 adds exact short-answer handling.",
+        "unitTeachingConnection": "Paraphrased the actual source profiles/routines, then authored controlled-language items, cross-text details and exact completion. Training models language before selection; transfer uses the source’s different routine/household example.",
+        "taskTransformation": "Actual source semantic details are retained: named students, timings, transport and family roles for training; Dan’s day and the source housework allocation for transfer. Wording, grouping and questions are adapted; no invented factual scenario. Source-specific exercise answers are not pasted."
+      },
+      {
+        "objectiveId": "reading-cross-text-detail",
+        "sourceRefIds": [
+          "MSF-R01",
+          "MS1-R01"
+        ],
+        "sourceLearningPoint": "MSF-R 01 provides Nina/Ava/Michael daily profiles, Dan’s routine and household chores, simple-present/frequency language, cross-text selection and completion. MS 1-R 01 adds exact short-answer handling.",
+        "unitTeachingConnection": "Paraphrased the actual source profiles/routines, then authored controlled-language items, cross-text details and exact completion. Training models language before selection; transfer uses the source’s different routine/household example.",
+        "taskTransformation": "Actual source semantic details are retained: named students, timings, transport and family roles for training; Dan’s day and the source housework allocation for transfer. Wording, grouping and questions are adapted; no invented factual scenario. Source-specific exercise answers are not pasted."
+      },
+      {
+        "objectiveId": "reading-controlled-completion",
+        "sourceRefIds": [
+          "MSF-R01",
+          "MS1-R01"
+        ],
+        "sourceLearningPoint": "MSF-R 01 provides Nina/Ava/Michael daily profiles, Dan’s routine and household chores, simple-present/frequency language, cross-text selection and completion. MS 1-R 01 adds exact short-answer handling.",
+        "unitTeachingConnection": "Paraphrased the actual source profiles/routines, then authored controlled-language items, cross-text details and exact completion. Training models language before selection; transfer uses the source’s different routine/household example.",
+        "taskTransformation": "Actual source semantic details are retained: named students, timings, transport and family roles for training; Dan’s day and the source housework allocation for transfer. Wording, grouping and questions are adapted; no invented factual scenario. Source-specific exercise answers are not pasted."
+      }
+    ]
+  },
+  "teacherReview": {
+    "status": "pending",
+    "notes": [
+      "Re-authored from inspected licensed teaching selections; independent source-alignment and IELTS teacher review pending. No calibrated level or band claim."
+    ]
+  },
+  "examTrack": "academic"
+}
