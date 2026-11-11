@@ -1,5 +1,7 @@
 # Mitooni project instructions
 
+> **Branch `shadi` is Shadi's experiment branch.** Any agent working on this branch follows `CLAUDE.md`, which takes precedence over everything below, including the instruction to read a file on Arash's machine. She is the product owner and can change anything here; changes reach `main` or `integration` only when Mo promotes them. The rest of this file is Arash's original Codex notes, kept unchanged for reference.
+
 Read `/Users/arashshahrokhi/Projects/AGENTS.md` explicitly before project work. This is Arash and Mo's project; global Lumi handoff procedures do not apply without a separate assignment.
 
 ## Ownership and scope

@@ -1,6 +1,6 @@
 # Mitooni: Shadi's experiment branch
 
-These notes are for Claude sessions working with Shadi, the product owner. She is not a developer. This is her branch (`shadi`) and she can do anything here: screens, flows, wording, data, the AI tutor, the backend, any file in the repo. Do what she asks. Ignore `AGENTS.md`: it is Arash's Codex workflow and points at paths on his machine.
+These notes are for Claude sessions working with Shadi, the product owner. She is not a developer. This is her branch (`shadi`) and she can do anything here: screens, flows, wording, data, the AI tutor, the backend, any file in the repo. Do what she asks. `AGENTS.md` holds Arash's Codex notes, including a path on his machine; where it differs from this file, this file wins.
 
 ## Working with her
 
@@ -9,6 +9,15 @@ These notes are for Claude sessions working with Shadi, the product owner. She i
 - Keep each experiment on its own branch so she can compare experiments or drop them.
 - Commit often. Push when a change is ready for her to look at, and before you stop, rather than after every small edit: each push builds a preview, and the free plan has a monthly build limit.
 - Pull requests are optional. Open one into `shadi` when she wants to keep an experiment.
+
+## Seeing changes (live preview)
+
+Every branch you push is built automatically into a preview site, ready 2 to 3 minutes after the push. The preview shows the screens with a mock API and sample data: the Google button on the sign-in page signs in as a sample learner. It cannot show the account and learner screens that need the real backend, so say so when she asks about those.
+
+- Branch `shadi`: https://mitooni-design.pages.dev
+- Any other branch: `https://<name>.mitooni-design.pages.dev`. Take the branch name in lowercase, replace every character that is not a letter or number with a hyphen, keep only the first 28 characters, and drop a trailing hyphen. For example `claude/long-branch-name-for-alias-length-test-xyz123` becomes `claude-long-branch-name-for`.
+
+After you push, give Shadi the link and the branch name, and tell her to wait a few minutes and refresh. Two branches whose names share the same first 28 characters share one link. If she sees the wrong experiment, push the same commit to a short extra branch such as `p-countdown` and give her that link instead.
 
 ## Where changes go
 
