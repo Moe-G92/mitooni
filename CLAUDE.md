@@ -1,59 +1,42 @@
 # Mitooni: Shadi's experiment branch
 
-These instructions are for Claude sessions working with Shadi, the product owner. She is not a developer. This is her branch (`shadi`), and she can try anything here. Nothing reaches `main`, `integration` or the hosted app unless Mo reviews and merges it. Ignore `AGENTS.md`: it is Arash's Codex workflow and points at paths on his machine.
+These notes are for Claude sessions working with Shadi, the product owner. She is not a developer. This is her branch (`shadi`) and she can do anything here: screens, flows, wording, data, the AI tutor, the backend, any file in the repo. Do what she asks. Ignore `AGENTS.md`: it is Arash's Codex workflow and points at paths on his machine.
 
-## How to work with Shadi
+## Working with her
 
-- Talk in plain language. Say what changed on screen, not which functions you edited. Never ask her to run terminal commands.
-- Before you change anything, say in one or two sentences what you will try. Afterwards, list what changed and how she can check it.
-- Experiments are welcome and may touch any file in the repo: screens, flows, wording, data shapes, even the backend. Prefer the smallest change that answers her question. Keep each experiment on its own branch so she can compare experiments or drop them.
-- Commit small and often, and push after every meaningful change so nothing is lost when the session pauses.
-- Open pull requests into `shadi`, never into `main` or `integration`. If the Create PR button would target another branch, tell Shadi to change the base to `shadi` on GitHub before she confirms. Say in the description what the experiment tries and what it would affect if kept.
+- Use plain language. Say what changed on screen, not which functions you edited. Never ask her to run terminal commands.
+- Say in a sentence what you will try before you start, and what changed when you finish.
+- Keep each experiment on its own branch so she can compare experiments or drop them.
+- Commit often. Push when a change is ready for her to look at, and before you stop, rather than after every small edit: each push builds a preview, and the free plan has a monthly build limit.
+- Pull requests are optional. Open one into `shadi` when she wants to keep an experiment.
 
-## Branch rules
+## Where changes go
 
-- Work only on the branch your session started from (`shadi`) and branches made from it. If the session started from `main`, `integration` or a `codex/` branch, stop and tell Shadi to switch the branch to `shadi`.
-- Never push to `main`, `integration` or any `codex/` branch. Never force-push, and never delete a branch you did not create in this session.
+- Stay on the branch the session started from (`shadi`) and branches made from it. If the session started from `main`, `integration` or a `codex/` branch, stop and ask her to switch to `shadi`.
+- Never push to `main`, `integration` or any `codex/` branch. Mo decides what reaches them.
 
-## Other hard limits
+## Ask first, then do it
 
-- Never read or create `.env` files and never handle keys or passwords.
-- Never deploy, and never call Railway, Supabase, the hosted app or any AI provider. The cloud machine has no backend or database, so anything that needs one cannot be tested here. Say so instead of faking a result.
-- Never copy licensed books, audio or learner data into the repo.
+Before anything outward-facing or hard to undo, say what it will affect and do it if she says yes: deploying, calling the hosted app, Railway, Supabase or an AI provider (these can cost money or change what the teachers see), force-pushing, and deleting branches or data.
 
-## Flag, don't hold back
+Never commit secrets or private material: keys, passwords, `.env` files, licensed books or audio, learner data.
 
-An experiment that goes beyond design should still be built. Mention it in the pull request description so the right person can decide when it is promoted:
+## Flag for review
 
-- "For Arash" if it changes data shapes, accounts, sign-in, the AI tutor, content or anything under `platform/`.
-- "For Mo" if it breaks one of the design defaults below.
+If an experiment changes accounts, sign-in, data shapes, the AI tutor, content or `platform/`, build it anyway and mention "For Arash" in your summary or the pull request. If it breaks a design default below, mention "For Mo". The flag only tells them what to look at when it is promoted.
 
 ## Design defaults (Mo's)
 
-Follow these unless Shadi asks for something different. If she does, do it and name the rule it breaks.
+Follow these unless she asks for something different. If she does, do it and name the default it breaks.
 
-- The brand is Mitooni. Use the tokens in `web/src/index.css` rather than new colours.
-- Day mode only. No dark styles and no theme toggle.
-- Persian (right to left) and English both work. Use logical CSS (start and end, not left and right). Keep the default language as it is.
-- No full stops at the end of titles, headings, card titles, labels or taglines. Body sentences keep theirs.
+- The brand is Mitooni. Use the tokens in `web/src/index.css`.
+- Day mode only. Persian (right to left) and English both work.
+- No full stops at the end of titles, headings, card titles, labels or taglines.
 - Never zero-pad numbers: 1, 2, 3, not 01, 02, 03.
-- Text contrast meets WCAG AA. Exam screens stay faithful to the official IELTS look (`docs/research/research-official-ielts.md`).
-- Home pages are short and promotional, with detail on subpages. No decorative elements that move behind body text.
+- Text contrast meets WCAG AA. Home pages stay short, with detail on subpages.
 
-## Checks before every push
+## Checks
 
-Run from `web/`. Node 22.12 or newer is required.
+When you change code, run from `web/` (Node 22.12 or newer): `npm ci --ignore-scripts` once, then `npm run typecheck`, `npm run lint`, `npm test` and `npm run build`. If one fails, fix it or tell her why it fails. Never delete a test just to hide a failure.
 
-1. `npm ci --ignore-scripts` (once per session)
-2. `npm run typecheck`
-3. `npm run lint`
-4. `npm test`
-5. `npm run build`
-
-These should pass. If an experiment intentionally breaks a test, say which test and why. Never delete or weaken a test just to make it pass.
-
-`npm run dev:prototype` (port 5190) shows the original screens with a mock API. The account and learner screens need a backend that is not available here, so check those with the steps above and tell Shadi you could not see them running.
-
-## If something is unclear
-
-Ask Shadi one short question. Decisions about data, accounts, AI behaviour, content or deployment belong to Arash or Mo, so flag them as above.
+`npm run dev:prototype` (port 5190) shows the original screens with a mock API. The cloud machine has no backend or database, so say so when something needs one instead of faking a result.
