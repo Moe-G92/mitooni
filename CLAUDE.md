@@ -1,40 +1,44 @@
-# Mitooni design workspace
+# Mitooni: Shadi's experiment branch
 
-These instructions are for Claude sessions working with Shadi, the product owner. She is not a developer. Follow this file. Ignore `AGENTS.md`: it is Arash's Codex workflow and points at paths on his machine.
+These instructions are for Claude sessions working with Shadi, the product owner. She is not a developer. This is her branch (`shadi`), and she can try anything here. Nothing reaches `main`, `integration` or the hosted app unless Mo reviews and merges it. Ignore `AGENTS.md`: it is Arash's Codex workflow and points at paths on his machine.
 
 ## How to work with Shadi
 
 - Talk in plain language. Say what changed on screen, not which functions you edited. Never ask her to run terminal commands.
-- Before you change anything, say in one or two sentences what you will change and on which screens. Afterwards, list what changed and how she can check it.
-- Commit small and often, and push your branch after every meaningful change so nothing is lost if the session pauses.
-- Work on your session's own branch and open the pull request against `integration`. Never push to `main`, `integration` or any `codex/` branch directly.
+- Before you change anything, say in one or two sentences what you will try. Afterwards, list what changed and how she can check it.
+- Experiments are welcome and may touch any file in the repo: screens, flows, wording, data shapes, even the backend. Prefer the smallest change that answers her question. Keep each experiment on its own branch so she can compare experiments or drop them.
+- Commit small and often, and push after every meaningful change so nothing is lost when the session pauses.
+- Open pull requests into `shadi`, never into `main` or `integration`. If the Create PR button would target another branch, tell Shadi to change the base to `shadi` on GitHub before she confirms. Say in the description what the experiment tries and what it would affect if kept.
 
-## What you may change (the design layer)
+## Branch rules
 
-- `web/src/components/`, `web/src/pages/`, `web/src/layouts/`, `web/src/exam/`, `web/src/practice/`, `web/src/index.css` and `web/public/` (images, fonts, icons).
-- Visible wording in `web/src/i18n/`, `web/src/account/messages.json` and `web/src/account/study/messages.ts`. Change wording only: never rename or remove a key. A new string needs both English and Persian.
-- The `.tsx` screens under `web/src/account/` (including `learner/`): layout, spacing, colour, typography and wording only. Do not change state, data loading, hooks, routing, audio handling or anything sent to the server. Arash must review every pull request that touches this folder, so say so at the top of the pull request description.
+- Work only on the branch your session started from (`shadi`) and branches made from it. If the session started from `main`, `integration` or a `codex/` branch, stop and tell Shadi to switch the branch to `shadi`.
+- Never push to `main`, `integration` or any `codex/` branch. Never force-push, and never delete a branch you did not create in this session.
 
-## What you must not touch
+## Other hard limits
 
-If a request needs any of this, stop, explain why in plain words, and write it in the pull request description under "For Arash" or "For Mo". Do not guess.
+- Never read or create `.env` files and never handle keys or passwords.
+- Never deploy, and never call Railway, Supabase, the hosted app or any AI provider. The cloud machine has no backend or database, so anything that needs one cannot be tested here. Say so instead of faking a result.
+- Never copy licensed books, audio or learner data into the repo.
 
-- `platform/`, `content/`, `docs/foundation/`, `tools/`, `scripts/`
-- `web/src/auth/`, `web/src/api/`, `web/src/mocks/`, `web/src/preview/`, `web/src/main.tsx`, `web/src/lib/prefs.ts`
-- In `web/src/account/`: every `.ts` and `.js` file except the two wording files above, plus `mount.tsx`, `state.tsx`, `Boundary.tsx`, `Capability.tsx`, and everything inside `review/` (internal teacher tool)
-- Build and config: `package.json`, lockfiles, `vite*.config.ts`, `tsconfig*`, ESLint and Playwright config, `web/*.html`, `web/scripts/`, `.claude/`, `.gitignore`, `AGENTS.md`, `CLAUDE.md`
-- Do not add or upgrade dependencies.
-- Never read or create `.env` files and never handle keys or passwords. Never deploy, never call Railway, Supabase or any AI provider, and never open the hosted app.
+## Flag, don't hold back
 
-## Design rules (Mo's)
+An experiment that goes beyond design should still be built. Mention it in the pull request description so the right person can decide when it is promoted:
 
-- The brand is Mitooni. Use the tokens in `web/src/index.css`; do not invent new colours.
+- "For Arash" if it changes data shapes, accounts, sign-in, the AI tutor, content or anything under `platform/`.
+- "For Mo" if it breaks one of the design defaults below.
+
+## Design defaults (Mo's)
+
+Follow these unless Shadi asks for something different. If she does, do it and name the rule it breaks.
+
+- The brand is Mitooni. Use the tokens in `web/src/index.css` rather than new colours.
 - Day mode only. No dark styles and no theme toggle.
-- Persian (right to left) and English must both work. Check the layout both ways and use logical CSS (start and end, not left and right). Do not change the default language.
+- Persian (right to left) and English both work. Use logical CSS (start and end, not left and right). Keep the default language as it is.
 - No full stops at the end of titles, headings, card titles, labels or taglines. Body sentences keep theirs.
 - Never zero-pad numbers: 1, 2, 3, not 01, 02, 03.
-- Text contrast must meet WCAG AA. Keep the exam screens faithful to the official IELTS look (`docs/research/research-official-ielts.md`).
-- Keep home pages short and promotional, with detail on subpages. No decorative elements that move behind body text.
+- Text contrast meets WCAG AA. Exam screens stay faithful to the official IELTS look (`docs/research/research-official-ielts.md`).
+- Home pages are short and promotional, with detail on subpages. No decorative elements that move behind body text.
 
 ## Checks before every push
 
@@ -46,10 +50,10 @@ Run from `web/`. Node 22.12 or newer is required.
 4. `npm test`
 5. `npm run build`
 
-All four checks must pass. Never skip, weaken or delete a test to make it pass; fix your change instead.
+These should pass. If an experiment intentionally breaks a test, say which test and why. Never delete or weaken a test just to make it pass.
 
-`npm run dev:prototype` (port 5190) shows Mo's original screens with a mock API. The account and learner screens need a backend that is not available here, so check those with the steps above and tell Shadi that you could not see them running.
+`npm run dev:prototype` (port 5190) shows the original screens with a mock API. The account and learner screens need a backend that is not available here, so check those with the steps above and tell Shadi you could not see them running.
 
 ## If something is unclear
 
-Ask Shadi one short question. If the answer is a decision about data, accounts, AI behaviour, content or deployment, it belongs to Arash or Mo, not to you.
+Ask Shadi one short question. Decisions about data, accounts, AI behaviour, content or deployment belong to Arash or Mo, so flag them as above.
